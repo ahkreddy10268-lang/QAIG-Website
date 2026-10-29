@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script>
+<script src="qaig-viewport.js"></script>
+<script src="qaig-transition.js"></script>
+<script src="qaig-product-ill.js"></script>
+<script src="qaig-spectrum.js"></script>
+<script src="qaig-product-data.js"></script>
+<style>body{margin:0;background:#010204}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}.qsub::-webkit-scrollbar{display:none}a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
+
+<dc-import name="QAIG Global Navbar" current="Products" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<section data-screen-label="01 All Products Hero" style="position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 70% at 72% 38%,rgba(0,90,150,.2),transparent 70%),var(--base)">
+  <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.28;-webkit-mask-image:radial-gradient(ellipse 60% 70% at 70% 40%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 70% 40%,#000,transparent 75%);pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;left:50%;top:-30%;width:min(1400px,140%);aspect-ratio:1/1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(0,212,255,.10),transparent 70%);pointer-events:none"></div>
+  <div class="section-shell" style="position:relative;padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(32px,4vw,56px)">
+    <div style="display:grid;grid-template-columns:{{ heroCols }};align-items:end;gap:28px clamp(32px,5vw,80px)">
+      <div style="min-width:0">
+        <h1 style="margin:0;max-width:13ch;font-size:clamp(2.75rem,1.4rem + 4.4vw,5.5rem);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Five Domains. <span style="color:var(--brand)">Thirteen Products.</span></h1>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">From quantum-safe security to narrow-linewidth lasers. Tune across the spectrum below to find a product, or open the directory to compare them domain by domain.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toIndex }}" hint-size="200px,44px">Browse the Directory</x-import>
+          <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ toEnq }}" hint-size="230px,44px">Discuss Your Requirement</x-import>
+        </div>
+      </div>
+    </div>
+
+    <figure style="position:relative;margin:clamp(40px,5vw,64px) 0 0;border:1px solid var(--border-light);border-radius:24px;background:linear-gradient(180deg,rgba(0,212,255,.04),transparent 40%),var(--surface);box-shadow:0 60px 120px -80px rgba(0,212,255,.45)">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 20px;padding:14px 22px;border-bottom:1px solid var(--border)">
+        <span style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--brand-soft)"></span>Fig. 00 · Portfolio Spectrum</span>
+        <span style="display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span class="tnum"><span style="color:var(--foreground)">{{ nAll }}</span> Products</span><span class="tnum"><span style="color:var(--foreground)">{{ nReady }}</span> Available</span><span class="tnum"><span style="color:var(--warning)">{{ nRnd }}</span> In R&amp;D</span></span>
+      </div>
+      <div tabIndex="0" role="group" aria-roledescription="spectrum" aria-label="{{ spAria }}" onKeyDown="{{ spKey }}" style="position:relative;height:{{ fieldH }};cursor:crosshair;outline-offset:-2px">
+        <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.45;pointer-events:none"></div>
+        <canvas ref="{{ fieldRef }}" aria-hidden="true" style="position:absolute;inset:0;display:block;width:100%;height:100%"></canvas>
+      </div>
+      <figcaption aria-live="polite" style="display:grid;grid-template-columns:{{ roCols }};align-items:center;gap:16px 28px;padding:18px 22px;border-top:1px solid var(--border);background:var(--surface-2);border-radius:0 0 24px 24px">
+        <div style="display:flex;align-items:center;gap:14px;min-width:0">
+          <img src="{{ sp.logo }}" alt="" aria-hidden="true" style="flex:none;width:44px;height:44px;object-fit:contain">
+          <div style="min-width:0;display:flex;flex-direction:column;gap:3px">
+            <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ sp.idx }} · {{ sp.domain }}</span>
+            <span style="display:flex;align-items:center;gap:10px;font-size:clamp(1.2rem,1rem + .5vw,1.5rem);font-weight:600;letter-spacing:-0.02em">{{ sp.title }}<sc-if value="{{ sp.rnd }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span></sc-if></span>
+          </div>
+        </div>
+        <p style="margin:0;min-width:0;font-size:16px;line-height:1.55;color:var(--foreground-2);text-wrap:pretty">{{ sp.does }}</p>
+        <div style="display:flex;align-items:center;justify-content:{{ roJustify }};gap:8px">
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ spPrev }}" aria-label="Previous product" hint-size="40px,40px">←</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ spNext }}" aria-label="Next product" hint-size="40px,40px">→</x-import>
+          <x-import component-from-global-scope="QAIG.Button" onClick="{{ spOpen }}" hint-size="150px,40px">View Product →</x-import>
+        </div>
+      </figcaption>
+    </figure>
+  </div>
+
+</section>
+
+<section id="featured" data-screen-label="02 Featured Mini Products" style="position:relative;scroll-margin-top:100px;padding:clamp(56px,7vw,104px) 0;border-top:1px solid var(--border);background:radial-gradient(ellipse 50% 60% at 50% 0%,rgba(0,110,190,.10),transparent 70%),var(--base)">
+  <div class="section-shell" style="display:flex;flex-direction:column;gap:clamp(28px,3.5vw,48px)">
+    <header style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 48px">
+      <div style="display:flex;flex-direction:column;gap:14px;min-width:0">
+        <span class="eyebrow" style="white-space:nowrap">Hardware</span>
+        <h2 style="margin:0;font-size:var(--text-h2);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Featured <span style="color:var(--brand)">Mini Products</span></h2>
+      </div>
+      <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">Compact hardware units that run Q-Cluster and QNTSim on your own site.</p>
+    </header>
+    <div style="display:grid;grid-template-columns:{{ minisCols }};gap:clamp(16px,2vw,24px)">
+      <sc-for list="{{ minis }}" as="m" hint-placeholder-count="2">
+        <article id="{{ m.slug }}" data-rv="" aria-labelledby="t-{{ m.slug }}" style="position:relative;scroll-margin-top:150px;display:grid;grid-template-columns:{{ miniInner }};align-items:stretch;min-width:0;border:1px solid var(--border-light);border-radius:20px;background:linear-gradient(135deg,{{ m.tint }},transparent 55%),var(--surface);overflow:hidden;transition:border-color .3s,box-shadow .3s" style-hover="border-color:var(--border-strong);box-shadow:0 40px 90px -60px rgba(0,212,255,.45)">
+          <div style="display:flex;flex-direction:column;gap:14px;min-width:0;padding:{{ miniPad }}">
+            <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ m.parentLabel }}</span>
+            <h3 id="t-{{ m.slug }}" style="margin:0;font-size:clamp(1.6rem,1.2rem + 1vw,2.25rem);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ m.title }}</h3>
+            <p style="margin:0;font-size:17px;line-height:1.4;font-weight:500;color:var(--foreground-2)">{{ m.kicker }}</p>
+            <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ m.line }}</p>
+            <div style="margin-top:auto;padding-top:10px;display:flex">
+              <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ m.go }}" aria-label="{{ m.aria }}" hint-size="150px,40px">View Product →</x-import>
+            </div>
+          </div>
+          <figure style="position:relative;margin:0;min-height:{{ miniFigH }};background:radial-gradient(ellipse 58% 42% at 50% 78%,rgba(0,212,255,.14),transparent 72%),radial-gradient(ellipse 66% 60% at 50% 50%,rgba(120,170,215,.28),rgba(40,90,140,.10) 58%,transparent 78%)">
+            <img src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="position:absolute;inset:{{ miniImgInset }};width:calc(100% - {{ miniImgW }});height:calc(100% - {{ miniImgH }});object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.6))">
+          </figure>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="index" data-screen-label="03 Domain Index" style="scroll-margin-top:100px;border-top:1px solid var(--border)">
+  <div class="section-shell" style="padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px)">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding:0 0 16px;border-bottom:1px solid var(--border)">
+      <h2 style="margin:0;font-family:var(--font-mono);font-size:13.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Browse by Domain</h2>
+      <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted);white-space:nowrap">05 DOMAINS · {{ nAll }} PRODUCTS</span>
+    </div>
+    <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:{{ idxCols }};border-left:1px solid var(--border)">
+      <sc-for list="{{ doms }}" as="d" hint-placeholder-count="5">
+        <li style="min-width:0;grid-column:{{ d.span }};border-right:1px solid var(--border);border-bottom:1px solid var(--border)"><a href="#{{ d.id }}" onClick="{{ d.goIdx }}" style="display:flex;flex-direction:column;gap:10px;height:100%;box-sizing:border-box;padding:20px;color:var(--foreground);transition:background .25s" style-hover="background:var(--surface)">
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)"><span>{{ d.idx }}</span><span aria-hidden="true">↓</span></span>
+          <span style="font-size:17px;line-height:1.25;font-weight:600;letter-spacing:-0.015em;text-wrap:balance">{{ d.label }}</span>
+          <span style="margin-top:auto;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted)">{{ d.count }}</span>
+        </a></li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<div style="position:sticky;top:85px;z-index:40;height:0">
+<nav aria-label="Product domains" style="position:absolute;left:0;right:0;top:0;background:var(--nav-surface);backdrop-filter:blur(20px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);opacity:{{ subOp }};visibility:{{ subVis }};transform:translateY({{ subY }});transition:opacity .3s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s">
+  <span ref="{{ progRef }}" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,rgba(0,212,255,.35),var(--brand));box-shadow:0 0 10px rgba(0,212,255,.55);pointer-events:none"></span>
+  <div ref="{{ subRef }}" class="section-shell qsub" style="display:flex;align-items:center;justify-content:safe center;gap:4px;overflow-x:auto;height:48px;scrollbar-width:none">
+    <sc-for list="{{ subs }}" as="s" hint-placeholder-count="5">
+      <x-import component-from-global-scope="QAIG.Button" variant="{{ s.variant }}" size="sm" onClick="{{ s.go }}" data-sub="" aria-current="{{ s.cur }}" dc-props="{{ noShrink }}" hint-size="120px,32px">{{ s.name }}</x-import>
+    </sc-for>
+  </div>
+</nav>
+</div>
+
+<sc-for list="{{ doms }}" as="d" hint-placeholder-count="2">
+<section id="{{ d.id }}" data-dom="" data-screen-label="{{ d.sl }}" style="position:relative;scroll-margin-top:133px;padding:clamp(56px,7vw,104px) 0;border-top:1px solid var(--border);background:{{ d.bg }}">
+  <div class="section-shell" style="display:flex;flex-direction:column;gap:clamp(28px,3.5vw,48px)">
+    <header data-rv="" data-dh="" style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:clamp(16px,3vw,48px)">
+      <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:14px">
+        <span class="eyebrow" style="white-space:nowrap">{{ d.idx }} · Technology Domain</span>
+        <h2 style="margin:0;font-size:var(--text-h2);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">{{ d.labelA }} <span style="color:var(--brand)">{{ d.labelB }}</span></h2>
+        <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ d.desc }}</p>
+      </div>
+      <span style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;white-space:nowrap;color:var(--muted);padding-bottom:4px">{{ d.count }}</span>
+    </header>
+    <sc-if value="{{ d.stack }}" hint-placeholder-val="{{ false }}">
+      <div role="group" aria-label="Q-Forte, integrated PQC stack" style="display:flex;flex-direction:column;gap:{{ grpGap }};padding:{{ grpPad }};border:1px solid rgba(0,212,255,.28);border-radius:28px;background:linear-gradient(180deg,rgba(0,212,255,.06),transparent 40%),rgba(0,212,255,.015)">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:{{ grpHeadPad }}">
+          <div style="flex:1 1 320px;display:flex;align-items:center;gap:14px;min-width:0">
+            <img src="{{ qfIcon }}" alt="Q-Forte" style="flex:none;width:40px;height:40px;object-fit:contain">
+            <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+              <span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px"><span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;white-space:nowrap">Q-Forte</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Integrated PQC Stack</span></span>
+              <span style="font-size:16px;line-height:1.45;color:var(--foreground-2)">Three complementary products. One unified stack.</span>
+            </div>
+          </div>
+          <a href="{{ qfHref }}" style="display:flex;align-items:center;gap:8px;min-height:44px;font-size:16px;font-weight:600;white-space:nowrap" style-hover="gap:12px">View Q-Forte<span aria-hidden="true">→</span></a>
+        </div>
+        <div style="display:grid;grid-template-columns:{{ d.cols }};gap:{{ cardGap }}">
+          <sc-for list="{{ d.cards }}" as="c" hint-placeholder-count="3">
+          <article id="{{ c.slug }}" data-rv="" aria-labelledby="t-{{ c.slug }}" style="position:relative;scroll-margin-top:150px;grid-column:{{ c.span }};display:flex;flex-direction:{{ c.dir }};min-width:0;min-height:{{ c.minH }};border:1px solid var(--border);border-radius:20px;background:var(--surface);transition:border-color .35s,transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s" style-hover="border-color:rgba(0,212,255,.45);transform:translateY(-4px);box-shadow:0 30px 60px -40px rgba(0,212,255,.45)">
+            <figure style="position:relative;margin:0;flex:{{ c.figFlex }};height:{{ c.figH }};border-right:{{ c.figBR }};border-bottom:{{ c.figBB }};border-radius:{{ c.figR }};background:{{ c.figBg }};overflow:hidden;transition:background .4s">
+              <sc-if value="{{ c.showIll }}" hint-placeholder-val="{{ true }}">
+                <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.35;pointer-events:none"></div>
+                <div style="position:absolute;left:20px;right:20px;top:48px;bottom:24px;display:flex;align-items:center;justify-content:center">{{ c.ill }}</div>
+              </sc-if>
+              <sc-if value="{{ c.showPhoto }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
+              </sc-if>
+              <sc-if value="{{ c.hasPhoto }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="Figure view" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
+                  <button type="button" aria-pressed="{{ c.pIll }}" onClick="{{ c.toIll }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tIllBg }};color:{{ c.tIllFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Concept</button>
+                  <button type="button" aria-pressed="{{ c.pPhoto }}" onClick="{{ c.toPhoto }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tPhBg }};color:{{ c.tPhFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Product Render</button>
+                </div>
+              </sc-if>
+            </figure>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:{{ c.bodyJ }};gap:14px;padding:{{ c.bodyPad }}">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+                <div style="flex:1;min-width:0"><h3 id="t-{{ c.slug }}" style="margin:0;font-size:22px;line-height:1.15;letter-spacing:-0.02em;font-weight:600">{{ c.title }}</h3><p style="margin:6px 0 0;font-size:16px;color:var(--foreground-2)">{{ c.blurb }}</p></div>
+                <div style="flex:none;display:{{ c.badgeDisp }};align-items:center;gap:8px">
+                <sc-if value="{{ c.qf }}" hint-placeholder-val="{{ false }}">
+                  <span style="position:relative;display:flex">
+                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
+                    <span id="tip-{{ c.slug }}" role="tooltip" style="position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:max-content;max-width:260px;padding:10px 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-3);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;color:var(--foreground);opacity:{{ c.tipOp }};visibility:{{ c.tipVis }};transform:translateY({{ c.tipY }});transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none">{{ c.tip }}</span>
+                  </span>
+                </sc-if>
+                <sc-if value="{{ c.rnd }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;white-space:nowrap;color:var(--warning)">R&amp;D</span></sc-if>
+                </div>
+              </div>
+              <dl style="margin:0;display:grid;grid-template-columns:{{ c.dlCols }};gap:12px 28px;padding-top:12px;border-top:1px solid var(--border)">
+                <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">What It Does</dt><dd style="margin:0;font-size:16px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ c.does }}</dd></div>
+                <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ c.whenK }}</dt><dd style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ c.when }}</dd></div>
+              </dl>
+              <sc-if value="{{ c.hasMini }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ c.miniHref }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:0 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);color:var(--foreground);transition:border-color .2s" style-hover="border-color:var(--border-strong)"><span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;min-width:0"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Hardware Unit</span><span style="font-size:16px;font-weight:600;white-space:nowrap">{{ c.miniTitle }}</span></span><span aria-hidden="true" style="color:var(--brand)">→</span></a>
+              </sc-if>
+              <a href="{{ c.href }}" aria-label="{{ c.ctaAria }}" style="margin-top:auto;padding-top:6px;align-self:flex-start;display:flex;align-items:center;min-height:44px;font-size:16px;font-weight:600;white-space:nowrap">Read More →</a>
+            </div>
+          </article>
+          </sc-for>
+        </div>
+      </div>
+    </sc-if>
+    <sc-if value="{{ d.plain }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-columns:{{ d.cols }};gap:{{ cardGap }}">
+        <sc-for list="{{ d.cards }}" as="c" hint-placeholder-count="3">
+          <article id="{{ c.slug }}" data-rv="" aria-labelledby="t-{{ c.slug }}" style="position:relative;scroll-margin-top:150px;grid-column:{{ c.span }};display:flex;flex-direction:{{ c.dir }};min-width:0;min-height:{{ c.minH }};border:1px solid var(--border);border-radius:20px;background:var(--surface);transition:border-color .35s,transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s" style-hover="border-color:rgba(0,212,255,.45);transform:translateY(-4px);box-shadow:0 30px 60px -40px rgba(0,212,255,.45)">
+            <figure style="position:relative;margin:0;flex:{{ c.figFlex }};height:{{ c.figH }};border-right:{{ c.figBR }};border-bottom:{{ c.figBB }};border-radius:{{ c.figR }};background:{{ c.figBg }};overflow:hidden;transition:background .4s">
+              <sc-if value="{{ c.showIll }}" hint-placeholder-val="{{ true }}">
+                <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.35;pointer-events:none"></div>
+                <div style="position:absolute;left:20px;right:20px;top:48px;bottom:24px;display:flex;align-items:center;justify-content:center">{{ c.ill }}</div>
+              </sc-if>
+              <sc-if value="{{ c.showPhoto }}" hint-placeholder-val="{{ false }}">
+                <img src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
+              </sc-if>
+              <sc-if value="{{ c.hasPhoto }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="Figure view" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
+                  <button type="button" aria-pressed="{{ c.pIll }}" onClick="{{ c.toIll }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tIllBg }};color:{{ c.tIllFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Concept</button>
+                  <button type="button" aria-pressed="{{ c.pPhoto }}" onClick="{{ c.toPhoto }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tPhBg }};color:{{ c.tPhFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Product Render</button>
+                </div>
+              </sc-if>
+            </figure>
+            <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:{{ c.bodyJ }};gap:14px;padding:{{ c.bodyPad }}">
+              <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px">
+                <div style="flex:1;min-width:0"><h3 id="t-{{ c.slug }}" style="margin:0;font-size:22px;line-height:1.15;letter-spacing:-0.02em;font-weight:600">{{ c.title }}</h3><p style="margin:6px 0 0;font-size:16px;color:var(--foreground-2)">{{ c.blurb }}</p></div>
+                <div style="flex:none;display:{{ c.badgeDisp }};align-items:center;gap:8px">
+                <sc-if value="{{ c.qf }}" hint-placeholder-val="{{ false }}">
+                  <span style="position:relative;display:flex">
+                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
+                    <span id="tip-{{ c.slug }}" role="tooltip" style="position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:max-content;max-width:260px;padding:10px 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-3);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;color:var(--foreground);opacity:{{ c.tipOp }};visibility:{{ c.tipVis }};transform:translateY({{ c.tipY }});transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none">{{ c.tip }}</span>
+                  </span>
+                </sc-if>
+                <sc-if value="{{ c.rnd }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;white-space:nowrap;color:var(--warning)">R&amp;D</span></sc-if>
+                </div>
+              </div>
+              <dl style="margin:0;display:grid;grid-template-columns:{{ c.dlCols }};gap:12px 28px;padding-top:12px;border-top:1px solid var(--border)">
+                <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">What It Does</dt><dd style="margin:0;font-size:16px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ c.does }}</dd></div>
+                <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ c.whenK }}</dt><dd style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ c.when }}</dd></div>
+              </dl>
+              <sc-if value="{{ c.hasMini }}" hint-placeholder-val="{{ false }}">
+                <a href="{{ c.miniHref }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:44px;padding:0 14px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);color:var(--foreground);transition:border-color .2s" style-hover="border-color:var(--border-strong)"><span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;min-width:0"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Hardware Unit</span><span style="font-size:16px;font-weight:600;white-space:nowrap">{{ c.miniTitle }}</span></span><span aria-hidden="true" style="color:var(--brand)">→</span></a>
+              </sc-if>
+              <a href="{{ c.href }}" aria-label="{{ c.ctaAria }}" style="margin-top:auto;padding-top:6px;align-self:flex-start;display:flex;align-items:center;min-height:44px;font-size:16px;font-weight:600;white-space:nowrap">Read More →</a>
+            </div>
+          </article>
+        </sc-for>
+      </div>
+    </sc-if>
+  </div>
+</section>
+</sc-for>
+
+<dc-import name="QAIG Global CTA" hint-size="100%,620px"></dc-import>
+<dc-import name="QAIG Global Footer" after-cta="true" hint-size="100%,760px"></dc-import>
+</div>
+</x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
+<script type="text/x-dc" data-dc-script data-props="{&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Auto&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, h: typeof window !== "undefined" ? window.innerHeight : 900, rm: false, sp: 0, act: 0, view: {}, tip: null };
+  subRef = React.createRef();
+  progRef = React.createRef();
+  fieldRef = React.createRef();
+  qaigData() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV; }
+  prodData() { if (window.QAIG_PRODUCTS) return window.QAIG_PRODUCTS; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-product-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_PRODUCTS || {}; }
+  qvpSync() { const m = this.props.viewport ?? "Auto"; if (m === this._qvp) return; const go = () => { if (window.QAIGViewport) { this._qvp = m; window.QAIGViewport.apply(m); } else setTimeout(go, 120); }; go(); }
+  jump(id) { const el = document.getElementById(id); if (!el) return; history.replaceState(null, "", "#" + id); this.revealNow(el); this.flash(el); window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - (parseFloat(getComputedStyle(el).scrollMarginTop) || 0), behavior: this.state.rm ? "auto" : "smooth" }); }
+  spList() { const nav = this.qaigData() || { cats: [] }; return (nav.cats || []).flatMap((c, ci) => c.items.map((p) => ({ title: p.title, code: c.code, rnd: !!p.rnd, ci, domain: c.label, does: p.does || p.blurb }))); }
+  initField() {
+    const cv = this.fieldRef.current;
+    if (!cv || !window.QAIG_SPECTRUM) { this._ft = setTimeout(() => this.initField(), 120); return; }
+    if (this.field) return;
+    const nav = this.qaigData() || { cats: [] }, list = this.spList(), slug = nav.slug ? (t) => nav.slug(t) : (t) => t;
+    this.field = window.QAIG_SPECTRUM(cv, { reduced: this.state.rm, lanes: (nav.cats || []).map((c) => ({ code: c.code, label: c.label })), items: list,
+      onFocus: (i) => { if (i !== this.state.sp) this.setState({ sp: i }); }, onPick: (i) => this.jump(slug(list[i].title)) });
+  }
+  revealNow(root) { const els = root && root.matches && root.matches("[data-rv]") ? [root] : []; els.concat(Array.from(document.querySelectorAll("[data-rv]")).filter((e) => e.dataset.rvh)).forEach((e) => this.show(e)); }
+  flash(el) { if (this.state.rm || !el.animate) return; const tg = el.matches("[data-dom]") ? el.querySelector("[data-dh]") : el.matches("article") ? el : null; if (!tg) return; setTimeout(() => { tg.animate(el.matches("article") ? [{ boxShadow: "0 0 0 1px rgba(0,212,255,0)" }, { boxShadow: "0 0 0 2px rgba(0,212,255,.9),0 0 40px rgba(0,212,255,.35)" }, { boxShadow: "0 0 0 1px rgba(0,212,255,0)" }] : [{ opacity: 0.35, transform: "translateY(12px)", filter: "blur(2px)" }, { opacity: 1, transform: "none", filter: "none" }], { duration: el.matches("article") ? 1400 : 700, easing: "cubic-bezier(.22,1,.36,1)" }); }, 420); }
+  show(e) { if (!e.dataset.rvh) return; delete e.dataset.rvh; e.style.opacity = ""; e.style.transform = ""; this.io && this.io.unobserve(e); setTimeout(() => { e.style.transition = ""; }, 1300); }
+  initReveal() {
+    if (this.state.rm || !("IntersectionObserver" in window)) return;
+    this.io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) this.show(x.target); }), { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll("[data-rv]").forEach((e) => { if (e.getBoundingClientRect().top < window.innerHeight) return; const sib = e.parentElement ? Array.from(e.parentElement.children).filter((x) => x.matches("[data-rv]")) : [], k = Math.max(0, sib.indexOf(e)), hd = e.matches("[data-dh]"); e.dataset.rvh = "1"; e.style.opacity = "0"; e.style.transform = hd ? "translateY(20px)" : "translateY(36px) scale(.97)"; e.style.transition = "opacity .7s cubic-bezier(.22,1,.36,1) " + (k * 0.09) + "s,transform .8s cubic-bezier(.22,1,.36,1) " + (k * 0.09) + "s,border-color .35s,box-shadow .45s"; this.io.observe(e); });
+  }
+  componentDidMount() {
+    this.qvpSync();
+    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    this.setState({ rm }, () => { this.upd(); this.initField(); if (location.hash) setTimeout(() => this.jump(location.hash.slice(1)), 300); else setTimeout(() => this.initReveal(), 300); });
+    this.onR = () => this.setState({ w: window.innerWidth, h: window.innerHeight }, () => this.upd());
+    this.onS = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.upd(); }); };
+    this.onHash = () => location.hash && this.jump(location.hash.slice(1));
+    window.addEventListener("resize", this.onR); window.addEventListener("scroll", this.onS, { passive: true }); window.addEventListener("hashchange", this.onHash);
+  }
+  componentDidUpdate() { this.qvpSync(); }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); clearTimeout(this._ft); this.io && this.io.disconnect(); if (this.field) this.field.destroy(); window.removeEventListener("resize", this.onR); window.removeEventListener("scroll", this.onS); window.removeEventListener("hashchange", this.onHash); }
+  upd() { const secs = document.querySelectorAll("[data-dom]"); let act = 0; secs.forEach((s, i) => { if (s.getBoundingClientRect().top <= 200) act = i; });
+    const pg = this.progRef.current; if (pg && secs.length) { const a = secs[0].getBoundingClientRect().top + window.scrollY - 140, z = secs[secs.length - 1].getBoundingClientRect().bottom + window.scrollY - window.innerHeight, f = Math.max(0, Math.min(1, (window.scrollY - a) / Math.max(1, z - a))); pg.style.transform = "scaleX(" + f.toFixed(4) + ")"; } const ix = document.getElementById("index"), last = secs[secs.length - 1], on = !!(ix && ix.getBoundingClientRect().bottom <= 140 && (!last || last.getBoundingClientRect().bottom > 181));
+    if (on !== !!this.state.subOn) this.setState({ subOn: on });
+    if (act !== this.state.act) this.setState({ act }, () => this.subScroll(act)); }
+  subScroll(i) { const el = this.subRef.current; if (!el || el.scrollWidth <= el.clientWidth) return; const a = el.querySelectorAll("[data-sub]")[i]; if (a) el.scrollTo({ left: a.offsetLeft - 16, behavior: this.state.rm ? "auto" : "smooth" }); }
+  setView(slug, v) { this.setState((s) => ({ view: Object.assign({}, s.view, { [slug]: v }) })); }
+  go(h) { window.QAIG_GO ? window.QAIG_GO(h) : (location.href = h); }
+  renderVals() {
+    const S = this.state, nav = this.qaigData() || { cats: [] }, cats = nav.cats || [], R = nav.routes || {}, P = this.prodData(), pad = (n) => String(n).padStart(2, "0");
+    const desk = S.w >= 1024, tab = S.w >= 640 && !desk, mob = S.w < 640;
+    const all = cats.reduce((s, x) => s + x.items.length, 0), rd = cats.reduce((s, x) => s + x.items.filter((p) => p.rnd).length, 0);
+    const slug = nav.slug ? (t) => nav.slug(t) : (t) => "p-" + t.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+    const href = (t) => (nav.productPageHref ? nav.productPageHref(t) : (nav.productHref || {})[t]) || R.enquiry || "#";
+    const enq = R.enquiry || "Discuss Your Requirement.dc.html";
+    const qfStack = (cats.find((x) => x.stack) || {}).stack || {};
+    const prodBy = (t) => Object.values(P).find((v) => v && v.name === t) || {};
+    const minis = [];
+    cats.forEach((x) => x.items.forEach((p) => { if (!p.mini) return; const m = p.mini, pp = prodBy(p.title), pm = pp.mini || (pp.module || {}).mini || {};
+      minis.push({ slug: slug(m.title), title: m.title, kicker: pm.kicker || m.blurb, line: pm.line || "", img: m.img, alt: (pm.photoAlt || m.title + " hardware unit"), parentLabel: p.title + " · " + x.label,
+        tint: minis.length ? "rgba(0,140,220,.10)" : "rgba(0,212,255,.08)", aria: "View product: " + m.title, go: () => this.go(href(m.title)) }); }));
+    const doms = cats.map((x, ci) => { const n = x.items.length, single = n === 1, cols = mob || single ? 1 : desk ? (n === 4 ? 2 : Math.min(n, 3)) : 2, oddLast = (k) => cols === 2 && n % 2 === 1 && k === n - 1;
+      return { ci, id: x.code.toLowerCase(), idx: pad(ci + 1), sl: pad(ci + 4) + " " + x.label, label: x.label, labelA: x.label.split(" ").slice(0, -1).join(" "), labelB: x.label.split(" ").slice(-1)[0], desc: x.desc, stack: !!x.stack, plain: !x.stack,
+        cols: "repeat(" + cols + ",minmax(0,1fr))", goIdx: (e) => { e.preventDefault(); this.jump(x.code.toLowerCase()); },
+        bg: ci % 2 ? "var(--base)" : "radial-gradient(ellipse 50% 50% at 85% 0%,rgba(0,110,190,.08),transparent 70%),var(--base)",
+        count: x.stack ? "01 STACK · 03 PRODUCTS" : pad(n) + (n === 1 ? " PRODUCT" : " PRODUCTS"),
+        span: !mob && S.w < 1100 && ci === cats.length - 1 && cats.length % 2 ? "1 / -1" : "auto",
+        cards: x.items.map((p, k) => { const horiz = !mob && (single || oddLast(k)), r = !!p.rnd, sl = slug(p.title), ph = !!p.photo && S.view[sl] === "photo", tipOn = S.tip === sl;
+          return { span: oddLast(k) ? "1 / -1" : "auto", bodyJ: horiz ? "center" : "flex-start", slug: sl, title: p.title, blurb: p.blurb, rnd: r, qf: !!x.stack,
+            dir: horiz ? "row" : "column", minH: horiz ? "420px" : "0", figFlex: horiz ? "0 0 46%" : "0 0 auto", figH: horiz ? "auto" : mob ? "200px" : "232px",
+            figBR: horiz ? "1px solid var(--border)" : "0", figBB: horiz ? "0" : "1px solid var(--border)", figR: horiz ? "20px 0 0 20px" : "20px 20px 0 0",
+            bodyPad: horiz && desk ? "32px 36px 26px" : mob ? "20px 20px 16px" : "24px 24px 18px", dlCols: horiz && desk ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
+            logo: "assets/products/icons/" + ({ "Quantum Gravimeter": "quantum-sensing" }[p.title] || sl.replace(/^p-/, "")) + ".png",
+            hasPhoto: !!p.photo, showPhoto: ph, showIll: !ph, photo: p.photo || "", photoAlt: p.title + " product render",
+            figBg: ph ? "radial-gradient(ellipse 70% 70% at 50% 50%,#ffffff,#e4eaf0)" : "radial-gradient(ellipse 60% 70% at 50% 55%,rgba(0,212,255,.08),transparent 70%),var(--surface-2)",
+            badgeDisp: x.stack || r ? "flex" : "none", pIll: ph ? "false" : "true", pPhoto: ph ? "true" : "false",
+            tabBg: ph ? "rgba(255,255,255,.7)" : "rgba(5,8,14,.7)", tabBd: ph ? "rgba(10,20,35,.15)" : "var(--border)",
+            tIllBg: ph ? "transparent" : "var(--brand)", tIllFg: ph ? "#3b4a5c" : "var(--brand-ink)", tPhBg: ph ? "#0b1420" : "transparent", tPhFg: ph ? "#ffffff" : "var(--foreground-2)",
+            toIll: () => this.setView(sl, "ill"), toPhoto: () => this.setView(sl, "photo"),
+            tip: p.title + " is one of three products in Q-Forte, QAIG's integrated PQC stack.", tipOn: () => this.setState({ tip: sl }), tipOp: tipOn ? 1 : 0, tipVis: tipOn ? "visible" : "hidden", tipY: tipOn ? "0" : "-4px",
+            does: p.does || p.blurb, whenK: r ? "Stage" : "Useful When", when: r ? "In research and development. Not yet offered as a product." : p.when || "",
+            hasMini: !!p.mini, miniTitle: p.mini ? p.mini.title : "", miniHref: p.mini ? href(p.mini.title) : "#",
+            href: href(p.title), ctaAria: "Read more about " + p.title,
+            ill: !ph && window.QAIG_PILL ? window.QAIG_PILL(React, p.title, S.rm) : null }; }) }; });
+    return {
+      qfHref: href(qfStack.name || "Q-Forte"), qfIcon: qfStack.icon || "assets/products/QFORTE_ICON.png",
+      tipOff: () => this.state.tip && this.setState({ tip: null }), tipKey: (e) => { if (e.key === "Escape") this.setState({ tip: null }); },
+      toIndex: () => this.jump("index"), toEnq: () => this.go(enq), nAll: pad(all), nReady: pad(all - rd), nRnd: pad(rd), doms, minis,
+      minisCols: desk ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", miniInner: mob ? "minmax(0,1fr)" : "minmax(0,1.05fr) minmax(0,1fr)",
+      miniPad: mob ? "24px 22px 8px" : desk ? "30px 8px 30px 30px" : "32px 12px 32px 32px", miniFigH: mob ? "230px" : "300px", miniImgInset: "6%", miniImgW: "12%", miniImgH: "12%",
+      fieldRef: this.fieldRef, fieldH: desk ? "360px" : tab ? "320px" : "280px",
+      heroCols: desk ? "minmax(0,7fr) minmax(0,5fr)" : "minmax(0,1fr)",
+      ...(() => { const L = this.spList(), n = L.length, i = Math.max(0, Math.min(n - 1, S.sp || 0)), p = L[i] || { title: "", domain: "", does: "", ci: 0 }, setI = (k) => { const j = (k + n) % n; this.setState({ sp: j }); this.field && this.field.set(j); };
+        return { sp: { ...p, idx: pad(p.ci + 1), logo: "assets/products/icons/" + ({ "Quantum Gravimeter": "quantum-sensing" }[p.title] || slug(p.title || "x").replace(/^p-/, "")) + ".png" },
+          spPrev: () => setI(i - 1), spNext: () => setI(i + 1), spOpen: () => this.go(href(p.title)),
+          spKey: (e) => { if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); setI(i + 1); } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); setI(i - 1); } else if (e.key === "Enter") { e.preventDefault(); this.jump(slug(p.title)); } },
+          spAria: "Portfolio spectrum. " + (i + 1) + " of " + n + ": " + p.title + ", " + p.domain + (p.rnd ? ", in R&D" : "") + ". Use arrow keys to move between products and Enter to open.",
+          roCols: desk ? "minmax(0,4fr) minmax(0,5fr) auto" : "minmax(0,1fr)", roJustify: desk ? "flex-end" : "flex-start" }; })(),
+      subRef: this.subRef, progRef: this.progRef, subOp: S.subOn ? 1 : 0, subVis: S.subOn ? "visible" : "hidden", subY: S.subOn || S.rm ? "0" : "-10px", noShrink: { style: { flexShrink: 0 } },
+      subs: cats.map((x, i) => { const a = i === S.act; return { name: S.w >= 1180 ? x.label : x.short, cur: a ? "true" : undefined, variant: a ? "secondary" : "ghost", go: () => this.jump(x.code.toLowerCase()) }; }),
+      idxCols: S.w >= 1100 ? "repeat(5,minmax(0,1fr))" : mob ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))",
+      grpPad: mob ? "16px" : "20px", grpGap: mob ? "16px" : "20px", grpHeadPad: mob ? "4px 4px 0" : "4px 8px 0", cardGap: desk ? "20px" : "16px",
+    };
+  }
+}
+</script>
+</body>
+</html>

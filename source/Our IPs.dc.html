@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script>
+<script src="qaig-nav-data.js"></script>
+<script src="qaig-content-data.js"></script>
+<script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
+<dc-import name="QAIG Global Navbar" current="Our IPs" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<main>
+<section data-screen-label="01 Hero" style="position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 55% 80% at 85% 10%,color-mix(in srgb, var(--brand) 9%, transparent),transparent 70%),var(--base)">
+  <div class="bg-grid" style="position:absolute;inset:0;z-index:-1;opacity:.35;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 60% 85% at 80% 30%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 85% at 80% 30%,#000,transparent 75%)"></div>
+  <div class="section-shell" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,80px);padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(48px,6vw,96px)">
+    <div style="flex:1.1 1 440px;min-width:0;display:flex;flex-direction:column;gap:24px">
+      <h1 style="margin:0;max-width:14ch;font-size:clamp(2.6rem,1.4rem + 4vw,4.75rem);line-height:1;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Original Research, <span style="color:var(--brand)">Protected.</span></h1>
+      <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Fifteen inventions filed across quantum communication, memory, sensing, lasers and computation. Three hold certificates from the Patent Office, Government of India.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toPatents }}" hint-size="170px,44px">View Certificates</x-import>
+        <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ toPortfolio }}" hint-size="170px,44px">Full Portfolio</x-import>
+      </div>
+    </div>
+    <div style="flex:1 1 360px;min-width:0;display:flex;flex-direction:column;gap:20px">
+      <div aria-hidden="true" style="position:relative;width:100%;max-width:520px;margin:0 auto;aspect-ratio:1/1">{{ heroArt }}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px 32px;padding-top:16px;border-top:1px solid var(--border)">
+        <span style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--brand)"></span>03 Certified</span>
+        <span style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="width:8px;height:8px;border-radius:50%;border:1px solid var(--border-strong)"></span>15 IPs Filed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="granted" data-screen-label="02 Granted Patents" style="scroll-margin-top:85px;padding:clamp(64px,8vw,120px) 0;border-bottom:1px solid var(--border)">
+  <div class="section-shell" style="display:flex;flex-direction:column;gap:clamp(32px,4vw,56px)">
+    <header data-ipr="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px 48px">
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:14px">
+        <span class="eyebrow">Certified Inventions</span>
+        <h2 style="margin:0;font-size:var(--text-h2);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Three Inventions, <span style="color:var(--brand)">Certified.</span></h2>
+      </div>
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">03 of 15</span>
+    </header>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px">
+      <sc-for list="{{ patents }}" as="p" hint-placeholder-count="3">
+        <article data-ipr="" data-glow="" onMouseEnter="{{ p.enter }}" onMouseLeave="{{ p.leave }}" style="position:relative;display:flex;flex-direction:column;border:1px solid {{ p.bd }};border-radius:18px;background:var(--surface);overflow:hidden;transition:border-color .4s,box-shadow .4s;box-shadow:{{ p.shadow }}">
+          <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:var(--brand);transform-origin:left;transform:scaleX({{ p.line }});transition:transform .7s cubic-bezier(.16,1,.3,1);z-index:1"></span>
+          <button data-cursor="View" onClick="{{ p.open }}" aria-label="{{ p.viewAria }}" style="position:relative;display:block;aspect-ratio:1/1.41;width:100%;padding:0;border:0;border-bottom:1px solid var(--border);background:var(--surface-2);cursor:pointer;overflow:hidden">
+            <sc-if value="{{ p.hasCert }}" hint-placeholder-val="{{ false }}">{{ p.certEl }}</sc-if>
+            <sc-if value="{{ p.noCert }}" hint-placeholder-val="{{ true }}">
+              <span class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.35"></span>
+              <span style="position:absolute;inset:16%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;border:1px solid var(--border-light);border-radius:6px;background:var(--surface);transform:translateY({{ p.lift }});transition:transform .7s cubic-bezier(.16,1,.3,1)">
+                <img src="assets/qaig-stacked.png" alt="" style="width:48px;height:auto;opacity:.8">
+                <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2);text-align:center">Certificate {{ p.n }}</span>
+                <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:center;padding:0 12px">Preview Pending PDF</span>
+              </span>
+            </sc-if>
+          </button>
+          <div style="flex:1;display:flex;flex-direction:column;gap:14px;padding:22px 24px 24px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ p.numC }}">IP {{ p.n }}</span><x-import component-from-global-scope="QAIG.Badge" variant="success" hint-size="110px,20px">{{ p.badge }}</x-import></div>
+            <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--foreground-2)">{{ p.kind }}</span>
+            <h3 style="margin:0;font-size:1.3rem;line-height:1.3;letter-spacing:-0.01em;font-weight:600;text-wrap:balance">{{ p.title }}</h3>
+            <dl style="margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 16px;padding-top:14px;border-top:1px solid var(--border)">
+              <sc-for list="{{ p.rows }}" as="d" hint-placeholder-count="4"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">{{ d.k }}</dt><dd style="margin:0;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.04em;color:var(--foreground);overflow-wrap:anywhere">{{ d.v }}</dd></sc-for>
+            </dl>
+            <div style="margin-top:auto;padding-top:6px"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ p.open }}" aria-label="{{ p.viewAria }}" hint-size="150px,32px">View Certificate</x-import></div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" data-screen-label="03 Portfolio" style="scroll-margin-top:85px;padding:clamp(64px,8vw,120px) 0;border-bottom:1px solid var(--border)">
+  <div class="section-shell" style="display:flex;flex-direction:column;gap:clamp(28px,3vw,40px)">
+    <header data-ipr="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
+      <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:14px">
+        <span class="eyebrow">Complete Portfolio</span>
+        <h2 style="margin:0;font-size:var(--text-h2);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Every Filing, <span style="color:var(--brand)">in One Register.</span></h2>
+      </div>
+      <div role="group" aria-label="Filter by status" style="display:flex;flex-wrap:wrap;gap:6px">
+        <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3"><x-import component-from-global-scope="QAIG.Button" variant="{{ f.variant }}" size="sm" onClick="{{ f.pick }}" aria-pressed="{{ f.on }}" hint-size="120px,32px">{{ f.label }}</x-import></sc-for>
+      </div>
+    </header>
+    <p aria-live="polite" style="margin:0;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ showing }}</p>
+    <ol style="list-style:none;margin:0;padding:0;border-top:1px solid var(--border)">
+      <sc-for list="{{ rows }}" as="r" hint-placeholder-count="15">
+        <li onMouseEnter="{{ r.enter }}" onMouseLeave="{{ r.leave }}" style="position:relative;display:grid;grid-template-columns:{{ rowCols }};align-items:center;gap:8px 24px;padding:18px 0;border-bottom:1px solid var(--border)">
+          <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--brand);transform-origin:left;transform:scaleX({{ r.line }});transition:transform .6s cubic-bezier(.16,1,.3,1)"></span>
+          <span style="font-family:var(--font-mono);font-size:15px;letter-spacing:.08em;color:{{ r.numC }};transition:color .3s">{{ r.n }}</span>
+          <span style="min-width:0;font-size:{{ r.size }};line-height:1.45;font-weight:{{ r.fw }};color:{{ r.color }};text-wrap:pretty;transform:translateX({{ r.shift }});transition:transform .5s cubic-bezier(.16,1,.3,1)">{{ r.title }}<sc-if value="{{ r.hasNote }}" hint-placeholder-val="{{ false }}"><span style="margin-left:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">{{ r.note }}</span></sc-if></span>
+          <span style="grid-column:{{ r.badgeCol }};justify-self:{{ r.badgeJs }};display:flex;align-items:center;gap:10px"><x-import component-from-global-scope="QAIG.Badge" variant="{{ r.badgeV }}" hint-size="110px,20px">{{ r.status }}</x-import><sc-if value="{{ r.granted }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="ghost" size="sm" onClick="{{ r.open }}" aria-label="{{ r.viewAria }}" hint-size="110px,32px">Certificate</x-import></sc-if></span>
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<section data-screen-label="04 Closing" style="padding:clamp(64px,8vw,120px) 0">
+  <div data-ipr="" class="section-shell" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px 64px">
+    <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:16px">
+      <span class="eyebrow">From Filing to Product</span>
+      <h2 style="margin:0;max-width:22ch;font-size:var(--text-h2);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">The Same Work Behind Our <span style="color:var(--brand)">Products and Research.</span></h2>
+      <p style="margin:0;max-width:56ch;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">These inventions come from the engineering behind our 13 products and from the research our teams publish.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ toProducts }}" hint-size="170px,44px">Browse Products</x-import>
+      <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ toResearch }}" hint-size="230px,44px">Research &amp; Publications</x-import>
+    </div>
+  </div>
+</section>
+</main>
+
+<dc-import name="QAIG Global CTA" hint-size="100%,620px"></dc-import>
+<dc-import name="QAIG Global Footer" after-cta="true" hint-size="100%,760px"></dc-import>
+
+<sc-if value="{{ modalOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ close }}" style="position:fixed;inset:0;z-index:90;display:flex;align-items:center;justify-content:center;padding:clamp(12px,3vw,40px);background:rgba(2,4,8,.78);backdrop-filter:blur(8px);opacity:{{ mOp }};transition:opacity .25s ease-out">
+    <div ref="{{ dlgRef }}" role="dialog" aria-modal="true" aria-labelledby="ipdlg-t" tabindex="-1" onClick="{{ stop }}" onKeyDown="{{ trap }}" style="width:100%;max-width:880px;max-height:100%;display:flex;flex-direction:column;border:1px solid var(--border-light);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-lg);overflow:hidden;outline:none;transform:translateY({{ mY }}) scale({{ mSc }});transition:transform .35s cubic-bezier(.16,1,.3,1)">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:18px 20px;border-bottom:1px solid var(--border)">
+        <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">IP {{ m.n }} · {{ m.kind }}</span><h2 id="ipdlg-t" style="margin:0;font-size:1.2rem;line-height:1.3;font-weight:600">{{ m.title }}</h2></div>
+        <x-import component-from-global-scope="QAIG.Button" variant="ghost" size="icon-sm" onClick="{{ close }}" aria-label="Close certificate" hint-size="32px,32px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></x-import>
+      </div>
+      <div style="flex:1;min-height:0;background:var(--surface-2)">
+        <sc-if value="{{ m.hasImg }}" hint-placeholder-val="{{ false }}"><div style="height:min(74vh,980px);overflow:auto;display:flex;justify-content:center;padding:16px">{{ m.imgEl }}</div></sc-if>
+        <sc-if value="{{ m.noImg }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:min(56vh,520px);padding:32px;text-align:center">
+            <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Certificate Not Yet Added</span>
+            <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--muted)">The certificate for this patent will appear here once the source PDF is added to the site.</p>
+          </div>
+        </sc-if>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 20px;padding:14px 20px;border-top:1px solid var(--border)">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">{{ m.meta }}</span>
+        <sc-if value="{{ m.hasPdf }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ openPdf }}" hint-size="150px,32px">Open Original PDF</x-import></sc-if><sc-if value="{{ m.hasPdf }}" hint-placeholder-val="{{ false }}"><a href="{{ m.pdf }}" download="QAIG-Patent-Certificates.pdf" style="font-size:14px;font-weight:600">Download PDF</a></sc-if>
+      </div>
+    </div>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, f: "All", hov: null, modal: null, mIn: false, rm: false, lit: -1 };
+  dlgRef = React.createRef();
+  nav() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV || { routes: {} }; }
+  content() { if (window.QAIG_CONTENT) return window.QAIG_CONTENT; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-content-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_CONTENT || { ips: [] }; }
+  go(h) { if (!h || h === "#") return; if (window.QAIG_GO) window.QAIG_GO(h); else window.location.href = h; }
+  scrollTo(id) { const el = document.getElementById(id); if (!el) return; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 85, behavior: this.state.rm ? "auto" : "smooth" }); }
+  componentDidMount() {
+    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    this.setState({ rm });
+    this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR);
+    this.onK = (ev) => { if (ev.key === "Escape" && this.state.modal) this.close(); }; window.addEventListener("keydown", this.onK);
+    if (!rm && "IntersectionObserver" in window) {
+      setTimeout(() => {
+        const els = document.querySelectorAll("[data-ipr]");
+        this.io = new IntersectionObserver((ents) => ents.forEach((en) => { if (en.isIntersecting) { const t = en.target; t.style.opacity = "1"; t.style.transform = "none"; this.io.unobserve(t); } }), { rootMargin: "0px 0px -8% 0px" });
+        els.forEach((el, i) => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight) return; el.style.opacity = "0"; el.style.transform = "translateY(16px)"; el.style.transition = "opacity .7s cubic-bezier(.16,1,.3,1) " + ((i % 3) * 80) + "ms, transform .7s cubic-bezier(.16,1,.3,1) " + ((i % 3) * 80) + "ms"; this.io.observe(el); });
+      }, 60);
+      let k = 0; this.litT = setInterval(() => { k++; if (k > 15) { clearInterval(this.litT); this.setState({ lit: 99 }); return; } this.setState({ lit: k }); }, 70);
+    } else this.setState({ lit: 99 });
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onR); window.removeEventListener("keydown", this.onK); if (this.io) this.io.disconnect(); clearInterval(this.litT); clearTimeout(this.mT); }
+  open(n, from) { this.lastFocus = from || document.activeElement; this.setState({ modal: n, mIn: false }, () => { requestAnimationFrame(() => this.setState({ mIn: true })); setTimeout(() => this.dlgRef.current && this.dlgRef.current.focus(), 30); }); document.documentElement.style.overflow = "hidden"; }
+  close() { this.setState({ mIn: false }); document.documentElement.style.overflow = ""; this.mT = setTimeout(() => { this.setState({ modal: null }); if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus(); }, this.state.rm ? 0 : 200); }
+  heroArt(ips) {
+    const e = React.createElement, rm = this.state.rm, lit = this.state.lit, C = 260, B = "var(--brand)", L = "var(--border-light)", F = "var(--faint)";
+    const dom = [["Communication", [1, 5, 8, 12]], ["Memory", [2, 4, 7]], ["Sensing", [9]], ["Lasers", [3, 10, 14]], ["Computation", [6, 11, 13, 15]]];
+    const P = (r, deg) => { const a = deg * Math.PI / 180; return [C + r * Math.cos(a), C + r * Math.sin(a)]; };
+    const arc = (r, a0, a1) => { const [x0, y0] = P(r, a0), [x1, y1] = P(r, a1); return "M" + x0.toFixed(1) + " " + y0.toFixed(1) + " A" + r + " " + r + " 0 " + (a1 - a0 > 180 ? 1 : 0) + " 1 " + x1.toFixed(1) + " " + y1.toFixed(1); };
+    const g = (n) => (ips.find((x) => x.n === n) || {}).status === "Patent Granted", kids = [];
+    kids.push(e("circle", { key: "r0", cx: C, cy: C, r: 206, fill: "none", stroke: "var(--border)" }), e("circle", { key: "r1", cx: C, cy: C, r: 140, fill: "none", stroke: "var(--border)", strokeDasharray: "2 6" }), e("circle", { key: "r2", cx: C, cy: C, r: 104, fill: "none", stroke: "var(--border)" }));
+    for (let k = 0; k < 60; k++) { const [x0, y0] = P(206, k * 6), [x1, y1] = P(k % 4 === 0 ? 196 : 201, k * 6); kids.push(e("line", { key: "t" + k, x1: x0, y1: y0, x2: x1, y2: y1, stroke: k % 4 === 0 ? "var(--border-strong)" : "var(--border)" })); }
+    if (!rm) kids.push(e("g", { key: "sw" }, e("path", { d: "M" + C + " " + C + " L" + P(206, -90).join(" ") + " " + arc(206, -90, -62).slice(arc(206, -90, -62).indexOf("A")) + " Z", fill: "url(#ipSweep)", opacity: 0.55 }), e("animateTransform", { attributeName: "transform", type: "rotate", from: "0 " + C + " " + C, to: "360 " + C + " " + C, dur: "14s", repeatCount: "indefinite" })));
+    let idx = 0;
+    dom.forEach(([label, ns], i) => { const a0 = -90 + i * 72 + 5, a1 = -90 + (i + 1) * 72 - 5, mid = (a0 + a1) / 2, has = ns.some(g);
+      kids.push(e("path", { key: "a" + i, d: arc(184, a0, a1), fill: "none", stroke: has ? B : L, strokeWidth: 2, strokeLinecap: "round", opacity: has ? 0.9 : 1 }));
+      const [lx, ly] = P(232, mid), c = Math.cos(mid * Math.PI / 180);
+      kids.push(e("text", { key: "l" + i, x: lx, y: ly + 4, fill: "var(--foreground-2)", fontSize: 12.5, textAnchor: Math.abs(c) < 0.3 ? "middle" : c > 0 ? "start" : "end", style: { fontFamily: "var(--font-mono)", letterSpacing: ".08em", textTransform: "uppercase" } }, label));
+      ns.forEach((n, j) => { const ang = ns.length === 1 ? mid : a0 + 8 + (j * (a1 - a0 - 16)) / (ns.length - 1), r = j % 2 ? 128 : 162, [x, y] = P(r, ang), on = rm || lit >= ++idx, G = g(n);
+        if (G) { kids.push(e("line", { key: "g" + n, x1: C, y1: C, x2: x, y2: y, stroke: B, strokeOpacity: on ? 0.45 : 0, strokeDasharray: "3 4", style: { transition: "stroke-opacity .6s" } }));
+          if (!rm) kids.push(e("circle", { key: "h" + n, cx: x, cy: y, r: 8, fill: "none", stroke: B, opacity: on ? 1 : 0 }, e("animate", { attributeName: "r", values: "8;22", dur: "2.6s", begin: (j * 0.7) + "s", repeatCount: "indefinite" }), e("animate", { attributeName: "stroke-opacity", values: ".7;0", dur: "2.6s", begin: (j * 0.7) + "s", repeatCount: "indefinite" }))); }
+        const ttl = (ips.find((q) => q.n === n) || {}).title || "", [tx, ty] = P(r === 162 ? r + 17 : r - 19, ang);
+        kids.push(e("circle", { key: "n" + n, cx: x, cy: y, r: G ? 7 : 5, fill: G ? B : "var(--base)", stroke: G ? B : on ? "var(--foreground-2)" : "var(--border-strong)", strokeWidth: 1.4, opacity: on ? 1 : 0.25, style: { transition: "opacity .5s, stroke .5s", cursor: "help", pointerEvents: "all" } }, e("title", null, String(n).padStart(2, "0") + " · " + ttl + (G ? " · Certified" : " · Filed"))));
+        kids.push(e("text", { key: "x" + n, x: tx, y: ty + 4, fill: G ? B : F, fontSize: 12.5, textAnchor: "middle", opacity: on ? 1 : 0, style: { fontFamily: "var(--font-mono)", letterSpacing: ".06em", transition: "opacity .5s" } }, String(n).padStart(2, "0"))); }); });
+    kids.push(e("circle", { key: "c0", cx: C, cy: C, r: 78, fill: "var(--surface)", stroke: "var(--border-light)" }));
+    kids.push(e("circle", { key: "c1", cx: C, cy: C, r: 88, fill: "none", stroke: B, strokeOpacity: 0.5, strokeDasharray: "1 7", strokeLinecap: "round" }, rm ? null : e("animateTransform", { attributeName: "transform", type: "rotate", from: "0 " + C + " " + C, to: "-360 " + C + " " + C, dur: "40s", repeatCount: "indefinite" })));
+    const ng = ips.filter((x) => x.status === "Patent Granted").length;
+    kids.push(e("text", { key: "k0", x: C, y: C - 22, fill: F, fontSize: 12.5, textAnchor: "middle", style: { fontFamily: "var(--font-mono)", letterSpacing: ".08em" } }, "CERTIFIED"));
+    kids.push(e("text", { key: "k1", x: C, y: C + 20, fill: B, fontSize: 48, fontWeight: 600, textAnchor: "middle", style: { letterSpacing: "-0.03em" } }, String(ng).padStart(2, "0")));
+    kids.push(e("text", { key: "k2", x: C, y: C + 44, fill: "var(--foreground-2)", fontSize: 12.5, textAnchor: "middle", style: { fontFamily: "var(--font-mono)", letterSpacing: ".08em" } }, "OF " + String(ips.length).padStart(2, "0") + " FILED"));
+    return e("svg", { viewBox: "-40 -10 600 540", width: "100%", height: "100%", style: { display: "block", overflow: "visible" } }, e("defs", null, e("linearGradient", { id: "ipSweep", x1: "0", y1: "0", x2: "1", y2: "0" }, e("stop", { offset: "0", stopColor: "#00d4ff", stopOpacity: 0 }), e("stop", { offset: "1", stopColor: "#00d4ff", stopOpacity: 0.18 }))), ...kids);
+  }
+  renderVals() {
+    const S = this.state, D = this.nav(), R = D.routes || {}, C = this.content(), ips = C.ips || [], pad = (n) => String(n).padStart(2, "0"), rm = S.rm;
+    const hv = (id) => ({ enter: () => this.setState({ hov: id }), leave: () => this.setState({ hov: null }) });
+    const granted = ips.filter((x) => x.status === "Patent Granted"), pdf = C.ipCertPdf || "";
+    const certOf = (x) => x.cert || {};
+    const patents = granted.map((x, i) => { const id = "pt" + x.n, a = S.hov === id, c = certOf(x); return { n: pad(x.n), title: x.title, ...hv(id), line: a ? 1 : 0, bd: a ? "color-mix(in srgb, var(--brand) 45%, var(--border))" : "var(--border)", shadow: a ? "var(--shadow-md)" : "none", numC: a ? "var(--brand)" : "var(--faint)", lift: a && !rm ? "-4px" : "0px", sc: a && !rm ? 1.02 : 1,
+      hasCert: !!c.img, noCert: !c.img, certImg: c.img || "", certEl: c.img ? React.createElement("img", { src: c.img, alt: "Certificate for " + x.title, loading: "lazy", width: c.w, height: c.h, style: { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", objectPosition: "50% 50%", background: "var(--surface-2)", transform: "scale(" + (a && !rm ? 1.02 : 1) + ")", transition: "transform .9s cubic-bezier(.16,1,.3,1)" } }) : null, certAlt: "Patent certificate for " + x.title,
+      rows: (c.rows || [["Certificate", "Awaiting PDF"]]).filter((r) => r[0] !== "Patentee" && r[0] !== "Proprietor").map(([k, v]) => ({ k, v })), badge: x.badge || x.status, kind: c.kind || "Certificate",
+      viewAria: "View certificate for " + x.title, open: (ev) => this.open(x.n, ev && ev.currentTarget) }; });
+    const fdefs = [["All", "All", ips.length], ["Patent Granted", "Certified", granted.length], ["Filed", "Filed", ips.length - granted.length]];
+    const filters = fdefs.map(([k, label, n]) => ({ label: label + " · " + pad(n), on: String(S.f === k), variant: S.f === k ? "secondary" : "outline", pick: () => this.setState({ f: k }) }));
+    const vis = ips.filter((x) => S.f === "All" || x.status === S.f);
+    const wide = S.w >= 720;
+    const rows = vis.map((x) => { const id = "r" + x.n, a = S.hov === id, g = x.status === "Patent Granted"; return { n: pad(x.n), title: x.title, note: x.note || "", hasNote: !!x.note, status: x.badge || x.status, granted: g, badgeV: g ? "success" : "outline", ...hv(id), line: a ? 1 : 0, numC: a || g ? "var(--brand)" : "var(--faint)", color: g ? "var(--foreground)" : "var(--foreground-2)", fw: g ? 600 : 400, size: "17px", shift: a && !rm && wide ? "6px" : "0px", badgeCol: wide ? "auto" : "2", badgeJs: wide ? "end" : "start", viewAria: "View certificate for " + x.title, open: (ev) => this.open(x.n, ev && ev.currentTarget) }; });
+    const mx = ips.find((x) => x.n === S.modal) || {}, mc = certOf(mx), page = mc.page || (granted.indexOf(mx) + 1) || 1;
+    const cells = ips.map((x, i) => { const g = x.status === "Patent Granted", on = S.lit >= i + 1 || rm; return { n: pad(x.n), bd: g && on ? "var(--brand)" : "var(--border)", bg: g && on ? "color-mix(in srgb, var(--brand) 10%, var(--surface))" : on ? "var(--surface)" : "transparent", color: g && on ? "var(--brand)" : on ? "var(--foreground-2)" : "var(--faint)", dot: g && on ? "var(--brand)" : "var(--border-strong)" }; });
+    return {
+      homeHref: R.home || "#", aboutHref: R.about || "#", cells, heroArt: this.heroArt(ips), patents, filters, rows, rowCols: wide ? "56px minmax(0,1fr) auto" : "40px minmax(0,1fr)",
+      showing: vis.length === ips.length ? pad(ips.length) + " Intellectual Properties" : "Showing " + pad(vis.length) + " of " + pad(ips.length),
+      toPatents: () => this.scrollTo("granted"), toPortfolio: () => this.scrollTo("portfolio"),
+      toProducts: () => this.go(R.products), toResearch: () => this.go((R.resources || "#") + "?page=research"),
+      modalOpen: S.modal != null, mOp: S.mIn || rm ? 1 : 0, mY: S.mIn || rm ? "0px" : "12px", mSc: S.mIn || rm ? 1 : 0.98, dlgRef: this.dlgRef,
+      m: { n: pad(mx.n || 0), title: mx.title || "", kind: mc.kind || "Certificate", hasPdf: !!pdf, pdf, hasImg: !!mc.img, noImg: !mc.img, img: mc.img || "", imgEl: mc.img ? React.createElement("img", { src: mc.img, alt: (mc.kind || "Certificate") + " for " + (mx.title || ""), width: mc.w, height: mc.h, style: { display: "block", height: "auto", maxWidth: "100%", width: "auto", borderRadius: 4, boxShadow: "0 10px 30px -12px rgba(0,0,0,.8)" } }) : null, w: mc.w || 600, h: mc.h || 850, alt: (mc.kind || "Certificate") + " for " + (mx.title || "") + ", issued by the Patent Office, Government of India", meta: (mc.rows || []).slice(0, 1).map((r) => r[0] + " " + r[1]).join("") || "Esc to Close" },
+      openPdf: () => window.open(pdf + "#page=" + page, "_blank", "noopener"),
+      close: () => this.close(), stop: (ev) => ev.stopPropagation(),
+      trap: (ev) => { if (ev.key !== "Tab") return; const d = this.dlgRef.current; if (!d) return; const f = d.querySelectorAll("button,a[href],iframe,[tabindex]:not([tabindex='-1'])"); if (!f.length) return; const a = f[0], b = f[f.length - 1]; if (ev.shiftKey && document.activeElement === a) { ev.preventDefault(); b.focus(); } else if (!ev.shiftKey && document.activeElement === b) { ev.preventDefault(); a.focus(); } },
+    };
+  }
+}
+</script>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><rect x="30" y="26" width="40" height="50" rx="4" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M40 42h20M40 54h14" stroke="#00d4ff" stroke-width="5"/></svg></template>
+</body>
+</html>

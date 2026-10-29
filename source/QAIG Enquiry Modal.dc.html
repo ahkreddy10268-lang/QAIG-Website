@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script><script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}@keyframes qeqIn{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}@keyframes qeqFade{from{opacity:0}to{opacity:1}}.qeq-in{animation:qeqIn .42s cubic-bezier(.22,1,.36,1) both}.qeq-fade{animation:qeqFade .3s ease-out both}@keyframes qeqPing{0%{transform:scale(1);opacity:.8}100%{transform:scale(2.4);opacity:0}}@media (prefers-reduced-motion:reduce){.qeq-in,.qeq-fade{animation:none!important}}.qeq input::placeholder,.qeq textarea::placeholder{color:#7d8aa0;opacity:1}.qeq select option{background:#0b111c;color:#e6edf5}.qeq :focus-visible{outline:2px solid var(--brand);outline-offset:2px}</style>
+</helmet>
+<sc-if value="{{ show }}" hint-placeholder-val="{{ false }}">
+<div class="qeq qeq-fade" role="{{ wrapRole }}" aria-modal="{{ ariaModal }}" aria-labelledby="qeq-title" onMouseDown="{{ backdrop }}" style="position:{{ wrapPos }};inset:0;z-index:120;overflow-y:auto;overscroll-behavior:contain;background:{{ wrapBg }};backdrop-filter:{{ wrapBlur }};-webkit-backdrop-filter:{{ wrapBlur }};padding:{{ wrapPad }};font-family:var(--font-sans);color:var(--foreground);-webkit-font-smoothing:antialiased">
+  <div ref="{{ cardRef }}" class="qeq-in" onMouseDown="{{ stop }}" style="position:relative;max-width:1080px;margin:0 auto;display:grid;grid-template-columns:{{ cols }};border:1px solid var(--border-light);border-radius:clamp(18px,2vw,28px);background:var(--surface);overflow:hidden;box-shadow:0 40px 120px -20px rgba(0,0,0,.75),0 0 70px -36px color-mix(in srgb, var(--brand) 50%, transparent)">
+    <span aria-hidden="true" style="position:absolute;left:clamp(24px,4vw,40px);top:0;width:140px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)"></span>
+    <sc-if value="{{ isModal }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ close }}" aria-label="Close" style="position:absolute;z-index:3;top:clamp(12px,1.6vw,18px);right:clamp(12px,1.6vw,18px);display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--border-light);border-radius:10px;background:var(--surface-2);color:var(--foreground-2);cursor:pointer;transition:border-color .2s,color .2s" style-hover="border-color:var(--brand);color:var(--foreground)"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 3.5l9 9M12.5 3.5l-9 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"></path></svg></button>
+    </sc-if>
+
+    <div style="min-width:0;padding:clamp(28px,4.4vw,52px) clamp(20px,3.6vw,40px) clamp(28px,3.6vw,40px)">
+      <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+        <span style="display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)"><span style="width:22px;height:1px;background:var(--brand)"></span>Discuss Your Requirement</span>
+        <h2 id="qeq-title" style="margin:16px 0 0;padding-right:{{ titlePad }};font-size:clamp(30px,1.5rem + 1.6vw,42px);line-height:1.1;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Tell Us What You Are <span style="color:var(--brand)">Trying to Build.</span></h2>
+        <sc-if value="{{ hasCtx }}" hint-placeholder-val="{{ false }}"><p style="margin:12px 0 0;font-size:16px;line-height:1.5;color:var(--foreground-2)">Enquiring about <span style="color:var(--brand)">{{ ctx }}</span>. We have preselected it below.</p></sc-if>
+        <form onSubmit="{{ submit }}" novalidate="true" style="margin-top:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:22px">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:18px 16px">
+            <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Full Name <span style="color:var(--danger)">*</span></span><input data-f="name" ref="{{ firstRef }}" autocomplete="name" value="{{ F.name.value }}" onChange="{{ F.name.set }}" aria-invalid="{{ F.name.inv }}" style="height:46px;padding:0 14px;border:1px solid {{ F.name.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"><sc-if value="{{ F.name.has }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14px;line-height:1.4;color:var(--danger)">{{ F.name.err }}</span></sc-if></label>
+            <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Job Title</span><input data-f="title" autocomplete="organisation-title" value="{{ F.title.value }}" onChange="{{ F.title.set }}" aria-invalid="{{ F.title.inv }}" style="height:46px;padding:0 14px;border:1px solid {{ F.title.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"></label>
+            <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Work Email <span style="color:var(--danger)">*</span></span><input data-f="email" type="email" autocomplete="email" value="{{ F.email.value }}" onChange="{{ F.email.set }}" aria-invalid="{{ F.email.inv }}" style="height:46px;padding:0 14px;border:1px solid {{ F.email.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"><sc-if value="{{ F.email.has }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14px;line-height:1.4;color:var(--danger)">{{ F.email.err }}</span></sc-if></label>
+            <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Phone</span><input data-f="phone" type="tel" autocomplete="tel" placeholder="+91 98765 43210" value="{{ F.phone.value }}" onChange="{{ F.phone.set }}" aria-invalid="{{ F.phone.inv }}" style="height:46px;padding:0 14px;border:1px solid {{ F.phone.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"></label>
+            <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Organisation <span style="color:var(--danger)">*</span></span><input data-f="org" autocomplete="organisation" value="{{ F.org.value }}" onChange="{{ F.org.set }}" aria-invalid="{{ F.org.inv }}" style="height:46px;padding:0 14px;border:1px solid {{ F.org.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"><sc-if value="{{ F.org.has }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14px;line-height:1.4;color:var(--danger)">{{ F.org.err }}</span></sc-if></label>
+            <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Country <span style="color:var(--danger)">*</span></span><span style="position:relative;display:block"><select data-f="country" autocomplete="country-name" value="{{ F.country.value }}" onChange="{{ F.country.set }}" aria-invalid="{{ F.country.inv }}" style="width:100%;height:46px;padding:0 40px 0 14px;border:1px solid {{ F.country.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s;color:{{ countryColor }};appearance:none;-webkit-appearance:none;cursor:pointer" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"><option value="">Select your country</option><sc-for list="{{ countries }}" as="c" hint-placeholder-count="0"><option value="{{ c }}">{{ c }}</option></sc-for></select><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" style="position:absolute;right:14px;top:50%;margin-top:-7px;pointer-events:none;color:var(--foreground-2)"><path d="M3 5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span><sc-if value="{{ F.country.has }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14px;line-height:1.4;color:var(--danger)">{{ F.country.err }}</span></sc-if></label>
+          </div>
+          <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Use Case</span><input data-f="use" placeholder="e.g. Quantum key distribution between two sites" value="{{ F.use.value }}" onChange="{{ F.use.set }}" aria-invalid="{{ F.use.inv }}" style="height:46px;padding:0 14px;border:1px solid {{ F.use.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"></label>
+          <fieldset style="margin:0;padding:0;border:0;min-width:0">
+            <legend style="padding:0;font-size:15.5px;font-weight:500;color:var(--foreground)">Interested Products <span style="color:var(--danger)">*</span> <span style="font-weight:400;color:var(--muted)">(up to 5)</span></legend>
+            <div data-f="prods" tabindex="-1" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;outline:none">
+              <sc-for list="{{ chips }}" as="c" hint-placeholder-count="13">
+                <button type="button" aria-pressed="{{ c.on }}" aria-disabled="{{ c.dis }}" onClick="{{ c.toggle }}" style="min-height:38px;padding:0 13px;border:1px solid {{ c.bd }};border-radius:8px;background:{{ c.bg }};color:{{ c.color }};font:inherit;font-size:15.5px;font-weight:500;cursor:pointer;opacity:{{ c.op }};transition:background .2s,border-color .2s,color .2s,opacity .2s" style-hover="border-color:var(--brand);color:var(--foreground)">{{ c.label }}</button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ prodsErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="display:block;margin-top:8px;font-size:14px;color:var(--danger)">Select at least one product. Choose the closest match if you are unsure.</span></sc-if>
+          </fieldset>
+          <fieldset style="margin:0;padding:0;border:0;min-width:0">
+            <legend style="padding:0;font-size:15.5px;font-weight:500;color:var(--foreground)">Preferred Demo Mode</legend>
+            <div role="radiogroup" aria-label="Preferred Demo Mode" style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ modes }}" as="m" hint-placeholder-count="5">
+                <button type="button" role="radio" aria-checked="{{ m.on }}" onClick="{{ m.pick }}" style="min-height:38px;padding:0 13px;border:1px solid {{ m.bd }};border-radius:8px;background:{{ m.bg }};color:{{ m.color }};font:inherit;font-size:15.5px;font-weight:500;cursor:pointer;opacity:{{ m.op }};transition:background .2s,border-color .2s,color .2s,opacity .2s;box-shadow:{{ m.glow }}" style-hover="border-color:var(--brand);color:var(--foreground)">{{ m.label }}</button>
+              </sc-for>
+            </div>
+          </fieldset>
+          <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:15.5px;font-weight:500;color:var(--foreground)">Additional Requirements</span><textarea data-f="req" value="{{ F.req.value }}" onChange="{{ F.req.set }}" rows="4" style="min-height:96px;padding:12px 14px;border:1px solid {{ F.req.bd }};border-radius:8px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;line-height:1.55;outline:none;resize:vertical;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb, var(--brand) 16%, transparent)"></textarea></label>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding-top:4px">
+            <p style="margin:0;max-width:40ch;font-size:16px;line-height:1.5;color:var(--muted)">We use these details only to respond to this request. Read our <a href="{{ privacyHref }}">Privacy Policy</a>.</p>
+            <x-import component-from-global-scope="QAIG.Button" size="lg" type="submit" dc-props="{{ submitProps }}" hint-size="190px,48px">Submit Request →</x-import>
+          </div>
+        </form>
+      </sc-if>
+      <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+        <div class="qeq-in" role="status" style="display:flex;flex-direction:column;gap:22px;padding-right:{{ titlePad }}">
+          <span style="display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)"><span style="width:22px;height:1px;background:var(--brand)"></span>Request Received</span>
+          <span style="display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;border:1px solid var(--brand);background:var(--brand-soft);color:var(--brand)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+          <h2 id="qeq-title" style="margin:0;font-size:clamp(28px,1.4rem + 1.4vw,40px);line-height:1.12;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Thank You, <span style="color:var(--brand)">{{ firstName }}</span>. Your Request Is In.</h2>
+          <p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:var(--foreground-2)">A confirmation is on its way to {{ sentEmail }}. Our engineering team will review your request within 24 hours.</p>
+          <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--border)">
+            <div style="padding:16px 18px;background:var(--surface-2)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Reference</dt><dd class="tnum" style="margin:8px 0 0;font-family:var(--font-mono);font-size:16px;color:var(--brand)">{{ refId }}</dd></div>
+            <div style="padding:16px 18px;background:var(--surface-2)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Demo Mode</dt><dd style="margin:8px 0 0;font-size:16px;color:var(--foreground)">{{ modeSel }}</dd></div>
+            <div style="padding:16px 18px;background:var(--surface-2)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Products</dt><dd style="margin:8px 0 0;font-size:16px;line-height:1.45;color:var(--foreground)">{{ prodList }}</dd></div>
+          </dl>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ done }}" hint-size="150px,48px">{{ doneLabel }}</x-import>
+            <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ again }}" hint-size="200px,48px">Send Another Request</x-import>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+
+    <aside aria-label="What happens after you submit" onMouseLeave="{{ tlLeave }}" style="position:relative;min-width:0;padding:clamp(28px,4.4vw,52px) clamp(20px,3.6vw,40px) clamp(28px,3.6vw,40px);border-left:{{ asideBL }};border-top:{{ asideBT }};background:color-mix(in srgb, var(--surface-2) 55%, var(--surface))">
+      <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.25;-webkit-mask-image:linear-gradient(180deg,#000,transparent 55%);mask-image:linear-gradient(180deg,#000,transparent 55%);pointer-events:none"></div>
+      <div style="position:relative">
+        <h3 style="margin:0;padding-right:{{ asidePad }};font-family:var(--font-mono);font-size:13.5px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:var(--foreground-2)">What Happens After You Submit</h3>
+        <ol ref="{{ olRef }}" style="position:relative;list-style:none;margin:28px 0 0;padding:0;display:flex;flex-direction:column;gap:6px">
+          <span aria-hidden="true" style="position:absolute;left:6px;top:{{ tlTop }};height:{{ tlLen }};width:1px;background:var(--border-light)"><span style="position:absolute;left:0;top:0;width:1px;height:{{ tlFill }};background:linear-gradient(180deg,color-mix(in srgb, var(--brand) 30%, transparent),var(--brand));box-shadow:0 0 8px var(--brand);transition:height .9s cubic-bezier(.22,1,.36,1)"></span></span>
+          <sc-for list="{{ steps }}" as="s" hint-placeholder-count="5">
+            <li onMouseEnter="{{ s.hover }}" style="position:relative;display:grid;grid-template-columns:14px minmax(0,1fr);gap:0 18px;padding:8px 10px 10px 0;margin-left:0">
+              <span data-dot="1" aria-hidden="true" style="position:relative;margin-top:5px;width:13px;height:13px;box-sizing:border-box;border-radius:50%;border:1.5px solid {{ s.ring }};background:{{ s.fill }};box-shadow:{{ s.glow }};transition:background .4s,border-color .4s,box-shadow .4s">{{ s.ping }}</span>
+              <div style="min-width:0;transform:translateX({{ s.tx }});transition:transform .5s cubic-bezier(.22,1,.36,1)">
+                <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px"><span style="font-size:16.5px;font-weight:600;color:{{ s.tc }};transition:color .4s">{{ s.t }}</span><span style="font-family:var(--font-mono);font-size:13.5px;color:var(--brand)">{{ s.when }}</span></div>
+                <p style="margin:6px 0 0;font-size:16px;line-height:1.55;color:{{ s.dc }};transition:color .4s">{{ s.d }}</p>
+              </div>
+            </li>
+          </sc-for>
+        </ol>
+        <div style="margin-top:26px;padding-top:24px;border-top:1px solid var(--border)">
+          <div style="font-size:16px;font-weight:600;color:var(--foreground)">Need Immediate Assistance?</div>
+          <p style="margin:6px 0 0;font-size:16px;line-height:1.55;color:var(--foreground-2)">Urgent procurement or government tenders:<br><a href="mailto:info@thequantum.ai" style-hover="text-decoration:underline">info@thequantum.ai</a></p>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;inline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { open: false, f: { name: "", title: "", email: "", phone: "", org: "", country: "", use: "", req: "" }, prods: [], mode: "", tried: false, sent: false, refId: "", ctx: "", w: typeof window !== "undefined" ? window.innerWidth : 1280, step: 0, hov: null, rm: false };
+  firstRef = React.createRef(); cardRef = React.createRef(); olRef = React.createRef();
+  tlMeasure() { const c = this.cardRef.current, ol = this.olRef.current || (c && c.querySelector("ol")); if (!ol) return; const ys = Array.from(ol.querySelectorAll("[data-dot]")).map((d) => Math.round(d.getBoundingClientRect().top - ol.getBoundingClientRect().top + d.offsetHeight / 2)); if (ys.length && ys.join() !== (this.state.ys || []).join()) this.setState({ ys }); }
+  componentDidUpdate() { this.tlMeasure(); }
+  nav() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV || { cats: [], routes: {} }; }
+  inline() { const v = this.props.inline; return v === true || v === "true"; }
+  products() { return this.nav().cats.flatMap((c) => c.items.map((i) => i.title)); }
+  componentDidMount() {
+    if (this.inline()) this.applyParams(new URLSearchParams(location.search));
+    else window.QAIG_ENQUIRE = (o) => this.openWith(o || {});
+    this.onK = (e) => { if (!this.state.open) return; if (e.key === "Escape") { e.stopPropagation(); this.close(); } else if (e.key === "Tab") this.trap(e); };
+    window.addEventListener("keydown", this.onK, true);
+    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    this.onR = () => this.setState({ w: window.innerWidth }, () => this.tlMeasure()); window.addEventListener("resize", this.onR);
+    this.setState({ rm, w: window.innerWidth }); [60, 400, 1200].forEach((t) => setTimeout(() => this.tlMeasure(), t));
+    this.tl = setInterval(() => { const S = this.state; if (S.rm || S.hov !== null || S.sent || (!this.inline() && !S.open)) return; this.setState({ step: (S.step + 1) % 6 }); }, 1700);
+  }
+  componentWillUnmount() { clearInterval(this.tl); window.removeEventListener("resize", this.onR); window.removeEventListener("keydown", this.onK, true); if (!this.inline() && window.QAIG_ENQUIRE) delete window.QAIG_ENQUIRE; document.documentElement.style.overflow = ""; }
+  applyParams(p) {
+    const all = this.products(), D = this.nav(); let prods = [];
+    const pr = p.get("product");
+    if (pr) { if (pr === "Q-Forte") prods = ["Chec-Q AI", "Q-Sleeve", "QuRNG"]; else if (all.includes(pr)) prods = [pr]; }
+    const doms = (p.get("domains") || "").split(",").filter(Boolean);
+    D.cats.forEach((c) => { if (doms.includes(c.code)) c.items.forEach((i) => prods.push(i.title)); });
+    const use = [p.get("interest"), p.get("plan") && "Plan: " + p.get("plan"), p.get("resource") && "Resource: " + p.get("resource")].filter(Boolean).join(" · ");
+    this.setState((s) => ({ prods: Array.from(new Set(prods.length ? prods : s.prods)), f: { ...s.f, use: use || s.f.use }, ctx: pr || "" }));
+  }
+  openWith(o) {
+    let search = o.search || ""; if (!search && o.href) { try { search = new URL(o.href, location.href).search; } catch (e) {} }
+    this.lastFocus = document.activeElement;
+    this.setState({ open: true, sent: false, tried: false, step: 0, hov: null });
+    this.applyParams(new URLSearchParams(search));
+    document.documentElement.style.overflow = "hidden";
+    setTimeout(() => this.firstRef.current && this.firstRef.current.focus({ preventScroll: true }), 80);
+  }
+  close() { this.setState({ open: false }); document.documentElement.style.overflow = ""; try { this.lastFocus && this.lastFocus.focus(); } catch (e) {} }
+  trap(e) { const c = this.cardRef.current; if (!c) return; const f = Array.from(c.querySelectorAll("button,input,select,textarea,a[href]")).filter((x) => !x.disabled && x.offsetParent !== null); if (!f.length) return; const a = f[0], z = f[f.length - 1]; if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); } }
+  errors() {
+    const f = this.state.f, e = {};
+    if (!f.name.trim()) e.name = "Enter your full name.";
+    if (!f.email.trim()) e.email = "Enter your work email so we can reply.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim())) e.email = "This email looks incomplete. Use the format name@organisation.com.";
+    if (!f.org.trim()) e.org = "Enter your company or research institution.";
+    if (!f.country) e.country = "Select the country you are based in.";
+    if (!this.state.prods.length) e.prods = true;
+    return e;
+  }
+  submit(ev) {
+    if (ev && ev.preventDefault) ev.preventDefault();
+    const e = this.errors(), keys = Object.keys(e);
+    if (keys.length) { this.setState({ tried: true }); setTimeout(() => { const el = this.cardRef.current && this.cardRef.current.querySelector('[data-f="' + keys[0] + '"]'); el && el.focus(); }, 30); return; }
+    this.setState({ sent: true, hov: null, step: 0, refId: "QAIG-" + Date.now().toString(36).toUpperCase().slice(-6) });
+    const c = this.cardRef.current && this.cardRef.current.parentElement; if (c && c.scrollTo) c.scrollTo({ top: 0, behavior: "smooth" });
+    if (this.inline()) window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  renderVals() {
+    const S = this.state, modal = !this.inline(), D = this.nav(), R = D.routes || {};
+    const errs = S.tried ? this.errors() : {};
+    const fld = (k) => ({ value: S.f[k], set: (ev) => { const v = ev.target.value; this.setState((s) => ({ f: { ...s.f, [k]: v } })); }, err: errs[k] || "", has: !!errs[k], inv: errs[k] ? "true" : "false", bd: errs[k] ? "var(--danger)" : "var(--border-control)" });
+    const F = {}; ["name", "title", "email", "phone", "org", "country", "use", "req"].forEach((k) => { F[k] = fld(k); });
+    const full = S.prods.length >= 5;
+    const chips = this.products().map((label) => { const on = S.prods.includes(label), dis = full && !on; return { label, on: on ? "true" : "false", dis: dis ? "true" : "false", op: dis ? 0.45 : 1, bd: on ? "var(--brand)" : "var(--border-light)", bg: on ? "var(--brand-soft)" : "transparent", color: on ? "var(--foreground)" : "var(--foreground-2)", toggle: () => this.setState((s) => s.prods.includes(label) ? { prods: s.prods.filter((x) => x !== label) } : s.prods.length >= 5 ? null : { prods: [...s.prods, label] }) }; });
+    const modes = ["Online Demo", "On-site Demo", "Workshop", "Technical Session", "No Preference"].map((label) => { const on = S.mode === label; return { label, on: on ? "true" : "false", op: 1, bd: on ? "var(--brand)" : "var(--border-light)", bg: on ? "var(--brand-soft)" : "transparent", glow: on ? "0 0 16px -6px var(--brand)" : "none", color: on ? "var(--foreground)" : "var(--foreground-2)", pick: () => this.setState((s) => ({ mode: s.mode === label ? "" : label })) }; });
+    const SD = [["Request Received", "Immediately", "Your enquiry is logged with our team."], ["Technical Review", "Within 24 hours", "Our engineers review your requirement and goals."], ["Schedule Confirmation", "1-2 business days", "We contact you to finalise the session date and delivery mode."], ["Live Demonstration", "Customized", "A technical session on the relevant hardware and software."], ["Proposal & Specs", "Post-Session", "You receive technical documentation and a deployment plan."]];
+    const act = S.rm ? -1 : S.hov !== null ? S.hov : S.sent ? 0 : Math.min(4, S.step), e = React.createElement;
+    const steps = SD.map(([t, when, d], i) => { const on = i === act, past = act >= 0 && i < act; return { t, when, d, ring: on || past || act < 0 ? "var(--brand)" : "color-mix(in srgb, var(--brand) 55%, var(--border-light))", fill: on ? "var(--brand)" : past ? "var(--brand-soft)" : "transparent", glow: on ? "0 0 10px color-mix(in srgb, var(--brand) 70%, transparent)" : "none", tx: on ? "4px" : "0px", tc: on || act < 0 ? "var(--foreground)" : "color-mix(in srgb, var(--foreground) 82%, transparent)", dc: on ? "var(--foreground-2)" : "var(--muted)",
+      ping: on ? e("span", { key: "p" + i + "-" + S.step, style: { position: "absolute", inset: -2, borderRadius: "50%", border: "1px solid var(--brand)", animation: "qeqPing 1.4s cubic-bezier(.22,1,.36,1) infinite" } }) : null,
+      hover: () => this.setState({ hov: i }) }; });
+    const wide = S.w >= 900, modalW = !this.inline();
+    return {
+      ...(() => { const ys = S.ys && S.ys.length === 5 ? S.ys : null, y0 = ys ? ys[0] : 14, len = ys ? ys[4] - ys[0] : 0, a = act < 0 ? 4 : act; return { tlTop: y0 + "px", tlLen: len + "px", tlFill: (ys ? ys[a] - y0 : 0) + "px" }; })(),
+      steps, tlLeave: () => this.setState({ hov: null }),
+      cols: wide ? "minmax(0,1.42fr) minmax(0,1fr)" : "minmax(0,1fr)", asideBL: wide ? "1px solid var(--border)" : "0", asideBT: wide ? "0" : "1px solid var(--border)", titlePad: modalW && !wide ? "52px" : "0px", asidePad: modalW && wide ? "48px" : "0px",
+      show: !modal || S.open, isModal: modal, wrapRole: modal ? "dialog" : "region", ariaModal: modal ? "true" : "false",
+      wrapPos: modal ? "fixed" : "relative", wrapBg: modal ? "rgba(2,5,12,.58)" : "transparent", wrapBlur: modal ? "blur(16px) saturate(1.2)" : "none", wrapPad: modal ? "clamp(12px,4vw,64px) clamp(10px,3vw,40px)" : "0",
+      backdrop: () => modal && this.close(), stop: (e) => e.stopPropagation(), close: () => this.close(), cardRef: this.cardRef, firstRef: this.firstRef,
+      notSent: !S.sent, sent: S.sent, hasCtx: !!S.ctx, ctx: S.ctx, F, chips, modes, prodsErr: !!errs.prods,
+      countries: ["India", "United States", "United Arab Emirates", "United Kingdom", "Singapore", "Saudi Arabia", "Germany", "France", "Netherlands", "Canada", "Australia", "Japan", "South Korea", "Other"],
+      countryColor: S.f.country ? "var(--foreground)" : "#7d8aa0",
+      submit: (e) => this.submit(e), submitProps: { type: "submit", onClick: (e) => this.submit(e) },
+      privacyHref: R.privacy || "Privacy Policy.dc.html",
+      firstName: (S.f.name.trim().split(/\s+/)[0] || ""), sentEmail: S.f.email.trim(), refId: S.refId, modeSel: S.mode || "Not specified", prodList: S.prods.join(", "),
+      doneLabel: modal ? "Close" : "Back to Home", done: () => modal ? this.close() : (window.QAIG_GO ? window.QAIG_GO(R.home || "Home Page Design.dc.html") : (location.href = R.home)),
+      again: () => this.setState({ sent: false, tried: false, f: { name: "", title: "", email: "", phone: "", org: "", country: "", use: "", req: "" }, prods: [], mode: "" }),
+    };
+  }
+}
+</script>
+</body>
+</html>

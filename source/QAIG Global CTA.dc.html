@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script>
+<script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#05080e}</style>
+</helmet>
+<section id="contact" data-screen-label="07 Final CTA" style="position:relative;isolation:isolate;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(0,150,200,.42) 0%,rgba(0,110,170,.22) 30%,rgba(0,60,110,.1) 60%,transparent 100%)">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 0%,rgba(0,212,255,.3),transparent 70%)"></div>
+    <div style="position:absolute;left:50%;top:0;width:min(1500px,150%);aspect-ratio:1/1;transform:translate(-50%,-52%);border-radius:50%;border:1px solid rgba(0,212,255,.16);box-shadow:0 0 0 clamp(60px,9vw,130px) rgba(0,212,255,.025),0 0 0 clamp(120px,18vw,260px) rgba(0,212,255,.02)"></div>
+  </div>
+  <div class="section-shell" style="padding-top:clamp(56px,7vw,88px);padding-bottom:clamp(56px,7vw,88px)">
+    <div id="cta-card" style="position:relative;display:grid;grid-template-columns:{{ ctaCols }};border:1px solid var(--border-light);border-radius:24px;background:var(--surface);overflow:visible">
+      <div style="position:relative;overflow:hidden;display:flex;flex-direction:column;gap:18px;padding:clamp(24px,3.2vw,44px) clamp(24px,3.2vw,44px) clamp(18px,2vw,24px);border-radius:{{ ctaRL }}">
+        <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 0% 0%,#000,transparent);mask-image:radial-gradient(ellipse 80% 70% at 0% 0%,#000,transparent);pointer-events:none"></div>
+        <span class="eyebrow" style="position:relative;white-space:nowrap">{{ cEyebrow }}</span>
+        <h2 style="position:relative;margin:0;max-width:15ch;font-size:clamp(2rem,1.3rem + 2.4vw,3.25rem);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance;color:var(--foreground)">{{ cTitleA }} <span style="color:var(--brand)">{{ cTitleB }}</span></h2>
+        <p style="position:relative;margin:0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ cText }}</p>
+        <div aria-hidden="true" style="position:relative;margin:auto calc(-1 * clamp(24px,3.2vw,44px)) 0;padding-top:12px;display:flex;flex-direction:column;gap:12px;pointer-events:none">
+          <div style="position:relative;height:88px;overflow:hidden">
+          <svg preserveAspectRatio="none" viewBox="0 0 600 90" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+            <defs><linearGradient id="qwg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00d4ff" stop-opacity="0"></stop><stop offset=".18" stop-color="#00d4ff" stop-opacity=".55"></stop><stop offset=".55" stop-color="#7fe9ff" stop-opacity="1"></stop><stop offset=".85" stop-color="#00d4ff" stop-opacity=".55"></stop><stop offset="1" stop-color="#00d4ff" stop-opacity="0"></stop></linearGradient></defs>
+            <path ref="{{ waveRef }}" d="M0 45 L600 45" fill="none" stroke="url(#qwg)" stroke-width="1.4" vector-effect="non-scaling-stroke" style="filter:drop-shadow(0 0 8px rgba(0,212,255,.55))"></path>
+          </svg>
+          </div>
+          <div style="padding:0 clamp(24px,3.2vw,44px);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;line-height:1.5;text-transform:uppercase;color:var(--muted)">{{ ctaSig }}</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3.2vw,44px);background:var(--surface-2);border:0 solid var(--border);border-left-width:{{ ctaBL }};border-top-width:{{ ctaBT }};border-radius:{{ ctaRR }}">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ cAsk }}</span>
+        <div role="group" aria-label="{{ cAsk }}" style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ ctaDomains }}" as="ch" hint-placeholder-count="5"><x-import component-from-global-scope="QAIG.Button" variant="{{ ch.variant }}" size="sm" onClick="{{ ch.toggle }}" aria-pressed="{{ ch.on }}" dc-props="{{ ch.props }}" hint-size="150px,32px">{{ ch.label }}</x-import></sc-for>
+        </div>
+        <p aria-live="polite" style="margin:0;min-height:1.6em;font-size:16px;line-height:1.6;color:var(--muted)">{{ ctaNote }}</p>
+        <div style="margin-top:auto;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px">
+          <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toEnquiry }}" dc-props="{{ fullBtn }}" hint-size="100%,44px">{{ cPrimary }} →</x-import>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, rm: false, ctaSel: [] };
+  waveRef = React.createRef();
+  qaigData() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV; }
+  componentDidMount() {
+    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    this.onR = () => this.setState({ w: window.innerWidth });
+    window.addEventListener("resize", this.onR);
+    this.setState({ rm }, () => this.setupWave());
+  }
+  componentWillUnmount() { this.waveOff && this.waveOff(); window.removeEventListener("resize", this.onR); }
+  setupWave() {
+    const p = this.waveRef.current; if (!p || this.waveOff) return; const svg = p.ownerSVGElement, host = document.getElementById("cta-card"), rm = this.state.rm;
+    let W = 600, raf = 0, vis = false, px = -1e4, A = 0, tA = 0; const t0 = performance.now();
+    const draw = (t) => { const now = performance.now(); let d = ""; const pk = (this.wavePulses || []).filter((s) => now - s < 1600); this.wavePulses = pk;
+      for (let x = 0; x <= W + 4; x += 4) { const g = Math.exp(-((x - px) * (x - px)) / (2 * 110 * 110)); let y = 45 + 4 * Math.sin(x / 70 + t * 0.7) + 2 * Math.sin(x / 23 - t * 1.2) + A * g * Math.sin(x / 13 - t * 5);
+        for (const s of pk) { const u = (now - s) / 1600, c = u * (W + 160) - 80, k = Math.exp(-((x - c) * (x - c)) / (2 * 50 * 50)) * (1 - u); y += 20 * k * Math.sin(x / 8 - t * 9); }
+        d += (x ? " L" : "M") + x + " " + y.toFixed(1); } p.setAttribute("d", d); };
+    const size = () => { W = Math.max(1, Math.round(svg.getBoundingClientRect().width)); svg.setAttribute("viewBox", "0 0 " + W + " 90"); draw((performance.now() - t0) / 1000); };
+    const loop = (now) => { raf = 0; if (!vis || document.visibilityState === "hidden") return; A += (tA - A) * 0.07; draw((now - t0) / 1000); raf = requestAnimationFrame(loop); };
+    this.waveKick = () => { if (rm) return; (this.wavePulses = this.wavePulses || []).push(performance.now()); if (vis && !raf) raf = requestAnimationFrame(loop); };
+    const mv = (ev) => { const r = svg.getBoundingClientRect(); px = ev.clientX - r.left; tA = 18; }, lv = () => { tA = 0; };
+    size(); window.addEventListener("resize", size);
+    if (!rm && host) { host.addEventListener("pointermove", mv); host.addEventListener("pointerleave", lv); }
+    const io = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver(([en]) => { vis = en.isIntersecting && !rm; if (vis && !raf) raf = requestAnimationFrame(loop); }) : null; io && io.observe(svg);
+    this.waveOff = () => { cancelAnimationFrame(raf); window.removeEventListener("resize", size); if (host) { host.removeEventListener("pointermove", mv); host.removeEventListener("pointerleave", lv); } io && io.disconnect(); };
+  }
+  ctaVals(cats) {
+    const S = this.state, sel = S.ctaSel, wide = S.w >= 900, P = this.props, opts = P.options || null, SIG = { PQC: "Secure", QIS: "Simulate", NET: "Connect", SEN: "Measure", LSR: "Illuminate" };
+    const list = opts ? opts.map((o) => ({ label: o, code: o })) : cats; const ctaDomains = list.map((x, i) => { const on = sel.includes(i); return { label: (on ? "✓ " : "") + x.label, on, variant: on ? "secondary" : "outline", props: { style: on ? { borderColor: "var(--brand)", color: "var(--foreground)" } : {} },
+      toggle: () => { this.setState((s) => ({ ctaSel: s.ctaSel.includes(i) ? s.ctaSel.filter((v) => v !== i) : [...s.ctaSel, i].sort() })); this.waveKick && this.waveKick(); } }; });
+    const n = sel.length;
+    return { ctaDomains, ctaCols: wide ? "minmax(0,1.15fr) minmax(0,1fr)" : "minmax(0,1fr)", ctaRL: wide ? "24px 0 0 24px" : "24px 24px 0 0", ctaRR: wide ? "0 24px 24px 0" : "0 0 24px 24px", ctaBL: wide ? "1px" : "0", ctaBT: wide ? "0" : "1px",
+      ctaSig: n ? "Signal · " + sel.map((i) => SIG[list[i].code] || list[i].label).join(" + ") : "Signal · Waiting for Your Requirement",
+      ctaNote: n ? "Selected: " + sel.map((i) => list[i].label).join(", ") + "." : "",
+      cEyebrow: P.eyebrow || "Start With a Requirement", cTitleA: P.titleA || "Have a Quantum Technology", cTitleB: P.titleB || "Requirement?",
+      cText: P.text || "Tell us what you need to build, measure or secure. Our engineering team will work through the requirement with you.",
+      cAsk: P.ask || "What are you working on?", cPrimary: P.primary || "Discuss Your Requirement", fullBtn: { style: { width: "100%" } },
+      toMail: () => { window.location.href = "mailto:info@thequantum.ai"; } };
+  }
+  renderVals() {
+    const S = this.state, nav = this.qaigData() || { cats: [] }, cats = nav.cats || [];
+    return { waveRef: this.waveRef, ...this.ctaVals(cats),
+      toEnquiry: () => { const P = this.props, base = (nav.routes && nav.routes.enquiry) || "Discuss Your Requirement.dc.html"; let href;
+        if (P.product) { const pick = S.ctaSel.map((i) => (P.options || [])[i]).filter(Boolean); href = base + "?product=" + encodeURIComponent(P.product) + (pick.length ? "&interest=" + encodeURIComponent(pick.join(", ")) : ""); }
+        else { const sel = S.ctaSel.map((i) => cats[i] && cats[i].code).filter(Boolean); href = base + (sel.length ? "?domains=" + sel.join(",") : ""); } window.QAIG_GO ? window.QAIG_GO(href, "enquiry") : (window.location.href = href); } };
+  }
+}
+</script>
+</body>
+</html>

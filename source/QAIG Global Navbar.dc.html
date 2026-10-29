@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script>
+<script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}@keyframes qdrift{from{transform:translate3d(-5%,-3%,0)}to{transform:translate3d(5%,4%,0)}}@keyframes qsig2{from{stroke-dashoffset:60}to{stroke-dashoffset:-900}}@keyframes qsig3{from{stroke-dashoffset:120}to{stroke-dashoffset:-1400}}@keyframes qsig{from{stroke-dashoffset:80}to{stroke-dashoffset:-1000}}@keyframes qtravel{0%{left:12.5%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:87.5%;opacity:0}}@keyframes qnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}@keyframes qbob{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,4px)}}@keyframes qfadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.qnudge{animation:qnudge 1.5s ease-in-out infinite}.qbob{animation:qbob 1.8s ease-in-out infinite}.qfadein{animation:qfadein .35s cubic-bezier(.22,1,.36,1) both}@media (prefers-reduced-motion:reduce){.qnudge,.qbob,.qfadein{animation:none!important}}@keyframes rsdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes rsin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}input::placeholder{color:var(--faint)}select option,select optgroup{background:#0b111c;color:#e6edf5}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}</style>
+</helmet>
+<div style="font-family:var(--font-sans);color:var(--foreground);-webkit-font-smoothing:antialiased">
+<header onMouseLeave="{{ closeMenu }}" style="position:relative;z-index:50;background:var(--nav-surface);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border)">
+  <div class="section-shell" style="display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px">
+    <a href="{{ homeHref }}" aria-label="Quantum AI Global home" onMouseEnter="{{ closeMenu }}" style="display:flex;align-items:center;flex:none"><img src="assets/qaig-stacked.png" alt="Quantum AI Global" style="display:block;height:72px;width:auto;aspect-ratio:1460/1062"></a>
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <nav style="display:flex;align-items:center;gap:4px">
+        <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
+          <x-import component-from-global-scope="QAIG.Button" variant="{{ n.variant }}" size="sm" onMouseEnter="{{ n.enter }}" onFocus="{{ n.enter }}" onClick="{{ n.click }}" aria-label="{{ n.aria }}" hint-size="90px,32px">{{ n.label }}<span style="margin-left:6px;font-size:11px;opacity:.6">{{ n.caret }}</span>{{ n.ext }}</x-import>
+        </sc-for>
+      </nav>
+    </sc-if>
+    <div style="display:flex;align-items:center;gap:8px;flex:none" onMouseEnter="{{ closeMenu }}">
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ openSearch }}" aria-label="Search" hint-size="130px,32px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Search<kbd style="margin-left:6px;font-family:var(--font-mono);font-size:13.5px;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:2px 5px;line-height:1">⌘K</kbd></x-import></sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ openSearch }}" aria-label="Search" hint-size="36px,36px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></x-import></sc-if>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" variant="ghost" size="sm" onClick="{{ toPortal }}" hint-size="72px,32px">Sign In</x-import></sc-if>
+      <sc-if value="{{ notTiny }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" size="sm" onClick="{{ toEnquiry }}" hint-size="210px,32px">Discuss Your Requirement</x-import></sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ toggleMobile }}" aria-label="Menu" hint-size="36px,36px">{{ mobileIcon }}</x-import></sc-if>
+    </div>
+  </div>
+
+  <sc-if value="{{ menuProducts }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;top:100%;background:radial-gradient(ellipse 45% 90% at 0% 0%,rgba(0,212,255,.07),transparent 70%),var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-lg)">
+      <div class="rule-signal"></div>
+      <div class="section-shell" style="display:grid;grid-template-columns:300px minmax(0,1fr) 330px;gap:0 40px;padding-top:28px;padding-bottom:28px">
+        <div role="tablist" aria-label="Product domains" aria-orientation="vertical" style="display:flex;flex-direction:column;gap:4px;padding-right:32px;border-right:1px solid var(--border)">
+          <div style="display:flex;align-items:center;gap:10px;padding:0 12px 14px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">
+            <svg class="qbob" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style="color:var(--brand);flex:none"><path d="M3 2l10 5-4.2 1.4L7.4 13z" fill="currentColor"></path></svg>Choose a Domain
+          </div>
+          <sc-for list="{{ mcats }}" as="mc" hint-placeholder-count="5">
+            <button role="tab" aria-selected="{{ mc.on }}" onMouseEnter="{{ mc.pick }}" onFocus="{{ mc.pick }}" onClick="{{ mc.open }}" style="position:relative;display:flex;align-items:center;gap:12px;min-height:56px;padding:8px 12px;border:1px solid {{ mc.bd }};border-radius:12px;background:{{ mc.bg }};color:{{ mc.color }};font:inherit;text-align:left;cursor:pointer;transition:background .2s,border-color .2s,color .2s" style-hover="background:var(--surface-2)">
+              <span style="flex:none;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:9px;border:1px solid {{ mc.wellBd }};background:{{ mc.wellBg }};transition:all .2s">{{ mc.icon }}</span>
+              <span style="flex:1;min-width:0"><span style="display:block;font-size:16px;font-weight:500;line-height:1.3">{{ mc.label }}</span><span style="display:block;margin-top:3px;font-family:var(--font-mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">{{ mc.countLabel }}</span></span>
+              <sc-if value="{{ mc.on }}" hint-placeholder-val="{{ false }}"><span class="qnudge" aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--brand);color:var(--brand-ink)"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></sc-if>
+              <sc-if value="{{ mc.on }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;right:-40px;top:50%;width:14px;height:14px;margin-top:-7px;background:var(--surface);border-top:1px solid var(--brand);border-right:1px solid var(--brand);transform:rotate(45deg);box-shadow:0 0 12px rgba(0,212,255,.35)"></span></sc-if>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 12px 14px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase"><span style="color:var(--brand)">{{ mcur.label }}</span><span class="tnum" style="color:var(--muted)">{{ mcur.countLabel }}</span></div>
+          <sc-if value="{{ mcur.hasStack }}" hint-placeholder-val="{{ false }}">
+            <div class="qfadein" style="display:flex;align-items:center;gap:14px;margin-bottom:6px;padding:12px 14px;border:1px solid var(--brand);border-radius:12px;background:var(--brand-soft)">
+              <img src="assets/products/QFORTE_ICON.png" alt="" width="48" height="48" style="flex:none;display:block;width:48px;height:48px;object-fit:contain">
+              <span style="flex:1;min-width:0"><span style="display:block;font-size:16px;font-weight:600;color:var(--foreground)">Q-Forte</span><span style="display:block;margin-top:2px;font-size:16px;line-height:1.4;color:var(--foreground-2)">Quantum Assured InfoSec Platform</span></span>
+              <span style="flex:none;font-family:var(--font-mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--brand)">Parent Stack</span>
+            </div>
+          </sc-if>
+          <div style="display:flex;flex-direction:column;gap:2px;margin-left:{{ mcur.ml }};padding-left:{{ mcur.pl }};border-left:1px solid {{ mcur.rail }}">
+          <sc-for list="{{ mcur.items }}" as="p" hint-placeholder-count="3">
+            <a href="{{ p.href }}" class="qfadein" style="display:flex;align-items:center;gap:14px;padding:10px 12px;border:1px solid transparent;border-radius:12px;color:inherit" style-hover="background:var(--surface-2);border-color:var(--border-light)">
+              <span style="flex:none;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:10px;border:1px solid var(--border);background:var(--surface-2);overflow:hidden">
+                <sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ p.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:5px;display:block"></sc-if>
+                <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted)">{{ p.mono }}</span></sc-if>
+              </span>
+              <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;font-size:16.5px;font-weight:600;color:var(--foreground)">{{ p.title }}<sc-if value="{{ p.rnd }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="36px,18px">R&amp;D</x-import></sc-if></span><span style="display:block;margin-top:3px;font-size:16px;line-height:1.45;color:var(--muted)">{{ p.blurb }}</span></span>
+              <span style="color:var(--muted);font-size:16px">→</span>
+            </a>
+            <sc-if value="{{ p.hasMini }}" hint-placeholder-val="{{ false }}">
+            <a href="{{ p.miniHref }}" class="qfadein" style="display:flex;align-items:center;gap:12px;margin:-2px 0 4px 38px;padding:8px 12px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(90deg,rgba(0,212,255,.07),transparent 70%);color:inherit" style-hover="background:var(--surface-2);border-color:var(--brand)">
+              <span style="flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--base);overflow:hidden"><img src="{{ p.miniImg }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:2px;display:block"></span>
+              <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:600;color:var(--foreground)">{{ p.miniTitle }}<span style="padding:1px 6px;border:1px solid var(--brand);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)">HARDWARE</span></span><span style="display:block;margin-top:2px;font-size:16px;line-height:1.4;color:var(--muted)">{{ p.miniBlurb }}</span></span>
+              <span style="color:var(--muted);font-size:16px">→</span>
+            </a>
+            </sc-if>
+          </sc-for>
+          </div>
+        </div>
+        <div style="position:relative;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--border-light);border-radius:16px;background:var(--surface-2)">
+          <div class="bg-grid" style="position:absolute;inset:0;opacity:.5;pointer-events:none"></div>
+          <div style="position:relative;display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--muted)"><span>Fig. · {{ mcur.label }}</span><span>Conceptual</span></div>
+          <div data-diagram="true" style="position:relative;flex:1;display:flex;align-items:center;padding:20px 16px;min-height:130px">{{ mcur.svg }}</div>
+          <p style="position:relative;margin:0;padding:0 16px 16px;font-size:16px;line-height:1.55;color:var(--muted)">{{ mcur.desc }}</p>
+          <div style="position:relative;padding:14px 16px;border-top:1px solid var(--border)"><x-import component-from-global-scope="QAIG.Button" size="sm" onClick="{{ mcur.go }}" dc-props="{{ fullBtn }}" hint-size="100%,32px">{{ mcur.cta }}</x-import></div>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ menuResources }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;top:100%;background:radial-gradient(ellipse 45% 90% at 100% 0%,rgba(0,212,255,.06),transparent 70%),var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-lg)">
+      <div class="rule-signal"></div>
+      <div class="section-shell" style="display:flex;gap:32px;padding-top:28px;padding-bottom:28px">
+        <div style="flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+          <sc-for list="{{ resourceItems }}" as="r" hint-placeholder-count="3">
+            <a href="{{ r.href }}" class="card-hover" style="display:flex;flex-direction:column;border:1px solid var(--border);border-radius:16px;background:var(--surface-2);color:inherit;overflow:hidden">
+              <span data-diagram="true" style="position:relative;display:block;height:132px;border-bottom:1px solid var(--border);background:var(--surface);overflow:hidden">
+                <span class="bg-grid" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000,transparent);mask-image:radial-gradient(ellipse 70% 70% at 50% 50%,#000,transparent)"></span>
+                <span style="position:relative;display:flex;align-items:center;justify-content:center;height:100%;padding:8px 12px">{{ r.art }}</span>
+              </span>
+              <span style="display:block;padding:16px 18px 18px">
+                <span style="display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:16px;font-weight:600;color:var(--foreground)">{{ r.label }}<span style="color:var(--brand);font-size:16px">→</span></span>
+                <span style="display:block;margin-top:6px;font-size:16px;line-height:1.55;color:var(--muted)">{{ r.description }}</span>
+              </span>
+            </a>
+          </sc-for>
+        </div>
+        <div style="flex:none;width:260px;display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:24px;border:1px solid var(--border-light);border-radius:16px;background:var(--surface-2)">
+          <div><span class="eyebrow">Library</span><p style="margin:16px 0 0;font-size:16px;line-height:1.6;color:var(--muted)">Brochures, product dossiers, videos and research publications for every product line.</p></div>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ toResources }}" hint-size="100%,36px">Explore Resources →</x-import>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ menuCompany }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;top:100%;background:radial-gradient(ellipse 45% 90% at 100% 0%,rgba(0,212,255,.07),transparent 70%),var(--surface);border-bottom:1px solid var(--border);box-shadow:var(--shadow-lg)">
+      <div class="rule-signal"></div>
+      <div class="section-shell" style="display:grid;grid-template-columns:minmax(0,560px) minmax(0,1fr);gap:0 40px;padding-top:28px;padding-bottom:28px">
+        <div aria-label="Company pages" style="display:flex;flex-direction:column;gap:18px;padding-right:32px;border-right:1px solid var(--border)">
+          <div style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><svg class="qbob" width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" style="color:var(--brand);flex:none"><path d="M3 2l10 5-4.2 1.4L7.4 13z" fill="currentColor"></path></svg>Explore the Company</div>
+          <sc-for list="{{ cGroups }}" as="g" hint-placeholder-count="2">
+            <div>
+              <div style="display:flex;align-items:center;gap:12px;padding-bottom:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><a href="{{ g.href }}" style="color:var(--muted)" style-hover="color:var(--brand)">{{ g.group }}</a><span style="flex:1;height:1px;background:var(--border)"></span></div>
+              <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px">
+                <sc-for list="{{ g.items }}" as="c" hint-placeholder-count="4">
+                  <a href="{{ c.href }}" aria-current="{{ c.cur }}" onMouseEnter="{{ c.pick }}" onFocus="{{ c.pick }}" style="position:relative;display:flex;align-items:center;gap:10px;min-height:60px;padding:8px 10px;border:1px solid {{ c.bd }};border-radius:12px;background:{{ c.bg }};color:inherit;transition:background .2s,border-color .2s" style-hover="background:var(--surface-2)">
+                    <span style="flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;border:1px solid {{ c.wellBd }};background:{{ c.wellBg }};transition:all .2s">{{ c.icon }}</span>
+                    <span style="flex:1;min-width:0"><span style="display:block;font-size:16px;font-weight:500;line-height:1.3;color:{{ c.color }}">{{ c.label }}</span><span style="display:block;margin-top:2px;font-size:13.5px;line-height:1.35;color:var(--muted)">{{ c.description }}</span></span>
+                    <sc-if value="{{ c.on }}" hint-placeholder-val="{{ false }}"><span class="qnudge" aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--brand);color:var(--brand-ink)"><svg width="11" height="11" viewBox="0 0 12 12"><path d="M2 6h8M6.5 2.5L10 6l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span></sc-if>
+                  </a>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="position:relative;overflow:hidden;min-height:340px;border:1px solid var(--border-light);border-radius:18px;background:var(--surface-2)">
+          <sc-for list="{{ cPanels }}" as="pn" hint-placeholder-count="7">
+            <div aria-hidden="{{ pn.hidden }}" style="position:absolute;inset:0;opacity:{{ pn.op }};transition:opacity .55s;pointer-events:{{ pn.pe }}">
+              <img src="{{ pn.img }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ pn.pos }};transform:scale({{ pn.sc }});transition:transform 1.4s cubic-bezier(.22,1,.36,1);filter:brightness(.8) saturate(.9)">
+              <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,8,14,.94) 0%,rgba(5,8,14,.62) 38%,rgba(5,8,14,.1) 72%,rgba(5,8,14,.25) 100%)"></div>
+              <div class="bg-grid" style="position:absolute;inset:0;opacity:.18;pointer-events:none"></div>
+              <span style="position:absolute;left:20px;top:18px;display:inline-flex;align-items:center;gap:8px;padding:5px 9px;border-radius:6px;background:rgba(5,8,14,.62);backdrop-filter:blur(8px);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--foreground-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--brand)"></span>{{ pn.group }}</span>
+              <div style="position:absolute;left:20px;right:20px;bottom:20px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px">
+                <div style="min-width:0;max-width:420px">
+                  <div style="font-size:clamp(1.375rem,1.1rem + .8vw,1.875rem);line-height:1.05;letter-spacing:-0.03em;font-weight:600;color:var(--foreground)">{{ pn.label }}</div>
+                  <p style="margin:8px 0 0;font-size:16px;line-height:1.5;color:var(--foreground-2)">{{ pn.description }}</p>
+                  <div style="margin-top:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--brand)">{{ pn.stat }}</div>
+                </div>
+                <x-import component-from-global-scope="QAIG.Button" size="sm" dc-props="{{ pn.btnProps }}" hint-size="140px,32px">Open {{ pn.label }} →</x-import>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </sc-if>
+</header>
+
+<sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:84px 0 0 0;z-index:45;background:var(--base);border-top:1px solid var(--border);overflow-y:auto">
+    <div class="section-shell" style="padding-top:40px;padding-bottom:32px;display:flex;flex-direction:column">
+      <a href="{{ homeHref }}" style="display:flex;align-items:center;justify-content:space-between;padding:16px 4px;border-bottom:1px solid var(--border);font-size:17px;font-weight:500;color:var(--foreground)">Home</a>
+      <sc-for list="{{ mobileSections }}" as="ms" hint-placeholder-count="3">
+        <div style="border-bottom:1px solid var(--border)">
+          <x-import component-from-global-scope="QAIG.Button" variant="ghost" size="lg" onClick="{{ ms.toggle }}" dc-props="{{ mobBtn }}" hint-size="100%,56px">{{ ms.label }}<span style="color:var(--muted)">{{ ms.sign }}</span></x-import>
+          <sc-if value="{{ ms.open }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex;flex-direction:column;padding:0 4px 16px 16px;border-left:1px solid var(--border-light);margin-left:4px">
+              <sc-for list="{{ ms.links }}" as="ml" hint-placeholder-count="4"><sc-if value="{{ ml.head }}" hint-placeholder-val="{{ false }}"><a href="{{ ml.href }}" style="display:block;padding:14px 0 4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)" style-hover="color:var(--brand)">{{ ml.label }}</a></sc-if><sc-if value="{{ ml.link }}" hint-placeholder-val="{{ true }}"><a href="{{ ml.href }}" style="display:flex;align-items:center;gap:8px;padding:9px 0 9px {{ ml.pad }};font-size:16.5px;color:{{ ml.color }}">{{ ml.label }}<sc-if value="{{ ml.rnd }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="36px,18px">R&amp;D</x-import></sc-if></a></sc-if></sc-for>
+            </div>
+          </sc-if>
+        </div>
+      </sc-for>
+      <a href="{{ ipsHref }}" aria-current="{{ ipsCur }}" style="display:flex;align-items:center;justify-content:space-between;padding:16px 4px;border-bottom:1px solid var(--border);font-size:17px;font-weight:500;color:{{ ipsColor }}">Our IPs</a>
+      <a href="#" style="display:flex;align-items:center;justify-content:space-between;padding:16px 4px;border-bottom:1px solid var(--border);font-size:17px;font-weight:500;color:var(--foreground)">QuLabs <span style="color:var(--muted)">↗</span></a>
+      <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+        <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ toEnquiry }}" hint-size="100%,44px">Discuss Your Requirement</x-import>
+        <x-import component-from-global-scope="QAIG.Button" size="lg" variant="secondary" onClick="{{ toPortal }}" hint-size="100%,44px">Sign In</x-import>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ closeSearch }}" style="position:fixed;inset:0;z-index:80;background:rgba(2,4,8,.72);backdrop-filter:blur(6px);display:flex;justify-content:center;align-items:flex-start;padding:12vh 16px 16px">
+    <div onClick="{{ stop }}" style="width:100%;max-width:640px;border:1px solid var(--border-light);border-radius:14px;background:var(--surface);box-shadow:var(--shadow-lg);overflow:hidden">
+      <div style="display:flex;align-items:center;gap:12px;padding:0 16px;height:56px;border-bottom:1px solid var(--border)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+        <input ref="{{ searchRef }}" value="{{ q }}" onChange="{{ setQ }}" placeholder="Search Quantum AI Global..." style="flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16.5px">
+        <kbd style="font-family:var(--font-mono);font-size:13.5px;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:3px 6px;line-height:1">ESC</kbd>
+      </div>
+      <div style="padding:14px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px">Suggested</span>
+        <sc-for list="{{ suggested }}" as="s" hint-placeholder-count="5"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ s.pick }}" hint-size="80px,32px">{{ s.label }}</x-import></sc-for>
+      </div>
+      <div style="max-height:46vh;overflow-y:auto;padding:8px">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="6">
+          <a href="{{ r.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;color:inherit" style-hover="background:var(--surface-2)">
+            <span style="min-width:0"><span style="display:block;font-size:16px;font-weight:600;color:var(--foreground)">{{ r.title }}</span><span style="display:block;margin-top:2px;font-size:13.5px;color:var(--muted)">{{ r.sub }}</span></span>
+            <span style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ r.kind }}</span>
+          </a>
+        </sc-for>
+        <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}"><div style="padding:28px 12px;text-align:center;font-size:16px;color:var(--muted)">No matches. Try a product or page name.</div></sc-if>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<dc-import name="QAIG Enquiry Modal" hint-size="0px,0px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;current&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Home&quot;,&quot;Products&quot;,&quot;Resources&quot;,&quot;Company&quot;,&quot;Our IPs&quot;],&quot;default&quot;:&quot;Home&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;enquiryHref&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Discuss Your Requirement.dc.html&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, menu: null, search: false, q: "", mobile: false, mSec: null, mcat: 0, cmi: 0, rm: false };
+  searchRef = React.createRef();
+  nav() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV; }
+  route(k) { const D = this.nav() || {}, R = D.routes || {}; return R[k] || "#"; }
+  pHref(t) { const D = this.nav() || {}; return D.productPageHref ? D.productPageHref(t) : (D.productHref || {})[t] || this.route("products"); }
+  dHref(code) { const D = this.nav() || {}; return D.domainHref ? D.domainHref(code) : this.route("products"); }
+  cHref(l) { const D = this.nav() || {}; return (D.companyHref || {})[l] || "#"; }
+  go(href, kind) { if (!href || href === "#") return; this.setState({ menu: null, mobile: false, search: false }); if (window.QAIG_GO) window.QAIG_GO(href, kind); else window.location.href = href; }
+  openSearch() { this.setState({ search: true, menu: null, mobile: false, q: "" }, () => setTimeout(() => this.searchRef.current && this.searchRef.current.focus(), 30)); }
+  componentDidMount() {
+    try { this.setState({ rm: window.matchMedia("(prefers-reduced-motion: reduce)").matches }); } catch (err) {}
+    this.onR = () => this.setState({ w: window.innerWidth });
+    this.onK = (ev) => {
+      if ((ev.metaKey || ev.ctrlKey) && ev.key.toLowerCase() === "k") { ev.preventDefault(); this.state.search ? this.setState({ search: false }) : this.openSearch(); }
+      else if (ev.key === "Escape") this.setState({ search: false, menu: null, mobile: false });
+    };
+    window.addEventListener("keydown", this.onK); window.addEventListener("resize", this.onR); this.onR();
+  }
+  componentWillUnmount() { window.removeEventListener("keydown", this.onK); window.removeEventListener("resize", this.onR); }
+  resArt(i) {
+    const e = React.createElement, rm = !!this.state.rm, B = "var(--brand)", L = "var(--border-strong)", Mu = "var(--muted)", S = "var(--surface-2)";
+    const rect = (k, x, y, w, h, o) => e("rect", Object.assign({ key: k, x, y, width: w, height: h, rx: 3, fill: S, stroke: L, strokeWidth: 1 }, o || {}));
+    const ln = (k, x1, y1, x2, y2, o) => e("line", Object.assign({ key: k, x1, y1, x2, y2, stroke: L, strokeWidth: 1.4, strokeLinecap: "round" }, o || {}));
+    const lab = (k, x, y, s) => e("text", { key: k, x, y, textAnchor: "middle", fill: "var(--muted)", style: { font: "10.5px var(--font-mono)", letterSpacing: ".08em" } }, s);
+    const svg = (...kids) => e("svg", { viewBox: "0 0 300 116", width: "100%", height: "100%", style: { display: "block", maxHeight: 116 }, "aria-hidden": true }, ...kids);
+    if (i === 0) { const cv = "M196 88 C212 86 222 62 238 56 S262 42 274 32";
+      return svg(rect("b", 52, 16, 92, 82, { fill: "var(--surface)" }), rect("f", 66, 26, 92, 82, { stroke: B, opacity: 0.95 }), rect("h", 76, 36, 30, 8, { fill: B, stroke: "none", opacity: 0.85 }), ln("l1", 76, 54, 146, 54), ln("l2", 76, 64, 138, 64), ln("l3", 76, 74, 144, 74), ln("l4", 76, 84, 120, 84), lab("ci", 142, 100, "[1]"),
+        ln("ax", 190, 96, 284, 96, { stroke: Mu }), ln("ay", 190, 96, 190, 22, { stroke: Mu }), e("path", { key: "cv", d: cv, fill: "none", stroke: B, strokeWidth: 1.8, strokeLinecap: "round" }),
+        e("line", { key: "g", x1: 238, y1: 56, x2: 238, y2: 96, stroke: L, strokeDasharray: "2 3" }), e("circle", { key: "n1", cx: 238, cy: 56, r: 3.5, fill: "var(--base)", stroke: B }), e("circle", { key: "n2", cx: 274, cy: 32, r: 3.5, fill: B }),
+        rm ? null : e("circle", { key: "p", r: 3, fill: B }, e("animateMotion", { dur: "3.6s", repeatCount: "indefinite", path: cv })));
+    }
+    if (i === 1) return svg(
+      e("g", { key: "fl" }, rect("d1", 40, 44, 34, 44, { fill: "var(--surface)" }), ln("d1l", 47, 58, 67, 58), ln("d1m", 47, 66, 64, 66), lab("t1", 57, 104, "PDF"), rect("d2", 226, 44, 34, 44, { fill: "var(--surface)" }), ln("d2l", 233, 58, 253, 58), ln("d2m", 233, 66, 250, 66), lab("t2", 243, 104, "DOC")),
+      e("path", { key: "cb", d: "M118 62 L150 48 L182 62 L182 94 L150 108 L118 94 Z", fill: "var(--surface)", stroke: L, strokeWidth: 1.3, strokeLinejoin: "round" }), e("path", { key: "cb2", d: "M118 62 L150 76 L182 62 M150 76 V108", fill: "none", stroke: L, strokeWidth: 1.3, strokeLinejoin: "round" }), ln("tp", 134, 55, 166, 69, { stroke: B, opacity: 0.6 }),
+      e("g", { key: "ar" }, e("path", { d: "M150 8 V32 M141 24 L150 33 L159 24", fill: "none", stroke: B, strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" }), rm ? null : e("animateTransform", { attributeName: "transform", type: "translate", values: "0 -2;0 8;0 -2", dur: "2.2s", repeatCount: "indefinite" })),
+      e("rect", { key: "pt", x: 100, y: 112, width: 100, height: 2.5, rx: 1.2, fill: L }), e("rect", { key: "pf", x: 100, y: 112, width: 64, height: 2.5, rx: 1.2, fill: B }, rm ? null : e("animate", { attributeName: "width", values: "20;78;20", dur: "3.2s", repeatCount: "indefinite" })));
+    const rings = rm ? [e("circle", { key: "r1", cx: 150, cy: 58, r: 26, fill: "none", stroke: B, opacity: 0.35 })] : [0, 1.2].map((d, k) => e("circle", { key: "r" + k, cx: 150, cy: 58, r: 8, fill: "none", stroke: B, strokeWidth: 1.2 }, e("animate", { attributeName: "r", values: "8;44", dur: "2.8s", begin: d + "s", repeatCount: "indefinite" }), e("animate", { attributeName: "opacity", values: "0.7;0", dur: "2.8s", begin: d + "s", repeatCount: "indefinite" })));
+    return svg(...rings, e("circle", { key: "c0", cx: 150, cy: 58, r: 9, fill: "var(--surface)", stroke: B, strokeWidth: 1.3 }), e("circle", { key: "c1", cx: 150, cy: 58, r: 3, fill: B }),
+      ...[0, 1, 2].flatMap((k) => [e("circle", { key: "fd" + k, cx: 28, cy: 34 + k * 24, r: 2.5, fill: k === 0 ? B : L }), ln("fl" + k, 38, 34 + k * 24, 74 - k * 10, 34 + k * 24, { stroke: k === 0 ? B : L, opacity: k === 0 ? 0.8 : 1 }), e("circle", { key: "fe" + k, cx: 272, cy: 34 + k * 24, r: 2.5, fill: k === 1 ? B : L }), ln("fm" + k, 226 + k * 10, 34 + k * 24, 262, 34 + k * 24, { stroke: k === 1 ? B : L, opacity: k === 1 ? 0.8 : 1 })]),
+      lab("tl", 150, 112, "LATEST"));
+  }
+  renderVals() {
+    const S = this.state, e = React.createElement, rm = !!S.rm, D = this.nav();
+    const pad = (i) => String(i + 1).padStart(2, "0");
+    const productCats = D.cats.map((c) => ({ code: c.code, href: this.dHref(c.code), label: c.label, stack: c.stack, desc: c.desc, labs: c.labs, icon: c.icon, cta: c.cta, count: String(c.items.length).padStart(2, "0"),
+      countLabel: c.stack ? "01 STACK · " + String(c.items.length).padStart(2, "0") + " PRODUCTS" : String(c.items.length).padStart(2, "0") + " PRODUCTS",
+      items: c.items.map((p) => ({ href: this.pHref(p.title), title: p.title, blurb: p.blurb, rnd: !!p.rnd, cat: c.label, hasImg: !!p.thumb, noImg: !p.thumb, img: p.thumb ? "assets/products/" + p.thumb + ".png" : "", mono: p.title.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase(), hasMini: !!p.mini, miniTitle: (p.mini || {}).title || "", miniBlurb: (p.mini || {}).blurb || "", miniImg: (p.mini || {}).img || "", miniHref: p.mini ? this.pHref(p.mini.title) : "" })) }));
+    const resourceItems = D.resources.map((r, i) => ({ ...r, href: r.href || this.route("resources"), idx: pad(i) }));
+    const companyCols = D.company.map((c) => ({ heading: c.heading, items: c.items.map(([label, description, cur]) => ({ label, description, color: cur ? "var(--brand)" : "var(--foreground)" })) }));
+    const menuFor = (k) => ({ enter: () => this.setState({ menu: k }), click: () => this.setState((s) => ({ menu: s.menu === k ? null : k })) });
+    const cur = this.props.current ?? "Home";
+    const navItems = [
+      { label: "Home", key: null }, { label: "Products", key: "products" }, { label: "Resources", key: "resources" }, { label: "Company", key: "company" }, { label: "Our IPs", key: null, route: "ips" }, { label: "QuLabs", key: null, ext: true },
+    ].map((n) => {
+      const open = n.key && S.menu === n.key;
+      const dest = { products: "products", resources: "resources", company: "about" }[n.key];
+      const h = n.key ? { enter: () => this.setState({ menu: n.key }), click: () => this.go(this.route(dest)) } : { enter: () => this.setState({ menu: null }), click: () => { if (n.label === "Home") this.go(this.route("home")); else if (n.route) this.go(this.route(n.route)); } };
+      return { label: n.label, aria: n.ext ? "QuLabs, opens an external site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
+        variant: open || n.label === cur ? "secondary" : "ghost" };
+    });
+    const tx = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--foreground-2)", style: { font: "500 13px var(--font-sans)" } }, o || {}), s);
+    const mt = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--muted)", style: { font: "11.5px var(--font-mono)", letterSpacing: ".08em", textTransform: "uppercase" } }, o || {}), s);
+    const pulse = (d, dur, k) => rm ? null : e("circle", { key: k || "pl", r: 4, fill: "var(--brand)", style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animateMotion", { dur: dur + "s", repeatCount: "indefinite", path: d }));
+    const trail = (d, dur, k) => rm ? e("path", { key: k || "tr", d, fill: "none", stroke: "var(--brand)", strokeWidth: 1.5, opacity: 0.5 }) : e("path", { key: k || "tr", d, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "60 900", style: { animation: "qsig2 " + dur + "s linear infinite" } });
+    const DG = (k, x, y) => { const c = "var(--brand)", m = "var(--muted)", L = (kk, a, b, cc, dd, s, w) => e("line", { key: kk, x1: a, y1: b, x2: cc, y2: dd, stroke: s || m, strokeWidth: w || 1.3 }), P = (kk, d, s, w) => e("path", { key: kk, d, fill: "none", stroke: s || c, strokeWidth: w || 1.4, strokeLinecap: "round", strokeLinejoin: "round" });
+      switch (k) {
+        case "src": return [e("circle", { key: 1, cx: x, cy: y, r: 5, fill: c }), e("circle", { key: 2, cx: x, cy: y, r: 13, fill: "none", stroke: c, opacity: 0.45 })];
+        case "wave": return [P(1, "M" + (x - 16) + " " + y + " q4 -11 8 0 t8 0 t8 0 t8 0")];
+        case "tube": return [L(1, x - 16, y - 7, x + 16, y - 7), L(2, x - 16, y + 7, x + 16, y + 7), e("circle", { key: 3, cx: x, cy: y, r: 2.5, fill: c })];
+        case "det": return [P(1, "M" + (x - 3) + " " + (y - 13) + " a13 13 0 0 1 0 26"), L(2, x - 14, y, x - 3, y, c)];
+        case "threat": return [0, 1, 2].map((i) => P(i, "M" + (x - 14) + " " + (y - 9 + i * 9) + " h11 m-4 -4 l4 4 l-4 4", m, 1.2));
+        case "shield": return [P(1, "M" + x + " " + (y - 14) + " l11 4 v7 c0 7 -5 11 -11 14 c-6 -3 -11 -7 -11 -14 v-7 z")];
+        case "check": return [e("circle", { key: 1, cx: x, cy: y, r: 12, fill: "none", stroke: c, strokeWidth: 1.3 }), P(2, "M" + (x - 5) + " " + y + " l3.5 3.5 l7 -7", c, 1.6)];
+        case "levels": return [-8, 0, 8].map((d, i) => L(i, x - 13, y + d, x + 13, y + d, i === 1 ? c : m, 1.5));
+        case "state": return [e("circle", { key: 1, cx: x, cy: y, r: 12, fill: "none", stroke: m }), L(2, x, y, x + 8, y - 9, c, 1.5), e("circle", { key: 3, cx: x + 8, cy: y - 9, r: 2.5, fill: c })];
+        case "field": return [-8, 0, 8].map((d, i) => P(i, "M" + (x - 15) + " " + (y + d) + " q15 -8 30 0", i === 1 ? c : m, 1.2));
+        case "cell": return [e("rect", { key: 1, x: x - 11, y: y - 11, width: 22, height: 22, rx: 4, fill: "none", stroke: c, strokeWidth: 1.3 }), e("circle", { key: 2, cx: x, cy: y, r: 3, fill: c })];
+        case "meter": return [P(1, "M" + (x - 13) + " " + (y + 6) + " A13 13 0 0 1 " + (x + 13) + " " + (y + 6), m, 1.2), L(2, x, y + 6, x + 7, y - 6, c, 1.6)];
+        case "signal": return [P(1, "M" + (x - 16) + " " + y + " h5 l3 -9 l4 18 l4 -13 l3 4 h13")];
+        case "node": return [e("circle", { key: 1, cx: x, cy: y, r: 5, fill: c })];
+        case "diode": return [e("rect", { key: 1, x: x - 13, y: y - 8, width: 26, height: 16, rx: 3, fill: "none", stroke: c, strokeWidth: 1.3 }), L(2, x - 4, y - 8, x - 4, y + 8, c, 1)];
+        case "dial": return [e("circle", { key: 1, cx: x, cy: y, r: 12, fill: "none", stroke: m }), L(2, x, y, x + 6, y - 10, c, 1.6), e("circle", { key: 3, cx: x, cy: y, r: 2, fill: c })];
+        case "app": return [e("circle", { key: 1, cx: x, cy: y, r: 13, fill: "none", stroke: c }), e("circle", { key: 2, cx: x, cy: y, r: 7, fill: "none", stroke: c, opacity: 0.6 }), e("circle", { key: 3, cx: x, cy: y, r: 2.5, fill: c })];
+        case "layers": return [L(8, x - 9, y - 8, x + 9, y, m, 1), L(9, x - 9, y + 8, x + 9, y, m, 1), ...[[-9, -8], [-9, 8], [9, 0]].map(([a, b], i) => e("circle", { key: i, cx: x + a, cy: y + b, r: 3.5, fill: i === 2 ? c : "var(--surface)", stroke: c }))];
+        case "gates": return [L(1, x - 16, y - 6, x + 16, y - 6), L(2, x - 16, y + 6, x + 16, y + 6), e("rect", { key: 3, x: x - 11, y: y - 11, width: 9, height: 10, rx: 1.5, fill: "var(--surface)", stroke: c }), e("rect", { key: 4, x: x + 2, y: y + 1, width: 9, height: 10, rx: 1.5, fill: "var(--surface)", stroke: c })];
+        default: return [];
+      } };
+        const mDesc = productCats.map((c) => c.desc);
+    const mLabs = productCats.map((c) => c.labs);
+    const mc = S.mcat || 0;
+    const mini = (labs) => { const xs = [30, 110, 190, 270], d = "M30 40 L270 40"; return e("svg", { viewBox: "0 0 300 90", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": labs.join(", then ") }, e("line", { x1: 30, y1: 40, x2: 270, y2: 40, stroke: "var(--border-strong)", strokeDasharray: "3 4" }), trail(d, 3.2), pulse(d, 3.2), ...xs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: 40, r: i === 0 || i === 3 ? 8 : 6, fill: i === 3 ? "var(--brand)" : "var(--surface-2)", stroke: "var(--brand)", strokeWidth: 1 }), mt(x, 74, labs[i], { style: { font: "10.5px var(--font-mono)", letterSpacing: ".07em", textTransform: "uppercase" } })))); };
+    const mIcon = productCats.map((c) => c.icon);
+    const mcats = productCats.map((c, i) => { const on = i === mc; return { label: c.label, count: c.count, on, bg: on ? "var(--surface-2)" : "transparent", bd: on ? "var(--brand)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", wellBg: on ? "var(--brand-soft)" : "var(--surface)", wellBd: on ? "var(--brand)" : "var(--border)", icon: e("svg", { width: 20, height: 20, viewBox: "-6 -6 36 36", "aria-hidden": true }, ...DG(mIcon[i], 12, 12)), pick: () => S.mcat !== i && this.setState({ mcat: i }), open: () => this.go(productCats[i].href) }; });
+    const mcur = { label: productCats[mc].label, count: productCats[mc].count, items: productCats[mc].items, countLabel: productCats[mc].countLabel, hasStack: !!productCats[mc].stack, ml: productCats[mc].stack ? "30px" : "0px", pl: productCats[mc].stack ? "14px" : "0px", rail: productCats[mc].stack ? "var(--border-strong)" : "transparent", cta: productCats[mc].cta, go: () => this.go(mc === productCats.length - 1 ? this.route("laser") : this.route("products")), desc: mDesc[mc], svg: S.menu === "products" ? mini(mLabs[mc]) : null };
+    const cm = S.cmi || 0;
+    const cVis = {
+      "Overview": ["assets/company/gallery/g3-team-group.jpg", "50% 40%", "Est. November 2019 · India, US, UAE", "app"],
+      "In the Lab": ["assets/company/gallery/g8-lab-wide.jpg", "50% 50%", "Labs and Offices, in Photographs", "cell"],
+      "Leadership": ["assets/company/founder-sanjay.jpg", "68% 26%", "Sanjay Chittore · Founder & CEO", "state"],
+      "Team": ["assets/company/gallery/g4-optics-bench.jpg", "50% 50%", "Physicists, Engineers and Operators", "check"],
+      "Advisory": ["assets/company/gallery/g6-optics-closeup.jpg", "50% 50%", "Advisory Board", "state"],
+      "Careers": ["assets/company/gallery/g9-team-office.jpg", "50% 50%", "75+ People · India, US, UAE", "layers"],
+      "Collaborations": ["assets/company/gallery/g7-workbench.jpg", "50% 50%", "40+ Partners", "gates"],
+      "Contact Us": ["assets/company/gallery/g5-workspace.jpg", "50% 50%", "hello@thequantum.ai", "signal"],
+    };
+    const cDef = D.company.flatMap((c) => c.items.map(([label, description]) => [label, description, c.heading, ...(cVis[label] || ["assets/company/gallery/g3-team-group.jpg", "50% 50%", "", "app"])]));
+    const cItems = cDef.map(([label, description, group, img, pos, stat, ic], i) => { const on = i === cm; return { label, description, group, href: this.cHref(label), head: i === 0 || cDef[i - 1][2] !== group, on, cur: on ? "true" : "false", bg: on ? "var(--surface-2)" : "transparent", bd: on ? "var(--brand)" : "transparent", color: on ? "var(--foreground)" : "var(--foreground-2)", wellBg: on ? "var(--brand-soft)" : "var(--surface)", wellBd: on ? "var(--brand)" : "var(--border)", icon: e("svg", { width: 20, height: 20, viewBox: "-6 -6 36 36", "aria-hidden": true }, ...DG(ic, 12, 12)), pick: () => S.cmi !== i && this.setState({ cmi: i }) }; });
+    const cGroups = ["About", "Work With Us"].map((g) => ({ group: g, href: this.cHref(g), items: cItems.filter((c) => c.group === g) }));
+    const cPanels = cDef.map(([label, description, group, img, pos, stat], i) => { const on = i === cm; return { label, description, group, img, pos, stat, op: on ? 1 : 0, sc: on ? 1 : 1.06, pe: on ? "auto" : "none", hidden: !on, btnProps: { tabIndex: on ? 0 : -1, onClick: () => this.go(this.cHref(label)) } }; });
+    const allProducts = productCats.flatMap((c) => c.items);
+    const pages = [...companyCols.flatMap((c) => c.items.map((i) => ({ title: i.label, sub: i.description, kind: "Company", href: this.cHref(i.label) }))), ...resourceItems.map((r) => ({ title: r.label, sub: r.description, kind: "Resources", href: r.href })), { title: "Our IPs", sub: "Patents and intellectual property portfolio", kind: "Company", href: this.route("ips") }];
+    const pool = [{ title: "Q-Forte", sub: "Quantum Assured InfoSec Platform", kind: "Stack", href: this.dHref("PQC") }, ...allProducts.map((p) => ({ title: p.title, sub: p.blurb, kind: p.cat.split(" ").slice(-1)[0], href: p.href })), ...pages];
+    const q = S.q.trim().toLowerCase();
+    const results = (q ? pool.filter((r) => (r.title + " " + r.sub + " " + r.kind).toLowerCase().includes(q)) : pool.slice(0, 7)).slice(0, 9);
+    const mobPlain = (arr) => arr.map(([label, href]) => ({ label, href, pad: "0px", color: "var(--muted)", rnd: false, head: false, link: true }));
+    const mobProd = [{ label: "Browse Products →", href: this.route("products"), head: false, link: true, pad: "0px", color: "var(--brand)", rnd: false }, ...productCats.flatMap((c) => [{ label: c.label, head: true, link: false, pad: "0px", color: "", rnd: false, href: c.href }, ...(c.stack ? [{ label: c.stack.name + " · " + c.stack.full, href: c.href, head: false, link: true, pad: "0px", color: "var(--foreground-2)", rnd: false }] : []), ...c.items.flatMap((p) => [{ label: p.title, href: p.href, head: false, link: true, pad: c.stack ? "16px" : "0px", color: "var(--muted)", rnd: p.rnd }, ...(p.hasMini ? [{ label: p.miniTitle, href: p.miniHref, head: false, link: true, pad: "16px", color: "var(--foreground-2)", rnd: false }] : [])])])];
+    const mobileSections = [
+      { label: "Products", links: mobProd },
+      { label: "Resources", links: mobPlain(resourceItems.map((r) => [r.label, r.href])) },
+      { label: "Company", links: mobPlain(companyCols.flatMap((c) => c.items.map((i) => [i.label, this.cHref(i.label)]))) },
+    ].map((m) => ({ ...m, open: S.mSec === m.label, sign: S.mSec === m.label ? "−" : "+", toggle: () => this.setState((s) => ({ mSec: s.mSec === m.label ? null : m.label })) }));
+    return {
+      navItems, productCats, resourceItems: resourceItems.map((r, i) => ({ ...r, art: this.resArt(i) })), companyCols, mobileSections,
+      mobBtn: { style: { width: "100%", justifyContent: "space-between", height: 56, fontSize: 18 } }, fullBtn: { style: { width: "100%" } },
+      menuProducts: S.menu === "products", menuResources: S.menu === "resources", menuCompany: S.menu === "company",
+      closeMenu: () => S.menu && this.setState({ menu: null }),
+      notTiny: S.w >= 480, wide: S.w >= 1080, narrow: S.w < 1080,
+      mobileOpen: S.mobile && S.w < 1080, mobileIcon: S.mobile ? "✕" : "☰",
+      toggleMobile: () => this.setState((s) => ({ mobile: !s.mobile })),
+      searchOpen: S.search, openSearch: () => this.openSearch(), closeSearch: () => this.setState({ search: false }),
+      stop: (ev) => ev.stopPropagation(), searchRef: this.searchRef, q: S.q, setQ: (ev) => this.setState({ q: ev.target.value }),
+      suggested: ["QuLabs", "Resources", "Documentation", "Research", "Company"].map((label) => ({ label, pick: () => this.setState({ q: label }) })),
+      results, noResults: results.length === 0,
+      toEnquiry: () => this.go(this.props.enquiryHref || this.route("enquiry"), "enquiry"),
+      toPortal: () => this.go(this.route("portal")), toResources: () => this.go(this.route("resources")), homeHref: this.route("home"), ipsHref: this.route("ips"), ipsCur: cur === "Our IPs" ? "page" : undefined, ipsColor: cur === "Our IPs" ? "var(--brand)" : "var(--foreground)",
+      mcats, mcur, cItems, cGroups, cPanels };
+  }
+}
+</script>
+</body>
+</html>

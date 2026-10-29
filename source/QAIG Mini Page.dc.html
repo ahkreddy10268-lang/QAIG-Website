@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script>
+<script src="qaig-nav-data.js"></script>
+<script src="qaig-product-data.js"></script>
+<script src="qaig-transition.js"></script>
+<script src="qaig-mini-3d.js"></script>
+</helmet>
+<div style="color:var(--foreground);font-family:var(--font-sans)">
+
+<section data-screen-label="01 Mini Hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 55% 65% at 72% 55%,rgba(0,120,190,.24),transparent 70%),radial-gradient(ellipse 40% 40% at 10% 0%,rgba(0,212,255,.08),transparent 70%),var(--base)">
+  <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.28;-webkit-mask-image:radial-gradient(ellipse 55% 70% at 70% 55%,#000,transparent 75%);mask-image:radial-gradient(ellipse 55% 70% at 70% 55%,#000,transparent 75%);pointer-events:none"></div>
+  <div class="section-shell" style="position:relative;display:grid;grid-template-columns:{{ heroCols }};gap:clamp(24px,4vw,64px);align-items:center;min-height:{{ heroMinH }};padding-top:clamp(28px,4vw,56px);padding-bottom:clamp(40px,5vw,72px)">
+    <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+      <nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">
+        <a href="{{ crumbAll }}" style="color:var(--muted)" style-hover="color:var(--foreground)">Products</a><span aria-hidden="true">/</span>
+        <a href="{{ parentHref }}" style="color:var(--muted)" style-hover="color:var(--foreground)">{{ parentName }}</a><span aria-hidden="true">/</span>
+        <span aria-current="page" style="color:var(--foreground-2)">{{ name }}</span>
+      </nav>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px">
+        <span style="display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:5px 10px;border:1px solid var(--brand);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)"><span style="width:6px;height:6px;border-radius:50%;background:var(--brand);box-shadow:0 0 10px var(--brand)"></span>Hardware · Available Now</span>
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ kicker }}</span>
+      </div>
+      <h1 style="margin:0;max-width:13ch;font-size:clamp(2.6rem,1.3rem + 4.2vw,5rem);line-height:.98;letter-spacing:-0.04em;font-weight:600;text-wrap:balance">{{ h1A }} <span style="color:var(--brand)">{{ h1B }}</span></h1>
+      <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ lead }}</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 28px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+        <div><div class="tnum" style="font-size:clamp(2rem,1.5rem + 1.4vw,2.9rem);line-height:1;letter-spacing:-0.035em;font-weight:600">{{ price }}</div><div style="margin-top:8px;font-size:16px;color:var(--muted)">{{ priceNote }}</div></div>
+        <div style="display:flex;flex-direction:column;gap:6px;padding-left:20px;border-left:1px solid var(--border-light)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Software Included</span><span style="font-size:16px;color:var(--foreground-2)">Free for the first 3 months</span></div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ goBuy }}" hint-size="220px,44px">{{ buyLabel }}</x-import>
+        <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ goPlans }}" hint-size="150px,44px">See Plans</x-import>
+      </div>
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 22px">
+        <sc-for list="{{ trust }}" as="t" hint-placeholder-count="3"><li style="display:flex;align-items:center;gap:8px;font-size:16px;color:var(--muted)"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 7.4l2.8 2.8 6.2-6.4" fill="none" stroke="var(--brand)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{ t }}</li></sc-for>
+      </ul>
+    </div>
+    <div style="position:relative;min-width:0">
+      <div ref="{{ stageRef }}" role="img" aria-label="{{ stageAlt }}" style="position:relative;height:{{ stageH }};border-radius:28px;overflow:hidden">
+        <div aria-hidden="true" style="position:absolute;left:50%;top:58%;width:78%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.16),rgba(0,90,160,.06) 45%,transparent 70%);pointer-events:none"></div>
+        <img src="{{ poster }}" alt="" style="position:absolute;inset:8% 6%;width:88%;height:84%;object-fit:contain;opacity:{{ posterOp }};transition:opacity .6s ease;pointer-events:none">
+      </div>
+      <div style="position:relative;margin-top:-8px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+        <div role="group" aria-label="Choose a view" style="display:flex;flex-wrap:wrap;gap:6px">
+          <sc-for list="{{ views }}" as="v" hint-placeholder-count="4"><button type="button" onClick="{{ v.pick }}" aria-pressed="{{ v.on }}" style="min-height:40px;padding:0 14px;border:1px solid {{ v.bd }};border-radius:999px;background:{{ v.bg }};color:{{ v.color }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--brand)">{{ v.label }}</button></sc-for>
+        </div>
+        <span style="display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)"><svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h16M1 6l3-3M1 6l3 3M17 6l-3-3M17 6l-3 3" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"></path></svg>{{ dragHint }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 Why Own It" style="border-bottom:1px solid var(--border)">
+  <div class="section-shell" style="display:grid;grid-template-columns:{{ benCols }};gap:0">
+    <sc-for list="{{ benefits }}" as="b" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;gap:10px;padding:clamp(24px,3vw,40px) clamp(16px,2vw,28px);border-left:{{ b.bl }};border-top:{{ b.bt }}">
+        <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)">{{ b.n }}</span>
+        <h2 style="margin:0;font-size:20px;line-height:1.25;letter-spacing:-0.02em;font-weight:600">{{ b.title }}</h2>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:var(--muted);text-wrap:pretty">{{ b.text }}</p>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="angles" data-screen-label="03 Every Angle" style="padding:clamp(72px,8vw,120px) 0;border-bottom:1px solid var(--border)">
+  <div class="section-shell">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:36px">
+      <div><span class="eyebrow">Every Angle</span><h2 style="margin:20px 0 0;max-width:16ch;font-size:var(--text-h2);line-height:1.08;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ angA }} <span style="color:var(--brand)">{{ angB }}</span></h2></div>
+      <p style="margin:0;max-width:46ch;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ angText }}</p>
+    </div>
+    <div style="position:relative;border:1px solid var(--border-light);border-radius:24px;overflow:hidden;background:radial-gradient(ellipse 50% 55% at 50% 58%,rgba(0,212,255,.13),transparent 70%),linear-gradient(180deg,var(--surface),var(--base))">
+      <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.22;-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 60%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 60% at 50% 60%,#000,transparent 75%)"></div>
+      <div role="img" aria-label="{{ galAlt }}" style="position:relative;height:{{ galH }}">
+        <sc-for list="{{ frames }}" as="f" hint-placeholder-count="1"><img src="{{ f.src }}" alt="" loading="{{ f.load }}" style="position:absolute;inset:6% 8%;width:84%;height:88%;object-fit:contain;opacity:{{ f.op }};transform:scale({{ f.sc }});transition:opacity .5s ease,transform .8s cubic-bezier(.16,1,.3,1)"></sc-for>
+        <span class="tnum" style="position:absolute;left:20px;top:18px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">View {{ fNum }} / {{ fTot }}</span>
+        <div style="position:absolute;right:16px;top:12px;display:flex;gap:8px">
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ fPrev }}" aria-label="Previous view" hint-size="40px,40px">←</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ fNext }}" aria-label="Next view" hint-size="40px,40px">→</x-import>
+        </div>
+      </div>
+      <div role="group" aria-label="Choose a photo" style="position:relative;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:0 16px 16px">
+        <sc-for list="{{ frames }}" as="f" hint-placeholder-count="6"><button type="button" onClick="{{ f.pick }}" aria-label="View {{ f.n }}" aria-pressed="{{ f.on }}" style="position:relative;aspect-ratio:4/3;padding:0;border:1px solid {{ f.bd }};border-radius:12px;background:var(--surface-2);overflow:hidden;cursor:pointer;transition:border-color .2s" style-hover="border-color:var(--brand)"><img src="{{ f.src }}" alt="" loading="lazy" style="position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;opacity:{{ f.thOp }}"></button></sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="04 What You Can Do" style="padding:clamp(72px,8vw,120px) 0;border-bottom:1px solid var(--border)">
+  <div class="section-shell">
+    <span class="eyebrow">Inside the Box</span>
+    <h2 style="margin:20px 0 0;max-width:18ch;font-size:var(--text-h2);line-height:1.08;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ capA }} <span style="color:var(--brand)">{{ capB }}</span></h2>
+    <div style="margin-top:40px;display:grid;grid-template-columns:{{ capCols }};gap:16px">
+      <sc-for list="{{ caps }}" as="c" hint-placeholder-count="3">
+        <article class="card-hover" style="position:relative;display:flex;flex-direction:column;gap:14px;min-height:240px;padding:28px;border:1px solid var(--border-light);border-radius:20px;background:linear-gradient(180deg,rgba(0,212,255,.06),transparent 55%),var(--surface);overflow:hidden" style-hover="border-color:var(--brand)">
+          <span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--brand);border-radius:12px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;color:var(--brand)">{{ c.n }}</span>
+          <h3 style="margin:8px 0 0;font-size:22px;line-height:1.2;letter-spacing:-0.02em;font-weight:600">{{ c.title }}</h3>
+          <p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ c.text }}</p>
+        </article>
+      </sc-for>
+    </div>
+    <ol style="list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:{{ stepCols }};border:1px solid var(--border);border-radius:20px;overflow:hidden">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="3">
+        <li style="display:flex;gap:16px;align-items:flex-start;padding:24px 28px;border-left:{{ s.bl }};border-top:{{ s.bt }};background:var(--surface)">
+          <span class="tnum" style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand);padding-top:4px">STEP {{ s.n }}</span>
+          <div><div style="font-size:18px;font-weight:600;letter-spacing:-0.01em">{{ s.title }}</div><div style="margin-top:6px;font-size:16px;line-height:1.55;color:var(--muted)">{{ s.text }}</div></div>
+        </li>
+      </sc-for>
+    </ol>
+  </div>
+</section>
+
+<section id="plans" data-screen-label="05 Pricing" style="padding:clamp(72px,8vw,120px) 0;border-bottom:1px solid var(--border);scroll-margin-top:100px">
+  <div class="section-shell">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:36px">
+      <div><span class="eyebrow">Pricing</span><h2 style="margin:20px 0 0;max-width:18ch;font-size:var(--text-h2);line-height:1.08;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">One Price for the Hardware. <span style="color:var(--brand)">A Plan for What Comes Next.</span></h2></div>
+      <p style="margin:0;max-width:48ch;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ subLead }}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:{{ priceCols }};gap:16px;align-items:stretch">
+      <article style="position:relative;display:flex;flex-direction:column;gap:20px;padding:clamp(24px,3vw,36px);border:1px solid var(--brand);border-radius:24px;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(0,212,255,.12),transparent 70%),var(--surface);box-shadow:0 30px 80px -60px rgba(0,212,255,.7)">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">The Hardware</span>
+        <div><div style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ name }}</div><div class="tnum" style="margin-top:14px;font-size:clamp(2.4rem,2rem + 1.4vw,3.25rem);line-height:1;letter-spacing:-0.035em;font-weight:600">{{ price }}</div><div style="margin-top:8px;font-size:16px;color:var(--muted)">{{ priceNote }} · Software free for 3 months</div></div>
+        <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--border)">
+          <sc-for list="{{ features }}" as="ft" hint-placeholder-count="5"><li style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:16px;color:var(--foreground-2)"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" style="flex:none"><path d="M2.5 7.4l2.8 2.8 6.2-6.4" fill="none" stroke="var(--brand)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{ ft }}</li></sc-for>
+        </ul>
+        <div style="margin-top:auto"><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ goBuy }}" dc-props="{{ full }}" hint-size="100%,44px">{{ buyLabel }}</x-import></div>
+      </article>
+      <div style="display:flex;flex-direction:column;gap:16px;min-width:0;padding:clamp(20px,2.6vw,32px);border:1px solid var(--border-light);border-radius:24px;background:var(--surface)">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
+          <div style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ subEyebrow }}</div>
+          <div role="group" aria-label="Billing period" style="display:flex;gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
+            <sc-for list="{{ periods }}" as="p" hint-placeholder-count="3"><button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.on }}" style="display:flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border:0;border-radius:7px;background:{{ p.bg }};color:{{ p.color }};font:inherit;font-size:15px;cursor:pointer">{{ p.label }}<sc-if value="{{ p.hasSave }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--font-mono);font-size:13.5px;color:var(--success)">{{ p.save }}</span></sc-if></button></sc-for>
+          </div>
+        </div>
+        <sc-if value="{{ multiTrack }}" hint-placeholder-val="{{ false }}"><div role="group" aria-label="Where it runs" style="display:grid;grid-template-columns:{{ trackCols }};gap:8px">
+          <sc-for list="{{ tracks }}" as="tr" hint-placeholder-count="2"><button type="button" onClick="{{ tr.pick }}" aria-pressed="{{ tr.on }}" style="display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid {{ tr.bd }};border-radius:14px;background:{{ tr.bg }};color:var(--foreground);font:inherit;text-align:left;cursor:pointer;transition:border-color .2s" style-hover="border-color:var(--brand)"><span style="font-size:16px;font-weight:600">{{ tr.label }}</span><span style="font-size:16px;line-height:1.45;color:var(--muted)">{{ tr.line }}</span></button></sc-for>
+        </div></sc-if>
+        <div style="display:grid;grid-template-columns:{{ planCols }};gap:10px">
+          <sc-for list="{{ plans }}" as="pl" hint-placeholder-count="3">
+            <button type="button" onClick="{{ pl.pick }}" aria-pressed="{{ pl.on }}" style="display:flex;flex-direction:column;gap:10px;padding:18px;border:1px solid {{ pl.bd }};border-radius:16px;background:{{ pl.bg }};color:var(--foreground);font:inherit;text-align:left;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--brand)">
+              <span style="font-size:17px;font-weight:600">{{ pl.name }}</span>
+              <span><span class="tnum" style="font-size:26px;font-weight:600;letter-spacing:-0.03em">{{ pl.price }}</span><span style="margin-left:4px;font-size:15px;color:var(--muted)">{{ pl.per }}</span></span>
+              <span style="font-size:16px;line-height:1.45;color:var(--muted)">{{ pl.blurb }}</span>
+              <span style="display:flex;flex-direction:column;gap:6px;padding-top:10px;border-top:1px solid var(--border)"><sc-for list="{{ pl.bullets }}" as="bu" hint-placeholder-count="3"><span style="font-size:16px;line-height:1.4;color:var(--foreground-2)">{{ bu }}</span></sc-for></span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;padding-top:16px;border-top:1px solid var(--border)">
+          <span style="font-size:16px;color:var(--foreground-2)">{{ selSummary }}</span>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ goPlan }}" hint-size="180px,40px">{{ planCta }}</x-import>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 Questions" style="padding:clamp(72px,8vw,120px) 0;border-bottom:1px solid var(--border)">
+  <div class="section-shell" style="display:grid;grid-template-columns:{{ faqCols }};gap:clamp(32px,5vw,80px)">
+    <div style="display:flex;flex-direction:column;gap:20px">
+      <span class="eyebrow">Built For</span>
+      <h2 style="margin:0;max-width:14ch;font-size:var(--text-h2);line-height:1.08;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Questions Before <span style="color:var(--brand)">You Buy</span></h2>
+      <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ bestFor }}" as="bf" hint-placeholder-count="4"><span class="tag" style="font-size:12.5px">{{ bf }}</span></sc-for></div>
+    </div>
+    <div style="border-top:1px solid var(--border)">
+      <sc-for list="{{ faq }}" as="q" hint-placeholder-count="4">
+        <div style="border-bottom:1px solid var(--border)">
+          <button type="button" onClick="{{ q.toggle }}" aria-expanded="{{ q.open }}" style="display:flex;width:100%;align-items:center;justify-content:space-between;gap:16px;min-height:64px;padding:16px 0;border:0;background:none;color:var(--foreground);font:inherit;font-size:18px;font-weight:600;letter-spacing:-0.01em;text-align:left;cursor:pointer">{{ q.q }}<span aria-hidden="true" style="flex:none;font-family:var(--font-mono);font-size:18px;color:var(--brand)">{{ q.sign }}</span></button>
+          <sc-if value="{{ q.isOpen }}" hint-placeholder-val="{{ false }}"><p style="margin:0;padding:0 0 20px;max-width:60ch;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ q.a }}</p></sc-if>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="07 Pair It With" style="padding:clamp(56px,6vw,96px) 0">
+  <div class="section-shell">
+    <span class="eyebrow">Pair It With</span>
+    <div style="margin-top:28px;display:grid;grid-template-columns:{{ pairCols }};gap:16px">
+      <sc-for list="{{ pairs }}" as="pr" hint-placeholder-count="2">
+        <a href="{{ pr.href }}" class="card-hover" style="display:grid;grid-template-columns:{{ pr.cols }};align-items:center;gap:20px;padding:24px;border:1px solid var(--border-light);border-radius:20px;background:var(--surface);color:var(--foreground)" style-hover="border-color:var(--brand);color:var(--foreground)">
+          <sc-if value="{{ pr.hasImg }}" hint-placeholder-val="{{ true }}"><div style="position:relative;aspect-ratio:4/3;border-radius:14px;background:radial-gradient(ellipse 60% 60% at 50% 60%,rgba(0,212,255,.14),transparent 70%),var(--base);overflow:hidden"><img src="{{ pr.img }}" alt="" loading="lazy" style="position:absolute;inset:8%;width:84%;height:84%;object-fit:contain"></div></sc-if>
+          <div style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ pr.kind }}</span><span style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ pr.name }}</span><span style="font-size:16px;line-height:1.55;color:var(--muted)">{{ pr.text }}</span><span style="margin-top:4px;font-size:16px;color:var(--brand)">{{ pr.cta }} →</span></div>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<dc-import name="QAIG Global CTA" product="{{ name }}" eyebrow="{{ ctaEyebrow }}" title-a="{{ ctaA }}" title-b="{{ ctaB }}" text="{{ ctaText }}" ask="What Would You Like to Explore?" options="{{ ctaOptions }}" hint-size="100%,620px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, rm: false, view: "hero", ready: false, failed: false, fi: 0, subT: 0, subP: 30, subSel: "researcher", faq: 0 };
+  stageRef = React.createRef();
+  load(name, file) { if (window[name]) return window[name]; try { const x = new XMLHttpRequest(); x.open("GET", file, false); x.send(); (0, eval)(x.responseText); } catch (e) {} return window[name]; }
+  nav() { return this.load("QAIG_NAV", "qaig-nav-data.js") || {}; }
+  key() { return this.props.product === "qntsim" ? "qntsim" : "q-cluster"; }
+  prod() { const all = this.load("QAIG_PRODUCTS", "qaig-product-data.js") || {}; return all[this.key()] || {}; }
+  go(href) { if (!href) return; if (href.charAt(0) === "#") { const el = document.getElementById(href.slice(1)); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: "smooth" }); return; } if (window.QAIG_GO) window.QAIG_GO(href); else window.location.href = href; }
+  componentDidMount() {
+    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    this.setState({ rm });
+    this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR);
+    this.init3d(rm, 0);
+  }
+  init3d(rm, n) {
+    const host = this.stageRef.current;
+    if (!host || !window.QAIG_MINI3D) { if (n < 40) this._t = setTimeout(() => this.init3d(rm, n + 1), 120); return; }
+    if (this._init3d) return; this._init3d = true;
+    const m = this.prod().mini || {};
+    window.QAIG_MINI3D(host, { kind: m.slug, reducedMotion: rm, onReady: () => { if (!this._dead) this.setState({ ready: true }); }, onFail: () => this.setState({ failed: true }) })
+      .then((api) => { if (this._dead) { api.destroy(); return; } this.api = api; this.setState({ ready: true }); })
+      .catch(() => this.setState({ failed: true }));
+  }
+  componentWillUnmount() { this._dead = true; clearTimeout(this._t); if (this.api) this.api.destroy(); window.removeEventListener("resize", this.onR); }
+  copy(k) {
+    return k === "qntsim" ? {
+      h1A: "Your Quantum Network,", h1B: "Running on Your Bench",
+      benefits: [["Hardware-in-the-Loop", "Run network simulations that connect to the real devices in your lab."], ["Direct Device Integration", "Connect the unit directly to your lab equipment."], ["Onsite Calibration", "Our team installs and calibrates the unit at your site."], ["1-Year Warranty", "The hardware is covered by a one-year warranty."]],
+      angA: "Small Enough for the Bench.", angB: "Built for the Lab.", angText: "Six views of the QNTSim Mini. Use the 3D model above to turn it yourself.",
+      capA: "A Complete Quantum Network Lab,", capB: "in One Unit",
+      caps: [["Complete Software Stack", "The QNTSim network simulator, installed and ready to run on the unit."], ["Entanglement and QKD Protocols", "Generate, purify and swap entanglement across nodes, and run key distribution protocols."], ["Physics-Grounded Outputs", "See how coherence time, detector efficiency and noise change each result."]],
+      steps: [["Order", "Choose the QNTSim Mini and tell us about your lab."], ["Install and Calibrate", "Our team installs the unit and calibrates it with your devices."], ["Simulate", "Build topologies and run protocols. Software is free for the first 3 months."]],
+      faqLocal: "The QNTSim Mini runs locally and connects directly to your lab devices. Your plan covers the software on the unit itself.",
+      pairText: "The full quantum network simulator for classrooms and research labs, in the cloud or on premises.",
+      ctaA: "Bring Quantum Networking", ctaB: "Onto Your Bench", ctaText: "Tell us about your lab and devices. We'll confirm availability, installation and the plan that fits."
+    } : {
+      h1A: "A Quantum Lab", h1B: "That Fits on Your Desk",
+      benefits: [["Zero Cloud Dependency", "Circuits run on the unit itself, so no data leaves your site."], ["Complete Software Stack", "The Q-Cluster software comes included and ready to run on the unit."], ["Onsite Installation", "Our team installs and sets up the unit at your site."], ["1-Year Warranty", "The hardware is covered by a one-year warranty."]],
+      angA: "Compact Outside.", angB: "A Quantum Lab Inside.", angText: "Six views of the Q-Cluster Mini. Use the 3D model above to turn it yourself.",
+      capA: "Everything You Need to Start", capB: "Building Quantum Circuits",
+      caps: [["Personal, Portable Hardware", "A compact unit for a desk, a lab bench or a classroom."], ["10 Essential Algorithms", "A curated set of 10 essential quantum algorithms, ready to run and study."], ["Per-Gate Noise Modelling", "Apply noise gate by gate and see how a real processor would change your results."]],
+      steps: [["Order", "Choose the Q-Cluster Mini and tell us where it will be used."], ["Install", "Our team sets up the unit and the software at your site."], ["Build", "Design and simulate circuits. Software is free for the first 3 months."]],
+      faqLocal: "No. The Q-Cluster Mini runs locally with zero cloud dependency. Your plan covers the software on the unit itself.",
+      pairText: "The full quantum simulation platform for teaching, research and enterprise R&D, on CPU, GPU and HPC.",
+      ctaA: "Put a Quantum Lab", ctaB: "on Your Desk", ctaText: "Tell us who will use the Q-Cluster Mini and where. We'll confirm availability, installation and the plan that fits."
+    };
+  }
+  renderVals() {
+    const S = this.state, w = S.w, desk = w >= 1024, mob = w < 640, k = this.key(), p = this.prod(), m = p.mini || {}, C = this.copy(k), nav = this.nav(), R = nav.routes || {}, PH = nav.productHref || {};
+    const pad = (i) => String(i + 1).padStart(2, "0"), inr = (n) => "₹" + Math.round(n).toLocaleString("en-IN");
+    const enq = R.enquiry || "Discuss Your Requirement.dc.html", enqFor = (extra) => enq + "?product=" + encodeURIComponent(m.name || "") + (extra ? "&" + extra : "");
+    const photos = m.photos || [], fi = S.fi % Math.max(1, photos.length);
+    const setF = (i) => this.setState({ fi: (i + photos.length) % photos.length });
+    const viewDefs = [["hero", "3/4"], ["front", "Front"], ["side", "Side"], ["top", "Top"]];
+    const sb = m.subs || {}, tracks = sb.tracks || [], ti = Math.min(Math.max(0, tracks.length - 1), S.subT), tr = tracks[ti] || { plans: [] };
+    const pers = sb.periods || [[30, "Monthly", 1, 0]], per = pers.find((x) => x[0] === S.subP) || pers[0], plans = tr.plans || [], sel = plans.find((x) => x.k === S.subSel) || plans[1] || plans[0] || {};
+    const other = k === "qntsim" ? "q-cluster" : "qntsim", all = window.QAIG_PRODUCTS || {}, om = (all[other] || {}).mini || {};
+    return {
+      name: m.name, kicker: m.kicker, h1A: C.h1A, h1B: C.h1B, lead: m.line, price: m.price, priceNote: m.priceNote,
+      crumbAll: R.products || "Products.dc.html", parentName: p.name, parentHref: PH[p.name] || R.products,
+      buyLabel: m.cta || "Buy " + m.name, goBuy: () => this.go(enqFor("interest=" + encodeURIComponent("Buy " + m.name))), goPlans: () => this.go("#plans"),
+      trust: ["1-Year Hardware Warranty", k === "qntsim" ? "Onsite Installation and Calibration" : "Onsite Installation and Setup", k === "qntsim" ? "Direct Device Integration" : "Zero Cloud Dependency"],
+      heroCols: desk ? "minmax(0,5fr) minmax(0,6fr)" : "minmax(0,1fr)", heroMinH: desk ? "min(760px,calc(100vh - 85px))" : "0px",
+      stageRef: this.stageRef, stageH: desk ? "clamp(440px,42vw,600px)" : mob ? "320px" : "440px", poster: photos[0] || "", posterOp: S.ready ? 0 : 1,
+      stageAlt: "Interactive 3D model of the " + m.name + ". Drag to rotate, or choose a view below.",
+      dragHint: S.failed ? "Photo view" : mob ? "Swipe to Rotate" : "Drag to Rotate",
+      views: S.failed ? [] : viewDefs.map(([id, label]) => { const on = S.view === id; return { label, on: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border-light)", bg: on ? "var(--brand-soft)" : "transparent", color: on ? "var(--foreground)" : "var(--foreground-2)", pick: () => { this.setState({ view: id }); if (this.api) this.api.setView(id); } }; }),
+      benCols: desk ? "repeat(4,minmax(0,1fr))" : mob ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))",
+      benefits: C.benefits.map(([title, text], i) => { const cols = desk ? 4 : mob ? 1 : 2; return { n: pad(i), title, text, bl: i % cols === 0 ? "0" : "1px solid var(--border)", bt: i >= cols ? "1px solid var(--border)" : "0" }; }),
+      angA: C.angA, angB: C.angB, angText: C.angText, galAlt: (m.photoAlt || m.name) + ", view " + (fi + 1) + " of " + photos.length, galH: desk ? "clamp(380px,40vw,560px)" : mob ? "280px" : "400px",
+      frames: photos.map((src, i) => { const on = i === fi; return { src, n: i + 1, on: on ? "true" : "false", op: on ? 1 : 0, sc: on ? 1 : 0.97, load: i === 0 ? "eager" : "lazy", bd: on ? "var(--brand)" : "var(--border)", thOp: on ? 1 : 0.6, pick: () => setF(i) }; }),
+      fNum: pad(fi), fTot: pad(photos.length - 1), fPrev: () => setF(fi - 1), fNext: () => setF(fi + 1),
+      capA: C.capA, capB: C.capB, capCols: w >= 900 ? "repeat(3,minmax(0,1fr))" : "minmax(0,1fr)",
+      caps: C.caps.map(([title, text], i) => ({ n: pad(i), title, text })),
+      stepCols: w >= 900 ? "repeat(3,minmax(0,1fr))" : "minmax(0,1fr)",
+      steps: C.steps.map(([title, text], i) => ({ n: pad(i), title, text, bl: w >= 900 && i > 0 ? "1px solid var(--border)" : "0", bt: w < 900 && i > 0 ? "1px solid var(--border)" : "0" })),
+      subLead: sb.lead, subEyebrow: sb.eyebrow || "After Your 3 Free Months", features: m.features || [], full: { style: { width: "100%" } },
+      priceCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", trackCols: mob ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))", planCols: w >= 760 ? "repeat(3,minmax(0,1fr))" : "minmax(0,1fr)",
+      periods: pers.map(([d, label, , disc]) => { const on = d === per[0]; return { label, on: on ? "true" : "false", bg: on ? "var(--surface-3)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", hasSave: !!disc, save: disc ? "−" + Math.round(disc * 100) + "%" : "", pick: () => this.setState({ subP: d }) }; }),
+      multiTrack: tracks.length > 1,
+      tracks: tracks.map((x, i) => { const on = i === ti; return { label: x.label, line: x.line, on: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "transparent", pick: () => this.setState({ subT: i }) }; }),
+      plans: plans.map((x) => { const on = x.k === sel.k, mo = x.price != null ? x.price * (1 - per[3]) : null; return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], price: mo != null ? inr(mo) : "Custom", per: mo != null ? "/ month" : "", on: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--base)", pick: () => this.setState({ subSel: x.k }) }; }),
+      selSummary: (sel.name || "") + " · " + per[1] + (sel.price != null ? " · " + inr(sel.price * (1 - per[3]) * per[2]) + (per[2] > 1 ? " every " + (per[2] === 12 ? "12 months" : per[2] + " months") : " a month") : " · Priced for your contract"),
+      planCta: sel.price != null ? "Choose " + sel.name : "Discuss " + sel.name,
+      goPlan: () => this.go(enqFor("plan=" + encodeURIComponent((sel.name || "") + " · " + per[1]))),
+      faqCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", bestFor: m.bestFor || [],
+      faq: [
+        ["What does the " + (m.price || "") + " cover?", "The " + m.name + " hardware, the complete software stack, " + (k === "qntsim" ? "onsite installation and calibration" : "onsite installation and setup") + ", and a 1-year hardware warranty."],
+        ["What happens after the first 3 months?", sb.lead || ""],
+        [k === "qntsim" ? "Can it work with my lab equipment?" : "Does any data leave my site?", C.faqLocal],
+        ["Who is it for?", "Researchers, universities, startups and academic labs that want " + (k === "qntsim" ? "quantum network simulation" : "quantum simulation") + " on hardware they own."]
+      ].map(([q, a], i) => { const open = S.faq === i; return { q, a, isOpen: open, open: open ? "true" : "false", sign: open ? "−" : "+", toggle: () => this.setState({ faq: open ? -1 : i }) }; }),
+      pairCols: w >= 900 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
+      pairs: [
+        { kind: "The Platform", name: p.name, text: C.pairText, cta: "Explore " + p.name, href: PH[p.name] || R.products, hasImg: !!p.logo, img: p.logo, cols: mob ? "minmax(0,1fr)" : "160px minmax(0,1fr)" },
+        { kind: "Also in the Mini Range", name: om.name || "", text: om.line || "", cta: "Explore " + (om.name || ""), href: PH[om.name] || R.products, hasImg: !!(om.photos || [])[0], img: (om.photos || [])[0], cols: mob ? "minmax(0,1fr)" : "160px minmax(0,1fr)" }
+      ],
+      ctaEyebrow: "Start With " + m.name, ctaA: C.ctaA, ctaB: C.ctaB, ctaText: C.ctaText,
+      ctaOptions: ["Buy " + (m.name || ""), "Subscription Plans", "Installation", "Product Demo"]
+    };
+  }
+}
+</script>
+</body>
+</html>

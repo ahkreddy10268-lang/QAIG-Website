@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script>
+<script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}input::placeholder,textarea::placeholder{color:var(--faint)}select option{background:#0b111c;color:#e6edf5}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
+
+<dc-import name="QAIG Global Navbar" current="Company" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<section data-screen-label="01 Work With Us Hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+  <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 20% 0%,#000,transparent);mask-image:radial-gradient(ellipse 70% 80% at 20% 0%,#000,transparent)"></div>
+  <div class="section-shell" style="position:relative;display:grid;grid-template-columns:{{ heroCols }};align-items:center;gap:clamp(40px,5vw,72px);padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(56px,7vw,104px)">
+    <div style="display:flex;flex-direction:column;gap:28px;min-width:0">
+      <nav aria-label="Breadcrumb" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:15px;color:var(--muted)"><a href="{{ companyHref }}" style="color:var(--muted)" style-hover="color:var(--foreground)">Company</a><span aria-hidden="true" style="color:var(--muted)">/</span><span style="color:var(--foreground)">Work With Us</span></nav>
+      <h1 style="margin:0;max-width:13ch;font-size:clamp(2.6rem,1.4rem + 4vw,4.75rem);line-height:1;letter-spacing:-0.04em;font-weight:600;text-wrap:balance">Build Quantum Technology <span style="color:var(--brand)">With Us.</span></h1>
+      <p style="margin:0;max-width:50ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Join our research, engineering, technology and business teams or work with us through research, academic, industry and technology collaborations.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ goCareers }}" hint-size="180px,44px">Explore Careers</x-import>
+        <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ goCollab }}" hint-size="220px,44px">Explore Collaborations</x-import>
+      </div>
+      <dl style="margin:8px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--border)">
+        <sc-for list="{{ facts }}" as="f" hint-placeholder-count="3">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:18px 16px 0 0"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ f.k }}</dt><dd class="tnum" style="margin:0;font-size:clamp(1.25rem,1rem + .8vw,1.75rem);font-weight:600;letter-spacing:-0.02em">{{ f.v }}</dd></div>
+        </sc-for>
+      </dl>
+    </div>
+    <div style="position:relative;min-width:0;padding-bottom:{{ collagePad }}">
+      <div style="position:relative;aspect-ratio:4/3;border-radius:20px;overflow:hidden;border:1px solid var(--border-light);background:var(--surface-2)">
+        <img src="assets/company/gallery/g9-team-office.jpg" alt="Quantum AI Global team members working together in the office" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,8,14,.75))"></div>
+        <span style="position:absolute;left:18px;bottom:16px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 01 · The Team</span>
+      </div>
+      <sc-if value="{{ showInset }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;left:{{ insetLeft }};bottom:0;width:42%;aspect-ratio:1/1;border-radius:16px;overflow:hidden;border:1px solid var(--border-light);box-shadow:var(--shadow-lg);background:var(--surface-2)">
+          <img src="assets/company/gallery/g7-workbench.jpg" alt="Lab workbench with optical and electronic instruments" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<nav aria-label="Work With Us chapters" style="position:sticky;top:85px;z-index:40;border-bottom:1px solid var(--border);background:var(--nav-surface);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4)">
+  <div class="section-shell" role="tablist" aria-label="Choose a path" onKeyDown="{{ tabKey }}" style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr))">
+    <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2">
+      <button id="wtab-{{ t.id }}" role="tab" aria-selected="{{ t.sel }}" aria-controls="wpanel" tabIndex="{{ t.tab }}" onClick="{{ t.pick }}" style="position:relative;display:flex;align-items:center;gap:14px;min-height:68px;padding:0 4px;border:0;background:transparent;color:{{ t.color }};font:inherit;text-align:left;cursor:pointer;transition:color .25s" style-hover="color:var(--foreground)">
+        <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ t.ic }}">{{ t.n }}</span>
+        <span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:17px;font-weight:600">{{ t.label }}</span><sc-if value="{{ showTabSub }}" hint-placeholder-val="{{ true }}"><span style="font-size:15px;color:var(--muted)">{{ t.sub }}</span></sc-if></span>
+        <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--brand);transform:scaleX({{ t.bar }});transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)"></span>
+      </button>
+    </sc-for>
+  </div>
+</nav>
+
+<div id="wpanel" role="tabpanel" aria-labelledby="wtab-{{ page }}">
+
+<sc-if value="{{ isCareers }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="02 Careers · Why Work Here" style="padding:clamp(80px,9vw,140px) 0 clamp(56px,6vw,88px)">
+    <div class="section-shell">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 64px">
+        <div style="flex:1 1 520px;min-width:0"><span class="eyebrow">Careers</span><h2 style="margin:24px 0 0;max-width:16ch;font-size:var(--text-h2);line-height:1.06;letter-spacing:-0.032em;font-weight:600;text-wrap:balance">Build What <span style="color:var(--brand)">Comes Next.</span></h2></div>
+        <p style="flex:0 1 420px;margin:0;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">Work on real quantum technology problems across research, engineering, software and product development, with colleagues in India, the US and the UAE.</p>
+      </div>
+      <div style="margin-top:56px;display:grid;grid-template-columns:{{ pillarCols }};border-top:1px solid var(--border);border-left:1px solid var(--border)">
+        <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="4">
+          <div style="display:flex;flex-direction:column;gap:14px;padding:28px 24px 32px;border-right:1px solid var(--border);border-bottom:1px solid var(--border)">
+            <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)">{{ p.n }}</span>
+            <h3 style="margin:0;font-size:20px;line-height:1.25;letter-spacing:-0.015em;font-weight:600">{{ p.t }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ p.d }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Careers · Teams" style="padding:0 0 clamp(56px,6vw,88px)">
+    <div class="section-shell">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid var(--border)"><h2 style="margin:0;font-size:var(--text-h3);letter-spacing:-0.02em;font-weight:600">Teams</h2><span style="font-size:15px;color:var(--muted)">Select a team to start an application for it.</span></div>
+      <div style="display:flex;flex-direction:column">
+        <sc-for list="{{ teams }}" as="t" hint-placeholder-count="4">
+          <button type="button" onClick="{{ t.pick }}" aria-pressed="{{ t.sel }}" style="display:grid;grid-template-columns:{{ teamCols }};align-items:center;gap:8px 32px;padding:24px 0;border:0;border-bottom:1px solid var(--border);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .25s" style-hover="background:var(--surface)">
+            <span style="display:flex;align-items:center;gap:16px;min-width:0"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ t.ic }}">{{ t.n }}</span><span style="font-size:clamp(1.25rem,1rem + .7vw,1.6rem);font-weight:600;letter-spacing:-0.02em;color:{{ t.color }}">{{ t.t }}</span></span>
+            <span style="font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ t.d }}</span>
+            <span style="display:flex;align-items:center;justify-content:flex-end;gap:8px;font-size:15px;font-weight:600;color:var(--brand);white-space:nowrap">{{ t.cta }}<span aria-hidden="true">→</span></span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="apply" data-screen-label="04 Careers · Open Application" style="padding:0 0 clamp(80px,9vw,140px);scroll-margin-top:160px">
+    <div class="section-shell" style="display:grid;grid-template-columns:{{ applyCols }};gap:clamp(24px,3vw,40px);align-items:start">
+      <div style="display:flex;flex-direction:column;gap:20px;padding:clamp(24px,3vw,36px);border:1px solid var(--border);border-radius:20px;background:var(--surface)">
+        <span style="align-self:flex-start;padding:4px 10px;border:1px solid var(--border-light);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Open Roles · 00</span>
+        <h2 style="margin:0;font-size:var(--text-h3);line-height:1.15;letter-spacing:-0.02em;font-weight:600">No Open Roles Right Now</h2>
+        <p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">There are no positions posted at the moment.</p>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">Send an open application. We keep it on file and contact you when a role matches your background.</p>
+      </div>
+
+      <div style="padding:clamp(24px,3vw,40px);border:1px solid var(--border-light);border-radius:20px;background:var(--surface)">
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ submit }}" noValidate="{{ true }}" style="display:flex;flex-direction:column;gap:22px">
+            <div><span class="eyebrow">Open Application</span><h2 style="margin:14px 0 0;font-size:var(--text-h3);letter-spacing:-0.02em;font-weight:600">Tell Us About Yourself</h2></div>
+            <div style="display:grid;grid-template-columns:{{ fieldCols }};gap:18px">
+              <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15px;font-weight:500;color:var(--foreground-2)">Full Name</span><input value="{{ fv.name }}" onChange="{{ on.name }}" autoComplete="name" aria-invalid="{{ fe.nameInv }}" style="height:46px;padding:0 14px;border:1px solid {{ fe.nameBd }};border-radius:10px;background:var(--surface-2);color:var(--foreground);font:inherit;font-size:16px"><sc-if value="{{ fe.nameErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14.5px;color:var(--danger)">Enter your full name.</span></sc-if></label>
+              <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15px;font-weight:500;color:var(--foreground-2)">Email</span><input type="email" value="{{ fv.email }}" onChange="{{ on.email }}" autoComplete="email" aria-invalid="{{ fe.emailInv }}" style="height:46px;padding:0 14px;border:1px solid {{ fe.emailBd }};border-radius:10px;background:var(--surface-2);color:var(--foreground);font:inherit;font-size:16px"><sc-if value="{{ fe.emailErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14.5px;color:var(--danger)">Enter a valid email address.</span></sc-if></label>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px"><span id="team-lbl" style="font-size:15px;font-weight:500;color:var(--foreground-2)">Team</span>
+              <div role="radiogroup" aria-labelledby="team-lbl" style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ teamOpts }}" as="o" hint-placeholder-count="4"><button type="button" role="radio" aria-checked="{{ o.sel }}" onClick="{{ o.pick }}" style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid {{ o.bd }};border-radius:8px;background:{{ o.bg }};color:{{ o.color }};font:inherit;font-size:15px;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--border-strong)">{{ o.t }}</button></sc-for></div>
+              <sc-if value="{{ fe.teamErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14.5px;color:var(--danger)">Choose the team you're interested in.</span></sc-if>
+            </div>
+            <div style="display:grid;grid-template-columns:{{ fieldCols }};gap:18px">
+              <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15px;font-weight:500;color:var(--foreground-2)">Location</span><select value="{{ fv.loc }}" onChange="{{ on.loc }}" style="height:46px;padding:0 12px;border:1px solid var(--border-control);border-radius:10px;background:var(--surface-2);color:var(--foreground);font:inherit;font-size:16px"><option value="India">India</option><option value="United States">United States</option><option value="UAE">UAE</option><option value="Elsewhere">Elsewhere</option></select></label>
+              <label style="display:flex;flex-direction:column;gap:8px;min-width:0"><span style="font-size:15px;font-weight:500;color:var(--foreground-2)">LinkedIn or Portfolio <span style="font-weight:400;color:var(--muted)">(Optional)</span></span><input type="url" value="{{ fv.url }}" onChange="{{ on.url }}" placeholder="https://" style="height:46px;padding:0 14px;border:1px solid var(--border-control);border-radius:10px;background:var(--surface-2);color:var(--foreground);font:inherit;font-size:16px"></label>
+            </div>
+            <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:15px;font-weight:500;color:var(--foreground-2)">What Would You Like to Work On?</span><textarea rows="4" value="{{ fv.msg }}" onChange="{{ on.msg }}" aria-invalid="{{ fe.msgInv }}" style="padding:12px 14px;border:1px solid {{ fe.msgBd }};border-radius:10px;background:var(--surface-2);color:var(--foreground);font:inherit;font-size:16px;line-height:1.55;resize:vertical"></textarea><sc-if value="{{ fe.msgErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14.5px;color:var(--danger)">Add a short note, at least 20 characters.</span></sc-if></label>
+            <label style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px;border:1px dashed var(--border-strong);border-radius:12px;cursor:pointer" style-hover="border-color:var(--brand)"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:15.5px;font-weight:500">{{ cvLabel }}</span><span style="font-size:14.5px;color:var(--muted)">PDF or DOCX, up to 5 MB. Optional.</span></span><span style="flex:none;font-size:15px;font-weight:600;color:var(--brand)">{{ cvAction }}</span><input type="file" accept=".pdf,.doc,.docx" onChange="{{ on.cv }}" style="position:absolute;width:1px;height:1px;opacity:0"></label>
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:6px"><span style="max-width:40ch;font-size:14.5px;line-height:1.5;color:var(--muted)">We use these details only to assess your application. See our <a href="{{ privacyHref }}">Privacy Policy</a>.</span><x-import component-from-global-scope="QAIG.Button" type="submit" size="lg" hint-size="200px,44px">Send Application</x-import></div>
+          </form>
+        </sc-if>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div role="status" style="display:flex;flex-direction:column;gap:18px;padding:12px 0">
+            <span aria-hidden="true" style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:var(--brand-soft);color:var(--brand)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></span>
+            <h2 style="margin:0;font-size:var(--text-h3);letter-spacing:-0.02em;font-weight:600">Application Received</h2>
+            <p style="margin:0;max-width:52ch;font-size:16.5px;line-height:1.6;color:var(--foreground-2)">Thank you, {{ fv.name }}. Your application for the {{ fv.team }} team is on file. We'll write to {{ fv.email }} when a role matches your background.</p>
+            <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--muted)">Reference · {{ ref }}</span>
+            <div><x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ reset }}" hint-size="200px,40px">Send Another Application</x-import></div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isCollab }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="02 Collaborations · Models" style="padding:clamp(80px,9vw,140px) 0 clamp(56px,6vw,88px)">
+    <div class="section-shell">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 64px">
+        <div style="flex:1 1 520px;min-width:0"><span class="eyebrow">Collaborations</span><h2 style="margin:24px 0 0;max-width:17ch;font-size:var(--text-h2);line-height:1.06;letter-spacing:-0.032em;font-weight:600;text-wrap:balance">Build Quantum Technology <span style="color:var(--brand)">Together.</span></h2></div>
+        <p style="flex:0 1 420px;margin:0;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">Collaborate with Quantum AI Global across research, technology, education and enterprise innovation. We work with 40+ partners across government, industry and academia.</p>
+      </div>
+
+      <div style="margin-top:56px;display:grid;grid-template-columns:{{ modelCols }};border:1px solid var(--border);border-radius:20px;background:var(--surface);overflow:hidden">
+        <div role="tablist" aria-label="Collaboration models" aria-orientation="vertical" onKeyDown="{{ modelKey }}" style="display:flex;flex-direction:{{ modelDir }};overflow-x:auto;scrollbar-width:none;border-right:{{ modelBR }};border-bottom:{{ modelBB }}">
+          <sc-for list="{{ models }}" as="m" hint-placeholder-count="4">
+            <button id="wm-{{ m.i }}" role="tab" aria-selected="{{ m.sel }}" tabIndex="{{ m.tab }}" onClick="{{ m.pick }}" style="position:relative;flex:{{ modelFlex }};display:flex;align-items:center;gap:14px;min-height:72px;padding:0 24px;border:0;border-bottom:{{ m.bb }};background:{{ m.bg }};color:{{ m.color }};font:inherit;text-align:left;white-space:nowrap;cursor:pointer;transition:background .25s,color .25s" style-hover="color:var(--foreground)">
+              <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--brand);opacity:{{ m.bar }}"></span>
+              <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ m.ic }}">{{ m.n }}</span><span style="font-size:17px;font-weight:600">{{ m.t }}</span>
+            </button>
+          </sc-for>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px;padding:clamp(24px,3.2vw,44px);min-width:0">
+          <div style="display:flex;flex-direction:column;gap:12px"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ model.n }} · {{ model.t }}</span><p style="margin:0;max-width:52ch;font-size:clamp(1.15rem,1rem + .4vw,1.35rem);line-height:1.5;color:var(--foreground);text-wrap:pretty">{{ model.d }}</p></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Typical Areas · Select Any</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ model.areas }}" as="a" hint-placeholder-count="3"><button type="button" aria-pressed="{{ a.sel }}" onClick="{{ a.toggle }}" style="display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid {{ a.bd }};border-radius:8px;background:{{ a.bg }};color:{{ a.color }};font:inherit;font-size:15px;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--border-strong)"><span aria-hidden="true" style="color:var(--brand);opacity:{{ a.chk }}">✓</span>{{ a.t }}</button></sc-for></div>
+          </div>
+          <div style="margin-top:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;padding-top:20px;border-top:1px solid var(--border)"><span style="font-size:15.5px;color:var(--muted)">{{ selSummary }}</span><x-import component-from-global-scope="QAIG.Button" onClick="{{ propose }}" hint-size="220px,40px">Propose a Collaboration →</x-import></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="03 Collaborations · Areas" style="padding:0 0 clamp(80px,9vw,140px)">
+    <div class="section-shell">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid var(--border)"><h2 style="margin:0;font-size:var(--text-h3);letter-spacing:-0.02em;font-weight:600">Collaboration Opportunities</h2><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted)">{{ selCount }} SELECTED</span></div>
+      <div style="margin-top:24px;display:grid;grid-template-columns:{{ areaCols }};gap:12px">
+        <sc-for list="{{ areas }}" as="a" hint-placeholder-count="8">
+          <div style="position:relative;display:flex;flex-direction:column;gap:12px;padding:22px;border:1px solid {{ a.bd }};border-radius:16px;background:{{ a.bg }};transition:border-color .25s,background .25s">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)">{{ a.n }}</span><button type="button" aria-pressed="{{ a.sel }}" aria-label="{{ a.aria }}" onClick="{{ a.toggle }}" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid {{ a.cbd }};border-radius:8px;background:{{ a.cbg }};color:{{ a.mcol }};font:inherit;font-size:15px;font-weight:700;cursor:pointer">{{ a.mark }}</button></div>
+            <h3 style="margin:0;font-size:18px;line-height:1.3;font-weight:600">{{ a.t }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.55;color:var(--muted);text-wrap:pretty">{{ a.d }}</p>
+            <sc-if value="{{ a.hasDom }}" hint-placeholder-val="{{ false }}"><a href="{{ a.domHref }}" style="margin-top:auto;padding-top:4px;font-size:15px;font-weight:600">{{ a.domLabel }} →</a></sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+</sc-if>
+</div>
+
+<dc-import name="QAIG Global CTA" hint-size="100%,620px"></dc-import>
+<dc-import name="QAIG Global Footer" after-cta="true" hint-size="100%,760px"></dc-import>
+</div>
+</x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, page: "careers", team: "", f: { name: "", email: "", loc: "India", url: "", msg: "" }, cv: "", tried: false, sent: false, ref: "", model: 0, sel: [] };
+  nav() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (e) {} return window.QAIG_NAV || { routes: {}, cats: [] }; }
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR);
+    const q = new URLSearchParams(window.location.search).get("page"); if (q === "collaborations" || q === "careers") this.setState({ page: q });
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onR); }
+  setPage(p, scroll) {
+    this.setState({ page: p });
+    try { const u = new URL(window.location.href); u.searchParams.set("page", p); history.replaceState(null, "", u); } catch (e) {}
+    if (scroll) { const el = document.getElementById("wpanel"); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150 }); }
+  }
+  renderVals() {
+    const S = this.state, D = this.nav(), R = D.routes || {}, w = S.w, desk = w >= 1024, mob = w < 640;
+    const pad = (n) => String(n).padStart(2, "0");
+    const TEAMS = [["Research", "Quantum science and applied research across communication, sensing, security and simulation."], ["Engineering", "Hardware, photonics and device engineering for laboratory and field instruments."], ["Software and Simulation", "Quantum software, algorithms and simulation platforms such as Q-Cluster and QNTSim."], ["Business", "Product, partnerships and programmes that take quantum technology to customers."]];
+    const f = S.f, emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim()), nameOk = f.name.trim().length > 1, msgOk = f.msg.trim().length >= 20, teamOk = !!S.team, t = S.tried;
+    const set = (k) => (e) => { const v = e.target.value; this.setState((s) => ({ f: { ...s.f, [k]: v } })); };
+    const toApply = () => { const el = document.getElementById("apply"); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 150 }); };
+    const MODELS = [
+      ["Research and Academia", "Joint research, experiments and teaching with universities and institutes.", [0, 2, 6]],
+      ["Industry", "Applied projects and product development with companies.", [5, 7, 4]],
+      ["Technology", "Joint engineering across quantum hardware, software, sensing, communication and security.", [1, 2, 3, 4]],
+      ["Ecosystem", "Programmes with government bodies that build India's quantum technology capacity.", [6, 7, 0]]];
+    const AREAS = [["Quantum Research", "Joint research programmes across quantum computing and theory.", ""], ["Hardware Development", "Collaborate on quantum hardware and device engineering.", "LSR"], ["Software and Simulation", "Build quantum software, algorithms and simulation tools.", "QIS"], ["Quantum Communication", "Advance quantum networking and secure communication.", "NET"], ["Quantum Sensing", "Develop precision quantum sensing technologies.", "SEN"], ["Post-Quantum Security", "Work on post-quantum cryptography and security solutions.", "PQC"], ["Education and Workforce", "Build quantum education programmes and talent pipelines.", ""], ["Enterprise Innovation", "Explore quantum applications for enterprise and industry.", ""]];
+    const catBy = {}; (D.cats || []).forEach((c) => { catBy[c.code] = c; });
+    const toggle = (i) => () => this.setState((s) => ({ sel: s.sel.includes(i) ? s.sel.filter((x) => x !== i) : [...s.sel, i] }));
+    const m = MODELS[S.model], nM = MODELS.length;
+    const selNames = S.sel.map((i) => AREAS[i][0]);
+    return {
+      page: S.page, isCareers: S.page === "careers", isCollab: S.page === "collaborations",
+      companyHref: R.about || "#", privacyHref: R.privacy || "#",
+      heroCols: desk ? "minmax(0,7fr) minmax(0,5fr)" : "minmax(0,1fr)", showInset: w >= 760, insetLeft: desk ? "-28px" : "20px", collagePad: w >= 760 ? "56px" : "0px",
+      facts: [{ k: "People", v: "75+" }, { k: "Offices", v: "India · US · UAE" }, { k: "Partners", v: "40+" }],
+      goCareers: () => this.setPage("careers", true), goCollab: () => this.setPage("collaborations", true),
+      showTabSub: w >= 760,
+      tabs: [["careers", "Careers", "Join our research, engineering and business teams"], ["collaborations", "Collaborations", "Research, industry and technology partnerships"]].map(([id, label, sub], i) => { const on = S.page === id; return { id, label, sub, n: pad(i + 1), sel: on ? "true" : "false", tab: on ? 0 : -1, color: on ? "var(--foreground)" : "var(--muted)", ic: on ? "var(--brand)" : "var(--faint)", bar: on ? 1 : 0, pick: () => this.setPage(id) }; }),
+      tabKey: (e) => { if (e.key === "ArrowRight" || e.key === "ArrowLeft") { e.preventDefault(); const nx = S.page === "careers" ? "collaborations" : "careers"; this.setPage(nx); setTimeout(() => { const b = document.getElementById("wtab-" + nx); b && b.focus(); }, 0); } },
+      pillarCols: w >= 1024 ? "repeat(4,minmax(0,1fr))" : w >= 640 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
+      pillars: [["Deep-Tech Research", "Work on applied research in quantum communication, sensing, security and simulation."], ["Product-Driven Development", "Take designs from the lab bench to products customers use."], ["Global Impact", "Work with colleagues across India, the US and the UAE."], ["Mission-Led Work", "Contribute to the research our team publishes."]].map(([tt, d], i) => ({ n: pad(i + 1), t: tt, d })),
+      teamCols: desk ? "minmax(0,4fr) minmax(0,6fr) 200px" : "minmax(0,1fr)",
+      teams: TEAMS.map(([tt, d], i) => { const on = S.team === tt; return { n: pad(i + 1), t: tt, d, sel: on ? "true" : "false", color: on ? "var(--brand)" : "var(--foreground)", ic: on ? "var(--brand)" : "var(--faint)", cta: on ? "Selected" : "Apply to " + (tt === "Software and Simulation" ? "Software" : tt), pick: () => { this.setState({ team: tt, sent: false }); setTimeout(toApply, 0); } }; }),
+      applyCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", fieldCols: mob ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))",
+      notSent: !S.sent, sent: S.sent, ref: S.ref,
+      fv: { ...f, team: S.team },
+      fe: { nameErr: t && !nameOk, nameInv: t && !nameOk ? "true" : "false", nameBd: t && !nameOk ? "var(--danger)" : "var(--border-control)", emailErr: t && !emailOk, emailInv: t && !emailOk ? "true" : "false", emailBd: t && !emailOk ? "var(--danger)" : "var(--border-control)", msgErr: t && !msgOk, msgInv: t && !msgOk ? "true" : "false", msgBd: t && !msgOk ? "var(--danger)" : "var(--border-control)", teamErr: t && !teamOk },
+      on: { name: set("name"), email: set("email"), loc: set("loc"), url: set("url"), msg: set("msg"), cv: (e) => { const fl = e.target.files && e.target.files[0]; this.setState({ cv: fl ? fl.name : "" }); } },
+      cvLabel: S.cv || "Attach Your CV", cvAction: S.cv ? "Replace" : "Choose File",
+      teamOpts: TEAMS.map(([tt]) => { const on = S.team === tt; return { t: tt, sel: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border-control)", bg: on ? "var(--brand-soft)" : "var(--surface-2)", color: on ? "var(--foreground)" : "var(--foreground-2)", pick: () => this.setState({ team: tt }) }; }),
+      submit: (e) => { e.preventDefault(); if (!(nameOk && emailOk && msgOk && teamOk)) { this.setState({ tried: true }); return; } this.setState({ sent: true, tried: false, ref: "QAIG-CAR-" + Date.now().toString(36).toUpperCase().slice(-6) }); },
+      reset: () => this.setState({ sent: false, team: "", cv: "", f: { name: "", email: "", loc: "India", url: "", msg: "" } }),
+      modelCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", modelDir: desk ? "column" : "row", modelBR: desk ? "1px solid var(--border)" : "0", modelBB: desk ? "0" : "1px solid var(--border)", modelFlex: desk ? "0 0 auto" : "1 0 auto",
+      models: MODELS.map(([tt], i) => { const on = i === S.model; return { i, n: pad(i + 1), t: tt, sel: on ? "true" : "false", tab: on ? 0 : -1, bg: on ? "var(--surface-2)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", ic: on ? "var(--brand)" : "var(--faint)", bar: on ? 1 : 0, bb: desk ? "1px solid var(--border)" : "0", pick: () => this.setState({ model: i }) }; }),
+      modelKey: (e) => { const k = e.key; let i = S.model; if (k === "ArrowDown" || k === "ArrowRight") i = (i + 1) % nM; else if (k === "ArrowUp" || k === "ArrowLeft") i = (i + nM - 1) % nM; else return; e.preventDefault(); this.setState({ model: i }); setTimeout(() => { const b = document.getElementById("wm-" + i); b && b.focus(); }, 0); },
+      model: { n: pad(S.model + 1), t: m[0], d: m[1], areas: m[2].map((ai) => { const on = S.sel.includes(ai); return { t: AREAS[ai][0], sel: on ? "true" : "false", chk: on ? 1 : 0, bd: on ? "var(--brand)" : "var(--border-control)", bg: on ? "var(--brand-soft)" : "var(--surface-2)", color: on ? "var(--foreground)" : "var(--foreground-2)", toggle: toggle(ai) }; }) },
+      selCount: pad(S.sel.length),
+      selSummary: S.sel.length ? "Selected: " + selNames.join(", ") + "." : "Select areas to include them in your proposal.",
+      propose: () => { const base = R.enquiry || "Discuss Your Requirement.dc.html", href = base + "?interest=" + encodeURIComponent("Collaboration · " + m[0] + (selNames.length ? " · " + selNames.join(", ") : "")); window.QAIG_GO ? window.QAIG_GO(href, "enquiry") : (window.location.href = href); },
+      areaCols: w >= 1100 ? "repeat(4,minmax(0,1fr))" : w >= 640 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
+      areas: AREAS.map(([tt, d, code], i) => { const on = S.sel.includes(i), c = catBy[code]; return { n: pad(i + 1), t: tt, d, sel: on ? "true" : "false", aria: (on ? "Remove " : "Add ") + tt + " from your proposal", mark: on ? "✓" : "+", bd: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--surface)", cbd: on ? "var(--brand)" : "var(--border-light)", cbg: on ? "var(--brand)" : "transparent", mcol: on ? "var(--brand-ink)" : "var(--foreground-2)", hasDom: !!c, domLabel: c ? c.label : "", domHref: c && D.domainHref ? D.domainHref(code) : "#", toggle: toggle(i) }; }),
+    };
+  }
+}
+</script>
+</body>
+</html>

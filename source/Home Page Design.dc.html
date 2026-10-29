@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script><script src="assets/logos/logos.js"></script>
+<script src="qaig-scroll-affordance.js"></script>
+<script src="qaig-viewport.js"></script>
+<script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#010204}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}.qscroll::-webkit-scrollbar{display:none}
+@keyframes qword{from{opacity:0;transform:translateY(.32em);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}@keyframes qrise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}@keyframes qfield{from{opacity:0}to{opacity:1}}
+.qrise{animation:qrise .8s cubic-bezier(.22,1,.36,1) both}.qfield{animation:qfield 1.6s cubic-bezier(.22,1,.36,1) both}
+.qrv-on [data-rv]{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}.qrv-on [data-rv][data-in]{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.qrise,.qfield{animation:none!important}.qrv-on [data-rv]{opacity:1!important;transform:none!important}}</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
+
+<dc-import name="QAIG Global Navbar" current="Home" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<section id="top" data-screen-label="01 Hero" style="position:relative;overflow:hidden;min-height:min(900px,calc(100vh - 85px));display:flex;align-items:center;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 55% 70% at 72% 50%,rgba(0,90,140,.24),transparent 70%),var(--base)">
+  <canvas ref="{{ fieldRef }}" class="qfield" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+  <div aria-hidden="true" style="position:absolute;inset:0;background:{{ heroVeil }};pointer-events:none"></div>
+  <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(0deg,var(--base),transparent);pointer-events:none"></div>
+  <div class="section-shell" style="position:relative;width:100%;padding-top:clamp(48px,6vw,88px);padding-bottom:{{ heroPadB }};pointer-events:none">
+    <div style="max-width:780px;pointer-events:auto">
+      <span class="qrise" style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border:1px solid rgba(0,212,255,.45);border-radius:999px;background:rgba(0,212,255,.06);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--brand);animation-delay:.3s"><span aria-hidden="true" style="width:6px;height:6px;border-radius:50%;background:var(--brand);box-shadow:0 0 8px var(--brand)"></span>Quantum Products &amp; Solutions</span>
+      <h1 class="qrise" style="margin:28px 0 0;font-size:clamp(2.75rem,1.2rem + 5.6vw,6rem);line-height:.98;letter-spacing:-0.045em;font-weight:600;text-wrap:balance;animation-delay:.42s">Leading the Way<br>in <span style="color:var(--brand);text-shadow:0 0 40px rgba(0,212,255,.35);white-space:nowrap">Quantum &amp; AI</span><br>Innovations</h1>
+      <p class="qrise" style="margin:28px 0 0;max-width:52ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty;animation-delay:.58s">Quantum AI Global develops practical quantum technologies that bring quantum intelligence, security, computing, networking and sensing closer to real-world use, so organisations can prepare for what comes next.</p>
+      <div class="qrise" style="margin-top:40px;display:flex;flex-wrap:wrap;gap:12px;animation-delay:.74s">
+        <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toExplore }}" hint-size="230px,44px">Explore Our Technologies →</x-import>
+        <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ toEnquiryHero }}" hint-size="250px,44px">Discuss a Custom Requirement</x-import>
+      </div>
+      <div ref="{{ vizRef }}" aria-hidden="true" style="height:{{ heroVizH }};margin-top:{{ heroVizM }};pointer-events:none"></div>
+    </div>
+  </div>
+  <div class="section-shell qrise" style="position:absolute;left:0;right:0;bottom:28px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;pointer-events:none;animation-delay:1.1s">
+    <span aria-hidden="true" style="display:flex;flex-direction:column;gap:8px;white-space:nowrap;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span>Electron Orbitals · Artistic Visualisation</span><span style="color:var(--foreground-2)">ψ <span style="color:var(--brand)">{{ orbName }}</span> · {{ orbQn }}</span></span>
+    <span aria-hidden="true" style="white-space:nowrap;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ heroHint }}</span>
+  </div>
+</section>
+
+<div aria-hidden="true" class="section-shell" style="height:0"><div style="position:relative;height:0;z-index:2"><span style="position:absolute;left:0;top:-4px;display:flex;align-items:center"><span style="width:7px;height:7px;border-radius:50%;border:1px solid var(--brand);background:var(--base)"></span><span style="width:64px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)"></span></span></div></div>
+<section data-sec="" id="leadership" data-screen-label="02 Core Technology Leadership" style="position:relative;overflow:hidden;padding:clamp(72px,8vw,112px) 0;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 60% 55% at 30% 110%,rgba(0,110,190,.14),transparent 70%),var(--base)"><div data-spot="" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1);background:radial-gradient(circle 380px at var(--mx,50%) var(--my,50%),rgba(0,212,255,.07),transparent 70%)"><div class="bg-grid" style="position:absolute;inset:0;-webkit-mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%);mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%)"></div></div>
+  <div aria-hidden="true" style="position:absolute;right:-22%;top:-40%;width:min(1100px,90vw);aspect-ratio:1;border-radius:50%;border:1px solid rgba(0,212,255,.12);pointer-events:none;-webkit-mask-image:linear-gradient(200deg,#000 10%,transparent 55%);mask-image:linear-gradient(200deg,#000 10%,transparent 55%)"></div>
+  <div class="section-shell" style="position:relative">
+    <div data-rv="">
+      <span class="eyebrow" style="white-space:nowrap">Core Technology Leadership</span>
+      <h2 style="margin:22px 0 0;font-size:var(--text-h2);line-height:1.06;letter-spacing:-0.032em;font-weight:600;text-wrap:balance">Built by Researchers.<br><span style="color:var(--brand)">Engineered for Impact.</span></h2>
+      <p style="margin:20px 0 0;max-width:54ch;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">Quantum AI Global brings scientific expertise and engineering together to develop practical quantum technologies.</p>
+    </div>
+    <dl data-rv="" style="margin:clamp(40px,4.5vw,64px) 0 0;display:grid;grid-template-columns:{{ ldCols }};gap:{{ ldGap }};transition-delay:.08s">
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr);align-content:start;align-items:center;gap:{{ ldRG }};min-width:0;padding:4px clamp(16px,2vw,28px) 4px 0;border-left:0 solid var(--border)">
+        <span aria-hidden="true" style="grid-column:1;grid-row:1;display:{{ ldIc }};align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;border:1px solid var(--border-light);background:var(--surface);color:var(--brand)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.6 2.7 3 6 3s6-1.4 6-3v-5"></path><path d="M22 9v6"></path></svg></span>
+        <dt style="grid-column:1/-1;grid-row:2;font-size:clamp(16px,.9rem + .2vw,16px);font-weight:600;line-height:1.3;color:var(--foreground)">Scientists &amp; Engineers</dt>
+        <dd class="tnum" style="grid-column:{{ ldNc }};grid-row:1;margin:0;font-size:clamp(2.25rem,1.9rem + 1.6vw,3.25rem);line-height:1;letter-spacing:-0.04em;font-weight:600;color:var(--foreground)">10<span style="color:var(--brand)">+</span></dd>
+        <dd style="grid-column:1/-1;grid-row:3;margin:-6px 0 0;font-size:clamp(13px,.8rem + .2vw,14px);line-height:1.55;color:var(--foreground-2);text-wrap:pretty">From IISc, IIT, IIIT and IIST</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr);align-content:start;align-items:center;gap:{{ ldRG }};min-width:0;padding:4px clamp(16px,2vw,28px) 4px {{ ldP2 }};border-left:{{ ldB2 }} solid var(--border)">
+        <span aria-hidden="true" style="grid-column:1;grid-row:1;display:{{ ldIc }};align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;border:1px solid var(--border-light);background:var(--surface);color:var(--brand)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"></circle><path d="M3.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5"></path><circle cx="17" cy="9" r="2.4"></circle><path d="M15.8 14.2c2.4.1 4.1 1.9 4.7 4.8"></path></svg></span>
+        <dt style="grid-column:1/-1;grid-row:2;font-size:clamp(16px,.9rem + .2vw,16px);font-weight:600;line-height:1.3;color:var(--foreground)">People Across Regions</dt>
+        <dd class="tnum" style="grid-column:{{ ldNc }};grid-row:1;margin:0;font-size:clamp(2.25rem,1.9rem + 1.6vw,3.25rem);line-height:1;letter-spacing:-0.04em;font-weight:600;color:var(--foreground)">75<span style="color:var(--brand)">+</span></dd>
+        <dd style="grid-column:1/-1;grid-row:3;margin:-6px 0 0;font-size:clamp(13px,.8rem + .2vw,14px);line-height:1.55;color:var(--foreground-2);text-wrap:pretty">India, US and UAE</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr);align-content:start;align-items:center;gap:{{ ldRG }};min-width:0;padding:4px clamp(16px,2vw,28px) 4px {{ ldP3 }};border-left:{{ ldB3 }} solid var(--border)">
+        <span aria-hidden="true" style="grid-column:1;grid-row:1;display:{{ ldIc }};align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;border:1px solid var(--border-light);background:var(--surface);color:var(--brand)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"></path><path d="M14 3v5h5"></path><path d="M9 13h6M9 17h4"></path></svg></span>
+        <dt style="grid-column:1/-1;grid-row:2;font-size:clamp(16px,.9rem + .2vw,16px);font-weight:600;line-height:1.3;color:var(--foreground)">IP Filings</dt>
+        <dd class="tnum" style="grid-column:{{ ldNc }};grid-row:1;margin:0;font-size:clamp(2.25rem,1.9rem + 1.6vw,3.25rem);line-height:1;letter-spacing:-0.04em;font-weight:600;color:var(--foreground)">15</dd>
+        <dd style="grid-column:1/-1;grid-row:3;margin:-6px 0 0;font-size:clamp(13px,.8rem + .2vw,14px);line-height:1.55;color:var(--foreground-2);text-wrap:pretty">Filed across our quantum technology work</dd>
+      </div>
+      <div style="display:grid;grid-template-columns:auto minmax(0,1fr);align-content:start;align-items:center;gap:{{ ldRG }};min-width:0;padding:4px clamp(16px,2vw,28px) 4px {{ ldP4 }};border-left:{{ ldB4 }} solid var(--border)">
+        <span aria-hidden="true" style="grid-column:1;grid-row:1;display:{{ ldIc }};align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;border:1px solid var(--border-light);background:var(--surface);color:var(--brand)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"></circle><path d="M12 6.6l.8 1.6 1.7.2-1.3 1.2.3 1.7-1.5-.8-1.5.8.3-1.7-1.3-1.2 1.7-.2z"></path><path d="M8.6 13.4L7 21l5-2.5 5 2.5-1.6-7.6"></path></svg></span>
+        <dt style="grid-column:1/-1;grid-row:2;font-size:clamp(16px,.9rem + .2vw,16px);font-weight:600;line-height:1.3;color:var(--foreground)">Patents Granted</dt>
+        <dd class="tnum" style="grid-column:{{ ldNc }};grid-row:1;margin:0;font-size:clamp(2.25rem,1.9rem + 1.6vw,3.25rem);line-height:1;letter-spacing:-0.04em;font-weight:600;color:var(--foreground)">3</dd>
+        <dd style="grid-column:1/-1;grid-row:3;margin:-6px 0 0;font-size:clamp(13px,.8rem + .2vw,14px);line-height:1.55;color:var(--foreground-2);text-wrap:pretty">Quantum Memory, Quantum-Resistant Cryptography and Laser Control</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<div aria-hidden="true" class="section-shell" style="height:0"><div style="position:relative;height:0;z-index:2"><span style="position:absolute;left:0;top:-4px;display:flex;align-items:center"><span style="width:7px;height:7px;border-radius:50%;border:1px solid var(--brand);background:var(--base)"></span><span style="width:64px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)"></span></span></div></div>
+<section data-sec="" id="explore" data-screen-label="03 Technology Explorer" style="position:relative;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 60% 50% at 70% 60%,rgba(0,212,255,.05),transparent 70%),var(--base)"><div data-spot="" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1);background:radial-gradient(circle 380px at var(--mx,50%) var(--my,50%),rgba(0,212,255,.07),transparent 70%)"><div class="bg-grid" style="position:absolute;inset:0;-webkit-mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%);mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%)"></div></div>
+  <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.35;-webkit-mask-image:linear-gradient(180deg,#000,transparent 18%);mask-image:linear-gradient(180deg,#000,transparent 18%);pointer-events:none"></div>
+  <div class="section-shell" style="position:relative;padding-top:clamp(96px,10vw,160px)">
+    <div data-rv="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 64px">
+      <div style="flex:1 1 560px;min-width:0"><span class="eyebrow" style="white-space:nowrap">Technology Explorer</span><h2 style="margin:24px 0 0;max-width:19ch;font-size:var(--text-h2);line-height:1.06;letter-spacing:-0.032em;font-weight:600;text-wrap:balance">Five Domains of Quantum Technology, <span style="color:var(--brand)">Each Starting With a Real Problem.</span></h2></div>
+      <div style="flex:0 1 380px;display:flex;flex-direction:column;align-items:flex-start;gap:16px"><p style="margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ exIntro }}</p></div>
+    </div>
+  </div>
+  <div id="ex-track" style="position:relative;height:{{ exTrackH }};padding-bottom:{{ exPadB }}">
+    <div style="position:{{ exPos }};top:85px;height:{{ exStickyH }};display:flex;align-items:center">
+      <div class="section-shell" style="width:100%;display:flex;gap:40px;align-items:stretch;padding-top:{{ exPadT }}">
+        <sc-if value="{{ exPin }}" hint-placeholder-val="{{ true }}">
+          <div data-exzone="" style="flex:0 0 clamp(300px,28vw,380px);height:{{ exCardH }};position:{{ exLeftPos }};top:{{ exLeftTop }};align-self:flex-start;display:flex;flex-direction:column;gap:20px">
+            <div role="tablist" aria-label="Technology domains" aria-orientation="vertical" onKeyDown="{{ exKey }}" style="flex:1;min-height:0;display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ exTabs }}" as="t" hint-placeholder-count="5">
+                <button id="extab-{{ t.i }}" role="tab" aria-selected="{{ t.on }}" aria-controls="expanel-{{ t.i }}" tabIndex="{{ t.tab }}" onClick="{{ t.pick }}" style="position:relative;flex:1 1 0;min-height:0;display:flex;align-items:center;gap:18px;width:100%;padding:0 20px 0 24px;border:1px solid {{ t.bd }};border-radius:18px;background:{{ t.bg }};color:{{ t.color }};font:inherit;text-align:left;cursor:pointer;overflow:hidden;box-shadow:{{ t.sh }};transition:background .35s,color .35s,border-color .35s,box-shadow .35s" style-hover="color:var(--foreground);border-color:var(--border-light)">
+                  <span aria-hidden="true" style="position:absolute;left:0;top:16px;bottom:16px;width:2px;border-radius:2px;background:var(--border)"><span data-exfill="{{ t.i }}" style="position:absolute;left:0;top:0;width:2px;height:{{ t.fill }};border-radius:2px;background:var(--brand);box-shadow:0 0 8px rgba(0,212,255,.6)"></span></span>
+                  <span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;border:1px solid {{ t.wellBd }};background:{{ t.wellBg }};transition:border-color .3s,background .3s">{{ t.icon }}</span>
+                  <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><span style="font-size:17px;font-weight:{{ t.fw }};line-height:1.25;text-wrap:balance">{{ t.name }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--muted)">{{ t.count }}</span></span>
+                  <span aria-hidden="true" style="flex:none;font-size:16px;color:var(--brand);opacity:{{ t.arOp }};transform:translateX({{ t.arX }});transition:opacity .3s,transform .3s">→</span>
+                </button>
+              </sc-for>
+            </div>
+            <div style="flex:none;display:flex;align-items:center;gap:16px"><span class="tnum" aria-live="polite" style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted)">{{ exCount }}</span><span aria-hidden="true" style="position:relative;flex:1;height:1px;background:var(--border)"><span style="position:absolute;left:0;top:0;height:1px;width:{{ exBar }};background:var(--brand);transition:width .6s cubic-bezier(.22,1,.36,1)"></span></span></div>
+          </div>
+        </sc-if>
+        <div data-exzone="" style="position:relative;flex:1;min-width:0;height:{{ exColH }};display:flex;flex-direction:column;gap:{{ exColGap }}">
+          <sc-if value="{{ exStack }}" hint-placeholder-val="{{ false }}">
+            <div role="tablist" aria-label="Technology domains" style="flex:none;position:sticky;top:85px;z-index:6;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin:0 -4px;padding:12px 4px 14px;background:linear-gradient(to bottom,var(--base) 82%,transparent)">
+              <sc-for list="{{ exChips }}" as="c" hint-placeholder-count="5">
+                <button role="tab" aria-selected="{{ c.on }}" aria-controls="expanel-{{ c.i }}" onClick="{{ c.pick }}" style="display:flex;flex-direction:column;align-items:stretch;gap:10px;min-width:0;min-height:48px;padding:6px 0 0;border:0;background:none;color:{{ c.color }};font:inherit;text-align:left;cursor:pointer;transition:color .25s">
+                  <span aria-hidden="true" style="position:relative;display:block;height:2px;border-radius:2px;background:var(--border)"><span style="position:absolute;left:0;top:0;bottom:0;width:{{ c.fill }};border-radius:2px;background:var(--brand);box-shadow:0 0 8px rgba(0,212,255,.6)"></span></span>
+                  <span style="display:flex;flex-direction:column;gap:3px;min-width:0"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:{{ c.nC }}">{{ c.idx }}</span><span style="font-size:15px;font-weight:500;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ c.name }}</span></span>
+                </button>
+              </sc-for>
+            </div>
+          </sc-if>
+          <div style="position:relative;flex:1 1 auto;min-height:0;display:flex;flex-direction:column;gap:{{ exStkGap }}">
+          <sc-for list="{{ exPanels }}" as="pn" hint-placeholder-count="1">
+            <article id="expanel-{{ pn.i }}" data-exstk="{{ pn.i }}" data-glow="" role="{{ pn.role }}" aria-labelledby="{{ pn.lb }}" aria-label="{{ pn.al }}" aria-hidden="{{ pn.hid }}" style="position:{{ exPanelPos }};top:{{ pn.top }};left:0;right:0;z-index:{{ pn.z }};height:{{ exPH }};transform-origin:50% 0;flex:{{ exPanelFlex }};display:{{ pn.disp }};flex-direction:column;border:1px solid var(--border-light);border-radius:24px;background:var(--surface);overflow:hidden;opacity:{{ pn.op }};transform:{{ pn.tf }};visibility:{{ pn.vis }};transition:{{ exTrans }};box-shadow:0 40px 90px -50px rgba(0,212,255,.3)">
+              <figure style="position:relative;flex:1 1 auto;min-height:{{ exFigMin }};margin:0;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 70% 80% at 45% 50%,var(--surface-2),var(--surface));overflow:hidden">
+                <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.35;pointer-events:none"></div>
+                                <div style="position:absolute;left:16px;right:16px;top:16px;bottom:16px;display:flex;align-items:center;justify-content:center">{{ pn.ill }}</div>
+              </figure>
+              <div style="flex:none;display:flex;flex-direction:column;gap:{{ exBodyGap }};padding:{{ exBodyPad }}">
+                <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px">
+                  <div style="min-width:0"><div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-family:var(--font-mono);font-size:13.5px;line-height:1.4;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)"><span style="white-space:nowrap">{{ pn.name }}</span></div><h3 style="margin:10px 0 0;font-size:{{ exH3 }};line-height:1.15;letter-spacing:-0.022em;font-weight:600;text-wrap:balance">{{ pn.head }}</h3></div>
+                </div>
+                <sc-if value="{{ pn.cpt }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px"><sc-for list="{{ pn.steps }}" as="st" hint-placeholder-count="3"><span style="display:flex;flex-direction:column;gap:6px;min-width:0"><span style="position:relative;display:block;height:1px;background:var(--border)"><span style="position:absolute;left:0;top:0;bottom:0;width:{{ st.w }};background:var(--brand)"></span></span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:{{ st.c }}">{{ st.k }}</span></span></sc-for></div></sc-if>
+                <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:16px 28px;min-height:{{ exFactMin }}">
+                  <sc-for list="{{ pn.facts }}" as="f" hint-placeholder-count="3">
+                    <div style="display:{{ f.disp }};flex-direction:column;gap:6px;padding-top:{{ f.pt }};border-top:{{ f.bt }}"><dt style="display:{{ f.dt }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ f.k }}</dt><dd style="margin:0;font-size:16px;line-height:1.55;color:var(--foreground-2);text-wrap:pretty">{{ f.v }}</dd></div>
+                  </sc-for>
+                </dl>
+                <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+                  <sc-if value="{{ pn.stack }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:center;gap:8px;padding-right:6px;font-size:15px;font-weight:600;color:var(--foreground)"><img src="assets/products/QFORTE_ICON.png" alt="" style="width:20px;height:20px;object-fit:contain">Q-Forte <span aria-hidden="true" style="color:var(--muted)">›</span></span></sc-if>
+                  <sc-for list="{{ pn.products }}" as="p" hint-placeholder-count="3">
+                    <a href="{{ p.href }}" tabIndex="{{ pn.tab }}" style="display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:0 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-2);font-size:15px;font-weight:600;white-space:nowrap;color:var(--foreground);transition:border-color .2s,background .2s" style-hover="border-color:var(--brand)">{{ p.title }}<sc-if value="{{ p.rnd }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span></sc-if></a>
+                  </sc-for>
+                  <a href="{{ pn.href }}" tabIndex="{{ pn.tab }}" style="flex:0 0 {{ exCtaBasis }};margin-left:auto;font-size:16px;font-weight:600">{{ pn.cta }}</a>
+                </div>
+              </div>
+            <div data-exdim="" aria-hidden="true" style="position:absolute;inset:0;background:var(--base);opacity:0;pointer-events:none;border-radius:24px"></div>
+            </article>
+          </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div aria-hidden="true" class="section-shell" style="height:0"><div style="position:relative;height:0;z-index:2"><span style="position:absolute;left:0;top:-4px;display:flex;align-items:center"><span style="width:7px;height:7px;border-radius:50%;border:1px solid var(--brand);background:var(--base)"></span><span style="width:64px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)"></span></span></div></div>
+<section data-sec="" id="products" data-screen-label="04 Featured Products" style="position:relative;padding:clamp(96px,10vw,160px) 0;border-bottom:1px solid var(--border)"><div data-spot="" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1);background:radial-gradient(circle 380px at var(--mx,50%) var(--my,50%),rgba(0,212,255,.07),transparent 70%)"><div class="bg-grid" style="position:absolute;inset:0;-webkit-mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%);mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%)"></div></div>
+  <div class="section-shell" style="position:relative">
+    <div data-rv="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 64px">
+      <div style="flex:1 1 560px;min-width:0"><span class="eyebrow" style="white-space:nowrap">Featured Products</span><h2 style="margin:24px 0 0;max-width:17ch;font-size:var(--text-h2);line-height:1.06;letter-spacing:-0.032em;font-weight:600;text-wrap:balance">Thirteen Products, <span style="color:var(--brand)">Each Built for a Specific Job.</span></h2></div>
+      <p style="flex:0 1 400px;margin:0;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ pIntro }}</p>
+    </div>
+    <div data-rv="" style="margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+    <div role="tablist" aria-label="Filter products by domain" onKeyDown="{{ pfKey }}" style="display:flex;flex-wrap:wrap;gap:8px">
+      <sc-for list="{{ pTabs }}" as="f" hint-placeholder-count="6">
+        <button id="pf-{{ f.i }}" role="tab" aria-selected="{{ f.on }}" aria-controls="pgrid" tabIndex="{{ f.tab }}" onClick="{{ f.pick }}" style="display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px;border:1px solid {{ f.bd }};border-radius:999px;background:{{ f.bg }};color:{{ f.color }};font:inherit;font-size:16px;font-weight:{{ f.fw }};white-space:nowrap;cursor:pointer;transition:background .3s,border-color .3s,color .3s" style-hover="border-color:var(--border-strong);color:var(--foreground)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:{{ f.ic }}">{{ f.idx }}</span>{{ f.label }}</button>
+      </sc-for>
+    </div>
+    <a href="{{ allHref }}" style="display:inline-flex;align-items:center;gap:10px;min-height:40px;padding:0 16px;border:1px dashed var(--border-strong);border-radius:999px;font-size:16px;font-weight:600;white-space:nowrap;color:var(--brand);transition:border-color .3s" style-hover="border-color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--muted)">{{ allCount }}</span>Browse Products →</a>
+    </div>
+    <div id="pgrid" role="tabpanel" aria-labelledby="pf-{{ pf }}" ref="{{ pgRef }}" style="margin-top:36px;display:flex;flex-direction:column;gap:56px">
+      <sc-for list="{{ pGroups }}" as="g" hint-placeholder-count="1">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px;padding-bottom:14px;border-bottom:1px solid var(--border)">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)">{{ g.idx }}</span><span style="font-size:20px;font-weight:600;letter-spacing:-0.015em;white-space:nowrap">{{ g.label }}</span><sc-if value="{{ g.stack }}" hint-placeholder-val="{{ false }}"><span style="display:inline-flex;align-items:center;gap:8px;padding:5px 10px;border:1px solid var(--border-light);border-radius:6px;font-size:15px;color:var(--foreground-2);white-space:nowrap"><img src="assets/products/QFORTE_ICON.png" alt="" style="width:18px;height:18px;object-fit:contain"><span style="font-weight:600;color:var(--foreground)">Q-Forte</span> · Quantum Assured InfoSec Platform</span></sc-if></div>
+            <span style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted);white-space:nowrap">{{ g.count }}<sc-if value="{{ g.swipe }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="color:var(--brand)">SWIPE →</span></sc-if></span>
+          </div>
+          <div style="display:{{ pRowDisp }};grid-template-columns:repeat({{ g.cols }},minmax(0,1fr));gap:{{ pRowGap }};overflow-x:{{ pRowOx }};scroll-snap-type:{{ pRowSnap }};scroll-padding-inline:{{ pRowSP }};scrollbar-width:none;overscroll-behavior-x:contain;margin:{{ pRowMar }};padding:{{ pRowPad }}">
+            <sc-for list="{{ g.cards }}" as="c" hint-placeholder-count="3">
+              <article data-cursor="{{ c.cur }}" data-glow="" style="position:relative;display:flex;flex:{{ c.flex }};scroll-snap-align:start;min-width:0;flex-direction:{{ c.dir }};grid-column:span {{ c.span }};border:1px solid var(--border);border-radius:20px;background:var(--surface);overflow:hidden;transition:border-color .35s,transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s" style-hover="border-color:rgba(0,212,255,.45);transform:translateY(-4px);box-shadow:0 30px 60px -40px rgba(0,212,255,.45)">
+                <figure style="position:relative;margin:0;flex:{{ c.figFlex }};height:{{ c.figH }};min-height:{{ c.figMin }};border-bottom:{{ c.figBB }};border-right:{{ c.figBR }};background:radial-gradient(ellipse 60% 70% at 50% 55%,rgba(0,212,255,.08),transparent 70%),var(--surface-2);overflow:hidden">
+                  <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.35"></div>
+                                    <div style="position:absolute;left:10px;right:10px;top:12px;bottom:8px">{{ c.ill }}</div>
+                </figure>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:{{ c.bodyJ }};gap:14px;padding:{{ c.bodyPad }}">
+                  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px"><div style="min-width:0"><h3 style="margin:0;font-size:22px;line-height:1.15;letter-spacing:-0.02em;font-weight:600">{{ c.title }}</h3><p style="margin:6px 0 0;font-size:16px;color:var(--foreground-2)">{{ c.blurb }}</p></div><sc-if value="{{ c.hasTag }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border:1px solid {{ c.tagB }};border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;white-space:nowrap;color:{{ c.tagC }}">{{ c.tag }}</span></sc-if></div>
+                  <dl style="margin:0;display:flex;flex-direction:column;gap:12px">
+                    <div style="display:flex;flex-direction:column;gap:4px;padding-top:12px;border-top:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">What It Does</dt><dd style="margin:0;font-size:16px;line-height:1.55;color:var(--foreground-2);text-wrap:pretty;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:{{ c.doesClamp }};overflow:hidden">{{ c.does }}</dd></div>
+                    <div style="display:{{ c.whenDisp }};flex-direction:column;gap:4px"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ c.whenK }}</dt><dd style="margin:0;font-size:16px;line-height:1.55;color:var(--muted);text-wrap:pretty">{{ c.when }}</dd></div>
+                  </dl>
+                  <a href="{{ c.href }}" style="margin-top:auto;padding-top:6px;font-size:16px;font-weight:600">{{ c.cta }}</a>
+                </div>
+              </article>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 32px;padding-top:24px;border-top:1px solid var(--border)">
+      <p style="margin:0;max-width:56ch;font-size:16.5px;line-height:1.6;color:var(--muted);text-wrap:pretty">{{ pMore }}</p>
+      <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ toProducts }}" hint-size="190px,36px">Browse Products →</x-import>
+    </div>
+  </div>
+</section>
+
+<div aria-hidden="true" class="section-shell" style="height:0"><div style="position:relative;height:0;z-index:2"><span style="position:absolute;left:0;top:-4px;display:flex;align-items:center"><span style="width:7px;height:7px;border-radius:50%;border:1px solid var(--brand);background:var(--base)"></span><span style="width:64px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)"></span></span></div></div>
+<section data-sec="" id="achievements" data-screen-label="05 Achievements" style="position:relative;padding:clamp(96px,10vw,160px) 0;border-bottom:1px solid var(--border)"><div data-spot="" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1);background:radial-gradient(circle 380px at var(--mx,50%) var(--my,50%),rgba(0,212,255,.07),transparent 70%)"><div class="bg-grid" style="position:absolute;inset:0;-webkit-mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%);mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%)"></div></div>
+  <div class="section-shell" style="position:relative">
+    <div data-rv=""><span class="eyebrow" style="white-space:nowrap">Achievements &amp; Recognition</span><h2 style="margin:24px 0 0;max-width:16ch;font-size:var(--text-h2);line-height:1.06;letter-spacing:-0.032em;font-weight:600;text-wrap:balance">Awards, Agreements <span style="color:var(--brand)">and Milestones.</span></h2></div>
+    <div data-rv="" style="margin-top:clamp(24px,3vw,40px)">
+    <div ref="{{ achRef }}" class="qscroll" onScroll="{{ achOnScroll }}" role="region" aria-label="Achievements, scrollable" tabIndex="0" style="display:flex;gap:20px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;padding:8px 0 32px;margin:0 -2px;padding-left:2px;padding-right:2px">
+      <sc-for list="{{ ach }}" as="a" hint-placeholder-count="3">
+      <article style="position:relative;display:flex;flex-direction:column;flex:0 0 {{ achBasis }};min-width:0;scroll-snap-align:start;border:1px solid var(--border);border-radius:20px;background:var(--surface);overflow:hidden;transition:border-color .35s,transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s" style-hover="border-color:rgba(0,212,255,.45);transform:translateY(-4px);box-shadow:0 30px 60px -40px rgba(0,212,255,.45)">
+        <div style="position:relative;aspect-ratio:16/10;border-bottom:1px solid var(--border);background:#05080f;overflow:hidden">
+          <img src="{{ a.img }}" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(22px) brightness(.38) saturate(.8)">
+          <img src="{{ a.img }}" alt="{{ a.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ a.fit }};object-position:{{ a.pos }}">
+          <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(6,10,20,.55),transparent);pointer-events:none"></span>
+          <span style="position:absolute;left:14px;top:14px;display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border:1px solid rgba(0,212,255,.35);border-radius:6px;background:rgba(5,9,18,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)"><span style="width:6px;height:6px;border-radius:50%;background:var(--brand);box-shadow:0 0 8px var(--brand)"></span>{{ a.kind }}</span>
+          <span class="tnum" aria-hidden="true" style="position:absolute;right:14px;top:14px;padding:6px 9px;border-radius:6px;background:rgba(5,9,18,.78);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--foreground-2)">{{ a.n }}</span>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 22px 0">
+          <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ a.date }}</span>
+          <h3 style="margin:0;font-size:21px;line-height:1.2;letter-spacing:-0.02em;font-weight:600;text-wrap:balance">{{ a.title }}</h3>
+          <p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ a.text }}</p>
+        </div>
+        <span style="display:block;margin:20px 22px 0;padding:14px 0 20px;border-top:1px solid var(--border);font-family:var(--font-mono);font-size:13.5px;line-height:1.5;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ a.mark }}</span>
+      </article>
+      </sc-for>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px">
+      <span class="tnum" aria-live="polite" style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--foreground-2)">{{ achCount }}</span>
+      <span aria-hidden="true" style="position:relative;flex:1;height:1px;background:var(--border)"><span style="position:absolute;top:-1px;height:3px;border-radius:2px;background:var(--brand);box-shadow:0 0 8px rgba(0,212,255,.5);left:{{ achBarL }};width:{{ achBarW }};transition:left .25s cubic-bezier(.22,1,.36,1),width .25s"></span></span>
+      <div style="flex:none;display:flex;gap:8px">
+        <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" aria-label="Previous achievements" onClick="{{ achPrev }}" dc-props="{{ achPrevProps }}" hint-size="40px,40px">←</x-import>
+        <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" aria-label="Next achievements" onClick="{{ achNext }}" dc-props="{{ achNextProps }}" hint-size="40px,40px">→</x-import>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:clamp(36px,4vw,56px)">
+      <x-import component-from-global-scope="QAIG.Button" variant="outline" size="lg" onClick="{{ toAchievements }}" hint-size="220px,44px">See All Achievements →</x-import>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div aria-hidden="true" class="section-shell" style="height:0"><div style="position:relative;height:0;z-index:2"><span style="position:absolute;left:0;top:-4px;display:flex;align-items:center"><span style="width:7px;height:7px;border-radius:50%;border:1px solid var(--brand);background:var(--base)"></span><span style="width:64px;height:1px;background:linear-gradient(90deg,var(--brand),transparent)"></span></span></div></div>
+<section data-sec="" id="collaborators" data-screen-label="06 Collaborators" style="position:relative;padding:clamp(72px,8vw,120px) 0;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 55% 70% at 62% 115%,rgba(0,110,190,.16),transparent 70%),var(--base)"><div data-spot="" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .7s cubic-bezier(.22,1,.36,1);background:radial-gradient(circle 380px at var(--mx,50%) var(--my,50%),rgba(0,212,255,.07),transparent 70%)"><div class="bg-grid" style="position:absolute;inset:0;-webkit-mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%);mask-image:radial-gradient(circle 220px at var(--mx,50%) var(--my,50%),#000,transparent 80%)"></div></div>
+  <div class="section-shell" style="position:relative">
+    <h2 data-rv="" style="margin:0;display:flex;align-items:center;gap:16px;font-family:var(--font-mono);font-size:13.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap"><span aria-hidden="true" style="width:36px;height:1px;background:var(--brand)"></span><span style="color:var(--foreground-2)">Trusted by</span><span aria-hidden="true" style="width:1px;height:14px;background:var(--border-strong)"></span><span style="color:var(--muted)">Collaborators</span></h2>
+    <div data-rv="" style="margin-top:clamp(32px,4vw,48px)">
+      <sc-if value="{{ coWide }}" hint-placeholder-val="{{ true }}">
+        <div style="display:flex;align-items:stretch">
+          <div role="tablist" aria-label="Collaborator categories" aria-orientation="vertical" onKeyDown="{{ coKey }}" onPointerEnter="{{ coEnter }}" onPointerLeave="{{ coLeave }}" style="flex:0 0 clamp(240px,26%,320px);display:flex;flex-direction:column;justify-content:center;gap:14px;padding-right:clamp(28px,3.5vw,48px)">
+            <sc-for list="{{ coTabs }}" as="c" hint-placeholder-count="3">
+              <button id="cotab-{{ c.i }}" role="tab" aria-selected="{{ c.on }}" aria-controls="co-panel" tabIndex="{{ c.tab }}" onClick="{{ c.pick }}" style="position:relative;display:flex;align-items:center;gap:16px;width:100%;height:72px;padding:0 20px 0 14px;border:1px solid {{ c.bd }};border-radius:16px;background:{{ c.bg }};box-shadow:{{ c.sh }};color:var(--foreground);font:inherit;text-align:left;cursor:pointer;overflow:hidden;transition:background .35s,border-color .35s,box-shadow .35s" style-hover="border-color:var(--border-strong)">
+                <span aria-hidden="true" style="position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:0 3px 3px 0;background:var(--brand);box-shadow:0 0 10px rgba(0,212,255,.7);opacity:{{ c.edge }};transition:opacity .3s"></span>
+                <span aria-hidden="true" style="flex:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:{{ c.wellBg }};color:{{ c.ic }};transition:background .3s,color .3s">{{ c.icon }}</span>
+                <span style="flex:1;min-width:0;font-size:17px;font-weight:{{ c.fw }};letter-spacing:-0.01em">{{ c.label }}</span>
+                <span aria-hidden="true" style="flex:none;font-size:16.5px;color:{{ c.ic }};transform:translateX({{ c.arX }});transition:transform .3s,color .3s">→</span>
+                </button>
+            </sc-for>
+          </div>
+          <div aria-hidden="true" style="position:relative;flex:none;width:1px;background:linear-gradient(180deg,transparent,var(--border-strong) 12%,var(--border-strong) 88%,transparent)"><span style="position:absolute;left:-4px;top:{{ coDot }};width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--brand-soft),0 0 12px var(--brand);transition:top .45s cubic-bezier(.22,1,.36,1)"></span></div>
+          <div id="co-panel" role="tabpanel" aria-labelledby="cotab-{{ co }}" ref="{{ coRef }}" style="flex:1;min-width:0;min-height:{{ coMinH }};padding-left:clamp(24px,4vw,56px);display:grid;grid-template-columns:repeat({{ coCols }},minmax(0,1fr));grid-auto-rows:{{ coRowH }};align-content:center;position:relative;overflow:hidden">
+            <span ref="{{ coScanRef }}" aria-hidden="true" style="position:absolute;top:0;bottom:0;left:0;width:100%;pointer-events:none;opacity:0"><span style="position:absolute;top:6%;bottom:6%;left:0;width:1px;background:linear-gradient(180deg,transparent,var(--brand),transparent);box-shadow:0 0 16px 2px rgba(0,212,255,.45)"></span><span style="position:absolute;top:6%;bottom:6%;right:100%;width:120px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.07))"></span></span>
+            <sc-for list="{{ coLogos }}" as="l" hint-placeholder-count="0"><div data-logo="" style="display:flex;align-items:center;justify-content:center;min-width:0;padding:0 8px"><span role="img" aria-label="{{ l.alt }}" style="display:block;width:{{ l.w }};height:{{ l.h }};max-width:100%;background-image:{{ l.bg }};background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.88;transition:opacity .25s" style-hover="opacity:1"></span></div></sc-for>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ coNarrow }}" hint-placeholder-val="{{ false }}">
+        <div role="tablist" aria-label="Collaborator categories" onKeyDown="{{ coKey }}" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px">
+          <sc-for list="{{ coTabs }}" as="c" hint-placeholder-count="3">
+            <button id="cotab-{{ c.i }}" role="tab" aria-selected="{{ c.on }}" aria-controls="co-panel" tabIndex="{{ c.tab }}" onClick="{{ c.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:72px;padding:10px 6px;border:1px solid {{ c.bd }};border-radius:14px;background:{{ c.bg }};box-shadow:{{ c.sh }};color:var(--foreground);font:inherit;cursor:pointer;overflow:hidden;transition:background .35s,border-color .35s,box-shadow .35s">
+              <span aria-hidden="true" style="display:flex;color:{{ c.ic }};transition:color .3s">{{ c.icon }}</span>
+              <span style="font-size:15px;font-weight:{{ c.fw }}">{{ c.label }}</span>
+              </button>
+          </sc-for>
+        </div>
+        <div id="co-panel" role="tabpanel" aria-labelledby="cotab-{{ co }}" ref="{{ coRef }}" style="margin-top:28px;min-height:{{ coMinH }};display:grid;grid-template-columns:repeat({{ coCols }},minmax(0,1fr));grid-auto-rows:{{ coRowH }};align-content:start;position:relative;overflow:hidden">
+            <span ref="{{ coScanRef }}" aria-hidden="true" style="position:absolute;top:0;bottom:0;left:0;width:100%;pointer-events:none;opacity:0"><span style="position:absolute;top:6%;bottom:6%;left:0;width:1px;background:linear-gradient(180deg,transparent,var(--brand),transparent);box-shadow:0 0 16px 2px rgba(0,212,255,.45)"></span><span style="position:absolute;top:6%;bottom:6%;right:100%;width:120px;background:linear-gradient(90deg,transparent,rgba(0,212,255,.07))"></span></span>
+          <sc-for list="{{ coLogos }}" as="l" hint-placeholder-count="0"><div data-logo="" style="display:flex;align-items:center;justify-content:center;min-width:0;padding:0 8px"><span role="img" aria-label="{{ l.alt }}" style="display:block;width:{{ l.w }};height:{{ l.h }};max-width:100%;background-image:{{ l.bg }};background-size:contain;background-repeat:no-repeat;background-position:center;opacity:.88;transition:opacity .25s" style-hover="opacity:1"></span></div></sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<section data-sec="" id="contact" data-screen-label="07 Final CTA" style="position:relative;isolation:isolate;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(0,150,200,.42) 0%,rgba(0,110,170,.22) 30%,rgba(0,60,110,.1) 60%,transparent 100%)">
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 0%,rgba(0,212,255,.3),transparent 70%)"></div>
+    <div style="position:absolute;left:50%;top:0;width:min(1500px,150%);aspect-ratio:1/1;transform:translate(-50%,-52%);border-radius:50%;border:1px solid rgba(0,212,255,.16);box-shadow:0 0 0 clamp(60px,9vw,130px) rgba(0,212,255,.025),0 0 0 clamp(120px,18vw,260px) rgba(0,212,255,.02)"></div>
+  </div>
+  <div class="section-shell" style="padding-top:clamp(56px,7vw,88px);padding-bottom:clamp(56px,7vw,88px)">
+    <div id="cta-card" data-rv="" style="position:relative;display:grid;grid-template-columns:{{ ctaCols }};border:1px solid var(--border-light);border-radius:24px;background:var(--surface);overflow:visible">
+      <div style="position:relative;overflow:hidden;display:flex;flex-direction:column;gap:18px;padding:clamp(24px,3.2vw,44px) clamp(24px,3.2vw,44px) 116px;border-radius:{{ ctaRL }}">
+        <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 0% 0%,#000,transparent);mask-image:radial-gradient(ellipse 80% 70% at 0% 0%,#000,transparent);pointer-events:none"></div>
+        <span class="eyebrow" style="position:relative;white-space:nowrap">Start With a Requirement</span>
+        <h2 style="position:relative;margin:0;max-width:15ch;font-size:clamp(2rem,1.3rem + 2.4vw,3.25rem);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance;color:var(--foreground)">Have a Quantum Technology <span style="color:var(--brand)">Requirement?</span></h2>
+        <p style="position:relative;margin:0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Tell us what you need to build, measure or secure. Our engineering team will work through the requirement with you.</p>
+        <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:104px;pointer-events:none">
+          <div style="position:absolute;left:clamp(24px,3.2vw,44px);bottom:16px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ ctaSig }}</div>
+          <svg preserveAspectRatio="none" viewBox="0 0 600 90" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+            <defs><linearGradient id="qwg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#00d4ff" stop-opacity="0"></stop><stop offset=".18" stop-color="#00d4ff" stop-opacity=".55"></stop><stop offset=".55" stop-color="#7fe9ff" stop-opacity="1"></stop><stop offset=".85" stop-color="#00d4ff" stop-opacity=".55"></stop><stop offset="1" stop-color="#00d4ff" stop-opacity="0"></stop></linearGradient></defs>
+            <path ref="{{ waveRef }}" d="M0 45 L600 45" fill="none" stroke="url(#qwg)" stroke-width="1.4" vector-effect="non-scaling-stroke" style="filter:drop-shadow(0 0 8px rgba(0,212,255,.55))"></path>
+          </svg>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3.2vw,44px);background:var(--surface-2);border:0 solid var(--border);border-left-width:{{ ctaBL }};border-top-width:{{ ctaBT }};border-radius:{{ ctaRR }}">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">What are you working on?</span>
+        <div role="group" aria-label="Technology domains" style="display:flex;flex-wrap:wrap;gap:8px">
+          <sc-for list="{{ ctaDomains }}" as="ch" hint-placeholder-count="5"><x-import component-from-global-scope="QAIG.Button" variant="{{ ch.variant }}" size="sm" onClick="{{ ch.toggle }}" aria-pressed="{{ ch.on }}" dc-props="{{ ch.props }}" hint-size="150px,32px">{{ ch.label }}</x-import></sc-for>
+        </div>
+        <p aria-live="polite" style="margin:0;min-height:1.6em;font-size:16px;line-height:1.6;color:var(--muted)">{{ ctaNote }}</p>
+        <div style="margin-top:auto;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px">
+          <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toEnquiry }}" dc-props="{{ fullBtn }}" hint-size="100%,44px">Discuss Your Requirement →</x-import>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="QAIG Global Footer" after-cta="true" hint-size="100%,760px"></dc-import>
+</div>
+</x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
+<script type="text/x-dc" data-dc-script data-props="{&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Desktop · 1440&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;fieldIntensity&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Standard&quot;,&quot;Subtle&quot;],&quot;default&quot;:&quot;Standard&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, h: typeof window !== "undefined" ? window.innerHeight : 900, cnt: 1, rm: false, fine: true, orb: 0, exP: 0, wfP: 0, trP: 0, pf: 0, ach: false, co: 0, coK: 0, coFade: false, coPaused: true, coHold: false, ctaSel: [], achSL: 0, achSW: 0, achCW: 0 };
+  achRef = React.createRef(); coRef = React.createRef(); coScanRef = React.createRef(); waveRef = React.createRef(); coRem = 4000; coVis = true; coIn = false; coHover = false;
+  fieldRef = React.createRef(); vizRef = React.createRef();
+  pgRef = React.createRef();
+  ORB = [["2p_z", "n=2 · l=1 · m=0"], ["3d_z²", "n=3 · l=2 · m=0"], ["3d_xy", "n=3 · l=2 · real orbital"], ["3p_x", "n=3 · l=1 · real orbital"]];
+  qaigData() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV; }
+  qvpSync() { const m = this.props.viewport ?? "Auto"; if (m === this._qvp) return; const go = () => { if (window.QAIGViewport) { this._qvp = m; window.QAIGViewport.apply(m); } else setTimeout(go, 120); }; go(); }
+  componentDidMount() {
+    this.qvpSync();
+    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    const fine = !!(window.matchMedia && window.matchMedia("(pointer: fine)").matches);
+    this.setState({ rm, fine }, () => { this.setupField(); this.scrollUpd(); this.setupCursor(); this.coSetup(); this.setupWave(); this.achMeasure(); });
+    this.onR = () => this.setState({ w: window.innerWidth, h: window.innerHeight }, () => { this.scrollUpd(); this.achMeasure(); });
+    this.onS = () => { if (!this.sRaf) this.sRaf = requestAnimationFrame(() => { this.sRaf = 0; this.scrollUpd(); }); };
+    window.addEventListener("resize", this.onR); window.addEventListener("scroll", this.onS, { passive: true }); this.exWire();
+    if (!rm && typeof IntersectionObserver !== "undefined") {
+      document.documentElement.classList.add("qrv-on");
+      this.rvIO = new IntersectionObserver((es) => es.forEach((en) => { if (en.isIntersecting) { en.target.setAttribute("data-in", ""); this.rvIO.unobserve(en.target); } }), { rootMargin: "0px 0px -8% 0px" });
+      document.querySelectorAll("[data-rv]").forEach((el) => this.rvIO.observe(el));
+      const lg = document.getElementById("ledger");
+      if (lg && lg.getBoundingClientRect().top > window.innerHeight) {
+        this.setState({ cnt: 0 });
+        this.cIO = new IntersectionObserver(([en]) => { if (!en.isIntersecting) return; this.cIO.disconnect(); const t0 = performance.now(); const step = (now) => { const p = Math.min(1, (now - t0) / 1400); this.setState({ cnt: 1 - Math.pow(1 - p, 3) }); if (p < 1) this.cRaf = requestAnimationFrame(step); }; this.cRaf = requestAnimationFrame(step); }, { threshold: 0.3 });
+        this.cIO.observe(lg);
+      }
+    }
+  }
+  componentDidUpdate(pp, ps) {
+    this.qvpSync(); this.exAutoSync();
+    if (!this.fStop) this.setupField();
+    if (ps && ps.pf !== this.state.pf && !this.state.rm && this.pgRef.current) {
+      this.pgRef.current.querySelectorAll("article").forEach((el, i) => el.animate([{ opacity: 0, transform: "translateY(16px)" }, { opacity: 1, transform: "none" }], { duration: 520, delay: Math.min(i, 8) * 55, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" }));
+    }
+  }
+  componentWillUnmount() { this.exUnwire && this.exUnwire(); this.coOff && this.coOff(); this.waveOff && this.waveOff(); this.fStop && this.fStop(); this.cursorOff && this.cursorOff(); this.rvIO && this.rvIO.disconnect(); this.cIO && this.cIO.disconnect(); cancelAnimationFrame(this.cRaf); cancelAnimationFrame(this.sRaf); window.removeEventListener("resize", this.onR); window.removeEventListener("scroll", this.onS); window.removeEventListener("wheel", this.onW); window.removeEventListener("touchstart", this.onTS); window.removeEventListener("touchmove", this.onTM); window.removeEventListener("touchend", this.onTE); clearTimeout(this.snapT); document.documentElement.classList.remove("qrv-on"); }
+  pinned() { return false; }
+  exStk() { const S = this.state; return S.w >= 1024 && !S.rm && S.h >= 600; }
+  exCardPx() { const S = this.state; return Math.round(Math.max(460, Math.min(660, S.h - 85 - 72))); }
+  exStepPx() { return Math.max(360, Math.round(this.state.h * 0.6)); }
+  exN() { return document.querySelectorAll("[data-exstk]").length || 5; }
+  exOff() { const ex = document.getElementById("ex-track"); return ex ? 85 - ex.getBoundingClientRect().top : -1e9; }
+  exTop() { const ex = document.getElementById("ex-track"); return ex ? ex.getBoundingClientRect().top : 1e9; }
+  exAlign() { const ex = document.getElementById("ex-track"); if (ex) window.scrollTo({ top: Math.round(ex.getBoundingClientRect().top + window.scrollY - 85), behavior: "smooth" }); }
+  exJump(i) { const n = this.exN(); i = Math.max(0, Math.min(n - 1, i)); this.setState({ exM: i }); if (Math.abs(this.exTop() - 85) > 4) this.exAlign(); }
+  exCan(dir) { const n = this.exN(), c = Math.min(n - 1, this.state.exM || 0), t = c + dir; return t < 0 || t > n - 1 ? null : t; }
+  exZone(el) { return !!(el && el.closest && el.closest("[data-exzone]")); }
+  exNear() { return Math.abs(this.exTop() - 85) <= window.innerHeight * 0.45; }
+  exAutoOK() { return this.state.w >= 1024 && !this.state.rm; }
+  exAutoSync() {
+    const n = this.exN(), cur = Math.min(n - 1, this.state.exM || 0);
+    if (this.exAnI !== cur || (this.exAn && !this.exAn.effect.target.isConnected)) { this.exAn && this.exAn.cancel(); this.exAn = null; this.exAnI = cur; }
+    clearTimeout(this.exAT);
+    if (!this.exAutoOK()) { this.exAn && this.exAn.cancel(); this.exAn = null; return; }
+    if (!this.exAn) { const el = document.querySelector('[data-exfill="' + cur + '"]'); if (!el || !el.animate) return; this.exAn = el.animate([{ height: "0%" }, { height: "100%" }], { duration: this.exAutoD, easing: "linear", fill: "forwards" }); this.exAn.pause(); }
+    const run = this.exVis && !this.exHover && !document.hidden;
+    if (run) { this.exAn.play(); const rem = this.exAutoD - (this.exAn.currentTime || 0); this.exAT = setTimeout(() => this.setState((s) => ({ exM: ((s.exM || 0) + 1) % this.exN() })), Math.max(60, rem)); }
+    else this.exAn.pause();
+  }
+  exWire() {
+    this.exAutoD = 6500;
+    this.onW = (e) => { if (!this.exStk() || e.ctrlKey) return; const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaMode === 2 ? e.deltaY * 400 : e.deltaY; if (Math.abs(e.deltaX) > Math.abs(dy)) return;
+      const now = performance.now(), gap = now - (this.wLast || 0), a = Math.abs(dy); this.wLast = now;
+      if (this.wLock) { const since = now - this.wLockT, fresh = (gap > 140 && since > 380) || (since > 450 && a > 12 && a > (this.wPrev || 0) * 1.8 + 6); this.wPrev = a; if (!fresh) { e.preventDefault(); return; } this.wLock = false; this.wAcc = 0; }
+      this.wPrev = a; if (a < 1 || !this.exZone(e.target) || !this.exNear()) return;
+      const dir = dy > 0 ? 1 : -1, t = this.exCan(dir); if (t === null) return; e.preventDefault();
+      if (gap > 220 || Math.sign(this.wAcc || 0) !== dir) this.wAcc = 0; this.wAcc += dy; if (Math.abs(this.wAcc) < 20) return;
+      this.wAcc = 0; this.wLock = true; this.wLockT = now; if (Math.abs(this.exTop() - 85) > 4) this.exAlign(); else this.exJump(t); };
+    this.onTS = (e) => { this.tY = e.touches[0].clientY; this.tAct = this.exStk() && this.exZone(e.target) && this.exNear(); };
+    this.onTM = (e) => { if (!this.tAct || !this.exStk()) return; const dy = this.tY - e.touches[0].clientY; if (Math.abs(dy) < 6) return; if (this.exCan(dy > 0 ? 1 : -1) !== null) e.preventDefault(); else this.tAct = false; };
+    this.onTE = (e) => { if (!this.tAct) return; this.tAct = false; const dy = this.tY - (e.changedTouches[0] || {}).clientY; if (Math.abs(dy) < 36) return; const t = this.exCan(dy > 0 ? 1 : -1); if (t === null) return; if (Math.abs(this.exTop() - 85) > 4) this.exAlign(); else this.exJump(t); };
+    this.onPO = (e) => { const h = this.exZone(e.target); if (h !== !!this.exHover) { this.exHover = h; this.exAutoSync(); } };
+    this.onVis = () => this.exAutoSync();
+    window.addEventListener("wheel", this.onW, { passive: false }); window.addEventListener("touchstart", this.onTS, { passive: true }); window.addEventListener("touchmove", this.onTM, { passive: false }); window.addEventListener("touchend", this.onTE, { passive: true });
+    document.addEventListener("pointerover", this.onPO, { passive: true }); document.addEventListener("visibilitychange", this.onVis);
+    this.exUnwire = () => { clearTimeout(this.exAT); this.exAn && this.exAn.cancel(); window.removeEventListener("wheel", this.onW); window.removeEventListener("touchstart", this.onTS); window.removeEventListener("touchmove", this.onTM); window.removeEventListener("touchend", this.onTE); document.removeEventListener("pointerover", this.onPO); document.removeEventListener("visibilitychange", this.onVis); };
+  }
+  exFlow() { return this.state.w < 1024; }
+  exFlowTop() { return 85 + 84; }
+  exFlowUpd() {
+    const cs = document.querySelectorAll("[data-exstk]"); if (!cs.length) return; const vh = window.innerHeight, rm = this.state.rm, T = this.exFlowTop(); let a = 0, fp = 0;
+    const tops = []; cs.forEach((c, i) => { const t = rm ? 0 : Math.min(T + i * 10, vh - c.offsetHeight - 12); tops.push(t); if (!rm) c.style.top = t + "px"; });
+    cs.forEach((c, i) => { const nx = cs[i + 1], dim = c.querySelector("[data-exdim]"), r = c.getBoundingClientRect(); let p = 0;
+      if (nx) { const q = nx.getBoundingClientRect(); p = Math.max(0, Math.min(1, (r.bottom - q.top) / Math.max(1, r.height))); }
+      if (i > 0 && r.top <= Math.max(tops[i], 0) + T * 0.6 + 4) { const pr = cs[i - 1].getBoundingClientRect(); if (pr.bottom - r.top > pr.height * 0.4) a = i; }
+      if (!rm) { c.style.transform = p > 0.001 ? "scale(" + (1 - 0.06 * p).toFixed(4) + ")" : ""; if (dim) dim.style.opacity = (0.6 * p).toFixed(3); } });
+    { const c = cs[a], nx = cs[a + 1]; if (c) { const r = c.getBoundingClientRect(); fp = nx ? Math.max(0, Math.min(1, (r.bottom - nx.getBoundingClientRect().top) / Math.max(1, r.height))) : Math.max(0, Math.min(1, (T - r.top + 60) / Math.max(1, r.height))); } }
+    const S = this.state; if (a !== (S.exM || 0) || Math.abs(fp - (S.exFP || 0)) > 0.01) this.setState({ exM: a, exFP: fp });
+  }
+  exFlowJump(i) { const el = document.getElementById("expanel-" + i); if (!el) return; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - this.exFlowTop() - 8, behavior: this.state.rm ? "auto" : "smooth" }); }
+  exStkUpd() {
+    if (this.exFlow()) return this.exFlowUpd();
+    const ex = document.getElementById("ex-track"); if (ex) { const r = ex.getBoundingClientRect(), vh = window.innerHeight, v = r.top < vh * 0.6 && r.bottom > vh * 0.4; if (v !== !!this.exVis) { this.exVis = v; this.exAutoSync(); } }
+  }
+  scrollUpd() {
+    const vh = window.innerHeight, cl = (v) => Math.max(0, Math.min(1, v)), S = this.state, nx = {};
+    this.exStkUpd();
+    const ex = document.getElementById("ex-track"); if (ex && this.pinned()) { const r = ex.getBoundingClientRect(); nx.exP = cl((85 - r.top) / Math.max(1, r.height - (vh - 85))); }
+    
+    if (!S.rm) document.querySelectorAll("[data-sec]").forEach((el) => { const r = el.getBoundingClientRect(), q = cl((vh - r.top) / (vh * 0.6)); if (q >= 1) { if (el.style.clipPath) el.style.clipPath = ""; return; } const m = (1 - q) * Math.min(64, window.innerWidth * 0.05), rr = (1 - q) * 40; el.style.clipPath = "inset(0 " + m.toFixed(1) + "px round " + rr.toFixed(1) + "px)"; });
+    if (Object.keys(nx).some((k) => Math.abs(nx[k] - S[k]) > 0.002 || (nx[k] !== S[k] && (nx[k] === 0 || nx[k] === 1)))) this.setState(nx);
+  }
+  go(id) { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 85, behavior: this.state.rm ? "auto" : "smooth" }); }
+  goEx(i, focus) {
+    const ex = document.getElementById("ex-track"); if (!ex) return;
+    const vh = window.innerHeight, top = ex.getBoundingClientRect().top + window.scrollY, span = ex.offsetHeight - (vh - 85);
+    window.scrollTo({ top: top - 85 + span * (i + (this.state.w >= 1024 ? 0.5 : 0.08)) / 5, behavior: "smooth" });
+    if (focus) setTimeout(() => { const b = document.getElementById("extab-" + i); b && b.focus({ preventScroll: true }); }, 0);
+  }
+  pickF(i, focus) { this.setState({ pf: i, pfSet: true }); if (focus) setTimeout(() => { const b = document.getElementById("pf-" + i); b && b.focus(); }, 0); }
+  setupCursor() {
+    if (this.state.rm || !this.state.fine || this.cursorOff) return;
+    const old = document.getElementById("qcur-root"); if (old) old.remove();
+    const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
+    document.head.appendChild(st);
+    const root = document.createElement("div"); root.id = "qcur-root"; root.setAttribute("aria-hidden", "true");
+    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", Transition: "opacity .25s" });
+    const mono = "font:500 9px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase";
+    root.innerHTML = '<div data-k="ring" style="position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(0,212,255,.7);background:rgba(0,212,255,0);transition:transform .35s cubic-bezier(.22,1,.36,1),background .3s,border-color .3s;will-change:transform"></div>'
+      + '<svg data-k="cross" width="44" height="44" viewBox="0 0 44 44" style="position:absolute;left:-22px;top:-22px;opacity:0;transition:opacity .2s;color:#00d4ff"><path d="M22 0v14M22 30v14M0 22h14M30 22h14" stroke="currentColor" stroke-width="1"/></svg>'
+      + '<svg data-k="focus" width="48" height="48" viewBox="0 0 48 48" style="position:absolute;left:-24px;top:-24px;opacity:0;transform:scale(.7);transition:opacity .2s,transform .3s;color:#e6edf5"><path d="M1 10V1h9M38 1h9v9M47 38v9h-9M10 47H1v-9" fill="none" stroke="currentColor" stroke-width="1"/></svg>'
+      + '<span data-k="label" style="position:absolute;left:0;top:0;transform:translate(-50%,-50%);white-space:nowrap;opacity:0;transition:opacity .2s;color:#02131a;' + mono + '"></span>'
+      + '<span data-k="tag" style="position:absolute;left:26px;top:-22px;white-space:nowrap;opacity:0;transition:opacity .2s;color:#00d4ff;' + mono + '"></span>'
+      + '<div data-k="dot" style="position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#00d4ff;box-shadow:0 0 10px rgba(0,212,255,.8);transition:transform .18s"></div>';
+    document.body.appendChild(root); document.documentElement.classList.add("qcur");
+    const K = {}; ["ring", "cross", "focus", "label", "tag", "dot"].forEach((k) => { K[k] = root.querySelector('[data-k="' + k + '"]'); });
+    const parts = [K.ring, K.cross, K.focus, K.label, K.tag];
+    let x = -100, y = -100, rx = -100, ry = -100, raf = 0, mode = "-", sec = null;
+    const set = (m, lab) => { const key = m + "|" + (lab || ""); if (key === mode) return; mode = key;
+      const big = m === "label", lk = m === "link";
+      K.ring.style.transform = big ? "scale(2.1)" : lk ? "scale(1.45)" : m === "measure" ? "scale(.7)" : m === "media" ? "scale(0)" : "scale(1)";
+      K.ring.style.background = big ? "rgba(0,212,255,.92)" : lk ? "rgba(0,212,255,.1)" : "rgba(0,212,255,0)";
+      K.ring.style.borderColor = big ? "rgba(0,212,255,1)" : "rgba(0,212,255,.7)";
+      K.label.textContent = big ? lab : ""; K.label.style.opacity = big ? "1" : "0";
+      K.cross.style.opacity = m === "measure" ? "1" : "0"; K.tag.textContent = m === "measure" ? "Measure" : ""; K.tag.style.opacity = m === "measure" ? "1" : "0";
+      K.focus.style.opacity = m === "media" ? "1" : "0"; K.focus.style.transform = m === "media" ? "scale(1)" : "scale(.7)";
+      K.dot.style.transform = big ? "scale(0)" : "scale(1)"; };
+    const ctxOf = (tg) => { if (!tg || !tg.closest) return [""]; if (tg.closest('input,textarea,[contenteditable="true"]')) return ["text"];
+      const lab = tg.closest("[data-cursor]"); const a = tg.closest('a,button,[role="button"],[role="tab"],select,label');
+      if (a && !(lab && lab.contains(a) && a.tagName === "ARTICLE")) return a.closest("article[data-cursor]") ? ["label", a.closest("article[data-cursor]").getAttribute("data-cursor")] : ["link"];
+      if (lab && lab.getAttribute("data-cursor")) return ["label", lab.getAttribute("data-cursor")];
+      if (tg.tagName === "CANVAS" || (tg.closest("#top") && !tg.closest("h1,p,span"))) return ["measure"];
+      if (tg.closest("img,figure")) return ["media"]; return [""]; };
+    const tick = () => { raf = 0; rx += (x - rx) * 0.2; ry += (y - ry) * 0.2; K.dot.parentNode && (K.dot.style.left = (x - rx - 3) + "px", K.dot.style.top = (y - ry - 3) + "px", K.label.style.left = "0px"); root.style.transform = "translate3d(" + rx.toFixed(1) + "px," + ry.toFixed(1) + "px,0)"; if (Math.abs(x - rx) + Math.abs(y - ry) > 0.3) raf = requestAnimationFrame(tick); };
+    const spot = (ev) => { const s = ev.target && ev.target.closest ? ev.target.closest("[data-sec]") : null; if (s !== sec) { if (sec) { const o = sec.querySelector(":scope > [data-spot]"); o && (o.style.opacity = "0"); } sec = s; if (s) { const o = s.querySelector(":scope > [data-spot]"); o && (o.style.opacity = "1"); } }
+      if (sec) { const o = sec.querySelector(":scope > [data-spot]"); if (o) { const r = sec.getBoundingClientRect(); o.style.setProperty("--mx", (ev.clientX - r.left).toFixed(0) + "px"); o.style.setProperty("--my", (ev.clientY - r.top).toFixed(0) + "px"); } } };
+    this.cMove = (ev) => { x = ev.clientX; y = ev.clientY; if (rx < -50) { rx = x; ry = y; } root.style.opacity = "1"; spot(ev); if (!raf) raf = requestAnimationFrame(tick); };
+    this.cOver = (ev) => { const [m, lab] = ctxOf(ev.target); root.style.visibility = m === "text" ? "hidden" : "visible"; set(m === "text" ? "" : m, lab); };
+    this.cLeave = () => { root.style.opacity = "0"; if (sec) { const o = sec.querySelector(":scope > [data-spot]"); o && (o.style.opacity = "0"); sec = null; } };
+    this.cDown = () => { K.ring.style.transform += " scale(.85)"; }; this.cUp = () => { const m = mode; mode = "-"; const [a, b] = m.split("|"); set(a, b); };
+    window.addEventListener("mousemove", this.cMove, { passive: true }); document.addEventListener("mouseover", this.cOver); document.documentElement.addEventListener("mouseleave", this.cLeave);
+    window.addEventListener("mousedown", this.cDown); window.addEventListener("mouseup", this.cUp);
+    this.cursorOff = () => { cancelAnimationFrame(raf); window.removeEventListener("mousemove", this.cMove); document.removeEventListener("mouseover", this.cOver); document.documentElement.removeEventListener("mouseleave", this.cLeave); window.removeEventListener("mousedown", this.cDown); window.removeEventListener("mouseup", this.cUp); root.remove(); st.remove(); document.documentElement.classList.remove("qcur"); };
+  }
+  setupField() {
+    const c = this.fieldRef.current; if (!c || !c.getContext || this.fStop) return; if (c.getBoundingClientRect().width < 10) return;
+    const ctx = c.getContext("2d"), dpr = Math.min(this.state.fine ? 2 : 1.5, window.devicePixelRatio || 1), rm = this.state.rm, fine = this.state.fine, host = c.parentElement;
+    let W = 0, H = 0, raf = 0, vis = true, last = 0; const t0 = performance.now();
+    let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const NP = fine ? 2600 : 1100;
+    const dens = [(x, y, z, r) => z * z * Math.exp(-r), (x, y, z, r) => { const q = 3 * z * z - r * r; return q * q * Math.exp(-2 * r / 3); }, (x, y, z, r) => x * x * y * y * Math.exp(-2 * r / 3), (x, y, z, r) => { const q = 6 - r; return x * x * q * q * Math.exp(-2 * r / 3); }];
+    const RR = [10, 21, 19, 24];
+    const O = dens.map((f, k) => { const R = RR[k]; let mx = 0; for (let i = 0; i < 8000; i++) { const x = (rnd() * 2 - 1) * R, y = (rnd() * 2 - 1) * R, z = (rnd() * 2 - 1) * R; mx = Math.max(mx, f(x, y, z, Math.hypot(x, y, z))); } mx *= 1.05;
+      const A = new Float32Array(NP * 3); let n = 0, g = 0; while (n < NP && g < 3e6) { g++; const x = (rnd() * 2 - 1) * R, y = (rnd() * 2 - 1) * R, z = (rnd() * 2 - 1) * R, r = Math.hypot(x, y, z); if (r > R) continue; if (f(x, y, z, r) > rnd() * mx) { A[n * 3] = x / R; A[n * 3 + 1] = y / R; A[n * 3 + 2] = z / R; n++; } } return A; });
+    const C = new Float32Array(NP * 3), SN = new Float32Array(NP * 3), SX = new Float32Array(NP), SY = new Float32Array(NP), ph = new Float32Array(NP); for (let i = 0; i < NP; i++) ph[i] = rnd() * 6.283;
+    C.set(O[0]);
+    let a = 0, b = 1, mode = "hold", mt = 0; const T = [0, 0, 0], RP = [];
+    const P = { x: 0.7, y: 0.5, tx: 0.7, ty: 0.5, a: 0, ta: 0 };
+    let yawA = 0.6;
+    const eio = (u) => u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2;
+    let CX = 0, CY = 0, SC = 1, wide = true;
+    const size = () => { const r = c.getBoundingClientRect(); W = r.width; H = r.height; c.width = Math.round(W * dpr); c.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0); wide = W >= 1100; CX = W * 0.71; CY = H * 0.47; SC = Math.min(W * 0.23, H * 0.4);
+      if (!wide) { const v = this.vizRef.current, vr = v && v.getBoundingClientRect(); if (vr && vr.height > 20) { CX = W / 2; CY = vr.top - r.top + vr.height / 2; SC = Math.min(W * 0.4, vr.height * 0.4); } else { CX = W * 0.5; CY = H * 0.72; SC = Math.min(W * 0.36, H * 0.2); } } if (rm) draw(2); };
+    const setOrb = (i) => this.setState({ orb: i });
+    const draw = (t, dt) => {
+      const kI = (this.props.fieldIntensity === "Subtle" ? 0.6 : 1) * (wide ? 1 : 0.92);
+      if (!rm) { mt += dt;
+        if (mode === "hold" && mt > 5.5) { mode = "morph"; mt = 0; b = (a + 1) % 4; }
+        else if (mode === "morph" && mt > 2.6) { a = b; mode = "hold"; mt = 0; setOrb(a); }
+        else if (mode === "collapse" && mt > 0.55) { a = (a + 1) % 4; mode = "expand"; mt = 0; setOrb(a); }
+        else if (mode === "expand" && mt > 1.7) { mode = "hold"; mt = 0; } }
+      const A = O[a], B = O[b];
+      if (mode === "hold") C.set(A);
+      else if (mode === "morph") { const u = eio(Math.min(1, mt / 2.6)); for (let i = 0; i < NP * 3; i++) C[i] = A[i] + (B[i] - A[i]) * u; }
+      else if (mode === "collapse") { const u = Math.pow(Math.min(1, mt / 0.55), 2); for (let i = 0; i < NP; i++) { C[i * 3] = SN[i * 3] + (T[0] - SN[i * 3]) * u; C[i * 3 + 1] = SN[i * 3 + 1] + (T[1] - SN[i * 3 + 1]) * u; C[i * 3 + 2] = SN[i * 3 + 2] + (T[2] - SN[i * 3 + 2]) * u; } }
+      else { const u = 1 - Math.pow(1 - Math.min(1, mt / 1.7), 3); for (let i = 0; i < NP; i++) { C[i * 3] = T[0] + (A[i * 3] - T[0]) * u; C[i * 3 + 1] = T[1] + (A[i * 3 + 1] - T[1]) * u; C[i * 3 + 2] = T[2] + (A[i * 3 + 2] - T[2]) * u; } }
+      P.x += (P.tx - P.x) * 0.06; P.y += (P.ty - P.y) * 0.06; P.a += (P.ta - P.a) * 0.05;
+      yawA += (rm ? 0 : dt * 0.16);
+      const yaw = yawA + (P.x - 0.5) * 1.6 * P.a, pitch = -0.32 + (P.y - 0.5) * 1.1 * P.a;
+      const cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
+      const px = P.x * W, py = P.y * H, obs = fine && P.a > 0.05;
+      const proj = (x, y, z) => { const x1 = x * cy - y * sy, y1 = x * sy + y * cy, z2 = z * cp - y1 * sp, d = z * sp + y1 * cp, f = 3 / (3 + d); return [CX + x1 * SC * f, CY - z2 * SC * f, d]; };
+      ctx.clearRect(0, 0, W, H); ctx.globalCompositeOperation = "source-over";
+      ctx.lineWidth = 1; ctx.strokeStyle = "rgba(150,205,240," + (0.13 * kI).toFixed(3) + ")";
+      [[1.2, 0, 0], [0, 1.2, 0], [0, 0, 1.2]].forEach(([x, y, z], k) => { const p0 = proj(-x, -y, -z), p1 = proj(x, y, z); ctx.setLineDash(k === 2 ? [] : [2, 5]); ctx.beginPath(); ctx.moveTo(p0[0], p0[1]); ctx.lineTo(p1[0], p1[1]); ctx.stroke(); ctx.fillStyle = "rgba(160,190,215," + (0.5 * kI).toFixed(3) + ")"; ctx.font = "10px ui-monospace, SFMono-Regular, Menlo, monospace"; ctx.fillText(["x", "y", "z"][k], p1[0] + 6, p1[1] - 4); });
+      ctx.setLineDash([]); ctx.beginPath(); for (let k = 0; k <= 72; k++) { const q = k / 72 * 6.283, p = proj(Math.cos(q) * 1.08, Math.sin(q) * 1.08, 0); k ? ctx.lineTo(p[0], p[1]) : ctx.moveTo(p[0], p[1]); } ctx.strokeStyle = "rgba(0,212,255," + (0.1 * kI).toFixed(3) + ")"; ctx.stroke();
+      ctx.globalCompositeOperation = "lighter";
+      const jit = rm ? 0 : 0.008;
+      for (let i = 0; i < NP; i++) {
+        const x = C[i * 3] + jit * Math.sin(t * 2.3 + ph[i]), y = C[i * 3 + 1] + jit * Math.cos(t * 1.9 + ph[i]), z = C[i * 3 + 2];
+        const x1 = x * cy - y * sy, y1 = x * sy + y * cy, z2 = z * cp - y1 * sp, d = z * sp + y1 * cp, f = 3 / (3 + d), sx = CX + x1 * SC * f, syy = CY - z2 * SC * f;
+        SX[i] = sx; SY[i] = syy;
+        const depth = 0.35 + 0.65 * (1 - (d + 1) / 2);
+        let al = (0.16 + 0.5 * depth) * kI, s = (0.9 + 1.1 * depth) * f;
+        if (obs) { const dd = Math.hypot(sx - px, syy - py); if (dd < 120) { const k = 1 - dd / 120; al += 0.55 * k * P.a; s += 1.3 * k * P.a; ctx.fillStyle = "#e6fbff"; ctx.globalAlpha = Math.min(1, al); ctx.fillRect(sx - s / 2, syy - s / 2, s, s); continue; } }
+        ctx.fillStyle = "#00d4ff"; ctx.globalAlpha = Math.min(1, al); ctx.fillRect(sx - s / 2, syy - s / 2, s, s);
+      }
+      ctx.globalAlpha = 1; ctx.globalCompositeOperation = "source-over";
+      const g = ctx.createRadialGradient(CX, CY, 0, CX, CY, 18); g.addColorStop(0, "rgba(230,251,255," + (0.9 * kI).toFixed(3) + ")"); g.addColorStop(1, "rgba(0,212,255,0)"); ctx.fillStyle = g; ctx.beginPath(); ctx.arc(CX, CY, 18, 0, 6.283); ctx.fill();
+      for (let q = RP.length - 1; q >= 0; q--) { const age = t - RP[q].t; if (age > 1.6) { RP.splice(q, 1); continue; } const u = age / 1.6; ctx.strokeStyle = "rgba(0,212,255," + (0.6 * (1 - u)).toFixed(3) + ")"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(RP[q].x, RP[q].y, 6 + u * 160, 0, 6.283); ctx.stroke(); }
+      if (mode === "collapse") { const p = proj(T[0], T[1], T[2]), u = Math.min(1, mt / 0.55); ctx.fillStyle = "rgba(230,251,255," + (0.9 * u).toFixed(3) + ")"; ctx.beginPath(); ctx.arc(p[0], p[1], 2 + 4 * u, 0, 6.283); ctx.fill(); }
+      if (obs) { ctx.globalAlpha = P.a; ctx.strokeStyle = "rgba(0,212,255,.65)"; ctx.lineWidth = 1; ctx.beginPath(); ctx.arc(px, py, 20, 0, 6.283); ctx.stroke(); [[0, -1], [0, 1], [-1, 0], [1, 0]].forEach(([dx, dy]) => { ctx.beginPath(); ctx.moveTo(px + dx * 25, py + dy * 25); ctx.lineTo(px + dx * 33, py + dy * 33); ctx.stroke(); }); ctx.fillStyle = "rgba(200,235,250,.85)"; ctx.font = "10px ui-monospace, SFMono-Regular, Menlo, monospace"; ctx.fillText("OBSERVING · |ψ|²", px + 30, py - 24); ctx.globalAlpha = 1; }
+    };
+    const loop = (now) => { raf = 0; if (!vis || document.visibilityState === "hidden") return; const t = (now - t0) / 1000, dt = Math.min(0.05, Math.max(0, t - last)); last = t; draw(t, dt); raf = requestAnimationFrame(loop); };
+    const start = () => { if (!rm && !raf) { last = (performance.now() - t0) / 1000; raf = requestAnimationFrame(loop); } };
+    size(); const ro = typeof ResizeObserver !== "undefined" ? new ResizeObserver(() => { cancelAnimationFrame(this._roRaf); this._roRaf = requestAnimationFrame(size); }) : null; if (ro) { ro.observe(host); this.vizRef.current && ro.observe(this.vizRef.current); } else window.addEventListener("resize", size);
+    const mv = (ev) => { const r = c.getBoundingClientRect(); P.tx = (ev.clientX - r.left) / r.width; P.ty = (ev.clientY - r.top) / r.height; P.ta = 1; };
+    const lv = () => { P.ta = 0; };
+    const dn = (ev) => {
+      if (ev.target.closest && ev.target.closest("a,button,h1,p,span")) return; if (mode === "collapse" || mode === "expand") return;
+      const r = c.getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top; let bi = 0, bd = 1e9;
+      for (let i = 0; i < NP; i += 3) { const d = (SX[i] - x) ** 2 + (SY[i] - y) ** 2; if (d < bd) { bd = d; bi = i; } }
+      SN.set(C); T[0] = C[bi * 3]; T[1] = C[bi * 3 + 1]; T[2] = C[bi * 3 + 2]; mode = "collapse"; mt = 0; RP.push({ x: SX[bi], y: SY[bi], t: (performance.now() - t0) / 1000 });
+    };
+    if (!rm) { if (fine) { host.addEventListener("pointermove", mv); host.addEventListener("pointerleave", lv); } host.addEventListener("pointerdown", dn); }
+    const io = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver(([en]) => { vis = en.isIntersecting; if (vis) start(); }, { threshold: 0 }) : null; io && io.observe(c);
+    const vz = () => start(); document.addEventListener("visibilitychange", vz);
+    if (rm) draw(2, 0); else start();
+    this.fStop = () => { cancelAnimationFrame(raf); ro ? ro.disconnect() : window.removeEventListener("resize", size); host.removeEventListener("pointermove", mv); host.removeEventListener("pointerleave", lv); host.removeEventListener("pointerdown", dn); io && io.disconnect(); document.removeEventListener("visibilitychange", vz); };
+  }
+  navIcon(k) {
+    const e = React.createElement, c = "var(--brand)", m = "var(--muted)", x = 12, y = 12;
+    const L = (kk, a, b, cc, dd, s, w) => e("line", { key: kk, x1: a, y1: b, x2: cc, y2: dd, stroke: s || m, strokeWidth: w || 1.3 }), P = (kk, d, s, w) => e("path", { key: kk, d, fill: "none", stroke: s || c, strokeWidth: w || 1.4, strokeLinecap: "round", strokeLinejoin: "round" });
+    const K = {
+      shield: () => [P(1, "M" + x + " " + (y - 14) + " l11 4 v7 c0 7 -5 11 -11 14 c-6 -3 -11 -7 -11 -14 v-7 z")],
+      gates: () => [L(1, x - 16, y - 6, x + 16, y - 6), L(2, x - 16, y + 6, x + 16, y + 6), e("rect", { key: 3, x: x - 11, y: y - 11, width: 9, height: 10, rx: 1.5, fill: "var(--surface)", stroke: c }), e("rect", { key: 4, x: x + 2, y: y + 1, width: 9, height: 10, rx: 1.5, fill: "var(--surface)", stroke: c })],
+      tube: () => [L(1, x - 16, y - 7, x + 16, y - 7), L(2, x - 16, y + 7, x + 16, y + 7), e("circle", { key: 3, cx: x, cy: y, r: 2.5, fill: c })],
+      meter: () => [P(1, "M" + (x - 13) + " " + (y + 6) + " A13 13 0 0 1 " + (x + 13) + " " + (y + 6), m, 1.2), L(2, x, y + 6, x + 7, y - 6, c, 1.6)],
+      diode: () => [e("rect", { key: 1, x: x - 13, y: y - 8, width: 26, height: 16, rx: 3, fill: "none", stroke: c, strokeWidth: 1.3 }), L(2, x - 4, y - 8, x - 4, y + 8, c, 1)],
+    };
+    return e("svg", { width: 24, height: 24, viewBox: "-6 -6 36 36", "aria-hidden": true, style: { display: "block" } }, ...(K[k] ? K[k]() : []));
+  }
+  coIcon(i) {
+    const e = React.createElement, p = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round", strokeLinejoin: "round", "aria-hidden": true, style: { display: "block" } };
+    const k = [
+      [e("path", { key: 1, d: "M12 3l9 5H3z" }), e("path", { key: 2, d: "M5 10v8M9.5 10v8M14.5 10v8M19 10v8" }), e("path", { key: 3, d: "M3 21h18" })],
+      [e("path", { key: 1, d: "M3 21V11l5 3v-3l5 3v-3l5 3V4h3v17z" }), e("path", { key: 2, d: "M7 18h2M12 18h2" })],
+      [e("path", { key: 1, d: "M2 9l10-5 10 5-10 5z" }), e("path", { key: 2, d: "M6 11v5c0 1.6 2.7 3 6 3s6-1.4 6-3v-5" }), e("path", { key: 3, d: "M22 9v6" })],
+    ][i];
+    return e("svg", p, k);
+  }
+  coData() { if (this._co) return this._co; let L = window.QAIG_LOGOS || []; if (!L.length) try { const x = new XMLHttpRequest(); x.open("GET", "assets/logos/logos.json", false); x.send(); L = JSON.parse(x.responseText); } catch (err) {} this._co = L; return L; }
+  coSync() {
+    const run = !this.state.rm && this.coVis && this.coIn && !this.coHover && !this.state.coHold;
+    if (run === this.coRun) return; this.coRun = run;
+    if (run) { this.coStart = performance.now(); clearTimeout(this.coTO); this.coTO = setTimeout(() => this.coNext(), this.coRem); }
+    else { clearTimeout(this.coTO); if (this.coStart != null) this.coRem = Math.max(0, this.coRem - (performance.now() - this.coStart)); this.coStart = null; }
+    if (this.state.coPaused === run) this.setState({ coPaused: !run });
+  }
+  coNext() { this.coRun = false; this.coStart = null; this.coRem = 4000; this.coSwap((this.state.co + 1) % 3, () => this.coSync()); }
+  coSwap(i, cb) {
+    if (i === this.state.co) { this.setState((s) => ({ coK: s.coK + 1 }), cb); return; }
+    const cells = () => { const g = this.coRef.current; return g ? Array.from(g.querySelectorAll("[data-logo]")) : []; };
+    if (this.state.rm || !Element.prototype.animate) { this.setState((s) => ({ co: i, coK: s.coK + 1 }), cb); return; }
+    clearTimeout(this.coFT);
+    const cols = Math.max(1, Math.round((this.coRef.current ? this.coRef.current.clientWidth : 1000) / Math.max(1, (cells()[0] || { clientWidth: 200 }).clientWidth)));
+    cells().forEach((el, n) => { el.getAnimations().forEach((a) => a.cancel()); el.animate([{ opacity: 1, transform: "none", Filter: "blur(0px)" }, { opacity: 0, transform: "translateY(-8px)", Filter: "blur(4px)" }], { duration: 260, delay: (n % cols) * 24, easing: "cubic-bezier(.4,0,1,1)", fill: "forwards" }); });
+    const sc = this.coScanRef.current; if (sc) sc.animate([{ opacity: 0, transform: "translateX(-4%)" }, { opacity: 1, offset: 0.15 }, { opacity: 1, offset: 0.8 }, { opacity: 0, transform: "translateX(104%)" }], { duration: 900, delay: 120, easing: "cubic-bezier(.45,0,.2,1)" });
+    this.coFT = setTimeout(() => this.setState((s) => ({ co: i, coK: s.coK + 1 }), () => {
+      cells().forEach((el, n) => { el.getAnimations().forEach((a) => a.cancel()); el.animate([{ opacity: 0, transform: "translateY(10px)", filter: "blur(6px)" }, { opacity: 1, transform: "none", Filter: "blur(0px)" }], { duration: 560, delay: (n % cols) * 70 + Math.floor(n / cols) * 40, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" }); });
+      cb && cb(); }), 330);
+  }
+  coPick(i, focus) {
+    clearTimeout(this.coHT); clearTimeout(this.coTO); this.coRun = false; this.coStart = null; this.coRem = 4000;
+    this.setState({ coHold: true, coPaused: true }, () => this.coSwap(i));
+    if (focus) setTimeout(() => { const b = document.getElementById("cotab-" + i); b && b.focus(); }, 0);
+    this.coHT = setTimeout(() => { this.coRem = 4000; this.setState((s) => ({ coHold: false, coK: s.coK + 1 }), () => this.coSync()); }, 6000);
+  }
+  setupWave() {
+    const p = this.waveRef.current; if (!p || this.waveOff) return; const svg = p.ownerSVGElement, host = document.getElementById("cta-card"), rm = this.state.rm;
+    let W = 600, raf = 0, vis = false, px = -1e4, A = 0, tA = 0; const t0 = performance.now();
+    const draw = (t) => { const now = performance.now(); let d = ""; const pk = (this.wavePulses || []).filter((s) => now - s < 1600); this.wavePulses = pk;
+      for (let x = 0; x <= W + 4; x += 4) { const g = Math.exp(-((x - px) * (x - px)) / (2 * 110 * 110)); let y = 45 + 4 * Math.sin(x / 70 + t * 0.7) + 2 * Math.sin(x / 23 - t * 1.2) + A * g * Math.sin(x / 13 - t * 5);
+        for (const s of pk) { const u = (now - s) / 1600, c = u * (W + 160) - 80, k = Math.exp(-((x - c) * (x - c)) / (2 * 50 * 50)) * (1 - u); y += 20 * k * Math.sin(x / 8 - t * 9); }
+        d += (x ? " L" : "M") + x + " " + y.toFixed(1); } p.setAttribute("d", d); };
+    const size = () => { W = Math.max(1, Math.round(svg.getBoundingClientRect().width)); svg.setAttribute("viewBox", "0 0 " + W + " 90"); draw((performance.now() - t0) / 1000); };
+    const loop = (now) => { raf = 0; if (!vis || document.visibilityState === "hidden") return; A += (tA - A) * 0.07; draw((now - t0) / 1000); raf = requestAnimationFrame(loop); };
+    this.waveKick = () => { if (rm) return; (this.wavePulses = this.wavePulses || []).push(performance.now()); if (vis && !raf) raf = requestAnimationFrame(loop); };
+    const mv = (ev) => { const r = svg.getBoundingClientRect(); px = ev.clientX - r.left; tA = 18; }, lv = () => { tA = 0; };
+    size(); window.addEventListener("resize", size);
+    if (!rm && host) { host.addEventListener("pointermove", mv); host.addEventListener("pointerleave", lv); }
+    const io = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver(([en]) => { vis = en.isIntersecting && !rm; if (vis && !raf) raf = requestAnimationFrame(loop); }) : null; io && io.observe(svg);
+    this.waveOff = () => { cancelAnimationFrame(raf); window.removeEventListener("resize", size); if (host) { host.removeEventListener("pointermove", mv); host.removeEventListener("pointerleave", lv); } io && io.disconnect(); };
+  }
+  achVals() {
+    const P = "assets/home/achievements/", S = this.state, A = [
+      { kind: "Award", mark: "Innovation in DeepTech", date: "February 2026", title: "16th Aegis Graham Bell Award", text: "Quantum AI Global received the 16th Aegis Graham Bell Award for Innovation in DeepTech for Qubit Intelligence, its generalised quantum algorithm development accelerator.", img: P + "01-agbi-award.png", fit: "cover", pos: "50% 35%", alt: "QAIG team on stage receiving the Aegis Graham Bell trophy and Award of Excellence certificate" },
+      { kind: "National Initiative", mark: "Amaravati Quantum Valley", date: "February 2026", title: "Amaravati Quantum Valley Foundation Stone Ceremony", text: "On 7 February 2026, QAIG participated in the Foundation Stone ceremony for Amaravati Quantum Valley. CEO Sanjay Chittore was felicitated by National Quantum Mission Director Dr. J.B.V. Reddy, recognising QAIG's role in India's quantum technology ecosystem.", img: P + "02-amaravati-quantum-valley-foundation-stone-with-cm.png", fit: "contain", pos: "50% 50%", alt: "QAIG CEO Sanjay Chittore with the Chief Minister of Andhra Pradesh in front of the state emblem" },
+      { kind: "Strategic Partnership", mark: "Government of Andhra Pradesh", date: "November 2025", title: "Strategic MoUs with the Government of Andhra Pradesh", text: "At the CII Partnership Summit on 15 November 2025, QAIG signed two strategic MoUs: one with the State Government of Andhra Pradesh through AP Quantum Valley and another with the Ratan Tata Innovation Hub, supporting the state's quantum innovation ecosystem.", img: P + "03-strategic-mou-andhra-pradesh-government.jpeg", fit: "cover", pos: "50% 22%", alt: "Representatives holding signed MoU documents on stage, Government of Andhra Pradesh backdrop" },
+      { kind: "Award", mark: "Times Business Awards · Hyderabad", date: "2025", title: "Times Business Awards 2025: Excellence in Quantum & AI Innovations", text: "Quantum AI Global was recognised for Excellence in Quantum & AI Innovations at the 11th edition of the Times Business Awards, Hyderabad 2025.", img: P + "04-bharat-telecom-export-excellence-award.png", fit: "cover", pos: "40% 50%", alt: "QAIG receiving the Times Business Awards Hyderabad 2025 recognition for Excellence in Quantum & AI Innovations on stage" },
+      { kind: "Leadership Recognition", mark: "India's Top 10 Deep Tech CTOs", date: "April 2025", title: "India's Top 10 Deep Tech CTOs", text: "QAIG CTO Kapil Jaiswal was recognised among India's Top 10 Deep Tech CTOs, acknowledging his leadership and contributions across quantum technology, AI/ML and cybersecurity.", img: P + "05-indias-top-10-deep-tech-ctos-kapil-jaiswal.jpeg", fit: "contain", pos: "50% 50%", alt: "Corporate Trendz magazine cover, April 2025, featuring QAIG CTO Kapil Jaiswal in 10 Leading CTOs in India 2025" },
+      { kind: "Healthcare Innovation", mark: "AMTZ · Visakhapatnam", date: "March 2025", title: "Advancing Healthcare with Quantum & AI Innovation", text: "On 13 March 2025, the QAIG team held discussions with Andhra Pradesh MedTech Zone Limited (AMTZ), Visakhapatnam, exploring how quantum and AI technologies can support sensing and security in healthcare applications.", img: P + "amtz-advancing-healthcare-quantum-ai-innovation.jpg", fit: "cover", pos: "50% 45%", alt: "QAIG team with AMTZ representatives at the AMTZ office in Visakhapatnam" },
+    ].map((x, i, arr) => Object.assign(x, { n: String(i + 1).padStart(2, "0") + " / " + String(arr.length).padStart(2, "0") }));
+    const o = S.ach;
+    const pv = S.w >= 1024 ? 3 : S.w >= 640 ? 2 : 1, n = A.length, sw = S.achSW || 1, cw = S.achCW || 1, measured = S.achSW > 0;
+    const idx = measured ? Math.round(S.achSL / ((sw + 20) / n)) : 0, p2 = (v) => String(v).padStart(2, "0");
+    const atS = S.achSL <= 2, atE = measured && S.achSL + cw >= sw - 2;
+    return { ach: A, achBasis: pv === 1 ? "86%" : "calc((100% - " + (pv - 1) * 20 + "px) / " + pv + ")", achRef: this.achRef, achOnScroll: () => this.achMeasure(),
+      achCount: p2(idx + 1) + "–" + p2(Math.min(n, idx + pv)) + " / " + p2(n),
+      achBarW: (measured ? Math.min(100, cw / sw * 100) : pv / n * 100).toFixed(1) + "%", achBarL: (measured ? S.achSL / sw * 100 : 0).toFixed(1) + "%",
+      achPrevProps: { disabled: atS }, achNextProps: { disabled: atE },
+      achPrev: () => this.achGo(-1), achNext: () => this.achGo(1),
+      toAchievements: () => { const nav = this.qaigData() || {}, href = nav.achievementsHref || ((nav.routes && nav.routes.resources) || "Resources v2.dc.html") + "?page=downloads#dl-achievements"; window.QAIG_GO ? window.QAIG_GO(href) : (window.location.href = href); } };
+  }
+  achGo(d) { const el = this.achRef.current; if (!el || !el.children[0]) return; const pv = this.state.w >= 1024 ? 3 : this.state.w >= 640 ? 2 : 1; el.scrollBy({ left: d * pv * (el.children[0].offsetWidth + 20), behavior: this.state.rm ? "auto" : "smooth" }); }
+  achMeasure() { const el = this.achRef.current; if (!el) return; const sl = Math.round(el.scrollLeft), sw = el.scrollWidth, cw = el.clientWidth, S = this.state; if (sl !== S.achSL || sw !== S.achSW || cw !== S.achCW) this.setState({ achSL: sl, achSW: sw, achCW: cw }); }
+  coSetup() {
+    const el = document.getElementById("collaborators"); if (!el) return;
+    this.coIO = typeof IntersectionObserver !== "undefined" ? new IntersectionObserver(([en]) => { this.coIn = en.isIntersecting; this.coSync(); }, { threshold: 0.35 }) : null;
+    if (this.coIO) this.coIO.observe(el); else { this.coIn = true; this.coSync(); }
+    this.coVz = () => { this.coVis = document.visibilityState !== "hidden"; this.coSync(); }; document.addEventListener("visibilitychange", this.coVz);
+    this.coOff = () => { clearTimeout(this.coTO); clearTimeout(this.coHT); clearTimeout(this.coFT); this.coIO && this.coIO.disconnect(); document.removeEventListener("visibilitychange", this.coVz); };
+  }
+  ill(code, live) {
+
+    const e = React.createElement, rm = this.state.rm || !live, B = "var(--brand)", L = "var(--border-strong)", T = "var(--faint)", FG = "var(--foreground-2)", SF = "var(--surface-2)";
+    const an = (key, p) => rm ? null : e("animate", { key, repeatCount: "indefinite", ...p });
+    const mot = (key, path, dur, begin) => rm ? null : e("animateMotion", { key, path, dur, begin: (begin ? "-" + begin : "0s"), repeatCount: "indefinite" });
+    const lab = (key, x, y, s, anchor, fill) => e("text", { key, x, y, fill: fill || "var(--muted)", fontSize: 13.5, textAnchor: anchor || "start", style: { fontFamily: "var(--font-mono)", letterSpacing: "0.14em" } }, s);
+    const dot = (key, r, fill, m) => e("circle", { key, r, fill, opacity: rm ? 0 : 1 }, m);
+    let k = [];
+    if (code === "PQC") {
+      const cx = 280, cy = 150, hex = (r) => [0, 1, 2, 3, 4, 5].map((i) => { const a = -Math.PI / 2 + i * Math.PI / 3; return (cx + r * Math.cos(a)).toFixed(1) + "," + (cy + r * Math.sin(a)).toFixed(1); }).join(" ");
+      k = [
+        e("line", { key: "l1", x1: 20, y1: cy, x2: cx - 104, y2: cy, stroke: T, strokeDasharray: "2 6" }),
+        e("line", { key: "l3", x1: cx + 104, y1: cy, x2: 540, y2: cy, stroke: L }),
+        ...[120, 86, 52].map((r, i) => e("polygon", { key: "h" + i, points: hex(r), fill: i === 2 ? "rgba(0,212,255,.06)" : "none", stroke: i === 0 ? L : B, strokeOpacity: i === 1 ? 0.5 : 1, strokeDasharray: i === 0 ? "3 5" : null, strokeWidth: 1 }, i === 2 ? an("a", { attributeName: "stroke-opacity", values: ".35;1;.35", dur: "3s" }) : null)),
+        ...[-2, -1, 0, 1, 2].flatMap((a) => [-2, -1, 0, 1, 2].map((b) => Math.hypot(a, b) <= 2.2 ? e("circle", { key: "d" + a + b, cx: cx + a * 14 + (b % 2 ? 7 : 0), cy: cy + b * 12, r: 1.3, fill: B, opacity: 0.5 }) : null)),
+        e("line", { key: "l2", x1: cx - 104, y1: cy, x2: cx + 104, y2: cy, stroke: B, strokeWidth: 1.5 }),
+        dot("p1", 4, B, mot("m", "M20 150 H540", "5s")), dot("p2", 3, "#bdf5ff", mot("m", "M20 150 H540", "5s", "2.5s")),
+        lab("t1", 20, 136, "DATA IN TRANSIT"), lab("t2", cx, 18, "QUANTUM-SAFE BOUNDARY", "middle"), lab("t3", 540, 136, "PROTECTED", "end"),
+      ];
+    } else if (code === "QIS") {
+      const cx = 170, cy = 150, pts = Array.from({ length: 13 }, (_, i) => { const a = i / 12 * Math.PI * 2; return [cx + 62 * Math.cos(a), cy - 74 + 20 * Math.sin(a)]; });
+      const xs = pts.map((p) => p[0].toFixed(1)).join(";"), ys = pts.map((p) => p[1].toFixed(1)).join(";");
+      k = [
+        e("circle", { key: "s", cx, cy, r: 100, fill: "rgba(0,212,255,.03)", stroke: L }),
+        e("ellipse", { key: "eq", cx, cy, rx: 100, ry: 28, fill: "none", stroke: L, strokeDasharray: "3 4" }),
+        e("line", { key: "ax", x1: cx, y1: 44, x2: cx, y2: 256, stroke: T, strokeDasharray: "2 4" }),
+        e("ellipse", { key: "tr", cx, cy: cy - 74, rx: 62, ry: 20, fill: "none", stroke: B, strokeOpacity: 0.35, strokeDasharray: "2 4" }),
+        e("line", { key: "v", x1: cx, y1: cy, x2: pts[0][0], y2: pts[0][1], stroke: B, strokeWidth: 2 }, an("a", { attributeName: "x2", values: xs, dur: "6s" }), an("b", { attributeName: "y2", values: ys, dur: "6s" })),
+        e("circle", { key: "vp", cx: pts[0][0], cy: pts[0][1], r: 5, fill: B }, an("a", { attributeName: "cx", values: xs, dur: "6s" }), an("b", { attributeName: "cy", values: ys, dur: "6s" })),
+        e("circle", { key: "c", cx, cy, r: 3, fill: FG }),
+        e("text", { key: "k0", x: cx, y: 36, fill: FG, fontSize: 13.5, textAnchor: "middle" }, "|0⟩"), e("text", { key: "k1", x: cx, y: 274, fill: FG, fontSize: 13.5, textAnchor: "middle" }, "|1⟩"),
+        ...[100, 150, 200].flatMap((y, i) => [e("line", { key: "q" + i, x1: 340, y1: y, x2: 540, y2: y, stroke: L }), lab("ql" + i, 330, y + 4, "q" + i, "end")]),
+        e("rect", { key: "h", x: 362, y: 88, width: 24, height: 24, rx: 3, fill: SF, stroke: B }), e("text", { key: "ht", x: 374, y: 104, fill: B, fontSize: 13.5, textAnchor: "middle" }, "H"),
+        e("line", { key: "c1", x1: 430, y1: 100, x2: 430, y2: 159, stroke: B }), e("circle", { key: "c1d", cx: 430, cy: 100, r: 4, fill: B }), e("circle", { key: "c1t", cx: 430, cy: 150, r: 9, fill: SF, stroke: B }), e("path", { key: "c1p", d: "M421 150h18M430 141v18", stroke: B }),
+        e("line", { key: "c2", x1: 484, y1: 150, x2: 484, y2: 209, stroke: B }), e("circle", { key: "c2d", cx: 484, cy: 150, r: 4, fill: B }), e("circle", { key: "c2t", cx: 484, cy: 200, r: 9, fill: SF, stroke: B }), e("path", { key: "c2p", d: "M475 200h18M484 191v18", stroke: B }),
+        dot("pl", 3, "#bdf5ff", mot("m", "M340 100 H540", "3s")),
+        lab("t1", 70, 290, "QUBIT STATE"), lab("t2", 540, 290, "CIRCUIT", "end"),
+      ];
+    } else if (code === "NET") {
+      const n = [[50, 150], [160, 70], [160, 230], [290, 150], [420, 70], [420, 230], [520, 150]], ed = [[0, 1], [0, 2], [1, 3], [2, 3], [3, 4], [3, 5], [4, 6], [5, 6]];
+      k = [
+        ...ed.map(([a, b], i) => e("line", { key: "e" + i, x1: n[a][0], y1: n[a][1], x2: n[b][0], y2: n[b][1], stroke: L })),
+        e("path", { key: "ent", d: "M160 80 Q 178 150 160 220", fill: "none", stroke: B, strokeOpacity: 0.5, strokeDasharray: "3 4" }),
+        e("circle", { key: "ring", cx: 290, cy: 150, r: 14, fill: "none", stroke: B }, an("a", { attributeName: "r", values: "14;30", dur: "2.4s" }), an("b", { attributeName: "stroke-opacity", values: ".7;0", dur: "2.4s" })),
+        ...n.map(([x, y], i) => i === 3 ? e("rect", { key: "n" + i, x: x - 11, y: y - 11, width: 22, height: 22, rx: 4, fill: SF, stroke: B }) : e("circle", { key: "n" + i, cx: x, cy: y, r: 6, fill: SF, stroke: i === 0 || i === 6 ? B : FG })),
+        dot("ph1", 3.5, B, mot("m", "M50 150 L160 70 L290 150 L420 70 L520 150", "4.5s")),
+        dot("ph2", 3.5, "#bdf5ff", mot("m", "M50 150 L160 230 L290 150 L420 230 L520 150", "4.5s", "2.25s")),
+        lab("t1", 50, 178, "NODE A", "middle"), lab("t2", 520, 178, "NODE B", "middle"), lab("t3", 290, 188, "MEMORY", "middle"), lab("t4", 196, 154, "ENTANGLED PAIR"),
+      ];
+    } else if (code === "SEN") {
+      const sig = Array.from({ length: 41 }, (_, i) => { const x = 380 + i * 3.8, g = Math.exp(-((i - 22) ** 2) / 10); return x.toFixed(1) + "," + (190 - 70 * g - 4 * Math.sin(i * 1.7)).toFixed(1); }).join(" ");
+      k = [
+        ...[0, 1, 2, 3, 4, 5, 6].map((i) => { const y = 42 + i * 36, yp = y + (150 - y) * 0.35; return e("path", { key: "f" + i, d: "M0 " + y + " C120 " + y + " 150 " + yp + " 200 " + yp + " S280 " + y + " 340 " + y, fill: "none", stroke: L, strokeDasharray: "4 8" }, an("a", { attributeName: "stroke-dashoffset", values: "0;-24", dur: "2s" })); }),
+        e("ellipse", { key: "o1", cx: 200, cy: 150, rx: 46, ry: 16, fill: "none", stroke: FG, strokeOpacity: 0.6, transform: "rotate(30 200 150)" }),
+        e("ellipse", { key: "o2", cx: 200, cy: 150, rx: 46, ry: 16, fill: "none", stroke: FG, strokeOpacity: 0.6, transform: "rotate(-30 200 150)" }),
+        e("g", { key: "g1", transform: "rotate(30 200 150)" }, dot("e1", 3, B, mot("m", "M154 150 a46 16 0 1 0 92 0 a46 16 0 1 0 -92 0", "3s"))),
+        e("g", { key: "g2", transform: "rotate(-30 200 150)" }, dot("e2", 3, B, mot("m", "M246 150 a46 16 0 1 0 -92 0 a46 16 0 1 0 92 0", "4s"))),
+        e("circle", { key: "nu", cx: 200, cy: 150, r: 6, fill: B }),
+        e("rect", { key: "pn", x: 370, y: 70, width: 170, height: 150, rx: 8, fill: "rgba(0,212,255,.03)", stroke: L }),
+        e("line", { key: "bl", x1: 380, y1: 190, x2: 530, y2: 190, stroke: T, strokeDasharray: "2 4" }),
+        e("polyline", { key: "sg", points: sig, fill: "none", stroke: B, strokeWidth: 1.5 }),
+        e("line", { key: "sc", x1: 380, y1: 80, x2: 380, y2: 210, stroke: "#bdf5ff", strokeOpacity: rm ? 0 : 0.6 }, an("a", { attributeName: "x1", values: "380;530", dur: "3s" }), an("b", { attributeName: "x2", values: "380;530", dur: "3s" })),
+        lab("t1", 20, 26, "EXTERNAL FIELD"), lab("t2", 370, 58, "MEASURED SIGNAL"), lab("t3", 200, 214, "ATOM", "middle"),
+      ];
+    } else {
+      let d = "M120 150"; for (let x = 120; x <= 330; x += 2) d += " L" + x + " " + (150 + 10 * Math.sin((x - 120) / 22 * Math.PI)).toFixed(1);
+      k = [
+        e("line", { key: "cb", x1: 110, y1: 150, x2: 340, y2: 150, stroke: B, strokeOpacity: 0.35 }),
+        e("path", { key: "sw", d, fill: "none", stroke: B, strokeWidth: 1.4, strokeDasharray: "6 6" }, an("a", { attributeName: "stroke-dashoffset", values: "0;-24", dur: "1s" })),
+        e("rect", { key: "dio", x: 40, y: 128, width: 70, height: 44, rx: 6, fill: "rgba(0,212,255,.08)", stroke: B }),
+        e("ellipse", { key: "ln", cx: 150, cy: 150, rx: 5, ry: 22, fill: "none", stroke: FG }),
+        e("g", { key: "gr", transform: "rotate(-30 345 150)" }, e("rect", { x: 338, y: 105, width: 14, height: 90, rx: 2, fill: SF, stroke: FG }), ...[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => e("line", { key: i, x1: 341, y1: 110 + i * 9, x2: 349, y2: 110 + i * 9, stroke: T }))),
+        e("line", { key: "out", x1: 350, y1: 148, x2: 540, y2: 58, stroke: B, strokeWidth: 2 }),
+        e("line", { key: "op", x1: 350, y1: 148, x2: 540, y2: 58, stroke: "#bdf5ff", strokeWidth: 2, strokeDasharray: "18 40", strokeOpacity: rm ? 0 : 1 }, an("a", { attributeName: "stroke-dashoffset", values: "0;-58", dur: "1.2s" })),
+        e("path", { key: "fb", d: "M318 176 H246 M254 170 L246 176 L254 182", fill: "none", stroke: T }),
+        lab("t1", 75, 196, "DIODE", "middle"), lab("t2", 225, 112, "EXTERNAL CAVITY", "middle"), lab("t3", 345, 226, "GRATING", "middle"), lab("t4", 282, 196, "FEEDBACK", "middle"), lab("t5", 540, 46, "OUTPUT", "end"),
+      ];
+    }
+    return e("svg", { key: code, viewBox: "0 0 560 300", preserveAspectRatio: "xMidYMid meet", role: "img", "aria-label": "Concept Illustration", style: { display: "block", width: "100%", height: "100%", maxHeight: 340 } }, k);
+  }
+  pIll(title) {
+    const e = React.createElement, rm = this.state.rm, B = "var(--brand)", L = "var(--border-strong)", T = "var(--faint)", FG = "var(--foreground-2)", SF = "var(--surface-2)", W = "#bdf5ff";
+    const an = (key, p) => rm ? null : e("animate", { key, repeatCount: "indefinite", ...p });
+    const mot = (key, path, dur, begin, extra) => rm ? null : e("animateMotion", { key, path, dur, begin: (begin ? "-" + begin : "0s"), repeatCount: "indefinite", ...(extra || {}) });
+    const lab = (key, x, y, s, anchor) => e("text", { key, x, y, fill: "var(--muted)", fontSize: 12.5, textAnchor: anchor || "start", style: { fontFamily: "var(--font-mono)", letterSpacing: "0.14em" } }, s);
+    const dot = (key, r, fill, m) => e("circle", { key, r, fill, opacity: rm ? 0 : 1 }, m);
+    const ln = (key, x1, y1, x2, y2, s, o) => e("line", { key, x1, y1, x2, y2, stroke: s || L, ...(o || {}) });
+    let k = [];
+    switch (title) {
+      case "Chec-Q AI": { const fl = [3, 10, 13, 20]; k = [...Array.from({ length: 24 }, (_, i) => { const cx = 30 + (i % 8) * 34, cy = 22 + Math.floor(i / 8) * 30, f = fl.includes(i); return e("rect", { key: "k" + i, x: cx, y: cy, width: 24, height: 18, rx: 3, fill: f ? "rgba(0,212,255,.14)" : "none", stroke: f ? B : L }, f ? an("a", { attributeName: "stroke-opacity", values: ".3;1;.3", dur: "2.4s", begin: (i % 4) * 0.3 + "s" }) : null); }),
+        ln("sc", 26, 14, 26, 112, W, { strokeOpacity: rm ? 0 : 0.8 }, null), rm ? null : e("line", { key: "sc2", x1: 26, y1: 14, x2: 26, y2: 112, stroke: W, strokeWidth: 1.5 }, an("a", { attributeName: "x1", values: "26;298;26", dur: "4s" }), an("b", { attributeName: "x2", values: "26;298;26", dur: "4s" })),
+        lab("t1", 30, 132, "CRYPTO INVENTORY"), lab("t2", 296, 132, "AT RISK", "end")]; break; }
+      case "Q-Sleeve": k = [e("rect", { key: "a", x: 14, y: 46, width: 40, height: 40, rx: 6, fill: SF, stroke: FG }), e("rect", { key: "b", x: 266, y: 46, width: 40, height: 40, rx: 6, fill: SF, stroke: FG }),
+        ln("n1", 54, 30, 266, 30, T, { strokeDasharray: "2 6" }), ln("n2", 54, 104, 266, 104, T, { strokeDasharray: "2 6" }),
+        e("rect", { key: "sl", x: 58, y: 52, width: 204, height: 28, rx: 14, fill: "rgba(0,212,255,.06)", stroke: B }), ln("c", 70, 66, 250, 66, B, { strokeOpacity: 0.35, strokeDasharray: "3 4" }),
+        ...[0, 1, 2].map((i) => e("rect", { key: "p" + i, x: -7, y: -5, width: 14, height: 10, rx: 2, fill: B, opacity: rm ? 0 : 1 }, mot("m", "M66 66 H254", "3s", i + "s"))),
+        lab("t1", 34, 102, "SITE A", "middle"), lab("t2", 286, 102, "SITE B", "middle"), lab("t3", 160, 24, "PUBLIC NETWORK", "middle"), lab("t4", 160, 126, "QUANTUM-SAFE TUNNEL", "middle")]; break;
+      case "QuRNG": k = [e("circle", { key: "s", cx: 36, cy: 78, r: 10, fill: "rgba(0,212,255,.12)", stroke: B }), ln("b1", 46, 78, 160, 78, B, { strokeOpacity: 0.5 }), ln("b2", 160, 78, 268, 78, L), ln("b3", 160, 78, 160, 22, L),
+        e("rect", { key: "bs", x: 150, y: 68, width: 20, height: 20, fill: SF, stroke: FG, transform: "rotate(45 160 78)" }),
+        e("rect", { key: "d0", x: 268, y: 66, width: 26, height: 24, rx: 4, fill: B, fillOpacity: 0.15, stroke: B }, an("a", { attributeName: "fill-opacity", values: ".1;.9;.1;.1;.1;.9;.1;.9;.1;.1", dur: "5s" })),
+        e("rect", { key: "d1", x: 148, y: 4, width: 24, height: 18, rx: 4, fill: B, fillOpacity: 0.15, stroke: B }, an("a", { attributeName: "fill-opacity", values: ".1;.1;.9;.1;.9;.1;.1;.1;.9;.1", dur: "5s" })),
+        dot("ph", 3, W, mot("m", "M46 78 H160", "0.5s")), lab("t0", 281, 104, "0", "middle"), lab("t1", 186, 16, "1"),
+        e("text", { key: "bits", x: 36, y: 128, fill: FG, fontSize: 13, style: { fontFamily: "var(--font-mono)", letterSpacing: "0.3em" } }, "0 1 1 0 1 0 0 1 1 0")]; break;
+      case "Q-Cluster": { const N = [[60, 40], [130, 40], [200, 40], [60, 100], [130, 100], [200, 100]], Ed = [[0, 1], [1, 2], [3, 4], [4, 5], [0, 3], [1, 4], [2, 5]];
+        k = [...Ed.map(([a, b], i) => ln("e" + i, N[a][0], N[a][1], N[b][0], N[b][1])), ...N.map(([x, y], i) => e("rect", { key: "n" + i, x: x - 15, y: y - 11, width: 30, height: 22, rx: 4, fill: SF, stroke: i === 4 ? B : FG })),
+          dot("p1", 3, B, mot("m", "M60 40 H200 V100 H60 Z", "4s")), e("path", { key: "cl", d: "M252 84 a14 14 0 0 1 4 -27 a20 20 0 0 1 38 4 a12 12 0 0 1 2 23 Z", fill: "none", stroke: B }), ln("lk", 215, 70, 250, 70, B, { strokeDasharray: "3 4" }),
+          lab("t1", 130, 132, "LOCAL NODES", "middle"), lab("t2", 274, 104, "CLOUD", "middle")]; break; }
+      case "QubitIQ": { const cols = [[40, [40, 70, 100]], [100, [28, 58, 88, 118]], [160, [40, 70, 100]]]; const nodes = cols.flatMap(([x, ys]) => ys.map((y) => [x, y]));
+        k = [...cols.slice(0, 2).flatMap(([x, ys], ci) => ys.flatMap((y, a) => cols[ci + 1][1].map((y2, b) => ln("w" + ci + a + b, x, y, cols[ci + 1][0], y2, L, { strokeOpacity: 0.6 })))),
+          ...nodes.map(([x, y], i) => e("circle", { key: "n" + i, cx: x, cy: y, r: 5, fill: SF, stroke: FG }, an("a", { attributeName: "stroke", values: "var(--foreground-2);#00d4ff;var(--foreground-2)", dur: "2.4s", begin: (i % 4) * 0.4 + "s" }))),
+          ln("ar", 176, 70, 206, 70, B), e("circle", { key: "bl", cx: 254, cy: 70, r: 40, fill: "rgba(0,212,255,.04)", stroke: L }), e("ellipse", { key: "eq", cx: 254, cy: 70, rx: 40, ry: 11, fill: "none", stroke: L, strokeDasharray: "2 3" }),
+          e("g", { key: "v" }, ln("vl", 254, 70, 276, 42, B, { strokeWidth: 2 }), e("circle", { cx: 276, cy: 42, r: 4, fill: B }), rm ? null : e("animateTransform", { attributeName: "transform", type: "rotate", values: "0 254 70;360 254 70", dur: "7s", repeatCount: "indefinite" })),
+          lab("t1", 100, 140, "AI MODEL", "middle"), lab("t2", 254, 132, "QUBIT LOGIC", "middle")]; break; }
+      case "EPS-QKD": k = [ln("ab", 34, 72, 286, 72, L), e("path", { key: "en", d: "M40 60 Q160 6 280 60", fill: "none", stroke: B, strokeOpacity: 0.45, strokeDasharray: "3 4" }),
+        e("circle", { key: "src", cx: 160, cy: 72, r: 12, fill: "rgba(0,212,255,.14)", stroke: B }, an("a", { attributeName: "r", values: "11;14;11", dur: "1.6s" })),
+        e("rect", { key: "A", x: 14, y: 58, width: 28, height: 28, rx: 5, fill: SF, stroke: FG }), e("rect", { key: "Bb", x: 278, y: 58, width: 28, height: 28, rx: 5, fill: SF, stroke: FG }),
+        dot("p1", 3.5, B, mot("m", "M160 72 H42", "1.6s")), dot("p2", 3.5, W, mot("m", "M160 72 H278", "1.6s")),
+        lab("t1", 28, 104, "ALICE", "middle"), lab("t2", 292, 104, "BOB", "middle"), lab("t3", 160, 104, "PAIR SOURCE", "middle"), lab("t4", 160, 128, "SHARED KEY", "middle")]; break;
+      case "Q-Memory": k = [ln("in", 20, 70, 300, 70, L), e("rect", { key: "cell", x: 126, y: 40, width: 68, height: 60, rx: 10, fill: "rgba(0,212,255,.06)", stroke: B }),
+        e("circle", { key: "rg", cx: 160, cy: 70, r: 10, fill: "none", stroke: B }, an("a", { attributeName: "r", values: "8;22;8", dur: "3s" }), an("b", { attributeName: "stroke-opacity", values: "1;.15;1", dur: "3s" })),
+        dot("ph", 4, W, mot("m", "M20 70 H300", "4s", "0s", { keyPoints: "0;0.5;0.5;1", keyTimes: "0;0.35;0.7;1", calcMode: "linear" })),
+        lab("t1", 60, 58, "WRITE", "middle"), lab("t2", 160, 120, "STORE", "middle"), lab("t3", 260, 58, "READ", "middle")]; break;
+      case "QNTSim": { const N = [[40, 50], [100, 26], [110, 86], [180, 50], [230, 96], [260, 30], [290, 74]], Ed = [[0, 1], [0, 2], [1, 3], [2, 3], [3, 5], [3, 4], [4, 6], [5, 6], [2, 4]];
+        k = [...Ed.map(([a, b], i) => ln("e" + i, N[a][0], N[a][1], N[b][0], N[b][1])), ...N.map(([x, y], i) => e("circle", { key: "n" + i, cx: x, cy: y, r: 5, fill: SF, stroke: i === 0 || i === 6 ? B : FG })),
+          dot("p1", 3, B, mot("m", "M40 50 L100 26 L180 50 L260 30 L290 74", "3.5s")), dot("p2", 3, W, mot("m", "M40 50 L110 86 L230 96 L290 74", "3.5s", "1.75s")),
+          ln("tl", 30, 124, 300, 124, L), ...Array.from({ length: 10 }, (_, i) => ln("tk" + i, 30 + i * 30, 120, 30 + i * 30, 128, T)),
+          e("line", { key: "ph", x1: 30, y1: 114, x2: 30, y2: 132, stroke: B, strokeWidth: 2 }, an("a", { attributeName: "x1", values: "30;300", dur: "3.5s" }), an("b", { attributeName: "x2", values: "30;300", dur: "3.5s" })),
+          lab("t1", 30, 144, "SIMULATED TIME")]; break; }
+      case "Quantum Repeater": k = [ln("l", 30, 92, 290, 92, L), ...[[30, "A"], [160, "R"], [290, "B"]].map(([x, s], i) => e("g", { key: "n" + i }, e("rect", { x: x - 12, y: 80, width: 24, height: 24, rx: 5, fill: SF, stroke: i === 1 ? B : FG }), e("text", { x, y: 96, fill: FG, fontSize: 12.5, textAnchor: "middle", style: { fontFamily: "var(--font-mono)" } }, s))),
+        e("path", { key: "a1", d: "M30 78 Q95 40 160 78", fill: "none", stroke: B, strokeDasharray: "3 4" }), e("path", { key: "a2", d: "M160 78 Q225 40 290 78", fill: "none", stroke: B, strokeDasharray: "3 4" }),
+        e("path", { key: "a3", d: "M30 76 Q160 -4 290 76", fill: "none", stroke: W, strokeWidth: 1.5, opacity: rm ? 0.6 : 0 }, an("a", { attributeName: "opacity", values: "0;0;1;1;0", keyTimes: "0;.45;.6;.9;1", dur: "4s" })),
+        lab("t1", 95, 124, "SEGMENT", "middle"), lab("t2", 225, 124, "SEGMENT", "middle"), lab("t3", 160, 22, "ENTANGLEMENT SWAP", "middle")]; break;
+      case "Q-Biosensor": k = [ln("sf", 20, 112, 300, 112, FG), ...Array.from({ length: 14 }, (_, i) => e("circle", { key: "d" + i, cx: 30 + i * 20, cy: 122, r: 1.6, fill: B, opacity: 0.6 })),
+        e("g", { key: "mol" }, ...[0, 1, 2].map((i) => { const cx = 70 + i * 26, cy = 66 + (i % 2) * 14; return e("polygon", { key: i, points: [0, 1, 2, 3, 4, 5].map((j) => { const a = Math.PI / 3 * j; return (cx + 13 * Math.cos(a)).toFixed(1) + "," + (cy + 13 * Math.sin(a)).toFixed(1); }).join(" "), fill: "rgba(0,212,255,.05)", stroke: FG }); }), rm ? null : e("animateTransform", { attributeName: "transform", type: "translate", values: "0 -8;0 6;0 -8", dur: "4s", repeatCount: "indefinite" })),
+        e("polyline", { key: "sg", points: Array.from({ length: 30 }, (_, i) => { const x = 190 + i * 4, g = Math.exp(-((i - 15) ** 2) / 12); return x + "," + (80 - 44 * g + 2 * Math.sin(i * 2)).toFixed(1); }).join(" "), fill: "none", stroke: B, strokeWidth: 1.5 }, an("a", { attributeName: "stroke-opacity", values: ".25;1;.25", dur: "4s" })),
+        lab("t1", 96, 30, "MOLECULE", "middle"), lab("t2", 250, 30, "SIGNAL", "middle"), lab("t3", 20, 142, "SENSOR SURFACE")]; break;
+      case "Quantum Gravimeter": k = [...[36, 70, 104].map((y, i) => e("line", { key: "lz" + i, x1: 70, y1: y, x2: 250, y2: y, stroke: B, strokeOpacity: 0.2 }, an("a", { attributeName: "stroke-opacity", values: ".15;.9;.15", dur: "2.4s", begin: i * 0.6 + "s" }))),
+        e("g", { key: "cloud" }, ...Array.from({ length: 16 }, (_, i) => e("circle", { key: i, cx: 160 + 9 * Math.cos(i * 2.4) * (i % 3 + 1) / 2, cy: 18 + 6 * Math.sin(i * 1.7) * (i % 2 + 1) / 2, r: 1.8, fill: W })), rm ? null : e("animateTransform", { attributeName: "transform", type: "translate", values: "0 0;0 96", keyTimes: "0;1", keySplines: ".55 0 1 .45", calcMode: "spline", dur: "2.4s", repeatCount: "indefinite" })),
+        ln("g1", 286, 30, 286, 110, FG), e("path", { key: "g2", d: "M280 102 L286 112 L292 102", fill: "none", stroke: FG }), e("text", { key: "g3", x: 296, y: 74, fill: FG, fontSize: 13.5, style: { fontStyle: "italic" } }, "g"),
+        lab("t1", 70, 124, "LASER PULSES"), lab("t2", 250, 144, "FREE-FALLING ATOMS", "end")]; break;
+      case "Rydberg Sensor": { let d = "M310 70"; for (let x = 310; x >= 170; x -= 2) d += " L" + x + " " + (70 + 12 * Math.sin((310 - x) / 14)).toFixed(1);
+        k = [e("circle", { key: "orb", cx: 100, cy: 70, r: 52, fill: "rgba(0,212,255,.03)", stroke: L, strokeDasharray: "3 4" }), e("circle", { key: "nu", cx: 100, cy: 70, r: 5, fill: B }),
+          e("g", { key: "el" }, e("circle", { cx: 152, cy: 70, r: 4, fill: W }), rm ? null : e("animateTransform", { attributeName: "transform", type: "rotate", values: "0 100 70;360 100 70", dur: "6s", repeatCount: "indefinite" })),
+          e("path", { key: "rf", d, fill: "none", stroke: B, strokeWidth: 1.4, strokeDasharray: "8 6" }, an("a", { attributeName: "stroke-dashoffset", values: "0;28", dur: "1s" })),
+          lab("t1", 100, 140, "RYDBERG ATOM", "middle"), lab("t2", 260, 40, "RF FIELD", "middle")]; break; }
+      default: { let d = "M84 75"; for (let x = 84; x <= 210; x += 2) d += " L" + x + " " + (75 + 7 * Math.sin((x - 84) / 14 * Math.PI)).toFixed(1);
+        k = [e("rect", { key: "dio", x: 20, y: 58, width: 64, height: 34, rx: 6, fill: "rgba(0,212,255,.08)", stroke: B }), ln("cb", 84, 75, 220, 75, B, { strokeOpacity: 0.3 }),
+          e("path", { key: "sw", d, fill: "none", stroke: B, strokeWidth: 1.3, strokeDasharray: "5 5" }, an("a", { attributeName: "stroke-dashoffset", values: "0;-20", dur: "1s" })),
+          e("g", { key: "gr", transform: "rotate(-30 226 75)" }, e("rect", { x: 220, y: 44, width: 12, height: 62, rx: 2, fill: SF, stroke: FG })),
+          ln("out", 232, 72, 306, 30, B, { strokeWidth: 2 }), e("line", { key: "op", x1: 232, y1: 72, x2: 306, y2: 30, stroke: W, strokeWidth: 2, strokeDasharray: "12 26", strokeOpacity: rm ? 0 : 1 }, an("a", { attributeName: "stroke-dashoffset", values: "0;-38", dur: "1s" })),
+          lab("t1", 52, 110, "DIODE", "middle"), lab("t2", 150, 52, "CAVITY", "middle"), lab("t3", 226, 124, "GRATING", "middle"), lab("t4", 306, 22, "OUTPUT", "end")]; }
+    }
+    return e("svg", { viewBox: "0 0 320 150", preserveAspectRatio: "xMidYMid meet", role: "img", "aria-label": title + " Concept Illustration", style: { display: "block", width: "100%", height: "100%" } }, k);
+  }
+  coVals() {
+    const S = this.state, L = this.coData(), cats = ["government", "industry", "academia"], wide = S.w >= 760, co = S.co;
+    const cols = wide ? (S.w >= 1180 ? 5 : 4) : (S.w >= 380 ? 3 : 2), maxN = Math.max(1, ...cats.map((c) => L.filter((l) => l.cat === c).length)), rows = Math.ceil(maxN / cols), rowH = wide ? 104 : 76;
+    const A = wide ? (cols === 5 ? 4600 : 3800) : 2300, wmax = wide ? (cols === 5 ? 150 : 132) : 96, hmax = wide ? 70 : 48;
+    const coLogos = L.filter((l) => l.cat === cats[co]).map((l) => { const r = l.w / l.h; let w = Math.min(wmax, Math.sqrt(A * r)), h = w / r; if (h > hmax) { h = hmax; w = h * r; } return { src: l.src, bg: "url(\"" + l.src + "\")", alt: l.verified ? l.name : "Collaborator logo", w: w.toFixed(0) + "px", h: h.toFixed(0) + "px", wn: Math.round(w), hn: Math.round(h) }; });
+    const minH = rows * rowH, selH = 3 * 72 + 2 * 14, H = wide ? Math.max(minH, selH) : minH;
+    const coTabs = ["Government", "Industry", "Academia"].map((label, i) => { const on = i === co;
+      return { i, label, on, tab: on ? 0 : -1, icon: this.coIcon(i), bg: on ? "linear-gradient(180deg,rgba(0,90,160,.28),rgba(0,60,120,.14))" : "transparent", bd: on ? "rgba(0,212,255,.55)" : "var(--border)", sh: on ? "0 0 0 1px rgba(0,212,255,.12),0 18px 44px -24px rgba(0,160,255,.55)" : "none", wellBg: on ? "var(--brand-soft)" : "var(--surface-2)", ic: on ? "var(--brand)" : "var(--muted)", fw: on ? 600 : 500, edge: on ? 1 : 0, arX: on ? "2px" : "0",
+                pick: () => this.coPick(i) }; });
+    return { coWide: wide, coNarrow: !wide, coTabs, coLogos, co, coRef: this.coRef, coCols: cols, coRowH: rowH + "px", coMinH: H + "px", coScanRef: this.coScanRef,
+      coDot: ((H - selH) / 2 + co * 86 + 36) + "px",
+      coEnter: (ev) => { if (ev.pointerType !== "mouse") return; this.coHover = true; this.coSync(); },
+      coLeave: (ev) => { if (ev.pointerType !== "mouse") return; this.coHover = false; this.coSync(); },
+      coKey: (ev) => { const k = ev.key; let i = co; if (k === "ArrowDown" || k === "ArrowRight") i = (co + 1) % 3; else if (k === "ArrowUp" || k === "ArrowLeft") i = (co + 2) % 3; else if (k === "Home") i = 0; else if (k === "End") i = 2; else return; ev.preventDefault(); this.coPick(i, true); } };
+  }
+  ctaVals(cats) {
+    const S = this.state, sel = S.ctaSel, wide = S.w >= 900, SIG = { PQC: "Secure", QIS: "Simulate", NET: "Connect", SEN: "Measure", LSR: "Illuminate" };
+    const ctaDomains = cats.map((x, i) => { const on = sel.includes(i); return { label: (on ? "✓ " : "") + x.label, on, variant: on ? "secondary" : "outline", props: { style: on ? { borderColor: "var(--brand)", color: "var(--foreground)" } : {} },
+      toggle: () => { this.setState((s) => ({ ctaSel: s.ctaSel.includes(i) ? s.ctaSel.filter((v) => v !== i) : [...s.ctaSel, i].sort() })); this.waveKick && this.waveKick(); } }; });
+    const n = sel.length;
+    return { ctaDomains, ctaCols: wide ? "minmax(0,1.15fr) minmax(0,1fr)" : "minmax(0,1fr)", ctaRL: wide ? "24px 0 0 24px" : "24px 24px 0 0", ctaRR: wide ? "0 24px 24px 0" : "0 0 24px 24px", ctaBL: wide ? "1px" : "0", ctaBT: wide ? "0" : "1px",
+      ctaSig: n ? "Signal · " + sel.map((i) => SIG[cats[i].code] || cats[i].label).join(" + ") : "Signal · waiting for your Requirement",
+      ctaNote: n ? "Selected: " + sel.map((i) => cats[i].label).join(", ") + "." : "", fullBtn: { style: { width: "100%" } },
+      toMail: () => { window.location.href = "mailto:info@thequantum.ai"; } };
+  }
+  renderVals() {
+    const S = this.state, nav = this.qaigData() || { cats: [] }, cats = nav.cats, pad = (n) => String(n).padStart(2, "0"), cl = (x) => Math.max(0, Math.min(1, x));
+    const D = {
+      PQC: { head: "Secure Today’s Data Against Tomorrow’s Computers.", cap: "Data crossing a Quantum-Safe Boundary", f: ["Cryptography designed to stay secure once large-scale quantum computers can break today’s public-key algorithms.", "Encrypted data can be harvested now and decrypted later. Systems that rely on RSA or elliptic-curve keys are exposed.", "Map where vulnerable cryptography is used, move it to quantum-safe algorithms and strengthen key generation."] },
+      QIS: { head: "Design Quantum Algorithms Before the Hardware Is Ready.", cap: "A precessing qubit beside a three-qubit circuit", f: ["How quantum systems represent and process information, and how algorithms are built to use it.", "Quantum hardware is scarce and noisy. Algorithms need to be modelled, tested and refined before they run on a real device.", "Simulate quantum circuits locally or in the cloud, and apply AI to the design of algorithms and logic."] },
+      NET: { head: "Carry Quantum Information Across Distance.", cap: "Photons routed between two nodes through a memory", f: ["Moving quantum states between distant nodes using photons, entanglement and quantum memory.", "A quantum signal cannot be copied or amplified, so longer links depend on entanglement sources, memories and repeaters.", "Simulate networks in software, distribute entanglement in the lab and store quantum information in memory hardware."] },
+      SEN: { head: "Measure Signals Conventional Sensors Can’t Resolve.", cap: "An Atom perturbed by an external Field", f: ["Using atoms and quantum states as highly sensitive measuring instruments.", "Weak magnetic, gravitational, radio-frequency and biological signals sit below what conventional sensors can detect.", "Atomic sensors that measure weak fields at room temperature, from molecular biosensing to gravity and RF."] },
+      LSR: { head: "Light Held at the Exact Wavelength an Experiment Needs.", cap: "Grating feedback inside an external cavity", f: ["Stable, precisely tuned light sources for quantum optics and atomic physics.", "Cooling, trapping and probing atoms depend on light at a precise wavelength with a very narrow linewidth.", "External cavity diode lasers that use grating feedback to deliver tunable, narrow-linewidth light."] },
+    };
+    const pin = this.pinned(), n = cats.length || 5, exI = Math.min(n - 1, Math.floor(S.exP * n)), sub = cl(S.exP * n - exI);
+    const exCur = pin ? exI : Math.min(n - 1, S.exM || 0);
+    const exTabs = cats.map((x, i) => { const on = i === exCur; return { i, on, tab: on ? 0 : -1, name: x.label, icon: this.navIcon(x.icon), count: x.stack ? "01 STACK · 03 PRODUCTS" : pad(x.items.length) + (x.items.length === 1 ? " PRODUCT" : " PRODUCTS"), bg: on ? "var(--surface)" : "transparent", bd: on ? "rgba(0,212,255,.45)" : "var(--border)", sh: on ? "0 24px 60px -36px rgba(0,212,255,.5)" : "none", wellBd: on ? "var(--brand)" : "var(--border)", wellBg: on ? "var(--brand-soft)" : "var(--surface-2)", color: on ? "var(--foreground)" : "var(--muted)", fw: on ? 600 : 500, arOp: on ? 1 : 0, arX: on ? "0" : "-6px", fill: (pin ? (i < exI ? 100 : i === exI ? Math.max(8, sub * 100) : 0) : this.exAutoOK() ? (i < exCur ? 100 : 0) : on ? 100 : 0).toFixed(1) + "%", pick: () => (pin ? this.goEx(i) : this.exStk() ? this.exJump(i) : this.setState({ exM: i })) }; });
+    const exWide = S.w >= 1024, cpt = pin && !exWide, factI = Math.min(2, Math.floor(sub * 3)), stk = this.exStk(), stkH = this.exCardPx();
+    const flow = this.exFlow();
+    const exPanels = cats.map((x, i) => { const on = i === exCur || flow, fI = i < exI ? 2 : i > exI ? 0 : factI, d = D[x.code] || { head: "", cap: "", f: ["", "", ""] };
+      return { i, idx: pad(i + 1), disp: pin || on || stk ? "flex" : "none", z: stk ? i + 1 : undefined, top: stk ? "0" : flow && !S.rm ? (this.exFlowTop() + i * 10) + "px" : "auto", cpt, steps: cpt ? ["The Field", "The Problem", "Our Approach"].map((k, j) => ({ k, c: j === fI ? "var(--brand)" : "var(--faint)", w: (j < fI ? 100 : j === fI ? Math.max(10, (sub * 3 - fI) * 100) : 0).toFixed(1) + "%" })) : [], name: x.label, head: d.head, cap: d.cap, cta: x.cta, stack: !!x.stack, role: pin ? "tabpanel" : "region", lb: pin ? "extab-" + i : undefined, al: pin ? undefined : x.label, hid: stk ? i !== exCur : !on, tab: stk ? (i === exCur ? 0 : -1) : on ? 0 : -1,
+        op: stk ? (i === exCur ? 1 : 0) : on ? 1 : 0, tf: stk ? (i === exCur ? "none" : i < exCur ? "translateY(-24px) scale(.96)" : "translateY(64px)") : on ? "none" : i < exI ? "translateY(-32px) scale(.985)" : "translateY(32px) scale(.985)", vis: stk ? (i === exCur ? "visible" : "hidden") : on ? "visible" : "hidden",
+        facts: [{ k: "The Field", v: d.f[0] }, { k: "The Problem", v: d.f[1] }, { k: "How We Approach It", v: d.f[2] }].map((f, j) => ({ ...f, disp: !cpt || j === fI ? "flex" : "none", dt: cpt ? "none" : "block", bt: cpt ? "0" : "1px solid var(--border)", pt: cpt ? "0" : "12px" })),
+        href: ((nav.routes || {}).products || "Products.dc.html") + "#" + x.code.toLowerCase(),
+        products: x.items.map((p) => ({ title: p.title, rnd: !!p.rnd, href: (nav.productHref || {})[p.title] || ((nav.routes || {}).products || "Products.dc.html") + "#p-" + p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") })),
+        ill: this.ill(x.code, on) }; });
+    const jobDef = {
+      "Chec-Q AI": ["Find Vulnerable Cryptography in Your Systems", "Identifies where cryptography is used across your systems and flags what is vulnerable to quantum attack.", "You need an inventory of cryptographic risk before planning a move to quantum-safe algorithms."],
+      "Q-Sleeve": ["Protect Data in Transit With Quantum-Safe Encryption", "A VPN and security layer that protects data in transit with quantum-safe encryption.", "Data moving between sites or users has to stay confidential against future quantum attacks."],
+      "QuRNG": ["Generate Random Numbers From a Quantum Source", "Generates random numbers from a quantum process for keys and cryptographic operations.", "Your keys and protocols depend on randomness that cannot be predicted."],
+      "Q-Cluster": ["Simulate Quantum Circuits and Algorithms", "Runs quantum simulations on a local machine or in the cloud.", "You want to design and test quantum algorithms without access to quantum hardware."],
+      "EPS-QKD": ["Distribute Keys With Entangled Photons", "Distributes encryption keys using entangled photon pairs, so their security rests on quantum mechanics.", "Links between sites must stay secure against classical and quantum attacks."],
+      "Q-Memory": ["Store Quantum States Inside a Network", "Quantum memory hardware that holds quantum information for later retrieval.", "A quantum network has to hold states while links between nodes are established."],
+      "QNTSim": ["Model a Quantum Network Before Building It", "Simulates quantum networks, including their nodes, links and protocols, in software.", "You are planning a quantum network and want to evaluate designs before building hardware."],
+      "Q-Biosensor": ["Detect Biological Molecules With Quantum Sensing", "Applies quantum sensing to the detection of biological molecules.", "Molecular signals need more sensitivity than conventional sensors provide."],
+      "ECDL": ["Get Narrow-Linewidth Light for Experiments", "An external cavity diode laser producing tunable, narrow-linewidth light.", "Atomic physics or quantum optics experiments need light at a precise wavelength."],
+    };
+    const rdDef = { "QubitIQ": "Applies AI to the design of quantum algorithms and logic.", "Quantum Repeater": "Modules intended to extend quantum signals over long distances.", "Quantum Gravimeter": "An atom-based instrument for precision gravity mapping.", "Rydberg Sensor": "Uses highly excited Rydberg atoms to sense RF and microwave fields." };
+    const nC = cats.length, pfI = Math.max(0, Math.min(S.pf, nC - 1)), prodRoute = (nav.routes || {}).products || "Products.dc.html";
+    const pTabs = cats.map((x, i) => ({ i, idx: pad(i + 1), label: x.label })).map((f) => { const on = f.i === pfI; return { ...f, on, tab: on ? 0 : -1, bg: on ? "var(--brand-soft)" : "transparent", bd: on ? "var(--brand)" : "var(--border)", color: on ? "var(--foreground)" : "var(--foreground-2)", ic: on ? "var(--brand)" : "var(--faint)", fw: on ? 600 : 500, pick: () => this.pickF(f.i) }; });
+    const pGroups = [pfI].map((ci) => { const x = cats[ci];
+      const nI = x.items.length, M = S.w >= 1180 ? 4 : S.w >= 820 ? 3 : S.w >= 560 ? 2 : 1; let gc = Math.min(nI, M); if (nI > M) { gc = M; for (let c = M; c >= 2; c--) if (nI % c === 0) { gc = c; break; } }
+      const rowOK = S.w >= 720;
+      return { cols: gc, swipe: S.w < 640 && nI > 1, idx: pad(ci + 1), label: x.label, stack: !!x.stack, count: x.stack ? "01 STACK · 03 PRODUCTS" : pad(x.items.length) + (x.items.length === 1 ? " PRODUCT" : " PRODUCTS"),
+        cards: x.items.map((p, k) => { const car = S.w < 640, jd = jobDef[p.title], r = !!p.rnd, last = k === nI - 1, span = gc > 1 && nI % gc === 1 && last ? gc : (gc === 1 ? 1 : 1), wide = rowOK && (nI === 1 || span > 1), tall = gc <= 3;
+          return { whenDisp: car ? "none" : "flex", doesClamp: car ? 4 : 99, span, flex: car ? (nI === 1 ? "0 0 100%" : "0 0 84%") : "initial", dir: wide ? "row" : "column", figFlex: wide ? "0 0 42%" : "0 0 auto", figH: wide ? "auto" : S.w < 560 ? "152px" : tall ? "208px" : "176px", figMin: wide ? "260px" : "0", figBB: wide ? "0" : "1px solid var(--border)", figBR: wide ? "1px solid var(--border)" : "0", bodyPad: wide ? "32px 34px" : tall ? "22px 24px 24px" : "20px 22px 22px", bodyJ: wide ? "center" : "flex-start", title: p.title, blurb: p.blurb, cat: x.label, fig: (ci + 1) + "." + (k + 1), ill: this.pIll(p.title), hasTag: r || !!x.stack, tag: r ? "R&D" : "Q-FORTE", tagC: r ? "var(--warning)" : "var(--brand)", tagB: r ? "var(--warning)" : "var(--brand)",
+            does: r ? rdDef[p.title] || p.blurb : jd ? jd[1] : p.blurb, whenK: r ? "Stage" : "Useful when", when: r ? "In research and development. Not yet offered as a product." : jd ? jd[2] : "",
+            cta: "Read More →", href: nav.productPageHref ? nav.productPageHref(p.title) : (nav.productHref || {})[p.title] || prodRoute + "#p-" + p.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""), cur: "View" }; }) }; });
+    const rnd = []; cats.forEach((x) => x.items.forEach((p) => { if (p.rnd) rnd.push({ title: p.title, cat: x.label }); }));
+    const ct = S.cnt, orb = this.ORB[S.orb] || this.ORB[0];
+    return {
+      fieldRef: this.fieldRef, waveRef: this.waveRef,
+      heroVeil: S.w >= 1100 ? "linear-gradient(90deg,var(--base) 0%,rgba(5,8,14,.88) 32%,rgba(5,8,14,.15) 62%,rgba(5,8,14,0) 100%)" : "linear-gradient(180deg,rgba(5,8,14,.55) 0%,rgba(5,8,14,.3) 40%,rgba(5,8,14,0) 58%)",
+      vizRef: this.vizRef, heroVizH: S.w >= 1100 ? "0px" : S.w >= 640 ? "clamp(300px,46vw,440px)" : "clamp(240px,72vw,320px)", heroVizM: S.w >= 1100 ? "0px" : "12px", heroPadB: S.w >= 1100 ? "clamp(120px,10vw,160px)" : "88px",
+      orbName: orb[0], orbQn: orb[1],
+      heroHint: S.fine ? "Observation changes the State" : "Tap the Field to measure",
+      ldCols: S.w >= 1240 ? "repeat(4,minmax(0,1fr))" : "repeat(2,minmax(0,1fr))", ldB2: "1px", ldB3: S.w >= 1240 ? "1px" : "0", ldB4: "1px", ldP2: S.w >= 560 ? "clamp(16px,2vw,28px)" : "16px", ldP3: S.w >= 1240 ? "clamp(16px,2vw,28px)" : "0", ldP4: S.w >= 560 ? "clamp(16px,2vw,28px)" : "16px", ldIc: S.w >= 560 ? "flex" : "none", ldNc: S.w >= 560 ? "2" : "1 / -1", ldGap: S.w >= 560 ? "36px 0" : "28px 0", ldRG: S.w >= 560 ? "16px 18px" : "10px 12px",
+      ...this.achVals(),
+      pIntro: (() => { const all = cats.reduce((s, x) => s + x.items.length, 0), rd = cats.reduce((s, x) => s + x.items.filter((p) => p.rnd).length, 0), w = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen"]; const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1); return cap(w[all - rd] || String(all - rd)) + " are ready to deploy. " + cap(w[rd] || String(rd)) + " are taking shape in our labs. Every one starts from a question that conventional technology leaves unanswered."; })(),
+      exPin: S.w >= 1024, exIntro: "Each domain begins with a problem today’s technology cannot solve. What changes when quantum physics becomes the tool?",
+      exTrackH: stk ? "calc(100vh - 85px)" : pin ? (S.w >= 1024 ? "480vh" : "640vh") : "auto", exPadB: pin || stk ? "0" : "clamp(96px,10vw,160px)", exPos: pin || stk ? "sticky" : "relative", exStickyH: stk ? "calc(100vh - 85px)" : pin ? (S.w >= 1024 ? "calc(100vh - 85px)" : "calc(100svh - 85px)") : "auto", exPadT: pin || stk ? "0" : "48px",
+      exStkGap: "24px", exPH: stk ? "100%" : "auto", exColH: stk ? stkH + "px" : (S.w >= 1024 ? "640px" : "auto"), exLeftPos: "relative", exLeftTop: "auto", exTrans: stk ? "opacity .5s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1),visibility .7s" : flow ? "box-shadow .4s" : "opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1),visibility .65s",
+      exCardH: stk ? stkH + "px" : pin ? (S.w >= 1024 ? "min(700px, calc(100vh - 136px))" : "calc(100svh - 85px - 28px)") : S.w >= 1024 ? "640px" : "auto", exPanelPos: stk ? "absolute" : (flow && !S.rm) ? "sticky" : pin ? "absolute" : "relative", exFigMin: stk ? "0px" : pin ? (S.w >= 1024 ? "0px" : "120px") : S.w >= 1024 ? "300px" : S.w >= 640 ? "240px" : "180px", exPanelFlex: pin || flow ? "none" : "1 1 auto",
+      exStack: !exWide, exChips: cats.map((x, i) => { const on = pin ? i === exI : i === (S.exM || 0), short = ["PQC", "QIS", "Network", "Sensing", "Lasers"][i] || x.label; return { i, idx: pad(i + 1), name: S.w >= 1000 ? x.label : short, on, color: on ? "var(--foreground)" : "var(--foreground-2)", nC: on ? "var(--brand)" : "var(--faint)", fill: (flow ? (i < (S.exM || 0) ? 100 : on ? Math.max(6, (S.exFP || 0) * 100) : 0) : pin ? (i < exI ? 100 : i === exI ? Math.max(6, sub * 100) : 0) : on ? 100 : 0).toFixed(1) + "%", pick: () => (pin ? this.goEx(i) : flow ? (this.setState({ exM: i }), this.exFlowJump(i)) : this.setState({ exM: i })) }; }),
+      exColGap: exWide ? "24px" : "12px", exH3: cpt ? "1.25rem" : "clamp(1.375rem,1.1rem + .8vw,1.875rem)", exBodyGap: cpt ? "12px" : "18px", exBodyPad: cpt ? "18px 18px 20px" : "clamp(22px,2.4vw,30px) clamp(22px,2.6vw,34px)", exFactMin: cpt ? "4.8em" : "0", exCtaBasis: cpt ? "100%" : "auto",
+      exTabs, exPanels, exCount: pad((pin ? exI : exCur) + 1) + " / " + pad(n), exBar: (pin ? S.exP * 100 : (exCur / Math.max(1, n - 1)) * 100).toFixed(1) + "%",
+      exKey: (ev) => { const k = ev.key; let i = exCur; if (k === "ArrowDown" || k === "ArrowRight") i = Math.min(n - 1, i + 1); else if (k === "ArrowUp" || k === "ArrowLeft") i = Math.max(0, i - 1); else if (k === "Home") i = 0; else if (k === "End") i = n - 1; else return; ev.preventDefault(); if (pin) this.goEx(i, true); else { this.setState({ exM: i }); const b = document.getElementById("extab-" + i); b && b.focus({ preventScroll: true }); if (this.exFlow()) this.exFlowJump(i); else if (this.exStk()) this.exJump(i); } },
+      allHref: prodRoute, allCount: pad(cats.reduce((s, x) => s + x.items.length, 0)), toProducts: () => { window.QAIG_GO ? window.QAIG_GO(prodRoute) : (window.location.href = prodRoute); },
+      pMore: "The Product Directory lists all " + cats.reduce((s, x) => s + x.items.length, 0) + " Products, grouped by Domain.",
+      pTabs, pGroups, pCar: S.w < 640, pRowDisp: S.w < 640 ? "flex" : "grid", pRowOx: S.w < 640 ? "auto" : "visible", pRowSnap: S.w < 640 ? "x mandatory" : "none", pRowGap: S.w < 640 ? "12px" : "20px", pRowMar: S.w < 640 ? "0 calc(50% - 50vw)" : "0", pRowPad: S.w < 640 ? "4px max(16px, calc(50vw - 50% + 0px)) 8px" : "0", pRowSP: S.w < 640 ? "max(16px, calc(50vw - 50%))" : "0", pf: pfI, pgRef: this.pgRef,
+      pfKey: (ev) => { const k = ev.key, m = nC; let i = pfI; if (k === "ArrowRight" || k === "ArrowDown") i = (i + 1) % m; else if (k === "ArrowLeft" || k === "ArrowUp") i = (i + m - 1) % m; else if (k === "Home") i = 0; else if (k === "End") i = m - 1; else return; ev.preventDefault(); this.pickF(i, true); },
+      ...this.coVals(),
+      ...this.ctaVals(cats),
+      toExplore: () => this.go("explore"), toContact: () => this.go("contact"),
+      toEnquiry: () => { const sel = S.ctaSel.map((i) => cats[i] && cats[i].code).filter(Boolean), href = ((nav.routes && nav.routes.enquiry) || "Discuss Your Requirement.dc.html") + (sel.length ? "?domains=" + sel.join(",") : ""); window.QAIG_GO ? window.QAIG_GO(href, "enquiry") : (window.location.href = href); },
+      toEnquiryHero: () => { const href = (nav.routes && nav.routes.enquiry) || "Discuss Your Requirement.dc.html"; window.QAIG_GO ? window.QAIG_GO(href, "enquiry") : (window.location.href = href); },
+    };
+  }
+}
+</script>
+</body>
+</html>

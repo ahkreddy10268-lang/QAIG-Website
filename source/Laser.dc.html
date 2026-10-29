@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script><script src="qaig-transition.js"></script>
+<script src="qaig-scroll-affordance.js"></script>
+<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}@keyframes qdrift{from{transform:translate3d(-5%,-3%,0)}to{transform:translate3d(5%,4%,0)}}@keyframes qsig2{from{stroke-dashoffset:60}to{stroke-dashoffset:-900}}@keyframes qsig3{from{stroke-dashoffset:120}to{stroke-dashoffset:-1400}}@keyframes qsig{from{stroke-dashoffset:80}to{stroke-dashoffset:-1000}}@keyframes qtravel{0%{left:12.5%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:87.5%;opacity:0}}@keyframes qnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}@keyframes qbob{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,4px)}}@keyframes qfadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.qnudge{animation:qnudge 1.5s ease-in-out infinite}.qbob{animation:qbob 1.8s ease-in-out infinite}.qfadein{animation:qfadein .35s cubic-bezier(.22,1,.36,1) both}@media (prefers-reduced-motion:reduce){.qnudge,.qbob,.qfadein{animation:none!important}}@keyframes lzdash{to{stroke-dashoffset:-36}}@keyframes rsdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes rsin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rspop{0%{transform:scale(0)}60%{transform:scale(1.25)}100%{transform:scale(1)}}@keyframes rsring{from{transform:scale(.6);opacity:.8}to{transform:scale(2.6);opacity:0}}input::placeholder,textarea::placeholder{color:var(--faint)}select option{background:#0b111c;color:#e6edf5}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}</style>
+<script src="qaig-viewport.js"></script>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
+
+<dc-import name="QAIG Global Navbar" current="Products" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+
+<main>
+<sc-if value="{{ l_isOverview }}" hint-placeholder-val="{{ true }}">
+<section data-screen-label="Lasers hero" style="position:relative;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 50% 65% at 74% 42%,color-mix(in srgb, var(--brand) 10%, transparent),transparent 70%),radial-gradient(ellipse 45% 55% at 0% 100%,color-mix(in srgb, var(--brand) 6%, transparent),transparent 70%),var(--base)">
+  <div class="bg-grid" style="position:absolute;inset:0;z-index:-1;opacity:.4;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 60% 75% at 70% 50%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 75% at 70% 50%,#000,transparent 75%)"></div>
+  <div data-diagram="true" ref="{{ l_artRef }}" onPointerMove="{{ l_artMove }}" onPointerLeave="{{ l_artLeave }}" style="position:{{ l_artPos }};top:0;bottom:0;right:{{ l_artR }};width:{{ l_artW }};order:2;box-sizing:border-box;padding:{{ l_artPad }};display:flex;align-items:center;cursor:ew-resize">{{ l_heroArt }}</div>
+  <div class="section-shell" style="position:relative;z-index:1;display:flex;flex-direction:column;justify-content:center;min-height:{{ l_heroMinH }};padding-top:clamp(40px,5vw,72px);padding-bottom:{{ l_heroPadB }};pointer-events:none">
+    <div style="display:flex;flex-direction:column;gap:26px;max-width:480px;pointer-events:auto">
+      <div style="display:flex;flex-wrap:wrap;gap:10px 24px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="color:var(--brand)">● Quantum Lasers</span><span>Precision Laser Systems</span><span>6 Products</span></div>
+      <h1 style="margin:0;font-size:clamp(2.6rem,1.4rem + 4vw,4.6rem);line-height:1;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Light Engineered for <span style="color:var(--brand)">Quantum Precision.</span></h1>
+      <p style="margin:0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">Our precision laser systems are a complete family of narrow-linewidth laser sources, controllers and supporting instruments built for quantum science, atomic physics, spectroscopy and photonics.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px"><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_toExplorer }}" hint-size="200px,44px">Explore Laser Systems</x-import><x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ l_toEnquiry }}" hint-size="230px,44px">Discuss Your Requirements</x-import></div>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:400px;padding-top:6px;border-top:1px solid var(--border)">
+        <label for="lz-range" style="display:flex;justify-content:space-between;gap:12px;padding-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span>Tune Across the Portfolio</span><output id="lz-out" for="lz-range" style="color:var(--brand)">780 nm</output></label>
+        <input id="lz-range" type="range" min="380" max="1600" step="1" defaultValue="780" onInput="{{ l_range }}" aria-describedby="lz-range-note" style="width:100%;accent-color:var(--brand);cursor:pointer">
+        <span id="lz-range-note" style="font-size:16px;line-height:1.5;color:var(--muted)">Illustrative map of the documented wavelength ranges. Move across the figure or use the slider.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:{{ l_introCols }};gap:24px clamp(32px,6vw,96px);padding-bottom:8px">
+    <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Precision Laser Systems</span><p style="margin:16px 0 0;font-size:clamp(1.35rem,1rem + 1.1vw,2rem);line-height:1.3;letter-spacing:-0.02em;font-weight:500;color:var(--foreground);text-wrap:pretty">The range spans external cavity diode lasers covering a broad wavelength span and built to order for your experiment, ready-to-use plug-and-play diode lasers at popular fixed wavelengths and the electronics needed to drive and stabilize them.</p></div>
+    <div style="display:flex;flex-direction:column;gap:16px;padding-top:30px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Every laser is available in a free-space or fibre-coupled version, so it can be integrated directly into an optical setup or delivered cleanly to a remote experiment.</p><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Designed and tested in-house, each system combines stable, reliable performance with a compact footprint and straightforward day-to-day operation.</p></div>
+  </div>
+</section>
+
+<section id="lz-explorer" data-screen-label="Product explorer" class="section-shell" style="scroll-margin-top:110px;padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Product Explorer</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Explore Our <span style="color:var(--brand)">Precision Laser Systems.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Filter by group or by a documented wavelength. Every card opens the full product page.</p></div>
+  <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px">
+    <div role="tablist" aria-label="Product groups" style="display:flex;flex-wrap:wrap;gap:0 4px;border-bottom:1px solid var(--border)">
+      <sc-for list="{{ l_cats }}" as="t" hint-placeholder-count="4">
+        <button role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="position:relative;flex:none;display:flex;align-items:center;gap:10px;min-height:52px;padding:0 16px 0 2px;margin-right:12px;border:0;background:none;color:{{ t.color }};font:inherit;font-size:16.5px;font-weight:500;cursor:pointer;transition:color .2s" style-hover="color:var(--foreground)">{{ t.label }}<span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;color:{{ t.nC }}">{{ t.n }}</span><span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--brand);box-shadow:0 0 10px var(--brand);transform-origin:left;transform:scaleX({{ t.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span></button>
+      </sc-for>
+    </div>
+    <div role="group" aria-label="Wavelength" style="display:flex;flex-wrap:wrap;align-items:center;gap:8px">
+      <span style="margin-right:6px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Wavelength</span>
+      <sc-for list="{{ l_wls }}" as="o" hint-placeholder-count="6">
+        <button aria-pressed="{{ o.on }}" onClick="{{ o.pick }}" style="min-height:36px;padding:0 14px;border:1px solid {{ o.bd }};border-radius:999px;background:{{ o.bg }};color:{{ o.color }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.04em;cursor:pointer;transition:all .25s">{{ o.label }}</button>
+      </sc-for>
+    </div>
+    <sc-if value="{{ l_ctrlHidden }}" hint-placeholder-val="{{ false }}"><p role="status" style="margin:0;font-size:16px;color:var(--foreground-2)">ApeX-Ctrl and the digital locking module have no documented wavelength, so they are hidden while a wavelength is selected. The compact spectrometer is listed by its measurement range.</p></sc-if>
+  </div>
+  <sc-if value="{{ l_noCards }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)"><span style="font-size:16.5px;color:var(--foreground-2)">No product in this group lists that wavelength.</span><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ l_resetFilters }}" hint-size="120px,32px">Clear Filters</x-import></div></sc-if>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px">
+    <sc-for list="{{ l_cards }}" as="c" hint-placeholder-count="6">
+      <article style="position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid var(--border);border-radius:16px;background:var(--surface);overflow:hidden;transition:border-color .3s,transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s" style-hover="border-color:var(--border-light);transform:translateY(-3px);box-shadow:var(--shadow-md)">
+        <a href="{{ c.href }}" aria-hidden="true" tabindex="-1" style="position:relative;display:block;aspect-ratio:16/10;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 70% 80% at 70% 40%,color-mix(in srgb, var(--brand) 9%, transparent),transparent 70%),var(--surface-2);overflow:hidden">
+          <span class="bg-grid" style="position:absolute;inset:0;opacity:.35"></span>
+          <sc-if value="{{ c.hasImg }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;background:URL('{{ c.img }}') 80% 50%/cover no-repeat"></span></sc-if>
+          <sc-if value="{{ c.noImg }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center"><span style="font-size:clamp(1.6rem,1.2rem + 1.2vw,2.2rem);font-weight:600;letter-spacing:-0.03em;color:var(--border-strong)">{{ c.short }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Product Photograph · Placeholder</span></span></sc-if>
+          <span style="position:absolute;left:14px;top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ c.code }}</span>
+        </a>
+        <div style="display:flex;flex-direction:column;gap:14px;flex:1;padding:22px 22px 18px">
+          <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ c.catLabel }}</span>
+          <h3 style="margin:0;font-size:20px;line-height:1.25;letter-spacing:-0.015em;font-weight:600"><a href="{{ c.href }}" style="color:var(--foreground)" style-hover="color:var(--brand)">{{ c.name }}</a></h3>
+          <p style="margin:0;font-size:16px;line-height:1.55;color:var(--muted)">{{ c.desc }}</p>
+          <dl style="margin:0;display:flex;flex-direction:column;border-top:1px solid var(--border)">
+            <sc-for list="{{ c.specs }}" as="s" hint-placeholder-count="3"><div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:12px;padding:9px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:16px;line-height:1.45;color:var(--foreground)">{{ s.v }}</dd></div></sc-for>
+          </dl>
+          <p style="margin:0;font-size:16px;line-height:1.5;color:var(--foreground-2)">{{ c.apps }}</p>
+          <div style="margin-top:auto"><a href="{{ c.href }}" aria-label="{{ c.aria }}" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+  <sc-if value="{{ l_cardMore }}" hint-placeholder-val="{{ false }}"><div style="margin-top:16px;display:flex"><x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ l_cardToggle }}" dc-props="{{ l_fullBtn }}" hint-size="100%,40px">{{ l_cardMoreLabel }}</x-import></div></sc-if>
+</section>
+
+<section data-screen-label="Featured sources" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Featured · Laser Sources</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Tunable, Rubidium-Ready, or <span style="color:var(--brand)">Ready to Switch On.</span></h2></div><span></span></div>
+  <article style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--border-light)">
+    <a href="#/ecdl" aria-label="Tunable external cavity diode lasers (ECDL) details" style="position:relative;display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#020713"><span style="position:absolute;inset:0;background:URL('{{ l_ecdlImg }}') 82% 50%/cover no-repeat;transition:transform 1.2s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.04)"></span><span style="position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:13.5px;color:var(--foreground-2)">Temporary Image</span></a>
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">01 · Laser Sources</span>
+      <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600;text-wrap:balance">Tunable External Cavity Diode Lasers (ECDL)</h3>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Tunable, narrow linewidth laser source, designed around your experiment.</p>
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_ecdlSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
+      <div style="display:flex;flex-wrap:wrap;gap:4px 24px"><a href="#/ecdl" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
+    </div>
+  </article>
+  <article style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--border-light)">
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0;order:{{ l_featOrder }}">
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">02 · Laser Sources</span>
+      <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600">ApeX-Pro</h3>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Tunable laser system for the rubidium D1 and D2 transitions, based on our ECDL platform.</p>
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_apexSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
+      <div><a href="#/apex-pro" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
+    </div>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figApex }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 02 · Rubidium D1 and D2 within the documented range · illustrative</figcaption></figure>
+  </article>
+  <article style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)">
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figTk }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 03 · Four fixed wavelengths · choose one to follow the beam</figcaption></figure>
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">03 · Laser Sources</span>
+      <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600">Turnkey Diode Lasers</h3>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Fixed-wavelength diode lasers, supplied aligned and ready to operate.</p>
+      <div role="radiogroup" aria-label="Turnkey wavelength" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)">
+        <sc-for list="{{ l_tkOpts }}" as="k" hint-placeholder-count="4">
+          <button role="radio" aria-checked="{{ k.on }}" onClick="{{ k.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:76px;padding:14px 10px 14px 0;border:0;background:none;color:{{ k.color }};font:inherit;text-align:left;cursor:pointer;transition:color .25s" style-hover="color:var(--foreground)"><span class="tnum" style="font-size:clamp(1.4rem,1rem + 1.2vw,2rem);line-height:1;letter-spacing:-0.03em;font-weight:600">{{ k.v }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ k.uC }}">nm</span><span aria-hidden="true" style="position:absolute;left:0;right:10px;top:-1px;height:2px;background:var(--brand);box-shadow:0 0 10px var(--brand);transform-origin:left;transform:scaleX({{ k.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span></button>
+        </sc-for>
+      </div>
+      <p aria-live="polite" style="margin:0;font-size:16px;line-height:1.6;color:var(--foreground-2)">{{ l_tkNote }}</p>
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_tkSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
+      <div><a href="#/turnkey-diode-lasers" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
+    </div>
+  </article>
+</section>
+
+<section data-screen-label="Control and stabilization" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Control &amp; Stabilization</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Drive It, Then <span style="color:var(--brand)">Hold It on Frequency.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">ApeX-Ctrl drives and controls the laser. The digital locking module is an optional add-on for ApeX-Ctrl, used when the frequency must be stabilized to an atomic or cavity reference.</p></div>
+  <div style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center">
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figCtrl }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 04 · Conceptual relationship diagram · not a connector layout</figcaption></figure>
+    <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-light)">
+      <a href="#/apex-ctrl" style="display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding-top:5px">04</span><span><span style="display:block;font-size:20px;font-weight:600">ApeX-Ctrl</span><span style="display:block;margin-top:8px;font-size:16.5px;line-height:1.55;color:var(--muted)">Laser controller combining a low-noise current driver, temperature controller and piezo driver in one unit.</span></span><span aria-hidden="true" style="padding-top:4px">→</span></a>
+      <a href="#/digital-locking-module" style="display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding-top:5px">05</span><span><span style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:20px;font-weight:600">Digital Locking Module<x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="110px,20px">Optional Add-On</x-import></span><span style="display:block;margin-top:8px;font-size:16.5px;line-height:1.55;color:var(--muted)">Optional digital locking module for ApeX-Ctrl, for frequency stabilization to an atomic or cavity reference. Not sold separately.</span></span><span aria-hidden="true" style="padding-top:4px">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Measurement" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Measurement &amp; Accessories</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Verify the Wavelength <span style="color:var(--brand)">You Are Working At.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">The following modules and instruments extend our laser systems into complete, frequency-stabilised setups. Each can be ordered with a new laser system or added to an existing one.</p></div>
+  <div style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0;order:{{ l_featOrder }}">
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">06 · Measurement &amp; Accessories</span>
+      <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600">Compact Spectrometer</h3>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Compact spectrometer for verifying and monitoring laser emission wavelengths.</p>
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_specSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
+      <div><a href="#/compact-spectrometer" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
+    </div>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figSpec }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 06 · Input, instrument and readout · illustrative, no measured data</figcaption></figure>
+  </div>
+</section>
+
+<section data-screen-label="Applications" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Applications</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Where Each System <span style="color:var(--brand)">Is Used.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Each application is listed against the product it is documented for.</p></div>
+  <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));column-gap:40px;border-top:1px solid var(--border-light)">
+    <sc-for list="{{ l_apps }}" as="a" hint-placeholder-count="9">
+      <li style="border-bottom:1px solid var(--border)"><a href="{{ a.href }}" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-height:56px;padding:16px 0;color:var(--foreground)" style-hover="color:var(--brand)"><span style="font-size:16px;line-height:1.4">{{ a.app }}</span><span style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--foreground-2)">{{ a.prod }} →</span></a></li>
+    </sc-for>
+  </ul>
+</section>
+
+<section data-screen-label="Enquiry" class="section-shell" style="padding-top:clamp(72px,9vw,128px);padding-bottom:clamp(72px,9vw,128px)">
+  <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px 64px;align-items:end;padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--border-light)">
+    <span aria-hidden="true" style="position:absolute;left:0;top:-1px;width:120px;height:2px;background:var(--brand);box-shadow:0 0 12px var(--brand)"></span>
+    <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Technical Enquiry</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Let’s Configure a System Around <span style="color:var(--brand)">Your Requirements.</span></h2></div>
+    <div style="display:flex;flex-direction:column;gap:20px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Contact us to discuss your wavelength, power and integration requirements, and we will configure a system around them.</p><div><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_toEnquiry }}" hint-size="230px,44px">Discuss Your Requirements</x-import></div></div>
+  </div>
+</section>
+<section data-screen-label="Resources" class="section-shell" style="padding-bottom:clamp(56px,7vw,96px)">
+  <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px"><h2 style="margin:0;font-family:var(--font-mono);font-size:13.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Resources &amp; Further Reading</h2><span style="font-size:15px;color:var(--muted)">Available on request</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px">
+    <sc-for list="{{ l_res }}" as="rs" hint-placeholder-count="3">
+      <a href="{{ rs.href }}" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);color:var(--foreground);transition:border-color .25s" style-hover="border-color:var(--border-light)">
+        <span aria-hidden="true" style="flex:none;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.06em;color:var(--brand)">{{ rs.glyph }}</span>
+        <span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px"><span style="font-size:16.5px;font-weight:600">{{ rs.title }}</span><span style="font-size:16px;line-height:1.4;color:var(--muted)">{{ rs.line }}</span></span>
+        <span style="flex:none;font-size:15px;font-weight:600;color:var(--brand);white-space:nowrap">Request Access</span>
+      </a>
+    </sc-for>
+  </div>
+</section>
+</sc-if>
+<sc-if value="{{ l_isDetail }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Breadcrumb" class="section-shell" style="padding-top:22px">
+  <ol style="list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">
+    <li><a href="{{ l_homeHref }}" style="color:var(--foreground-2)" style-hover="color:var(--brand)">Home</a></li><li aria-hidden="true">/</li>
+    <li><a href="{{ l_productsHref }}" style="color:var(--foreground-2)" style-hover="color:var(--brand)">Products</a></li><li aria-hidden="true">/</li>
+    <li><a href="#/" style="color:var(--foreground-2)" style-hover="color:var(--brand)">Quantum Lasers</a></li><li aria-hidden="true">/</li>
+    <li aria-current="page" style="color:var(--foreground)">{{ l_d.short }}</li>
+  </ol>
+</nav>
+<section data-screen-label="Product hero" class="section-shell" style="padding-top:clamp(32px,4vw,56px);padding-bottom:clamp(56px,7vw,96px);border-bottom:1px solid var(--border)">
+  <div style="display:grid;grid-template-columns:{{ l_heroCols }};gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ l_d.code }} · {{ l_d.catLabel }}</span><sc-for list="{{ l_d.badges }}" as="b" hint-placeholder-count="0"><x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="120px,20px">{{ b }}</x-import></sc-for></div>
+      <h1 style="margin:0;font-size:clamp(2.2rem,1.3rem + 3vw,3.9rem);line-height:1.02;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">{{ l_d.name }}</h1>
+      <p style="margin:0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ l_d.desc }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px"><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_d.enquire }}" hint-size="250px,44px">{{ l_d.cta }}</x-import><x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ l_toOverview }}" hint-size="180px,44px">← Quantum Lasers</x-import></div>
+    </div>
+    <div style="position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:radial-gradient(ellipse 70% 80% at 65% 40%,color-mix(in srgb, var(--brand) 11%, transparent),transparent 70%),var(--surface)">
+      <span class="bg-grid" style="position:absolute;inset:0;opacity:.35"></span>
+      <sc-if value="{{ l_d.hasImg }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ l_d.imgAlt }}" style="position:absolute;inset:0;background:#020713 URL('{{ l_d.img }}') 80% 50%/cover no-repeat"></span></sc-if>
+      <sc-if value="{{ l_d.noImg }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center"><span style="font-size:clamp(2rem,1.4rem + 2vw,3.2rem);font-weight:600;letter-spacing:-0.035em;color:var(--border-strong)">{{ l_d.short }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Product Photograph · Placeholder</span></span></sc-if>
+      <span style="position:absolute;left:16px;bottom:14px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ l_d.imgNote }}</span>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Specifications" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Specification Highlights</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.short }} at a Glance.</h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.note }}</p></div>
+  <sc-if value="{{ l_d.hasSpecs }}" hint-placeholder-val="{{ true }}"><dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_d.specs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:24px 24px 24px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.35rem,1rem + 1vw,2rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl></sc-if>
+  <sc-if value="{{ l_d.hasGroups }}" hint-placeholder-val="{{ false }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));border-top:1px solid var(--border-light)">
+      <sc-for list="{{ l_d.groups }}" as="g" hint-placeholder-count="4"><div style="display:flex;flex-direction:column;gap:14px;padding:24px 24px 24px 0;border-bottom:1px solid var(--border)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ g.k }}</span><ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px"><sc-for list="{{ g.items }}" as="it" hint-placeholder-count="2"><li style="display:flex;gap:10px;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.3;font-weight:600;letter-spacing:-0.015em"><span aria-hidden="true" style="flex:none;width:6px;height:6px;margin-top:9px;border-radius:50%;background:var(--brand)"></span>{{ it }}</li></sc-for></ul></div></sc-for>
+    </div>
+  </sc-if>
+</section>
+<section data-screen-label="Concept" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Product Description</span>
+      <h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.conceptTitle }}</h2>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.desc }}</p>
+      <sc-if value="{{ l_d.isTk }}" hint-placeholder-val="{{ false }}"><div role="radiogroup" aria-label="Turnkey wavelength" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)">
+        <sc-for list="{{ l_tkOpts }}" as="k" hint-placeholder-count="4">
+          <button role="radio" aria-checked="{{ k.on }}" onClick="{{ k.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:76px;padding:14px 10px 14px 0;border:0;background:none;color:{{ k.color }};font:inherit;text-align:left;cursor:pointer;transition:color .25s" style-hover="color:var(--foreground)"><span class="tnum" style="font-size:clamp(1.4rem,1rem + 1.2vw,2rem);line-height:1;letter-spacing:-0.03em;font-weight:600">{{ k.v }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ k.uC }}">nm</span><span aria-hidden="true" style="position:absolute;left:0;right:10px;top:-1px;height:2px;background:var(--brand);box-shadow:0 0 10px var(--brand);transform-origin:left;transform:scaleX({{ k.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span></button>
+        </sc-for>
+      </div>
+      <p aria-live="polite" style="margin:0;font-size:16px;line-height:1.6;color:var(--foreground-2)">{{ l_tkNote }}</p>
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_tkSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl></sc-if>
+    </div>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_d.fig }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ l_d.figCap }}</figcaption></figure>
+  </div>
+</section>
+<section data-screen-label="Applications and configuration" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(40px,5vw,72px);align-items:start">
+    <div>
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Applications</span>
+      <ol style="list-style:none;margin:20px 0 0;padding:0;border-top:1px solid var(--border-light)">
+        <sc-for list="{{ l_d.apps }}" as="a" hint-placeholder-count="3"><li style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--border)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ a.n }}</span><span style="font-size:clamp(1.1rem,.95rem + .5vw,1.4rem);line-height:1.3;letter-spacing:-0.015em;font-weight:500">{{ a.t }}</span></li></sc-for>
+      </ol>
+    </div>
+    <div>
+      <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Configuration &amp; Options</span>
+      <sc-if value="{{ l_d.hasConfig }}" hint-placeholder-val="{{ true }}"><dl style="margin:20px 0 0;border-top:1px solid var(--border-light)">
+        <sc-for list="{{ l_d.config }}" as="c" hint-placeholder-count="2"><div style="display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2);padding-top:3px">{{ c.k }}</dt><dd style="margin:0;font-size:16px;line-height:1.5;color:var(--foreground)">{{ c.v }}</dd></div></sc-for>
+      </dl></sc-if>
+      <p style="margin:18px 0 0;font-size:16px;line-height:1.55;color:var(--foreground-2)">{{ l_d.note }}</p>
+    </div>
+  </div>
+</section>
+<section data-screen-label="Related" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Related Products</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.relTitle }}</h2></div><span></span></div>
+  <sc-if value="{{ l_d.hasRel }}" hint-placeholder-val="{{ true }}">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px">
+      <sc-for list="{{ l_d.rel }}" as="r" hint-placeholder-count="2">
+        <a href="{{ r.href }}" style="display:flex;flex-direction:column;gap:12px;min-height:180px;padding:24px;border:1px solid var(--border);border-radius:16px;background:var(--surface);color:var(--foreground);transition:border-color .3s,transform .5s cubic-bezier(.16,1,.3,1)" style-hover="border-color:var(--brand);transform:translateY(-3px)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ r.why }}</span><span style="font-size:20px;line-height:1.25;font-weight:600">{{ r.name }}</span><span style="font-size:16px;line-height:1.55;color:var(--muted)">{{ r.src }}</span><span style="margin-top:auto;font-size:16px;font-weight:600;color:var(--brand)">View Details →</span></a>
+      </sc-for>
+    </div>
+  </sc-if>
+  <sc-if value="{{ l_d.noRel }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)"><span style="max-width:52ch;font-size:16.5px;line-height:1.55;color:var(--muted)">No direct product relationship is documented for {{ l_d.short }}.</span><a href="#/" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">Explore the Quantum Lasers Portfolio <span aria-hidden="true">→</span></a></div></sc-if>
+</section>
+<section data-screen-label="Product enquiry" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
+  <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px 64px;align-items:end;padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--border-light)">
+    <span aria-hidden="true" style="position:absolute;left:0;top:-1px;width:120px;height:2px;background:var(--brand);box-shadow:0 0 12px var(--brand)"></span>
+    <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Technical Enquiry</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.cta }}</h2></div>
+    <div style="display:flex;flex-direction:column;gap:20px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.note }} We’ll start the enquiry with {{ l_d.short }} already noted.</p><div><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_d.enquire }}" hint-size="250px,44px">{{ l_d.cta }}</x-import></div></div>
+  </div>
+</section>
+<nav aria-label="Portfolio" class="section-shell" style="padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(64px,8vw,112px)">
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--border)">
+    <a href="{{ l_d.prevHref }}" style="display:flex;flex-direction:column;gap:6px;padding:24px 16px 0 0;color:var(--foreground-2)" style-hover="color:var(--foreground)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">← Previous</span><span style="font-size:clamp(16px,1.3vw,19px);font-weight:600">{{ l_d.prevName }}</span></a>
+    <a href="{{ l_d.nextHref }}" style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;padding:24px 0 0 16px;text-align:right;color:var(--foreground)" style-hover="color:var(--brand)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Next →</span><span style="font-size:clamp(16px,1.3vw,19px);font-weight:600">{{ l_d.nextName }}</span></a>
+  </div>
+</nav>
+</sc-if>
+
+<sc-if value="{{ l_isMissing }}" hint-placeholder-val="{{ false }}">
+<section data-screen-label="Not found" class="section-shell" style="padding-top:clamp(72px,9vw,128px);padding-bottom:clamp(72px,9vw,128px)">
+  <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Quantum Lasers · Page Not Found</span>
+  <h1 style="margin:16px 0 0;max-width:18ch;font-size:clamp(2.2rem,1.3rem + 3vw,3.6rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600">We Couldn’t Find That Laser Product.</h1>
+  <p style="margin:18px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">The link may be out of date. These are the six products in the laser portfolio.</p>
+  <ul style="list-style:none;margin:32px 0 0;padding:0;max-width:720px;border-top:1px solid var(--border-light)"><sc-for list="{{ l_allLinks }}" as="x" hint-placeholder-count="6"><li style="border-bottom:1px solid var(--border)"><a href="{{ x.href }}" style="display:flex;justify-content:space-between;gap:16px;min-height:52px;align-items:center;color:var(--foreground)" style-hover="color:var(--brand)"><span>{{ x.name }}</span><span aria-hidden="true">→</span></a></li></sc-for></ul>
+  <div style="margin-top:28px"><x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ l_toOverview }}" hint-size="220px,44px">Back to Quantum Lasers</x-import></div>
+</section>
+</sc-if>
+</main>
+
+<dc-import name="QAIG Global CTA" hint-size="100%,620px"></dc-import>
+<dc-import name="QAIG Global Footer" after-cta="true" hint-size="100%,760px"></dc-import>
+</div>
+</x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
+<script type="text/x-dc" data-dc-script data-props="{&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monochrome, colour on hover&quot;,&quot;Full colour&quot;],&quot;default&quot;:&quot;Full colour&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sectionNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Auto&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, step: 0, req: 2, tm: 0, wfP: 0, adv: "All", sec: "overview", menu: null, search: false, q: "", mobile: false, mSec: null, dx: 0, cmi: 0, cta: [], ovP: 0, evP: 0, gi: 0, mcat: 0 };
+  vidRef = React.createRef();
+  galRef = React.createRef();
+  searchRef = React.createRef();
+  openSearch() { this.setState({ search: true, menu: null, mobile: false, q: "" }, () => setTimeout(() => this.searchRef.current && this.searchRef.current.focus(), 30)); }
+  qvpSync() { const m = this.props.viewport ?? "Auto"; if (m === this._qvp) return; const go = () => { if (window.QAIGViewport) { this._qvp = m; window.QAIGViewport.apply(m); } else setTimeout(go, 120); }; go(); }
+  componentDidMount() { this.qvpSync(); this.lzMount();
+    try { this.setState({ rm: window.matchMedia("(prefers-reduced-motion: reduce)").matches }); } catch (e) {}
+    this.onR = () => this.setState({ w: window.innerWidth });
+    this.onS = () => {
+      let cur = "overview";
+      for (const s of this.sections) { const el = document.getElementById(s[0]); if (el && el.getBoundingClientRect().top < 180) cur = s[0]; }
+      if (cur !== this.state.sec) this.setState({ sec: cur });
+      if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.wfUpdate(); });
+    };
+    this.onK = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); this.state.search ? this.setState({ search: false }) : this.openSearch(); }
+      else if (e.key === "Escape") this.setState({ search: false, menu: null, mobile: false });
+    };
+    window.addEventListener("keydown", this.onK);
+    window.addEventListener("resize", this.onR); window.addEventListener("scroll", this.onS, { passive: true });
+    this.onR(); this.onS();
+    this.setupCursor(); this.setupVideo();
+  }
+  componentDidUpdate() { this.qvpSync(); this.setupVideo(); }
+  setupVideo() {
+    const v = this.vidRef.current; if (!v || this.vidEl === v || typeof IntersectionObserver === "undefined") return;
+    this.vidEl = v; v.muted = true; v.playsInline = true; v.loop = true; v.setAttribute("playsinline", "");
+    if (this.io) this.io.disconnect();
+    this.io = new IntersectionObserver(([en]) => { if (en.isIntersecting && en.intersectionRatio >= 0.35 && !this.state.rm) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } else v.pause(); }, { threshold: [0, 0.35, 0.7] });
+    this.io.observe(v);
+  }
+  setupCursor() {
+    if ((this.props.customCursor ?? true) === false) return;
+    try { if (!window.matchMedia("(pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; } catch (e) { return; }
+    const old = document.getElementById("qcur-root"); if (old) old.remove();
+    const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
+    document.head.appendChild(st);
+    const root = document.createElement("div"); root.id = "qcur-root"; root.setAttribute("aria-hidden", "true");
+    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", Transition: "opacity .2s", willChange: "transform" });
+    root.innerHTML = '<div data-k="dot" style="position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:var(--brand);transition:transform .18s"></div>'
+      + '<div data-k="ring" style="position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;border:1px solid var(--brand);opacity:0;transform:scale(.4);transition:transform .22s cubic-bezier(.22,1,.36,1),opacity .2s"></div>'
+      + '<svg data-k="arrow" width="10" height="10" viewBox="0 0 10 10" style="position:absolute;left:18px;top:-5px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M1 5h8M6 2l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>'
+      + '<svg data-k="ext" width="10" height="10" viewBox="0 0 10 10" style="position:absolute;left:14px;top:-18px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M2 8l6-6M3 2h5v5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>'
+      + '<svg data-k="cross" width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:-18px;top:-18px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M18 0v12M18 24v12M0 18h12M24 18h12" stroke="currentColor" stroke-width="1"/></svg>'
+      + '<svg data-k="focus" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;left:-20px;top:-20px;opacity:0;transform:scale(.7);transition:opacity .2s,transform .22s;color:var(--foreground)"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1"/></svg>';
+    document.body.appendChild(root); document.documentElement.classList.add("qcur");
+    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + k + '"]'); });
+    let x = 0, y = 0, raf = 0, mode = "x";
+    const set = (m) => { if (m === mode) return; mode = m; const lk = m === "link" || m === "ext";
+      P.ring.style.opacity = lk ? "1" : "0"; P.ring.style.transform = lk ? "scale(1)" : "scale(.4)";
+      P.arrow.style.opacity = m === "link" ? "1" : "0"; P.ext.style.opacity = m === "ext" ? "1" : "0";
+      P.cross.style.opacity = m === "measure" ? "1" : "0";
+      P.focus.style.opacity = m === "media" ? "1" : "0"; P.focus.style.transform = m === "media" ? "scale(1)" : "scale(.7)";
+      P.dot.style.transform = m === "media" ? "scale(.6)" : "scale(1)"; };
+    const ctx = (t) => { if (!t || !t.closest) return ""; if (t.closest('input,textarea,[contenteditable="true"]')) return "text";
+      const a = t.closest('a,button,[role="button"],[role="tab"],select,label'); if (a) { const h = (a.getAttribute && a.getAttribute("href")) || ""; return /^https?:/.test(h) || a.closest("[data-ext]") ? "ext" : "link"; }
+      if (t.closest('[data-diagram],svg[role="img"]')) return "measure"; if (t.closest("img,video,figure")) return "media"; return ""; };
+    this.cMove = (ev) => { x = ev.clientX; y = ev.clientY; root.style.opacity = "1"; if (!raf) raf = requestAnimationFrame(() => { raf = 0; root.style.transform = "translate3d(" + x + "px," + y + "px,0)"; }); };
+    this.cOver = (ev) => { const m = ctx(ev.target); root.style.visibility = m === "text" ? "hidden" : "visible"; set(m === "text" ? "" : m); };
+    this.cLeave = () => { root.style.opacity = "0"; };
+    this.cDown = () => { P.dot.style.transform = "scale(.5)"; }; this.cUp = () => { P.dot.style.transform = mode === "media" ? "scale(.6)" : "scale(1)"; };
+    window.addEventListener("mousemove", this.cMove, { passive: true }); document.addEventListener("mouseover", this.cOver); document.documentElement.addEventListener("mouseleave", this.cLeave);
+    window.addEventListener("mousedown", this.cDown); window.addEventListener("mouseup", this.cUp);
+    this.cursorOff = () => { window.removeEventListener("mousemove", this.cMove); document.removeEventListener("mouseover", this.cOver); document.documentElement.removeEventListener("mouseleave", this.cLeave); window.removeEventListener("mousedown", this.cDown); window.removeEventListener("mouseup", this.cUp); root.remove(); st.remove(); document.documentElement.classList.remove("qcur"); };
+  }
+  componentWillUnmount() { this.lzUnmount(); if (this.cursorOff) this.cursorOff(); if (this.io) this.io.disconnect(); window.removeEventListener("keydown", this.onK); window.removeEventListener("resize", this.onR); window.removeEventListener("scroll", this.onS); }
+  sections = [["overview","Overview"],["domains","Technologies"],["approach","Approach"],["workflow","Workflow"],["technology","In the Lab"],["evidence","Evidence"],["leadership","CEO"],["team","Team"],["advisory","Advisory"]];
+  wfUpdate() {
+    const vh0 = window.innerHeight, S0 = this.state, clp = (v) => Math.max(0, Math.min(1, v));
+    const upd = (id, fn, key) => { const el = document.getElementById(id); if (!el) return; const q = clp(fn(el.getBoundingClientRect())); if (Math.abs(q - S0[key]) > 0.01 || ((q === 0 || q === 1) && q !== S0[key])) this.setState({ [key]: q }); };
+    upd("ov-track", (r) => (vh0 * 0.72 - r.top) / Math.max(1, r.height * 0.8), "ovP");
+    upd("ev-track", (r) => (vh0 * 0.85 - r.top) / (r.height + vh0 * 0.25), "evP");
+    if (S0.w >= 960 && !(this.exLock > Date.now())) { let best = S0.dx, bd = 1e9; for (let i = 0; i < 7; i++) { const el = document.getElementById("ex-" + i); if (!el) continue; const r = el.getBoundingClientRect(); const d = Math.abs(r.top + r.height / 2 - vh0 * 0.5); if (d < bd) { bd = d; best = i; } } if (best !== S0.dx) this.setState({ dx: best }); }
+    const wide = this.state.w >= 860, vh = window.innerHeight;
+    const el = document.getElementById(wide ? "wf-track" : "wf-track-n"); if (!el) return;
+    const r = el.getBoundingClientRect();
+    const p = wide ? (136 - r.top) / Math.max(1, r.height - (vh - 136)) * 1.08 : (vh * 0.8 - r.top) / (r.height + vh * 0.2);
+    const q = Math.max(0, Math.min(1, p));
+    if (Math.abs(q - this.state.wfP) > 0.006 || ((q === 0 || q === 1) && q !== this.state.wfP)) this.setState({ wfP: q });
+  }
+  go(id) { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 136, behavior: "smooth" }); }
+  qaigData() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV; }
+  footerData() {
+    return [
+        { title: "Products", links: ["Product Catalog", "Chec-Q AI", "Q-Cluster", "QNTSim", "Browse Products →"] },
+        { title: "Ecosystem", links: ["Quantum AI Global", "QuLabs ↗", "Research Collaborations", "Partner Network"] },
+        { title: "Resources", links: ["Documentation", "Research Publications", "Case Studies", "API Documentation", "Downloads", "Blog"] },
+        { title: "Company", links: ["About", "Leadership", "Careers", "Collaborations", "Recognition", "Gallery", "Contact Us"] },
+      ].map((c) => ({ title: c.title, links: c.links.map((label) => ({ label, color: label.endsWith("→") ? "var(--brand)" : "var(--muted)" })) }));
+  }
+  videoSrc = "";
+  resArt(i) {
+    const e = React.createElement, rm = !!this.state.rm, B = "var(--brand)", L = "var(--border-strong)", Mu = "var(--muted)", S = "var(--surface-2)";
+    const rect = (k, x, y, w, h, o) => e("rect", Object.assign({ key: k, x, y, width: w, height: h, rx: 3, fill: S, stroke: L, strokeWidth: 1 }, o || {}));
+    const ln = (k, x1, y1, x2, y2, o) => e("line", Object.assign({ key: k, x1, y1, x2, y2, stroke: L, strokeWidth: 1.4, strokeLinecap: "round" }, o || {}));
+    const lab = (k, x, y, s) => e("text", { key: k, x, y, textAnchor: "middle", fill: "var(--muted)", style: { font: "10.5px var(--font-mono)", letterSpacing: ".08em" } }, s);
+    const svg = (...kids) => e("svg", { viewBox: "0 0 300 116", width: "100%", height: "100%", style: { display: "block", maxHeight: 116 }, "aria-hidden": true }, ...kids);
+    if (i === 0) { const cv = "M196 88 C212 86 222 62 238 56 S262 42 274 32";
+      return svg(rect("b", 52, 16, 92, 82, { fill: "var(--surface)" }), rect("f", 66, 26, 92, 82, { stroke: B, opacity: 0.95 }), rect("h", 76, 36, 30, 8, { fill: B, stroke: "none", opacity: 0.85 }), ln("l1", 76, 54, 146, 54), ln("l2", 76, 64, 138, 64), ln("l3", 76, 74, 144, 74), ln("l4", 76, 84, 120, 84), lab("ci", 142, 100, "[1]"),
+        ln("ax", 190, 96, 284, 96, { stroke: Mu }), ln("ay", 190, 96, 190, 22, { stroke: Mu }), e("path", { key: "cv", d: cv, fill: "none", stroke: B, strokeWidth: 1.8, strokeLinecap: "round" }),
+        e("line", { key: "g", x1: 238, y1: 56, x2: 238, y2: 96, stroke: L, strokeDasharray: "2 3" }), e("circle", { key: "n1", cx: 238, cy: 56, r: 3.5, fill: "var(--base)", stroke: B }), e("circle", { key: "n2", cx: 274, cy: 32, r: 3.5, fill: B }),
+        rm ? null : e("circle", { key: "p", r: 3, fill: B }, e("animateMotion", { dur: "3.6s", repeatCount: "indefinite", path: cv })));
+    }
+    if (i === 1) return svg(
+      e("g", { key: "fl" }, rect("d1", 40, 44, 34, 44, { fill: "var(--surface)" }), ln("d1l", 47, 58, 67, 58), ln("d1m", 47, 66, 64, 66), lab("t1", 57, 104, "PDF"), rect("d2", 226, 44, 34, 44, { fill: "var(--surface)" }), ln("d2l", 233, 58, 253, 58), ln("d2m", 233, 66, 250, 66), lab("t2", 243, 104, "DOC")),
+      e("path", { key: "cb", d: "M118 62 L150 48 L182 62 L182 94 L150 108 L118 94 Z", fill: "var(--surface)", stroke: L, strokeWidth: 1.3, strokeLinejoin: "round" }), e("path", { key: "cb2", d: "M118 62 L150 76 L182 62 M150 76 V108", fill: "none", stroke: L, strokeWidth: 1.3, strokeLinejoin: "round" }), ln("tp", 134, 55, 166, 69, { stroke: B, opacity: 0.6 }),
+      e("g", { key: "ar" }, e("path", { d: "M150 8 V32 M141 24 L150 33 L159 24", fill: "none", stroke: B, strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" }), rm ? null : e("animateTransform", { attributeName: "transform", type: "translate", values: "0 -2;0 8;0 -2", dur: "2.2s", repeatCount: "indefinite" })),
+      e("rect", { key: "pt", x: 100, y: 112, width: 100, height: 2.5, rx: 1.2, fill: L }), e("rect", { key: "pf", x: 100, y: 112, width: 64, height: 2.5, rx: 1.2, fill: B }, rm ? null : e("animate", { attributeName: "width", values: "20;78;20", dur: "3.2s", repeatCount: "indefinite" })));
+    const rings = rm ? [e("circle", { key: "r1", cx: 150, cy: 58, r: 26, fill: "none", stroke: B, opacity: 0.35 })] : [0, 1.2].map((d, k) => e("circle", { key: "r" + k, cx: 150, cy: 58, r: 8, fill: "none", stroke: B, strokeWidth: 1.2 }, e("animate", { attributeName: "r", values: "8;44", dur: "2.8s", begin: d + "s", repeatCount: "indefinite" }), e("animate", { attributeName: "opacity", values: "0.7;0", dur: "2.8s", begin: d + "s", repeatCount: "indefinite" })));
+    return svg(...rings, e("circle", { key: "c0", cx: 150, cy: 58, r: 9, fill: "var(--surface)", stroke: B, strokeWidth: 1.3 }), e("circle", { key: "c1", cx: 150, cy: 58, r: 3, fill: B }),
+      ...[0, 1, 2].flatMap((k) => [e("circle", { key: "fd" + k, cx: 28, cy: 34 + k * 24, r: 2.5, fill: k === 0 ? B : L }), ln("fl" + k, 38, 34 + k * 24, 74 - k * 10, 34 + k * 24, { stroke: k === 0 ? B : L, opacity: k === 0 ? 0.8 : 1 }), e("circle", { key: "fe" + k, cx: 272, cy: 34 + k * 24, r: 2.5, fill: k === 1 ? B : L }), ln("fm" + k, 226 + k * 10, 34 + k * 24, 262, 34 + k * 24, { stroke: k === 1 ? B : L, opacity: k === 1 ? 0.8 : 1 })]),
+      lab("tl", 150, 112, "LATEST"));
+  }
+  mkDia(fn, i, live) { return fn(i, live); }
+  galInset() { const w = this.state.w; return w < 640 ? 16 : Math.max(32, (w - 1240) / 2); }
+  scrollGal(d) { const el = this.galRef.current; if (el) el.scrollBy({ left: d * Math.min(640, el.clientWidth * 0.8), behavior: "smooth" }); }
+  v6Vals() {
+    const pad = (i) => String(i + 1).padStart(2, "0");
+    const steps = [
+      { tag: "Research", desc: "Research in quantum computing, quantum communication and quantum AI." },
+      { tag: "Innovation", desc: "Turning research into products and systems that can be deployed." },
+      { tag: "Education", desc: "Training students and engineers in quantum technology through courses and programmes." },
+      { tag: "Adoption", desc: "Working with industry and government to put quantum technology into practical use." },
+    ].map((s, i) => {
+      const on = i === this.state.step;
+      return { ...s, idx: pad(i), pick: () => this.setState({ step: i }),
+        bg: on ? "var(--surface-2)" : "transparent", bar: on ? "var(--brand)" : "transparent",
+        color: on ? "var(--foreground)" : "var(--muted)", idxColor: on ? "var(--brand)" : "var(--faint)" };
+    });
+    const advisorsAll = [
+      ["Prof. Anil Prabhakar","Quantum Professor, IIT Madras","","IIT"],
+      ["Dr. Venkata Jaya Krishna Kishore","Pro Vice-Chancellor, Jeppiaar University","","Universities"],
+      ["Prof. Sugata Gangopadhyay","Head of Department, CSE, IIT Roorkee","https://www.linkedin.com/in/sugata-gangopadhyay-08354219/","IIT"],
+      ["Prof. M.V. Panduranga Rao","Associate Professor, CSE, IIT Hyderabad","","IIT"],
+      ["Prof. Arijit Sharma","Assistant Professor, IIT Tirupati","https://www.linkedin.com/in/arijit-sharma-4261a923/","IIT"],
+      ["Mr. Naresh Kumar Emani","Associate Professor, EEE, IIT Hyderabad","https://www.linkedin.com/in/naresh-kumar-emani-a9b9377/","IIT"],
+      ["Mr. Sai Santosh Kumar Raavi","Professor, Physics, IIT Hyderabad","https://www.linkedin.com/in/sai-santosh-kumar-raavi-28715882/","IIT"],
+      ["Prof. Ajay Wasan","Professor, IIT Roorkee","https://www.linkedin.com/in/ajay-wasan-15116aa/","IIT"],
+      ["Prof. Debabrata Goswami","Professor, Quantum Computing, IIT Hyderabad","https://www.linkedin.com/in/debabrata-goswami-a453014/","IIT"],
+      ["Dr. Mansi Dhuria","Assistant Professor, PDEU Gandhinagar","https://www.linkedin.com/in/dr-mansi-dhuria-633a79125/","Universities"],
+      ["Dr. Ravi Sarepalli","Professor of Entrepreneurship, GITAM Hyderabad","https://www.linkedin.com/in/ravisaripalle/","Universities"],
+      ["Dr. Hemachandran","Enterprise Risk Advisor, University of St Thomas, USA","https://www.linkedin.com/in/drhemachandrank/","Universities"],
+      ["Dr. Aishik Acharya","Senior Scientist, CQuERE","https://www.linkedin.com/in/dr-aishik-acharya-7a717287/","Research & Industry"],
+      ["Dr. Satyadhyan Chickerur","Artificial Intelligence Research (CAIR), KLE University","https://www.linkedin.com/in/chickerursr/","Universities"],
+      ["Karthiganesh Dura","Founder/CEO, QuantumG Research Labs","https://www.linkedin.com/in/karthiganesh-durai-95535872/","Research & Industry"],
+    ].map(([name, title, linkedin, group], i) => ({ idx: pad(i), name, title, linkedin, group }));
+    const adv = this.state.adv;
+    const advFilters = ["All", "IIT", "Universities", "Research & Industry"].map((label) => {
+      const on = label === adv;
+      return { label, count: label === "All" ? advisorsAll.length : advisorsAll.filter((a) => a.group === label).length,
+        pick: () => this.setState({ adv: label }),
+        variant: on ? "secondary" : "outline" };
+    });
+    const mono = (this.props.photoTreatment ?? "Monochrome, colour on hover") !== "Full colour";
+    const S = this.state;
+    const reqs = [
+      { label: "Security", outs: [0, 2], blocks: ["Q-Sleeve", "Chec-Q AI", "QuRNG"] },
+      { label: "Sensing", outs: [1, 2], blocks: ["Q-Biosensor", "Quantum Gravimeter", "Rydberg Sensor"] },
+      { label: "Networking", outs: [0, 1, 2], blocks: ["EPS-QKD", "Q-Memory", "Quantum Repeater", "QNTSim"] },
+      { label: "Photonics", outs: [1], blocks: ["ECDL"] },
+      { label: "Simulation", outs: [0], blocks: ["Q-Cluster", "QubitIQ", "QNTSim"] },
+    ];
+    const outDefs = [["Software", "Simulation, Security, AI, Applications"], ["Hardware", "QKD, Memory, Sensing, Photonics"], ["Integrated System", "Hardware and software, deployed together"]];
+    const R0 = reqs[S.req];
+    const ly = [48, 129, 210, 291, 372], ry = [90, 210, 330];
+    const inPath = (i) => "M250 " + ly[i] + " C330 " + ly[i] + " 330 210 380 210";
+    const outPath = (i) => "M620 210 C690 210 690 " + ry[i] + " 750 " + ry[i];
+    const reqNodes = reqs.map((r, i) => { const on = i === S.req; return { label: r.label, top: (ly[i] - 28) + "px", pick: () => this.setState({ req: i }), variant: on ? "secondary" : "outline", arrow: on ? "var(--brand)" : "var(--faint)", props: { style: { width: "100%", height: "100%", justifyContent: "space-between", borderColor: on ? "var(--brand)" : undefined } } }; });
+    const outNodes = outDefs.map(([title, sub], i) => { const on = R0.outs.includes(i); return { title, sub, top: (ry[i] - 48) + "px", border: on ? "var(--brand)" : "var(--border-light)", bg: on ? "var(--brand-soft)" : "var(--surface)" }; });
+    const paths = [];
+    reqs.forEach((r, i) => { if (i !== S.req) paths.push({ d: inPath(i), stroke: "var(--border-strong)", sw: 1 }); });
+    outDefs.forEach((o, i) => { if (!R0.outs.includes(i)) paths.push({ d: outPath(i), stroke: "var(--border-strong)", sw: 1 }); });
+    paths.push({ d: inPath(S.req), stroke: "var(--brand)", sw: 1.5 });
+    R0.outs.forEach((i) => paths.push({ d: outPath(i), stroke: "var(--brand)", sw: 1.5 }));
+    const e = React.createElement, rm = !!S.rm, dx = S.dx || 0;
+    const hy = 34, hxs = [100, 300, 500, 700, 900, 1100];
+    const gl = (i, x) => { const c = "var(--brand)", m = "var(--muted)";
+      if (i === 0) return [e("circle", { key: "a", cx: x, cy: hy, r: 4, fill: c }), e("circle", { key: "b", cx: x, cy: hy, r: 11, fill: "none", stroke: c, strokeWidth: 1, opacity: 0.5 })];
+      if (i === 1) return [e("ellipse", { key: "a", cx: x, cy: hy, rx: 13, ry: 5, fill: "none", stroke: m, strokeWidth: 1 }), e("line", { key: "b", x1: x, y1: hy, x2: x + 7, y2: hy - 11, stroke: c, strokeWidth: 1.5 }), e("circle", { key: "c", cx: x + 7, cy: hy - 11, r: 2.2, fill: c })];
+      if (i === 2) return [e("path", { key: "a", d: "M" + (x - 13) + " " + hy + " q3.25 -9 6.5 0 t6.5 0 t6.5 0 t6.5 0", fill: "none", stroke: c, strokeWidth: 1.5 })];
+      if (i === 3) return [-7, 0, 7].map((dy, k) => e("line", { key: k, x1: x - 11, y1: hy + dy, x2: x + 11, y2: hy + dy, stroke: k === 1 ? c : m, strokeWidth: 1.5 }));
+      if (i === 4) return [e("path", { key: "a", d: "M" + (x - 12) + " " + (hy + 6) + " A12 12 0 0 1 " + (x + 12) + " " + (hy + 6), fill: "none", stroke: m, strokeWidth: 1.2 }), e("line", { key: "b", x1: x, y1: hy + 6, x2: x + 7, y2: hy - 5, stroke: c, strokeWidth: 1.6 })];
+      return [e("rect", { key: "a", x: x - 10, y: hy - 10, width: 20, height: 20, rx: 3, fill: "none", stroke: c, strokeWidth: 1.2 }), e("path", { key: "b", d: "M" + (x - 5) + " " + hy + " l3.5 3.5 l6 -7", fill: "none", stroke: c, strokeWidth: 1.6 })]; };
+    const anim = (d) => rm ? {} : { animation: "qsig 5.5s linear " + d + "s infinite" };
+    const HT = 9, HW = 1 / 6, fx = (v) => v.toFixed(4), hdur = HT + "s";
+    const hseg = rm ? [] : [0, 1, 2, 3, 4].flatMap((i) => { const a = hxs[i] + 30, b = hxs[i + 1] - 30, t0 = i * HW, t1 = (i + 1) * HW - 0.012;
+      const kt = [0, t0, t0 + 0.01, t1, t1 + 0.06, 1].map(fx).join(";");
+      return [
+        e("line", { key: "s" + i, x1: a, y1: hy, x2: b, y2: hy, stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", opacity: 0, style: { filter: "drop-shadow(0 0 5px var(--brand))" } }, e("animate", { attributeName: "opacity", values: "0;0;1;1;0;0", keyTimes: kt, dur: hdur, repeatCount: "indefinite" })),
+        e("circle", { key: "p" + i, cy: hy, r: 4, fill: "var(--brand)", opacity: 0, style: { filter: "drop-shadow(0 0 8px var(--brand))" } },
+          e("animate", { attributeName: "cx", values: [a, a, b, b].join(";"), keyTimes: [0, t0, t1, 1].map(fx).join(";"), dur: hdur, repeatCount: "indefinite" }),
+          e("animate", { attributeName: "opacity", values: "0;0;1;1;0;0", keyTimes: kt, dur: hdur, repeatCount: "indefinite" }))]; });
+    const hring = rm ? [] : hxs.map((x, k) => { const ta = k === 0 ? 0 : k * HW - 0.012; return e("circle", { key: "r" + k, cx: x, cy: hy, r: 30, fill: "none", stroke: "var(--brand)", strokeWidth: 1.5, opacity: 0, style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animate", { attributeName: "opacity", values: "0;0;1;0;0", keyTimes: [0, ta, ta + 0.04, ta + 0.14, 1].map(fx).join(";"), dur: hdur, repeatCount: "indefinite" })); });
+    const heroSvg = e("svg", { viewBox: "0 0 1200 68", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": "Diagram: a photon source feeds a quantum state into a channel, through memory and a sensor or receiver, producing a key, signal or data." },
+      e("line", { x1: 100, y1: hy, x2: 1100, y2: hy, stroke: "var(--border-strong)", strokeWidth: 1, strokeDasharray: "2 6" }),
+      ...hseg.filter((_, i) => i % 2 === 0),
+      ...hxs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: hy, r: 30, fill: "var(--surface)", stroke: i === 0 || i === 5 ? "var(--brand)" : "var(--border-light)", strokeWidth: 1 }), ...gl(i, x))),
+      ...hring, ...hseg.filter((_, i) => i % 2 === 1));
+    const heroStages = [["Source", "Photon or laser light"], ["Encode", "Quantum state preparation"], ["Channel", "Fibre or free-space link"], ["Store", "Quantum Memory"], ["Measure", "Sensor or receiver"], ["Output", "Key, signal or data"]].map(([t, d], i) => ({ idx: pad(i), t, d }));
+    const equation = [["Technology", "Photonics, quantum communication, memory, sensing and software.", "+"], ["Engineering", "Hardware, control and software designed together.", "+"], ["Integration", "Components combined into one working system.", "="], ["Application", "Deployed against a customer’s technical requirement.", ""]].map(([t, d, op], i) => ({ idx: pad(i), t, d, op, hasOp: !!op }));
+    const exFlows = [
+      [["Photon Source", "Input"], ["Quantum Channel", "Transport"], ["Receiver", "Measure"], ["Shared secure key", "Output"]],
+      [["Quantum threat", "Input"], ["PQC protection", "Process"], ["Secure Channel", "Transport"], ["Verification", "Output"]],
+      [["Quantum Information", "Input"], ["Storage", "Process"], ["Memory State", "Hold"], ["Retrieval", "Output"]],
+      [["Physical phenomenon", "Input"], ["Quantum Sensor", "Process"], ["Measurement", "Measure"], ["Useful Signal", "Output"]],
+      [["Node", "Input"], ["Quantum Link", "Transport"], ["Node", "Receive"], ["Network", "Output"]],
+      [["Laser Diode", "Source"], ["External Cavity", "Narrow"], ["Frequency lock", "Stabilise"], ["Stable Light", "Output"]],
+      [["Problem", "Input"], ["Algorithm design", "Process"], ["Simulation", "Test"], ["Result", "Output"]],
+    ];
+    const rnd = ["Quantum Repeater", "Quantum Gravimeter", "Rydberg Sensor"];
+    const domains = [
+      ["Quantum Communication", "Entanglement-based key distribution and long-distance quantum links.", ["EPS-QKD", "Quantum Repeater"]],
+      ["Quantum Security", "Quantum-Safe VPN, cryptographic risk assessment and random number generation.", ["Q-Sleeve", "Chec-Q AI", "QuRNG"]],
+      ["Quantum Memory", "Rb-based warm vapour cell quantum memory hardware.", ["Q-Memory"]],
+      ["Quantum Sensing", "Biosensing, gravimetry and RF and microwave electric field sensing.", ["Q-Biosensor", "Quantum Gravimeter", "Rydberg Sensor"]],
+      ["Quantum Networking", "Quantum Network Simulation.", ["QNTSim"]],
+      ["Photonics & Lasers", "Narrow-linewidth external cavity diode lasers.", ["ECDL"]],
+      ["Quantum Software & AI", "Quantum simulation (local or cloud) and algorithm development.", ["Q-Cluster", "QubitIQ"]],
+      ["Custom Engineering", "Hardware, software and AI combined around a customer requirement.", []],
+    ].map(([name, desc, products], i) => ({ name, desc, products, idx: pad(i), bg: i === 7 ? "var(--brand-soft)" : "transparent", idxColor: i === 7 ? "var(--brand)" : "var(--faint)" }));
+    const exD = domains[dx];
+    const ex = { idx: pad(dx), name: exD.name, desc: exD.desc,
+      flow: exFlows[dx].map(([t, k], i) => ({ idx: pad(i), t, k, border: i === 0 || i === 3 ? "var(--brand)" : "var(--border-light)", bg: i === 3 ? "var(--brand)" : "var(--surface)", color: i === 3 ? "var(--brand-ink)" : "var(--foreground-2)", dot: i === 3 ? "var(--brand)" : "var(--base)" })),
+      products: exD.products.map((p) => ({ label: rnd.includes(p) ? p + " · R&D" : p, variant: rnd.includes(p) ? "outline" : "secondary" })) };
+    const exPulse = rm ? null : e("span", { key: "p" + dx, "aria-hidden": true, style: { position: "absolute", top: 22, left: "12.5%", width: 10, height: 10, marginLeft: -5, marginTop: -5, borderRadius: "50%", background: "var(--brand)", boxShadow: "0 0 0 5px var(--brand-soft), 0 0 16px var(--brand)", animation: "qtravel 2.8s cubic-bezier(.55,0,.45,1) infinite" } });
+    const chainDefs = [["Photonics", "Hardware"], ["Quantum Channel", "Hardware"], ["QKD / Quantum Memory", "Hardware"], ["Network Layer", "System"], ["Simulation / Control", "Software"], ["Customer Application", "Software"]];
+    const chain = chainDefs.map(([label, kind], i) => ({ label, kind, arrow: i < chainDefs.length - 1 ? "→" : "", color: kind === "Hardware" ? "var(--brand)" : "var(--faint)" }));
+    const P = S.wfP, cl = (x) => Math.max(0, Math.min(1, x)), wfIdx = Math.min(4, Math.floor(P * 4 + 0.001));
+    const workflow = [
+      ["Discover", "Define the technical requirement, constraints and success criteria."],
+      ["Design", "Select and adapt technology building blocks across hardware and software."],
+      ["Prototype", "Build and measure a working demonstrator."],
+      ["Integrate", "Combine components, control and software into one system."],
+      ["Deploy", "Deliver and support the system in the customer's environment."],
+    ].map(([title, desc], i) => { const done = P >= i / 4 - 0.001, now = i === wfIdx; const rv = cl((P - (i / 4 - 0.1)) / 0.1); return { title, desc, idx: pad(i), nodeBg: done ? "var(--brand)" : "var(--surface)", nodeColor: done ? "var(--brand-ink)" : "var(--muted)", nodeBorder: done ? "var(--brand)" : "var(--border-light)", ring: now ? "0 0 0 5px var(--brand-soft)" : "none", titleColor: done ? "var(--foreground)" : "var(--muted)", op: (0.3 + 0.7 * rv).toFixed(3), ty: ((1 - rv) * 14).toFixed(1) + "px" }; });
+    const wfPct = (80 * P).toFixed(2) + "%", wfHead = "calc(10% + " + (80 * P).toFixed(2) + "%)", wfHeadOp = P > 0.003 && P < 0.997 ? 1 : 0, wfFillH = (P * 100).toFixed(2) + "%";
+    const wfLabel = pad(wfIdx) + " / 05 · " + workflow[wfIdx].title;
+    const wfChev = [0, 1, 2, 3].map((i) => ({ left: (20 + i * 20) + "%", color: P > (i + 0.5) / 4 ? "var(--brand)" : "var(--border-strong)" }));
+    const T = {
+      sanjay: { name: "Sanjay Chittore", title: "Founder & CEO", image: "assets/company/founder-sanjay.jpg", linkedin: "https://www.linkedin.com/in/sanjaychittore/", bio: "Advancing India's role in the quantum transformation." },
+      kapil: { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and former Army Director of InfoSec, Ministry of Defence, Government of India. Led a national-level InfoSec and cryptography research team." },
+      sachin: { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental atomic physicist with extensive experience in laser-cooled atomic spectroscopy and quantum sensor technology." },
+      diksha: { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops interpretable, scalable and resource-efficient quantum machine learning models." },
+      monika: { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental quantum optics physicist specialising in Rydberg-atom-based RF electric-field sensing and atomic spectroscopy." },
+      avinash: { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental physicist who designs narrow-linewidth laser cavities, with expertise in high-resolution spectroscopy." },
+      rama: { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum engineer with expertise in quantum sources, QKD testbeds and quantum memory hardware with integrated control electronics." },
+      neelesh: { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer working on quantum-safe cryptography and cybersecurity, building scalable, standards-compliant production systems." },
+    };
+    const teamGroups = [
+      { name: "Leadership", keys: ["kapil"] },
+      { name: "Science & Optics", keys: ["sachin", "monika", "avinash"] },
+      { name: "Engineering & Software", keys: ["rama", "diksha", "neelesh"] },
+    ].map((g) => ({ name: g.name, members: g.keys.map((k) => ({ ...T[k], zoom: T[k].image.endsWith(".png") ? 1.22 : 1 })) }));
+    const tlist = [["sanjay", "Leadership"], ["kapil", "Leadership"], ["sachin", "Science & Optics"], ["monika", "Science & Optics"], ["avinash", "Science & Optics"], ["rama", "Engineering & Software"], ["diksha", "Engineering & Software"], ["neelesh", "Engineering & Software"]];
+    const tmPos = (i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / tlist.length; return [50 + 40 * Math.cos(a), 50 + 40 * Math.sin(a)]; };
+    const orbit = tlist.map(([k], i) => { const m = T[k]; const on = i === S.tm; const p = tmPos(i); return { name: m.name, image: m.image, zoom: m.image.endsWith(".png") ? 1.22 : 1, left: p[0].toFixed(2) + "%", top: p[1].toFixed(2) + "%", border: on ? "var(--brand)" : "var(--border-light)", filter: on ? "none" : "grayscale(1) brightness(.75)", pick: () => this.setState({ tm: i }) }; });
+    const tcur = T[tlist[S.tm][0]];
+    const cur = { ...tcur, group: tlist[S.tm][1], zoom: tcur.image.endsWith(".png") ? 1.22 : 1, idx: pad(S.tm), total: pad(tlist.length - 1) };
+    const tp = tmPos(S.tm);
+    const lineD = "M50 50 L" + tp[0].toFixed(2) + " " + tp[1].toFixed(2);
+    const deck = tlist.map(([k, g], i) => { const m = T[k]; const on = i === S.tm; return { ...m, group: g, zoom: 1, idx: pad(i), flex: on ? 3.7 : 1, nameSize: "28px", bioSize: "14px", border: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--surface)", avLeft: on ? "28px" : "calc(50% - 36px)", openOp: on ? 1 : 0, closedOp: on ? 0 : 1, pe: on ? "auto" : "none", bgOp: 1, avOp: 0, avSize: "72px", bgScale: 1, bgPos: ({ diksha: "56% 14%", monika: "50% 14%", neelesh: "52% 12%" })[k] || "50% 16%", bgFilter: on ? "brightness(.88)" : "brightness(.65) saturate(.8)", bioColor: "var(--foreground-2)", filter: on ? "none" : "grayscale(.9) brightness(.8)", pick: () => this.setState({ tm: i }), open: () => window.open(m.linkedin, "_blank") }; });
+    const evidence = [
+      { stage: "Research", arrow: "→", figs: [{ value: "15", label: "IPs Filed" }, { value: "3", label: "Patents Granted" }] },
+      { stage: "Technology", arrow: "→", figs: [{ value: "13", label: "Products" }] },
+      { stage: "Deployment", arrow: "", figs: [{ value: "40+", label: "Partners" }] },
+    ];
+    const cats = this.qaigData().cats.map((c) => [c.label, c.items.map((p) => [p.title, p.blurb, p.rnd ? 1 : 0]), c.stack]);
+    const thumbs = {}; this.qaigData().cats.forEach((c) => c.items.forEach((p) => { if (p.thumb) thumbs[p.title] = p.thumb; }));
+    const productCats = cats.map(([label, items]) => ({ label, count: String(items.length).padStart(2, "0"), items: items.map(([title, blurb, rnd]) => ({ title, blurb, rnd: !!rnd, cat: label, hasImg: !!thumbs[title], noImg: !thumbs[title], img: thumbs[title] ? "assets/products/" + thumbs[title] + ".png" : "", mono: title.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase() })) }));
+    const resourceItems = [
+      { label: "Research & Publications", description: "Published quantum research and scientific publications" },
+      { label: "Downloads", description: "Brochures, product documents and downloadable resources" },
+      { label: "News & Updates", description: "Company, research and product updates" },
+    ].map((r, i) => ({ ...r, idx: pad(i) }));
+    const companyCols = [
+      { heading: "About", items: [["About","Our mission & roadmap",1],["Leadership","Meet our executive team"],["Recognition","Awards & achievements"],["Gallery","Photos & physical media"]] },
+      { heading: "Work With Us", items: [["Careers","Join our distributed team"],["Collaborations","Partnership opportunities"],["Contact Us","Get in touch with sales"]] },
+    ].map((c) => ({ heading: c.heading, items: c.items.map(([label, description, cur]) => ({ label, description, color: cur ? "var(--brand)" : "var(--foreground)" })) }));
+    const menuFor = (k) => ({ enter: () => this.setState({ menu: k }), click: () => this.setState((s) => ({ menu: s.menu === k ? null : k })) });
+    const navItems = [
+      { label: "Home", key: null }, { label: "Products", key: "products", current: true }, { label: "Resources", key: "resources" }, { label: "Company", key: "company" }, { label: "QuLabs", key: null, ext: true },
+    ].map((n) => {
+      const open = n.key && S.menu === n.key;
+      const h = n.key ? menuFor(n.key) : { enter: () => this.setState({ menu: null }), click: () => {} };
+      return { label: n.label, aria: n.ext ? "QuLabs, opens an external site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
+        variant: open || n.current ? "secondary" : "ghost" };
+    });
+    const tx = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--foreground-2)", style: { font: "500 13px var(--font-sans)" } }, o || {}), s);
+    const mt = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--muted)", style: { font: "11.5px var(--font-mono)", letterSpacing: ".08em", textTransform: "uppercase" } }, o || {}), s);
+    const pulse = (d, dur, k) => rm ? null : e("circle", { key: k || "pl", r: 4, fill: "var(--brand)", style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animateMotion", { dur: dur + "s", repeatCount: "indefinite", path: d }));
+    const trail = (d, dur, k) => rm ? e("path", { key: k || "tr", d, fill: "none", stroke: "var(--brand)", strokeWidth: 1.5, opacity: 0.5 }) : e("path", { key: k || "tr", d, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "60 900", style: { animation: "qsig2 " + dur + "s linear infinite" } });
+    // hero field: two interfering optical beams with waists
+    const BW = 1440, bcy = 330, env1 = (x) => 0.1 + 0.9 * Math.abs(Math.sin(x * Math.PI / 560)), env2 = (x) => 0.1 + 0.9 * Math.abs(Math.cos(x * Math.PI / 560)), cyf = (x) => bcy + 44 * Math.sin(x / 210);
+    const beam = (A, fn, off) => { let d = ""; for (let x = 0; x <= BW; x += 20) d += (x ? "L" : "M") + x + " " + (cyf(x) + off + A * fn(x)).toFixed(1) + " "; return d; };
+    const nA = 17, nB = 11;
+    const linesA = Array.from({ length: nA }, (_, i) => { const t = (i / (nA - 1)) * 2 - 1; return e("path", { key: "a" + i, d: beam(t * 118, env1, 0), fill: "none", stroke: "var(--brand)", strokeWidth: i === 8 ? 1.5 : 1, opacity: (0.1 + 0.42 * (1 - Math.abs(t))).toFixed(3) }); });
+    const linesB = Array.from({ length: nB }, (_, i) => { const t = (i / (nB - 1)) * 2 - 1; return e("path", { key: "b" + i, d: beam(t * 96, env2, 36), fill: "none", stroke: "var(--foreground-2)", strokeWidth: 1, opacity: (0.05 + 0.2 * (1 - Math.abs(t))).toFixed(3) }); });
+    const cd = beam(0, env1, 0);
+    const wx = [560, 1060];
+    const heroField = e("div", { style: { position: "absolute", inset: 0 } },
+      e("div", { style: { position: "absolute", right: "-10%", top: "-30%", width: "70%", height: "120%", borderRadius: "50%", background: "radial-gradient(closest-side,rgba(0,212,255,.11),transparent)", animation: rm ? "none" : "qdrift 40s ease-in-out infinite alternate" } }),
+      e("div", { style: { position: "absolute", left: "-15%", bottom: "-20%", width: "55%", height: "80%", borderRadius: "50%", background: "radial-gradient(closest-side,rgba(0,212,255,.05),transparent)", animation: rm ? "none" : "qdrift 55s ease-in-out infinite alternate-reverse" } }),
+      e("div", { style: { position: "absolute", left: 0, right: 0, top: 0, height: "min(100%,760px)", WebkitMaskImage: "linear-gradient(180deg,#000 0%,#000 60%,transparent 96%)", maskImage: "linear-gradient(180deg,#000 0%,#000 60%,transparent 96%)" } },
+        e("div", { style: { position: "absolute", inset: 0, WebkitMaskImage: "linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.2) 40%,#000 78%)", maskImage: "linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.2) 40%,#000 78%)" } },
+          e("svg", { viewBox: "0 0 1440 660", preserveAspectRatio: "xMidYMin slice", style: { position: "absolute", inset: 0, width: "100%", height: "100%" } },
+            ...linesB, ...linesA,
+            rm ? null : e("path", { key: "fl", d: cd, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "110 1500", style: { animation: "qsig3 16s linear infinite", Filter: "drop-shadow(0 0 6px var(--brand))" } }),
+            rm ? null : e("circle", { key: "pk", r: 3.5, fill: "var(--brand)", style: { filter: "drop-shadow(0 0 8px var(--brand))" } }, e("animateMotion", { dur: "16s", repeatCount: "indefinite", path: cd })),
+            ...(S.w >= 1200 ? wx : []).map((x, i) => e("g", { key: "w" + i }, e("circle", { cx: x, cy: cyf(x), r: 14, fill: "none", stroke: "var(--brand)", strokeWidth: 1, opacity: 0.5 }), e("circle", { cx: x, cy: cyf(x), r: 4, fill: "var(--base)", stroke: "var(--brand)", strokeWidth: 1.2 }), mt(x, cyf(x) - 28, "Focus 0" + (i + 1), { textAnchor: i === 1 ? "end" : "middle" })))))));
+    // explorer diagrams
+    const DG = (k, x, y) => { const c = "var(--brand)", m = "var(--muted)", L = (kk, a, b, cc, dd, s, w) => e("line", { key: kk, x1: a, y1: b, x2: cc, y2: dd, stroke: s || m, strokeWidth: w || 1.3 }), P = (kk, d, s, w) => e("path", { key: kk, d, fill: "none", stroke: s || c, strokeWidth: w || 1.4, strokeLinecap: "round", strokeLinejoin: "round" });
+      switch (k) {
+        case "src": return [e("circle", { key: 1, cx: x, cy: y, r: 5, fill: c }), e("circle", { key: 2, cx: x, cy: y, r: 13, fill: "none", stroke: c, opacity: 0.45 })];
+        case "wave": return [P(1, "M" + (x - 16) + " " + y + " q4 -11 8 0 t8 0 t8 0 t8 0")];
+        case "tube": return [L(1, x - 16, y - 7, x + 16, y - 7), L(2, x - 16, y + 7, x + 16, y + 7), e("circle", { key: 3, cx: x, cy: y, r: 2.5, fill: c })];
+        case "det": return [P(1, "M" + (x - 3) + " " + (y - 13) + " a13 13 0 0 1 0 26"), L(2, x - 14, y, x - 3, y, c)];
+        case "threat": return [0, 1, 2].map((i) => P(i, "M" + (x - 14) + " " + (y - 9 + i * 9) + " h11 m-4 -4 l4 4 l-4 4", m, 1.2));
+        case "shield": return [P(1, "M" + x + " " + (y - 14) + " l11 4 v7 c0 7 -5 11 -11 14 c-6 -3 -11 -7 -11 -14 v-7 z")];
+        case "check": return [e("circle", { key: 1, cx: x, cy: y, r: 12, fill: "none", stroke: c, strokeWidth: 1.3 }), P(2, "M" + (x - 5) + " " + y + " l3.5 3.5 l7 -7", c, 1.6)];
+        case "levels": return [-8, 0, 8].map((d, i) => L(i, x - 13, y + d, x + 13, y + d, i === 1 ? c : m, 1.5));
+        case "state": return [e("circle", { key: 1, cx: x, cy: y, r: 12, fill: "none", stroke: m }), L(2, x, y, x + 8, y - 9, c, 1.5), e("circle", { key: 3, cx: x + 8, cy: y - 9, r: 2.5, fill: c })];
+        case "field": return [-8, 0, 8].map((d, i) => P(i, "M" + (x - 15) + " " + (y + d) + " q15 -8 30 0", i === 1 ? c : m, 1.2));
+        case "cell": return [e("rect", { key: 1, x: x - 11, y: y - 11, width: 22, height: 22, rx: 4, fill: "none", stroke: c, strokeWidth: 1.3 }), e("circle", { key: 2, cx: x, cy: y, r: 3, fill: c })];
+        case "meter": return [P(1, "M" + (x - 13) + " " + (y + 6) + " A13 13 0 0 1 " + (x + 13) + " " + (y + 6), m, 1.2), L(2, x, y + 6, x + 7, y - 6, c, 1.6)];
+        case "signal": return [P(1, "M" + (x - 16) + " " + y + " h5 l3 -9 l4 18 l4 -13 l3 4 h13")];
+        case "node": return [e("circle", { key: 1, cx: x, cy: y, r: 5, fill: c })];
+        case "diode": return [e("rect", { key: 1, x: x - 13, y: y - 8, width: 26, height: 16, rx: 3, fill: "none", stroke: c, strokeWidth: 1.3 }), L(2, x - 4, y - 8, x - 4, y + 8, c, 1)];
+        case "dial": return [e("circle", { key: 1, cx: x, cy: y, r: 12, fill: "none", stroke: m }), L(2, x, y, x + 6, y - 10, c, 1.6), e("circle", { key: 3, cx: x, cy: y, r: 2, fill: c })];
+        case "app": return [e("circle", { key: 1, cx: x, cy: y, r: 13, fill: "none", stroke: c }), e("circle", { key: 2, cx: x, cy: y, r: 7, fill: "none", stroke: c, opacity: 0.6 }), e("circle", { key: 3, cx: x, cy: y, r: 2.5, fill: c })];
+        case "layers": return [L(8, x - 9, y - 8, x + 9, y, m, 1), L(9, x - 9, y + 8, x + 9, y, m, 1), ...[[-9, -8], [-9, 8], [9, 0]].map(([a, b], i) => e("circle", { key: i, cx: x + a, cy: y + b, r: 3.5, fill: i === 2 ? c : "var(--surface)", stroke: c }))];
+        case "gates": return [L(1, x - 16, y - 6, x + 16, y - 6), L(2, x - 16, y + 6, x + 16, y + 6), e("rect", { key: 3, x: x - 11, y: y - 11, width: 9, height: 10, rx: 1.5, fill: "var(--surface)", stroke: c }), e("rect", { key: 4, x: x + 2, y: y + 1, width: 9, height: 10, rx: 1.5, fill: "var(--surface)", stroke: c })];
+        default: return [];
+      } };
+    const D7 = [
+      { pts: [[70,150],[195,150],[325,150],[450,150]], d: "M70 150 L450 150", g: ["src","wave","tube","det"], lab: ["Source","Photon","Channel","Receiver"] },
+      { pts: [[70,95],[195,185],[325,185],[450,95]], d: "M70 95 C130 95 140 185 195 185 L325 185 C385 185 390 95 450 95", g: ["threat","shield","tube","check"], lab: ["Threat","Protection","Secure Channel","Verification"] },
+      { pts: [[70,150],[195,150],[325,150],[450,150]], d: "M70 150 L450 150", g: ["src","levels","state","wave"], lab: ["Input","Storage","Memory State","Retrieval"], hold: true },
+      { pts: [[70,150],[195,150],[325,150],[450,150]], d: "M70 150 C120 110 150 110 195 150 S285 190 325 150 S405 110 450 150", g: ["field","cell","meter","signal"], lab: ["Phenomenon","Sensor","Measurement","Signal"] },
+      { pts: [[80,90],[175,120],[270,150],[455,150]], d: "M80 90 L270 150 L430 80", g: ["node","none","node","none"], lab: ["Node","Link","Node","Network"], mesh: true },
+      { pts: [[70,165],[195,165],[325,165],[450,165]], d: "M70 165 L450 165", g: ["diode","wave","dial","app"], lab: ["Source","Optical Signal","Control","Application"], loop: true },
+      { pts: [[70,150],[195,110],[325,190],[450,150]], d: "M70 150 C130 150 140 110 195 110 S265 190 325 190 S400 150 450 150", g: ["layers","gates","dial","app"], lab: ["Model","Simulation","Control","Application"] },
+    ];
+    const dia = (i, live) => { const z = D7[i], kids = [e("path", { key: "base", d: z.d, fill: "none", stroke: "var(--border-strong)", strokeWidth: 1, strokeDasharray: "3 5" })];
+      if (z.mesh) { const N = [[80,90],[80,210],[270,150],[430,80],[430,220],[500,150],[180,240]]; [[0,2],[1,2],[2,3],[2,4],[3,4],[3,5],[4,5],[1,6],[6,2],[0,1]].forEach(([a, b], k) => kids.push(e("line", { key: "m" + k, x1: N[a][0], y1: N[a][1], x2: N[b][0], y2: N[b][1], stroke: "var(--border-light)", strokeWidth: 1 }))); [1,3,4,5,6].forEach((k) => kids.push(e("circle", { key: "mn" + k, cx: N[k][0], cy: N[k][1], r: 4, fill: k >= 3 && k <= 5 ? "var(--brand)" : "var(--muted)" }))); }
+      if (z.loop) { kids.push(e("path", { key: "lp", d: "M325 140 C300 60 95 60 70 140", fill: "none", stroke: "var(--muted)", strokeWidth: 1, strokeDasharray: "4 4" }), e("path", { key: "la", d: "M64 132 l6 8 l6 -8", fill: "none", stroke: "var(--muted)", strokeWidth: 1 }), mt(197, 62, "Feedback")); }
+      if (z.hold) kids.push(e("path", { key: "hb", d: "M215 118 v-8 h90 v8", fill: "none", stroke: "var(--muted)", strokeWidth: 1 }), mt(260, 100, "Hold"));
+      if (live) { kids.push(trail(z.d, 4.5)); const p = pulse(z.d, 4.5); if (p) kids.push(p); } else kids.push(e("path", { key: "st", d: z.d, fill: "none", stroke: "var(--brand)", strokeWidth: 1.2, opacity: 0.35 }));
+      z.pts.forEach(([x, y], k) => { const none = z.g[k] === "none"; kids.push(e("g", { key: "s" + k },
+        none ? null : e("circle", { cx: x, cy: y, r: 25, fill: "var(--surface)", stroke: k === 0 || k === 3 ? "var(--brand)" : "var(--border-light)", strokeWidth: 1 }),
+        ...DG(z.g[k], x, y),
+        z.mesh && k === 3 ? tx(x - 6, y + 5, z.lab[k]) : tx(x, y + 47, z.lab[k]),
+        z.mesh && (k === 1 || k === 3) ? null : mt(x, y + 63, pad(k)))); });
+      return e("svg", { viewBox: "0 45 520 225", width: "100%", style: { display: "block", overflow: "visible", maxHeight: "100%" }, role: "img", "aria-label": "Conceptual Diagram: " + z.lab.join(", then ") }, ...kids);
+    };
+    const dx2 = S.dx || 0;
+    const dprod = (d) => d.products.map((p) => ({ label: rnd.includes(p) ? p + " · R&D" : p, variant: rnd.includes(p) ? "outline" : "secondary" }));
+    const exWide2 = S.w >= 960;
+    const exGo = (i) => { this.setState({ dx: i }); if (!exWide2) return; this.exLock = Date.now() + 900; const el = document.getElementById("ex-" + i); if (el) { const r = el.getBoundingClientRect(); window.scrollTo({ top: r.top + window.scrollY - (window.innerHeight / 2 - r.height / 2), behavior: "smooth" }); } };
+    const exItems = domains.slice(0, 7).map((d, i) => { const on = !exWide2 || i === dx2; return { id: "ex-" + i, idx: pad(i), name: d.name, desc: d.desc, count: "Building blocks · " + String(d.products.length).padStart(2, "0"), on: i === dx2, minH: exWide2 ? "40vh" : "0", fill: exWide2 ? (i === dx2 ? "100%" : "0%") : "100%", color: on ? "var(--foreground)" : "var(--faint)", idxColor: on ? "var(--brand)" : "var(--faint)", size: exWide2 ? (i === dx2 ? "32px" : "24px") : "24px", descOp: on ? 1 : 0.35, pick: () => exGo(i), showInline: !exWide2, svg: exWide2 ? null : this.mkDia(dia, i, true), products: dprod(d) }; });
+    const exPanels = domains.slice(0, 7).map((d, i) => { const on = i === dx2; return { n: i + 1, idx: pad(i), name: d.name, products: dprod(d), op: on ? 1 : 0, ty: on ? "0px" : (i < dx2 ? "-16px" : "16px"), pe: on ? "auto" : "none", hidden: !on, svg: exWide2 ? this.mkDia(dia, i, on) : null }; });
+    // overview system
+    const op_ = rm ? 1 : (S.ovP || 0), ovI = Math.min(3, Math.floor(op_ * 4.0001)), rp = (a) => Math.max(0, Math.min(1, (op_ - a) / 0.12));
+    const ocx = 200, ocy = 190, orr = 92;
+    const techs = ["Photonics", "Communication", "Memory", "Sensing", "Networking", "Software & AI"];
+    const tp2 = techs.map((t, i) => { const a = (-120 + i * 60) * Math.PI / 180; return [ocx + orr * Math.cos(a), ocy + orr * Math.sin(a), Math.cos(a)]; });
+    const box = (k, x, y, w, label, o, fill) => e("g", { key: k, style: { opacity: o, transition: "opacity .4s" } }, e("rect", { x: x - w / 2, y: y - 16, width: w, height: 32, rx: 6, fill: fill || "var(--surface)", stroke: "var(--brand)", strokeWidth: 1 }), mt(x, y + 4, label, { fill: "var(--foreground)" }));
+    const ovKids = [];
+    tp2.forEach(([x, y], i) => ovKids.push(e("path", { key: "rq" + i, d: "M200 56 L" + x.toFixed(1) + " " + y.toFixed(1), stroke: "var(--brand)", strokeWidth: 1, opacity: 0.55 * rp(0.5), fill: "none" })));
+    tp2.forEach(([x, y], i) => { const j = (i + 1) % 6; ovKids.push(e("line", { key: "hx" + i, x1: x, y1: y, x2: tp2[j][0], y2: tp2[j][1], stroke: "var(--border-strong)", strokeWidth: 1, opacity: rp(0.5) })); });
+    tp2.forEach(([x, y], i) => { const tgt = i === 5 ? [[280, 350]] : i === 4 ? [[120, 350], [280, 350]] : [[120, 350]]; tgt.forEach(([tx2, ty2], k) => ovKids.push(e("path", { key: "o" + i + k, d: "M" + x.toFixed(1) + " " + y.toFixed(1) + " L" + tx2 + " " + (ty2 - 16), stroke: "var(--brand)", strokeWidth: 1, opacity: 0.4 * rp(0.75), fill: "none" }))); });
+    ovKids.push(e("path", { key: "ha", d: "M120 366 L180 396 M280 366 L220 396", stroke: "var(--brand)", strokeWidth: 1.2, opacity: rp(0.8), fill: "none" }));
+    ovKids.push(box("rq", 200, 40, 150, "Requirement", 1));
+    tp2.forEach(([x, y, cs], i) => { const o = rp(0.2 + i * 0.03); ovKids.push(e("g", { key: "t" + i, style: { opacity: o, transition: "opacity .4s" } }, e("circle", { cx: x, cy: y, r: 11, fill: "var(--surface)", stroke: "var(--brand)", strokeWidth: 1 }), e("circle", { cx: x, cy: y, r: 3.5, fill: "var(--brand)" }), tx(x + (cs > 0.1 ? 18 : cs < -0.1 ? -18 : 0), y + (Math.abs(cs) < 0.1 ? 0 : 4), techs[i], { textAnchor: cs > 0.1 ? "start" : cs < -0.1 ? "end" : "middle", style: { font: "500 12px var(--font-sans)" } }))); });
+    ovKids.push(box("hw", 120, 350, 120, "Hardware", rp(0.75)), box("sw", 280, 350, 120, "Software", rp(0.75)), box("ap", 200, 412, 170, "Application", rp(0.82), "var(--brand-soft)"));
+    if (!rm && ovI === 3) { const OT = "12s", order = [0, 5, 1, 4, 2, 3], q4 = (v) => v.toFixed(4);
+      order.forEach((ti, k) => { const hw = ti < 4, ex = hw ? 120 : 280, ax = hw ? 180 : 220, pd = "M200 56 L" + tp2[ti][0].toFixed(1) + " " + tp2[ti][1].toFixed(1) + " L" + ex + " 334 L" + ex + " 366 L" + ax + " 396";
+        const t0 = k / 6, t1 = (k + 1) / 6 - 0.012, kt = [0, t0, t0 + 0.01, t1, t1 + 0.05, 1].map(q4).join(";");
+        ovKids.push(e("path", { key: "fp" + k, d: pd, fill: "none", stroke: "var(--brand)", strokeWidth: 1.6, opacity: 0, style: { filter: "drop-shadow(0 0 4px var(--brand))" } }, e("animate", { attributeName: "opacity", values: "0;0;0.9;0.9;0;0", keyTimes: kt, dur: OT, repeatCount: "indefinite" })));
+        ovKids.push(e("circle", { key: "fc" + k, r: 3.5, fill: "var(--brand)", opacity: 0, style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animateMotion", { dur: OT, repeatCount: "indefinite", path: pd, calcMode: "linear", keyPoints: "0;0;1;1", keyTimes: [0, t0, t1, 1].map(q4).join(";") }), e("animate", { attributeName: "opacity", values: "0;0;1;1;0;0", keyTimes: kt, dur: OT, repeatCount: "indefinite" })));
+      }); }
+    const ovSvg = e("svg", { viewBox: "0 0 400 440", width: "100%", style: { display: "block", overflow: "visible", maxHeight: 460 }, role: "img", "aria-label": "Diagram: a requirement selects technology building blocks (photonics, communication, memory, sensing, networking, software and AI), which connect and resolve into hardware and software, deployed as one application." }, ...ovKids);
+    const ovStages = ["Requirement", "Technology", "Connection", "System"];
+    const ovCaps = ["Every system starts as a technical requirement.", "Technology building blocks are selected for it.", "The blocks are connected into one design.", "The design resolves into hardware and software, deployed as one application."];
+    // evidence
+    const ep = rm ? 1 : (S.evP || 0);
+    const evNodes = [["People", "75+", "People across India, the US and the UAE"], ["Intellectual property", "20+", "IPs filed · 3 granted"], ["Technology", "13", "Products across seven Domains"], ["Ecosystem", "40+", "partners"]].map(([stage, value, label], i) => { const at = i / 3, done = ep >= at * 0.92 - 0.001, rv = Math.max(0, Math.min(1, (ep - (at * 0.92 - 0.15)) / 0.15)); return { idx: pad(i), stage, value, label, bc: done ? "var(--brand)" : "var(--border-light)", bg: done ? "var(--brand)" : "var(--base)", ring: done ? "0 0 0 5px var(--brand-soft)" : "none", op: S.w >= 760 ? (0.25 + 0.75 * rv).toFixed(3) : 1, ty: S.w >= 760 ? ((1 - rv) * 12).toFixed(1) + "px" : "0px" }; });
+    // lab
+    const galD = [["g8-lab-wide.jpg","Quantum Optics Lab, wide shot","Lab","Quantum Optics Lab"],["g4-optics-bench.jpg","Optics bench","Optics","Optics bench"],["g7-workbench.jpg","Engineers at workbench","Engineering","Workbench"],["g6-optics-closeup.jpg","Optics rig closeup","Optics","Optics rig, close-up"],["g5-workspace.jpg","Lab Workspace","Lab","Lab Workspace"],["g9-team-office.jpg","Team at the Office","Team","Team at the Office"],["g3-team-group.jpg","Quantum AI Global Team","Team","The team"]];
+    const gi = S.gi || 0;
+    const galSet = (i) => { const n = (i + galD.length) % galD.length; this.setState({ gi: n }); const el = this.galRef.current; if (el && el.children[n]) { const c = el.children[n]; el.scrollTo({ left: Math.max(0, c.offsetLeft - el.clientWidth / 2 + c.clientWidth / 2), behavior: "smooth" }); } };
+    const gallery2 = galD.map(([fl, alt, tag, title], i) => { const on = i === gi; return { src: "assets/company/gallery/" + fl, alt, tag, title, on, op: on ? 1 : 0, sc: on ? 1 : 1.04, seg: i <= gi ? "var(--brand)" : "var(--border-strong)", border: on ? "var(--brand)" : "var(--border)", thOp: on ? 1 : 0.55, pick: () => galSet(i) }; });
+    const g0 = galD[gi];
+    // team deck v2
+    const deck2 = deck.map((c, i) => { const on = i === S.tm; return { ...c, on, clip: on ? "circle(150% at 50% 60px)" : "circle(0px at 50% 60px)", avOp: on ? 0 : 1, avSc: on ? 1.5 : 1, avLeft: "calc(50% - 36px)", avSize: "72px", zoom: 1.5, ovOp: on ? 1 : 0, bgScale: on ? 1 : 1.08, bgFilter: on ? "brightness(.88)" : "saturate(.85)", bgPos: tlist[i][0] === "sanjay" ? "66% 22%" : c.bgPos, mH: on ? "440px" : "118px", mClip: on ? "circle(150% at 58px 58px)" : "circle(0px at 58px 58px)", mAvOp: on ? 0 : 1, mAvSc: on ? 1.4 : 1, mPad: on ? "0px" : "88px" }; });
+    // menu
+    const mDesc = ["Find, fix and harden cryptography against quantum attacks.", "Simulate, distribute and store quantum information.", "Measure weak fields with atomic sensors at room temperature.", "Design, simulate and optimise quantum algorithms.", "Narrow-linewidth light for precision quantum experiments."];
+    const mLabs = [["Threat", "Protect", "Channel", "Verify"], ["Node", "Link", "Node", "Network"], ["Field", "Sensor", "Measure", "Signal"], ["Model", "Simulate", "Control", "Apply"], ["Source", "Beam", "Control", "Apply"]];
+    const mc = S.mcat || 0;
+    const mini = (labs) => { const xs = [30, 110, 190, 270], d = "M30 40 L270 40"; return e("svg", { viewBox: "0 0 300 90", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": labs.join(", then ") }, e("line", { x1: 30, y1: 40, x2: 270, y2: 40, stroke: "var(--border-strong)", strokeDasharray: "3 4" }), trail(d, 3.2), pulse(d, 3.2), ...xs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: 40, r: i === 0 || i === 3 ? 8 : 6, fill: i === 3 ? "var(--brand)" : "var(--surface-2)", stroke: "var(--brand)", strokeWidth: 1 }), mt(x, 74, labs[i], { style: { font: "10.5px var(--font-mono)", letterSpacing: ".07em", textTransform: "uppercase" } })))); };
+    const mIcon = ["shield", "tube", "meter", "gates", "diode"];
+    const mcats = productCats.map((c, i) => { const on = i === mc; return { label: c.label, count: c.count, on, bg: on ? "var(--surface-2)" : "transparent", bd: on ? "var(--brand)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", wellBg: on ? "var(--brand-soft)" : "var(--surface)", wellBd: on ? "var(--brand)" : "var(--border)", icon: e("svg", { width: 20, height: 20, viewBox: "-6 -6 36 36", "aria-hidden": true }, ...DG(mIcon[i], 12, 12)), pick: () => S.mcat !== i && this.setState({ mcat: i }) }; });
+    const mcur = { label: productCats[mc].label, count: productCats[mc].count, items: productCats[mc].items, desc: mDesc[mc], svg: S.menu === "products" ? mini(mLabs[mc]) : null };
+    const cm = S.cmi || 0;
+    const cDef = [
+      ["About", "Our mission & roadmap", "About", "assets/company/gallery/g3-team-group.jpg", "50% 40%", "Est. November 2019 · India, US, UAE", "app"],
+      ["Leadership", "Meet our executive team", "About", "assets/company/founder-sanjay.jpg", "68% 26%", "Sanjay Chittore · Founder & CEO", "state"],
+      ["Recognition", "Awards & achievements", "About", "assets/company/gallery/g4-optics-bench.jpg", "50% 50%", "AGBA 2026 · NASSCOM Emerge 50", "check"],
+      ["Gallery", "Photos & physical media", "About", "assets/company/gallery/g8-lab-wide.jpg", "50% 50%", "Labs and Offices, in Photographs", "cell"],
+      ["Careers", "Join our distributed team", "Work with us", "assets/company/gallery/g9-team-office.jpg", "50% 50%", "75+ People · India, US, UAE", "layers"],
+      ["Collaborations", "Partnership opportunities", "Work with us", "assets/company/gallery/g7-workbench.jpg", "50% 50%", "40+ Partners", "gates"],
+      ["Contact Us", "Get in touch with sales", "Work with us", "assets/company/gallery/g5-workspace.jpg", "50% 50%", "hello@thequantum.ai", "signal"],
+    ];
+    const cItems = cDef.map(([label, description, group, img, pos, stat, ic], i) => { const on = i === cm; return { label, description, group, head: i === 0 || cDef[i - 1][2] !== group, on, cur: on ? "true" : "false", bg: on ? "var(--surface-2)" : "transparent", bd: on ? "var(--brand)" : "transparent", color: on ? "var(--foreground)" : "var(--foreground-2)", wellBg: on ? "var(--brand-soft)" : "var(--surface)", wellBd: on ? "var(--brand)" : "var(--border)", icon: e("svg", { width: 20, height: 20, viewBox: "-6 -6 36 36", "aria-hidden": true }, ...DG(ic, 12, 12)), pick: () => S.cmi !== i && this.setState({ cmi: i }) }; });
+    const cGroups = ["About", "Work with us"].map((g) => ({ group: g, items: cItems.filter((c) => c.group === g) }));
+    const cPanels = cDef.map(([label, description, group, img, pos, stat], i) => { const on = i === cm; return { label, description, group, img, pos, stat, op: on ? 1 : 0, sc: on ? 1 : 1.06, pe: on ? "auto" : "none", hidden: !on, btnProps: { tabIndex: on ? 0 : -1 } }; });
+    this.v6 = { heroField, exItems, exPanels, exWide: exWide2, ovSvg, ovStage: ovStages[ovI], ovNum: pad(ovI), ovCap: ovCaps[ovI], ovTicks: [0, 1, 2, 3].map((i) => ({ bg: i <= ovI ? "var(--brand)" : "var(--border-strong)" })), ovPos: S.w >= 900 ? "sticky" : "relative",
+      ovQs: [["What we are", "A deep-tech company developing quantum technologies and AI-powered solutions."], ["What we build", "Quantum hardware, software and integrated technologies for communication, security, sensing, networking and scientific applications."], ["How we work", "Around each organisation’s specific technical requirements, from discovery to deployment."], ["Why it matters", "Quantum technologies only create value when they solve real-world challenges."]].map(([k, v], i) => ({ idx: pad(i), k, v })),
+      evNodes, evWide: S.w >= 760, evCols: S.w >= 960 ? "repeat(4,minmax(0,1fr))" : S.w >= 560 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", evFill: "calc((100% - 6px) * " + Math.min(1, ep / 0.92).toFixed(3) + ")",
+      gallery: gallery2, gcur: { tag: g0[2], title: g0[3], n: pad(gi) }, galPrev: () => galSet(gi - 1), galNext: () => galSet(gi + 1), labWide: S.w >= 900, labNarrow: S.w < 900,
+      vidRef: this.vidRef, videoSrc: this.videoSrc, hasVideo: !!this.videoSrc, noVideo: !this.videoSrc,
+      deck: deck2, mcats, mcur, cItems, cGroups, cPanels };
+    const allProducts = productCats.flatMap((c) => c.items);
+    const pages = [...companyCols.flatMap((c) => c.items.map((i) => ({ title: i.label, sub: i.description, kind: "Company" }))), ...resourceItems.map((r) => ({ title: r.label, sub: r.description, kind: "Resources" }))];
+    const pool = [...allProducts.map((p) => ({ title: p.title, sub: p.blurb, kind: p.cat.split(" ").slice(-1)[0] })), ...pages];
+    const q = S.q.trim().toLowerCase();
+    const results = (q ? pool.filter((r) => (r.title + " " + r.sub + " " + r.kind).toLowerCase().includes(q)) : pool.slice(0, 7)).slice(0, 9);
+    const mobileSections = [
+      { label: "Products", links: allProducts.map((p) => p.title) },
+      { label: "Resources", links: resourceItems.map((r) => r.label) },
+      { label: "Company", links: companyCols.flatMap((c) => c.items.map((i) => i.label)) },
+    ].map((m) => ({ ...m, open: S.mSec === m.label, sign: S.mSec === m.label ? "−" : "+", toggle: () => this.setState((s) => ({ mSec: s.mSec === m.label ? null : m.label })) }));
+    return {
+      navItems, productCats, resourceItems: resourceItems.map((r, i) => ({ ...r, art: this.resArt(i) })), companyCols, mobileSections,
+      cardPlain: { style: { height: "100%" } }, noShrink: { style: { flexShrink: 0 } }, mobBtn: { style: { width: "100%", justifyContent: "space-between", height: 56, fontSize: 18 } },
+      toTeam: () => this.go("team"), deck, deckWide: S.w >= 1180, deckNarrow: S.w < 1180, wfWide: S.w >= 860, wfNarrow: S.w < 860, wfPct, wfChev, wfHead, wfHeadOp, wfFillH, wfLabel,
+      orbit, cur, lineD,
+      prevMember: () => this.setState((s) => ({ tm: (s.tm + tlist.length - 1) % tlist.length })),
+      nextMember: () => this.setState((s) => ({ tm: (s.tm + 1) % tlist.length })),
+      openProfile: () => window.open(tcur.linkedin, "_blank"),
+      domains, reqNodes, outNodes, paths, chain, workflow, teamGroups, evidence,
+      reqLabel: R0.label, reqBlocks: R0.blocks, outsText: R0.outs.map((i) => outDefs[i][0]).join(", "),
+      diagramWide: S.w >= 1120, diagramNarrow: S.w < 1120,
+      swItems: ["Simulation", "Security", "AI", "Networking", "Applications"],
+      hwItems: ["QKD", "Memory", "Sensing", "Photonics", "Lasers"],
+      menuProducts: S.menu === "products", menuResources: S.menu === "resources", menuCompany: S.menu === "company",
+      closeMenu: () => S.menu && this.setState({ menu: null }),
+      notTiny: S.w >= 480,
+      mobileOpen: S.mobile && S.w < 1080, mobileIcon: S.mobile ? "✕" : "☰",
+      toggleMobile: () => this.setState((s) => ({ mobile: !s.mobile })),
+      searchOpen: S.search, openSearch: () => this.openSearch(), closeSearch: () => this.setState({ search: false }),
+      stop: (e) => e.stopPropagation(), searchRef: this.searchRef, q: S.q,
+      setQ: (e) => this.setState({ q: e.target.value }),
+      suggested: ["QuLabs", "Resources", "Documentation", "Research", "Company"].map((label) => ({ label, pick: () => this.setState({ q: label }) })),
+      results, noResults: results.length === 0,
+      toTop: () => window.scrollTo({ top: 0, behavior: "smooth" }),
+      brandStats: ["20+ IPs filed", "3 granted", "7 Technology Areas"],
+      contacts: [
+        { label: "General", value: "hello@thequantum.ai", href: "mailto:hello@thequantum.ai" },
+        { label: "Sales", value: "sales@thequantum.ai", href: "mailto:sales@thequantum.ai" },
+        { label: "Phone", value: "+91 81210 27006", href: "tel:+918121027006" },
+      ],
+      readout: [
+        { value: "2019", label: "Founded" }, { value: "75+", label: "People" }, { value: "15", label: "IPs Filed" },
+        { value: "3", label: "Patents Granted" }, { value: "13", label: "Products" }, { value: "40+", label: "Partners" },
+      ],
+      wide: this.state.w >= 1080, narrow: this.state.w < 1080,
+      heroSvg, heroStages, eqCols: S.w >= 1000 ? "repeat(4,minmax(0,1fr))" : S.w >= 560 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", heroWide: S.w >= 760, heroNarrow: S.w < 760, equation,
+      ex, exPulse, exWide: S.w >= 700, exNarrow: S.w < 700, exNavMax: S.w >= 860 ? "320px" : "none",
+      exTabProps: { style: { width: "100%", justifyContent: "space-between", height: 48 } },
+      exTabs: domains.slice(0, 7).map((d, i) => ({ idx: pad(i), name: d.name, count: String(d.products.length).padStart(2, "0"), on: i === dx, variant: i === dx ? "secondary" : "ghost", idxColor: i === dx ? "var(--brand)" : "var(--faint)", pick: () => this.setState({ dx: i }) })),
+      stack: [["Physical Layer", "Photonics · Communication · Memory · Sensing"], ["Control", "Electronics and Control Systems"], ["Software", "Simulation · Security · AI"], ["Application", "The customer’s use case"]].map(([k, v], i) => ({ k, v, kc: i === 3 ? "var(--brand)" : "var(--faint)", bg: i === 3 ? "var(--brand-soft)" : "transparent" })),
+      showSubnav: (this.props.sectionNav ?? true) !== false,
+      subnav: this.sections.map(([id, label], i) => ({ idx: pad(i), label, go: () => this.go(id),
+        variant: this.state.sec === id ? "secondary" : "ghost" })),
+      facts: [
+        { label: "Founded", value: "2019" },
+        { label: "People", value: "75+" },
+        { label: "Offices · India, US, UAE", value: "3" },
+      ],
+      steps, active: steps[this.state.step],
+      prevStep: () => this.setState((s) => ({ step: (s.step + 3) % 4 })),
+      nextStep: () => this.setState((s) => ({ step: (s.step + 1) % 4 })),
+      photoFilter: mono ? "grayscale(1) contrast(1.05)" : "none",
+      team: [
+        { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and former Army Director of InfoSec, Ministry of Defence, Government of India. Led a national-level InfoSec and cryptography research team." },
+        { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental atomic physicist with extensive experience in laser-cooled atomic spectroscopy and quantum sensor technology." },
+        { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops interpretable, scalable and resource-efficient quantum machine learning models." },
+        { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental quantum optics physicist specialising in Rydberg-atom-based RF electric-field sensing and atomic spectroscopy." },
+        { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental physicist who designs narrow-linewidth laser cavities, with expertise in high-resolution spectroscopy." },
+        { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum engineer with expertise in quantum sources, QKD testbeds and quantum memory hardware with integrated control electronics." },
+        { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer working on quantum-safe cryptography and cybersecurity, building scalable, standards-compliant production systems." },
+      ].map((m, i) => ({ ...m, idx: pad(i), zoom: m.image.endsWith(".png") ? 1.22 : 1 })),
+      advFilters,
+      advisorsShown: adv === "All" ? advisorsAll : advisorsAll.filter((a) => a.group === adv),
+      awards: [
+        { tag: "Innovation in Deep Tech", title: "2026 AGBA Winner", desc: "Recognised for innovation in deep technology." },
+        { tag: "NASSCOM", title: "NASSCOM Emerge 50", desc: "Recognition under the NASSCOM Emerge 50 programme." },
+      ].map((a, i) => ({ ...a, idx: pad(i) })),
+      galRef: this.galRef,
+      galPad: this.galInset() + "px", galSpacer: Math.max(0, this.galInset() - 12) + "px",
+      cardProps: { className: "card-hover", style: { height: "100%" } },
+      scrollGalLeft: () => this.scrollGal(-1), scrollGalRight: () => this.scrollGal(1),
+      gallery: [
+        ["g8-lab-wide.jpg","Quantum Optics Lab, wide shot","min(80vw,640px)","Optical Experiment / Quantum Optics Lab"],
+        ["g4-optics-bench.jpg","Optics bench","min(80vw,360px)","Optics bench"],
+        ["g7-workbench.jpg","Engineers at workbench","min(80vw,440px)","Workbench"],
+        ["g6-optics-closeup.jpg","Optics rig closeup","min(80vw,380px)","Optics rig, close-up"],
+        ["g5-workspace.jpg","Lab Workspace","min(80vw,480px)","Lab Workspace"],
+        ["g9-team-office.jpg","Team at the Office","min(80vw,640px)","Team at the Office"],
+        ["g3-team-group.jpg","Quantum AI Global Team","min(80vw,440px)","The team"],
+      ].map(([f, alt, w, c], i) => ({ src: "assets/company/gallery/" + f, alt, w, cap: "Fig. " + pad(i + 3) + " · " + c })),
+      videos: [
+        { title: "Office Opening", duration: "15:20" },
+        { title: "Events", duration: "45:10" },
+        { title: "Products Overview", duration: "05:55" },
+      ],
+      footCols: S.w >= 860 ? "1.5fr 1fr 1fr 1fr" : S.w >= 560 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
+      ctaCols: S.w >= 900 ? "minmax(0,1.15fr) minmax(0,1fr)" : "minmax(0,1fr)", ctaRL: S.w >= 900 ? "24px 0 0 24px" : "24px 24px 0 0", ctaRR: S.w >= 900 ? "0 24px 24px 0" : "0 0 24px 24px", ctaBorder: S.w >= 900 ? "border-left-width:1px" : "border-top-width:1px",
+      ctaChips: ["Communication", "Security", "Memory", "Sensing", "Networking", "Photonics & Lasers", "Software & AI"].map((l, i) => { const on = (S.cta || []).includes(i); return { label: (on ? "✓ " : "") + l, on, variant: on ? "secondary" : "outline", props: { style: on ? { borderColor: "var(--brand)", color: "var(--foreground)" } : {} }, pick: () => this.setState((s) => ({ cta: (s.cta || []).includes(i) ? s.cta.filter((x) => x !== i) : [...(s.cta || []), i] })) }; }),
+      ctaNote: (S.cta || []).length ? "Selected: " + (S.cta || []).slice().sort((x, y) => x - y).map((i) => ["Communication", "Security", "Memory", "Sensing", "Networking", "Photonics & Lasers", "Software & AI"][i]).join(", ") + "." : "Select one or more, or skip this step.",
+      ctaSvg: (() => { const xs = [50, 187, 323, 460], nm = ["Requirement", "Technology", "Engineering", "System"], d = "M50 30 L460 30"; return e("svg", { viewBox: "0 0 520 80", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": "Requirement, Technology, Engineering, System" }, e("line", { x1: 50, y1: 30, x2: 460, y2: 30, stroke: "var(--border-strong)", strokeDasharray: "3 5" }), trail(d, 5), pulse(d, 5), ...xs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: 30, r: i === 0 || i === 3 ? 9 : 6.5, fill: i === 3 ? "var(--brand)" : "var(--surface)", stroke: "var(--brand)", strokeWidth: 1.2 }), mt(x, 66, nm[i])))); })(),
+      advCols: S.w >= 1000 ? "repeat(3,minmax(0,1fr))" : S.w >= 640 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
+      ...this.v6, fullBtn: { style: { width: "100%" } },
+      footerGroups: (() => { const c = this.footerData(); return [[c[0], c[1]], [c[2]], [c[3]]]; })(),
+    };
+  }
+  _lzInit = Object.assign(this.state, { lRoute: (typeof location !== "undefined" ? location.hash : "").replace(/^#\/?/, "").split(/[?&]/)[0], lCat: "all", lWl: "any", lTk: 0 });
+  lzArtRef = React.createRef(); lzEase = "cubic-bezier(.16,1,.3,1)"; lzL = { c: 420, t: 780 }; lzRaf = 0;
+  lzImages = { ecdlProductImage: "assets/lasers/ecdl-hero.png", apexProProductImage: "", turnkeyDiodeLasersImage: "", apexCtrlProductImage: "", digitalLockingModuleImage: "", compactSpectrometerImage: "" };
+  lzMount() {
+    this.lzOnHash = () => { const r = location.hash.replace(/^#\/?/, "").split(/[?&]/)[0]; if (r !== this.state.lRoute) { this.setState({ lRoute: r, mobile: false, menu: null }); window.scrollTo({ top: 0 }); } };
+    window.addEventListener("hashchange", this.lzOnHash);
+    setTimeout(() => { if (this.state.rm) this.lzL.c = this.lzL.t; this.lzKick(); }, 500);
+  }
+  lzUnmount() { window.removeEventListener("hashchange", this.lzOnHash); cancelAnimationFrame(this.lzRaf); }
+  lzX(l) { return 60 + (l - 380) / 1220 * 800; }
+  lzSet(l) { l = Math.max(380, Math.min(1600, l)); const snap = [405, 532, 650, 780, 795, 1550].find((v) => Math.abs(v - l) <= 6); this.lzL.t = snap || l; this.lzKick(); }
+  lzArtMove = (ev) => { const svg = this.lzArtRef.current && this.lzArtRef.current.querySelector("svg"); if (!svg) return; const r = svg.getBoundingClientRect(), vx = (ev.clientX - r.left) / r.width * 1220; if (vx > 880) return; this.lzSet(380 + (vx - 60) / 800 * 1220); };
+  lzArtLeave = () => this.lzSet(780);
+  lzRange = (ev) => this.lzSet(+ev.target.value);
+  lzKick() { if (!this.lzRaf) this.lzRaf = requestAnimationFrame(this.lzTick); }
+  lzTick = () => { this.lzRaf = 0; const s = this.lzL; s.c += (s.t - s.c) * (this.state.rm ? 1 : 0.12); if (Math.abs(s.t - s.c) < 0.4) s.c = s.t; this.lzPaint(s.c); if (s.c !== s.t) this.lzKick(); };
+  lzRows() { return this._lzRows || (this._lzRows = [
+    { name: "ECDL", has: (l) => l >= 400 && l <= 1300, bands: [[400, 1300]], lx: 1300 },
+    { name: "ApeX-Pro", has: (l) => l >= 780 && l <= 795, bands: [[780, 795]], lx: 795 },
+    { name: "Turnkey Diode Lasers", has: (l) => [405, 532, 650, 1550].includes(l), bands: [[405], [532], [650], [1550]], lx: 650 },
+    { name: "Compact Spectrometer", has: (l) => l >= 400 && l <= 1100, bands: [[400, 1100]], lx: 1100 },
+  ]); }
+  lzPaint(lv) {
+    const root = this.lzArtRef.current; if (!root) return; const q = (id) => root.querySelector("#" + id), l = Math.round(lv), x = this.lzX(lv).toFixed(1);
+    ["lz-b1", "lz-b2", "lz-b3"].forEach((id) => { const n = q(id); if (n) n.setAttribute("x2", x); });
+    const cur = q("lz-cur"); if (cur) cur.setAttribute("transform", "translate(" + x + " 0)");
+    const rd = q("lz-rd"); if (rd) rd.textContent = "λ " + l + " nm";
+    const rows = this.lzRows(), hits = rows.map((r) => r.has(l));
+    rows.forEach((r, i) => { const n = q("lz-row" + i); if (n) n.setAttribute("opacity", hits[i] ? "1" : "0.34"); });
+    const names = rows.filter((r, i) => hits[i]).map((r) => r.name), m = q("lz-m"); if (m) m.textContent = names.length ? "Within: " + names.join(" · ") : "Outside the documented Ranges";
+    const inp = document.getElementById("lz-range"); if (inp && document.activeElement !== inp) inp.value = l;
+    const out = document.getElementById("lz-out"); if (out) out.textContent = l + " nm";
+  }
+  lzHeroArt() {
+    const e = React.createElement, rm = !!this.state.rm, B = "var(--brand)", X = (l) => this.lzX(l), LX = 880, LY = 200, RY = 430, x0 = X(780), mono = (sz, w, ls) => ({ font: (w ? w + " " : "") + sz + "px var(--font-mono)", letterSpacing: ls || ".1em" });
+    const K = [];
+    K.push(e("defs", { key: "d" },
+      e("radialGradient", { id: "lz-rad", cx: 0.64, cy: 0.55, r: 0.42 }, e("stop", { offset: 0.6, stopColor: "#fff" }), e("stop", { offset: 1, stopColor: "#000" })),
+      e("mask", { id: "lz-emask", maskUnits: "userSpaceOnUse", x: 294.25, y: -99.75, width: 920, height: 517.8 }, e("rect", { x: 294.25, y: -99.75, width: 920, height: 517.8, fill: "url(#lz-rad)" })),
+      e("linearGradient", { id: "lz-lin", gradientUnits: "userSpaceOnUse", x1: 858, x2: 896, y1: 0, y2: 0 }, e("stop", { offset: 0, stopColor: "#000", stopOpacity: 1 }), e("stop", { offset: 1, stopColor: "#000", stopOpacity: 0 })),
+      e("linearGradient", { id: "lz-fade", gradientUnits: "userSpaceOnUse", x1: 856, x2: 900, y1: 0, y2: 0 }, e("stop", { offset: 0, stopColor: "#fff", stopOpacity: 0 }), e("stop", { offset: 1, stopColor: "#fff", stopOpacity: 1 })),
+      e("mask", { id: "lz-imask", maskUnits: "userSpaceOnUse", maskContentUnits: "userSpaceOnUse", x: 0, y: -120, width: 1200, height: 720 }, e("rect", { x: 0, y: -120, width: 1200, height: 720, fill: "url(#lz-fade)" })),
+      e("filter", { id: "lz-glow", filterUnits: "userSpaceOnUse", x: 0, y: 0, width: 1200, height: 640 }, e("feGaussianBlur", { stdDeviation: 4 }))));
+    K.push(e("g", { key: "img", mask: "url(#lz-emask)", style: { pointerEvents: "none" } }, e("image", { href: this.lzImages.ecdlProductImage, x: 294.25, y: -99.75, width: 920, height: 517.8, mask: "url(#lz-imask)", preserveAspectRatio: "xMidYMid meet" })));
+    if (!rm) [0, 1, 2].forEach((i) => K.push(e("circle", { key: "rg" + i, cx: LX, cy: LY, r: 8, fill: "none", stroke: B }, e("animate", { attributeName: "r", values: "8;70", dur: "3.6s", begin: i * 1.2 + "s", repeatCount: "indefinite" }), e("animate", { attributeName: "stroke-opacity", values: ".55;0", dur: "3.6s", begin: i * 1.2 + "s", repeatCount: "indefinite" }))));
+    K.push(e("line", { key: "b1", id: "lz-b1", x1: LX, y1: LY, x2: x0, y2: RY, stroke: B, strokeWidth: 9, strokeOpacity: 0.35, filter: "url(#lz-glow)" }));
+    K.push(e("line", { key: "b2", id: "lz-b2", x1: LX, y1: LY, x2: x0, y2: RY, stroke: B, strokeWidth: 2, strokeLinecap: "round" }));
+    K.push(e("line", { key: "b3", id: "lz-b3", x1: LX, y1: LY, x2: x0, y2: RY, stroke: "var(--foreground)", strokeWidth: 1.6, strokeLinecap: "round", strokeDasharray: rm ? "none" : "10 26", strokeOpacity: rm ? 0 : 0.9, style: { animation: rm ? "none" : "lzdash 1s linear infinite reverse" } }));
+    K.push(e("circle", { key: "lens", cx: LX, cy: LY, r: 5, fill: "var(--foreground)", style: { filter: "drop-shadow(0 0 8px var(--brand))" } }));
+    K.push(e("text", { key: "t1", x: 60, y: RY - 92, fill: "var(--foreground-2)", style: mono(11, 500, ".14em") }, "WAVELENGTH MAP · 380–1600 NM"));
+    K.push(e("text", { key: "t2", id: "lz-m", x: 60, y: RY - 72, fill: B, style: mono(12, 500, ".04em") }, "Within: ECDL · ApeX-Pro · Compact Spectrometer"));
+    K.push(e("line", { key: "ax", x1: 60, y1: RY, x2: 860, y2: RY, stroke: "var(--border-strong)", strokeWidth: 1.2 }));
+    for (let l = 400; l <= 1600; l += 100) { const x = X(l), maj = l % 200 === 0; K.push(e("line", { key: "tk" + l, x1: x, y1: RY - (maj ? 10 : 6), x2: x, y2: RY, stroke: "var(--border-strong)" })); if (maj) K.push(e("text", { key: "tl" + l, x, y: RY - 16, textAnchor: "middle", fill: "var(--foreground-2)", style: mono(11) }, String(l))); }
+    this.lzRows().forEach((r, i) => { const y = RY + 36 + i * 26, on = r.has(780), g = [];
+      g.push(e("line", { key: "bl", x1: 60, y1: y, x2: 860, y2: y, stroke: "var(--border)", strokeDasharray: "1 5" }));
+      r.bands.forEach((b, j) => g.push(b.length === 2 ? e("rect", { key: "b" + j, x: X(b[0]), y: y - 3.5, width: Math.max(4, X(b[1]) - X(b[0])), height: 7, rx: 3.5, fill: B, fillOpacity: 0.85 }) : e("circle", { key: "b" + j, cx: X(b[0]), cy: y, r: 4.5, fill: B })));
+      g.push(e("text", { key: "n", x: X(r.lx) + 14, y: y + 4, fill: "var(--foreground)", style: mono(11, 500, ".06em") }, r.name.toUpperCase()));
+      K.push(e("g", { key: "row" + i, id: "lz-row" + i, opacity: on ? 1 : 0.34, style: { transition: "opacity .3s" } }, ...g)); });
+    const yb = RY + 36 + 3 * 26 + 12;
+    K.push(e("g", { key: "cur", id: "lz-cur", transform: "translate(" + x0 + " 0)" },
+      e("line", { x1: 0, y1: RY - 4, x2: 0, y2: yb, stroke: B, strokeOpacity: 0.7, strokeDasharray: "2 4" }),
+      e("rect", { x: -5, y: RY - 5, width: 10, height: 10, fill: B, transform: "rotate(45 0 " + RY + ")", style: { filter: "drop-shadow(0 0 6px var(--brand))" } }),
+      e("rect", { x: -50, y: RY - 62, width: 100, height: 26, rx: 5, fill: "var(--surface)", stroke: B, strokeOpacity: 0.8 }),
+      e("text", { id: "lz-rd", x: 0, y: RY - 44, textAnchor: "middle", fill: "var(--foreground)", style: mono(12, 600, ".04em") }, "λ 780 nm")));
+    K.push(e("text", { key: "ft", x: 860, y: yb + 26, textAnchor: "end", fill: "var(--foreground-2)", style: mono(11, 400, ".12em") }, "ILLUSTRATIVE · DOCUMENTED RANGES ONLY"));
+    return e("svg", { viewBox: "0 -100 1220 700", width: "100%", role: "img", "aria-label": "Illustrative wavelength Map. A beam from a laser head points to a wavelength on a 380 to 1600 nanometre scale, and the products whose documented ranges include it are highlighted.", style: { display: "block", overflow: "visible", maxHeight: 640 } }, ...K);
+  }
+  lzFig(slug) {
+    const e = React.createElement, S = this.state, rm = !!S.rm, B = "var(--brand)", L = "var(--border-strong)", F = "var(--foreground-2)", K = [], glow = { filter: "drop-shadow(0 0 5px var(--brand))" };
+    const mono = (sz, w, ls) => ({ font: (w ? w + " " : "") + (sz || 11) + "px var(--font-mono)", letterSpacing: ls || ".08em" });
+    const rect = (x, y, w, h, o, ...c) => e("rect", Object.assign({ x, y, width: w, height: h, rx: 8, fill: "var(--surface)", stroke: L, strokeWidth: 1.2 }, o), ...c);
+    const ln = (x1, y1, x2, y2, o, ...c) => e("line", Object.assign({ x1, y1, x2, y2, stroke: L, strokeWidth: 1.2, strokeLinecap: "round" }, o), ...c);
+    const pa = (d, o, ...c) => e("path", Object.assign({ d, fill: "none", stroke: L, strokeWidth: 1.2, strokeLinecap: "round", strokeLinejoin: "round" }, o), ...c);
+    const tx = (x, y, t, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: F, style: mono() }, o), t);
+    const an = (attr, values, dur, o) => rm ? null : e("animate", Object.assign({ attributeName: attr, values, dur, repeatCount: "indefinite" }, o));
+    const mot = (d, dur, begin, r) => rm ? null : e("circle", { r: r || 3.4, fill: B, style: glow }, e("animateMotion", { dur, begin: begin || "0s", repeatCount: "indefinite", path: d }));
+    const beam = (d) => [pa(d, { stroke: B, strokeWidth: 6, strokeOpacity: 0.25, style: { filter: "blur(3px)" } }), pa(d, { stroke: B, strokeWidth: 1.8 })];
+    const axis = (x0, x1, y, a, b, step, lab, X) => { K.push(ln(x0, y, x1, y, { stroke: L })); for (let l = a; l <= b; l += step) { const x = X(l); K.push(ln(x, y, x, y + (l % lab === 0 ? 9 : 5))); if (l % lab === 0) K.push(tx(x, y + 24, String(l))); } };
+    let vb = "0 0 560 340";
+    if (slug === "ecdl") {
+      K.push(rect(30, 70, 70, 46, { stroke: F }), tx(65, 136, "DIODE"), e("ellipse", { cx: 150, cy: 93, rx: 7, ry: 24, fill: "var(--surface)", stroke: F }), tx(150, 136, "LENS"), ...beam("M100 93 H300"), mot("M100 93 H300", "1.8s"), pa("M296 104 H104", { strokeDasharray: "3 4" }), mot("M296 104 H104", "1.8s", "0.6s", 2.6),
+        e("g", { transform: "rotate(-32 308 93)" }, rect(301, 53, 14, 80, { rx: 2, stroke: F }), ...[0, 1, 2, 3, 4, 5, 6, 7].map((k) => ln(301, 61 + k * 9, 315, 65 + k * 9, { stroke: B, strokeOpacity: 0.7, strokeWidth: 1 }))),
+        tx(312, 150, "GRATING · FEEDBACK"), ...beam("M308 93 L520 30"), mot("M308 93 L520 30", "1.8s", "0.3s"), tx(500, 58, "OUTPUT", { fill: B }));
+      const X = (l) => 30 + (l - 380) / 1220 * 500;
+      K.push(tx(30, 214, "DOCUMENTED EMISSION RANGE", { textAnchor: "start" }), rect(X(400), 236, X(1300) - X(400), 10, { rx: 5, fill: B, stroke: "none", fillOpacity: 0.85 }), tx(X(400), 230, "400 nm", { textAnchor: "start", fill: "var(--foreground)" }), tx(X(1300), 230, "1300 nm", { textAnchor: "end", fill: "var(--foreground)" }));
+      axis(30, 530, 266, 400, 1600, 100, 400, X);
+      K.push(e("circle", { cx: X(780), cy: 241, r: 7, fill: "var(--foreground)", style: glow }, an("cx", [X(420), X(1280), X(420)].join(";"), "9s")));
+      K.push(tx(530, 326, "CONCEPTUAL · NOT AN INTERNAL SCHEMATIC", { textAnchor: "end" }));
+    } else if (slug === "apex-pro") {
+      const X = (l) => 150 + (l - 776) / 23 * 370, x2 = X(780), x1 = X(795);
+      K.push(rect(20, 150, 76, 44, { stroke: F }), tx(58, 214, "APEX-PRO"));
+      [[x2, "Rb D2", "780 nm", "0s"], [x1, "Rb D1", "795 nm", "3s"]].forEach(([x, a, b, bg]) => { K.push(ln(x, 92, x, 248, { stroke: B, strokeWidth: 1.6 }), tx(x, 62, a, { fill: "var(--foreground)", style: mono(12, 600) }), tx(x, 80, b, { fill: B }));
+        K.push(e("g", { opacity: rm ? 1 : 0.2 }, ...beam("M96 172 L" + x + " 92"), e("circle", { cx: x, cy: 92, r: 6, fill: B, style: glow }), an("opacity", ".15;1;1;.15;.15", "6s", { begin: bg, keyTimes: "0;.08;.42;.5;1" }))); });
+      K.push(rect(x2, 244, x1 - x2, 8, { rx: 4, fill: B, stroke: "none", fillOpacity: 0.6 }), tx((x1 + x2) / 2, 236, "EMISSION WAVELENGTH RANGE"));
+      axis(150, 520, 268, 776, 799, 1, 5, X);
+      K.push(tx(520, 326, "ILLUSTRATIVE · NOT A MEASURED SPECTRUM", { textAnchor: "end" }));
+    } else if (slug === "turnkey-diode-lasers") {
+      const W = [405, 532, 650, 1550], sel = S.lTk || 0, X = (l) => 130 + (l - 380) / 1220 * 400, sx = 96, sy = 110, tx0 = X(W[sel]), ty = 246, dx = tx0 - sx, dy = ty - sy, len = Math.hypot(dx, dy), ang = Math.atan2(dy, dx) * 180 / Math.PI;
+      K.push(rect(20, 88, 76, 44, { stroke: F }), tx(58, 152, "TURNKEY"));
+      K.push(e("g", { style: { transformBox: "view-box", transformOrigin: "0 0", transform: "translate(" + sx + "px," + sy + "px) rotate(" + ang.toFixed(2) + "deg) scaleX(" + (len / 100).toFixed(3) + ")", Transition: rm ? "none" : "transform .8s cubic-bezier(.16,1,.3,1)" } },
+        e("line", { x1: 0, y1: 0, x2: 100, y2: 0, stroke: B, strokeWidth: 7, strokeOpacity: 0.25, vectorEffect: "non-scaling-stroke", style: { filter: "blur(3px)" } }),
+        e("line", { x1: 0, y1: 0, x2: 100, y2: 0, stroke: B, strokeWidth: 2, vectorEffect: "non-scaling-stroke" }),
+        e("line", { x1: 0, y1: 0, x2: 100, y2: 0, stroke: "var(--foreground)", strokeWidth: 1.4, vectorEffect: "non-scaling-stroke", strokeDasharray: rm ? "none" : "8 22", strokeOpacity: rm ? 0 : 0.85, style: { animation: rm ? "none" : "lzdash 1s linear infinite reverse" } })));
+      K.push(ln(130, ty, 530, ty, { stroke: L }));
+      W.forEach((w, i) => { const x = X(w), on = i === sel, pick = () => this.setState({ lTk: i });
+        K.push(e("g", { key: "w" + w, role: "button", tabIndex: -1, "aria-hidden": true, onClick: pick, style: { cursor: "pointer" } }, e("rect", { x: x - 22, y: ty - 26, width: 44, height: 70, fill: "transparent" }),
+          on && !rm ? e("circle", { cx: x, cy: ty, r: 8, fill: "none", stroke: B, style: { transformBox: "fill-box", transformOrigin: "center", animation: "rsring 1.8s cubic-bezier(.16,1,.3,1) infinite" } }) : null,
+          e("circle", { cx: x, cy: ty, r: on ? 7 : 5, fill: on ? B : "var(--surface)", stroke: on ? B : F, strokeWidth: 1.4, style: on ? glow : null }),
+          tx(x, ty + 30, String(w), { fill: on ? "var(--foreground)" : F, style: mono(12, on ? 600 : 400) }))); });
+      K.push(tx(530, 70, W[sel] + " nm", { textAnchor: "end", fill: "var(--foreground)", style: mono(20, 600, ".02em") }), tx(530, 90, "FIXED WAVELENGTH", { textAnchor: "end", fill: B }), tx(130, 326, "380 nm", { textAnchor: "start" }), tx(530, 326, "1600 nm · ILLUSTRATIVE", { textAnchor: "end" }));
+    } else if (slug === "apex-ctrl") {
+      K.push(rect(20, 40, 240, 236, { rx: 12, stroke: F }), tx(36, 66, "APEX-CTRL", { textAnchor: "start", fill: "var(--foreground)", style: mono(12, 600) }));
+      [["CURRENT DRIVER", "Up to 2 A", 98], ["TEMPERATURE", "2 mK stability", 146], ["PIEZO DRIVER", "0 to 100 V", 194]].forEach(([a, b, y], i) => {
+        K.push(rect(36, y - 20, 208, 40, { rx: 6, fill: "var(--surface-2)", stroke: "var(--border)" }), tx(48, y - 3, a, { textAnchor: "start" }), tx(48, y + 12, b, { textAnchor: "start", fill: "var(--foreground)", style: { font: "500 12px var(--font-sans)" } }), ln(244, y, 400, y, { stroke: B, strokeOpacity: 0.55 }), mot("M244 " + y + " H400", "2.4s", i * 0.5 + "s", 3)); });
+      K.push(rect(52, 226, 176, 34, { rx: 6, fill: "none", stroke: F, strokeDasharray: "4 4" }), tx(140, 247, "OPTIONAL LOCKING MODULE"));
+      K.push(rect(400, 70, 140, 152, { rx: 10, stroke: B }), tx(470, 140, "ECDL", { fill: "var(--foreground)", style: mono(12, 600) }), tx(470, 158, "or ApeX-Pro", { style: { font: "12px var(--font-sans)" } }), ...beam("M470 222 V300"), tx(470, 322, "LIGHT"));
+      K.push(pa("M140 276 V310 H300", { strokeDasharray: "3 4" }), tx(306, 314, "USB", { textAnchor: "start", fill: "var(--foreground)" }));
+    } else if (slug === "digital-locking-module") {
+      K.push(rect(30, 96, 110, 56, { stroke: F }), tx(85, 128, "LASER", { fill: "var(--foreground)", style: mono(12, 600) }), ...beam("M140 124 H340"), mot("M140 124 H340", "2s"), rect(340, 96, 180, 56, { stroke: F }), tx(430, 120, "REFERENCE", { fill: "var(--foreground)", style: mono(12, 600) }), tx(430, 138, "Atomic or cavity", { style: { font: "12px var(--font-sans)" } }));
+      K.push(pa("M430 152 V204", { stroke: B, strokeOpacity: 0.6 }), mot("M430 152 V204", "2s", "1s", 2.8));
+      K.push(rect(250, 204, 290, 112, { rx: 12, fill: "none", stroke: F, strokeDasharray: "4 4" }), tx(266, 226, "APEX-CTRL", { textAnchor: "start" }), rect(290, 238, 230, 54, { stroke: B }), tx(405, 262, "DIGITAL LOCKING MODULE", { fill: "var(--foreground)", style: mono(11, 600) }), tx(405, 280, "Optional add-on", { fill: B, style: { font: "12px var(--font-sans)" } }));
+      const fc = "M290 254 H110 V152", pz = "M290 280 H60 V152";
+      K.push(pa(fc, { stroke: B, strokeWidth: 1.6 }), pa(pz, { stroke: B, strokeWidth: 1.6, strokeDasharray: "6 4" }), mot(fc, "2.4s", "0.2s"), mot(pz, "3s", "0.8s"), tx(200, 246, "FAST CURRENT FEEDBACK"), tx(175, 300, "PIEZO FEEDBACK"));
+      K.push(tx(540, 336, "ILLUSTRATIVE FEEDBACK LOOP", { textAnchor: "end" }));
+      vb = "0 0 560 350";
+    } else if (slug === "compact-spectrometer") {
+      K.push(tx(20, 96, "FREE-SPACE OR FIBER", { textAnchor: "start" }), ...beam("M20 120 H190"), mot("M20 120 H190", "1.6s"), rect(190, 76, 190, 88, { rx: 10, stroke: B }), tx(285, 112, "COMPACT", { fill: "var(--foreground)", style: mono(12, 600) }), tx(285, 130, "SPECTROMETER", { fill: "var(--foreground)", style: mono(12, 600) }));
+      K.push(pa("M380 120 H460", { strokeDasharray: "3 4" }), tx(470, 124, "USB", { textAnchor: "start", fill: "var(--foreground)" }), pa("M285 164 V214", { stroke: B, strokeOpacity: 0.6 }));
+      const X = (l) => 40 + (l - 400) / 700 * 480;
+      K.push(rect(X(400), 232, X(1100) - X(400), 8, { rx: 4, fill: B, stroke: "none", fillOpacity: 0.35 }), tx(40, 224, "WAVELENGTH 400–1100 nm", { textAnchor: "start" }));
+      axis(40, 520, 256, 400, 1100, 50, 100, X);
+      K.push(e("g", null, e("path", { d: "M0 0 L-6 -10 H6 Z", fill: B, style: glow }), ln(0, 0, 0, 22, { stroke: B, strokeWidth: 2 }), rm ? null : e("animateTransform", { attributeName: "transform", type: "translate", values: [X(460), 222, X(780), 222, X(1020), 222, X(640), 222, X(460), 222].reduce((a, v, i, arr) => i % 2 ? a : a.concat(arr[i] + " " + arr[i + 1]), []).join(";"), keyTimes: "0;.25;.5;.75;1", calcMode: "spline", keySplines: ".16 1 .3 1;.16 1 .3 1;.16 1 .3 1;.16 1 .3 1", dur: "10s", repeatCount: "indefinite" }), rm ? e("animateTransform", { attributeName: "transform", type: "translate", values: X(780) + " 222", dur: "1s", fill: "freeze" }) : null));
+      K.push(tx(520, 326, "ILLUSTRATIVE · NO MEASURED DATA", { textAnchor: "end" }));
+    }
+    return e("svg", { key: slug, viewBox: vb, width: "100%", role: "img", "aria-label": (this.lzData().bySlug[slug] || {}).figCap || "", style: { display: "block", overflow: "visible", animation: rm ? "none" : "rsin 500ms " + this.lzEase + " both" } }, ...K);
+  }
+  lzData() {
+    if (this._lzD) return this._lzD;
+    const note = "Contact us for full specifications and configuration options.";
+    const products = [
+      { slug: "ecdl", code: "01", cat: "sources", catLabel: "Laser Sources", short: "ECDL", name: "Tunable External Cavity Diode Lasers (ECDL)", img: "ecdlProductImage", desc: "Tunable, narrow linewidth laser source, designed around your experiment.",
+        specs: [["Emission Wavelength", "400 nm to 1300 nm"], ["Optical Power", "10 mW to 100 mW"], ["Output", "Free-space or fibre-coupled"]],
+        apps: ["Atomic & molecular Spectroscopy", "Laser Cooling & trapping", "Quantum Sensing & Research"], config: [["Output", "Free-space or fibre-coupled"]], note,
+        cta: "Discuss ECDL Requirements", wl: (l) => l >= 400 && l <= 1300, conceptTitle: "Tunable Light, Designed Around Your Experiment.", figCap: "Fig. 01 · External cavity concept and the documented 400–1300 nm range · illustrative",
+        rel: [["apex-ctrl", "Operates the ECDL", "ApeX-Ctrl lists ECDL operation among its applications."], ["apex-pro", "Built on the ECDL Platform", "ApeX-Pro is based on our ECDL platform."]] },
+      { slug: "apex-pro", code: "02", cat: "sources", catLabel: "Laser Sources", short: "ApeX-Pro", name: "ApeX-Pro", img: "apexProProductImage", desc: "Tunable laser system for the rubidium D1 and D2 transitions, based on our ECDL platform.",
+        specs: [["Emission Wavelength Range", "780 nm to 795 nm"], ["Linewidth", "< 1 MHz"], ["Mode-hop-free tuning", "> 25 GHz"], ["Output", "Free-space or fibre-coupled version available"]],
+        // INTERNAL — NOT FOR PUBLICATION: source lists "Optical power: > 80 MW". Requires internal verification before it can be shown. Do not change the unit or substitute a value.
+        internal: { opticalPower: "> 80 MW", status: "verification required — withheld from public specifications" },
+        apps: ["Rubidium Spectroscopy", "Magneto-optical Traps & Laser Cooling", "Atomic Clocks & Quantum Sensing"], config: [["Output", "Free-space or fibre-coupled version available"], ["Platform", "Based on our ECDL Platform"]], note,
+        cta: "Discuss ApeX-Pro Requirements", wl: (l) => l >= 780 && l <= 795, conceptTitle: "Built for the Rubidium D1 and D2 Transitions.", figCap: "Fig. 02 · Rubidium D2 and D1 at either end of the documented range · illustrative",
+        rel: [["ecdl", "Platform", "ApeX-Pro is based on our ECDL platform."], ["apex-ctrl", "Operates ApeX-Pro", "ApeX-Ctrl lists ApeX-Pro operation among its applications."]] },
+      { slug: "turnkey-diode-lasers", code: "03", cat: "sources", catLabel: "Laser Sources", short: "Turnkey Diode Lasers", name: "Turnkey Diode Lasers", img: "turnkeyDiodeLasersImage", desc: "Fixed-wavelength diode lasers, supplied aligned and ready to operate.",
+        specs: [["Emission Wavelength", "405 nm, 532 nm, 650 nm, 1550 nm"], ["Optical Power", "5 mW to 50 mW"], ["Output", "Free-space or fibre-coupled"]],
+        apps: ["Fluorescence & imaging", "SPDC, QKD", "Telecom, Photonics & Teaching Labs"], config: [["Wavelengths", "405 nm, 532 nm, 650 nm, 1550 nm"], ["Output", "Free-space or fibre-coupled"]], note,
+        cta: "Discuss Turnkey Diode Lasers", wl: (l) => [405, 532, 650, 1550].includes(l), conceptTitle: "Four Fixed Wavelengths, Aligned and Ready.", figCap: "Fig. 03 · The four documented wavelengths · illustrative", rel: [] },
+      { slug: "apex-ctrl", code: "04", cat: "control", catLabel: "Control & Stabilization", short: "ApeX-Ctrl", name: "ApeX-Ctrl", img: "apexCtrlProductImage", desc: "Laser controller combining a low-noise current driver, temperature controller and piezo driver in one unit.",
+        specs: [["Current Driver", "Up to 2 A, noise < 10 µA/√Hz"], ["Temperature stability", "2 mK"], ["Piezo Driver", "0 to 100 V"], ["Interfaces", "USB"], ["Customisation", "Available"]],
+        apps: ["ECDL & ApeX-Pro operation", "Frequency scanning & locking"], config: [["Interfaces", "USB"], ["Customisation", "Available"], ["Optional Module", "Digital Locking Module"]], note: "Contact us for full specifications and configuration options. Customisation available.",
+        cta: "Discuss ApeX-Ctrl", wl: null, conceptTitle: "Current, Temperature and Piezo Control in One Unit.", figCap: "Fig. 04 · Conceptual relationship diagram · not a connector layout or internal circuit",
+        rel: [["ecdl", "Supported Laser", "ApeX-Ctrl lists ECDL operation among its applications."], ["apex-pro", "Supported Laser", "ApeX-Ctrl lists ApeX-Pro operation among its applications."], ["digital-locking-module", "Optional Module", "Optional digital locking module for ApeX-Ctrl."]] },
+      { slug: "digital-locking-module", code: "05", cat: "control", catLabel: "Control & Stabilization", short: "Digital Locking Module", name: "Digital Locking Module", img: "digitalLockingModuleImage", desc: "Optional digital locking module for ApeX-Ctrl, for frequency stabilization to an atomic or cavity reference.",
+        specs: [], badges: ["Optional add-on for ApeX-Ctrl", "Not sold separately"],
+        groups: [["Control channels", ["Fast current Feedback", "Piezo Feedback"]], ["Features", ["Automatic relock", "Digital-processing", "Software-configurable"]], ["Compatibility", ["Fits ApeX-Ctrl", "No external Servo needed"]], ["Configuration", ["Optional add-on Module for ApeX-Ctrl", "Not sold separately"]]],
+        cardSpecs: [["Configuration", "Optional add-on Module for ApeX-Ctrl"], ["Control channels", "Fast current Feedback, Piezo Feedback"], ["Availability", "Not sold separately"]],
+        apps: ["Atomic Transition locking", "Cavity locking", "Long-duration Experiments"], config: [["Configuration", "Optional add-on Module for ApeX-Ctrl"], ["Availability", "Not sold separately"], ["Compatibility", "Fits ApeX-Ctrl · No external servo needed"]], note,
+        cta: "Enquire About the Digital Locking Module", wl: null, conceptTitle: "An Optional Module, Not a Laser Source.", figCap: "Fig. 05 · Fast current and piezo feedback to a reference · illustrative",
+        rel: [["apex-ctrl", "Host Controller", "The module is an optional add-on for ApeX-Ctrl and is not sold separately."]] },
+      { slug: "compact-spectrometer", code: "06", cat: "measure", catLabel: "Measurement & Accessories", short: "Compact Spectrometer", name: "Compact Spectrometer", img: "compactSpectrometerImage", desc: "Compact spectrometer for verifying and monitoring laser emission wavelengths.",
+        specs: [["Precision", "0.1 nm to 0.05 nm"], ["Wavelength", "400 nm to 1100 nm"], ["Input", "Free-space or fibre-coupled"], ["Interface", "USB"]],
+        apps: ["Wavelength Verification", "Laser Wavelength tuning", "Optical testing"], config: [["Input", "Free-space or fibre-coupled"], ["Wavelength Range", "400 nm to 1100 nm"], ["Interface", "USB"]], note,
+        cta: "Enquire About the Compact Spectrometer", wl: (l) => l >= 400 && l <= 1100, conceptTitle: "Check the Wavelength You Are Working At.", figCap: "Fig. 06 · Input, instrument and readout · illustrative, no measured data", rel: [] },
+    ];
+    const bySlug = {}; products.forEach((p) => { bySlug[p.slug] = p; });
+    return (this._lzD = { products, bySlug });
+  }
+  lzEnquire(slug) { const h = (((window.QAIG_NAV || {}).routes || {}).enquiry || "Discuss Your Requirement.dc.html") + "?interest=" + (slug || "lasers"); window.QAIG_GO ? window.QAIG_GO(h, "enquiry") : (window.location.href = h); }
+  lzVals() { const o = this.lzRaw(), out = {}; for (const k in o) out["l_" + k] = o[k]; return out; }
+  lzRaw() {
+    const S = this.state, w = S.w, D = this.lzData(), r = S.lRoute || "", p = D.bySlug[r], isOv = r === "", hw = w >= 1040, two = w >= 900, pad = (n) => String(n).padStart(2, "0");
+    const img = (k) => this.lzImages[k] || "";
+    const sp = (list) => list.map(([k, v]) => ({ k, v }));
+    const base = {
+      homeHref: ((window.QAIG_NAV || {}).routes || {}).home || "Home Page Design.dc.html", productsHref: ((window.QAIG_NAV || {}).routes || {}).products || "Products.dc.html", isOverview: isOv, isDetail: !!p, isMissing: !isOv && !p, toEnquiry: () => this.lzEnquire(p ? p.slug : "lasers"), toOverview: () => { location.hash = "#/"; }, res: [["VID", "Product Video", "A short walkthrough of the ECDL family."], ["PPT", "Product Presentation", "An overview deck for your team."], ["PDF", "Technical Brochure", "ApeX-Pro and ApeX-Ctrl details for evaluation."]].map((r) => ({ glyph: r[0], title: r[1], line: r[2], href: ((window.QAIG_NAV || {}).routes || {}).enquiry ? window.QAIG_NAV.routes.enquiry + "?product=ECDL&resource=" + encodeURIComponent(r[1]) : "Discuss Your Requirement.dc.html?product=ECDL&resource=" + encodeURIComponent(r[1]) })),
+      featCols: w >= 760 ? "minmax(0,1fr) minmax(0,1fr)" : "minmax(0,1fr)", featOrder: w >= 760 ? 0 : 1, heroCols: two ? "minmax(0,1fr) minmax(0,1.05fr)" : "minmax(0,1fr)", introCols: two ? "minmax(0,1.3fr) minmax(0,1fr)" : "minmax(0,1fr)",
+      allLinks: D.products.map((x) => ({ href: "#/" + x.slug, name: x.name })),
+    };
+    const W = [405, 532, 650, 1550], tk = S.lTk || 0;
+    const tkVals = { tkOpts: W.map((v, i) => ({ v: String(v), on: String(i === tk), pick: () => this.setState({ lTk: i }), color: i === tk ? "var(--foreground)" : "var(--foreground-2)", uC: i === tk ? "var(--brand)" : "var(--foreground-2)", bar: i === tk ? 1 : 0 })),
+      tkNote: "Selected: " + W[tk] + " nm, one of four fixed wavelengths. The optical power range of 5 mW to 50 mW and the free-space or fibre-coupled output are stated for the family, not per wavelength.",
+      tkSpecs: sp([["Optical Power", "5 mW to 50 mW"], ["Output", "Free-space or fibre-coupled"]]) };
+    if (isOv) {
+      const cats = [["all", "All"], ["sources", "Laser Sources"], ["control", "Control & Stabilization"], ["measure", "Measurement & Accessories"]];
+      const wls = [["any", "Any"], ["405", "405 nm"], ["532", "532 nm"], ["650", "650 nm"], ["780", "780 nm"], ["1550", "1550 nm"]];
+      const list = D.products.filter((x) => (S.lCat === "all" || x.cat === S.lCat) && (S.lWl === "any" || (x.wl && x.wl(+S.lWl))));
+      return Object.assign(base, tkVals, {
+        artRef: this.lzArtRef, artMove: this.lzArtMove, artLeave: this.lzArtLeave, range: this.lzRange, heroArt: this.lzHeroArt(),
+        artPos: hw ? "absolute" : "relative", artR: hw ? "max(32px, calc((100% - 1240px) / 2))" : "0", artW: hw ? "min(56vw, 800px)" : "100%", artPad: hw ? "0" : "0 20px 48px",
+        heroMinH: hw ? "max(540px,min(680px,calc(100vh - 160px)))" : "0px", heroPadB: hw ? "clamp(48px,6vw,88px)" : "24px",
+        toExplorer: () => { const el = document.getElementById("lz-explorer"); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: S.rm ? "auto" : "smooth" }); },
+        cats: cats.map(([k, label]) => { const on = S.lCat === k; return { label, n: pad(k === "all" ? D.products.length : D.products.filter((x) => x.cat === k).length), on: String(on), pick: () => this.setState({ lCat: k }), color: on ? "var(--foreground)" : "var(--foreground-2)", nC: on ? "var(--brand)" : "var(--foreground-2)", bar: on ? 1 : 0 }; }),
+        wls: wls.map(([k, label]) => { const on = S.lWl === k; return { label, on: String(on), pick: () => this.setState({ lWl: k }), bd: on ? "var(--brand)" : "var(--border-light)", bg: on ? "var(--brand-soft)" : "transparent", color: on ? "var(--brand)" : "var(--foreground-2)" }; }),
+        ctrlHidden: S.lWl !== "any" && (S.lCat === "all" || S.lCat === "control"), noCards: list.length === 0, resetFilters: () => this.setState({ lCat: "all", lWl: "any" }),
+        cardMore: S.w < 640 && list.length > 3, cardMoreLabel: S.lAll ? "Show fewer" : "Show all " + list.length + " products", cardToggle: () => this.setState({ lAll: !S.lAll }), fullBtn: { style: { width: "100%" } },
+        cards: (S.w < 640 && list.length > 3 && !S.lAll ? list.slice(0, 3) : list).map((x) => ({ href: "#/" + x.slug, code: x.code, catLabel: x.catLabel, name: x.name, short: x.short, desc: x.desc, specs: sp(x.cardSpecs || x.specs.slice(0, 3)), apps: x.apps.join(" · "), hasImg: !!img(x.img), noImg: !img(x.img), img: img(x.img), aria: "View details: " + x.name })),
+        ecdlImg: img("ecdlProductImage"), ecdlSpecs: sp(D.bySlug.ecdl.specs), apexSpecs: sp(D.bySlug["apex-pro"].specs), specSpecs: sp(D.bySlug["compact-spectrometer"].specs),
+        figApex: this.lzFig("apex-pro"), figTk: this.lzFig("turnkey-diode-lasers"), figCtrl: this.lzFig("apex-ctrl"), figSpec: this.lzFig("compact-spectrometer"),
+        apps: D.products.reduce((a, x) => a.concat(x.apps.map((t) => ({ app: t, prod: x.short, href: "#/" + x.slug }))), []),
+      });
+    }
+    if (!p) return base;
+    const i = D.products.indexOf(p), prev = D.products[(i + 5) % 6], next = D.products[(i + 1) % 6], hasImg = !!img(p.img);
+    return Object.assign(base, tkVals, { d: {
+      slug: p.slug, code: p.code, catLabel: p.catLabel, short: p.short, name: p.name, desc: p.desc, note: p.note, cta: p.cta, badges: p.badges || [], conceptTitle: p.conceptTitle, figCap: p.figCap,
+      enquire: () => this.lzEnquire(p.slug), hasImg, noImg: !hasImg, img: img(p.img), imgAlt: "Temporary image of a laser head, not an exact depiction of QAIG hardware", imgNote: hasImg ? "Temporary image · not exact QAIG hardware" : "Final photography to follow",
+      hasSpecs: p.specs.length > 0, specs: sp(p.specs), hasGroups: !!p.groups, groups: (p.groups || []).map(([k, items]) => ({ k, items })),
+      fig: this.lzFig(p.slug), isTk: p.slug === "turnkey-diode-lasers",
+      apps: p.apps.map((t, j) => ({ n: pad(j + 1), t })), config: sp(p.config.filter(([k, v]) => !p.specs.some(([sk, sv]) => sk === k && sv === v))), hasConfig: p.config.some(([k, v]) => !p.specs.some(([sk, sv]) => sk === k && sv === v)),
+      hasRel: p.rel.length > 0, noRel: p.rel.length === 0, relTitle: p.rel.length ? "Documented relationships." : "Explore the Portfolio.",
+      rel: p.rel.map(([s, why, src]) => ({ href: "#/" + s, why, src, name: D.bySlug[s].name })),
+      prevHref: "#/" + prev.slug, prevName: prev.name, nextHref: "#/" + next.slug, nextName: next.name,
+    } });
+  }
+  renderVals() { return Object.assign({}, this.v6Vals(), this.lzVals()); }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.css">
+<link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
+<script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script>
+<script src="qaig-transition.js"></script>
+<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}@keyframes qshim{from{background-position:-400px 0}to{background-position:400px 0}}.qshim{background:linear-gradient(90deg,var(--surface-2) 0,var(--surface-3) 50%,var(--surface-2) 100%);background-size:800px 100%;animation:qshim 1.6s linear infinite}@keyframes qbar{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}.qbar{animation:qbar 1.4s cubic-bezier(.4,0,.2,1) infinite}@media (prefers-reduced-motion:reduce){.qshim,.qbar{animation:none!important}}</style>
+</helmet>
+<div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
+
+<sc-if value="{{ withNav }}" hint-placeholder-val="{{ true }}">
+  <dc-import name="QAIG Global Navbar" current="" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+</sc-if>
+
+<sc-if value="{{ isError }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="{{ screenLabel }}" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
+    <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.45;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 70% 40%,#000,transparent);mask-image:radial-gradient(ellipse 70% 80% at 70% 40%,#000,transparent)"></div>
+    <div class="section-shell" style="position:relative;display:grid;grid-template-columns:{{ cols }};align-items:center;gap:clamp(40px,5vw,72px);min-height:{{ minH }};padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(56px,7vw,104px)">
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:{{ s.tone }}">{{ s.kicker }}</span>
+        <h1 style="margin:0;max-width:14ch;font-size:clamp(2.5rem,1.4rem + 3.6vw,4.5rem);line-height:1.02;letter-spacing:-0.04em;font-weight:600;text-wrap:balance">{{ s.titleA }} <span style="color:var(--brand)">{{ s.titleB }}</span></h1>
+        <p style="margin:0;max-width:48ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ s.text }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ s.primaryGo }}" hint-size="180px,44px">{{ s.primary }}</x-import>
+          <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ s.secondaryGo }}" hint-size="180px,44px">{{ s.secondary }}</x-import>
+        </div>
+        <sc-if value="{{ s.hasLinks }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top:8px;display:flex;flex-direction:column;border-top:1px solid var(--border)">
+            <span style="padding:16px 0 6px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ s.linksLabel }}</span>
+            <sc-for list="{{ s.links }}" as="l" hint-placeholder-count="4">
+              <a href="{{ l.href }}" style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span style="display:flex;flex-direction:column;gap:2px;min-width:0"><span style="font-size:16.5px;font-weight:600">{{ l.t }}</span><span style="font-size:15px;color:var(--muted)">{{ l.d }}</span></span><span aria-hidden="true" style="color:var(--brand)">→</span></a>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+
+      <div role="img" aria-label="{{ s.figAria }}" style="position:relative;min-width:0;border:1px solid var(--border-light);border-radius:20px;background:var(--surface);overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border)"><span style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="width:8px;height:8px;border-radius:50%;background:{{ s.tone }}"></span>{{ s.channel }}</span><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--muted)">{{ s.unit }}</span></div>
+        <div style="position:relative;height:{{ scopeH }};background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(0,212,255,.06),transparent 70%),var(--surface-2)">
+          <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.7"></div>
+          <div aria-hidden="true" style="position:absolute;left:0;right:0;top:50%;height:1px;background:var(--border-light)"></div>
+          <div aria-hidden="true" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:clamp(5rem,3rem + 8vw,10rem);font-weight:600;letter-spacing:-0.04em;color:transparent;-webkit-text-stroke:1px rgba(0,212,255,.16);user-select:none">{{ s.code }}</div>
+          <svg width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;display:block"><path ref="{{ waveRef }}" d="" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linejoin="round" style="filter:drop-shadow(0 0 6px rgba(0,212,255,.55))"></path><path ref="{{ ghostRef }}" d="" fill="none" stroke="rgba(0,212,255,.28)" stroke-width="1" stroke-dasharray="4 6"></path></svg>
+        </div>
+        <dl style="margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
+          <sc-for list="{{ s.reads }}" as="r" hint-placeholder-count="3">
+            <div style="display:flex;flex-direction:column;gap:6px;min-width:0;padding:16px 20px;border-right:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ r.k }}</dt><dd class="tnum" style="margin:0;font-size:16px;font-weight:500;color:{{ r.c }};overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ r.v }}</dd></div>
+          </sc-for>
+        </dl>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isLoading }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Loading" aria-busy="true" aria-live="polite" style="position:relative;border-bottom:1px solid var(--border)">
+    <div aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:2px;overflow:hidden;background:var(--border)"><div class="qbar" style="width:40%;height:100%;background:linear-gradient(90deg,transparent,var(--brand),transparent)"></div></div>
+    <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Loading page content</span>
+    <div class="section-shell" style="display:grid;grid-template-columns:{{ cols }};align-items:center;gap:clamp(40px,5vw,72px);padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div class="qshim" style="width:140px;height:14px;border-radius:4px"></div>
+        <div class="qshim" style="width:92%;height:56px;border-radius:10px"></div>
+        <div class="qshim" style="width:70%;height:56px;border-radius:10px"></div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:8px"><div class="qshim" style="width:100%;height:16px;border-radius:4px"></div><div class="qshim" style="width:88%;height:16px;border-radius:4px"></div><div class="qshim" style="width:60%;height:16px;border-radius:4px"></div></div>
+        <div style="display:flex;gap:12px;margin-top:8px"><div class="qshim" style="width:180px;height:44px;border-radius:8px"></div><div class="qshim" style="width:150px;height:44px;border-radius:8px"></div></div>
+      </div>
+      <div class="qshim" style="aspect-ratio:4/3;border-radius:20px"></div>
+    </div>
+    <div class="section-shell" style="padding-bottom:clamp(56px,7vw,104px);display:grid;grid-template-columns:{{ skelCols }};gap:16px">
+      <sc-for list="{{ skelCards }}" as="k" hint-placeholder-count="3">
+        <div style="display:flex;flex-direction:column;gap:14px;padding:22px;border:1px solid var(--border);border-radius:16px;background:var(--surface)"><div class="qshim" style="width:100%;aspect-ratio:16/9;border-radius:10px"></div><div class="qshim" style="width:60%;height:20px;border-radius:4px"></div><div class="qshim" style="width:90%;height:14px;border-radius:4px"></div><div class="qshim" style="width:75%;height:14px;border-radius:4px"></div></div>
+      </sc-for>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ isMaint }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Maintenance" style="position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden">
+    <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 45%,#000,transparent);mask-image:radial-gradient(ellipse 60% 60% at 50% 45%,#000,transparent)"></div>
+    <header class="section-shell" style="position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px;border-bottom:1px solid var(--border)"><img src="assets/qaig-stacked.png" alt="Quantum AI Global" style="width:96px;height:auto"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--warning)">● Scheduled Maintenance</span></header>
+    <div class="section-shell" style="position:relative;flex:1;display:grid;grid-template-columns:{{ cols }};align-items:center;gap:clamp(40px,5vw,72px);padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)">
+      <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Recalibrating</span>
+        <h1 style="margin:0;max-width:14ch;font-size:clamp(2.5rem,1.4rem + 3.6vw,4.5rem);line-height:1.02;letter-spacing:-0.04em;font-weight:600;text-wrap:balance">We're Tuning the <span style="color:var(--brand)">Instruments.</span></h1>
+        <p style="margin:0;max-width:48ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">The site is down for scheduled maintenance. Product pages, resources and the Customer Portal will be back shortly. Licences and devices already in use are not affected.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--border);border-radius:14px;background:var(--surface)">
+          <div style="display:flex;flex-direction:column;gap:6px;padding:16px 20px;border-right:1px solid var(--border)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Window</span><span class="tnum" style="font-size:16.5px;font-weight:500">02:00–04:00 IST</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;padding:16px 20px"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Progress</span><span class="tnum" style="font-size:16.5px;font-weight:500;color:var(--brand)">{{ maintPct }}</span></div>
+        </div>
+        <p style="margin:0;font-size:16px;color:var(--muted)">Urgent support: <a href="mailto:info@thequantum.ai">info@thequantum.ai</a> · <a href="tel:+918121027006">+91 81210 27006</a></p>
+      </div>
+      <div role="img" aria-label="Calibration signal converging towards a stable waveform" style="position:relative;min-width:0;border:1px solid var(--border-light);border-radius:20px;background:var(--surface);overflow:hidden">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 20px;border-bottom:1px solid var(--border)"><span style="display:flex;align-items:center;gap:10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="width:8px;height:8px;border-radius:50%;background:var(--warning)"></span>CH-0 · Calibration</span><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--muted)">Lock-In</span></div>
+        <div style="position:relative;height:{{ scopeH }};background:var(--surface-2)"><div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.7"></div><div aria-hidden="true" style="position:absolute;left:0;right:0;top:50%;height:1px;background:var(--border-light)"></div><svg width="100%" height="100%" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;display:block"><path ref="{{ waveRef }}" d="" fill="none" stroke="var(--brand)" stroke-width="2" style="filter:drop-shadow(0 0 6px rgba(0,212,255,.55))"></path><path ref="{{ ghostRef }}" d="" fill="none" stroke="rgba(0,212,255,.28)" stroke-width="1" stroke-dasharray="4 6"></path></svg></div>
+        <div style="height:4px;background:var(--border)"><div style="height:100%;width:{{ maintPct }};background:var(--brand);transition:width .6s"></div></div>
+      </div>
+    </div>
+  </section>
+</sc-if>
+
+<sc-if value="{{ withFooter }}" hint-placeholder-val="{{ true }}">
+  <dc-import name="QAIG Global Footer" after-cta="false" hint-size="100%,760px"></dc-import>
+</sc-if>
+
+<sc-if value="{{ showSwitch }}" hint-placeholder-val="{{ true }}">
+  <div role="group" aria-label="Preview system state" style="position:fixed;left:50%;bottom:16px;z-index:60;transform:translateX(-50%);display:flex;align-items:center;gap:4px;max-width:calc(100vw - 24px);overflow-x:auto;scrollbar-width:none;padding:6px;border:1px solid var(--border-light);border-radius:12px;background:var(--nav-surface);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow-lg)">
+    <span style="padding:0 10px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:nowrap">Preview</span>
+    <sc-for list="{{ switches }}" as="o" hint-placeholder-count="6"><button type="button" aria-pressed="{{ o.sel }}" onClick="{{ o.pick }}" style="min-height:36px;padding:0 12px;border:1px solid {{ o.bd }};border-radius:8px;background:{{ o.bg }};color:{{ o.color }};font:inherit;font-size:15px;white-space:nowrap;cursor:pointer" style-hover="color:var(--foreground)">{{ o.label }}</button></sc-for>
+  </div>
+</sc-if>
+</div>
+</x-dc>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
+<script type="text/x-dc" data-dc-script data-props="{&quot;state&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;404&quot;,&quot;500&quot;,&quot;403&quot;,&quot;empty&quot;,&quot;loading&quot;,&quot;maintenance&quot;],&quot;default&quot;:&quot;404&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showSwitcher&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, st: null, rm: false, pct: 64 };
+  waveRef = React.createRef(); ghostRef = React.createRef();
+  nav() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (e) {} return window.QAIG_NAV || { routes: {} }; }
+  componentDidMount() {
+    this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR);
+    const q = new URLSearchParams(window.location.search).get("state"); const ok = ["404", "500", "403", "empty", "loading", "maintenance"];
+    this.setState({ st: ok.includes(q) ? q : null, rm: window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches });
+    this.ref = "QAIG-" + Date.now().toString(36).toUpperCase().slice(-6);
+    this.pctT = setInterval(() => this.setState((s) => ({ pct: s.pct >= 96 ? 64 : s.pct + 1 })), 2400);
+    this.loop();
+  }
+  componentWillUnmount() { window.removeEventListener("resize", this.onR); cancelAnimationFrame(this.raf); clearInterval(this.pctT); }
+  cur() { return this.state.st || this.props.state || "404"; }
+  loop() {
+    const t0 = performance.now();
+    const draw = (now) => {
+      this.raf = 0; const p = this.waveRef.current, g = this.ghostRef.current;
+      if (p && p.ownerSVGElement) {
+        const r = p.ownerSVGElement.getBoundingClientRect(), W = Math.max(1, r.width), H = Math.max(1, r.height), mid = H / 2, A = H * 0.28, st = this.cur(), t = this.state.rm ? 1.2 : (now - t0) / 1000;
+        let d = "", gd = "", pen = false;
+        for (let x = 0; x <= W; x += 3) {
+          const u = x / W, base = Math.sin(u * 14 - t * 2.2); let y = null, gy = mid - A * base;
+          if (st === "404") { const gap = u > 0.34 && u < 0.66; y = gap ? null : mid - A * 0.5 * base * Math.min(1, Math.abs(u - 0.5) * 6 - 0.9); }
+          else if (st === "500") { const burst = Math.exp(-Math.pow((u - 0.55) * 5, 2)); y = mid - A * (base * 0.6 + burst * 1.6 * Math.sin(u * 90 + t * 17) * Math.sin(t * 3 + u * 7)); y = Math.max(8, Math.min(H - 8, y)); }
+          else if (st === "403") { const wall = 0.62; y = u < wall ? mid - A * base * (0.4 + 0.6 * Math.min(1, u / wall)) : mid - A * 0.05 * Math.sin(u * 40 - t * 4) * Math.exp(-(u - wall) * 12); }
+          else if (st === "empty") { const pulse = ((t * 0.18) % 1.3) - 0.15; y = mid - A * 0.9 * Math.exp(-Math.pow((u - pulse) * 18, 2)); }
+          else { const lock = 0.5 + 0.5 * Math.sin(t * 0.6); y = mid - A * base * (0.7 + 0.3 * lock) - A * (1 - lock) * 0.5 * Math.sin(u * 47 + t * 9); }
+          if (y == null) { pen = false; } else { d += (pen ? " L" : " M") + x.toFixed(1) + " " + y.toFixed(1); pen = true; }
+          gd += (x ? " L" : "M") + x.toFixed(1) + " " + gy.toFixed(1);
+        }
+        p.setAttribute("d", d.trim()); if (g) g.setAttribute("d", st === "500" || st === "404" || st === "maintenance" ? gd : "");
+      }
+      if (!this.state.rm && document.visibilityState !== "hidden") this.raf = requestAnimationFrame(draw); else if (!this.state.rm) setTimeout(() => { this.raf = requestAnimationFrame(draw); }, 500);
+    };
+    this.raf = requestAnimationFrame(draw);
+    this.kick = () => { if (this.state.rm) requestAnimationFrame(draw); };
+  }
+  componentDidUpdate() { this.kick && this.kick(); }
+  renderVals() {
+    const S = this.state, D = this.nav(), R = D.routes || {}, w = S.w, desk = w >= 1024, st = this.cur();
+    const go = (h) => () => { window.QAIG_GO ? window.QAIG_GO(h) : (window.location.href = h); };
+    const enq = R.enquiry || "#", path = (typeof window !== "undefined" ? decodeURIComponent(window.location.pathname.split("/").pop() || "/") : "/");
+    const LINKS = [["Browse Products", "Thirteen products across five domains", R.products], ["Resources", "Research, downloads and news", R.resources], ["Company", "About Quantum AI Global", R.about], ["Contact Us", "Talk to our team", enq]].map(([t, d, href]) => ({ t, d, href: href || "#" }));
+    const STATES = {
+      "404": { code: "404", kicker: "Error 404 · Signal Not Found", titleA: "This Page Has", titleB: "Left the Detector.", text: "The address may be mistyped, or the page has moved. Start from one of the sections below.", primary: "Go to Home", primaryGo: go(R.home || "#"), secondary: "Browse Products", secondaryGo: go(R.products || "#"), hasLinks: true, linksLabel: "Popular Destinations", links: LINKS, tone: "var(--brand)", channel: "CH-1 · No Signal", unit: "Input · Missing", figAria: "Waveform with a gap where the signal is missing", reads: [{ k: "Status", v: "404", c: "var(--foreground)" }, { k: "Requested", v: path, c: "var(--foreground-2)" }, { k: "Result", v: "Not Found", c: "var(--warning)" }] },
+      "500": { code: "500", kicker: "Error 500 · Server Fault", titleA: "Something Went Wrong", titleB: "on Our Side.", text: "Our servers hit an unexpected error. It is not caused by anything you did. Try again in a moment; if it keeps happening, contact us with the reference below.", primary: "Try Again", primaryGo: () => window.location.reload(), secondary: "Contact Support", secondaryGo: go(enq + "?interest=" + encodeURIComponent("Support · Error 500 · " + (this.ref || ""))), hasLinks: false, links: [], tone: "var(--danger)", channel: "CH-1 · Decoherence", unit: "Noise · High", figAria: "Waveform disrupted by a burst of noise", reads: [{ k: "Status", v: "500", c: "var(--foreground)" }, { k: "Reference", v: this.ref || "—", c: "var(--foreground-2)" }, { k: "Result", v: "Server Error", c: "var(--danger)" }] },
+      "403": { code: "403", kicker: "Error 403 · Access Restricted", titleA: "You Don't Have Access", titleB: "to This Page.", text: "This area is limited to signed-in customers or specific roles. Sign in to the Customer Portal, or ask your account administrator for access.", primary: "Sign In to Portal", primaryGo: go(R.portal || "#"), secondary: "Request Access", secondaryGo: go(enq + "?interest=" + encodeURIComponent("Access Request")), hasLinks: false, links: [], tone: "var(--warning)", channel: "CH-1 · Barrier", unit: "Transmission · 0%", figAria: "Waveform stopped at a barrier", reads: [{ k: "Status", v: "403", c: "var(--foreground)" }, { k: "Requested", v: path, c: "var(--foreground-2)" }, { k: "Result", v: "Forbidden", c: "var(--warning)" }] },
+      "empty": { code: "0", kicker: "Empty State · No Data Yet", titleA: "Nothing to Show", titleB: "Yet.", text: "There are no items in this view. When content is published or your filters match something, it will appear here.", primary: "Clear Filters", primaryGo: () => {}, secondary: "Browse Products", secondaryGo: go(R.products || "#"), hasLinks: false, links: [], tone: "var(--foreground-2)", channel: "CH-1 · Standby", unit: "Events · 0", figAria: "Flat baseline with a single scanning pulse", reads: [{ k: "Results", v: "0", c: "var(--foreground)" }, { k: "Filters", v: "Active", c: "var(--foreground-2)" }, { k: "Status", v: "Waiting", c: "var(--muted)" }] },
+    };
+    const s = STATES[st] || STATES["404"], isError = !!STATES[st];
+    const LABELS = [["404", "404"], ["500", "500"], ["403", "403"], ["empty", "Empty"], ["loading", "Loading"], ["maintenance", "Maintenance"]];
+    return {
+      isError, isLoading: st === "loading", isMaint: st === "maintenance", withNav: st !== "maintenance", withFooter: st !== "maintenance" && st !== "loading", s,
+      screenLabel: "State · " + st, cols: desk ? "minmax(0,6fr) minmax(0,5fr)" : "minmax(0,1fr)", minH: desk ? "calc(100vh - 85px)" : "auto", scopeH: w >= 640 ? "260px" : "200px",
+      waveRef: this.waveRef, ghostRef: this.ghostRef, maintPct: S.pct + "%",
+      skelCols: w >= 900 ? "repeat(3,minmax(0,1fr))" : w >= 600 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", skelCards: [1, 2, 3],
+      showSwitch: this.props.showSwitcher ?? true,
+      switches: LABELS.map(([k, label]) => { const on = k === st; return { label, sel: on ? "true" : "false", bd: on ? "var(--brand)" : "transparent", bg: on ? "var(--surface-2)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", pick: () => { this.setState({ st: k }); try { const u = new URL(window.location.href); u.searchParams.set("state", k); history.replaceState(null, "", u); } catch (e) {} } }; }),
+    };
+  }
+}
+</script>
+</body>
+</html>
