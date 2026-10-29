@@ -1,98 +1,87 @@
-# QAIG Website: Handoff (final build, 29 Oct 2026)
+# QAIG Website
 
-Two folders. All old versions have been removed; everything here is the latest.
+Design source for the QAIG (Quantum AI Global) marketing website and Customer Portal. Every page is a `.dc.html` design component rendered in the browser by a small React-based runtime (`support.js`). There is no build step and no package install.
 
-## Quick start
-1. Unzip the folder.
-2. Open `site/index.html` in any modern browser (double-click; no server or install needed).
-3. It redirects to the Home page. Every navbar, footer, button and card link routes to a page inside `site/`.
+## Run locally
 
-The first open needs internet (React loads from unpkg). To host, upload the contents of `site/` as-is to any static host; `index.html` is the entry point.
+Pages load shared components (navbar, footer, enquiry modal, templates) with `fetch`, so they must be served over HTTP. Opening them from `file://` will not work.
 
-## site/ (open directly, no server needed)
-Each page is self-contained, with the navbar, footer, CTA, enquiry popup and product/legal templates inlined. Keep `assets/`, `_ds/` and `qaig-*.js` next to the pages; images and data load from them. Do not rename page files: routes in `qaig-nav-data.js` use these exact filenames.
+```sh
+cd source
+python3 -m http.server 8000
+```
 
-### Pages (28)
-- Chec-Q AI.dc.html
-- Company page.dc.html
-- Cookie Policy.dc.html
-- Customer Portal.dc.html
-- Discuss Your Requirement.dc.html
-- EPS-QKD.dc.html
-- Home Page Design.dc.html
-- Laser.dc.html
-- Our IPs.dc.html
-- Portal States.dc.html
-- Privacy Policy.dc.html
-- Products.dc.html
-- Q-Biosensor.dc.html
-- Q-Cluster.dc.html
-- Q-Forte.dc.html
-- Q-Memory.dc.html
-- Q-Sleeve.dc.html
-- QNTSim.dc.html
-- QuRNG.dc.html
-- Quantum Gravimeter.dc.html
-- Quantum Repeater.dc.html
-- QubitIQ.dc.html
-- Resources v2.dc.html
-- Rydberg Sensor.dc.html
-- Sitemap.dc.html
-- System States.dc.html
-- Terms of Service.dc.html
-- Work With Us.dc.html
+Then open <http://localhost:8000/Home%20Page%20Design.dc.html>. You need an internet connection because React loads from unpkg.
 
-## source/ (editable)
-The `.dc.html` sources, shared components (`QAIG Global Navbar`, `Footer`, `CTA`, `Enquiry Modal`, `Product Page`, `Legal Page`), data files and `PROJECT-RULES.md`. Edit here and regenerate `site/`.
+To host the site, upload the contents of `source/` to any static host. Do not rename page files: routes in `qaig-nav-data.js` use these exact filenames.
 
-### Data files
-- `qaig-nav-data.js`: routes, product taxonomy, nav and footer links (all page destinations).
-- `qaig-content-data.js`: IP portfolio and certificate details, publications, News & Updates achievements, upcoming events (empty until confirmed).
-- `qaig-legal-data.js`: Privacy, Terms, Cookies copy (DRAFT pending legal review).
+## Repository layout
 
-## Changes in this build (29 Oct 2026)
-- **site/ rebuilt:** all 28 pages re-bundled from the current source, plus the latest `qaig-*.js` data files and `assets/`, so `site/index.html` shows exactly the same design as `source/`.
-- **Cleanup:** old versions removed (Products (Stacking Cards), Global Footer (previous)). Only current pages and shared components remain.
-- **Routing:** every internal link checked to resolve inside `site/`. Fixed a stale fallback link on Laser (resources enquiry) that pointed to a removed page; it now opens Discuss Your Requirement.
-- **ISO 27001 badge:** shipped at `site/assets/certifications/qaig-iso-27001-badge.png` (1416×486, used in the footer).
+```
+source/
+  *.dc.html          Pages and shared components
+  qaig-*.js          Shared data and behaviour scripts
+  support.js         dc-runtime (generated, do not edit)
+  _ds/               "QAIG Instrument" design system bundle (CSS, JS, tokens)
+  assets/            Images, logos, PDFs used by the pages
+  docs/              Content audits, QA reports and the source brochures in docs/src/
+  PROJECT-RULES.md   Mandatory rules for editing pages and global components
+```
 
-## Changes in the 28 Oct build
-- **Company, Our IPs, All Products heroes:** breadcrumbs and eyebrow labels removed from these three heroes only (product-detail pages keep theirs). Headline and supporting copy rebalanced: Company and Products side by side, bottom-anchored; Our IPs stacked beside the dial.
-- **Products:** the sticky domain bar is hidden while Browse by Domain is on screen. It fades in once Browse by Domain has scrolled above the navbar and the products begin, and hides again after the last domain. It overlays the page, so showing it causes no layout shift.
-- **Resources, Downloads, Fold 02:** the product list was capped at 640px with its own scroll, independent of the dossier, so it cut off mid-heading. It now fills exactly the dossier's height as a single scroll container (stable scrollbar gutter, contained overscroll, bottom fade that clears at the end of the list). All 13 products and 5 domain headings are reachable.
-- **Enquiry popup:** Preferred Demo Mode has no default; the visitor picks one (click again to clear). Unanswered shows as "Not specified" on the confirmation.
-- **Customer Portal:** "Back to Website" is now a bordered button with a globe icon in the desktop header, the sign-in screen and the mobile header ("Website"), and an outline button in the mobile menu.
+### Pages
 
-## Changes in the 26 Oct build
-- **Navbar:** Resources dropdown copy now reads "Brochures, product dossiers, videos and research publications for every product line." (White papers removed.)
-- **Technology Explorer (Home) and Products card stacks:** a single wheel notch or trackpad swipe moves one card, only while the pointer is over the cards; scrolling elsewhere passes straight to the next section. Cards auto-advance every 6.5s with a progress timer, pausing on hover. Skip to Products buttons removed.
-- **Resources:** sticky section navigator with scrollspy (matches Company). White Papers section removed.
-- **"Talk to Our Engineering Team"** removed from every final CTA. "Film" renamed "Video" site-wide.
-- **Our IPs:** new hero dial illustration (15 IPs by area, 3 certified highlighted, titles on hover).
-- **Customer Portal:** back button on every inner screen (desktop and mobile headers) and on the forgot/reset/verify screens.
-- **Q-Cluster Mini / QNTSim Mini:** "Explore Subscription Plans" next to Buy, opening a plans panel (On Your Mini / Cloud Access, Monthly / Quarterly / Annual, Learner / Researcher / Custom). Q-Cluster includes a full feature comparison from the backend feature list. All plan data lives in `qaig-product-data.js`.
+| Area | Files |
+|---|---|
+| Marketing | Home Page Design, Products, Company page, Our IPs, Resources v2, Work With Us, Discuss Your Requirement |
+| Products | Chec-Q AI, Q-Sleeve, QuRNG, Q-Forte, Q-Cluster, Q-Cluster Mini, QNTSim, QNTSim Mini, QubitIQ, EPS-QKD, Q-Memory, Quantum Repeater, Q-Biosensor, Quantum Gravimeter, Rydberg Sensor, Laser |
+| Legal | Privacy Policy, Terms of Service, Cookie Policy, Sitemap |
+| Portal (app screens, no marketing navbar/footer) | Customer Portal, Portal States |
+| Reference | System States |
 
-## Earlier changes
-- New **Our IPs** page (navbar, mobile menu, search and footer link). Certificates: `assets/ips/certificate-*.jpg`, original PDF `assets/pdfs/qaig-patent-certificates.pdf`.
-- Research & Publications lists the four verified papers; News & Updates shows five achievements plus an upcoming-events placeholder / empty state.
-- Downloads company covers use `assets/resources/*.jpg`.
-- Accessibility page removed (page, route, footer link, sitemap entry).
-- Corner-bracket frames removed site-wide; Products section nav matches Company.
-- Customer Portal search, filters and dropdowns match the outline button (10px radius, 44px height).
+### Shared components
 
-## Editorial conventions (applied 26 Oct 2026)
-- British English spelling (organisation, optimise, fibre, vapour, licence as noun, programme, catalogue).
-- Title Case for headings, buttons, tabs, card titles; sentence case for paragraphs, descriptions, diagram labels and form help text.
-- No serial comma. Separators in mono labels and captions use " · " (e.g. "Fig. 01 · …", "Fold 02 · Products"); em dashes are not used in body copy.
+Mounted with `<dc-import name="...">`. See `PROJECT-RULES.md` for exact mount snippets and props.
+
+- `QAIG Global Navbar`, `QAIG Global Footer`: locked, single source of truth for every page.
+- `QAIG Global CTA`, `QAIG Enquiry Modal`: final CTA band and the enquiry popup (also mounted inline on Discuss Your Requirement).
+- `QAIG Product Page`, `QAIG Mini Page`, `QAIG Legal Page`: templates for product, Mini product and legal pages.
+
+### Data and behaviour scripts
+
+| File | Contents |
+|---|---|
+| `qaig-nav-data.js` | Routes, product taxonomy and order, nav and footer links. All page destinations live here. |
+| `qaig-product-data.js` | Product page content, including Mini subscription plans. |
+| `qaig-content-data.js` | IP portfolio and certificates, publications, News & Updates, upcoming events. |
+| `qaig-legal-data.js` | Privacy, Terms and Cookies copy (DRAFT pending legal review). |
+| `qaig-transition.js` | Page transition sweep and enquiry-link interception (`QAIG_GO`). Loaded by every page. |
+| `qaig-product-ill.js`, `qaig-hero-ill.js`, `qaig-motifs.js`, `qaig-spectrum.js`, `qaig-mini-3d.js` | Illustrations and visual motifs. |
+| `qaig-cursor.js`, `qaig-scroll-affordance.js`, `qaig-viewport.js` | Cursor, scroll hints and viewport helpers. |
+
+## Editing rules
+
+Read `source/PROJECT-RULES.md` before changing anything. In short:
+
+- Never redesign or duplicate the navbar or footer; change them only when explicitly asked.
+- Product category order: Post-Quantum Cryptography, Quantum Information Sciences, Quantum Networking, Quantum Sensing, Quantum Lasers.
+- Derive product lists and links from `qaig-nav-data.js`; never hard-code page filenames for nav or footer links.
+- Navbar height is 85px; sticky offsets use 85.
+
+### Editorial conventions
+
+- British English spelling (organisation, optimise, fibre, licence as noun, programme, catalogue).
+- Title Case for headings, buttons, tabs and card titles; sentence case for paragraphs, descriptions and form help text.
+- No serial comma. Mono label separators use " · "; no em dashes in body copy.
 - Official names unchanged: Q-Forte, Chec-Q AI, QuRNG, Q-Sleeve, Q-Cluster, QNTSim, EPS-QKD, Q-Memory, ApeX-Pro.
 - Body text 16px minimum; mono labels 12.5px minimum.
 
 ## Known gaps
-- **Subscription prices are placeholders** (Q-Cluster Mini ₹3,000 / ₹7,500, cloud ₹5,000 / ₹12,000; QNTSim Mini ₹2,500 / ₹6,000, cloud ₹4,000 / ₹10,000). Studio, QML, QEC, QPU and Projects values per plan are assumptions; only GPU allowance and qubit ceilings come from the backend screens. Edit in `qaig-product-data.js`.
-- Mission and Vision statements, the CEO quote and the hero headline were left as written (official copy). They read as generic; consider a rewrite with QAIG.
-- Company page "7 Technology Areas" (renamed from "7 Technology Domains") differs from the five product domains. Confirm the intended count.
-- Removed the unsupported claim "India’s first deep-tech quantum stack" from the team intro.
-- IP 03 "Input Laser Control Box" is listed as "Patent Granted" on the IP sheet, but its certificate is a Certificate of Registration of Design (No. 460524-001). The site labels it "Design Registered"; confirm the wording.
-- Author list for "Experimental Realization of Quantum Memory and EPS-QKD" (IEEE ATS 2024) not verified; shown as the QAIG research team.
-- `/videos/Companyppt.mp4` and the company brochure/presentation PDFs still need adding to the host / `assets/pdfs`.
-- Forms (enquiry, Work With Us) confirm client-side only; wire to the backend.
+
+- **Subscription prices are placeholders** (Q-Cluster Mini ₹3,000 / ₹7,500, cloud ₹5,000 / ₹12,000; QNTSim Mini ₹2,500 / ₹6,000, cloud ₹4,000 / ₹10,000). Only GPU allowance and qubit ceilings come from the backend; the rest are assumptions. Edit in `qaig-product-data.js`.
+- Mission, Vision, CEO quote and hero headline are official copy but read as generic; consider a rewrite with QAIG.
+- Company page "7 Technology Areas" differs from the five product domains. Confirm the intended count.
+- IP 03 "Input Laser Control Box" is listed as "Patent Granted" on the IP sheet but its certificate is a Design Registration (No. 460524-001). The site says "Design Registered"; confirm.
+- Author list for "Experimental Realization of Quantum Memory and EPS-QKD" (IEEE ATS 2024) is unverified.
+- `/videos/Companyppt.mp4` and the company brochure/presentation PDFs still need adding to the host or `assets/pdfs`.
+- Forms (enquiry, Work With Us) confirm client-side only; wire them to a backend.
+- Legal copy is a draft pending legal review.
