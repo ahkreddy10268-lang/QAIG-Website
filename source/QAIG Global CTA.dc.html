@@ -56,7 +56,7 @@ class Component extends DCLogic {
   waveRef = React.createRef();
   qaigData() { if (window.QAIG_NAV) return window.QAIG_NAV; try { const x = new XMLHttpRequest(); x.open("GET", "qaig-nav-data.js", false); x.send(); (0, eval)(x.responseText); } catch (err) {} return window.QAIG_NAV; }
   componentDidMount() {
-    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    let rm = false; try { rm = window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches; } catch (e) {}
     this.onR = () => this.setState({ w: window.innerWidth });
     window.addEventListener("resize", this.onR);
     this.setState({ rm }, () => this.setupWave());
@@ -87,8 +87,8 @@ class Component extends DCLogic {
       ctaSig: n ? "Signal · " + sel.map((i) => SIG[list[i].code] || list[i].label).join(" + ") : "Signal · Waiting for Your Requirement",
       ctaNote: n ? "Selected: " + sel.map((i) => list[i].label).join(", ") + "." : "",
       cEyebrow: P.eyebrow || "Start With a Requirement", cTitleA: P.titleA || "Have a Quantum Technology", cTitleB: P.titleB || "Requirement?",
-      cText: P.text || "Tell us what you need to build, measure or secure. Our engineering team will work through the requirement with you.",
-      cAsk: P.ask || "What are you working on?", cPrimary: P.primary || "Discuss Your Requirement", fullBtn: { style: { width: "100%" } },
+      cText: P.text || "Tell Us What You Need to Build, Measure or Secure. Our Engineering Team Will Work Through the Requirement With You.",
+      cAsk: P.ask || "What Are You Working On?", cPrimary: P.primary || "Discuss Your Requirement", fullBtn: { style: { width: "100%" } },
       toMail: () => { window.location.href = "mailto:info@thequantum.ai"; } };
   }
   renderVals() {

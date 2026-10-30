@@ -32,7 +32,7 @@
       <div style="order:{{ textOrder }};display:grid;grid-template-columns:{{ heroTextCols }};gap:22px clamp(24px,4vw,64px);align-items:end;min-width:0">
         <div style="display:flex;flex-direction:column;gap:22px;min-width:0">
           <div style="display:flex;align-items:center;gap:14px">
-            <img src="{{ logo }}" alt="" style="flex:none;width:60px;height:60px;object-fit:contain">
+            <img loading="lazy" src="{{ logo }}" alt="" style="flex:none;width:60px;height:60px;object-fit:contain">
             <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px"><span style="font-size:18px;font-weight:600;letter-spacing:-0.01em;white-space:nowrap">{{ name }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--brand)">{{ tag }}</span></div>
             <sc-if value="{{ isRnd }}" hint-placeholder-val="{{ false }}"><span style="flex:none;padding:3px 8px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span></sc-if>
           </div>
@@ -80,7 +80,7 @@
 
   <sc-if value="{{ ovJourney }}" hint-placeholder-val="{{ false }}">
     <div style="border:1px solid var(--border-light);border-radius:24px;background:var(--surface);overflow:hidden">
-      <div role="tablist" aria-label="How it works" style="position:relative;display:grid;grid-template-columns:{{ stepCols }}">
+      <div role="tablist" aria-label="How It Works" style="position:relative;display:grid;grid-template-columns:{{ stepCols }}">
         <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
           <button type="button" role="tab" aria-selected="{{ s.open }}" onClick="{{ s.pick }}" onMouseEnter="{{ s.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:24px 24px 22px;border:0;border-right:{{ s.br }};border-bottom:1px solid var(--border);background:{{ s.bg }};color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .35s">
             <span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--brand);transform-origin:0 50%;transform:scaleX({{ s.bar }});transition:transform .5s"></span>
@@ -92,8 +92,8 @@
       <div aria-live="polite" style="display:grid;grid-template-columns:{{ detailCols }};gap:16px 48px;align-items:center;padding:clamp(24px,3vw,40px)">
         <p style="margin:0;max-width:40ch;font-size:clamp(1.25rem,1rem + .8vw,1.75rem);line-height:1.35;letter-spacing:-0.015em;font-weight:500;text-wrap:pretty">{{ stepText }}</p>
         <div style="display:flex;align-items:center;gap:10px;justify-self:{{ ctrlJustify }}">
-          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepPrev }}" aria-label="Previous stage" hint-size="40px,40px">←</x-import>
-          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepNext }}" aria-label="Next stage" hint-size="40px,40px">→</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepPrev }}" aria-label="Previous Stage" hint-size="40px,40px">←</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepNext }}" aria-label="Next Stage" hint-size="40px,40px">→</x-import>
         </div>
       </div>
     </div>
@@ -115,9 +115,9 @@
       <div style="display:grid;grid-template-columns:{{ detailCols }};gap:16px 48px;align-items:end;margin-top:8px">
         <div aria-live="polite" style="display:flex;flex-direction:column;gap:10px;min-width:0"><span style="font-size:clamp(1.5rem,1.2rem + 1vw,2.25rem);font-weight:600;letter-spacing:-0.03em">{{ stepTitle }}</span><p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ stepText }}</p></div>
         <div style="display:flex;align-items:center;gap:10px;justify-self:{{ ctrlJustify }}">
-          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepPrev }}" aria-label="Previous stage" hint-size="40px,40px">←</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepPrev }}" aria-label="Previous Stage" hint-size="40px,40px">←</x-import>
           <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ replay }}" hint-size="120px,40px">{{ playLabel }}</x-import>
-          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepNext }}" aria-label="Next stage" hint-size="40px,40px">→</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ stepNext }}" aria-label="Next Stage" hint-size="40px,40px">→</x-import>
         </div>
       </div>
     </div>
@@ -156,7 +156,7 @@
       </sc-for></div>
       <div style="order:{{ mapCOrder }};position:relative;display:flex;flex-direction:column;align-items:center;gap:20px;padding:clamp(24px,3vw,40px);border:1px solid var(--border-light);border-radius:28px;background:radial-gradient(circle at 50% 30%,rgba(0,212,255,.12),transparent 65%),var(--surface);text-align:center">
         <span aria-hidden="true" style="position:absolute;inset:14px;border:1px dashed rgba(0,212,255,.18);border-radius:22px;pointer-events:none"></span>
-        <div style="display:flex;align-items:center;gap:16px"><img src="{{ logo }}" alt="" style="width:64px;height:64px;object-fit:contain"><span aria-hidden="true" style="width:1px;height:48px;background:var(--border-light)"></span><div style="width:clamp(140px,14vw,190px);height:clamp(88px,9vw,118px)">{{ capMotif }}</div></div>
+        <div style="display:flex;align-items:center;gap:16px"><img loading="lazy" src="{{ logo }}" alt="" style="width:64px;height:64px;object-fit:contain"><span aria-hidden="true" style="width:1px;height:48px;background:var(--border-light)"></span><div style="width:clamp(140px,14vw,190px);height:clamp(88px,9vw,118px)">{{ capMotif }}</div></div>
         <div aria-live="polite" style="display:flex;flex-direction:column;gap:8px;max-width:34ch"><span style="font-size:20px;font-weight:600;letter-spacing:-0.015em">{{ capTitle }}</span><p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ capText }}</p></div>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px;order:{{ mapROrder }}"><sc-for list="{{ capsR }}" as="c" hint-placeholder-count="2">
@@ -189,7 +189,7 @@
           <img src="{{ photo }}" alt="{{ name }} product render" loading="lazy" style="position:absolute;left:8%;right:8%;top:6%;width:84%;height:64%;object-fit:contain;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 72%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 72%)">
         </sc-if>
         <sc-if value="{{ noPhoto }}" hint-placeholder-val="{{ true }}">
-          <div aria-hidden="true" style="position:absolute;left:10%;right:10%;top:8%;height:52%">{{ capMotif }}</div><img src="{{ logo }}" alt="" aria-hidden="true" style="position:absolute;right:20px;top:20px;width:52px;height:52px;object-fit:contain">
+          <div aria-hidden="true" style="position:absolute;left:10%;right:10%;top:8%;height:52%">{{ capMotif }}</div><img loading="lazy" src="{{ logo }}" alt="" aria-hidden="true" style="position:absolute;right:20px;top:20px;width:52px;height:52px;object-fit:contain">
         </sc-if>
         <div aria-live="polite" style="position:relative;display:flex;flex-direction:column;gap:8px;padding-top:16px;border-top:1px solid var(--border)"><span style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ capTitle }}</span><p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ capText }}</p></div>
       </div>
@@ -202,7 +202,7 @@
         <article class="card-hover" style="grid-column:{{ c.gc }};grid-row:{{ c.gr }};position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:24px;border:1px solid var(--border-light);border-radius:22px;background:{{ c.bg }};overflow:hidden">
           <sc-if value="{{ c.big }}" hint-placeholder-val="{{ false }}">
             <sc-if value="{{ c.bigPhoto }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position:absolute;inset:0;background:radial-gradient(ellipse 55% 45% at 50% 38%,rgba(214,226,238,.6),rgba(120,150,180,.16) 48%,transparent 72%)"></div><img src="{{ photo }}" alt="{{ name }} product render" loading="lazy" style="position:absolute;left:6%;top:4%;width:88%;height:62%;object-fit:contain;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 72%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 45%,transparent 72%)"></sc-if>
-            <sc-if value="{{ c.bigIcon }}" hint-placeholder-val="{{ true }}"><img src="{{ logo }}" alt="" aria-hidden="true" style="position:absolute;left:50%;top:38%;width:min(220px,50%);aspect-ratio:1;transform:translate(-50%,-50%);object-fit:contain"></sc-if>
+            <sc-if value="{{ c.bigIcon }}" hint-placeholder-val="{{ true }}"><img loading="lazy" src="{{ logo }}" alt="" aria-hidden="true" style="position:absolute;left:50%;top:38%;width:min(220px,50%);aspect-ratio:1;transform:translate(-50%,-50%);object-fit:contain"></sc-if>
           </sc-if>
           <sc-if value="{{ c.small }}" hint-placeholder-val="{{ true }}"><div aria-hidden="true" style="position:relative;height:72px;margin-bottom:auto">{{ c.motif }}</div></sc-if>
           <span aria-hidden="true" style="position:relative;width:28px;height:2px;background:var(--brand)"></span>
@@ -226,7 +226,7 @@
       <sc-for list="{{ stackItems }}" as="it" hint-placeholder-count="3">
         <a id="{{ it.id }}" href="{{ it.href }}" class="card-hover" style="position:relative;scroll-margin-top:110px;display:flex;flex-direction:column;gap:18px;padding:24px;border:1px solid {{ it.bd }};border-radius:20px;background:var(--surface);color:var(--foreground);transition:border-color .3s" style-hover="border-color:var(--brand)">
           <div style="display:flex;align-items:center;gap:10px"><span aria-hidden="true" style="flex:none;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--brand);background:var(--base)"><span style="width:8px;height:8px;border-radius:50%;background:var(--brand)"></span></span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--brand)">{{ it.verb }}</span></div>
-          <div style="display:flex;align-items:center;gap:14px"><img src="{{ it.logo }}" alt="" style="flex:none;width:56px;height:56px;object-fit:contain"><h3 style="flex:1;min-width:0;margin:0;font-size:24px;letter-spacing:-0.025em;font-weight:600;white-space:nowrap">{{ it.name }}</h3></div>
+          <div style="display:flex;align-items:center;gap:14px"><img loading="lazy" src="{{ it.logo }}" alt="" style="flex:none;width:56px;height:56px;object-fit:contain"><h3 style="flex:1;min-width:0;margin:0;font-size:24px;letter-spacing:-0.025em;font-weight:600;white-space:nowrap">{{ it.name }}</h3></div>
           <p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ it.line }}</p>
           <ul style="list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:10px">
             <sc-for list="{{ it.points }}" as="pt" hint-placeholder-count="3"><li style="display:flex;gap:10px;font-size:16px;line-height:1.45;color:var(--muted)"><span aria-hidden="true" style="flex:none;margin-top:7px;width:5px;height:5px;background:var(--brand)"></span>{{ pt }}</li></sc-for>
@@ -258,7 +258,7 @@
       </sc-if>
       <sc-if value="{{ hasNote }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:28px;border:1px solid var(--warning);border-radius:20px;background:var(--surface)">
-          <div style="display:flex;flex-direction:column;gap:12px"><span style="align-self:flex-start;padding:3px 8px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span><h3 style="margin:0;font-size:22px;letter-spacing:-0.02em;font-weight:600">{{ note }}</h3><p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--foreground-2)">This programme is not yet offered as a product. We welcome conversations with research partners and institutions.</p></div>
+          <div style="display:flex;flex-direction:column;gap:12px"><span style="align-self:flex-start;padding:3px 8px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span><h3 style="margin:0;font-size:22px;letter-spacing:-0.02em;font-weight:600">{{ note }}</h3><p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--foreground-2)">This Programme Is Not yet Offered as a Product. We Welcome Conversations With Research Partners and Institutions.</p></div>
           <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ goEnq }}" hint-size="200px,40px">Discuss This Research</x-import>
         </div>
       </sc-if>
@@ -289,11 +289,11 @@
               <sc-for list="{{ miniFrames }}" as="fr" hint-placeholder-count="1"><img src="{{ fr.src }}" alt="" loading="{{ fr.load }}" style="position:absolute;left:50%;top:50%;height:100%;width:auto;max-width:100%;object-fit:contain;transform:translate(-50%,-50%);-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 72%,transparent 100%);opacity:{{ fr.op }};transition:opacity .45s cubic-bezier(.22,1,.36,1)"></sc-for>
               <span class="tnum" style="position:absolute;left:18px;top:16px;padding:4px 10px;border-radius:4px;background:rgba(5,8,14,.82);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground)">View {{ miniFNum }} / {{ miniFTot }}</span>
               <div style="position:absolute;right:14px;top:12px;display:flex;gap:6px">
-                <button type="button" onClick="{{ miniPrev }}" aria-label="Previous view" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:0;border-radius:50%;background:rgba(5,8,14,.82);color:var(--foreground);font:inherit;font-size:16px;cursor:pointer" style-hover="background:#05080e">←</button>
-                <button type="button" onClick="{{ miniNext }}" aria-label="Next view" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:0;border-radius:50%;background:rgba(5,8,14,.82);color:var(--foreground);font:inherit;font-size:16px;cursor:pointer" style-hover="background:#05080e">→</button>
+                <button type="button" onClick="{{ miniPrev }}" aria-label="Previous View" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:0;border-radius:50%;background:rgba(5,8,14,.82);color:var(--foreground);font:inherit;font-size:16px;cursor:pointer" style-hover="background:#05080e">←</button>
+                <button type="button" onClick="{{ miniNext }}" aria-label="Next View" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border:0;border-radius:50%;background:rgba(5,8,14,.82);color:var(--foreground);font:inherit;font-size:16px;cursor:pointer" style-hover="background:#05080e">→</button>
               </div>
             </div>
-            <div role="group" aria-label="Choose a view" style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:0 14px 14px">
+            <div role="group" aria-label="Choose a View" style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;padding:0 14px 14px">
               <sc-for list="{{ miniFrames }}" as="fr" hint-placeholder-count="6"><button type="button" onClick="{{ fr.pick }}" aria-label="View {{ fr.n }}" aria-pressed="{{ fr.sel }}" style="position:relative;aspect-ratio:4/3;padding:0;border:2px solid {{ fr.bd }};border-radius:8px;background:#d1d1d1;overflow:hidden;cursor:pointer;transition:border-color .2s" style-hover="border-color:#05080e"><img src="{{ fr.src }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></button></sc-for>
             </div>
           </div>
@@ -332,7 +332,7 @@
           </div>
         </div>
         <sc-if value="{{ subMultiTrack }}" hint-placeholder-val="{{ false }}">
-        <div role="radiogroup" aria-label="Where it runs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;padding:24px clamp(18px,4vw,32px) 0">
+        <div role="radiogroup" aria-label="Where It Runs" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px;padding:24px clamp(18px,4vw,32px) 0">
           <sc-for list="{{ subTracks }}" as="tk" hint-placeholder-count="2">
             <button type="button" role="radio" aria-checked="{{ tk.on }}" onClick="{{ tk.pick }}" style="display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:14px;padding:16px 18px;border:1px solid {{ tk.bd }};border-radius:12px;background:{{ tk.bg }};color:inherit;font:inherit;text-align:left;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--border-strong)">
               <span aria-hidden="true" style="margin-top:2px;display:flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:50%;border:1px solid {{ tk.dotBd }}"><span style="width:8px;height:8px;border-radius:50%;background:{{ tk.dot }}"></span></span>
@@ -342,10 +342,10 @@
         </div>
         </sc-if>
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:16px clamp(18px,4vw,32px) 0">
-          <div role="group" aria-label="Billing period" style="display:flex;gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
+          <div role="group" aria-label="Billing Period" style="display:flex;gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
             <sc-for list="{{ subPeriods }}" as="pd" hint-placeholder-count="3"><x-import component-from-global-scope="QAIG.Button" variant="{{ pd.variant }}" size="sm" aria-pressed="{{ pd.on }}" onClick="{{ pd.pick }}" hint-size="100px,32px">{{ pd.label }}<sc-if value="{{ pd.hasSave }}" hint-placeholder-val="{{ false }}"><span style="margin-left:6px;font-size:12.5px;color:var(--success)">{{ pd.save }}</span></sc-if></x-import></sc-for>
           </div>
-          <span style="font-size:15px;white-space:nowrap;color:var(--muted)">Prices in INR, before GST</span>
+          <span style="font-size:15px;white-space:nowrap;color:var(--muted)">Prices in INR, Before GST</span>
         </div>
         <div role="radiogroup" aria-label="Plans" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;padding:20px clamp(18px,4vw,32px) 24px">
           <sc-for list="{{ subCards }}" as="pc" hint-placeholder-count="3">
@@ -395,7 +395,7 @@
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 32px;padding:22px clamp(18px,4vw,32px);border-top:1px solid var(--border);background:var(--surface-2)">
           <div style="display:flex;flex-wrap:wrap;gap:16px 36px">
             <div><div style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Selected</div><div style="margin-top:6px;font-size:16px;font-weight:600">{{ subSumPlan }}</div></div>
-            <sc-if value="{{ subHasTrial }}" hint-placeholder-val="{{ false }}"><div><div style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Starts</div><div style="margin-top:6px;font-size:16px">After the 3 free months</div></div></sc-if>
+            <sc-if value="{{ subHasTrial }}" hint-placeholder-val="{{ false }}"><div><div style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Starts</div><div style="margin-top:6px;font-size:16px">After the 3 Free Months</div></div></sc-if>
             <div><div style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Billed</div><div style="margin-top:6px;font-size:16px;font-variant-numeric:tabular-nums;color:var(--foreground-2)">{{ subSumBilled }}</div></div>
           </div>
           <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ subGo }}" hint-size="200px,44px">{{ subCta }}</x-import>
@@ -412,7 +412,7 @@
   <div style="display:grid;grid-template-columns:{{ relCols }};gap:16px">
     <sc-for list="{{ related }}" as="r" hint-placeholder-count="2">
       <a href="{{ r.href }}" style="position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;padding:22px 24px;border:1px solid var(--border-light);border-radius:20px;background:linear-gradient(90deg,rgba(0,212,255,.05),transparent 60%),var(--surface);color:var(--foreground);transition:border-color .25s,transform .25s" style-hover="border-color:var(--brand);transform:translateY(-2px)">
-        <img src="{{ r.logo }}" alt="" style="width:72px;height:72px;object-fit:contain">
+        <img loading="lazy" src="{{ r.logo }}" alt="" style="width:72px;height:72px;object-fit:contain">
         <span style="min-width:0;display:flex;flex-direction:column;gap:6px"><span style="display:flex;align-items:center;gap:8px;font-size:20px;font-weight:600;letter-spacing:-0.015em;white-space:nowrap">{{ r.name }}<sc-if value="{{ r.rnd }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span></sc-if></span><span style="font-size:16px;line-height:1.5;color:var(--muted)">{{ r.line }}</span><span style="margin-top:4px;font-size:16px;font-weight:600;color:var(--brand);white-space:nowrap">Read More →</span></span>
       </a>
     </sc-for>
@@ -451,7 +451,7 @@ class Component extends DCLogic {
   go(href) { if (!href) return; if (href.charAt(0) === "#") { const el = document.getElementById(href.slice(1)); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: this.state.rm ? "auto" : "smooth" }); return; } if (window.QAIG_GO) window.QAIG_GO(href); else location.href = href; }
   initIll() { const cv = this.illRef.current; if (!cv || !window.QAIG_HERO) { this._it = setTimeout(() => this.initIll(), 120); return; } if (this.ill) return; const p = this.prod(); this.ill = window.QAIG_HERO(cv, (p && p.ill) || "", { reduced: this.state.rm }); }
   componentDidMount() {
-    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    let rm = false; try { rm = window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches; } catch (e) {}
     this.setState({ rm, playing: !rm }, () => this.initIll());
     this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR);
     if (!rm) {
@@ -481,20 +481,20 @@ class Component extends DCLogic {
     const inr = (n) => "₹" + Math.round(n).toLocaleString("en-IN"), tracks = sb.tracks || [], ti = Math.min(tracks.length - 1, S.subT || 0), tr = tracks[ti] || { plans: [] };
     const pers = sb.periods || [[30, "Monthly", 1, 0]], per = pers.find((x) => x[0] === S.subP) || pers[0], plans = tr.plans || [], sel = plans.find((x) => x.k === S.subSel) || plans[1] || plans[0] || {};
     const cmp = sb.compare, vals = cmp && cmp.values ? cmp.values[tr.k] : null;
-    const cell = (v, on) => { const bg = on ? "rgba(0,212,255,.05)" : "transparent"; if (v === true) return { yes: true, hasTxt: false, txt: "", al: "Included", color: "var(--foreground)", bg }; if (v === false || v == null) return { yes: false, hasTxt: true, txt: "—", txtHid: "true", al: "Not included", color: "var(--muted)", bg }; return { yes: false, hasTxt: true, txt: String(v), al: String(v), color: "var(--foreground-2)", bg }; };
+    const cell = (v, on) => { const bg = on ? "rgba(0,212,255,.05)" : "transparent"; if (v === true) return { yes: true, hasTxt: false, txt: "", al: "Included", color: "var(--foreground)", bg }; if (v === false || v == null) return { yes: false, hasTxt: true, txt: "—", txtHid: "true", al: "Not Included", color: "var(--muted)", bg }; return { yes: false, hasTxt: true, txt: String(v), al: String(v), color: "var(--foreground-2)", bg }; };
     return {
-      hasSubs: true, subHasTrial: !sb.cloudOnly, subMultiTrack: tracks.length > 1, subNote: sb.note || "You can change plan or move between your Mini and cloud access at the end of any billing period.", subEyebrow: sb.eyebrow, subTitle: sb.title, subLead: sb.lead, subTrackLine: tr.line,
+      hasSubs: true, subHasTrial: !sb.cloudOnly, subMultiTrack: tracks.length > 1, subNote: sb.note || "You Can Change Plan or Move Between Your Mini and Cloud Access at the End of Any Billing Period.", subEyebrow: sb.eyebrow, subTitle: sb.title, subLead: sb.lead, subTrackLine: tr.line,
       goSubs: () => this.go("#subscriptions"),
       subTracks: tracks.map((x, i) => ({ label: x.label, line: x.line, on: i === ti ? "true" : "false", bd: i === ti ? "var(--brand)" : "var(--border)", bg: i === ti ? "var(--surface-2)" : "transparent", dotBd: i === ti ? "var(--brand)" : "var(--border-strong)", dot: i === ti ? "var(--brand)" : "transparent", pick: () => this.setState({ subT: i }) })),
       subPeriods: pers.map(([d, label, m, disc]) => ({ label, on: d === per[0] ? "true" : "false", variant: d === per[0] ? "secondary" : "ghost", hasSave: !!disc, save: disc ? "Save " + Math.round(disc * 100) + "%" : "", pick: () => this.setState({ subP: d }) })),
       subCards: plans.map((x) => { const on = x.k === sel.k, mo = x.price != null ? x.price * (1 - per[3]) : null;
-        return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], hasPrice: mo != null, noPrice: mo == null, price: mo != null ? inr(mo) : "", billed: mo != null ? (per[2] > 1 ? inr(mo * per[2]) + " billed " + per[1].toLowerCase() : "Billed monthly") : "Quoted for your deployment",
+        return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], hasPrice: mo != null, noPrice: mo == null, price: mo != null ? inr(mo) : "", billed: mo != null ? (per[2] > 1 ? inr(mo * per[2]) + " billed " + per[1].toLowerCase() : "Billed Monthly") : "Quoted for Your Deployment",
           on: on ? "true" : "false", isOn: on, border: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--surface)", ring: on ? "0 0 0 3px var(--brand-soft)" : "none", radioBorder: on ? "var(--brand)" : "var(--border-strong)", radioBg: on ? "var(--brand)" : "transparent", pick: () => this.setState({ subSel: x.k }) }; }),
       subHasCmp: !!vals, subCmpOn: !!vals && !!S.subCmp, subCmpExp: S.subCmp ? "true" : "false", subCmpRot: S.subCmp ? "180deg" : "0deg", subCmpLabel: S.subCmp ? "Hide Feature Comparison" : "Compare All Features", subToggleCmp: () => this.setState((s) => ({ subCmp: !s.subCmp })),
-      subCmpAria: "Feature comparison, " + (tr.label || ""), subCmpCols: "minmax(0,2.2fr) repeat(" + plans.length + ",minmax(0,1fr))",
+      subCmpAria: "Feature Comparison, " + (tr.label || ""), subCmpCols: "minmax(0,2.2fr) repeat(" + plans.length + ",minmax(0,1fr))",
       subCmpHead: plans.map((x) => ({ name: x.name, color: x.k === sel.k ? "var(--brand)" : "var(--faint)" })),
       subCmpRows: vals ? (cmp.rows || []).map(([name, desc], ri) => ({ name, desc, cells: plans.map((x) => cell((vals[x.k] || [])[ri], x.k === sel.k)) })) : [],
-      subSumPlan: (sel.name || "") + " · " + per[1], subSumBilled: sel.price != null ? inr(sel.price * (1 - per[3]) * per[2]) + (per[2] > 1 ? " every " + (per[2] === 12 ? "12 months" : per[2] + " months") : " per month") : "Quoted for your deployment",
+      subSumPlan: (sel.name || "") + " · " + per[1], subSumBilled: sel.price != null ? inr(sel.price * (1 - per[3]) * per[2]) + (per[2] > 1 ? " every " + (per[2] === 12 ? "12 months" : per[2] + " months") : " per month") : "Quoted for Your Deployment",
       subCta: sel.price != null ? "Choose " + sel.name : "Discuss " + sel.name,
       subGo: () => this.go(enq + "?product=" + encodeURIComponent(mini.name || "") + "&plan=" + encodeURIComponent((sel.name || "") + " · " + per[1] + " · " + (tr.label || ""))),
     };
@@ -524,7 +524,7 @@ class Component extends DCLogic {
       h1A: this.split2(p.headline)[0], h1B: this.split2(p.headline)[1], ovA: this.split2(p.overviewTitle)[0], ovB: this.split2(p.overviewTitle)[1], modA: this.split2(md.title)[0], modB: this.split2(md.title)[1],
       capMotif: window.QAIG_MOTIF ? window.QAIG_MOTIF(React, ((caps[ci] || [])[0] || "") + " " + ((caps[ci] || [])[1] || ""), S.rm, capKeys[ci]) : null,
       relCols: S.w >= 760 ? "repeat(" + Math.min(2, (p.related || []).length || 1) + ",minmax(0,1fr))" : "minmax(0,1fr)",
-      resLead: this.capN("Video walkthroughs, presentations and technical brochures are shared on request, so we can match the material to your evaluation."),
+      resLead: this.capN("Video Walkthroughs, Presentations and Technical Brochures Are Shared on Request, so We Can Match the Material to Your Evaluation."),
       ctaEyebrow: "Start With " + p.name, ctaA: this.split2(p.finalTitle)[0], ctaB: this.split2(p.finalTitle)[1], ctaText: this.capN(p.finalText),
       ctaOptions: md.type === "pricing" ? ["Plan Details", (md.mini || {}).name || (md.cloud ? "Cloud Access" : "Mini Offering"), "Deployment Options", "Product Demo"] : md.note ? ["Research Collaboration", "Technical Briefing", "Partnership"] : p.stack || md.type === "stack" ? ["Product Demo", "Customisation", "Integration", "Q-Forte Stack"] : ["System Configuration", "Product Demo", "Integration", "Technical Brochure"],
       name: p.name, tag: p.tag, logo: p.logo, isRnd: p.status === "rnd", headline: p.headline, lead: this.capN(p.lead), inStack: !!p.stack, stackHref: (nav.productHref || {})["Q-Forte"] || "Q-Forte.dc.html",
@@ -532,7 +532,7 @@ class Component extends DCLogic {
       crumbAll: R.products || "Products.dc.html", domLabel: dom.label || "", crumbDomHref: nav.domainHref ? nav.domainHref(p.domain || "") : "",
       primaryLabel: (p.primary || {}).label, secondaryLabel: (p.secondary || {}).label,
       goPrimary: () => this.go(to((p.primary || {}).to)), goSecondary: () => this.go(to((p.secondary || {}).to)), goEnq: () => this.go(enqFor()),
-      illRef: this.illRef, illAlt: "Concept illustration for " + p.name + ": " + (p.flow || []).join(", then "),
+      illRef: this.illRef, illAlt: "Concept Illustration For " + p.name + ": " + (p.flow || []).join(", then "),
       heroCols: stacked ? "minmax(0,1fr)" : "minmax(0,5fr) minmax(0,6fr)", heroTextCols: hero === "stacked" && desk ? "minmax(0,1.1fr) minmax(0,1fr)" : "minmax(0,1fr)",
       textOrder: hero === "reverse" && desk ? 1 : 0, figOrder: hero === "reverse" && desk ? 0 : 1, heroGlowX: hero === "reverse" ? "25%" : "75%",
       illH: hero === "stacked" && desk ? "420px" : desk ? "clamp(380px, calc(100vh - 340px), 500px)" : mob ? "320px" : "400px",
@@ -575,13 +575,13 @@ class Component extends DCLogic {
       ...this.subVals(md.mini || (md.cloud ? { subs: md.cloud, name: p.name } : null), enq),
       hasMini: !!md.mini, miniName: (md.mini || {}).name, miniLine: this.capN((md.mini || {}).line), miniPoints: (md.mini || {}).points || [], miniPhoto: (md.mini || {}).photo, miniCta: (md.mini || {}).cta,
       hasMiniPhoto: ((md.mini || {}).photos || []).length > 0, ...(() => { const ph = (md.mini || {}).photos || [], n = ph.length, cur = Math.min(n - 1, Math.max(0, S.miniF || 0)), set = (k) => this.setState({ miniF: (k + n) % n }); return { miniFrames: ph.map((src, i) => ({ src, n: String(i + 1).padStart(2, "0"), op: i === cur ? 1 : 0, load: i === 0 ? "eager" : "lazy", sel: i === cur ? "true" : "false", bd: i === cur ? "var(--brand)" : "transparent", pick: () => set(i) })), miniFNum: String(cur + 1).padStart(2, "0"), miniFTot: String(n).padStart(2, "0"), miniPrev: () => set(cur - 1), miniNext: () => set(cur + 1), miniStageH: S.w >= 1024 ? "460px" : S.w >= 640 ? "380px" : "260px" }; })(), miniBadge: "Hardware Unit", miniKicker: (md.mini || {}).kicker || "", miniAlt: (md.mini || {}).photoAlt || ((md.mini || {}).name + " hardware"), miniBest: (md.mini || {}).bestFor || [], miniFeatures: (md.mini || {}).features || (md.mini || {}).points || [], miniPrice: (md.mini || {}).price || "Contact Us for Pricing", miniPriceNote: (md.mini || {}).priceNote || "", miniStepCols: S.w >= 560 ? "repeat(3,minmax(0,1fr))" : "minmax(0,1fr)",
-      miniSteps: [["01", "Buy the " + ((md.mini || {}).name || "Mini") + " Hardware"], ["02", "Software Included Free for " + Math.round(((md.mini || {}).trialDays || 90) / 30) + " Months"], ["03", "Then Choose a Monthly Plan"]].map(([n, t], i) => ({ n, t, c: i === 1 ? "var(--brand)" : "var(--faint)" })),
+      miniSteps: [["01", "Buy The " + ((md.mini || {}).name || "Mini") + " Hardware"], ["02", "Software Included Free For " + Math.round(((md.mini || {}).trialDays || 90) / 30) + " Months"], ["03", "Then Choose a Monthly Plan"]].map(([n, t], i) => ({ n, t, c: i === 1 ? "var(--brand)" : "var(--faint)" })),
       goMini: () => this.go(enq + "?product=" + encodeURIComponent(p.name) + "&plan=" + encodeURIComponent((md.mini || {}).name || "")), miniCols: desk ? "minmax(0,6fr) minmax(0,5fr)" : "minmax(0,1fr)", miniImgH: desk ? "100%" : "260px",
       hasRel: (p.related || []).length > 0, finalCols: desk && (p.related || []).length ? "minmax(0,1fr) minmax(0,1fr)" : "minmax(0,1fr)",
       related: (p.related || []).map((r) => { const it = find(r[0]); return { name: r[0], line: this.capN(r[1]), rnd: !!it.rnd, logo: iconOf(r[0]), href: nav.productPageHref ? nav.productPageHref(r[0]) : "#" }; }),
       finalTitle: p.finalTitle, finalText: p.finalText, finalCta: p.finalCta,
       resCols: S.w >= 900 ? "repeat(3,minmax(0,1fr))" : S.w >= 600 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)",
-      resources: [["Video", "Product Video", "A short Walkthrough of " + p.name + " and what it does."], ["Deck", "Product Presentation", "An overview deck to share with your team."], ["PDF", "Technical Brochure", "Detailed Information for technical Evaluation."]].map((r, i) => ({ kind: r[0], title: r[1], line: r[2], art: this.resArt(i, S.rm), href: enqFor("resource=" + encodeURIComponent(r[1])) }))
+      resources: [["Video", "Product Video", "A Short Walkthrough Of " + p.name + " and what it does."], ["Deck", "Product Presentation", "An Overview Deck to Share With Your Team."], ["PDF", "Technical Brochure", "Detailed Information for Technical Evaluation."]].map((r, i) => ({ kind: r[0], title: r[1], line: r[2], art: this.resArt(i, S.rm), href: enqFor("resource=" + encodeURIComponent(r[1])) }))
     };
   }
 }

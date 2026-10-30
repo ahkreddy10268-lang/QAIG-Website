@@ -25,7 +25,7 @@
   <div class="section-shell" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(40px,6vw,80px);padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(48px,6vw,96px)">
     <div style="flex:1.1 1 440px;min-width:0;display:flex;flex-direction:column;gap:24px">
       <h1 style="margin:0;max-width:14ch;font-size:clamp(2.6rem,1.4rem + 4vw,4.75rem);line-height:1;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Original Research, <span style="color:var(--brand)">Protected.</span></h1>
-      <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Fifteen inventions filed across quantum communication, memory, sensing, lasers and computation. Three hold certificates from the Patent Office, Government of India.</p>
+      <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Fifteen Inventions Filed Across Quantum Communication, Memory, Sensing, Lasers and Computation. Three Hold Certificates From the Patent Office, Government of India.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
         <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toPatents }}" hint-size="170px,44px">View Certificates</x-import>
         <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ toPortfolio }}" hint-size="170px,44px">Full Portfolio</x-import>
@@ -85,9 +85,9 @@
     <header data-ipr="" style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 48px">
       <div style="flex:1 1 420px;display:flex;flex-direction:column;gap:14px">
         <span class="eyebrow">Complete Portfolio</span>
-        <h2 style="margin:0;font-size:var(--text-h2);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Every Filing, <span style="color:var(--brand)">in One Register.</span></h2>
+        <h2 style="margin:0;font-size:var(--text-h2);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Every Filing, <span style="color:var(--brand)">In One Register.</span></h2>
       </div>
-      <div role="group" aria-label="Filter by status" style="display:flex;flex-wrap:wrap;gap:6px">
+      <div role="group" aria-label="Filter by Status" style="display:flex;flex-wrap:wrap;gap:6px">
         <sc-for list="{{ filters }}" as="f" hint-placeholder-count="3"><x-import component-from-global-scope="QAIG.Button" variant="{{ f.variant }}" size="sm" onClick="{{ f.pick }}" aria-pressed="{{ f.on }}" hint-size="120px,32px">{{ f.label }}</x-import></sc-for>
       </div>
     </header>
@@ -110,7 +110,7 @@
     <div style="flex:1 1 480px;display:flex;flex-direction:column;gap:16px">
       <span class="eyebrow">From Filing to Product</span>
       <h2 style="margin:0;max-width:22ch;font-size:var(--text-h2);line-height:1.05;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">The Same Work Behind Our <span style="color:var(--brand)">Products and Research.</span></h2>
-      <p style="margin:0;max-width:56ch;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">These inventions come from the engineering behind our 13 products and from the research our teams publish.</p>
+      <p style="margin:0;max-width:56ch;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">These Inventions Come From the Engineering Behind Our 13 Products and From the Research Our Teams Publish.</p>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:12px">
       <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ toProducts }}" hint-size="170px,44px">Browse Products</x-import>
@@ -128,14 +128,14 @@
     <div ref="{{ dlgRef }}" role="dialog" aria-modal="true" aria-labelledby="ipdlg-t" tabindex="-1" onClick="{{ stop }}" onKeyDown="{{ trap }}" style="width:100%;max-width:880px;max-height:100%;display:flex;flex-direction:column;border:1px solid var(--border-light);border-radius:16px;background:var(--surface);box-shadow:var(--shadow-lg);overflow:hidden;outline:none;transform:translateY({{ mY }}) scale({{ mSc }});transition:transform .35s cubic-bezier(.16,1,.3,1)">
       <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:18px 20px;border-bottom:1px solid var(--border)">
         <div style="display:flex;flex-direction:column;gap:6px;min-width:0"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">IP {{ m.n }} · {{ m.kind }}</span><h2 id="ipdlg-t" style="margin:0;font-size:1.2rem;line-height:1.3;font-weight:600">{{ m.title }}</h2></div>
-        <x-import component-from-global-scope="QAIG.Button" variant="ghost" size="icon-sm" onClick="{{ close }}" aria-label="Close certificate" hint-size="32px,32px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></x-import>
+        <x-import component-from-global-scope="QAIG.Button" variant="ghost" size="icon-sm" onClick="{{ close }}" aria-label="Close Certificate" hint-size="32px,32px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></x-import>
       </div>
       <div style="flex:1;min-height:0;background:var(--surface-2)">
         <sc-if value="{{ m.hasImg }}" hint-placeholder-val="{{ false }}"><div style="height:min(74vh,980px);overflow:auto;display:flex;justify-content:center;padding:16px">{{ m.imgEl }}</div></sc-if>
         <sc-if value="{{ m.noImg }}" hint-placeholder-val="{{ false }}">
           <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:min(56vh,520px);padding:32px;text-align:center">
             <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Certificate Not Yet Added</span>
-            <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--muted)">The certificate for this patent will appear here once the source PDF is added to the site.</p>
+            <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--muted)">The Certificate for This Patent Will Appear Here Once the Source PDF Is Added to the Site.</p>
           </div>
         </sc-if>
       </div>
@@ -157,7 +157,7 @@ class Component extends DCLogic {
   go(h) { if (!h || h === "#") return; if (window.QAIG_GO) window.QAIG_GO(h); else window.location.href = h; }
   scrollTo(id) { const el = document.getElementById(id); if (!el) return; window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 85, behavior: this.state.rm ? "auto" : "smooth" }); }
   componentDidMount() {
-    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    let rm = false; try { rm = window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches; } catch (e) {}
     this.setState({ rm });
     this.onR = () => this.setState({ w: window.innerWidth }); window.addEventListener("resize", this.onR);
     this.onK = (ev) => { if (ev.key === "Escape" && this.state.modal) this.close(); }; window.addEventListener("keydown", this.onK);
@@ -209,7 +209,7 @@ class Component extends DCLogic {
     const patents = granted.map((x, i) => { const id = "pt" + x.n, a = S.hov === id, c = certOf(x); return { n: pad(x.n), title: x.title, ...hv(id), line: a ? 1 : 0, bd: a ? "color-mix(in srgb, var(--brand) 45%, var(--border))" : "var(--border)", shadow: a ? "var(--shadow-md)" : "none", numC: a ? "var(--brand)" : "var(--faint)", lift: a && !rm ? "-4px" : "0px", sc: a && !rm ? 1.02 : 1,
       hasCert: !!c.img, noCert: !c.img, certImg: c.img || "", certEl: c.img ? React.createElement("img", { src: c.img, alt: "Certificate for " + x.title, loading: "lazy", width: c.w, height: c.h, style: { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain", objectPosition: "50% 50%", background: "var(--surface-2)", transform: "scale(" + (a && !rm ? 1.02 : 1) + ")", transition: "transform .9s cubic-bezier(.16,1,.3,1)" } }) : null, certAlt: "Patent certificate for " + x.title,
       rows: (c.rows || [["Certificate", "Awaiting PDF"]]).filter((r) => r[0] !== "Patentee" && r[0] !== "Proprietor").map(([k, v]) => ({ k, v })), badge: x.badge || x.status, kind: c.kind || "Certificate",
-      viewAria: "View certificate for " + x.title, open: (ev) => this.open(x.n, ev && ev.currentTarget) }; });
+      viewAria: "View Certificate For " + x.title, open: (ev) => this.open(x.n, ev && ev.currentTarget) }; });
     const fdefs = [["All", "All", ips.length], ["Patent Granted", "Certified", granted.length], ["Filed", "Filed", ips.length - granted.length]];
     const filters = fdefs.map(([k, label, n]) => ({ label: label + " · " + pad(n), on: String(S.f === k), variant: S.f === k ? "secondary" : "outline", pick: () => this.setState({ f: k }) }));
     const vis = ips.filter((x) => S.f === "All" || x.status === S.f);

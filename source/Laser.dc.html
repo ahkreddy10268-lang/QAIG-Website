@@ -28,12 +28,12 @@
     <div style="display:flex;flex-direction:column;gap:26px;max-width:480px;pointer-events:auto">
       <div style="display:flex;flex-wrap:wrap;gap:10px 24px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span style="color:var(--brand)">● Quantum Lasers</span><span>Precision Laser Systems</span><span>6 Products</span></div>
       <h1 style="margin:0;font-size:clamp(2.6rem,1.4rem + 4vw,4.6rem);line-height:1;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Light Engineered for <span style="color:var(--brand)">Quantum Precision.</span></h1>
-      <p style="margin:0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">Our precision laser systems are a complete family of narrow-linewidth laser sources, controllers and supporting instruments built for quantum science, atomic physics, spectroscopy and photonics.</p>
+      <p style="margin:0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">Our Precision Laser Systems Are a Complete Family of Narrow-Linewidth Laser Sources, Controllers and Supporting Instruments Built for Quantum Science, Atomic Physics, Spectroscopy and Photonics.</p>
       <div style="display:flex;flex-wrap:wrap;gap:12px"><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_toExplorer }}" hint-size="200px,44px">Explore Laser Systems</x-import><x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ l_toEnquiry }}" hint-size="230px,44px">Discuss Your Requirements</x-import></div>
       <div style="display:flex;flex-direction:column;gap:10px;max-width:400px;padding-top:6px;border-top:1px solid var(--border)">
         <label for="lz-range" style="display:flex;justify-content:space-between;gap:12px;padding-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)"><span>Tune Across the Portfolio</span><output id="lz-out" for="lz-range" style="color:var(--brand)">780 nm</output></label>
         <input id="lz-range" type="range" min="380" max="1600" step="1" defaultValue="780" onInput="{{ l_range }}" aria-describedby="lz-range-note" style="width:100%;accent-color:var(--brand);cursor:pointer">
-        <span id="lz-range-note" style="font-size:16px;line-height:1.5;color:var(--muted)">Illustrative map of the documented wavelength ranges. Move across the figure or use the slider.</span>
+        <span id="lz-range-note" style="font-size:16px;line-height:1.5;color:var(--muted)">Illustrative Map of the Documented Wavelength Ranges. Move Across the Figure or Use the Slider.</span>
       </div>
     </div>
   </div>
@@ -41,15 +41,15 @@
 
 <section class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
   <div style="display:grid;grid-template-columns:{{ l_introCols }};gap:24px clamp(32px,6vw,96px);padding-bottom:8px">
-    <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Precision Laser Systems</span><p style="margin:16px 0 0;font-size:clamp(1.35rem,1rem + 1.1vw,2rem);line-height:1.3;letter-spacing:-0.02em;font-weight:500;color:var(--foreground);text-wrap:pretty">The range spans external cavity diode lasers covering a broad wavelength span and built to order for your experiment, ready-to-use plug-and-play diode lasers at popular fixed wavelengths and the electronics needed to drive and stabilize them.</p></div>
-    <div style="display:flex;flex-direction:column;gap:16px;padding-top:30px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Every laser is available in a free-space or fibre-coupled version, so it can be integrated directly into an optical setup or delivered cleanly to a remote experiment.</p><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Designed and tested in-house, each system combines stable, reliable performance with a compact footprint and straightforward day-to-day operation.</p></div>
+    <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Precision Laser Systems</span><p style="margin:16px 0 0;font-size:clamp(1.35rem,1rem + 1.1vw,2rem);line-height:1.3;letter-spacing:-0.02em;font-weight:500;color:var(--foreground);text-wrap:pretty">The Range Spans External Cavity Diode Lasers Covering a Broad Wavelength Span and Built to Order for Your Experiment, Ready-To-Use Plug-And-Play Diode Lasers at Popular Fixed Wavelengths and the Electronics Needed to Drive and Stabilize Them.</p></div>
+    <div style="display:flex;flex-direction:column;gap:16px;padding-top:30px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Every Laser Is Available in a Free-Space or Fibre-Coupled Version, so It Can Be Integrated Directly Into an Optical Setup or Delivered Cleanly to a Remote Experiment.</p><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Designed and Tested In-House, Each System Combines Stable, Reliable Performance With a Compact Footprint and Straightforward Day-To-Day Operation.</p></div>
   </div>
 </section>
 
 <section id="lz-explorer" data-screen-label="Product explorer" class="section-shell" style="scroll-margin-top:110px;padding-top:clamp(72px,9vw,128px)">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Product Explorer</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Explore Our <span style="color:var(--brand)">Precision Laser Systems.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Filter by group or by a documented wavelength. Every card opens the full product page.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Product Explorer</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Explore Our <span style="color:var(--brand)">Precision Laser Systems.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Filter by Group or by a Documented Wavelength. Every Card Opens the Full Product Page.</p></div>
   <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px">
-    <div role="tablist" aria-label="Product groups" style="display:flex;flex-wrap:wrap;gap:0 4px;border-bottom:1px solid var(--border)">
+    <div role="tablist" aria-label="Product Groups" style="display:flex;flex-wrap:wrap;gap:0 4px;border-bottom:1px solid var(--border)">
       <sc-for list="{{ l_cats }}" as="t" hint-placeholder-count="4">
         <button role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="position:relative;flex:none;display:flex;align-items:center;gap:10px;min-height:52px;padding:0 16px 0 2px;margin-right:12px;border:0;background:none;color:{{ t.color }};font:inherit;font-size:16.5px;font-weight:500;cursor:pointer;transition:color .2s" style-hover="color:var(--foreground)">{{ t.label }}<span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;color:{{ t.nC }}">{{ t.n }}</span><span aria-hidden="true" style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--brand);box-shadow:0 0 10px var(--brand);transform-origin:left;transform:scaleX({{ t.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span></button>
       </sc-for>
@@ -60,9 +60,9 @@
         <button aria-pressed="{{ o.on }}" onClick="{{ o.pick }}" style="min-height:36px;padding:0 14px;border:1px solid {{ o.bd }};border-radius:999px;background:{{ o.bg }};color:{{ o.color }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.04em;cursor:pointer;transition:all .25s">{{ o.label }}</button>
       </sc-for>
     </div>
-    <sc-if value="{{ l_ctrlHidden }}" hint-placeholder-val="{{ false }}"><p role="status" style="margin:0;font-size:16px;color:var(--foreground-2)">ApeX-Ctrl and the digital locking module have no documented wavelength, so they are hidden while a wavelength is selected. The compact spectrometer is listed by its measurement range.</p></sc-if>
+    <sc-if value="{{ l_ctrlHidden }}" hint-placeholder-val="{{ false }}"><p role="status" style="margin:0;font-size:16px;color:var(--foreground-2)">ApeX-Ctrl and the Digital Locking Module Have No Documented Wavelength, so They Are Hidden While a Wavelength Is Selected. The Compact Spectrometer Is Listed by Its Measurement Range.</p></sc-if>
   </div>
-  <sc-if value="{{ l_noCards }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)"><span style="font-size:16.5px;color:var(--foreground-2)">No product in this group lists that wavelength.</span><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ l_resetFilters }}" hint-size="120px,32px">Clear Filters</x-import></div></sc-if>
+  <sc-if value="{{ l_noCards }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)"><span style="font-size:16.5px;color:var(--foreground-2)">No Product in This Group Lists That Wavelength.</span><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ l_resetFilters }}" hint-size="120px,32px">Clear Filters</x-import></div></sc-if>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:20px">
     <sc-for list="{{ l_cards }}" as="c" hint-placeholder-count="6">
       <article style="position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid var(--border);border-radius:16px;background:var(--surface);overflow:hidden;transition:border-color .3s,transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s" style-hover="border-color:var(--border-light);transform:translateY(-3px);box-shadow:var(--shadow-md)">
@@ -91,11 +91,11 @@
 <section data-screen-label="Featured sources" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Featured · Laser Sources</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Tunable, Rubidium-Ready, or <span style="color:var(--brand)">Ready to Switch On.</span></h2></div><span></span></div>
   <article style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--border-light)">
-    <a href="#/ecdl" aria-label="Tunable external cavity diode lasers (ECDL) details" style="position:relative;display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#020713"><span style="position:absolute;inset:0;background:URL('{{ l_ecdlImg }}') 82% 50%/cover no-repeat;transition:transform 1.2s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.04)"></span><span style="position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:13.5px;color:var(--foreground-2)">Temporary Image</span></a>
+    <a href="#/ecdl" aria-label="Tunable External Cavity Diode Lasers (ECDL) Details" style="position:relative;display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#020713"><span style="position:absolute;inset:0;background:URL('{{ l_ecdlImg }}') 82% 50%/cover no-repeat;transition:transform 1.2s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.04)"></span><span style="position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:13.5px;color:var(--foreground-2)">Temporary Image</span></a>
     <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
       <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">01 · Laser Sources</span>
       <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600;text-wrap:balance">Tunable External Cavity Diode Lasers (ECDL)</h3>
-      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Tunable, narrow linewidth laser source, designed around your experiment.</p>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Tunable, Narrow Linewidth Laser Source, Designed Around Your Experiment.</p>
       <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_ecdlSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
       <div style="display:flex;flex-wrap:wrap;gap:4px 24px"><a href="#/ecdl" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
     </div>
@@ -104,19 +104,19 @@
     <div style="display:flex;flex-direction:column;gap:18px;min-width:0;order:{{ l_featOrder }}">
       <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">02 · Laser Sources</span>
       <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600">ApeX-Pro</h3>
-      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Tunable laser system for the rubidium D1 and D2 transitions, based on our ECDL platform.</p>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Tunable Laser System for the Rubidium D1 and D2 Transitions, Based on Our ECDL Platform.</p>
       <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_apexSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
       <div><a href="#/apex-pro" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
     </div>
-    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figApex }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 02 · Rubidium D1 and D2 within the documented range · illustrative</figcaption></figure>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figApex }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 02 · Rubidium D1 and D2 Within the Documented Range · Illustrative</figcaption></figure>
   </article>
   <article style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)">
-    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figTk }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 03 · Four fixed wavelengths · choose one to follow the beam</figcaption></figure>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figTk }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 03 · Four Fixed Wavelengths · Choose One to Follow the Beam</figcaption></figure>
     <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
       <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">03 · Laser Sources</span>
       <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600">Turnkey Diode Lasers</h3>
-      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Fixed-wavelength diode lasers, supplied aligned and ready to operate.</p>
-      <div role="radiogroup" aria-label="Turnkey wavelength" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)">
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Fixed-Wavelength Diode Lasers, Supplied Aligned and Ready to Operate.</p>
+      <div role="radiogroup" aria-label="Turnkey Wavelength" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)">
         <sc-for list="{{ l_tkOpts }}" as="k" hint-placeholder-count="4">
           <button role="radio" aria-checked="{{ k.on }}" onClick="{{ k.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:76px;padding:14px 10px 14px 0;border:0;background:none;color:{{ k.color }};font:inherit;text-align:left;cursor:pointer;transition:color .25s" style-hover="color:var(--foreground)"><span class="tnum" style="font-size:clamp(1.4rem,1rem + 1.2vw,2rem);line-height:1;letter-spacing:-0.03em;font-weight:600">{{ k.v }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ k.uC }}">nm</span><span aria-hidden="true" style="position:absolute;left:0;right:10px;top:-1px;height:2px;background:var(--brand);box-shadow:0 0 10px var(--brand);transform-origin:left;transform:scaleX({{ k.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span></button>
         </sc-for>
@@ -129,32 +129,32 @@
 </section>
 
 <section data-screen-label="Control and stabilization" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Control &amp; Stabilization</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Drive It, Then <span style="color:var(--brand)">Hold It on Frequency.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">ApeX-Ctrl drives and controls the laser. The digital locking module is an optional add-on for ApeX-Ctrl, used when the frequency must be stabilized to an atomic or cavity reference.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Control &amp; Stabilization</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Drive It, Then <span style="color:var(--brand)">Hold It on Frequency.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">ApeX-Ctrl Drives and Controls the Laser. The Digital Locking Module Is an Optional Add-On for ApeX-Ctrl, Used When the Frequency Must Be Stabilized to an Atomic or Cavity Reference.</p></div>
   <div style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center">
-    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figCtrl }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 04 · Conceptual relationship diagram · not a connector layout</figcaption></figure>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figCtrl }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 04 · Conceptual Relationship Diagram · Not a Connector Layout</figcaption></figure>
     <div style="display:flex;flex-direction:column;border-top:1px solid var(--border-light)">
-      <a href="#/apex-ctrl" style="display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding-top:5px">04</span><span><span style="display:block;font-size:20px;font-weight:600">ApeX-Ctrl</span><span style="display:block;margin-top:8px;font-size:16.5px;line-height:1.55;color:var(--muted)">Laser controller combining a low-noise current driver, temperature controller and piezo driver in one unit.</span></span><span aria-hidden="true" style="padding-top:4px">→</span></a>
-      <a href="#/digital-locking-module" style="display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding-top:5px">05</span><span><span style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:20px;font-weight:600">Digital Locking Module<x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="110px,20px">Optional Add-On</x-import></span><span style="display:block;margin-top:8px;font-size:16.5px;line-height:1.55;color:var(--muted)">Optional digital locking module for ApeX-Ctrl, for frequency stabilization to an atomic or cavity reference. Not sold separately.</span></span><span aria-hidden="true" style="padding-top:4px">→</span></a>
+      <a href="#/apex-ctrl" style="display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding-top:5px">04</span><span><span style="display:block;font-size:20px;font-weight:600">ApeX-Ctrl</span><span style="display:block;margin-top:8px;font-size:16.5px;line-height:1.55;color:var(--muted)">Laser Controller Combining a Low-Noise Current Driver, Temperature Controller and Piezo Driver in One Unit.</span></span><span aria-hidden="true" style="padding-top:4px">→</span></a>
+      <a href="#/digital-locking-module" style="display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:14px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border);color:var(--foreground)" style-hover="color:var(--brand)"><span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding-top:5px">05</span><span><span style="display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-size:20px;font-weight:600">Digital Locking Module<x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="110px,20px">Optional Add-On</x-import></span><span style="display:block;margin-top:8px;font-size:16.5px;line-height:1.55;color:var(--muted)">Optional Digital Locking Module for ApeX-Ctrl, for Frequency Stabilization to an Atomic or Cavity Reference. Not Sold Separately.</span></span><span aria-hidden="true" style="padding-top:4px">→</span></a>
     </div>
   </div>
 </section>
 
 <section data-screen-label="Measurement" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Measurement &amp; Accessories</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Verify the Wavelength <span style="color:var(--brand)">You Are Working At.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">The following modules and instruments extend our laser systems into complete, frequency-stabilised setups. Each can be ordered with a new laser system or added to an existing one.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Measurement &amp; Accessories</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Verify the Wavelength <span style="color:var(--brand)">You Are Working At.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">The Following Modules and Instruments Extend Our Laser Systems Into Complete, Frequency-Stabilised Setups. Each Can Be Ordered With a New Laser System or Added to an Existing One.</p></div>
   <div style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center">
     <div style="display:flex;flex-direction:column;gap:18px;min-width:0;order:{{ l_featOrder }}">
       <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">06 · Measurement &amp; Accessories</span>
       <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600">Compact Spectrometer</h3>
-      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Compact spectrometer for verifying and monitoring laser emission wavelengths.</p>
+      <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Compact Spectrometer for Verifying and Monitoring Laser Emission Wavelengths.</p>
       <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_specSpecs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:16px 18px 16px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl>
       <div><a href="#/compact-spectrometer" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">View Details <span aria-hidden="true">→</span></a></div>
     </div>
-    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figSpec }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 06 · Input, instrument and readout · illustrative, no measured data</figcaption></figure>
+    <figure data-diagram="true" style="position:relative;margin:0;min-width:0"><div aria-hidden="true" style="position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 9%, transparent),transparent);pointer-events:none"></div><div style="position:relative">{{ l_figSpec }}</div><figcaption style="position:relative;margin-top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. 06 · Input, Instrument and Readout · Illustrative, No Measured Data</figcaption></figure>
   </div>
 </section>
 
 <section data-screen-label="Applications" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Applications</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Where Each System <span style="color:var(--brand)">Is Used.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Each application is listed against the product it is documented for.</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Applications</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Where Each System <span style="color:var(--brand)">Is Used.</span></h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Each Application Is Listed Against the Product It Is Documented For.</p></div>
   <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));column-gap:40px;border-top:1px solid var(--border-light)">
     <sc-for list="{{ l_apps }}" as="a" hint-placeholder-count="9">
       <li style="border-bottom:1px solid var(--border)"><a href="{{ a.href }}" style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;min-height:56px;padding:16px 0;color:var(--foreground)" style-hover="color:var(--brand)"><span style="font-size:16px;line-height:1.4">{{ a.app }}</span><span style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--foreground-2)">{{ a.prod }} →</span></a></li>
@@ -166,11 +166,11 @@
   <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px 64px;align-items:end;padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--border-light)">
     <span aria-hidden="true" style="position:absolute;left:0;top:-1px;width:120px;height:2px;background:var(--brand);box-shadow:0 0 12px var(--brand)"></span>
     <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Technical Enquiry</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Let’s Configure a System Around <span style="color:var(--brand)">Your Requirements.</span></h2></div>
-    <div style="display:flex;flex-direction:column;gap:20px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Contact us to discuss your wavelength, power and integration requirements, and we will configure a system around them.</p><div><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_toEnquiry }}" hint-size="230px,44px">Discuss Your Requirements</x-import></div></div>
+    <div style="display:flex;flex-direction:column;gap:20px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">Contact Us to Discuss Your Wavelength, Power and Integration Requirements, and We Will Configure a System Around Them.</p><div><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_toEnquiry }}" hint-size="230px,44px">Discuss Your Requirements</x-import></div></div>
   </div>
 </section>
 <section data-screen-label="Resources" class="section-shell" style="padding-bottom:clamp(56px,7vw,96px)">
-  <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px"><h2 style="margin:0;font-family:var(--font-mono);font-size:13.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Resources &amp; Further Reading</h2><span style="font-size:15px;color:var(--muted)">Available on request</span></div>
+  <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px"><h2 style="margin:0;font-family:var(--font-mono);font-size:13.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Resources &amp; Further Reading</h2><span style="font-size:15px;color:var(--muted)">Available on Request</span></div>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:12px">
     <sc-for list="{{ l_res }}" as="rs" hint-placeholder-count="3">
       <a href="{{ rs.href }}" style="display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid var(--border);border-radius:14px;background:var(--surface);color:var(--foreground);transition:border-color .25s" style-hover="border-color:var(--border-light)">
@@ -208,7 +208,7 @@
   </div>
 </section>
 <section data-screen-label="Specifications" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Specification Highlights</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.short }} at a Glance.</h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.note }}</p></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Specification Highlights</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.short }} At a Glance.</h2></div><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.note }}</p></div>
   <sc-if value="{{ l_d.hasSpecs }}" hint-placeholder-val="{{ true }}"><dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));border-top:1px solid var(--border-light)"><sc-for list="{{ l_d.specs }}" as="s" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:10px;padding:24px 24px 24px 0;border-bottom:1px solid var(--border)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ s.k }}</dt><dd style="margin:0;font-size:clamp(1.35rem,1rem + 1vw,2rem);line-height:1.2;letter-spacing:-0.02em;font-weight:600;color:var(--foreground)">{{ s.v }}</dd></div></sc-for></dl></sc-if>
   <sc-if value="{{ l_d.hasGroups }}" hint-placeholder-val="{{ false }}">
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));border-top:1px solid var(--border-light)">
@@ -222,7 +222,7 @@
       <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Product Description</span>
       <h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.conceptTitle }}</h2>
       <p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.desc }}</p>
-      <sc-if value="{{ l_d.isTk }}" hint-placeholder-val="{{ false }}"><div role="radiogroup" aria-label="Turnkey wavelength" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)">
+      <sc-if value="{{ l_d.isTk }}" hint-placeholder-val="{{ false }}"><div role="radiogroup" aria-label="Turnkey Wavelength" style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)">
         <sc-for list="{{ l_tkOpts }}" as="k" hint-placeholder-count="4">
           <button role="radio" aria-checked="{{ k.on }}" onClick="{{ k.pick }}" style="position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-height:76px;padding:14px 10px 14px 0;border:0;background:none;color:{{ k.color }};font:inherit;text-align:left;cursor:pointer;transition:color .25s" style-hover="color:var(--foreground)"><span class="tnum" style="font-size:clamp(1.4rem,1rem + 1.2vw,2rem);line-height:1;letter-spacing:-0.03em;font-weight:600">{{ k.v }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:{{ k.uC }}">nm</span><span aria-hidden="true" style="position:absolute;left:0;right:10px;top:-1px;height:2px;background:var(--brand);box-shadow:0 0 10px var(--brand);transform-origin:left;transform:scaleX({{ k.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span></button>
         </sc-for>
@@ -259,13 +259,13 @@
       </sc-for>
     </div>
   </sc-if>
-  <sc-if value="{{ l_d.noRel }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)"><span style="max-width:52ch;font-size:16.5px;line-height:1.55;color:var(--muted)">No direct product relationship is documented for {{ l_d.short }}.</span><a href="#/" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">Explore the Quantum Lasers Portfolio <span aria-hidden="true">→</span></a></div></sc-if>
+  <sc-if value="{{ l_d.noRel }}" hint-placeholder-val="{{ false }}"><div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:28px 0;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border)"><span style="max-width:52ch;font-size:16.5px;line-height:1.55;color:var(--muted)">No Direct Product Relationship Is Documented for {{ l_d.short }}.</span><a href="#/" style="display:inline-flex;align-items:center;gap:10px;min-height:44px;font-size:16.5px;font-weight:600">Explore the Quantum Lasers Portfolio <span aria-hidden="true">→</span></a></div></sc-if>
 </section>
 <section data-screen-label="Product enquiry" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
   <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:24px 64px;align-items:end;padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--border-light)">
     <span aria-hidden="true" style="position:absolute;left:0;top:-1px;width:120px;height:2px;background:var(--brand);box-shadow:0 0 12px var(--brand)"></span>
     <div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Technical Enquiry</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">{{ l_d.cta }}</h2></div>
-    <div style="display:flex;flex-direction:column;gap:20px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.note }} We’ll start the enquiry with {{ l_d.short }} already noted.</p><div><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_d.enquire }}" hint-size="250px,44px">{{ l_d.cta }}</x-import></div></div>
+    <div style="display:flex;flex-direction:column;gap:20px"><p style="margin:0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">{{ l_d.note }} We’ll Start the Enquiry With {{ l_d.short }} Already Noted.</p><div><x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ l_d.enquire }}" hint-size="250px,44px">{{ l_d.cta }}</x-import></div></div>
   </div>
 </section>
 <nav aria-label="Portfolio" class="section-shell" style="padding-top:clamp(56px,7vw,96px);padding-bottom:clamp(64px,8vw,112px)">
@@ -280,7 +280,7 @@
 <section data-screen-label="Not found" class="section-shell" style="padding-top:clamp(72px,9vw,128px);padding-bottom:clamp(72px,9vw,128px)">
   <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Quantum Lasers · Page Not Found</span>
   <h1 style="margin:16px 0 0;max-width:18ch;font-size:clamp(2.2rem,1.3rem + 3vw,3.6rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600">We Couldn’t Find That Laser Product.</h1>
-  <p style="margin:18px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">The link may be out of date. These are the six products in the laser portfolio.</p>
+  <p style="margin:18px 0 0;max-width:52ch;font-size:16px;line-height:1.65;color:var(--muted);text-wrap:pretty">The Link May Be Out of Date. These Are the Six Products in the Laser Portfolio.</p>
   <ul style="list-style:none;margin:32px 0 0;padding:0;max-width:720px;border-top:1px solid var(--border-light)"><sc-for list="{{ l_allLinks }}" as="x" hint-placeholder-count="6"><li style="border-bottom:1px solid var(--border)"><a href="{{ x.href }}" style="display:flex;justify-content:space-between;gap:16px;min-height:52px;align-items:center;color:var(--foreground)" style-hover="color:var(--brand)"><span>{{ x.name }}</span><span aria-hidden="true">→</span></a></li></sc-for></ul>
   <div style="margin-top:28px"><x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ l_toOverview }}" hint-size="220px,44px">Back to Quantum Lasers</x-import></div>
 </section>
@@ -292,7 +292,7 @@
 </div>
 </x-dc>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
-<script type="text/x-dc" data-dc-script data-props="{&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monochrome, colour on hover&quot;,&quot;Full colour&quot;],&quot;default&quot;:&quot;Full colour&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sectionNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Auto&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monochrome, Colour on Hover&quot;,&quot;Full Colour&quot;],&quot;default&quot;:&quot;Full Colour&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sectionNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Auto&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, step: 0, req: 2, tm: 0, wfP: 0, adv: "All", sec: "overview", menu: null, search: false, q: "", mobile: false, mSec: null, dx: 0, cmi: 0, cta: [], ovP: 0, evP: 0, gi: 0, mcat: 0 };
   vidRef = React.createRef();
@@ -301,7 +301,7 @@ class Component extends DCLogic {
   openSearch() { this.setState({ search: true, menu: null, mobile: false, q: "" }, () => setTimeout(() => this.searchRef.current && this.searchRef.current.focus(), 30)); }
   qvpSync() { const m = this.props.viewport ?? "Auto"; if (m === this._qvp) return; const go = () => { if (window.QAIGViewport) { this._qvp = m; window.QAIGViewport.apply(m); } else setTimeout(go, 120); }; go(); }
   componentDidMount() { this.qvpSync(); this.lzMount();
-    try { this.setState({ rm: window.matchMedia("(prefers-reduced-motion: reduce)").matches }); } catch (e) {}
+    try { this.setState({ rm: window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches }); } catch (e) {}
     this.onR = () => this.setState({ w: window.innerWidth });
     this.onS = () => {
       let cur = "overview";
@@ -328,7 +328,7 @@ class Component extends DCLogic {
   }
   setupCursor() {
     if ((this.props.customCursor ?? true) === false) return;
-    try { if (!window.matchMedia("(pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; } catch (e) { return; }
+    try { if (!window.matchMedia("(Pointer: Fine)").matches || window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches) return; } catch (e) { return; }
     const old = document.getElementById("qcur-root"); if (old) old.remove();
     const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
     document.head.appendChild(st);
@@ -341,7 +341,7 @@ class Component extends DCLogic {
       + '<svg data-k="cross" width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:-18px;top:-18px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M18 0v12M18 24v12M0 18h12M24 18h12" stroke="currentColor" stroke-width="1"/></svg>'
       + '<svg data-k="focus" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;left:-20px;top:-20px;opacity:0;transform:scale(.7);transition:opacity .2s,transform .22s;color:var(--foreground)"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1"/></svg>';
     document.body.appendChild(root); document.documentElement.classList.add("qcur");
-    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + k + '"]'); });
+    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + K + '"]'); });
     let x = 0, y = 0, raf = 0, mode = "x";
     const set = (m) => { if (m === mode) return; mode = m; const lk = m === "link" || m === "ext";
       P.ring.style.opacity = lk ? "1" : "0"; P.ring.style.transform = lk ? "scale(1)" : "scale(.4)";
@@ -414,10 +414,10 @@ class Component extends DCLogic {
   v6Vals() {
     const pad = (i) => String(i + 1).padStart(2, "0");
     const steps = [
-      { tag: "Research", desc: "Research in quantum computing, quantum communication and quantum AI." },
-      { tag: "Innovation", desc: "Turning research into products and systems that can be deployed." },
-      { tag: "Education", desc: "Training students and engineers in quantum technology through courses and programmes." },
-      { tag: "Adoption", desc: "Working with industry and government to put quantum technology into practical use." },
+      { tag: "Research", desc: "Research in Quantum Computing, Quantum Communication and Quantum AI." },
+      { tag: "Innovation", desc: "Turning Research Into Products and Systems That Can Be Deployed." },
+      { tag: "Education", desc: "Training Students and Engineers in Quantum Technology Through Courses and Programmes." },
+      { tag: "Adoption", desc: "Working With Industry and Government to Put Quantum Technology Into Practical Use." },
     ].map((s, i) => {
       const on = i === this.state.step;
       return { ...s, idx: pad(i), pick: () => this.setState({ step: i }),
@@ -448,7 +448,7 @@ class Component extends DCLogic {
         pick: () => this.setState({ adv: label }),
         variant: on ? "secondary" : "outline" };
     });
-    const mono = (this.props.photoTreatment ?? "Monochrome, colour on hover") !== "Full colour";
+    const mono = (this.props.photoTreatment ?? "Monochrome, Colour on Hover") !== "Full Colour";
     const S = this.state;
     const reqs = [
       { label: "Security", outs: [0, 2], blocks: ["Q-Sleeve", "Chec-Q AI", "QuRNG"] },
@@ -457,7 +457,7 @@ class Component extends DCLogic {
       { label: "Photonics", outs: [1], blocks: ["ECDL"] },
       { label: "Simulation", outs: [0], blocks: ["Q-Cluster", "QubitIQ", "QNTSim"] },
     ];
-    const outDefs = [["Software", "Simulation, Security, AI, Applications"], ["Hardware", "QKD, Memory, Sensing, Photonics"], ["Integrated System", "Hardware and software, deployed together"]];
+    const outDefs = [["Software", "Simulation, Security, AI, Applications"], ["Hardware", "QKD, Memory, Sensing, Photonics"], ["Integrated System", "Hardware and Software, Deployed Together"]];
     const R0 = reqs[S.req];
     const ly = [48, 129, 210, 291, 372], ry = [90, 210, 330];
     const inPath = (i) => "M250 " + ly[i] + " C330 " + ly[i] + " 330 210 380 210";
@@ -488,32 +488,32 @@ class Component extends DCLogic {
           e("animate", { attributeName: "cx", values: [a, a, b, b].join(";"), keyTimes: [0, t0, t1, 1].map(fx).join(";"), dur: hdur, repeatCount: "indefinite" }),
           e("animate", { attributeName: "opacity", values: "0;0;1;1;0;0", keyTimes: kt, dur: hdur, repeatCount: "indefinite" }))]; });
     const hring = rm ? [] : hxs.map((x, k) => { const ta = k === 0 ? 0 : k * HW - 0.012; return e("circle", { key: "r" + k, cx: x, cy: hy, r: 30, fill: "none", stroke: "var(--brand)", strokeWidth: 1.5, opacity: 0, style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animate", { attributeName: "opacity", values: "0;0;1;0;0", keyTimes: [0, ta, ta + 0.04, ta + 0.14, 1].map(fx).join(";"), dur: hdur, repeatCount: "indefinite" })); });
-    const heroSvg = e("svg", { viewBox: "0 0 1200 68", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": "Diagram: a photon source feeds a quantum state into a channel, through memory and a sensor or receiver, producing a key, signal or data." },
+    const heroSvg = e("svg", { viewBox: "0 0 1200 68", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": "Diagram: A Photon Source Feeds a Quantum State Into a Channel, Through Memory and a Sensor or Receiver, Producing a Key, Signal or Data." },
       e("line", { x1: 100, y1: hy, x2: 1100, y2: hy, stroke: "var(--border-strong)", strokeWidth: 1, strokeDasharray: "2 6" }),
       ...hseg.filter((_, i) => i % 2 === 0),
       ...hxs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: hy, r: 30, fill: "var(--surface)", stroke: i === 0 || i === 5 ? "var(--brand)" : "var(--border-light)", strokeWidth: 1 }), ...gl(i, x))),
       ...hring, ...hseg.filter((_, i) => i % 2 === 1));
-    const heroStages = [["Source", "Photon or laser light"], ["Encode", "Quantum state preparation"], ["Channel", "Fibre or free-space link"], ["Store", "Quantum Memory"], ["Measure", "Sensor or receiver"], ["Output", "Key, signal or data"]].map(([t, d], i) => ({ idx: pad(i), t, d }));
-    const equation = [["Technology", "Photonics, quantum communication, memory, sensing and software.", "+"], ["Engineering", "Hardware, control and software designed together.", "+"], ["Integration", "Components combined into one working system.", "="], ["Application", "Deployed against a customer’s technical requirement.", ""]].map(([t, d, op], i) => ({ idx: pad(i), t, d, op, hasOp: !!op }));
+    const heroStages = [["Source", "Photon or Laser Light"], ["Encode", "Quantum State Preparation"], ["Channel", "Fibre or Free-Space Link"], ["Store", "Quantum Memory"], ["Measure", "Sensor or Receiver"], ["Output", "Key, Signal or Data"]].map(([t, d], i) => ({ idx: pad(i), t, d }));
+    const equation = [["Technology", "Photonics, Quantum Communication, Memory, Sensing and Software.", "+"], ["Engineering", "Hardware, Control and Software Designed Together.", "+"], ["Integration", "Components Combined Into One Working System.", "="], ["Application", "Deployed Against a Customer’s Technical Requirement.", ""]].map(([t, d, op], i) => ({ idx: pad(i), t, d, op, hasOp: !!op }));
     const exFlows = [
-      [["Photon Source", "Input"], ["Quantum Channel", "Transport"], ["Receiver", "Measure"], ["Shared secure key", "Output"]],
-      [["Quantum threat", "Input"], ["PQC protection", "Process"], ["Secure Channel", "Transport"], ["Verification", "Output"]],
+      [["Photon Source", "Input"], ["Quantum Channel", "Transport"], ["Receiver", "Measure"], ["Shared Secure Key", "Output"]],
+      [["Quantum Threat", "Input"], ["PQC Protection", "Process"], ["Secure Channel", "Transport"], ["Verification", "Output"]],
       [["Quantum Information", "Input"], ["Storage", "Process"], ["Memory State", "Hold"], ["Retrieval", "Output"]],
-      [["Physical phenomenon", "Input"], ["Quantum Sensor", "Process"], ["Measurement", "Measure"], ["Useful Signal", "Output"]],
+      [["Physical Phenomenon", "Input"], ["Quantum Sensor", "Process"], ["Measurement", "Measure"], ["Useful Signal", "Output"]],
       [["Node", "Input"], ["Quantum Link", "Transport"], ["Node", "Receive"], ["Network", "Output"]],
-      [["Laser Diode", "Source"], ["External Cavity", "Narrow"], ["Frequency lock", "Stabilise"], ["Stable Light", "Output"]],
-      [["Problem", "Input"], ["Algorithm design", "Process"], ["Simulation", "Test"], ["Result", "Output"]],
+      [["Laser Diode", "Source"], ["External Cavity", "Narrow"], ["Frequency Lock", "Stabilise"], ["Stable Light", "Output"]],
+      [["Problem", "Input"], ["Algorithm Design", "Process"], ["Simulation", "Test"], ["Result", "Output"]],
     ];
     const rnd = ["Quantum Repeater", "Quantum Gravimeter", "Rydberg Sensor"];
     const domains = [
-      ["Quantum Communication", "Entanglement-based key distribution and long-distance quantum links.", ["EPS-QKD", "Quantum Repeater"]],
-      ["Quantum Security", "Quantum-Safe VPN, cryptographic risk assessment and random number generation.", ["Q-Sleeve", "Chec-Q AI", "QuRNG"]],
-      ["Quantum Memory", "Rb-based warm vapour cell quantum memory hardware.", ["Q-Memory"]],
-      ["Quantum Sensing", "Biosensing, gravimetry and RF and microwave electric field sensing.", ["Q-Biosensor", "Quantum Gravimeter", "Rydberg Sensor"]],
+      ["Quantum Communication", "Entanglement-Based Key Distribution and Long-Distance Quantum Links.", ["EPS-QKD", "Quantum Repeater"]],
+      ["Quantum Security", "Quantum-Safe VPN, Cryptographic Risk Assessment and Random Number Generation.", ["Q-Sleeve", "Chec-Q AI", "QuRNG"]],
+      ["Quantum Memory", "Rb-Based Warm Vapour Cell Quantum Memory Hardware.", ["Q-Memory"]],
+      ["Quantum Sensing", "Biosensing, Gravimetry and RF and Microwave Electric Field Sensing.", ["Q-Biosensor", "Quantum Gravimeter", "Rydberg Sensor"]],
       ["Quantum Networking", "Quantum Network Simulation.", ["QNTSim"]],
-      ["Photonics & Lasers", "Narrow-linewidth external cavity diode lasers.", ["ECDL"]],
-      ["Quantum Software & AI", "Quantum simulation (local or cloud) and algorithm development.", ["Q-Cluster", "QubitIQ"]],
-      ["Custom Engineering", "Hardware, software and AI combined around a customer requirement.", []],
+      ["Photonics & Lasers", "Narrow-Linewidth External Cavity Diode Lasers.", ["ECDL"]],
+      ["Quantum Software & AI", "Quantum Simulation (Local or Cloud) and Algorithm Development.", ["Q-Cluster", "QubitIQ"]],
+      ["Custom Engineering", "Hardware, Software and AI Combined Around a Customer Requirement.", []],
     ].map(([name, desc, products], i) => ({ name, desc, products, idx: pad(i), bg: i === 7 ? "var(--brand-soft)" : "transparent", idxColor: i === 7 ? "var(--brand)" : "var(--faint)" }));
     const exD = domains[dx];
     const ex = { idx: pad(dx), name: exD.name, desc: exD.desc,
@@ -524,24 +524,24 @@ class Component extends DCLogic {
     const chain = chainDefs.map(([label, kind], i) => ({ label, kind, arrow: i < chainDefs.length - 1 ? "→" : "", color: kind === "Hardware" ? "var(--brand)" : "var(--faint)" }));
     const P = S.wfP, cl = (x) => Math.max(0, Math.min(1, x)), wfIdx = Math.min(4, Math.floor(P * 4 + 0.001));
     const workflow = [
-      ["Discover", "Define the technical requirement, constraints and success criteria."],
-      ["Design", "Select and adapt technology building blocks across hardware and software."],
-      ["Prototype", "Build and measure a working demonstrator."],
-      ["Integrate", "Combine components, control and software into one system."],
-      ["Deploy", "Deliver and support the system in the customer's environment."],
+      ["Discover", "Define the Technical Requirement, Constraints and Success Criteria."],
+      ["Design", "Select and Adapt Technology Building Blocks Across Hardware and Software."],
+      ["Prototype", "Build and Measure a Working Demonstrator."],
+      ["Integrate", "Combine Components, Control and Software Into One System."],
+      ["Deploy", "Deliver and Support the System in the Customer's Environment."],
     ].map(([title, desc], i) => { const done = P >= i / 4 - 0.001, now = i === wfIdx; const rv = cl((P - (i / 4 - 0.1)) / 0.1); return { title, desc, idx: pad(i), nodeBg: done ? "var(--brand)" : "var(--surface)", nodeColor: done ? "var(--brand-ink)" : "var(--muted)", nodeBorder: done ? "var(--brand)" : "var(--border-light)", ring: now ? "0 0 0 5px var(--brand-soft)" : "none", titleColor: done ? "var(--foreground)" : "var(--muted)", op: (0.3 + 0.7 * rv).toFixed(3), ty: ((1 - rv) * 14).toFixed(1) + "px" }; });
     const wfPct = (80 * P).toFixed(2) + "%", wfHead = "calc(10% + " + (80 * P).toFixed(2) + "%)", wfHeadOp = P > 0.003 && P < 0.997 ? 1 : 0, wfFillH = (P * 100).toFixed(2) + "%";
     const wfLabel = pad(wfIdx) + " / 05 · " + workflow[wfIdx].title;
     const wfChev = [0, 1, 2, 3].map((i) => ({ left: (20 + i * 20) + "%", color: P > (i + 0.5) / 4 ? "var(--brand)" : "var(--border-strong)" }));
     const T = {
-      sanjay: { name: "Sanjay Chittore", title: "Founder & CEO", image: "assets/company/founder-sanjay.jpg", linkedin: "https://www.linkedin.com/in/sanjaychittore/", bio: "Advancing India's role in the quantum transformation." },
-      kapil: { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and former Army Director of InfoSec, Ministry of Defence, Government of India. Led a national-level InfoSec and cryptography research team." },
-      sachin: { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental atomic physicist with extensive experience in laser-cooled atomic spectroscopy and quantum sensor technology." },
-      diksha: { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops interpretable, scalable and resource-efficient quantum machine learning models." },
-      monika: { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental quantum optics physicist specialising in Rydberg-atom-based RF electric-field sensing and atomic spectroscopy." },
-      avinash: { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental physicist who designs narrow-linewidth laser cavities, with expertise in high-resolution spectroscopy." },
-      rama: { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum engineer with expertise in quantum sources, QKD testbeds and quantum memory hardware with integrated control electronics." },
-      neelesh: { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer working on quantum-safe cryptography and cybersecurity, building scalable, standards-compliant production systems." },
+      sanjay: { name: "Sanjay Chittore", title: "Founder & CEO", image: "assets/company/founder-sanjay.jpg", linkedin: "https://www.linkedin.com/in/sanjaychittore/", bio: "Advancing India's Role in the Quantum Transformation." },
+      kapil: { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and Former Army Director of InfoSec, Ministry of Defence, Government of India. Led a National-Level InfoSec and Cryptography Research Team." },
+      sachin: { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental Atomic Physicist With Extensive Experience in Laser-Cooled Atomic Spectroscopy and Quantum Sensor Technology." },
+      diksha: { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops Interpretable, Scalable and Resource-Efficient Quantum Machine Learning Models." },
+      monika: { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental Quantum Optics Physicist Specialising in Rydberg-Atom-Based RF Electric-Field Sensing and Atomic Spectroscopy." },
+      avinash: { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental Physicist Who Designs Narrow-Linewidth Laser Cavities, With Expertise in High-Resolution Spectroscopy." },
+      rama: { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum Engineer With Expertise in Quantum Sources, QKD Testbeds and Quantum Memory Hardware With Integrated Control Electronics." },
+      neelesh: { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer Working on Quantum-Safe Cryptography and Cybersecurity, Building Scalable, Standards-Compliant Production Systems." },
     };
     const teamGroups = [
       { name: "Leadership", keys: ["kapil"] },
@@ -565,13 +565,13 @@ class Component extends DCLogic {
     const thumbs = {}; this.qaigData().cats.forEach((c) => c.items.forEach((p) => { if (p.thumb) thumbs[p.title] = p.thumb; }));
     const productCats = cats.map(([label, items]) => ({ label, count: String(items.length).padStart(2, "0"), items: items.map(([title, blurb, rnd]) => ({ title, blurb, rnd: !!rnd, cat: label, hasImg: !!thumbs[title], noImg: !thumbs[title], img: thumbs[title] ? "assets/products/" + thumbs[title] + ".png" : "", mono: title.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase() })) }));
     const resourceItems = [
-      { label: "Research & Publications", description: "Published quantum research and scientific publications" },
-      { label: "Downloads", description: "Brochures, product documents and downloadable resources" },
-      { label: "News & Updates", description: "Company, research and product updates" },
+      { label: "Research & Publications", description: "Published Quantum Research and Scientific Publications" },
+      { label: "Downloads", description: "Brochures, Product Documents and Downloadable Resources" },
+      { label: "News & Updates", description: "Company, Research and Product Updates" },
     ].map((r, i) => ({ ...r, idx: pad(i) }));
     const companyCols = [
-      { heading: "About", items: [["About","Our mission & roadmap",1],["Leadership","Meet our executive team"],["Recognition","Awards & achievements"],["Gallery","Photos & physical media"]] },
-      { heading: "Work With Us", items: [["Careers","Join our distributed team"],["Collaborations","Partnership opportunities"],["Contact Us","Get in touch with sales"]] },
+      { heading: "About", items: [["About","Our Mission & Roadmap",1],["Leadership","Meet Our Executive Team"],["Recognition","Awards & Achievements"],["Gallery","Photos & Physical Media"]] },
+      { heading: "Work With Us", items: [["Careers","Join Our Distributed Team"],["Collaborations","Partnership Opportunities"],["Contact Us","Get in Touch With Sales"]] },
     ].map((c) => ({ heading: c.heading, items: c.items.map(([label, description, cur]) => ({ label, description, color: cur ? "var(--brand)" : "var(--foreground)" })) }));
     const menuFor = (k) => ({ enter: () => this.setState({ menu: k }), click: () => this.setState((s) => ({ menu: s.menu === k ? null : k })) });
     const navItems = [
@@ -579,7 +579,7 @@ class Component extends DCLogic {
     ].map((n) => {
       const open = n.key && S.menu === n.key;
       const h = n.key ? menuFor(n.key) : { enter: () => this.setState({ menu: null }), click: () => {} };
-      return { label: n.label, aria: n.ext ? "QuLabs, opens an external site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
+      return { label: n.label, aria: n.ext ? "QuLabs, Opens an External Site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
         variant: open || n.current ? "secondary" : "ghost" };
     });
     const tx = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--foreground-2)", style: { font: "500 13px var(--font-sans)" } }, o || {}), s);
@@ -653,7 +653,7 @@ class Component extends DCLogic {
     const dprod = (d) => d.products.map((p) => ({ label: rnd.includes(p) ? p + " · R&D" : p, variant: rnd.includes(p) ? "outline" : "secondary" }));
     const exWide2 = S.w >= 960;
     const exGo = (i) => { this.setState({ dx: i }); if (!exWide2) return; this.exLock = Date.now() + 900; const el = document.getElementById("ex-" + i); if (el) { const r = el.getBoundingClientRect(); window.scrollTo({ top: r.top + window.scrollY - (window.innerHeight / 2 - r.height / 2), behavior: "smooth" }); } };
-    const exItems = domains.slice(0, 7).map((d, i) => { const on = !exWide2 || i === dx2; return { id: "ex-" + i, idx: pad(i), name: d.name, desc: d.desc, count: "Building blocks · " + String(d.products.length).padStart(2, "0"), on: i === dx2, minH: exWide2 ? "40vh" : "0", fill: exWide2 ? (i === dx2 ? "100%" : "0%") : "100%", color: on ? "var(--foreground)" : "var(--faint)", idxColor: on ? "var(--brand)" : "var(--faint)", size: exWide2 ? (i === dx2 ? "32px" : "24px") : "24px", descOp: on ? 1 : 0.35, pick: () => exGo(i), showInline: !exWide2, svg: exWide2 ? null : this.mkDia(dia, i, true), products: dprod(d) }; });
+    const exItems = domains.slice(0, 7).map((d, i) => { const on = !exWide2 || i === dx2; return { id: "ex-" + i, idx: pad(i), name: d.name, desc: d.desc, count: "Building Blocks · " + String(d.products.length).padStart(2, "0"), on: i === dx2, minH: exWide2 ? "40vh" : "0", fill: exWide2 ? (i === dx2 ? "100%" : "0%") : "100%", color: on ? "var(--foreground)" : "var(--faint)", idxColor: on ? "var(--brand)" : "var(--faint)", size: exWide2 ? (i === dx2 ? "32px" : "24px") : "24px", descOp: on ? 1 : 0.35, pick: () => exGo(i), showInline: !exWide2, svg: exWide2 ? null : this.mkDia(dia, i, true), products: dprod(d) }; });
     const exPanels = domains.slice(0, 7).map((d, i) => { const on = i === dx2; return { n: i + 1, idx: pad(i), name: d.name, products: dprod(d), op: on ? 1 : 0, ty: on ? "0px" : (i < dx2 ? "-16px" : "16px"), pe: on ? "auto" : "none", hidden: !on, svg: exWide2 ? this.mkDia(dia, i, on) : null }; });
     // overview system
     const op_ = rm ? 1 : (S.ovP || 0), ovI = Math.min(3, Math.floor(op_ * 4.0001)), rp = (a) => Math.max(0, Math.min(1, (op_ - a) / 0.12));
@@ -675,14 +675,14 @@ class Component extends DCLogic {
         ovKids.push(e("path", { key: "fp" + k, d: pd, fill: "none", stroke: "var(--brand)", strokeWidth: 1.6, opacity: 0, style: { filter: "drop-shadow(0 0 4px var(--brand))" } }, e("animate", { attributeName: "opacity", values: "0;0;0.9;0.9;0;0", keyTimes: kt, dur: OT, repeatCount: "indefinite" })));
         ovKids.push(e("circle", { key: "fc" + k, r: 3.5, fill: "var(--brand)", opacity: 0, style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animateMotion", { dur: OT, repeatCount: "indefinite", path: pd, calcMode: "linear", keyPoints: "0;0;1;1", keyTimes: [0, t0, t1, 1].map(q4).join(";") }), e("animate", { attributeName: "opacity", values: "0;0;1;1;0;0", keyTimes: kt, dur: OT, repeatCount: "indefinite" })));
       }); }
-    const ovSvg = e("svg", { viewBox: "0 0 400 440", width: "100%", style: { display: "block", overflow: "visible", maxHeight: 460 }, role: "img", "aria-label": "Diagram: a requirement selects technology building blocks (photonics, communication, memory, sensing, networking, software and AI), which connect and resolve into hardware and software, deployed as one application." }, ...ovKids);
+    const ovSvg = e("svg", { viewBox: "0 0 400 440", width: "100%", style: { display: "block", overflow: "visible", maxHeight: 460 }, role: "img", "aria-label": "Diagram: A Requirement Selects Technology Building Blocks (Photonics, Communication, Memory, Sensing, Networking, Software and AI), Which Connect and Resolve Into Hardware and Software, Deployed as One Application." }, ...ovKids);
     const ovStages = ["Requirement", "Technology", "Connection", "System"];
-    const ovCaps = ["Every system starts as a technical requirement.", "Technology building blocks are selected for it.", "The blocks are connected into one design.", "The design resolves into hardware and software, deployed as one application."];
+    const ovCaps = ["Every System Starts as a Technical Requirement.", "Technology Building Blocks Are Selected for It.", "The Blocks Are Connected Into One Design.", "The Design Resolves Into Hardware and Software, Deployed as One Application."];
     // evidence
     const ep = rm ? 1 : (S.evP || 0);
-    const evNodes = [["People", "75+", "People across India, the US and the UAE"], ["Intellectual property", "20+", "IPs filed · 3 granted"], ["Technology", "13", "Products across seven Domains"], ["Ecosystem", "40+", "partners"]].map(([stage, value, label], i) => { const at = i / 3, done = ep >= at * 0.92 - 0.001, rv = Math.max(0, Math.min(1, (ep - (at * 0.92 - 0.15)) / 0.15)); return { idx: pad(i), stage, value, label, bc: done ? "var(--brand)" : "var(--border-light)", bg: done ? "var(--brand)" : "var(--base)", ring: done ? "0 0 0 5px var(--brand-soft)" : "none", op: S.w >= 760 ? (0.25 + 0.75 * rv).toFixed(3) : 1, ty: S.w >= 760 ? ((1 - rv) * 12).toFixed(1) + "px" : "0px" }; });
+    const evNodes = [["People", "75+", "People Across India, the US and the UAE"], ["Intellectual Property", "20+", "IPs Filed · 3 Granted"], ["Technology", "13", "Products Across Seven Domains"], ["Ecosystem", "40+", "partners"]].map(([stage, value, label], i) => { const at = i / 3, done = ep >= at * 0.92 - 0.001, rv = Math.max(0, Math.min(1, (ep - (at * 0.92 - 0.15)) / 0.15)); return { idx: pad(i), stage, value, label, bc: done ? "var(--brand)" : "var(--border-light)", bg: done ? "var(--brand)" : "var(--base)", ring: done ? "0 0 0 5px var(--brand-soft)" : "none", op: S.w >= 760 ? (0.25 + 0.75 * rv).toFixed(3) : 1, ty: S.w >= 760 ? ((1 - rv) * 12).toFixed(1) + "px" : "0px" }; });
     // lab
-    const galD = [["g8-lab-wide.jpg","Quantum Optics Lab, wide shot","Lab","Quantum Optics Lab"],["g4-optics-bench.jpg","Optics bench","Optics","Optics bench"],["g7-workbench.jpg","Engineers at workbench","Engineering","Workbench"],["g6-optics-closeup.jpg","Optics rig closeup","Optics","Optics rig, close-up"],["g5-workspace.jpg","Lab Workspace","Lab","Lab Workspace"],["g9-team-office.jpg","Team at the Office","Team","Team at the Office"],["g3-team-group.jpg","Quantum AI Global Team","Team","The team"]];
+    const galD = [["g8-lab-wide.jpg","Quantum Optics Lab, Wide Shot","Lab","Quantum Optics Lab"],["g4-optics-bench.jpg","Optics Bench","Optics","Optics Bench"],["g7-workbench.jpg","Engineers at Workbench","Engineering","Workbench"],["g6-optics-closeup.jpg","Optics Rig Closeup","Optics","Optics Rig, Close-Up"],["g5-workspace.jpg","Lab Workspace","Lab","Lab Workspace"],["g9-team-office.jpg","Team at the Office","Team","Team at the Office"],["g3-team-group.jpg","Quantum AI Global Team","Team","The Team"]];
     const gi = S.gi || 0;
     const galSet = (i) => { const n = (i + galD.length) % galD.length; this.setState({ gi: n }); const el = this.galRef.current; if (el && el.children[n]) { const c = el.children[n]; el.scrollTo({ left: Math.max(0, c.offsetLeft - el.clientWidth / 2 + c.clientWidth / 2), behavior: "smooth" }); } };
     const gallery2 = galD.map(([fl, alt, tag, title], i) => { const on = i === gi; return { src: "assets/company/gallery/" + fl, alt, tag, title, on, op: on ? 1 : 0, sc: on ? 1 : 1.04, seg: i <= gi ? "var(--brand)" : "var(--border-strong)", border: on ? "var(--brand)" : "var(--border)", thOp: on ? 1 : 0.55, pick: () => galSet(i) }; });
@@ -690,7 +690,7 @@ class Component extends DCLogic {
     // team deck v2
     const deck2 = deck.map((c, i) => { const on = i === S.tm; return { ...c, on, clip: on ? "circle(150% at 50% 60px)" : "circle(0px at 50% 60px)", avOp: on ? 0 : 1, avSc: on ? 1.5 : 1, avLeft: "calc(50% - 36px)", avSize: "72px", zoom: 1.5, ovOp: on ? 1 : 0, bgScale: on ? 1 : 1.08, bgFilter: on ? "brightness(.88)" : "saturate(.85)", bgPos: tlist[i][0] === "sanjay" ? "66% 22%" : c.bgPos, mH: on ? "440px" : "118px", mClip: on ? "circle(150% at 58px 58px)" : "circle(0px at 58px 58px)", mAvOp: on ? 0 : 1, mAvSc: on ? 1.4 : 1, mPad: on ? "0px" : "88px" }; });
     // menu
-    const mDesc = ["Find, fix and harden cryptography against quantum attacks.", "Simulate, distribute and store quantum information.", "Measure weak fields with atomic sensors at room temperature.", "Design, simulate and optimise quantum algorithms.", "Narrow-linewidth light for precision quantum experiments."];
+    const mDesc = ["Find, Fix and Harden Cryptography Against Quantum Attacks.", "Simulate, Distribute and Store Quantum Information.", "Measure Weak Fields With Atomic Sensors at Room Temperature.", "Design, Simulate and Optimise Quantum Algorithms.", "Narrow-Linewidth Light for Precision Quantum Experiments."];
     const mLabs = [["Threat", "Protect", "Channel", "Verify"], ["Node", "Link", "Node", "Network"], ["Field", "Sensor", "Measure", "Signal"], ["Model", "Simulate", "Control", "Apply"], ["Source", "Beam", "Control", "Apply"]];
     const mc = S.mcat || 0;
     const mini = (labs) => { const xs = [30, 110, 190, 270], d = "M30 40 L270 40"; return e("svg", { viewBox: "0 0 300 90", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": labs.join(", then ") }, e("line", { x1: 30, y1: 40, x2: 270, y2: 40, stroke: "var(--border-strong)", strokeDasharray: "3 4" }), trail(d, 3.2), pulse(d, 3.2), ...xs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: 40, r: i === 0 || i === 3 ? 8 : 6, fill: i === 3 ? "var(--brand)" : "var(--surface-2)", stroke: "var(--brand)", strokeWidth: 1 }), mt(x, 74, labs[i], { style: { font: "10.5px var(--font-mono)", letterSpacing: ".07em", textTransform: "uppercase" } })))); };
@@ -699,19 +699,19 @@ class Component extends DCLogic {
     const mcur = { label: productCats[mc].label, count: productCats[mc].count, items: productCats[mc].items, desc: mDesc[mc], svg: S.menu === "products" ? mini(mLabs[mc]) : null };
     const cm = S.cmi || 0;
     const cDef = [
-      ["About", "Our mission & roadmap", "About", "assets/company/gallery/g3-team-group.jpg", "50% 40%", "Est. November 2019 · India, US, UAE", "app"],
-      ["Leadership", "Meet our executive team", "About", "assets/company/founder-sanjay.jpg", "68% 26%", "Sanjay Chittore · Founder & CEO", "state"],
-      ["Recognition", "Awards & achievements", "About", "assets/company/gallery/g4-optics-bench.jpg", "50% 50%", "AGBA 2026 · NASSCOM Emerge 50", "check"],
-      ["Gallery", "Photos & physical media", "About", "assets/company/gallery/g8-lab-wide.jpg", "50% 50%", "Labs and Offices, in Photographs", "cell"],
-      ["Careers", "Join our distributed team", "Work with us", "assets/company/gallery/g9-team-office.jpg", "50% 50%", "75+ People · India, US, UAE", "layers"],
-      ["Collaborations", "Partnership opportunities", "Work with us", "assets/company/gallery/g7-workbench.jpg", "50% 50%", "40+ Partners", "gates"],
-      ["Contact Us", "Get in touch with sales", "Work with us", "assets/company/gallery/g5-workspace.jpg", "50% 50%", "hello@thequantum.ai", "signal"],
+      ["About", "Our Mission & Roadmap", "About", "assets/company/gallery/g3-team-group.jpg", "50% 40%", "Est. November 2019 · India, US, UAE", "app"],
+      ["Leadership", "Meet Our Executive Team", "About", "assets/company/founder-sanjay.jpg", "68% 26%", "Sanjay Chittore · Founder & CEO", "state"],
+      ["Recognition", "Awards & Achievements", "About", "assets/company/gallery/g4-optics-bench.jpg", "50% 50%", "AGBA 2026 · NASSCOM Emerge 50", "check"],
+      ["Gallery", "Photos & Physical Media", "About", "assets/company/gallery/g8-lab-wide.jpg", "50% 50%", "Labs and Offices, in Photographs", "cell"],
+      ["Careers", "Join Our Distributed Team", "Work With Us", "assets/company/gallery/g9-team-office.jpg", "50% 50%", "75+ People · India, US, UAE", "layers"],
+      ["Collaborations", "Partnership Opportunities", "Work With Us", "assets/company/gallery/g7-workbench.jpg", "50% 50%", "40+ Partners", "gates"],
+      ["Contact Us", "Get in Touch With Sales", "Work With Us", "assets/company/gallery/g5-workspace.jpg", "50% 50%", "hello@thequantum.ai", "signal"],
     ];
     const cItems = cDef.map(([label, description, group, img, pos, stat, ic], i) => { const on = i === cm; return { label, description, group, head: i === 0 || cDef[i - 1][2] !== group, on, cur: on ? "true" : "false", bg: on ? "var(--surface-2)" : "transparent", bd: on ? "var(--brand)" : "transparent", color: on ? "var(--foreground)" : "var(--foreground-2)", wellBg: on ? "var(--brand-soft)" : "var(--surface)", wellBd: on ? "var(--brand)" : "var(--border)", icon: e("svg", { width: 20, height: 20, viewBox: "-6 -6 36 36", "aria-hidden": true }, ...DG(ic, 12, 12)), pick: () => S.cmi !== i && this.setState({ cmi: i }) }; });
-    const cGroups = ["About", "Work with us"].map((g) => ({ group: g, items: cItems.filter((c) => c.group === g) }));
+    const cGroups = ["About", "Work With Us"].map((g) => ({ group: g, items: cItems.filter((c) => c.group === g) }));
     const cPanels = cDef.map(([label, description, group, img, pos, stat], i) => { const on = i === cm; return { label, description, group, img, pos, stat, op: on ? 1 : 0, sc: on ? 1 : 1.06, pe: on ? "auto" : "none", hidden: !on, btnProps: { tabIndex: on ? 0 : -1 } }; });
     this.v6 = { heroField, exItems, exPanels, exWide: exWide2, ovSvg, ovStage: ovStages[ovI], ovNum: pad(ovI), ovCap: ovCaps[ovI], ovTicks: [0, 1, 2, 3].map((i) => ({ bg: i <= ovI ? "var(--brand)" : "var(--border-strong)" })), ovPos: S.w >= 900 ? "sticky" : "relative",
-      ovQs: [["What we are", "A deep-tech company developing quantum technologies and AI-powered solutions."], ["What we build", "Quantum hardware, software and integrated technologies for communication, security, sensing, networking and scientific applications."], ["How we work", "Around each organisation’s specific technical requirements, from discovery to deployment."], ["Why it matters", "Quantum technologies only create value when they solve real-world challenges."]].map(([k, v], i) => ({ idx: pad(i), k, v })),
+      ovQs: [["What We Are", "A Deep-Tech Company Developing Quantum Technologies and AI-powered Solutions."], ["What We Build", "Quantum Hardware, Software and Integrated Technologies for Communication, Security, Sensing, Networking and Scientific Applications."], ["How We Work", "Around Each Organisation’s Specific Technical Requirements, From Discovery to Deployment."], ["Why It Matters", "Quantum Technologies Only Create Value When They Solve Real-World Challenges."]].map(([k, v], i) => ({ idx: pad(i), k, v })),
       evNodes, evWide: S.w >= 760, evCols: S.w >= 960 ? "repeat(4,minmax(0,1fr))" : S.w >= 560 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", evFill: "calc((100% - 6px) * " + Math.min(1, ep / 0.92).toFixed(3) + ")",
       gallery: gallery2, gcur: { tag: g0[2], title: g0[3], n: pad(gi) }, galPrev: () => galSet(gi - 1), galNext: () => galSet(gi + 1), labWide: S.w >= 900, labNarrow: S.w < 900,
       vidRef: this.vidRef, videoSrc: this.videoSrc, hasVideo: !!this.videoSrc, noVideo: !this.videoSrc,
@@ -765,7 +765,7 @@ class Component extends DCLogic {
       ex, exPulse, exWide: S.w >= 700, exNarrow: S.w < 700, exNavMax: S.w >= 860 ? "320px" : "none",
       exTabProps: { style: { width: "100%", justifyContent: "space-between", height: 48 } },
       exTabs: domains.slice(0, 7).map((d, i) => ({ idx: pad(i), name: d.name, count: String(d.products.length).padStart(2, "0"), on: i === dx, variant: i === dx ? "secondary" : "ghost", idxColor: i === dx ? "var(--brand)" : "var(--faint)", pick: () => this.setState({ dx: i }) })),
-      stack: [["Physical Layer", "Photonics · Communication · Memory · Sensing"], ["Control", "Electronics and Control Systems"], ["Software", "Simulation · Security · AI"], ["Application", "The customer’s use case"]].map(([k, v], i) => ({ k, v, kc: i === 3 ? "var(--brand)" : "var(--faint)", bg: i === 3 ? "var(--brand-soft)" : "transparent" })),
+      stack: [["Physical Layer", "Photonics · Communication · Memory · Sensing"], ["Control", "Electronics and Control Systems"], ["Software", "Simulation · Security · AI"], ["Application", "The Customer’s Use Case"]].map(([k, v], i) => ({ k, v, kc: i === 3 ? "var(--brand)" : "var(--faint)", bg: i === 3 ? "var(--brand-soft)" : "transparent" })),
       showSubnav: (this.props.sectionNav ?? true) !== false,
       subnav: this.sections.map(([id, label], i) => ({ idx: pad(i), label, go: () => this.go(id),
         variant: this.state.sec === id ? "secondary" : "ghost" })),
@@ -779,32 +779,32 @@ class Component extends DCLogic {
       nextStep: () => this.setState((s) => ({ step: (s.step + 1) % 4 })),
       photoFilter: mono ? "grayscale(1) contrast(1.05)" : "none",
       team: [
-        { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and former Army Director of InfoSec, Ministry of Defence, Government of India. Led a national-level InfoSec and cryptography research team." },
-        { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental atomic physicist with extensive experience in laser-cooled atomic spectroscopy and quantum sensor technology." },
-        { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops interpretable, scalable and resource-efficient quantum machine learning models." },
-        { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental quantum optics physicist specialising in Rydberg-atom-based RF electric-field sensing and atomic spectroscopy." },
-        { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental physicist who designs narrow-linewidth laser cavities, with expertise in high-resolution spectroscopy." },
-        { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum engineer with expertise in quantum sources, QKD testbeds and quantum memory hardware with integrated control electronics." },
-        { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer working on quantum-safe cryptography and cybersecurity, building scalable, standards-compliant production systems." },
+        { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and Former Army Director of InfoSec, Ministry of Defence, Government of India. Led a National-Level InfoSec and Cryptography Research Team." },
+        { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental Atomic Physicist With Extensive Experience in Laser-Cooled Atomic Spectroscopy and Quantum Sensor Technology." },
+        { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops Interpretable, Scalable and Resource-Efficient Quantum Machine Learning Models." },
+        { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental Quantum Optics Physicist Specialising in Rydberg-Atom-Based RF Electric-Field Sensing and Atomic Spectroscopy." },
+        { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental Physicist Who Designs Narrow-Linewidth Laser Cavities, With Expertise in High-Resolution Spectroscopy." },
+        { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum Engineer With Expertise in Quantum Sources, QKD Testbeds and Quantum Memory Hardware With Integrated Control Electronics." },
+        { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer Working on Quantum-Safe Cryptography and Cybersecurity, Building Scalable, Standards-Compliant Production Systems." },
       ].map((m, i) => ({ ...m, idx: pad(i), zoom: m.image.endsWith(".png") ? 1.22 : 1 })),
       advFilters,
       advisorsShown: adv === "All" ? advisorsAll : advisorsAll.filter((a) => a.group === adv),
       awards: [
-        { tag: "Innovation in Deep Tech", title: "2026 AGBA Winner", desc: "Recognised for innovation in deep technology." },
-        { tag: "NASSCOM", title: "NASSCOM Emerge 50", desc: "Recognition under the NASSCOM Emerge 50 programme." },
+        { tag: "Innovation in Deep Tech", title: "2026 AGBA Winner", desc: "Recognised for Innovation in Deep Technology." },
+        { tag: "NASSCOM", title: "NASSCOM Emerge 50", desc: "Recognition Under the NASSCOM Emerge 50 Programme." },
       ].map((a, i) => ({ ...a, idx: pad(i) })),
       galRef: this.galRef,
       galPad: this.galInset() + "px", galSpacer: Math.max(0, this.galInset() - 12) + "px",
       cardProps: { className: "card-hover", style: { height: "100%" } },
       scrollGalLeft: () => this.scrollGal(-1), scrollGalRight: () => this.scrollGal(1),
       gallery: [
-        ["g8-lab-wide.jpg","Quantum Optics Lab, wide shot","min(80vw,640px)","Optical Experiment / Quantum Optics Lab"],
-        ["g4-optics-bench.jpg","Optics bench","min(80vw,360px)","Optics bench"],
-        ["g7-workbench.jpg","Engineers at workbench","min(80vw,440px)","Workbench"],
-        ["g6-optics-closeup.jpg","Optics rig closeup","min(80vw,380px)","Optics rig, close-up"],
+        ["g8-lab-wide.jpg","Quantum Optics Lab, Wide Shot","min(80vw,640px)","Optical Experiment / Quantum Optics Lab"],
+        ["g4-optics-bench.jpg","Optics Bench","min(80vw,360px)","Optics Bench"],
+        ["g7-workbench.jpg","Engineers at Workbench","min(80vw,440px)","Workbench"],
+        ["g6-optics-closeup.jpg","Optics Rig Closeup","min(80vw,380px)","Optics Rig, Close-Up"],
         ["g5-workspace.jpg","Lab Workspace","min(80vw,480px)","Lab Workspace"],
         ["g9-team-office.jpg","Team at the Office","min(80vw,640px)","Team at the Office"],
-        ["g3-team-group.jpg","Quantum AI Global Team","min(80vw,440px)","The team"],
+        ["g3-team-group.jpg","Quantum AI Global Team","min(80vw,440px)","The Team"],
       ].map(([f, alt, w, c], i) => ({ src: "assets/company/gallery/" + f, alt, w, cap: "Fig. " + pad(i + 3) + " · " + c })),
       videos: [
         { title: "Office Opening", duration: "15:20" },
@@ -850,7 +850,7 @@ class Component extends DCLogic {
     const rd = q("lz-rd"); if (rd) rd.textContent = "λ " + l + " nm";
     const rows = this.lzRows(), hits = rows.map((r) => r.has(l));
     rows.forEach((r, i) => { const n = q("lz-row" + i); if (n) n.setAttribute("opacity", hits[i] ? "1" : "0.34"); });
-    const names = rows.filter((r, i) => hits[i]).map((r) => r.name), m = q("lz-m"); if (m) m.textContent = names.length ? "Within: " + names.join(" · ") : "Outside the documented Ranges";
+    const names = rows.filter((r, i) => hits[i]).map((r) => r.name), m = q("lz-m"); if (m) m.textContent = names.length ? "Within: " + names.join(" · ") : "Outside the Documented Ranges";
     const inp = document.getElementById("lz-range"); if (inp && document.activeElement !== inp) inp.value = l;
     const out = document.getElementById("lz-out"); if (out) out.textContent = l + " nm";
   }
@@ -886,7 +886,7 @@ class Component extends DCLogic {
       e("rect", { x: -50, y: RY - 62, width: 100, height: 26, rx: 5, fill: "var(--surface)", stroke: B, strokeOpacity: 0.8 }),
       e("text", { id: "lz-rd", x: 0, y: RY - 44, textAnchor: "middle", fill: "var(--foreground)", style: mono(12, 600, ".04em") }, "λ 780 nm")));
     K.push(e("text", { key: "ft", x: 860, y: yb + 26, textAnchor: "end", fill: "var(--foreground-2)", style: mono(11, 400, ".12em") }, "ILLUSTRATIVE · DOCUMENTED RANGES ONLY"));
-    return e("svg", { viewBox: "0 -100 1220 700", width: "100%", role: "img", "aria-label": "Illustrative wavelength Map. A beam from a laser head points to a wavelength on a 380 to 1600 nanometre scale, and the products whose documented ranges include it are highlighted.", style: { display: "block", overflow: "visible", maxHeight: 640 } }, ...K);
+    return e("svg", { viewBox: "0 -100 1220 700", width: "100%", role: "img", "aria-label": "Illustrative Wavelength Map. A Beam From a Laser Head Points to a Wavelength on a 380 to 1600 Nanometre Scale, and the Products Whose Documented Ranges Include It Are Highlighted.", style: { display: "block", overflow: "visible", maxHeight: 640 } }, ...K);
   }
   lzFig(slug) {
     const e = React.createElement, S = this.state, rm = !!S.rm, B = "var(--brand)", L = "var(--border-strong)", F = "var(--foreground-2)", K = [], glow = { filter: "drop-shadow(0 0 5px var(--brand))" };
@@ -939,9 +939,9 @@ class Component extends DCLogic {
       K.push(rect(400, 70, 140, 152, { rx: 10, stroke: B }), tx(470, 140, "ECDL", { fill: "var(--foreground)", style: mono(12, 600) }), tx(470, 158, "or ApeX-Pro", { style: { font: "12px var(--font-sans)" } }), ...beam("M470 222 V300"), tx(470, 322, "LIGHT"));
       K.push(pa("M140 276 V310 H300", { strokeDasharray: "3 4" }), tx(306, 314, "USB", { textAnchor: "start", fill: "var(--foreground)" }));
     } else if (slug === "digital-locking-module") {
-      K.push(rect(30, 96, 110, 56, { stroke: F }), tx(85, 128, "LASER", { fill: "var(--foreground)", style: mono(12, 600) }), ...beam("M140 124 H340"), mot("M140 124 H340", "2s"), rect(340, 96, 180, 56, { stroke: F }), tx(430, 120, "REFERENCE", { fill: "var(--foreground)", style: mono(12, 600) }), tx(430, 138, "Atomic or cavity", { style: { font: "12px var(--font-sans)" } }));
+      K.push(rect(30, 96, 110, 56, { stroke: F }), tx(85, 128, "LASER", { fill: "var(--foreground)", style: mono(12, 600) }), ...beam("M140 124 H340"), mot("M140 124 H340", "2s"), rect(340, 96, 180, 56, { stroke: F }), tx(430, 120, "REFERENCE", { fill: "var(--foreground)", style: mono(12, 600) }), tx(430, 138, "Atomic or Cavity", { style: { font: "12px var(--font-sans)" } }));
       K.push(pa("M430 152 V204", { stroke: B, strokeOpacity: 0.6 }), mot("M430 152 V204", "2s", "1s", 2.8));
-      K.push(rect(250, 204, 290, 112, { rx: 12, fill: "none", stroke: F, strokeDasharray: "4 4" }), tx(266, 226, "APEX-CTRL", { textAnchor: "start" }), rect(290, 238, 230, 54, { stroke: B }), tx(405, 262, "DIGITAL LOCKING MODULE", { fill: "var(--foreground)", style: mono(11, 600) }), tx(405, 280, "Optional add-on", { fill: B, style: { font: "12px var(--font-sans)" } }));
+      K.push(rect(250, 204, 290, 112, { rx: 12, fill: "none", stroke: F, strokeDasharray: "4 4" }), tx(266, 226, "APEX-CTRL", { textAnchor: "start" }), rect(290, 238, 230, 54, { stroke: B }), tx(405, 262, "DIGITAL LOCKING MODULE", { fill: "var(--foreground)", style: mono(11, 600) }), tx(405, 280, "Optional Add-On", { fill: B, style: { font: "12px var(--font-sans)" } }));
       const fc = "M290 254 H110 V152", pz = "M290 280 H60 V152";
       K.push(pa(fc, { stroke: B, strokeWidth: 1.6 }), pa(pz, { stroke: B, strokeWidth: 1.6, strokeDasharray: "6 4" }), mot(fc, "2.4s", "0.2s"), mot(pz, "3s", "0.8s"), tx(200, 246, "FAST CURRENT FEEDBACK"), tx(175, 300, "PIEZO FEEDBACK"));
       K.push(tx(540, 336, "ILLUSTRATIVE FEEDBACK LOOP", { textAnchor: "end" }));
@@ -959,40 +959,40 @@ class Component extends DCLogic {
   }
   lzData() {
     if (this._lzD) return this._lzD;
-    const note = "Contact us for full specifications and configuration options.";
+    const note = "Contact Us for Full Specifications and Configuration Options.";
     const products = [
       { slug: "ecdl", code: "01", cat: "sources", catLabel: "Laser Sources", short: "ECDL", name: "Tunable External Cavity Diode Lasers (ECDL)", img: "ecdlProductImage", desc: "Tunable, narrow linewidth laser source, designed around your experiment.",
-        specs: [["Emission Wavelength", "400 nm to 1300 nm"], ["Optical Power", "10 mW to 100 mW"], ["Output", "Free-space or fibre-coupled"]],
-        apps: ["Atomic & molecular Spectroscopy", "Laser Cooling & trapping", "Quantum Sensing & Research"], config: [["Output", "Free-space or fibre-coupled"]], note,
-        cta: "Discuss ECDL Requirements", wl: (l) => l >= 400 && l <= 1300, conceptTitle: "Tunable Light, Designed Around Your Experiment.", figCap: "Fig. 01 · External cavity concept and the documented 400–1300 nm range · illustrative",
-        rel: [["apex-ctrl", "Operates the ECDL", "ApeX-Ctrl lists ECDL operation among its applications."], ["apex-pro", "Built on the ECDL Platform", "ApeX-Pro is based on our ECDL platform."]] },
+        specs: [["Emission Wavelength", "400 nm to 1300 nm"], ["Optical Power", "10 mW to 100 mW"], ["Output", "Free-Space or Fibre-Coupled"]],
+        apps: ["Atomic & Molecular Spectroscopy", "Laser Cooling & Trapping", "Quantum Sensing & Research"], config: [["Output", "Free-Space or Fibre-Coupled"]], note,
+        cta: "Discuss ECDL Requirements", wl: (l) => l >= 400 && l <= 1300, conceptTitle: "Tunable Light, Designed Around Your Experiment.", figCap: "Fig. 01 · External Cavity Concept and the Documented 400–1300 nm Range · Illustrative",
+        rel: [["apex-ctrl", "Operates the ECDL", "ApeX-Ctrl Lists ECDL Operation Among Its Applications."], ["apex-pro", "Built on the ECDL Platform", "ApeX-Pro Is Based on Our ECDL Platform."]] },
       { slug: "apex-pro", code: "02", cat: "sources", catLabel: "Laser Sources", short: "ApeX-Pro", name: "ApeX-Pro", img: "apexProProductImage", desc: "Tunable laser system for the rubidium D1 and D2 transitions, based on our ECDL platform.",
-        specs: [["Emission Wavelength Range", "780 nm to 795 nm"], ["Linewidth", "< 1 MHz"], ["Mode-hop-free tuning", "> 25 GHz"], ["Output", "Free-space or fibre-coupled version available"]],
+        specs: [["Emission Wavelength Range", "780 nm to 795 nm"], ["Linewidth", "< 1 MHz"], ["Mode-Hop-Free Tuning", "> 25 GHz"], ["Output", "Free-Space or Fibre-Coupled Version Available"]],
         // INTERNAL — NOT FOR PUBLICATION: source lists "Optical power: > 80 MW". Requires internal verification before it can be shown. Do not change the unit or substitute a value.
         internal: { opticalPower: "> 80 MW", status: "verification required — withheld from public specifications" },
-        apps: ["Rubidium Spectroscopy", "Magneto-optical Traps & Laser Cooling", "Atomic Clocks & Quantum Sensing"], config: [["Output", "Free-space or fibre-coupled version available"], ["Platform", "Based on our ECDL Platform"]], note,
-        cta: "Discuss ApeX-Pro Requirements", wl: (l) => l >= 780 && l <= 795, conceptTitle: "Built for the Rubidium D1 and D2 Transitions.", figCap: "Fig. 02 · Rubidium D2 and D1 at either end of the documented range · illustrative",
-        rel: [["ecdl", "Platform", "ApeX-Pro is based on our ECDL platform."], ["apex-ctrl", "Operates ApeX-Pro", "ApeX-Ctrl lists ApeX-Pro operation among its applications."]] },
+        apps: ["Rubidium Spectroscopy", "Magneto-Optical Traps & Laser Cooling", "Atomic Clocks & Quantum Sensing"], config: [["Output", "Free-Space or Fibre-Coupled Version Available"], ["Platform", "Based on Our ECDL Platform"]], note,
+        cta: "Discuss ApeX-Pro Requirements", wl: (l) => l >= 780 && l <= 795, conceptTitle: "Built for the Rubidium D1 and D2 Transitions.", figCap: "Fig. 02 · Rubidium D2 and D1 at Either End of the Documented Range · Illustrative",
+        rel: [["ecdl", "Platform", "ApeX-Pro Is Based on Our ECDL Platform."], ["apex-ctrl", "Operates ApeX-Pro", "ApeX-Ctrl Lists ApeX-Pro Operation Among Its Applications."]] },
       { slug: "turnkey-diode-lasers", code: "03", cat: "sources", catLabel: "Laser Sources", short: "Turnkey Diode Lasers", name: "Turnkey Diode Lasers", img: "turnkeyDiodeLasersImage", desc: "Fixed-wavelength diode lasers, supplied aligned and ready to operate.",
-        specs: [["Emission Wavelength", "405 nm, 532 nm, 650 nm, 1550 nm"], ["Optical Power", "5 mW to 50 mW"], ["Output", "Free-space or fibre-coupled"]],
-        apps: ["Fluorescence & imaging", "SPDC, QKD", "Telecom, Photonics & Teaching Labs"], config: [["Wavelengths", "405 nm, 532 nm, 650 nm, 1550 nm"], ["Output", "Free-space or fibre-coupled"]], note,
-        cta: "Discuss Turnkey Diode Lasers", wl: (l) => [405, 532, 650, 1550].includes(l), conceptTitle: "Four Fixed Wavelengths, Aligned and Ready.", figCap: "Fig. 03 · The four documented wavelengths · illustrative", rel: [] },
+        specs: [["Emission Wavelength", "405 nm, 532 nm, 650 nm, 1550 nm"], ["Optical Power", "5 mW to 50 mW"], ["Output", "Free-Space or Fibre-Coupled"]],
+        apps: ["Fluorescence & Imaging", "SPDC, QKD", "Telecom, Photonics & Teaching Labs"], config: [["Wavelengths", "405 nm, 532 nm, 650 nm, 1550 nm"], ["Output", "Free-Space or Fibre-Coupled"]], note,
+        cta: "Discuss Turnkey Diode Lasers", wl: (l) => [405, 532, 650, 1550].includes(l), conceptTitle: "Four Fixed Wavelengths, Aligned and Ready.", figCap: "Fig. 03 · The Four Documented Wavelengths · Illustrative", rel: [] },
       { slug: "apex-ctrl", code: "04", cat: "control", catLabel: "Control & Stabilization", short: "ApeX-Ctrl", name: "ApeX-Ctrl", img: "apexCtrlProductImage", desc: "Laser controller combining a low-noise current driver, temperature controller and piezo driver in one unit.",
-        specs: [["Current Driver", "Up to 2 A, noise < 10 µA/√Hz"], ["Temperature stability", "2 mK"], ["Piezo Driver", "0 to 100 V"], ["Interfaces", "USB"], ["Customisation", "Available"]],
-        apps: ["ECDL & ApeX-Pro operation", "Frequency scanning & locking"], config: [["Interfaces", "USB"], ["Customisation", "Available"], ["Optional Module", "Digital Locking Module"]], note: "Contact us for full specifications and configuration options. Customisation available.",
-        cta: "Discuss ApeX-Ctrl", wl: null, conceptTitle: "Current, Temperature and Piezo Control in One Unit.", figCap: "Fig. 04 · Conceptual relationship diagram · not a connector layout or internal circuit",
-        rel: [["ecdl", "Supported Laser", "ApeX-Ctrl lists ECDL operation among its applications."], ["apex-pro", "Supported Laser", "ApeX-Ctrl lists ApeX-Pro operation among its applications."], ["digital-locking-module", "Optional Module", "Optional digital locking module for ApeX-Ctrl."]] },
+        specs: [["Current Driver", "Up to 2 A, noise < 10 µA/√Hz"], ["Temperature Stability", "2 mK"], ["Piezo Driver", "0 to 100 V"], ["Interfaces", "USB"], ["Customisation", "Available"]],
+        apps: ["ECDL & ApeX-Pro Operation", "Frequency Scanning & Locking"], config: [["Interfaces", "USB"], ["Customisation", "Available"], ["Optional Module", "Digital Locking Module"]], note: "Contact Us for Full Specifications and Configuration Options. Customisation Available.",
+        cta: "Discuss ApeX-Ctrl", wl: null, conceptTitle: "Current, Temperature and Piezo Control in One Unit.", figCap: "Fig. 04 · Conceptual Relationship Diagram · Not a Connector Layout or Internal Circuit",
+        rel: [["ecdl", "Supported Laser", "ApeX-Ctrl Lists ECDL Operation Among Its Applications."], ["apex-pro", "Supported Laser", "ApeX-Ctrl Lists ApeX-Pro Operation Among Its Applications."], ["digital-locking-module", "Optional Module", "Optional Digital Locking Module for ApeX-Ctrl."]] },
       { slug: "digital-locking-module", code: "05", cat: "control", catLabel: "Control & Stabilization", short: "Digital Locking Module", name: "Digital Locking Module", img: "digitalLockingModuleImage", desc: "Optional digital locking module for ApeX-Ctrl, for frequency stabilization to an atomic or cavity reference.",
-        specs: [], badges: ["Optional add-on for ApeX-Ctrl", "Not sold separately"],
-        groups: [["Control channels", ["Fast current Feedback", "Piezo Feedback"]], ["Features", ["Automatic relock", "Digital-processing", "Software-configurable"]], ["Compatibility", ["Fits ApeX-Ctrl", "No external Servo needed"]], ["Configuration", ["Optional add-on Module for ApeX-Ctrl", "Not sold separately"]]],
-        cardSpecs: [["Configuration", "Optional add-on Module for ApeX-Ctrl"], ["Control channels", "Fast current Feedback, Piezo Feedback"], ["Availability", "Not sold separately"]],
-        apps: ["Atomic Transition locking", "Cavity locking", "Long-duration Experiments"], config: [["Configuration", "Optional add-on Module for ApeX-Ctrl"], ["Availability", "Not sold separately"], ["Compatibility", "Fits ApeX-Ctrl · No external servo needed"]], note,
-        cta: "Enquire About the Digital Locking Module", wl: null, conceptTitle: "An Optional Module, Not a Laser Source.", figCap: "Fig. 05 · Fast current and piezo feedback to a reference · illustrative",
-        rel: [["apex-ctrl", "Host Controller", "The module is an optional add-on for ApeX-Ctrl and is not sold separately."]] },
+        specs: [], badges: ["Optional Add-On for ApeX-Ctrl", "Not Sold Separately"],
+        groups: [["Control Channels", ["Fast Current Feedback", "Piezo Feedback"]], ["Features", ["Automatic Relock", "Digital-processing", "Software-configurable"]], ["Compatibility", ["Fits ApeX-Ctrl", "No External Servo Needed"]], ["Configuration", ["Optional Add-On Module for ApeX-Ctrl", "Not Sold Separately"]]],
+        cardSpecs: [["Configuration", "Optional Add-On Module for ApeX-Ctrl"], ["Control Channels", "Fast Current Feedback, Piezo Feedback"], ["Availability", "Not Sold Separately"]],
+        apps: ["Atomic Transition Locking", "Cavity Locking", "Long-Duration Experiments"], config: [["Configuration", "Optional Add-On Module for ApeX-Ctrl"], ["Availability", "Not Sold Separately"], ["Compatibility", "Fits ApeX-Ctrl · No External Servo Needed"]], note,
+        cta: "Enquire About the Digital Locking Module", wl: null, conceptTitle: "An Optional Module, Not a Laser Source.", figCap: "Fig. 05 · Fast Current and Piezo Feedback to a Reference · Illustrative",
+        rel: [["apex-ctrl", "Host Controller", "The Module Is an Optional Add-On for ApeX-Ctrl and Is Not Sold Separately."]] },
       { slug: "compact-spectrometer", code: "06", cat: "measure", catLabel: "Measurement & Accessories", short: "Compact Spectrometer", name: "Compact Spectrometer", img: "compactSpectrometerImage", desc: "Compact spectrometer for verifying and monitoring laser emission wavelengths.",
-        specs: [["Precision", "0.1 nm to 0.05 nm"], ["Wavelength", "400 nm to 1100 nm"], ["Input", "Free-space or fibre-coupled"], ["Interface", "USB"]],
-        apps: ["Wavelength Verification", "Laser Wavelength tuning", "Optical testing"], config: [["Input", "Free-space or fibre-coupled"], ["Wavelength Range", "400 nm to 1100 nm"], ["Interface", "USB"]], note,
-        cta: "Enquire About the Compact Spectrometer", wl: (l) => l >= 400 && l <= 1100, conceptTitle: "Check the Wavelength You Are Working At.", figCap: "Fig. 06 · Input, instrument and readout · illustrative, no measured data", rel: [] },
+        specs: [["Precision", "0.1 nm to 0.05 nm"], ["Wavelength", "400 nm to 1100 nm"], ["Input", "Free-Space or Fibre-Coupled"], ["Interface", "USB"]],
+        apps: ["Wavelength Verification", "Laser Wavelength Tuning", "Optical Testing"], config: [["Input", "Free-Space or Fibre-Coupled"], ["Wavelength Range", "400 nm to 1100 nm"], ["Interface", "USB"]], note,
+        cta: "Enquire About the Compact Spectrometer", wl: (l) => l >= 400 && l <= 1100, conceptTitle: "Check the Wavelength You Are Working At.", figCap: "Fig. 06 · Input, Instrument and Readout · Illustrative, No Measured Data", rel: [] },
     ];
     const bySlug = {}; products.forEach((p) => { bySlug[p.slug] = p; });
     return (this._lzD = { products, bySlug });
@@ -1004,14 +1004,14 @@ class Component extends DCLogic {
     const img = (k) => this.lzImages[k] || "";
     const sp = (list) => list.map(([k, v]) => ({ k, v }));
     const base = {
-      homeHref: ((window.QAIG_NAV || {}).routes || {}).home || "Home Page Design.dc.html", productsHref: ((window.QAIG_NAV || {}).routes || {}).products || "Products.dc.html", isOverview: isOv, isDetail: !!p, isMissing: !isOv && !p, toEnquiry: () => this.lzEnquire(p ? p.slug : "lasers"), toOverview: () => { location.hash = "#/"; }, res: [["VID", "Product Video", "A short walkthrough of the ECDL family."], ["PPT", "Product Presentation", "An overview deck for your team."], ["PDF", "Technical Brochure", "ApeX-Pro and ApeX-Ctrl details for evaluation."]].map((r) => ({ glyph: r[0], title: r[1], line: r[2], href: ((window.QAIG_NAV || {}).routes || {}).enquiry ? window.QAIG_NAV.routes.enquiry + "?product=ECDL&resource=" + encodeURIComponent(r[1]) : "Discuss Your Requirement.dc.html?product=ECDL&resource=" + encodeURIComponent(r[1]) })),
+      homeHref: ((window.QAIG_NAV || {}).routes || {}).home || "Home Page Design.dc.html", productsHref: ((window.QAIG_NAV || {}).routes || {}).products || "Products.dc.html", isOverview: isOv, isDetail: !!p, isMissing: !isOv && !p, toEnquiry: () => this.lzEnquire(p ? p.slug : "lasers"), toOverview: () => { location.hash = "#/"; }, res: [["VID", "Product Video", "A Short Walkthrough of the ECDL Family."], ["PPT", "Product Presentation", "An Overview Deck for Your Team."], ["PDF", "Technical Brochure", "ApeX-Pro and ApeX-Ctrl Details for Evaluation."]].map((r) => ({ glyph: r[0], title: r[1], line: r[2], href: ((window.QAIG_NAV || {}).routes || {}).enquiry ? window.QAIG_NAV.routes.enquiry + "?product=ECDL&resource=" + encodeURIComponent(r[1]) : "Discuss Your Requirement.dc.html?product=ECDL&resource=" + encodeURIComponent(r[1]) })),
       featCols: w >= 760 ? "minmax(0,1fr) minmax(0,1fr)" : "minmax(0,1fr)", featOrder: w >= 760 ? 0 : 1, heroCols: two ? "minmax(0,1fr) minmax(0,1.05fr)" : "minmax(0,1fr)", introCols: two ? "minmax(0,1.3fr) minmax(0,1fr)" : "minmax(0,1fr)",
       allLinks: D.products.map((x) => ({ href: "#/" + x.slug, name: x.name })),
     };
     const W = [405, 532, 650, 1550], tk = S.lTk || 0;
     const tkVals = { tkOpts: W.map((v, i) => ({ v: String(v), on: String(i === tk), pick: () => this.setState({ lTk: i }), color: i === tk ? "var(--foreground)" : "var(--foreground-2)", uC: i === tk ? "var(--brand)" : "var(--foreground-2)", bar: i === tk ? 1 : 0 })),
       tkNote: "Selected: " + W[tk] + " nm, one of four fixed wavelengths. The optical power range of 5 mW to 50 mW and the free-space or fibre-coupled output are stated for the family, not per wavelength.",
-      tkSpecs: sp([["Optical Power", "5 mW to 50 mW"], ["Output", "Free-space or fibre-coupled"]]) };
+      tkSpecs: sp([["Optical Power", "5 mW to 50 mW"], ["Output", "Free-Space or Fibre-Coupled"]]) };
     if (isOv) {
       const cats = [["all", "All"], ["sources", "Laser Sources"], ["control", "Control & Stabilization"], ["measure", "Measurement & Accessories"]];
       const wls = [["any", "Any"], ["405", "405 nm"], ["532", "532 nm"], ["650", "650 nm"], ["780", "780 nm"], ["1550", "1550 nm"]];
@@ -1024,7 +1024,7 @@ class Component extends DCLogic {
         cats: cats.map(([k, label]) => { const on = S.lCat === k; return { label, n: pad(k === "all" ? D.products.length : D.products.filter((x) => x.cat === k).length), on: String(on), pick: () => this.setState({ lCat: k }), color: on ? "var(--foreground)" : "var(--foreground-2)", nC: on ? "var(--brand)" : "var(--foreground-2)", bar: on ? 1 : 0 }; }),
         wls: wls.map(([k, label]) => { const on = S.lWl === k; return { label, on: String(on), pick: () => this.setState({ lWl: k }), bd: on ? "var(--brand)" : "var(--border-light)", bg: on ? "var(--brand-soft)" : "transparent", color: on ? "var(--brand)" : "var(--foreground-2)" }; }),
         ctrlHidden: S.lWl !== "any" && (S.lCat === "all" || S.lCat === "control"), noCards: list.length === 0, resetFilters: () => this.setState({ lCat: "all", lWl: "any" }),
-        cardMore: S.w < 640 && list.length > 3, cardMoreLabel: S.lAll ? "Show fewer" : "Show all " + list.length + " products", cardToggle: () => this.setState({ lAll: !S.lAll }), fullBtn: { style: { width: "100%" } },
+        cardMore: S.w < 640 && list.length > 3, cardMoreLabel: S.lAll ? "Show Fewer" : "Show All " + list.length + " products", cardToggle: () => this.setState({ lAll: !S.lAll }), fullBtn: { style: { width: "100%" } },
         cards: (S.w < 640 && list.length > 3 && !S.lAll ? list.slice(0, 3) : list).map((x) => ({ href: "#/" + x.slug, code: x.code, catLabel: x.catLabel, name: x.name, short: x.short, desc: x.desc, specs: sp(x.cardSpecs || x.specs.slice(0, 3)), apps: x.apps.join(" · "), hasImg: !!img(x.img), noImg: !img(x.img), img: img(x.img), aria: "View details: " + x.name })),
         ecdlImg: img("ecdlProductImage"), ecdlSpecs: sp(D.bySlug.ecdl.specs), apexSpecs: sp(D.bySlug["apex-pro"].specs), specSpecs: sp(D.bySlug["compact-spectrometer"].specs),
         figApex: this.lzFig("apex-pro"), figTk: this.lzFig("turnkey-diode-lasers"), figCtrl: this.lzFig("apex-ctrl"), figSpec: this.lzFig("compact-spectrometer"),
@@ -1035,11 +1035,11 @@ class Component extends DCLogic {
     const i = D.products.indexOf(p), prev = D.products[(i + 5) % 6], next = D.products[(i + 1) % 6], hasImg = !!img(p.img);
     return Object.assign(base, tkVals, { d: {
       slug: p.slug, code: p.code, catLabel: p.catLabel, short: p.short, name: p.name, desc: p.desc, note: p.note, cta: p.cta, badges: p.badges || [], conceptTitle: p.conceptTitle, figCap: p.figCap,
-      enquire: () => this.lzEnquire(p.slug), hasImg, noImg: !hasImg, img: img(p.img), imgAlt: "Temporary image of a laser head, not an exact depiction of QAIG hardware", imgNote: hasImg ? "Temporary image · not exact QAIG hardware" : "Final photography to follow",
+      enquire: () => this.lzEnquire(p.slug), hasImg, noImg: !hasImg, img: img(p.img), imgAlt: "Temporary Image of a Laser Head, Not an Exact Depiction of QAIG Hardware", imgNote: hasImg ? "Temporary Image · Not Exact QAIG Hardware" : "Final Photography to Follow",
       hasSpecs: p.specs.length > 0, specs: sp(p.specs), hasGroups: !!p.groups, groups: (p.groups || []).map(([k, items]) => ({ k, items })),
       fig: this.lzFig(p.slug), isTk: p.slug === "turnkey-diode-lasers",
       apps: p.apps.map((t, j) => ({ n: pad(j + 1), t })), config: sp(p.config.filter(([k, v]) => !p.specs.some(([sk, sv]) => sk === k && sv === v))), hasConfig: p.config.some(([k, v]) => !p.specs.some(([sk, sv]) => sk === k && sv === v)),
-      hasRel: p.rel.length > 0, noRel: p.rel.length === 0, relTitle: p.rel.length ? "Documented relationships." : "Explore the Portfolio.",
+      hasRel: p.rel.length > 0, noRel: p.rel.length === 0, relTitle: p.rel.length ? "Documented Relationships." : "Explore the Portfolio.",
       rel: p.rel.map(([s, why, src]) => ({ href: "#/" + s, why, src, name: D.bySlug[s].name })),
       prevHref: "#/" + prev.slug, prevName: prev.name, nextHref: "#/" + next.slug, nextName: next.name,
     } });

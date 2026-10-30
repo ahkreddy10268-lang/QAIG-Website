@@ -24,43 +24,43 @@ window.QAIG_NAV = {
   /* Company labels mirror the Company page's sticky section nav (same names, same order). Each About item deep-links to its section. */
   companyHref: { "About": "Company page.dc.html", "Overview": "Company page.dc.html#overview", "In the Lab": "Company page.dc.html#technology", "Leadership": "Company page.dc.html#leadership", "Team": "Company page.dc.html#team", "Advisory": "Company page.dc.html#advisory", "Recognition": "Resources v2.dc.html?page=downloads#dl-achievements", "Work With Us": "Work With Us.dc.html", "Our IPs": "Our IPs.dc.html", "Careers": "Work With Us.dc.html?page=careers", "Collaborations": "Work With Us.dc.html?page=collaborations", "Contact Us": "Discuss Your Requirement.dc.html" },
   cats: [
-    { code: "PQC", short: "PQC", fig: "Lattice key exchange", label: "Post-Quantum Cryptography", icon: "shield", labs: ["Threat", "Protect", "Channel", "Verify"],
-      desc: "Find, fix and harden cryptography against quantum attacks.", cta: "Explore Q-Forte →",
+    { code: "PQC", short: "PQC", fig: "Lattice Key Exchange", label: "Post-Quantum Cryptography", icon: "shield", labs: ["Threat", "Protect", "Channel", "Verify"],
+      desc: "Find, Fix and Harden Cryptography Against Quantum Attacks.", cta: "Explore Q-Forte →",
       stack: { name: "Q-Forte", full: "Quantum Assured InfoSec Platform", icon: "assets/products/QFORTE_ICON.png",
         /* Storytelling order, not a mandatory technical sequence. PROVISIONAL — CONFIRM WITH QAIG */
         steps: [["Discover", "Chec-Q AI", "Understand Cryptographic Exposure"], ["Protect", "Q-Sleeve", "Secure Communications in Transit"], ["Randomise", "QuRNG", "Quantum-Generated Randomness"]] },
       items: [
-        { title: "Chec-Q AI", blurb: "Cryptographic Risk Manager", thumb: "CHECQ_WN", does: "Identifies where cryptography is used across your systems and flags what is vulnerable to quantum attack.", when: "You need an inventory of cryptographic risk before planning a move to quantum-safe algorithms." },
-        { title: "Q-Sleeve", blurb: "Quantum-Safe VPN & Security", thumb: "QSLEEVE_WN", does: "A VPN and security layer that protects data in transit with quantum-safe encryption.", when: "Data moving between sites or users has to stay confidential against future quantum attacks." },
-        { title: "QuRNG", blurb: "Quantum Random Number Generation", thumb: "QuRNG_WN", does: "Generates random numbers from a quantum process for keys and cryptographic operations.", when: "Your keys and protocols depend on randomness that cannot be predicted." } ] },
-    { code: "QIS", short: "Information Sciences", fig: "A three-qubit circuit", label: "Quantum Information Sciences", icon: "gates", labs: ["Model", "Simulate", "Control", "Apply"],
-      desc: "Design, simulate and optimise quantum algorithms.", cta: "Explore Information Sciences →",
+        { title: "Chec-Q AI", blurb: "Cryptographic Risk Manager", thumb: "CHECQ_WN", does: "Identifies Where Cryptography Is Used Across Your Systems and Flags What Is Vulnerable to Quantum Attack.", when: "You Need an Inventory of Cryptographic Risk Before Planning a Move to Quantum-Safe Algorithms." },
+        { title: "Q-Sleeve", blurb: "Quantum-Safe VPN & Security", thumb: "QSLEEVE_WN", does: "A VPN and Security Layer That Protects Data in Transit With Quantum-Safe Encryption.", when: "Data Moving Between Sites or Users Has to Stay Confidential Against Future Quantum Attacks." },
+        { title: "QuRNG", blurb: "Quantum Random Number Generation", thumb: "QuRNG_WN", does: "Generates Random Numbers From a Quantum Process for Keys and Cryptographic Operations.", when: "Your Keys and Protocols Depend on Randomness That Cannot Be Predicted." } ] },
+    { code: "QIS", short: "Information Sciences", fig: "A Three-Qubit Circuit", label: "Quantum Information Sciences", icon: "gates", labs: ["Model", "Simulate", "Control", "Apply"],
+      desc: "Design, Simulate and Optimise Quantum Algorithms.", cta: "Explore Information Sciences →",
       items: [
-        { title: "Q-Cluster", blurb: "Quantum Simulation, Local or Cloud", thumb: "QCLUSTER_WN", mini: { title: "Q-Cluster Mini", blurb: "Your Own Quantum Compute Unit", img: "assets/products/mini/latest/cut/q-cluster-mini-0.png" }, does: "Runs quantum simulations on a local machine or in the cloud.", when: "You want to design and test quantum algorithms without access to quantum hardware." },
-        { title: "QubitIQ", blurb: "AI-Driven Algorithms & Logic", thumb: "QUBITIQ_WN", rnd: true, does: "Applies AI to the design of quantum algorithms and logic." } ] },
-    { code: "NET", short: "Networking", fig: "Entangled link with memory", label: "Quantum Networking", icon: "tube", labs: ["Node", "Link", "Node", "Network"],
-      desc: "Simulate, distribute and store quantum information.", cta: "Explore Quantum Networking →",
+        { title: "Q-Cluster", blurb: "Quantum Simulation, Local or Cloud", thumb: "QCLUSTER_WN", mini: { title: "Q-Cluster Mini", blurb: "Your Own Quantum Compute Unit", img: "assets/products/mini/latest/cut/q-cluster-mini-0.png" }, does: "Runs Quantum Simulations on a Local Machine or in the Cloud.", when: "You Want to Design and Test Quantum Algorithms Without Access to Quantum Hardware." },
+        { title: "QubitIQ", blurb: "AI-Driven Algorithms & Logic", thumb: "QUBITIQ_WN", rnd: true, does: "Applies AI to the Design of Quantum Algorithms and Logic." } ] },
+    { code: "NET", short: "Networking", fig: "Entangled Link With Memory", label: "Quantum Networking", icon: "tube", labs: ["Node", "Link", "Node", "Network"],
+      desc: "Simulate, Distribute and Store Quantum Information.", cta: "Explore Quantum Networking →",
       items: [
-        { title: "EPS-QKD", blurb: "Entanglement-Based QKD System", thumb: "EPSQKD_WN", photo: "assets/products/photos/eps-qkd.jpg", does: "Distributes encryption keys using entangled photon pairs, so their security rests on quantum mechanics.", when: "Links between sites must stay secure against classical and quantum attacks." },
-        { title: "Q-Memory", blurb: "Quantum Memory Hardware", thumb: "QMEMORY_WN", photo: "assets/products/photos/q-memory.jpg", does: "Quantum memory hardware that holds quantum information for later retrieval.", when: "A quantum network has to hold states while links between nodes are established." },
-        { title: "QNTSim", blurb: "Quantum Network Simulator", thumb: "QNTSIM_WN", mini: { title: "QNTSim Mini", blurb: "Local Quantum Network Simulator", img: "assets/products/mini/latest/cut/qntsim-mini-0.png" }, does: "Simulates quantum networks, including their nodes, links and protocols, in software.", when: "You are planning a quantum network and want to evaluate designs before building hardware." },
-        { title: "Quantum Repeater", blurb: "Long-Distance Signal Modules", rnd: true, does: "Modules intended to extend quantum signals over long distances." } ] },
+        { title: "EPS-QKD", blurb: "Entanglement-Based QKD System", thumb: "EPSQKD_WN", photo: "assets/products/photos/eps-qkd.jpg", does: "Distributes Encryption Keys Using Entangled Photon Pairs, so Their Security Rests on Quantum Mechanics.", when: "Links Between Sites Must Stay Secure Against Classical and Quantum Attacks." },
+        { title: "Q-Memory", blurb: "Quantum Memory Hardware", thumb: "QMEMORY_WN", photo: "assets/products/photos/q-memory.jpg", does: "Quantum Memory Hardware That Holds Quantum Information for Later Retrieval.", when: "A Quantum Network Has to Hold States While Links Between Nodes Are Established." },
+        { title: "QNTSim", blurb: "Quantum Network Simulator", thumb: "QNTSIM_WN", mini: { title: "QNTSim Mini", blurb: "Local Quantum Network Simulator", img: "assets/products/mini/latest/cut/qntsim-mini-0.png" }, does: "Simulates Quantum Networks, Including Their Nodes, Links and Protocols, in Software.", when: "You Are Planning a Quantum Network and Want to Evaluate Designs Before Building Hardware." },
+        { title: "Quantum Repeater", blurb: "Long-Distance Signal Modules", rnd: true, does: "Modules Intended to Extend Quantum Signals Over Long Distances." } ] },
     { code: "SEN", short: "Sensing", fig: "Atom in a Field", label: "Quantum Sensing", icon: "meter", labs: ["Field", "Sensor", "Measure", "Signal"],
-      desc: "Measure weak fields with atomic sensors at room temperature.", cta: "Explore Quantum Sensing →",
+      desc: "Measure Weak Fields With Atomic Sensors at Room Temperature.", cta: "Explore Quantum Sensing →",
       items: [
-        { title: "Q-Biosensor", blurb: "Biological Molecular Sensing", thumb: "QSENSING_WN", does: "Applies quantum sensing to the detection of biological molecules.", when: "Molecular signals need more sensitivity than conventional sensors provide." },
-        { title: "Quantum Gravimeter", blurb: "Precision Gravity Mapping", rnd: true, does: "An atom-based instrument for precision gravity mapping." },
-        { title: "Rydberg Sensor", blurb: "RF & Microwave Field Sensing", rnd: true, does: "Uses highly excited Rydberg atoms to sense RF and microwave fields." } ] },
+        { title: "Q-Biosensor", blurb: "Biological Molecular Sensing", thumb: "QSENSING_WN", does: "Applies Quantum Sensing to the Detection of Biological Molecules.", when: "Molecular Signals Need More Sensitivity Than Conventional Sensors Provide." },
+        { title: "Quantum Gravimeter", blurb: "Precision Gravity Mapping", rnd: true, does: "An Atom-Based Instrument for Precision Gravity Mapping." },
+        { title: "Rydberg Sensor", blurb: "RF & Microwave Field Sensing", rnd: true, does: "Uses Highly Excited Rydberg Atoms to Sense RF and Microwave Fields." } ] },
     { code: "LSR", short: "Lasers", fig: "External Cavity", label: "Quantum Lasers", icon: "diode", labs: ["Source", "Beam", "Control", "Apply"],
-      desc: "Narrow-linewidth light for precision quantum experiments.", cta: "Explore Quantum Lasers →",
-      items: [ { title: "ECDL", blurb: "External Cavity Diode Laser", thumb: "ECDL_WN", photo: "assets/products/photos/ecdl-head.jpg", does: "An external cavity diode laser producing tunable, narrow-linewidth light.", when: "Atomic physics or quantum optics experiments need light at a precise wavelength." } ] }
+      desc: "Narrow-Linewidth Light for Precision Quantum Experiments.", cta: "Explore Quantum Lasers →",
+      items: [ { title: "ECDL", blurb: "External Cavity Diode Laser", thumb: "ECDL_WN", photo: "assets/products/photos/ecdl-head.jpg", does: "An External Cavity Diode Laser Producing Tunable, Narrow-Linewidth Light.", when: "Atomic Physics or Quantum Optics Experiments Need Light at a Precise Wavelength." } ] }
   ],
   /* Mini hardware offerings sit under their parent product (item.mini). They are not counted in category product counts. */
   achievementsHref: "Resources v2.dc.html?page=downloads#dl-achievements",
   resources: [
-    { label: "Research & Publications", description: "Papers and conference proceedings from our research team", href: "Resources v2.dc.html?page=research" },
-    { label: "Downloads", description: "Brochures, product documents and downloadable resources", href: "Resources v2.dc.html?page=downloads" },
-    { label: "News & Updates", description: "Company, research and product updates", href: "Resources v2.dc.html?page=news" }
+    { label: "Research & Publications", description: "Papers and Conference Proceedings From Our Research Team", href: "Resources v2.dc.html?page=research" },
+    { label: "Downloads", description: "Brochures, Product Documents and Downloadable Resources", href: "Resources v2.dc.html?page=downloads" },
+    { label: "News & Updates", description: "Company, Research and Product Updates", href: "Resources v2.dc.html?page=news" }
   ],
   company: [
     { heading: "About", items: [["Overview", "Our Mission & Roadmap", 1], ["In the Lab", "Our Labs & Offices"], ["Leadership", "Founder & CEO"], ["Team", "Meet Our Team"], ["Advisory", "Advisory Board"]] },

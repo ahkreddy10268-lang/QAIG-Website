@@ -24,7 +24,7 @@
     <h1 style="margin:24px 0 0;font-size:clamp(2.4rem,1.6rem + 2.6vw,4rem);line-height:1.05;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">{{ titleA }} <span style="color:var(--brand)">{{ titleB }}</span></h1>
     <p style="margin:20px 0 0;max-width:62ch;font-size:clamp(18px,1rem + .35vw,21px);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ lead }}</p>
     <sc-if value="{{ isDoc }}" hint-placeholder-val="{{ true }}"><p style="margin:18px 0 0;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)">Last Updated · {{ updated }}</p></sc-if>
-    <div role="tablist" aria-label="Legal documents" style="margin-top:36px;display:flex;flex-wrap:wrap;gap:8px">
+    <div role="tablist" aria-label="Legal Documents" style="margin-top:36px;display:flex;flex-wrap:wrap;gap:8px">
       <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
         <a href="{{ t.href }}" role="tab" aria-selected="{{ t.on }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid {{ t.bd }};border-radius:999px;background:{{ t.bg }};color:{{ t.color }};font-size:15.5px;font-weight:500;transition:border-color .2s,color .2s" style-hover="border-color:var(--brand);color:var(--foreground)">{{ t.label }}</a>
       </sc-for>
@@ -35,7 +35,7 @@
 <sc-if value="{{ isDoc }}" hint-placeholder-val="{{ true }}">
 <main class="section-shell" style="display:grid;grid-template-columns:{{ cols }};gap:clamp(32px,5vw,80px);padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(72px,8vw,120px)">
   <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-    <aside aria-label="On this page" style="position:sticky;top:117px;align-self:start">
+    <aside aria-label="On This Page" style="position:sticky;top:117px;align-self:start">
       <div style="font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">On This Page</div>
       <ol style="list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;border-left:1px solid var(--border)">
         <sc-for list="{{ sections }}" as="s" hint-placeholder-count="8">
@@ -54,7 +54,7 @@
       </section>
     </sc-for>
     <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;padding:28px 30px;border:1px solid var(--border-light);border-radius:20px;background:var(--surface)">
-      <div><div style="font-size:19px;font-weight:600">Questions About This Page?</div><p style="margin:6px 0 0;font-size:16px;line-height:1.55;color:var(--muted)">Write to <a href="mailto:{{ contact }}">{{ contact }}</a>. We reply within 5 working days.</p></div>
+      <div><div style="font-size:19px;font-weight:600">Questions About This Page?</div><p style="margin:6px 0 0;font-size:16px;line-height:1.55;color:var(--muted)">Write to <a href="mailto:{{ contact }}">{{ contact }}</a>. We Reply Within 5 Working Days.</p></div>
       <x-import component-from-global-scope="QAIG.Button" variant="outline" onClick="{{ toEnquiry }}" hint-size="200px,40px">Contact Our Team</x-import>
     </div>
   </article>
@@ -103,14 +103,14 @@ class Component extends DCLogic {
     const sections = (d.sections || []).map(([t, paras], i) => ({ id: slug(t), title: t, paras, num: String(i + 1).padStart(2, "0"), cur: i === this.state.act ? "true" : "false", rail: i === this.state.act ? "var(--brand)" : "transparent", color: i === this.state.act ? "var(--foreground)" : "var(--muted)" }));
     const pH = (t) => (N.productPageHref ? N.productPageHref(t) : "#");
     const mapGroups = !isMap ? [] : [
-      { title: "Main Pages", links: [["Home", R.home, "Quantum technologies across five domains"], ["Product Directory", R.products, "All 13 products in one place"], ["Work With Us", R.workWithUs, "Careers and collaborations"], ["Resources", R.resources, "Research, downloads and news"], ["Company", R.about, "Mission, leadership and recognition"], ["Discuss Your Requirement", R.enquiry, "Request a demo or a technical session"], ["Customer Portal", R.portal, "Orders, licences, billing and addresses"]] },
+      { title: "Main Pages", links: [["Home", R.home, "Quantum Technologies Across Five Domains"], ["Product Directory", R.products, "All 13 Products in One Place"], ["Work With Us", R.workWithUs, "Careers and Collaborations"], ["Resources", R.resources, "Research, Downloads and News"], ["Company", R.about, "Mission, Leadership and Recognition"], ["Discuss Your Requirement", R.enquiry, "Request a Demo or a Technical Session"], ["Customer Portal", R.portal, "Orders, Licences, Billing and Addresses"]] },
       ...N.cats.map((c) => ({ title: c.label, links: [...(c.stack ? [[c.stack.name, R.products + "#" + c.code.toLowerCase(), c.stack.full]] : []), ...c.items.map((p) => [p.title, pH(p.title), p.blurb, p.rnd])] })),
       { title: "Resources", links: (N.resources || []).map((r) => [r.label, r.href, r.description]) },
-      { title: "Legal", links: [["Privacy Policy", R.privacy, "How we handle personal information"], ["Terms of Service", R.terms, "Rules for using this website"], ["Cookie Policy", R.cookies, "Cookies we use and how to control them"]] },
+      { title: "Legal", links: [["Privacy Policy", R.privacy, "How We Handle Personal Information"], ["Terms of Service", R.terms, "Rules for Using This Website"], ["Cookie Policy", R.cookies, "Cookies We Use and How to Control Them"]] },
     ].map((g, i) => ({ id: "map-" + i, title: g.title, count: String(g.links.length).padStart(2, "0") + " PAGES", links: g.links.map(([label, href, sub, rnd]) => ({ label, href: href || "#", sub, rnd: !!rnd })) }));
     const wide = this.state.w >= 1024;
     return {
-      title, titleA, titleB, lead: isMap ? "Every page on the Quantum AI Global website, grouped the same way as the main navigation." : d.lead, updated: L.updated, contact: L.contact,
+      title, titleA, titleB, lead: isMap ? "Every Page on the Quantum AI Global Website, Grouped the Same Way as the Main Navigation." : d.lead, updated: L.updated, contact: L.contact,
       isDoc: !isMap, isMap, tabs, sections, mapGroups, wide, cols: wide ? "240px minmax(0,1fr)" : "minmax(0,1fr)", homeHref: R.home || "#",
       toEnquiry: () => { const h = R.enquiry; window.QAIG_GO ? window.QAIG_GO(h, "enquiry") : (location.href = h); },
     };

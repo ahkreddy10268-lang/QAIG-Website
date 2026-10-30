@@ -32,7 +32,7 @@
         <h1 style="margin:0;max-width:13ch;font-size:clamp(2.75rem,1.4rem + 4.4vw,5.5rem);line-height:.98;letter-spacing:-0.05em;font-weight:600;text-wrap:balance">Five Domains. <span style="color:var(--brand)">Thirteen Products.</span></h1>
       </div>
       <div style="display:flex;flex-direction:column;gap:24px;min-width:0">
-        <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">From quantum-safe security to narrow-linewidth lasers. Tune across the spectrum below to find a product, or open the directory to compare them domain by domain.</p>
+        <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">From Quantum-Safe Security to Narrow-Linewidth Lasers. Tune Across the Spectrum Below to Find a Product, or Open the Directory to Compare Them Domain by Domain.</p>
         <div style="display:flex;flex-wrap:wrap;gap:12px">
           <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ toIndex }}" hint-size="200px,44px">Browse the Directory</x-import>
           <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ toEnq }}" hint-size="230px,44px">Discuss Your Requirement</x-import>
@@ -51,7 +51,7 @@
       </div>
       <figcaption aria-live="polite" style="display:grid;grid-template-columns:{{ roCols }};align-items:center;gap:16px 28px;padding:18px 22px;border-top:1px solid var(--border);background:var(--surface-2);border-radius:0 0 24px 24px">
         <div style="display:flex;align-items:center;gap:14px;min-width:0">
-          <img src="{{ sp.logo }}" alt="" aria-hidden="true" style="flex:none;width:44px;height:44px;object-fit:contain">
+          <img loading="lazy" src="{{ sp.logo }}" alt="" aria-hidden="true" style="flex:none;width:44px;height:44px;object-fit:contain">
           <div style="min-width:0;display:flex;flex-direction:column;gap:3px">
             <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ sp.idx }} · {{ sp.domain }}</span>
             <span style="display:flex;align-items:center;gap:10px;font-size:clamp(1.2rem,1rem + .5vw,1.5rem);font-weight:600;letter-spacing:-0.02em">{{ sp.title }}<sc-if value="{{ sp.rnd }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span></sc-if></span>
@@ -59,8 +59,8 @@
         </div>
         <p style="margin:0;min-width:0;font-size:16px;line-height:1.55;color:var(--foreground-2);text-wrap:pretty">{{ sp.does }}</p>
         <div style="display:flex;align-items:center;justify-content:{{ roJustify }};gap:8px">
-          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ spPrev }}" aria-label="Previous product" hint-size="40px,40px">←</x-import>
-          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ spNext }}" aria-label="Next product" hint-size="40px,40px">→</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ spPrev }}" aria-label="Previous Product" hint-size="40px,40px">←</x-import>
+          <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ spNext }}" aria-label="Next Product" hint-size="40px,40px">→</x-import>
           <x-import component-from-global-scope="QAIG.Button" onClick="{{ spOpen }}" hint-size="150px,40px">View Product →</x-import>
         </div>
       </figcaption>
@@ -76,7 +76,7 @@
         <span class="eyebrow" style="white-space:nowrap">Hardware</span>
         <h2 style="margin:0;font-size:var(--text-h2);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Featured <span style="color:var(--brand)">Mini Products</span></h2>
       </div>
-      <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">Compact hardware units that run Q-Cluster and QNTSim on your own site.</p>
+      <p style="margin:0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--muted);text-wrap:pretty">Compact Hardware Units That Run Q-Cluster and QNTSim on Your Own Site.</p>
     </header>
     <div style="display:grid;grid-template-columns:{{ minisCols }};gap:clamp(16px,2vw,24px)">
       <sc-for list="{{ minis }}" as="m" hint-placeholder-count="2">
@@ -118,7 +118,7 @@
 </section>
 
 <div style="position:sticky;top:85px;z-index:40;height:0">
-<nav aria-label="Product domains" style="position:absolute;left:0;right:0;top:0;background:var(--nav-surface);backdrop-filter:blur(20px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);opacity:{{ subOp }};visibility:{{ subVis }};transform:translateY({{ subY }});transition:opacity .3s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s">
+<nav aria-label="Product Domains" style="position:absolute;left:0;right:0;top:0;background:var(--nav-surface);backdrop-filter:blur(20px);border-top:1px solid var(--border);border-bottom:1px solid var(--border);opacity:{{ subOp }};visibility:{{ subVis }};transform:translateY({{ subY }});transition:opacity .3s cubic-bezier(.22,1,.36,1),transform .35s cubic-bezier(.22,1,.36,1),visibility .35s">
   <span ref="{{ progRef }}" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,rgba(0,212,255,.35),var(--brand));box-shadow:0 0 10px rgba(0,212,255,.55);pointer-events:none"></span>
   <div ref="{{ subRef }}" class="section-shell qsub" style="display:flex;align-items:center;justify-content:safe center;gap:4px;overflow-x:auto;height:48px;scrollbar-width:none">
     <sc-for list="{{ subs }}" as="s" hint-placeholder-count="5">
@@ -140,13 +140,13 @@
       <span style="flex:none;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;white-space:nowrap;color:var(--muted);padding-bottom:4px">{{ d.count }}</span>
     </header>
     <sc-if value="{{ d.stack }}" hint-placeholder-val="{{ false }}">
-      <div role="group" aria-label="Q-Forte, integrated PQC stack" style="display:flex;flex-direction:column;gap:{{ grpGap }};padding:{{ grpPad }};border:1px solid rgba(0,212,255,.28);border-radius:28px;background:linear-gradient(180deg,rgba(0,212,255,.06),transparent 40%),rgba(0,212,255,.015)">
+      <div role="group" aria-label="Q-Forte, Integrated PQC Stack" style="display:flex;flex-direction:column;gap:{{ grpGap }};padding:{{ grpPad }};border:1px solid rgba(0,212,255,.28);border-radius:28px;background:linear-gradient(180deg,rgba(0,212,255,.06),transparent 40%),rgba(0,212,255,.015)">
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:{{ grpHeadPad }}">
           <div style="flex:1 1 320px;display:flex;align-items:center;gap:14px;min-width:0">
-            <img src="{{ qfIcon }}" alt="Q-Forte" style="flex:none;width:40px;height:40px;object-fit:contain">
+            <img loading="lazy" src="{{ qfIcon }}" alt="Q-Forte" style="flex:none;width:40px;height:40px;object-fit:contain">
             <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
               <span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px"><span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;white-space:nowrap">Q-Forte</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Integrated PQC Stack</span></span>
-              <span style="font-size:16px;line-height:1.45;color:var(--foreground-2)">Three complementary products. One unified stack.</span>
+              <span style="font-size:16px;line-height:1.45;color:var(--foreground-2)">Three Complementary Products. One Unified Stack.</span>
             </div>
           </div>
           <a href="{{ qfHref }}" style="display:flex;align-items:center;gap:8px;min-height:44px;font-size:16px;font-weight:600;white-space:nowrap" style-hover="gap:12px">View Q-Forte<span aria-hidden="true">→</span></a>
@@ -163,7 +163,7 @@
                 <img src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
               </sc-if>
               <sc-if value="{{ c.hasPhoto }}" hint-placeholder-val="{{ false }}">
-                <div role="group" aria-label="Figure view" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
+                <div role="group" aria-label="Figure View" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
                   <button type="button" aria-pressed="{{ c.pIll }}" onClick="{{ c.toIll }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tIllBg }};color:{{ c.tIllFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Concept</button>
                   <button type="button" aria-pressed="{{ c.pPhoto }}" onClick="{{ c.toPhoto }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tPhBg }};color:{{ c.tPhFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Product Render</button>
                 </div>
@@ -175,7 +175,7 @@
                 <div style="flex:none;display:{{ c.badgeDisp }};align-items:center;gap:8px">
                 <sc-if value="{{ c.qf }}" hint-placeholder-val="{{ false }}">
                   <span style="position:relative;display:flex">
-                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
+                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte Stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img loading="lazy" src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
                     <span id="tip-{{ c.slug }}" role="tooltip" style="position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:max-content;max-width:260px;padding:10px 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-3);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;color:var(--foreground);opacity:{{ c.tipOp }};visibility:{{ c.tipVis }};transform:translateY({{ c.tipY }});transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none">{{ c.tip }}</span>
                   </span>
                 </sc-if>
@@ -209,7 +209,7 @@
                 <img src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
               </sc-if>
               <sc-if value="{{ c.hasPhoto }}" hint-placeholder-val="{{ false }}">
-                <div role="group" aria-label="Figure view" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
+                <div role="group" aria-label="Figure View" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
                   <button type="button" aria-pressed="{{ c.pIll }}" onClick="{{ c.toIll }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tIllBg }};color:{{ c.tIllFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Concept</button>
                   <button type="button" aria-pressed="{{ c.pPhoto }}" onClick="{{ c.toPhoto }}" style="min-height:28px;padding:0 10px;border:0;border-radius:5px;background:{{ c.tPhBg }};color:{{ c.tPhFg }};font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;white-space:nowrap;cursor:pointer">Product Render</button>
                 </div>
@@ -221,7 +221,7 @@
                 <div style="flex:none;display:{{ c.badgeDisp }};align-items:center;gap:8px">
                 <sc-if value="{{ c.qf }}" hint-placeholder-val="{{ false }}">
                   <span style="position:relative;display:flex">
-                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
+                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte Stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img loading="lazy" src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
                     <span id="tip-{{ c.slug }}" role="tooltip" style="position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:max-content;max-width:260px;padding:10px 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-3);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;color:var(--foreground);opacity:{{ c.tipOp }};visibility:{{ c.tipVis }};transform:translateY({{ c.tipY }});transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none">{{ c.tip }}</span>
                   </span>
                 </sc-if>
@@ -279,7 +279,7 @@ class Component extends DCLogic {
   }
   componentDidMount() {
     this.qvpSync();
-    let rm = false; try { rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+    let rm = false; try { rm = window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches; } catch (e) {}
     this.setState({ rm }, () => { this.upd(); this.initField(); if (location.hash) setTimeout(() => this.jump(location.hash.slice(1)), 300); else setTimeout(() => this.initReveal(), 300); });
     this.onR = () => this.setState({ w: window.innerWidth, h: window.innerHeight }, () => this.upd());
     this.onS = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.upd(); }); };
@@ -307,7 +307,7 @@ class Component extends DCLogic {
     const minis = [];
     cats.forEach((x) => x.items.forEach((p) => { if (!p.mini) return; const m = p.mini, pp = prodBy(p.title), pm = pp.mini || (pp.module || {}).mini || {};
       minis.push({ slug: slug(m.title), title: m.title, kicker: pm.kicker || m.blurb, line: pm.line || "", img: m.img, alt: (pm.photoAlt || m.title + " hardware unit"), parentLabel: p.title + " · " + x.label,
-        tint: minis.length ? "rgba(0,140,220,.10)" : "rgba(0,212,255,.08)", aria: "View product: " + m.title, go: () => this.go(href(m.title)) }); }));
+        tint: minis.length ? "rgba(0,140,220,.10)" : "rgba(0,212,255,.08)", aria: "View Product: " + m.title, go: () => this.go(href(m.title)) }); }));
     const doms = cats.map((x, ci) => { const n = x.items.length, single = n === 1, cols = mob || single ? 1 : desk ? (n === 4 ? 2 : Math.min(n, 3)) : 2, oddLast = (k) => cols === 2 && n % 2 === 1 && k === n - 1;
       return { ci, id: x.code.toLowerCase(), idx: pad(ci + 1), sl: pad(ci + 4) + " " + x.label, label: x.label, labelA: x.label.split(" ").slice(0, -1).join(" "), labelB: x.label.split(" ").slice(-1)[0], desc: x.desc, stack: !!x.stack, plain: !x.stack,
         cols: "repeat(" + cols + ",minmax(0,1fr))", goIdx: (e) => { e.preventDefault(); this.jump(x.code.toLowerCase()); },
@@ -327,9 +327,9 @@ class Component extends DCLogic {
             tIllBg: ph ? "transparent" : "var(--brand)", tIllFg: ph ? "#3b4a5c" : "var(--brand-ink)", tPhBg: ph ? "#0b1420" : "transparent", tPhFg: ph ? "#ffffff" : "var(--foreground-2)",
             toIll: () => this.setView(sl, "ill"), toPhoto: () => this.setView(sl, "photo"),
             tip: p.title + " is one of three products in Q-Forte, QAIG's integrated PQC stack.", tipOn: () => this.setState({ tip: sl }), tipOp: tipOn ? 1 : 0, tipVis: tipOn ? "visible" : "hidden", tipY: tipOn ? "0" : "-4px",
-            does: p.does || p.blurb, whenK: r ? "Stage" : "Useful When", when: r ? "In research and development. Not yet offered as a product." : p.when || "",
+            does: p.does || p.blurb, whenK: r ? "Stage" : "Useful When", when: r ? "In Research and Development. Not yet Offered as a Product." : p.when || "",
             hasMini: !!p.mini, miniTitle: p.mini ? p.mini.title : "", miniHref: p.mini ? href(p.mini.title) : "#",
-            href: href(p.title), ctaAria: "Read more about " + p.title,
+            href: href(p.title), ctaAria: "Read More About " + p.title,
             ill: !ph && window.QAIG_PILL ? window.QAIG_PILL(React, p.title, S.rm) : null }; }) }; });
     return {
       qfHref: href(qfStack.name || "Q-Forte"), qfIcon: qfStack.icon || "assets/products/QFORTE_ICON.png",
@@ -343,7 +343,7 @@ class Component extends DCLogic {
         return { sp: { ...p, idx: pad(p.ci + 1), logo: "assets/products/icons/" + ({ "Quantum Gravimeter": "quantum-sensing" }[p.title] || slug(p.title || "x").replace(/^p-/, "")) + ".png" },
           spPrev: () => setI(i - 1), spNext: () => setI(i + 1), spOpen: () => this.go(href(p.title)),
           spKey: (e) => { if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); setI(i + 1); } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); setI(i - 1); } else if (e.key === "Enter") { e.preventDefault(); this.jump(slug(p.title)); } },
-          spAria: "Portfolio spectrum. " + (i + 1) + " of " + n + ": " + p.title + ", " + p.domain + (p.rnd ? ", in R&D" : "") + ". Use arrow keys to move between products and Enter to open.",
+          spAria: "Portfolio Spectrum. " + (i + 1) + " of " + n + ": " + p.title + ", " + p.domain + (p.rnd ? ", in R&D" : "") + ". Use arrow keys to move between products and Enter to open.",
           roCols: desk ? "minmax(0,4fr) minmax(0,5fr) auto" : "minmax(0,1fr)", roJustify: desk ? "flex-end" : "flex-start" }; })(),
       subRef: this.subRef, progRef: this.progRef, subOp: S.subOn ? 1 : 0, subVis: S.subOn ? "visible" : "hidden", subY: S.subOn || S.rm ? "0" : "-10px", noShrink: { style: { flexShrink: 0 } },
       subs: cats.map((x, i) => { const a = i === S.act; return { name: S.w >= 1180 ? x.label : x.short, cur: a ? "true" : undefined, variant: a ? "secondary" : "ghost", go: () => this.jump(x.code.toLowerCase()) }; }),

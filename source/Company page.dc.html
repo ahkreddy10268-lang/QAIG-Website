@@ -26,7 +26,7 @@
     <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:32px clamp(40px,5vw,72px)">
       <h1 style="flex:3 1 560px;margin:0;font-size:clamp(2.5rem,1.4rem + 4.2vw,4.75rem);line-height:1;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Quantum Technology, <span style="color:var(--brand)">Engineered for Real-World Systems.</span></h1>
       <div style="flex:2 1 340px;display:flex;flex-direction:column;gap:28px">
-        <p style="margin:0;max-width:48ch;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">Quantum AI Global develops quantum hardware, software and integrated technologies for communication, security, sensing, networking and scientific applications. We work with organisations to design solutions around their specific technical requirements.</p>
+        <p style="margin:0;max-width:48ch;font-size:var(--text-lead);line-height:1.6;color:var(--muted);text-wrap:pretty">Quantum AI Global Develops Quantum Hardware, Software and Integrated Technologies for Communication, Security, Sensing, Networking and Scientific Applications. We Work With Organisations to Design Solutions Around Their Specific Technical Requirements.</p>
         <div style="display:flex;flex-wrap:wrap;gap:12px">
           <x-import component-from-global-scope="QAIG.Button" data-magnet="true" size="lg" onClick="{{ heroEnq }}" hint-size="220px,44px">Discuss Your Requirement →</x-import>
           <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ heroProducts }}" hint-size="190px,44px">Browse Products</x-import>
@@ -65,7 +65,7 @@
           </sc-for>
         </div>
       </sc-if>
-      <figcaption style="padding:16px 24px;border-top:1px solid var(--border);font-size:16px;color:var(--muted)">What enters, what happens to it and what comes out. Every system we build follows this chain, in hardware, software or both.</figcaption>
+      <figcaption style="padding:16px 24px;border-top:1px solid var(--border);font-size:16px;color:var(--muted)">What Enters, What Happens to It and What Comes Out. Every System We Build Follows This Chain, in Hardware, Software or Both.</figcaption>
     </figure>
   </div>
 </section>
@@ -86,7 +86,7 @@
     <div id="ov-track" style="margin-top:32px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(40px,6vw,56px) 80px">
       <div style="flex:1.15 1 440px;min-width:0">
         <h2 style="margin:0;font-size:var(--text-h2);line-height:1.1;letter-spacing:-0.028em;font-weight:600;text-wrap:balance;font-size:clamp(2.25rem,1.4rem + 3vw,3.75rem);line-height:1.04;letter-spacing:-0.035em">We Build Quantum Technologies as <span style="color:var(--brand)">Working Systems.</span></h2>
-        <p style="margin:24px 0 0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Combining hardware, software, photonics, control and AI around real technical requirements.</p>
+        <p style="margin:24px 0 0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Combining Hardware, Software, Photonics, Control and AI Around Real Technical Requirements.</p>
         <div style="margin-top:clamp(32px,5vw,56px);border-top:1px solid var(--border)">
           <sc-for list="{{ ovQs }}" as="q" hint-placeholder-count="4">
             <div style="display:flex;flex-wrap:wrap;gap:8px 32px;padding:clamp(16px,2.6vw,24px) 0;border-bottom:1px solid var(--border)">
@@ -101,7 +101,7 @@
           <div class="bg-grid" style="position:absolute;inset:0;opacity:.55;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000,transparent);mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,#000,transparent);pointer-events:none"></div>
           <div style="position:relative;display:flex;justify-content:space-between;gap:12px;padding:16px 20px;border-bottom:1px solid var(--border);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span style="white-space:nowrap">Fig. 01 · {{ ovStage }}</span><span class="tnum" style="white-space:nowrap">{{ ovNum }} / 04</span></div>
           <div data-diagram="true" style="position:relative;padding:24px 20px 8px">{{ ovSvg }}</div>
-          <div role="radiogroup" aria-label="Try a requirement" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:4px 20px 18px"><span style="width:100%;margin-bottom:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Try a Requirement</span><sc-for list="{{ ovReqs }}" as="r" hint-placeholder-count="5"><button type="button" role="radio" aria-checked="{{ r.sel }}" onClick="{{ r.pick }}" style="min-height:36px;padding:0 12px;border:1px solid {{ r.bd }};border-radius:8px;background:{{ r.bg }};color:{{ r.color }};font:inherit;font-size:15px;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--brand)">{{ r.label }}</button></sc-for></div>
+          <div role="radiogroup" aria-label="Try a Requirement" style="position:relative;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:4px 20px 18px"><span style="width:100%;margin-bottom:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Try a Requirement</span><sc-for list="{{ ovReqs }}" as="r" hint-placeholder-count="5"><button type="button" role="radio" aria-checked="{{ r.sel }}" onClick="{{ r.pick }}" style="min-height:36px;padding:0 12px;border:1px solid {{ r.bd }};border-radius:8px;background:{{ r.bg }};color:{{ r.color }};font:inherit;font-size:15px;cursor:pointer;transition:border-color .2s,background .2s" style-hover="border-color:var(--brand)">{{ r.label }}</button></sc-for></div>
           <div style="position:relative;display:flex;gap:6px;padding:0 20px">
             <sc-for list="{{ ovTicks }}" as="t" hint-placeholder-count="4"><span style="flex:1;height:2px;border-radius:2px;background:{{ t.bg }};transition:background .4s"></span></sc-for>
           </div>
@@ -110,8 +110,8 @@
       </div>
     </div>
     <div style="margin-top:96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:40px 72px">
-      <div style="padding-top:20px;border-top:1px solid var(--border-strong)"><span style="font-family:var(--font-mono);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Mission</span><p style="margin:16px 0 0;font-size:19px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">To accelerate the global adoption of quantum technologies through indigenous innovation, enterprise solutions, advanced research, education and collaborative ecosystems that solve real-world challenges.</p></div>
-      <div style="padding-top:20px;border-top:1px solid var(--border-strong)"><span style="font-family:var(--font-mono);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Vision</span><p style="margin:16px 0 0;font-size:19px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">To establish Quantum AI Global as a world-leading quantum technology organisation driving the future of secure communication, intelligent computing, scientific discovery and enterprise transformation.</p></div>
+      <div style="padding-top:20px;border-top:1px solid var(--border-strong)"><span style="font-family:var(--font-mono);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Mission</span><p style="margin:16px 0 0;font-size:19px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">To Accelerate the Global Adoption of Quantum Technologies Through Indigenous Innovation, Enterprise Solutions, Advanced Research, Education and Collaborative Ecosystems That Solve Real-World Challenges.</p></div>
+      <div style="padding-top:20px;border-top:1px solid var(--border-strong)"><span style="font-family:var(--font-mono);font-size:14px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Vision</span><p style="margin:16px 0 0;font-size:19px;line-height:1.6;color:var(--foreground-2);text-wrap:pretty">To Establish Quantum AI Global as a World-Leading Quantum Technology Organisation Driving the Future of Secure Communication, Intelligent Computing, Scientific Discovery and Enterprise Transformation.</p></div>
     </div>
   </div>
 </section>
@@ -134,12 +134,12 @@
           <span class="tnum" style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ gcur.n }} / 07</span>
           <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ gcur.tag }}</span>
           <h3 style="margin:0;font-size:24px;line-height:1.2;letter-spacing:-0.02em;font-weight:600">{{ gcur.title }}</h3>
-          <p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--muted)">Photographs taken in our labs and offices.</p>
+          <p style="margin:0;font-size:16.5px;line-height:1.6;color:var(--muted)">Photographs Taken in Our Labs and Offices.</p>
           <div style="margin-top:auto;display:flex;flex-direction:column;gap:16px">
             <div style="display:flex;gap:4px"><sc-for list="{{ gallery }}" as="g" hint-placeholder-count="7"><span style="flex:1;height:2px;border-radius:2px;background:{{ g.seg }};transition:background .3s"></span></sc-for></div>
             <div style="display:flex;gap:8px">
-              <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ galPrev }}" aria-label="Previous photo" hint-size="36px,36px">←</x-import>
-              <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ galNext }}" aria-label="Next photo" hint-size="36px,36px">→</x-import>
+              <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ galPrev }}" aria-label="Previous Photo" hint-size="36px,36px">←</x-import>
+              <x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ galNext }}" aria-label="Next Photo" hint-size="36px,36px">→</x-import>
             </div>
           </div>
         </div>
@@ -168,8 +168,8 @@
     </sc-if>
     <div style="margin-top:72px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)"><span>Fig. 05.08 · Company Video</span></div>
     <div style="margin-top:16px;position:relative;aspect-ratio:16/9;max-height:640px;width:100%;border-radius:20px;overflow:hidden;border:1px solid var(--border-light);background:var(--surface-2)">
-      <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}"><video ref="{{ vidRef }}" src="{{ videoSrc }}" poster="assets/videothumbnail.jpg" preload="none" aria-label="Quantum AI Global company video" style="width:100%;height:100%;object-fit:cover;display:block"></video></sc-if>
-      <sc-if value="{{ noVideo }}" hint-placeholder-val="{{ true }}"><img src="assets/videothumbnail.jpg" alt="Quantum AI Global company video" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
+      <sc-if value="{{ hasVideo }}" hint-placeholder-val="{{ false }}"><video ref="{{ vidRef }}" src="{{ videoSrc }}" poster="assets/videothumbnail.jpg" preload="none" aria-label="Quantum AI Global Company Video" style="width:100%;height:100%;object-fit:cover;display:block"></video></sc-if>
+      <sc-if value="{{ noVideo }}" hint-placeholder-val="{{ true }}"><img src="assets/videothumbnail.jpg" alt="Quantum AI Global Company Video" style="width:100%;height:100%;object-fit:cover;display:block"></sc-if>
     </div>
   </div>
 </section>
@@ -181,8 +181,8 @@
     <span class="eyebrow eyebrow-plain">CEO’s Message</span>
     <article style="margin-top:40px;width:100%;max-width:880px;display:flex;flex-direction:column;align-items:center">
       <span aria-hidden="true" style="font-size:clamp(4rem,3rem + 3vw,6rem);line-height:.7;font-weight:600;color:var(--brand)">“</span>
-      <blockquote style="margin:20px 0 0;font-size:clamp(2rem,1.3rem + 2.6vw,3.5rem);line-height:1.08;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Quantum Technology Will <span style="color:var(--brand)">Redefine the World</span> as we know it.</blockquote>
-      <p style="margin:32px 0 0;max-width:56ch;font-size:19px;line-height:1.7;color:var(--foreground-2);text-wrap:pretty">At Quantum AI Global, we are committed to advancing India's role in this transformation. Through focus, collaboration and purpose, we are building a quantum ecosystem that empowers industries, inspires talent and creates a better future for all.</p>
+      <blockquote style="margin:20px 0 0;font-size:clamp(2rem,1.3rem + 2.6vw,3.5rem);line-height:1.08;letter-spacing:-0.035em;font-weight:600;text-wrap:balance">Quantum Technology Will <span style="color:var(--brand)">Redefine the World</span> As We Know It.</blockquote>
+      <p style="margin:32px 0 0;max-width:56ch;font-size:19px;line-height:1.7;color:var(--foreground-2);text-wrap:pretty">At Quantum AI Global, We Are Committed to Advancing India's Role in This Transformation. Through Focus, Collaboration and Purpose, We Are Building a Quantum Ecosystem That Empowers Industries, Inspires Talent and Creates a Better Future for All.</p>
       <span aria-hidden="true" style="margin-top:48px;width:48px;height:1px;background:var(--brand)"></span>
       <div style="margin-top:24px;font-size:20px;font-weight:600;letter-spacing:-0.01em">Sanjay Chittore</div>
       <div style="margin-top:8px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Founder &amp; CEO, Quantum AI Global</div>
@@ -195,7 +195,7 @@
   <div class="section-shell">
     <span class="eyebrow">Team</span>
     <h2 style="margin:0;font-size:var(--text-h2);line-height:1.1;letter-spacing:-0.028em;font-weight:600;text-wrap:balance;margin-top:24px">Meet <span style="color:var(--brand)">Our Team</span></h2>
-    <p style="margin:16px 0 0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);max-width:56ch;text-wrap:pretty">Physicists, engineers and operations leaders who turn quantum research into working systems.</p>
+    <p style="margin:16px 0 0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);max-width:56ch;text-wrap:pretty">Physicists, Engineers and Operations Leaders Who Turn Quantum Research Into Working Systems.</p>
     <sc-if value="{{ deckWide }}" hint-placeholder-val="{{ true }}">
     <div style="margin-top:64px;display:flex;gap:12px;height:500px">
       <sc-for list="{{ deck }}" as="c" hint-placeholder-count="7">
@@ -243,7 +243,7 @@
     <div style="flex:1 1 100%;max-width:none"><span class="eyebrow">Advisory</span></div>
     <div style="flex:1 1 100%;min-width:0">
       <h2 style="margin:0;font-size:var(--text-h2);line-height:1.1;letter-spacing:-0.028em;font-weight:600">Advisory <span style="color:var(--brand)">Board</span></h2>
-      <p style="margin:16px 0 0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);max-width:56ch">Distinguished academic and industry experts supporting Quantum AI Global’s vision and growth.</p>
+      <p style="margin:16px 0 0;font-size:var(--text-lead);line-height:1.6;color:var(--muted);max-width:56ch">Distinguished Academic and Industry Experts Supporting Quantum AI Global’s Vision and Growth.</p>
       <div style="margin-top:40px;display:flex;flex-wrap:wrap;gap:8px">
         <sc-for list="{{ advFilters }}" as="c" hint-placeholder-count="4">
           <x-import component-from-global-scope="QAIG.Button" variant="{{ c.variant }}" size="sm" onClick="{{ c.pick }}" hint-size="100px,32px">{{ c.label }}<span class="tnum" style="margin-left:6px;font-size:12.5px;color:var(--muted)">{{ c.count }}</span></x-import>
@@ -276,7 +276,7 @@
         <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.5;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 0% 0%,#000,transparent);mask-image:radial-gradient(ellipse 80% 70% at 0% 0%,#000,transparent);pointer-events:none"></div>
         <span class="eyebrow" style="position:relative;white-space:nowrap">Start With a Requirement</span>
         <h2 style="position:relative;margin:0;max-width:15ch;font-size:clamp(2rem,1.3rem + 2.4vw,3.25rem);line-height:1.04;letter-spacing:-0.035em;font-weight:600;text-wrap:balance;color:var(--foreground)">Have a Quantum Technology <span style="color:var(--brand)">Requirement?</span></h2>
-        <p style="position:relative;margin:0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Tell us what you need to build, measure or secure. Our engineering team will work through the requirement with you.</p>
+        <p style="position:relative;margin:0;max-width:44ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">Tell Us What You Need to Build, Measure or Secure. Our Engineering Team Will Work Through the Requirement With You.</p>
         <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:104px;pointer-events:none">
           <div style="position:absolute;left:clamp(24px,3.2vw,44px);bottom:16px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ ctaSig }}</div>
           <svg preserveAspectRatio="none" viewBox="0 0 600 90" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
@@ -286,8 +286,8 @@
         </div>
       </div>
       <div style="display:flex;flex-direction:column;gap:16px;padding:clamp(24px,3.2vw,44px);background:var(--surface-2);border:0 solid var(--border);border-left-width:{{ ctaBL }};border-top-width:{{ ctaBT }};border-radius:{{ ctaRR }}">
-        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">What are you working on?</span>
-        <div role="group" aria-label="Technology domains" style="display:flex;flex-wrap:wrap;gap:8px">
+        <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">What Are You Working on?</span>
+        <div role="group" aria-label="Technology Domains" style="display:flex;flex-wrap:wrap;gap:8px">
           <sc-for list="{{ ctaDomains }}" as="ch" hint-placeholder-count="5"><x-import component-from-global-scope="QAIG.Button" variant="{{ ch.variant }}" size="sm" onClick="{{ ch.toggle }}" aria-pressed="{{ ch.on }}" dc-props="{{ ch.props }}" hint-size="150px,32px">{{ ch.label }}</x-import></sc-for>
         </div>
         <p aria-live="polite" style="margin:0;min-height:1.6em;font-size:16px;line-height:1.6;color:var(--muted)">{{ ctaNote }}</p>
@@ -302,7 +302,7 @@
 </div>
 </x-dc>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
-<script type="text/x-dc" data-dc-script data-props="{&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monochrome, colour on hover&quot;,&quot;Full colour&quot;],&quot;default&quot;:&quot;Full colour&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sectionNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Auto&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;photoTreatment&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Monochrome, Colour on Hover&quot;,&quot;Full Colour&quot;],&quot;default&quot;:&quot;Full Colour&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;sectionNav&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;customCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;viewport&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Auto&quot;,&quot;Desktop · 1440&quot;,&quot;Laptop · 1280&quot;,&quot;Tablet · 834&quot;,&quot;Mobile · 390&quot;,&quot;All screens&quot;],&quot;default&quot;:&quot;Auto&quot;,&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
   waveRef = React.createRef();
   state = { ctaSel: [], w: typeof window !== "undefined" ? window.innerWidth : 1440, step: 0, req: 2, tm: 0, wfP: 0, adv: "All", sec: "overview", menu: null, search: false, q: "", mobile: false, mSec: null, dx: 0, cmi: 0, cta: [], ovP: 0, evP: 0, gi: 0, mcat: 0 };
@@ -314,7 +314,7 @@ class Component extends DCLogic {
   componentDidMount() { this.qvpSync(); setTimeout(() => this.setupWave(), 60);
     this.onHash = () => { const id = (window.location.hash || "").slice(1); if (id && this.sections.some((s) => s[0] === id)) [60, 500, 1200].forEach((t) => setTimeout(() => this.go(id), t)); };
     window.addEventListener("hashchange", this.onHash); this.onHash();
-    try { this.setState({ rm: window.matchMedia("(prefers-reduced-motion: reduce)").matches }); } catch (e) {}
+    try { this.setState({ rm: window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches }); } catch (e) {}
     this.onR = () => this.setState({ w: window.innerWidth });
     this.onS = () => {
       let cur = "overview";
@@ -341,7 +341,7 @@ class Component extends DCLogic {
   }
   setupCursor() {
     if ((this.props.customCursor ?? true) === false) return;
-    try { if (!window.matchMedia("(pointer: fine)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; } catch (e) { return; }
+    try { if (!window.matchMedia("(Pointer: Fine)").matches || window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches) return; } catch (e) { return; }
     const old = document.getElementById("qcur-root"); if (old) old.remove();
     const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
     document.head.appendChild(st);
@@ -354,7 +354,7 @@ class Component extends DCLogic {
       + '<svg data-k="cross" width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:-18px;top:-18px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M18 0v12M18 24v12M0 18h12M24 18h12" stroke="currentColor" stroke-width="1"/></svg>'
       + '<svg data-k="focus" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;left:-20px;top:-20px;opacity:0;transform:scale(.7);transition:opacity .2s,transform .22s;color:var(--foreground)"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1"/></svg>';
     document.body.appendChild(root); document.documentElement.classList.add("qcur");
-    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + k + '"]'); });
+    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + K + '"]'); });
     let x = 0, y = 0, raf = 0, mode = "x";
     const set = (m) => { if (m === mode) return; mode = m; const lk = m === "link" || m === "ext";
       P.ring.style.opacity = lk ? "1" : "0"; P.ring.style.transform = lk ? "scale(1)" : "scale(.4)";
@@ -454,10 +454,10 @@ class Component extends DCLogic {
   renderVals() {
     const pad = (i) => String(i + 1).padStart(2, "0");
     const steps = [
-      { tag: "Research", desc: "Research in quantum computing, quantum communication and quantum AI." },
-      { tag: "Innovation", desc: "Turning research into products and systems that can be deployed." },
-      { tag: "Education", desc: "Training students and engineers in quantum technology through courses and programmes." },
-      { tag: "Adoption", desc: "Working with industry and government to put quantum technology into practical use." },
+      { tag: "Research", desc: "Research in Quantum Computing, Quantum Communication and Quantum AI." },
+      { tag: "Innovation", desc: "Turning Research Into Products and Systems That Can Be Deployed." },
+      { tag: "Education", desc: "Training Students and Engineers in Quantum Technology Through Courses and Programmes." },
+      { tag: "Adoption", desc: "Working With Industry and Government to Put Quantum Technology Into Practical Use." },
     ].map((s, i) => {
       const on = i === this.state.step;
       return { ...s, idx: pad(i), pick: () => this.setState({ step: i }),
@@ -488,7 +488,7 @@ class Component extends DCLogic {
         pick: () => this.setState({ adv: label }),
         variant: on ? "secondary" : "outline" };
     });
-    const mono = (this.props.photoTreatment ?? "Monochrome, colour on hover") !== "Full colour";
+    const mono = (this.props.photoTreatment ?? "Monochrome, Colour on Hover") !== "Full Colour";
     const S = this.state;
     const reqs = [
       { label: "Security", outs: [0, 2], blocks: ["Q-Sleeve", "Chec-Q AI", "QuRNG"] },
@@ -497,7 +497,7 @@ class Component extends DCLogic {
       { label: "Photonics", outs: [1], blocks: ["ECDL"] },
       { label: "Simulation", outs: [0], blocks: ["Q-Cluster", "QubitIQ", "QNTSim"] },
     ];
-    const outDefs = [["Software", "Simulation, Security, AI, Applications"], ["Hardware", "QKD, Memory, Sensing, Photonics"], ["Integrated System", "Hardware and software, deployed together"]];
+    const outDefs = [["Software", "Simulation, Security, AI, Applications"], ["Hardware", "QKD, Memory, Sensing, Photonics"], ["Integrated System", "Hardware and Software, Deployed Together"]];
     const R0 = reqs[S.req];
     const ly = [48, 129, 210, 291, 372], ry = [90, 210, 330];
     const inPath = (i) => "M250 " + ly[i] + " C330 " + ly[i] + " 330 210 380 210";
@@ -528,32 +528,32 @@ class Component extends DCLogic {
           e("animate", { attributeName: "cx", values: [a, a, b, b].join(";"), keyTimes: [0, t0, t1, 1].map(fx).join(";"), dur: hdur, repeatCount: "indefinite" }),
           e("animate", { attributeName: "opacity", values: "0;0;1;1;0;0", keyTimes: kt, dur: hdur, repeatCount: "indefinite" }))]; });
     const hring = rm ? [] : hxs.map((x, k) => { const ta = k === 0 ? 0 : k * HW - 0.012; return e("circle", { key: "r" + k, cx: x, cy: hy, r: 30, fill: "none", stroke: "var(--brand)", strokeWidth: 1.5, opacity: 0, style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animate", { attributeName: "opacity", values: "0;0;1;0;0", keyTimes: [0, ta, ta + 0.04, ta + 0.14, 1].map(fx).join(";"), dur: hdur, repeatCount: "indefinite" })); });
-    const heroSvg = e("svg", { viewBox: "0 0 1200 68", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": "Diagram: a photon source feeds a quantum state into a channel, through memory and a sensor or receiver, producing a key, signal or data." },
+    const heroSvg = e("svg", { viewBox: "0 0 1200 68", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": "Diagram: A Photon Source Feeds a Quantum State Into a Channel, Through Memory and a Sensor or Receiver, Producing a Key, Signal or Data." },
       e("line", { x1: 100, y1: hy, x2: 1100, y2: hy, stroke: "var(--border-strong)", strokeWidth: 1, strokeDasharray: "2 6" }),
       ...hseg.filter((_, i) => i % 2 === 0),
       ...hxs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: hy, r: 30, fill: "var(--surface)", stroke: i === 0 || i === 5 ? "var(--brand)" : "var(--border-light)", strokeWidth: 1 }), ...gl(i, x))),
       ...hring, ...hseg.filter((_, i) => i % 2 === 1));
-    const heroStages = [["Source", "Photon or laser light"], ["Encode", "Quantum state preparation"], ["Channel", "Fibre or free-space link"], ["Store", "Quantum Memory"], ["Measure", "Sensor or receiver"], ["Output", "Key, signal or data"]].map(([t, d], i) => ({ idx: pad(i), t, d }));
-    const equation = [["Technology", "Photonics, quantum communication, memory, sensing and software.", "+"], ["Engineering", "Hardware, control and software designed together.", "+"], ["Integration", "Components combined into one working system.", "="], ["Application", "Deployed against a customer’s technical requirement.", ""]].map(([t, d, op], i) => ({ idx: pad(i), t, d, op, hasOp: !!op }));
+    const heroStages = [["Source", "Photon or Laser Light"], ["Encode", "Quantum State Preparation"], ["Channel", "Fibre or Free-Space Link"], ["Store", "Quantum Memory"], ["Measure", "Sensor or Receiver"], ["Output", "Key, Signal or Data"]].map(([t, d], i) => ({ idx: pad(i), t, d }));
+    const equation = [["Technology", "Photonics, Quantum Communication, Memory, Sensing and Software.", "+"], ["Engineering", "Hardware, Control and Software Designed Together.", "+"], ["Integration", "Components Combined Into One Working System.", "="], ["Application", "Deployed Against a Customer’s Technical Requirement.", ""]].map(([t, d, op], i) => ({ idx: pad(i), t, d, op, hasOp: !!op }));
     const exFlows = [
-      [["Photon Source", "Input"], ["Quantum Channel", "Transport"], ["Receiver", "Measure"], ["Shared secure key", "Output"]],
-      [["Quantum threat", "Input"], ["PQC protection", "Process"], ["Secure Channel", "Transport"], ["Verification", "Output"]],
+      [["Photon Source", "Input"], ["Quantum Channel", "Transport"], ["Receiver", "Measure"], ["Shared Secure Key", "Output"]],
+      [["Quantum Threat", "Input"], ["PQC Protection", "Process"], ["Secure Channel", "Transport"], ["Verification", "Output"]],
       [["Quantum Information", "Input"], ["Storage", "Process"], ["Memory State", "Hold"], ["Retrieval", "Output"]],
-      [["Physical phenomenon", "Input"], ["Quantum Sensor", "Process"], ["Measurement", "Measure"], ["Useful Signal", "Output"]],
+      [["Physical Phenomenon", "Input"], ["Quantum Sensor", "Process"], ["Measurement", "Measure"], ["Useful Signal", "Output"]],
       [["Node", "Input"], ["Quantum Link", "Transport"], ["Node", "Receive"], ["Network", "Output"]],
-      [["Laser Diode", "Source"], ["External Cavity", "Narrow"], ["Frequency lock", "Stabilise"], ["Stable Light", "Output"]],
-      [["Problem", "Input"], ["Algorithm design", "Process"], ["Simulation", "Test"], ["Result", "Output"]],
+      [["Laser Diode", "Source"], ["External Cavity", "Narrow"], ["Frequency Lock", "Stabilise"], ["Stable Light", "Output"]],
+      [["Problem", "Input"], ["Algorithm Design", "Process"], ["Simulation", "Test"], ["Result", "Output"]],
     ];
     const rnd = ["Quantum Repeater", "Quantum Gravimeter", "Rydberg Sensor"];
     const domains = [
-      ["Quantum Communication", "Entanglement-based key distribution and long-distance quantum links.", ["EPS-QKD", "Quantum Repeater"]],
-      ["Quantum Security", "Quantum-Safe VPN, cryptographic risk assessment and random number generation.", ["Q-Sleeve", "Chec-Q AI", "QuRNG"]],
-      ["Quantum Memory", "Rb-based warm vapour cell quantum memory hardware.", ["Q-Memory"]],
-      ["Quantum Sensing", "Biosensing, gravimetry and RF and microwave electric field sensing.", ["Q-Biosensor", "Quantum Gravimeter", "Rydberg Sensor"]],
+      ["Quantum Communication", "Entanglement-Based Key Distribution and Long-Distance Quantum Links.", ["EPS-QKD", "Quantum Repeater"]],
+      ["Quantum Security", "Quantum-Safe VPN, Cryptographic Risk Assessment and Random Number Generation.", ["Q-Sleeve", "Chec-Q AI", "QuRNG"]],
+      ["Quantum Memory", "Rb-Based Warm Vapour Cell Quantum Memory Hardware.", ["Q-Memory"]],
+      ["Quantum Sensing", "Biosensing, Gravimetry and RF and Microwave Electric Field Sensing.", ["Q-Biosensor", "Quantum Gravimeter", "Rydberg Sensor"]],
       ["Quantum Networking", "Quantum Network Simulation.", ["QNTSim"]],
-      ["Photonics & Lasers", "Narrow-linewidth external cavity diode lasers.", ["ECDL"]],
-      ["Quantum Software & AI", "Quantum simulation (local or cloud) and algorithm development.", ["Q-Cluster", "QubitIQ"]],
-      ["Custom Engineering", "Hardware, software and AI combined around a customer requirement.", []],
+      ["Photonics & Lasers", "Narrow-Linewidth External Cavity Diode Lasers.", ["ECDL"]],
+      ["Quantum Software & AI", "Quantum Simulation (Local or Cloud) and Algorithm Development.", ["Q-Cluster", "QubitIQ"]],
+      ["Custom Engineering", "Hardware, Software and AI Combined Around a Customer Requirement.", []],
     ].map(([name, desc, products], i) => ({ name, desc, products, idx: pad(i), bg: i === 7 ? "var(--brand-soft)" : "transparent", idxColor: i === 7 ? "var(--brand)" : "var(--faint)" }));
     const exD = domains[dx];
     const ex = { idx: pad(dx), name: exD.name, desc: exD.desc,
@@ -564,24 +564,24 @@ class Component extends DCLogic {
     const chain = chainDefs.map(([label, kind], i) => ({ label, kind, arrow: i < chainDefs.length - 1 ? "→" : "", color: kind === "Hardware" ? "var(--brand)" : "var(--faint)" }));
     const P = S.wfP, cl = (x) => Math.max(0, Math.min(1, x)), wfIdx = Math.min(4, Math.floor(P * 4 + 0.001));
     const workflow = [
-      ["Discover", "Define the technical requirement, constraints and success criteria."],
-      ["Design", "Select and adapt technology building blocks across hardware and software."],
-      ["Prototype", "Build and measure a working demonstrator."],
-      ["Integrate", "Combine components, control and software into one system."],
-      ["Deploy", "Deliver and support the system in the customer's environment."],
+      ["Discover", "Define the Technical Requirement, Constraints and Success Criteria."],
+      ["Design", "Select and Adapt Technology Building Blocks Across Hardware and Software."],
+      ["Prototype", "Build and Measure a Working Demonstrator."],
+      ["Integrate", "Combine Components, Control and Software Into One System."],
+      ["Deploy", "Deliver and Support the System in the Customer's Environment."],
     ].map(([title, desc], i) => { const done = P >= i / 4 - 0.001, now = i === wfIdx; const rv = cl((P - (i / 4 - 0.1)) / 0.1); return { title, desc, idx: pad(i), nodeBg: done ? "var(--brand)" : "var(--surface)", nodeColor: done ? "var(--brand-ink)" : "var(--muted)", nodeBorder: done ? "var(--brand)" : "var(--border-light)", ring: now ? "0 0 0 5px var(--brand-soft)" : "none", titleColor: done ? "var(--foreground)" : "var(--muted)", op: (0.3 + 0.7 * rv).toFixed(3), ty: ((1 - rv) * 14).toFixed(1) + "px" }; });
     const wfPct = (80 * P).toFixed(2) + "%", wfHead = "calc(10% + " + (80 * P).toFixed(2) + "%)", wfHeadOp = P > 0.003 && P < 0.997 ? 1 : 0, wfFillH = (P * 100).toFixed(2) + "%";
     const wfLabel = pad(wfIdx) + " / 05 · " + workflow[wfIdx].title;
     const wfChev = [0, 1, 2, 3].map((i) => ({ left: (20 + i * 20) + "%", color: P > (i + 0.5) / 4 ? "var(--brand)" : "var(--border-strong)" }));
     const T = {
-      sanjay: { name: "Sanjay Chittore", title: "Founder & CEO", image: "assets/company/founder-sanjay.jpg", linkedin: "https://www.linkedin.com/in/sanjaychittore/", bio: "Advancing India's role in the quantum transformation." },
-      kapil: { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and former Army Director of InfoSec, Ministry of Defence, Government of India. Led a national-level InfoSec and cryptography research team." },
-      sachin: { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental atomic physicist with extensive experience in laser-cooled atomic spectroscopy and quantum sensor technology." },
-      diksha: { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops interpretable, scalable and resource-efficient quantum machine learning models." },
-      monika: { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental quantum optics physicist specialising in Rydberg-atom-based RF electric-field sensing and atomic spectroscopy." },
-      avinash: { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental physicist who designs narrow-linewidth laser cavities, with expertise in high-resolution spectroscopy." },
-      rama: { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum engineer with expertise in quantum sources, QKD testbeds and quantum memory hardware with integrated control electronics." },
-      neelesh: { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer working on quantum-safe cryptography and cybersecurity, building scalable, standards-compliant production systems." },
+      sanjay: { name: "Sanjay Chittore", title: "Founder & CEO", image: "assets/company/founder-sanjay.jpg", linkedin: "https://www.linkedin.com/in/sanjaychittore/", bio: "Advancing India's Role in the Quantum Transformation." },
+      kapil: { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and Former Army Director of InfoSec, Ministry of Defence, Government of India. Led a National-Level InfoSec and Cryptography Research Team." },
+      sachin: { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental Atomic Physicist With Extensive Experience in Laser-Cooled Atomic Spectroscopy and Quantum Sensor Technology." },
+      diksha: { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops Interpretable, Scalable and Resource-Efficient Quantum Machine Learning Models." },
+      monika: { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental Quantum Optics Physicist Specialising in Rydberg-Atom-Based RF Electric-Field Sensing and Atomic Spectroscopy." },
+      avinash: { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental Physicist Who Designs Narrow-Linewidth Laser Cavities, With Expertise in High-Resolution Spectroscopy." },
+      rama: { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum Engineer With Expertise in Quantum Sources, QKD Testbeds and Quantum Memory Hardware With Integrated Control Electronics." },
+      neelesh: { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer Working on Quantum-Safe Cryptography and Cybersecurity, Building Scalable, Standards-Compliant Production Systems." },
     };
     const teamGroups = [
       { name: "Leadership", keys: ["kapil"] },
@@ -605,13 +605,13 @@ class Component extends DCLogic {
     const thumbs = {}; this.qaigData().cats.forEach((c) => c.items.forEach((p) => { if (p.thumb) thumbs[p.title] = p.thumb; }));
     const productCats = cats.map(([label, items]) => ({ label, count: String(items.length).padStart(2, "0"), items: items.map(([title, blurb, rnd]) => ({ title, blurb, rnd: !!rnd, cat: label, hasImg: !!thumbs[title], noImg: !thumbs[title], img: thumbs[title] ? "assets/products/" + thumbs[title] + ".png" : "", mono: title.split(" ").map((w) => w[0]).join("").slice(0, 2).toUpperCase() })) }));
     const resourceItems = [
-      { label: "Research & Publications", description: "Published quantum research and scientific publications" },
-      { label: "Downloads", description: "Brochures, product documents and downloadable resources" },
-      { label: "News & Updates", description: "Company, research and product updates" },
+      { label: "Research & Publications", description: "Published Quantum Research and Scientific Publications" },
+      { label: "Downloads", description: "Brochures, Product Documents and Downloadable Resources" },
+      { label: "News & Updates", description: "Company, Research and Product Updates" },
     ].map((r, i) => ({ ...r, idx: pad(i) }));
     const companyCols = [
-      { heading: "About", items: [["About","Our mission & roadmap",1],["Leadership","Meet our executive team"],["Recognition","Awards & achievements"],["Gallery","Photos & physical media"]] },
-      { heading: "Work With Us", items: [["Careers","Join our distributed team"],["Collaborations","Partnership opportunities"],["Contact Us","Get in touch with sales"]] },
+      { heading: "About", items: [["About","Our Mission & Roadmap",1],["Leadership","Meet Our Executive Team"],["Recognition","Awards & Achievements"],["Gallery","Photos & Physical Media"]] },
+      { heading: "Work With Us", items: [["Careers","Join Our Distributed Team"],["Collaborations","Partnership Opportunities"],["Contact Us","Get in Touch With Sales"]] },
     ].map((c) => ({ heading: c.heading, items: c.items.map(([label, description, cur]) => ({ label, description, color: cur ? "var(--brand)" : "var(--foreground)" })) }));
     const menuFor = (k) => ({ enter: () => this.setState({ menu: k }), click: () => this.setState((s) => ({ menu: s.menu === k ? null : k })) });
     const navItems = [
@@ -619,7 +619,7 @@ class Component extends DCLogic {
     ].map((n) => {
       const open = n.key && S.menu === n.key;
       const h = n.key ? menuFor(n.key) : { enter: () => this.setState({ menu: null }), click: () => {} };
-      return { label: n.label, aria: n.ext ? "QuLabs, opens an external site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
+      return { label: n.label, aria: n.ext ? "QuLabs, Opens an External Site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
         variant: open || n.current ? "secondary" : "ghost" };
     });
     const tx = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--foreground-2)", style: { font: "500 13px var(--font-sans)" } }, o || {}), s);
@@ -693,7 +693,7 @@ class Component extends DCLogic {
     const dprod = (d) => d.products.map((p) => ({ label: rnd.includes(p) ? p + " · R&D" : p, variant: rnd.includes(p) ? "outline" : "secondary" }));
     const exWide2 = S.w >= 960;
     const exGo = (i) => { this.setState({ dx: i }); if (!exWide2) return; this.exLock = Date.now() + 900; const el = document.getElementById("ex-" + i); if (el) { const r = el.getBoundingClientRect(); window.scrollTo({ top: r.top + window.scrollY - (window.innerHeight / 2 - r.height / 2), behavior: "smooth" }); } };
-    const exItems = domains.slice(0, 7).map((d, i) => { const on = !exWide2 || i === dx2; return { id: "ex-" + i, idx: pad(i), name: d.name, desc: d.desc, count: "Building blocks · " + String(d.products.length).padStart(2, "0"), on: i === dx2, minH: exWide2 ? "40vh" : "0", fill: exWide2 ? (i === dx2 ? "100%" : "0%") : "100%", color: on ? "var(--foreground)" : "var(--faint)", idxColor: on ? "var(--brand)" : "var(--faint)", size: exWide2 ? (i === dx2 ? "32px" : "24px") : "24px", descOp: on ? 1 : 0.35, pick: () => exGo(i), showInline: !exWide2, svg: exWide2 ? null : this.mkDia(dia, i, true), products: dprod(d) }; });
+    const exItems = domains.slice(0, 7).map((d, i) => { const on = !exWide2 || i === dx2; return { id: "ex-" + i, idx: pad(i), name: d.name, desc: d.desc, count: "Building Blocks · " + String(d.products.length).padStart(2, "0"), on: i === dx2, minH: exWide2 ? "40vh" : "0", fill: exWide2 ? (i === dx2 ? "100%" : "0%") : "100%", color: on ? "var(--foreground)" : "var(--faint)", idxColor: on ? "var(--brand)" : "var(--faint)", size: exWide2 ? (i === dx2 ? "32px" : "24px") : "24px", descOp: on ? 1 : 0.35, pick: () => exGo(i), showInline: !exWide2, svg: exWide2 ? null : this.mkDia(dia, i, true), products: dprod(d) }; });
     const exPanels = domains.slice(0, 7).map((d, i) => { const on = i === dx2; return { n: i + 1, idx: pad(i), name: d.name, products: dprod(d), op: on ? 1 : 0, ty: on ? "0px" : (i < dx2 ? "-16px" : "16px"), pe: on ? "auto" : "none", hidden: !on, svg: exWide2 ? this.mkDia(dia, i, on) : null }; });
     // overview system
     const op_ = rm ? 1 : (S.ovP || 0), ovI0 = Math.min(3, Math.floor(op_ * 4.0001)), rp = (a) => Math.max(0, Math.min(1, (op_ - a) / 0.12));
@@ -724,15 +724,15 @@ class Component extends DCLogic {
     ovKids.push(pbox("hw", HWX, "Hardware", hwP), pbox("sw", SWX, "Software", swP));
     ovKids.push(e("g", { key: "ap", style: { opacity: on3 ? 1 : 0.4, transition: "opacity .5s" } }, e("rect", { x: 100, y: AY - 4, width: 200, height: 34, rx: 8, fill: "var(--brand-soft)", stroke: "var(--brand)", strokeWidth: 1 }), tx(200, AY + 18, RQ[1], { fill: "var(--foreground)", style: { font: "600 13px var(--font-sans)" } })));
     if (!rm && on3) flows.forEach((pd, k) => ovKids.push(e("circle", { key: "fc" + k + "-" + ovR, r: 3.5, fill: "var(--brand)", style: { filter: "drop-shadow(0 0 6px var(--brand))" } }, e("animateMotion", { dur: (2.4 + k * 0.35) + "s", repeatCount: "indefinite", path: pd }))));
-    const ovSvg = e("svg", { viewBox: "0 0 400 446", width: "100%", style: { display: "block", overflow: "visible", maxHeight: 470 }, role: "img", "aria-label": "Diagram: the requirement " + RQ[0] + " draws on " + Object.keys(use).join(", ") + ", resolving into " + (hwP.length ? "hardware (" + hwP.map((q) => q[1]).join(", ") + ")" : "no hardware") + " and " + (swP.length ? "software (" + swP.map((q) => q[1]).join(", ") + ")" : "no software") + ", delivered as " + RQ[1] + "." }, ...ovKids);
+    const ovSvg = e("svg", { viewBox: "0 0 400 446", width: "100%", style: { display: "block", overflow: "visible", maxHeight: 470 }, role: "img", "aria-label": "Diagram: The Requirement " + RQ[0] + " draws on " + Object.keys(use).join(", ") + ", resolving into " + (hwP.length ? "hardware (" + hwP.map((q) => q[1]).join(", ") + ")" : "no hardware") + " and " + (swP.length ? "software (" + swP.map((q) => q[1]).join(", ") + ")" : "no software") + ", delivered as " + RQ[1] + "." }, ...ovKids);
     const ovReqs = REQS.map((r, i) => { const sel = ovPicked && i === ovR; return { label: r[0], sel: sel ? "true" : "false", bd: sel ? "var(--brand)" : "var(--border-light)", bg: sel ? "var(--brand-soft)" : "transparent", color: sel ? "var(--foreground)" : "var(--foreground-2)", pick: () => this.setState({ ovReq: i }) }; });
     const ovStages = ["Requirement", "Technology", "Connection", "System"];
-    const ovCaps = ["Every system starts as a technical requirement.", "Our five technology domains are the building blocks.", "Only the domains the requirement needs are connected.", "The design resolves into hardware and software, delivered as one application. Pick a requirement to see how it resolves."];
+    const ovCaps = ["Every System Starts as a Technical Requirement.", "Our Five Technology Domains Are the Building Blocks.", "Only the Domains the Requirement Needs Are Connected.", "The Design Resolves Into Hardware and Software, Delivered as One Application. Pick a Requirement to See How It Resolves."];
     // evidence
     const ep = rm ? 1 : (S.evP || 0);
-    const evNodes = [["People", "75+", "People across India, the US and the UAE"], ["Intellectual property", "15", "IPs filed · 3 patents granted"], ["Technology", "13", "Products across five domains"], ["Ecosystem", "40+", "Partners"]].map(([stage, value, label], i) => { const at = i / 3, done = ep >= at * 0.92 - 0.001, rv = Math.max(0, Math.min(1, (ep - (at * 0.92 - 0.15)) / 0.15)); return { idx: pad(i), stage, value, label, bc: done ? "var(--brand)" : "var(--border-light)", bg: done ? "var(--brand)" : "var(--base)", ring: done ? "0 0 0 5px var(--brand-soft)" : "none", op: S.w >= 760 ? (0.25 + 0.75 * rv).toFixed(3) : 1, ty: S.w >= 760 ? ((1 - rv) * 12).toFixed(1) + "px" : "0px" }; });
+    const evNodes = [["People", "75+", "People Across India, the US and the UAE"], ["Intellectual Property", "15", "IPs Filed · 3 Patents Granted"], ["Technology", "13", "Products Across Five Domains"], ["Ecosystem", "40+", "Partners"]].map(([stage, value, label], i) => { const at = i / 3, done = ep >= at * 0.92 - 0.001, rv = Math.max(0, Math.min(1, (ep - (at * 0.92 - 0.15)) / 0.15)); return { idx: pad(i), stage, value, label, bc: done ? "var(--brand)" : "var(--border-light)", bg: done ? "var(--brand)" : "var(--base)", ring: done ? "0 0 0 5px var(--brand-soft)" : "none", op: S.w >= 760 ? (0.25 + 0.75 * rv).toFixed(3) : 1, ty: S.w >= 760 ? ((1 - rv) * 12).toFixed(1) + "px" : "0px" }; });
     // lab
-    const galD = [["g8-lab-wide.jpg","Quantum Optics Lab, wide shot","Lab","Quantum Optics Lab"],["g4-optics-bench.jpg","Optics bench","Optics","Optics bench"],["g7-workbench.jpg","Engineers at workbench","Engineering","Workbench"],["g6-optics-closeup.jpg","Optics rig closeup","Optics","Optics rig, close-up"],["g5-workspace.jpg","Lab Workspace","Lab","Lab Workspace"],["g9-team-office.jpg","Team at the Office","Team","Team at the Office"],["g3-team-group.jpg","Quantum AI Global Team","Team","The team"]];
+    const galD = [["g8-lab-wide.jpg","Quantum Optics Lab, Wide Shot","Lab","Quantum Optics Lab"],["g4-optics-bench.jpg","Optics Bench","Optics","Optics Bench"],["g7-workbench.jpg","Engineers at Workbench","Engineering","Workbench"],["g6-optics-closeup.jpg","Optics Rig Closeup","Optics","Optics Rig, Close-Up"],["g5-workspace.jpg","Lab Workspace","Lab","Lab Workspace"],["g9-team-office.jpg","Team at the Office","Team","Team at the Office"],["g3-team-group.jpg","Quantum AI Global Team","Team","The Team"]];
     const gi = S.gi || 0;
     const galSet = (i) => { const n = (i + galD.length) % galD.length; this.setState({ gi: n }); const el = this.galRef.current; if (el && el.children[n]) { const c = el.children[n]; el.scrollTo({ left: Math.max(0, c.offsetLeft - el.clientWidth / 2 + c.clientWidth / 2), behavior: "smooth" }); } };
     const gallery2 = galD.map(([fl, alt, tag, title], i) => { const on = i === gi; return { src: "assets/company/gallery/" + fl, alt, tag, title, on, op: on ? 1 : 0, sc: on ? 1 : 1.04, seg: i <= gi ? "var(--brand)" : "var(--border-strong)", border: on ? "var(--brand)" : "var(--border)", thOp: on ? 1 : 0.55, pick: () => galSet(i) }; });
@@ -740,7 +740,7 @@ class Component extends DCLogic {
     // team deck v2
     const deck2 = deck.map((c, i) => { const on = i === S.tm; return { ...c, on, clip: on ? "circle(150% at 50% 60px)" : "circle(0px at 50% 60px)", avOp: on ? 0 : 1, avSc: on ? 1.5 : 1, avLeft: "calc(50% - 36px)", avSize: "72px", zoom: 1.5, ovOp: on ? 1 : 0, bgScale: on ? 1 : 1.08, bgFilter: on ? "brightness(.88)" : "saturate(.85)", bgPos: tlist[i][0] === "sanjay" ? "66% 22%" : c.bgPos, mH: on ? "440px" : "118px", mClip: on ? "circle(150% at 58px 58px)" : "circle(0px at 58px 58px)", mAvOp: on ? 0 : 1, mAvSc: on ? 1.4 : 1, mPad: on ? "0px" : "88px", mSpan: on && S.w >= 640 ? "1 / -1" : "auto" }; });
     // menu
-    const mDesc = ["Find, fix and harden cryptography against quantum attacks.", "Simulate, distribute and store quantum information.", "Measure weak fields with atomic sensors at room temperature.", "Design, simulate and optimise quantum algorithms.", "Narrow-linewidth light for precision quantum experiments."];
+    const mDesc = ["Find, Fix and Harden Cryptography Against Quantum Attacks.", "Simulate, Distribute and Store Quantum Information.", "Measure Weak Fields With Atomic Sensors at Room Temperature.", "Design, Simulate and Optimise Quantum Algorithms.", "Narrow-Linewidth Light for Precision Quantum Experiments."];
     const mLabs = [["Threat", "Protect", "Channel", "Verify"], ["Node", "Link", "Node", "Network"], ["Field", "Sensor", "Measure", "Signal"], ["Model", "Simulate", "Control", "Apply"], ["Source", "Beam", "Control", "Apply"]];
     const mc = S.mcat || 0;
     const mini = (labs) => { const xs = [30, 110, 190, 270], d = "M30 40 L270 40"; return e("svg", { viewBox: "0 0 300 90", width: "100%", style: { display: "block", overflow: "visible" }, role: "img", "aria-label": labs.join(", then ") }, e("line", { x1: 30, y1: 40, x2: 270, y2: 40, stroke: "var(--border-strong)", strokeDasharray: "3 4" }), trail(d, 3.2), pulse(d, 3.2), ...xs.map((x, i) => e("g", { key: i }, e("circle", { cx: x, cy: 40, r: i === 0 || i === 3 ? 8 : 6, fill: i === 3 ? "var(--brand)" : "var(--surface-2)", stroke: "var(--brand)", strokeWidth: 1 }), mt(x, 74, labs[i], { style: { font: "10.5px var(--font-mono)", letterSpacing: ".07em", textTransform: "uppercase" } })))); };
@@ -749,19 +749,19 @@ class Component extends DCLogic {
     const mcur = { label: productCats[mc].label, count: productCats[mc].count, items: productCats[mc].items, desc: mDesc[mc], svg: S.menu === "products" ? mini(mLabs[mc]) : null };
     const cm = S.cmi || 0;
     const cDef = [
-      ["About", "Our mission & roadmap", "About", "assets/company/gallery/g3-team-group.jpg", "50% 40%", "Est. November 2019 · India, US, UAE", "app"],
-      ["Leadership", "Meet our executive team", "About", "assets/company/founder-sanjay.jpg", "68% 26%", "Sanjay Chittore · Founder & CEO", "state"],
-      ["Recognition", "Awards & achievements", "About", "assets/company/gallery/g4-optics-bench.jpg", "50% 50%", "AGBA 2026 · NASSCOM Emerge 50", "check"],
-      ["Gallery", "Photos & physical media", "About", "assets/company/gallery/g8-lab-wide.jpg", "50% 50%", "Labs and Offices, in Photographs", "cell"],
-      ["Careers", "Join our distributed team", "Work with us", "assets/company/gallery/g9-team-office.jpg", "50% 50%", "75+ People · India, US, UAE", "layers"],
-      ["Collaborations", "Partnership opportunities", "Work with us", "assets/company/gallery/g7-workbench.jpg", "50% 50%", "40+ Partners", "gates"],
-      ["Contact Us", "Get in touch with sales", "Work with us", "assets/company/gallery/g5-workspace.jpg", "50% 50%", "hello@thequantum.ai", "signal"],
+      ["About", "Our Mission & Roadmap", "About", "assets/company/gallery/g3-team-group.jpg", "50% 40%", "Est. November 2019 · India, US, UAE", "app"],
+      ["Leadership", "Meet Our Executive Team", "About", "assets/company/founder-sanjay.jpg", "68% 26%", "Sanjay Chittore · Founder & CEO", "state"],
+      ["Recognition", "Awards & Achievements", "About", "assets/company/gallery/g4-optics-bench.jpg", "50% 50%", "AGBA 2026 · NASSCOM Emerge 50", "check"],
+      ["Gallery", "Photos & Physical Media", "About", "assets/company/gallery/g8-lab-wide.jpg", "50% 50%", "Labs and Offices, in Photographs", "cell"],
+      ["Careers", "Join Our Distributed Team", "Work With Us", "assets/company/gallery/g9-team-office.jpg", "50% 50%", "75+ People · India, US, UAE", "layers"],
+      ["Collaborations", "Partnership Opportunities", "Work With Us", "assets/company/gallery/g7-workbench.jpg", "50% 50%", "40+ Partners", "gates"],
+      ["Contact Us", "Get in Touch With Sales", "Work With Us", "assets/company/gallery/g5-workspace.jpg", "50% 50%", "hello@thequantum.ai", "signal"],
     ];
     const cItems = cDef.map(([label, description, group, img, pos, stat, ic], i) => { const on = i === cm; return { label, description, group, head: i === 0 || cDef[i - 1][2] !== group, on, cur: on ? "true" : "false", bg: on ? "var(--surface-2)" : "transparent", bd: on ? "var(--brand)" : "transparent", color: on ? "var(--foreground)" : "var(--foreground-2)", wellBg: on ? "var(--brand-soft)" : "var(--surface)", wellBd: on ? "var(--brand)" : "var(--border)", icon: e("svg", { width: 20, height: 20, viewBox: "-6 -6 36 36", "aria-hidden": true }, ...DG(ic, 12, 12)), pick: () => S.cmi !== i && this.setState({ cmi: i }) }; });
-    const cGroups = ["About", "Work with us"].map((g) => ({ group: g, items: cItems.filter((c) => c.group === g) }));
+    const cGroups = ["About", "Work With Us"].map((g) => ({ group: g, items: cItems.filter((c) => c.group === g) }));
     const cPanels = cDef.map(([label, description, group, img, pos, stat], i) => { const on = i === cm; return { label, description, group, img, pos, stat, op: on ? 1 : 0, sc: on ? 1 : 1.06, pe: on ? "auto" : "none", hidden: !on, btnProps: { tabIndex: on ? 0 : -1 } }; });
     this.v6 = { heroEnq: () => { const h = (this.qaigData().routes || {}).enquiry || "#"; window.QAIG_GO ? window.QAIG_GO(h, "enquiry") : (window.location.href = h); }, heroProducts: () => { const h = (this.qaigData().routes || {}).products || "#"; window.QAIG_GO ? window.QAIG_GO(h) : (window.location.href = h); }, heroField, exItems, exPanels, exWide: exWide2, ovSvg, ovReqs, ovStage: ovStages[ovI], ovNum: pad(ovI), ovCap: ovCaps[ovI], ovTicks: [0, 1, 2, 3].map((i) => ({ bg: i <= ovI ? "var(--brand)" : "var(--border-strong)" })), ovPos: S.w >= 900 ? "sticky" : "relative", ovTop: S.w >= 900 ? "172px" : "0px",
-      ovQs: [["What we are", "A deep-tech company developing quantum technologies and AI-powered solutions."], ["What we build", "Quantum hardware, software and integrated technologies for communication, security, sensing, networking and scientific applications."], ["How we work", "Around each organisation’s specific technical requirements, from discovery to deployment."], ["Why it matters", "Quantum technologies only create value when they solve real-world challenges."]].map(([k, v], i) => ({ idx: pad(i), k, v })),
+      ovQs: [["What We Are", "A Deep-Tech Company Developing Quantum Technologies and AI-powered Solutions."], ["What We Build", "Quantum Hardware, Software and Integrated Technologies for Communication, Security, Sensing, Networking and Scientific Applications."], ["How We Work", "Around Each Organisation’s Specific Technical Requirements, From Discovery to Deployment."], ["Why It Matters", "Quantum Technologies Only Create Value When They Solve Real-World Challenges."]].map(([k, v], i) => ({ idx: pad(i), k, v })),
       evNodes, evWide: S.w >= 760, evCols: S.w >= 960 ? "repeat(4,minmax(0,1fr))" : S.w >= 560 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", evFill: "calc((100% - 6px) * " + Math.min(1, ep / 0.92).toFixed(3) + ")",
       gallery: gallery2, gcur: { tag: g0[2], title: g0[3], n: pad(gi) }, galPrev: () => galSet(gi - 1), galNext: () => galSet(gi + 1), labWide: S.w >= 900, labNarrow: S.w < 900,
       vidRef: this.vidRef, videoSrc: this.videoSrc, hasVideo: !!this.videoSrc, noVideo: !this.videoSrc,
@@ -815,7 +815,7 @@ class Component extends DCLogic {
       ex, exPulse, exWide: S.w >= 700, exNarrow: S.w < 700, exNavMax: S.w >= 860 ? "320px" : "none",
       exTabProps: { style: { width: "100%", justifyContent: "space-between", height: 48 } },
       exTabs: domains.slice(0, 7).map((d, i) => ({ idx: pad(i), name: d.name, count: String(d.products.length).padStart(2, "0"), on: i === dx, variant: i === dx ? "secondary" : "ghost", idxColor: i === dx ? "var(--brand)" : "var(--faint)", pick: () => this.setState({ dx: i }) })),
-      stack: [["Physical Layer", "Photonics · Communication · Memory · Sensing"], ["Control", "Electronics and Control Systems"], ["Software", "Simulation · Security · AI"], ["Application", "The customer’s use case"]].map(([k, v], i) => ({ k, v, kc: i === 3 ? "var(--brand)" : "var(--faint)", bg: i === 3 ? "var(--brand-soft)" : "transparent" })),
+      stack: [["Physical Layer", "Photonics · Communication · Memory · Sensing"], ["Control", "Electronics and Control Systems"], ["Software", "Simulation · Security · AI"], ["Application", "The Customer’s Use Case"]].map(([k, v], i) => ({ k, v, kc: i === 3 ? "var(--brand)" : "var(--faint)", bg: i === 3 ? "var(--brand-soft)" : "transparent" })),
       showSubnav: (this.props.sectionNav ?? true) !== false,
       subnav: this.sections.map(([id, label], i) => ({ idx: pad(i), label, go: () => this.go(id),
         variant: this.state.sec === id ? "secondary" : "ghost" })),
@@ -829,32 +829,32 @@ class Component extends DCLogic {
       nextStep: () => this.setState((s) => ({ step: (s.step + 1) % 4 })),
       photoFilter: mono ? "grayscale(1) contrast(1.05)" : "none",
       team: [
-        { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and former Army Director of InfoSec, Ministry of Defence, Government of India. Led a national-level InfoSec and cryptography research team." },
-        { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental atomic physicist with extensive experience in laser-cooled atomic spectroscopy and quantum sensor technology." },
-        { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops interpretable, scalable and resource-efficient quantum machine learning models." },
-        { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental quantum optics physicist specialising in Rydberg-atom-based RF electric-field sensing and atomic spectroscopy." },
-        { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental physicist who designs narrow-linewidth laser cavities, with expertise in high-resolution spectroscopy." },
-        { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum engineer with expertise in quantum sources, QKD testbeds and quantum memory hardware with integrated control electronics." },
-        { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer working on quantum-safe cryptography and cybersecurity, building scalable, standards-compliant production systems." },
+        { name: "Col. Kapil Jaiswal", title: "Chief Technology Officer", image: "assets/company/team/kapil.jpg", linkedin: "https://www.linkedin.com/in/k-jaiswal/", bio: "Adjunct Professor (Cyber ARM, VLab) and Former Army Director of InfoSec, Ministry of Defence, Government of India. Led a National-Level InfoSec and Cryptography Research Team." },
+        { name: "Dr. Sachin Barthwal", title: "Head of Quantum Technology", image: "assets/company/team/sachin-hd.png", linkedin: "https://www.linkedin.com/in/dr-sachin-barthwal-38190322a/", bio: "Experimental Atomic Physicist With Extensive Experience in Laser-Cooled Atomic Spectroscopy and Quantum Sensor Technology." },
+        { name: "Dr. Diksha Sharma", title: "Quantum Machine Learning Scientist", image: "assets/company/team/diksha-hd.png", linkedin: "https://www.linkedin.com/in/dr-diksha-sharma-065780a9/", bio: "Develops Interpretable, Scalable and Resource-Efficient Quantum Machine Learning Models." },
+        { name: "Dr. Monika", title: "Quantum Sensing Lead", image: "assets/company/team/monika-hd.png", linkedin: "https://www.linkedin.com/in/dr-monika-thakran-1695762b5/", bio: "Experimental Quantum Optics Physicist Specialising in Rydberg-Atom-Based RF Electric-Field Sensing and Atomic Spectroscopy." },
+        { name: "Dr. Avinash Kumar", title: "Quantum Optics Scientist", image: "assets/company/team/avinash-hd.png", linkedin: "https://www.linkedin.com/in/avinash-kumar-phd-05791a183/", bio: "Experimental Physicist Who Designs Narrow-Linewidth Laser Cavities, With Expertise in High-Resolution Spectroscopy." },
+        { name: "Rama Theja", title: "Opto Electronics Lead", image: "assets/company/team/rama-hd.png", linkedin: "https://www.linkedin.com/in/ramatheja/", bio: "Quantum Engineer With Expertise in Quantum Sources, QKD Testbeds and Quantum Memory Hardware With Integrated Control Electronics." },
+        { name: "Neelesh Singh Katoch", title: "Quantum Software Engineer", image: "assets/company/team/neelesh-hd.png", linkedin: "https://www.linkedin.com/in/neelesh-katoch/", bio: "Engineer Working on Quantum-Safe Cryptography and Cybersecurity, Building Scalable, Standards-Compliant Production Systems." },
       ].map((m, i) => ({ ...m, idx: pad(i), zoom: m.image.endsWith(".png") ? 1.22 : 1 })),
       advFilters,
-      ...(() => { const all = adv === "All" ? advisorsAll : advisorsAll.filter((a) => a.group === adv), lim = S.w < 640 && all.length > 5; const open = !!S.advAll; return { advisorsShown: lim && !open ? all.slice(0, 5) : all, advMore: lim, advMoreLabel: open ? "Show fewer" : "Show all " + all.length + " advisors", advToggle: () => this.setState({ advAll: !open }) }; })(),
+      ...(() => { const all = adv === "All" ? advisorsAll : advisorsAll.filter((a) => a.group === adv), lim = S.w < 640 && all.length > 5; const open = !!S.advAll; return { advisorsShown: lim && !open ? all.slice(0, 5) : all, advMore: lim, advMoreLabel: open ? "Show Fewer" : "Show All " + all.length + " advisors", advToggle: () => this.setState({ advAll: !open }) }; })(),
       awards: [
-        { tag: "Innovation in Deep Tech", title: "2026 AGBA Winner", desc: "Recognised for innovation in deep technology." },
-        { tag: "NASSCOM", title: "NASSCOM Emerge 50", desc: "Recognition under the NASSCOM Emerge 50 programme." },
+        { tag: "Innovation in Deep Tech", title: "2026 AGBA Winner", desc: "Recognised for Innovation in Deep Technology." },
+        { tag: "NASSCOM", title: "NASSCOM Emerge 50", desc: "Recognition Under the NASSCOM Emerge 50 Programme." },
       ].map((a, i) => ({ ...a, idx: pad(i) })),
       galRef: this.galRef,
       galPad: this.galInset() + "px", galSpacer: Math.max(0, this.galInset() - 12) + "px",
       cardProps: { className: "card-hover", style: { height: "100%" } },
       scrollGalLeft: () => this.scrollGal(-1), scrollGalRight: () => this.scrollGal(1),
       gallery: [
-        ["g8-lab-wide.jpg","Quantum Optics Lab, wide shot","min(80vw,640px)","Optical Experiment / Quantum Optics Lab"],
-        ["g4-optics-bench.jpg","Optics bench","min(80vw,360px)","Optics bench"],
-        ["g7-workbench.jpg","Engineers at workbench","min(80vw,440px)","Workbench"],
-        ["g6-optics-closeup.jpg","Optics rig closeup","min(80vw,380px)","Optics rig, close-up"],
+        ["g8-lab-wide.jpg","Quantum Optics Lab, Wide Shot","min(80vw,640px)","Optical Experiment / Quantum Optics Lab"],
+        ["g4-optics-bench.jpg","Optics Bench","min(80vw,360px)","Optics Bench"],
+        ["g7-workbench.jpg","Engineers at Workbench","min(80vw,440px)","Workbench"],
+        ["g6-optics-closeup.jpg","Optics Rig Closeup","min(80vw,380px)","Optics Rig, Close-Up"],
         ["g5-workspace.jpg","Lab Workspace","min(80vw,480px)","Lab Workspace"],
         ["g9-team-office.jpg","Team at the Office","min(80vw,640px)","Team at the Office"],
-        ["g3-team-group.jpg","Quantum AI Global Team","min(80vw,440px)","The team"],
+        ["g3-team-group.jpg","Quantum AI Global Team","min(80vw,440px)","The Team"],
       ].map(([f, alt, w, c], i) => ({ src: "assets/company/gallery/" + f, alt, w, cap: "Fig. " + pad(i + 3) + " · " + c })),
       videos: [
         { title: "Office Opening", duration: "15:20" },
