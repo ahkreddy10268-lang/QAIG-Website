@@ -70,7 +70,7 @@
             <div style="position:relative;width:clamp(108px,11vw,140px);aspect-ratio:2/3">
               <span aria-hidden="true" style="position:absolute;inset:0;border:1px solid var(--border);border-radius:6px;background:var(--surface);transform:translate(8px,8px) rotate(3deg)"></span>
               <div style="position:absolute;inset:0;border:1px solid {{ d.coverBd }};border-radius:6px;background:linear-gradient(165deg,var(--surface-3),var(--surface-2) 65%);overflow:hidden;transform:translateY({{ d.lift }}) rotate({{ d.rot }});box-shadow:{{ d.shadow }};transition:transform .7s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s">
-                <sc-if value="{{ d.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ d.img }}" alt="{{ d.alt }}" width="640" height="960" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%;background:var(--surface-2)"></sc-if>
+                <sc-if value="{{ d.hasImg }}" hint-placeholder-val="{{ true }}"><img sc-camel-src="{{ d.img }}" alt="{{ d.alt }}" width="640" height="960" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%;background:var(--surface-2)"></sc-if>
                 <sc-if value="{{ d.noImg }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;left:12px;right:12px;top:14px;display:flex;flex-direction:column;gap:7px"><span style="display:block;width:62%;height:3px;border-radius:2px;background:var(--border-strong)"></span><span style="display:block;width:82%;height:1px;background:var(--border)"></span><span style="display:block;width:70%;height:1px;background:var(--border)"></span><span style="display:block;width:76%;height:1px;background:var(--border)"></span></span></sc-if>
                 <sc-if value="{{ d.noImg }}" hint-placeholder-val="{{ true }}"><img src="assets/qaig-stacked.png" alt="" style="position:absolute;left:12px;bottom:26px;width:46px;height:auto;opacity:.85"></sc-if>
                 
@@ -102,7 +102,7 @@
               <sc-for list="{{ g.items }}" as="o" hint-placeholder-count="3">
                 <button role="option" aria-selected="{{ o.on }}" onClick="{{ o.pick }}" style="position:relative;display:grid;grid-template-columns:40px minmax(0,1fr) auto;align-items:center;gap:12px;width:100%;min-height:56px;padding:8px 18px;border:0;border-bottom:1px solid var(--border);background:{{ o.bg }};color:{{ o.color }};font:inherit;text-align:left;cursor:pointer;transition:background .2s" style-hover="background:var(--surface-3)">
                   <span aria-hidden="true" style="position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--brand);transform-origin:top;transform:scaleY({{ o.bar }});transition:transform .5s cubic-bezier(.16,1,.3,1)"></span>
-                  <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--surface);overflow:hidden"><sc-if value="{{ o.hasImg }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="display:block;width:100%;height:100%;background:URL('{{ o.img }}') center/contain no-repeat;background-origin:content-box;padding:4px;box-sizing:border-box"></span></sc-if><sc-if value="{{ o.noImg }}" hint-placeholder-val="{{ true }}"><span style="font-family:var(--font-mono);font-size:13.5px;color:var(--foreground-2)">{{ o.mono }}</span></sc-if></span>
+                  <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--surface);overflow:hidden"><sc-if value="{{ o.hasImg }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" sc-camel-style="display:block;width:100%;height:100%;background:URL('{{ o.img }}') center/contain no-repeat;background-origin:content-box;padding:4px;box-sizing:border-box"></span></sc-if><sc-if value="{{ o.noImg }}" hint-placeholder-val="{{ true }}"><span style="font-family:var(--font-mono);font-size:13.5px;color:var(--foreground-2)">{{ o.mono }}</span></sc-if></span>
                   <span style="font-size:16px;font-weight:500">{{ o.title }}</span>
                   <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;color:{{ o.flagC }}">{{ o.flag }}</span>
                 </button>
@@ -123,7 +123,7 @@
             <div aria-hidden="true" style="position:absolute;inset:-8% -10%;background:radial-gradient(closest-side,color-mix(in srgb, var(--brand) 12%, transparent),transparent);pointer-events:none"></div>
             <div style="position:relative;aspect-ratio:1/1">
               {{ r_prodArt }}
-              <sc-if value="{{ r_prodHasImg }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" style="position:absolute;right:0;top:0;width:56px;height:56px;border:1px solid var(--border-light);border-radius:10px;background:var(--surface-2) URL('{{ r_prodImg }}') center/72% no-repeat"></span></sc-if>
+              <sc-if value="{{ r_prodHasImg }}" hint-placeholder-val="{{ false }}"><span aria-hidden="true" sc-camel-style="position:absolute;right:0;top:0;width:56px;height:56px;border:1px solid var(--border-light);border-radius:10px;background:var(--surface-2) URL('{{ r_prodImg }}') center/72% no-repeat"></span></sc-if>
             </div>
             <p style="position:relative;margin:10px 0 0;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Fig. · {{ r_prodCap }}</p>
             <sc-if value="{{ r_hasPaHint }}" hint-placeholder-val="{{ false }}"><p style="position:relative;margin:6px 0 0;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ r_paHint }}</p></sc-if>
@@ -284,7 +284,7 @@
             <li data-rv="" style="grid-column:{{ a.span }};display:flex">
               <article onMouseEnter="{{ a.enter }}" onMouseLeave="{{ a.leave }}" style="position:relative;flex:1;display:grid;grid-template-columns:{{ a.cols }};border:1px solid {{ a.bd }};border-radius:18px;background:var(--surface);overflow:hidden;transition:border-color .4s">
                 <span aria-hidden="true" style="position:absolute;left:0;right:0;top:0;height:1px;background:var(--brand);transform-origin:left;transform:scaleX({{ a.line }});transition:transform .7s cubic-bezier(.16,1,.3,1);z-index:1"></span>
-                <div style="position:relative;aspect-ratio:{{ a.ar }};background:var(--surface-2);overflow:hidden;border-bottom:{{ a.imgBb }};border-right:{{ a.imgBr }}"><img src="{{ a.img }}" alt="{{ a.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ a.fit }};object-position:{{ a.pos }};transform:scale({{ a.sc }});transition:transform .9s cubic-bezier(.16,1,.3,1)"></div>
+                <div style="position:relative;aspect-ratio:{{ a.ar }};background:var(--surface-2);overflow:hidden;border-bottom:{{ a.imgBb }};border-right:{{ a.imgBr }}"><img sc-camel-src="{{ a.img }}" alt="{{ a.alt }}" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ a.fit }};object-position:{{ a.pos }};transform:scale({{ a.sc }});transition:transform .9s cubic-bezier(.16,1,.3,1)"></div>
                 <div style="display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.4vw,28px)">
                   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px"><x-import component-from-global-scope="QAIG.Badge" variant="secondary" hint-size="90px,20px">{{ a.kind }}</x-import><time style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ a.date }}</time></div>
                   <h3 style="margin:0;font-size:{{ a.titleSize }};line-height:1.25;letter-spacing:-0.015em;font-weight:600;text-wrap:balance">{{ a.title }}</h3>
@@ -367,7 +367,7 @@ class Component extends DCLogic {
     const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
     document.head.appendChild(st);
     const root = document.createElement("div"); root.id = "qcur-root"; root.setAttribute("aria-hidden", "true");
-    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", Transition: "opacity .2s", willChange: "transform" });
+    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", transition: "opacity .2s", willChange: "transform" });
     root.innerHTML = '<div data-k="dot" style="position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:var(--brand);transition:transform .18s"></div>'
       + '<div data-k="ring" style="position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;border:1px solid var(--brand);opacity:0;transform:scale(.4);transition:transform .22s cubic-bezier(.22,1,.36,1),opacity .2s"></div>'
       + '<svg data-k="arrow" width="10" height="10" viewBox="0 0 10 10" style="position:absolute;left:18px;top:-5px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M1 5h8M6 2l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>'
@@ -375,7 +375,7 @@ class Component extends DCLogic {
       + '<svg data-k="cross" width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:-18px;top:-18px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M18 0v12M18 24v12M0 18h12M24 18h12" stroke="currentColor" stroke-width="1"/></svg>'
       + '<svg data-k="focus" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;left:-20px;top:-20px;opacity:0;transform:scale(.7);transition:opacity .2s,transform .22s;color:var(--foreground)"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1"/></svg>';
     document.body.appendChild(root); document.documentElement.classList.add("qcur");
-    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + K + '"]'); });
+    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + k + '"]'); });
     let x = 0, y = 0, raf = 0, mode = "x";
     const set = (m) => { if (m === mode) return; mode = m; const lk = m === "link" || m === "ext";
       P.ring.style.opacity = lk ? "1" : "0"; P.ring.style.transform = lk ? "scale(1)" : "scale(.4)";
@@ -632,7 +632,7 @@ class Component extends DCLogic {
         e("div", { style: { position: "absolute", inset: 0, WebkitMaskImage: "linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.2) 40%,#000 78%)", maskImage: "linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.2) 40%,#000 78%)" } },
           e("svg", { viewBox: "0 0 1440 660", preserveAspectRatio: "xMidYMin slice", style: { position: "absolute", inset: 0, width: "100%", height: "100%" } },
             ...linesB, ...linesA,
-            rm ? null : e("path", { key: "fl", d: cd, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "110 1500", style: { animation: "qsig3 16s linear infinite", Filter: "drop-shadow(0 0 6px var(--brand))" } }),
+            rm ? null : e("path", { key: "fl", d: cd, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "110 1500", style: { animation: "qsig3 16s linear infinite", filter: "drop-shadow(0 0 6px var(--brand))" } }),
             rm ? null : e("circle", { key: "pk", r: 3.5, fill: "var(--brand)", style: { filter: "drop-shadow(0 0 8px var(--brand))" } }, e("animateMotion", { dur: "16s", repeatCount: "indefinite", path: cd })),
             ...(S.w >= 1200 ? wx : []).map((x, i) => e("g", { key: "w" + i }, e("circle", { cx: x, cy: cyf(x), r: 14, fill: "none", stroke: "var(--brand)", strokeWidth: 1, opacity: 0.5 }), e("circle", { cx: x, cy: cyf(x), r: 4, fill: "var(--base)", stroke: "var(--brand)", strokeWidth: 1.2 }), mt(x, cyf(x) - 28, "Focus 0" + (i + 1), { textAnchor: i === 1 ? "end" : "middle" })))))));
     // explorer diagrams
@@ -970,7 +970,7 @@ class Component extends DCLogic {
   rsFieldGlyph(i, on) {
     const e = React.createElement, A = on ? "var(--brand)" : "var(--muted)", rm = !!this.state.rm, E = this.rsEase;
     const s = { fill: "none", stroke: A, strokeWidth: 1.4, strokeLinecap: "round", strokeLinejoin: "round", style: { transition: "stroke 300ms" } };
-    const dr = (k, d) => e("path", Object.assign({ key: k, d, pathLength: 1 }, s, { style: { strokeDasharray: 1, animation: on && !rm ? `rsdraw 800ms ${E} both` : "none", Transition: "stroke 300ms" } }));
+    const dr = (k, d) => e("path", Object.assign({ key: k, d, pathLength: 1 }, s, { style: { strokeDasharray: 1, animation: on && !rm ? `rsdraw 800ms ${E} both` : "none", transition: "stroke 300ms" } }));
     const g = [
       [e("circle", Object.assign({ key: "c", cx: 20, cy: 20, r: 14 }, s)), e("ellipse", Object.assign({ key: "e", cx: 20, cy: 20, rx: 14, ry: 5 }, s)), dr("a", "M20 20 L29 9"), e("circle", { key: "d", cx: 29, cy: 9, r: 2.4, fill: A })],
       [e("circle", { key: "a", cx: 6, cy: 20, r: 3, fill: A }), e("circle", { key: "b", cx: 114, cy: 20, r: 3, fill: A }), dr("w", "M9 20 C24 4 36 36 51 20 S78 4 93 20 S108 36 111 20")],
@@ -1092,9 +1092,9 @@ class Component extends DCLogic {
       K.push(tx(262, 214, "PARAMS", { fill: M }), pa("M40 252 C90 254 120 276 170 284 S250 292 290 292", { stroke: B, strokeWidth: 2, pathLength: 1, style: { strokeDasharray: 1 } }, an("stroke-dashoffset", "1;0;0", "5s", { keyTimes: "0;.8;1" })), tx(60, 242, "LOSS", { fill: M }));
     } else if (id === "ecdl") {
       K.push(rect(22, 126, 52, 48, { stroke: F }), tx(48, 196, "DIODE"), e("ellipse", { cx: 104, cy: 150, rx: 6, ry: 22, fill: "var(--surface)", stroke: F }), tx(104, 196, "LENS"), ln(74, 150, 204, 150, { stroke: B, strokeWidth: 2 }), mot("M74 150 H210", "1.6s"), ln(204, 160, 80, 160, { stroke: M, strokeDasharray: "3 4" }), mot("M204 160 H80", "1.6s", "0.5s", 2.6),
-        e("g", { style: { transformBox: "view-box", transformOrigin: "210px 150px", transform: "rotate(calc(-32deg + (var(--pa, .5) - .5) * 18deg))", Transition: "transform .12s linear" } }, rect(203, 110, 14, 80, { rx: 2, stroke: F }), ...[0, 1, 2, 3, 4, 5, 6, 7].map((k) => ln(203, 118 + k * 9, 217, 122 + k * 9, { stroke: B, strokeOpacity: 0.7, strokeWidth: 1 }))),
+        e("g", { style: { transformBox: "view-box", transformOrigin: "210px 150px", transform: "rotate(calc(-32deg + (var(--pa, .5) - .5) * 18deg))", transition: "transform .12s linear" } }, rect(203, 110, 14, 80, { rx: 2, stroke: F }), ...[0, 1, 2, 3, 4, 5, 6, 7].map((k) => ln(203, 118 + k * 9, 217, 122 + k * 9, { stroke: B, strokeOpacity: 0.7, strokeWidth: 1 }))),
         ln(210, 150, 292, 98, { stroke: B, strokeWidth: 2 }), mot("M210 150 L292 98", "1.6s", "0.2s", 3), tx(262, 84, "OUTPUT", { fill: B }), tx(210, 214, "GRATING"), pa("M40 262 H280", { stroke: F }),
-        e("path", { d: "M-10 0 Q0 -50 10 0", fill: "none", stroke: B, strokeWidth: 2.4, style: { transform: "translate(calc(160px + (var(--pa, .5) - .5) * 130px), 262px)", Transition: "transform .12s linear", Filter: "drop-shadow(0 0 6px var(--brand))" } }),
+        e("path", { d: "M-10 0 Q0 -50 10 0", fill: "none", stroke: B, strokeWidth: 2.4, style: { transform: "translate(calc(160px + (var(--pa, .5) - .5) * 130px), 262px)", transition: "transform .12s linear", filter: "drop-shadow(0 0 6px var(--brand))" } }),
         e("text", { id: "rs-pa-read", "data-pre": "TUNING · ", "data-def": "50", x: 160, y: 296, textAnchor: "middle", fill: B, style: { font: "12.5px var(--font-mono)", letterSpacing: ".08em" } }, "TUNING · 50%"));
     }
     return e("svg", { key: id, viewBox: "0 0 320 320", width: "100%", role: "img", "aria-label": this.rsProdCaps()[id] || id, style: { display: "block", overflow: "visible", animation: rm ? "none" : "rsin 500ms " + this.rsEase + " both" } }, ...K);

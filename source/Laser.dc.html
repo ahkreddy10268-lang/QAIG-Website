@@ -68,7 +68,7 @@
       <article style="position:relative;display:flex;flex-direction:column;min-width:0;border:1px solid var(--border);border-radius:16px;background:var(--surface);overflow:hidden;transition:border-color .3s,transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s" style-hover="border-color:var(--border-light);transform:translateY(-3px);box-shadow:var(--shadow-md)">
         <a href="{{ c.href }}" aria-hidden="true" tabindex="-1" style="position:relative;display:block;aspect-ratio:16/10;border-bottom:1px solid var(--border);background:radial-gradient(ellipse 70% 80% at 70% 40%,color-mix(in srgb, var(--brand) 9%, transparent),transparent 70%),var(--surface-2);overflow:hidden">
           <span class="bg-grid" style="position:absolute;inset:0;opacity:.35"></span>
-          <sc-if value="{{ c.hasImg }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;inset:0;background:URL('{{ c.img }}') 80% 50%/cover no-repeat"></span></sc-if>
+          <sc-if value="{{ c.hasImg }}" hint-placeholder-val="{{ false }}"><span sc-camel-style="position:absolute;inset:0;background:URL('{{ c.img }}') 80% 50%/cover no-repeat"></span></sc-if>
           <sc-if value="{{ c.noImg }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:16px;text-align:center"><span style="font-size:clamp(1.6rem,1.2rem + 1.2vw,2.2rem);font-weight:600;letter-spacing:-0.03em;color:var(--border-strong)">{{ c.short }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Product Photograph · Placeholder</span></span></sc-if>
           <span style="position:absolute;left:14px;top:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">{{ c.code }}</span>
         </a>
@@ -91,7 +91,7 @@
 <section data-screen-label="Featured sources" class="section-shell" style="padding-top:clamp(72px,9vw,128px)">
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px 64px;align-items:end;margin-bottom:clamp(32px,4vw,56px)"><div><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Featured · Laser Sources</span><h2 style="margin:14px 0 0;max-width:20ch;font-size:clamp(2rem,1.3rem + 2vw,3.1rem);line-height:1.04;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Tunable, Rubidium-Ready, or <span style="color:var(--brand)">Ready to Switch On.</span></h2></div><span></span></div>
   <article style="display:grid;grid-template-columns:{{ l_featCols }};gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,4vw,48px) 0;border-top:1px solid var(--border-light)">
-    <a href="#/ecdl" aria-label="Tunable External Cavity Diode Lasers (ECDL) Details" style="position:relative;display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#020713"><span style="position:absolute;inset:0;background:URL('{{ l_ecdlImg }}') 82% 50%/cover no-repeat;transition:transform 1.2s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.04)"></span><span style="position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:13.5px;color:var(--foreground-2)">Temporary Image</span></a>
+    <a href="#/ecdl" aria-label="Tunable External Cavity Diode Lasers (ECDL) Details" style="position:relative;display:block;aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:#020713"><span sc-camel-style="position:absolute;inset:0;background:URL('{{ l_ecdlImg }}') 82% 50%/cover no-repeat;transition:transform 1.2s cubic-bezier(.16,1,.3,1)" style-hover="transform:scale(1.04)"></span><span style="position:absolute;left:14px;bottom:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:13.5px;color:var(--foreground-2)">Temporary Image</span></a>
     <div style="display:flex;flex-direction:column;gap:18px;min-width:0">
       <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">01 · Laser Sources</span>
       <h3 style="margin:0;font-size:clamp(1.6rem,1.2rem + 1.3vw,2.4rem);line-height:1.08;letter-spacing:-0.025em;font-weight:600;text-wrap:balance">Tunable External Cavity Diode Lasers (ECDL)</h3>
@@ -201,7 +201,7 @@
     </div>
     <div style="position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:radial-gradient(ellipse 70% 80% at 65% 40%,color-mix(in srgb, var(--brand) 11%, transparent),transparent 70%),var(--surface)">
       <span class="bg-grid" style="position:absolute;inset:0;opacity:.35"></span>
-      <sc-if value="{{ l_d.hasImg }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ l_d.imgAlt }}" style="position:absolute;inset:0;background:#020713 URL('{{ l_d.img }}') 80% 50%/cover no-repeat"></span></sc-if>
+      <sc-if value="{{ l_d.hasImg }}" hint-placeholder-val="{{ false }}"><span role="img" aria-label="{{ l_d.imgAlt }}" sc-camel-style="position:absolute;inset:0;background:#020713 URL('{{ l_d.img }}') 80% 50%/cover no-repeat"></span></sc-if>
       <sc-if value="{{ l_d.noImg }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center"><span style="font-size:clamp(2rem,1.4rem + 2vw,3.2rem);font-weight:600;letter-spacing:-0.035em;color:var(--border-strong)">{{ l_d.short }}</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">Product Photograph · Placeholder</span></span></sc-if>
       <span style="position:absolute;left:16px;bottom:14px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--foreground-2)">{{ l_d.imgNote }}</span>
     </div>
@@ -333,7 +333,7 @@ class Component extends DCLogic {
     const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
     document.head.appendChild(st);
     const root = document.createElement("div"); root.id = "qcur-root"; root.setAttribute("aria-hidden", "true");
-    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", Transition: "opacity .2s", willChange: "transform" });
+    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", transition: "opacity .2s", willChange: "transform" });
     root.innerHTML = '<div data-k="dot" style="position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:var(--brand);transition:transform .18s"></div>'
       + '<div data-k="ring" style="position:absolute;left:-14px;top:-14px;width:28px;height:28px;border-radius:50%;border:1px solid var(--brand);opacity:0;transform:scale(.4);transition:transform .22s cubic-bezier(.22,1,.36,1),opacity .2s"></div>'
       + '<svg data-k="arrow" width="10" height="10" viewBox="0 0 10 10" style="position:absolute;left:18px;top:-5px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M1 5h8M6 2l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>'
@@ -341,7 +341,7 @@ class Component extends DCLogic {
       + '<svg data-k="cross" width="36" height="36" viewBox="0 0 36 36" style="position:absolute;left:-18px;top:-18px;opacity:0;transition:opacity .2s;color:var(--brand)"><path d="M18 0v12M18 24v12M0 18h12M24 18h12" stroke="currentColor" stroke-width="1"/></svg>'
       + '<svg data-k="focus" width="40" height="40" viewBox="0 0 40 40" style="position:absolute;left:-20px;top:-20px;opacity:0;transform:scale(.7);transition:opacity .2s,transform .22s;color:var(--foreground)"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="1"/></svg>';
     document.body.appendChild(root); document.documentElement.classList.add("qcur");
-    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + K + '"]'); });
+    const P = {}; ["dot", "ring", "arrow", "ext", "cross", "focus"].forEach((k) => { P[k] = root.querySelector('[data-k="' + k + '"]'); });
     let x = 0, y = 0, raf = 0, mode = "x";
     const set = (m) => { if (m === mode) return; mode = m; const lk = m === "link" || m === "ext";
       P.ring.style.opacity = lk ? "1" : "0"; P.ring.style.transform = lk ? "scale(1)" : "scale(.4)";
@@ -601,7 +601,7 @@ class Component extends DCLogic {
         e("div", { style: { position: "absolute", inset: 0, WebkitMaskImage: "linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.2) 40%,#000 78%)", maskImage: "linear-gradient(90deg,rgba(0,0,0,.12) 0%,rgba(0,0,0,.2) 40%,#000 78%)" } },
           e("svg", { viewBox: "0 0 1440 660", preserveAspectRatio: "xMidYMin slice", style: { position: "absolute", inset: 0, width: "100%", height: "100%" } },
             ...linesB, ...linesA,
-            rm ? null : e("path", { key: "fl", d: cd, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "110 1500", style: { animation: "qsig3 16s linear infinite", Filter: "drop-shadow(0 0 6px var(--brand))" } }),
+            rm ? null : e("path", { key: "fl", d: cd, fill: "none", stroke: "var(--brand)", strokeWidth: 2, strokeLinecap: "round", strokeDasharray: "110 1500", style: { animation: "qsig3 16s linear infinite", filter: "drop-shadow(0 0 6px var(--brand))" } }),
             rm ? null : e("circle", { key: "pk", r: 3.5, fill: "var(--brand)", style: { filter: "drop-shadow(0 0 8px var(--brand))" } }, e("animateMotion", { dur: "16s", repeatCount: "indefinite", path: cd })),
             ...(S.w >= 1200 ? wx : []).map((x, i) => e("g", { key: "w" + i }, e("circle", { cx: x, cy: cyf(x), r: 14, fill: "none", stroke: "var(--brand)", strokeWidth: 1, opacity: 0.5 }), e("circle", { cx: x, cy: cyf(x), r: 4, fill: "var(--base)", stroke: "var(--brand)", strokeWidth: 1.2 }), mt(x, cyf(x) - 28, "Focus 0" + (i + 1), { textAnchor: i === 1 ? "end" : "middle" })))))));
     // explorer diagrams

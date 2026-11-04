@@ -216,8 +216,8 @@
       <sc-for list="{{ ach }}" as="a" hint-placeholder-count="3">
       <article style="position:relative;display:flex;flex-direction:column;flex:0 0 {{ achBasis }};min-width:0;scroll-snap-align:start;border:1px solid var(--border);border-radius:20px;background:var(--surface);overflow:hidden;transition:border-color .35s,transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s" style-hover="border-color:rgba(0,212,255,.45);transform:translateY(-4px);box-shadow:0 30px 60px -40px rgba(0,212,255,.45)">
         <div style="position:relative;aspect-ratio:16/10;border-bottom:1px solid var(--border);background:#05080f;overflow:hidden">
-          <img src="{{ a.img }}" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(22px) brightness(.38) saturate(.8)">
-          <img src="{{ a.img }}" alt="{{ a.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ a.fit }};object-position:{{ a.pos }}">
+          <img sc-camel-src="{{ a.img }}" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover;filter:blur(22px) brightness(.38) saturate(.8)">
+          <img sc-camel-src="{{ a.img }}" alt="{{ a.alt }}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:{{ a.fit }};object-position:{{ a.pos }}">
           <span aria-hidden="true" style="position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(6,10,20,.55),transparent);pointer-events:none"></span>
         </div>
         <div style="flex:1;display:flex;flex-direction:column;gap:10px;padding:22px 22px 0">
@@ -379,7 +379,7 @@ class Component extends DCLogic {
     if (this.exAnI !== cur || (this.exAn && !this.exAn.effect.target.isConnected)) { this.exAn && this.exAn.cancel(); this.exAn = null; this.exAnI = cur; }
     clearTimeout(this.exAT);
     if (!this.exAutoOK()) { this.exAn && this.exAn.cancel(); this.exAn = null; return; }
-    if (!this.exAn) { const el = document.querySelector('[data-exfill="' + Cur + '"]'); if (!el || !el.animate) return; this.exAn = el.animate([{ height: "0%" }, { height: "100%" }], { duration: this.exAutoD, easing: "linear", fill: "forwards" }); this.exAn.pause(); }
+    if (!this.exAn) { const el = document.querySelector('[data-exfill="' + cur + '"]'); if (!el || !el.animate) return; this.exAn = el.animate([{ height: "0%" }, { height: "100%" }], { duration: this.exAutoD, easing: "linear", fill: "forwards" }); this.exAn.pause(); }
     const run = this.exVis && !this.exHover && !document.hidden;
     if (run) { this.exAn.play(); const rem = this.exAutoD - (this.exAn.currentTime || 0); this.exAT = setTimeout(() => this.setState((s) => ({ exM: ((s.exM || 0) + 1) % this.exN() })), Math.max(60, rem)); }
     else this.exAn.pause();
@@ -441,7 +441,7 @@ class Component extends DCLogic {
     const st = document.createElement("style"); st.id = "qcur-style"; st.textContent = "html.qcur,html.qcur *{cursor:none!important}html.qcur input,html.qcur textarea{cursor:text!important}";
     document.head.appendChild(st);
     const root = document.createElement("div"); root.id = "qcur-root"; root.setAttribute("aria-hidden", "true");
-    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", Transition: "opacity .25s" });
+    Object.assign(root.style, { position: "fixed", left: "0", top: "0", width: "0", height: "0", zIndex: "2147483000", pointerEvents: "none", opacity: "0", transition: "opacity .25s" });
     const mono = "font:500 9px/1 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.16em;text-transform:uppercase";
     root.innerHTML = '<div data-k="ring" style="position:absolute;left:-18px;top:-18px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(0,212,255,.7);background:rgba(0,212,255,0);transition:transform .35s cubic-bezier(.22,1,.36,1),background .3s,border-color .3s;will-change:transform"></div>'
       + '<svg data-k="cross" width="44" height="44" viewBox="0 0 44 44" style="position:absolute;left:-22px;top:-22px;opacity:0;transition:opacity .2s;color:#00d4ff"><path d="M22 0v14M22 30v14M0 22h14M30 22h14" stroke="currentColor" stroke-width="1"/></svg>'
@@ -450,7 +450,7 @@ class Component extends DCLogic {
       + '<span data-k="tag" style="position:absolute;left:26px;top:-22px;white-space:nowrap;opacity:0;transition:opacity .2s;color:#00d4ff;' + mono + '"></span>'
       + '<div data-k="dot" style="position:absolute;left:-3px;top:-3px;width:6px;height:6px;border-radius:50%;background:#00d4ff;box-shadow:0 0 10px rgba(0,212,255,.8);transition:transform .18s"></div>';
     document.body.appendChild(root); document.documentElement.classList.add("qcur");
-    const K = {}; ["ring", "cross", "focus", "label", "tag", "dot"].forEach((k) => { K[k] = root.querySelector('[data-k="' + K + '"]'); });
+    const K = {}; ["ring", "cross", "focus", "label", "tag", "dot"].forEach((k) => { K[k] = root.querySelector('[data-k="' + k + '"]'); });
     const parts = [K.ring, K.cross, K.focus, K.label, K.tag];
     let x = -100, y = -100, rx = -100, ry = -100, raf = 0, mode = "-", sec = null;
     const set = (m, lab) => { const key = m + "|" + (lab || ""); if (key === mode) return; mode = key;
@@ -591,10 +591,10 @@ class Component extends DCLogic {
     if (this.state.rm || !Element.prototype.animate) { this.setState((s) => ({ co: i, coK: s.coK + 1 }), cb); return; }
     clearTimeout(this.coFT);
     const cols = Math.max(1, Math.round((this.coRef.current ? this.coRef.current.clientWidth : 1000) / Math.max(1, (cells()[0] || { clientWidth: 200 }).clientWidth)));
-    cells().forEach((el, n) => { el.getAnimations().forEach((a) => a.cancel()); el.animate([{ opacity: 1, transform: "none", Filter: "blur(0px)" }, { opacity: 0, transform: "translateY(-8px)", Filter: "blur(4px)" }], { duration: 260, delay: (n % cols) * 24, easing: "cubic-bezier(.4,0,1,1)", fill: "forwards" }); });
+    cells().forEach((el, n) => { el.getAnimations().forEach((a) => a.cancel()); el.animate([{ opacity: 1, transform: "none", filter: "blur(0px)" }, { opacity: 0, transform: "translateY(-8px)", filter: "blur(4px)" }], { duration: 260, delay: (n % cols) * 24, easing: "cubic-bezier(.4,0,1,1)", fill: "forwards" }); });
     const sc = this.coScanRef.current; if (sc) sc.animate([{ opacity: 0, transform: "translateX(-4%)" }, { opacity: 1, offset: 0.15 }, { opacity: 1, offset: 0.8 }, { opacity: 0, transform: "translateX(104%)" }], { duration: 900, delay: 120, easing: "cubic-bezier(.45,0,.2,1)" });
     this.coFT = setTimeout(() => this.setState((s) => ({ co: i, coK: s.coK + 1 }), () => {
-      cells().forEach((el, n) => { el.getAnimations().forEach((a) => a.cancel()); el.animate([{ opacity: 0, transform: "translateY(10px)", filter: "blur(6px)" }, { opacity: 1, transform: "none", Filter: "blur(0px)" }], { duration: 560, delay: (n % cols) * 70 + Math.floor(n / cols) * 40, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" }); });
+      cells().forEach((el, n) => { el.getAnimations().forEach((a) => a.cancel()); el.animate([{ opacity: 0, transform: "translateY(10px)", filter: "blur(6px)" }, { opacity: 1, transform: "none", filter: "blur(0px)" }], { duration: 560, delay: (n % cols) * 70 + Math.floor(n / cols) * 40, easing: "cubic-bezier(.22,1,.36,1)", fill: "backwards" }); });
       cb && cb(); }), 330);
   }
   coPick(i, focus) {

@@ -64,7 +64,7 @@
           <sc-for list="{{ mcur.items }}" as="p" hint-placeholder-count="3">
             <a href="{{ p.href }}" class="qfadein" style="display:flex;align-items:center;gap:14px;padding:10px 12px;border:1px solid transparent;border-radius:12px;color:inherit" style-hover="background:var(--surface-2);border-color:var(--border-light)">
               <span style="flex:none;display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:10px;border:1px solid var(--border);background:var(--surface-2);overflow:hidden">
-                <sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><img src="{{ p.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:5px;display:block"></sc-if>
+                <sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ true }}"><img sc-camel-src="{{ p.img }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:5px;display:block"></sc-if>
                 <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--muted)">{{ p.mono }}</span></sc-if>
               </span>
               <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;font-size:16.5px;font-weight:600;color:var(--foreground)">{{ p.title }}<sc-if value="{{ p.rnd }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="36px,18px">R&amp;D</x-import></sc-if></span><span style="display:block;margin-top:3px;font-size:16px;line-height:1.45;color:var(--muted)">{{ p.blurb }}</span></span>
@@ -72,7 +72,7 @@
             </a>
             <sc-if value="{{ p.hasMini }}" hint-placeholder-val="{{ false }}">
             <a href="{{ p.miniHref }}" class="qfadein" style="display:flex;align-items:center;gap:12px;margin:-2px 0 4px 38px;padding:8px 12px;border:1px solid var(--border);border-radius:12px;background:linear-gradient(90deg,rgba(0,212,255,.07),transparent 70%);color:inherit" style-hover="background:var(--surface-2);border-color:var(--brand)">
-              <span style="flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--base);overflow:hidden"><img src="{{ p.miniImg }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:2px;display:block"></span>
+              <span style="flex:none;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:1px solid var(--border);background:var(--base);overflow:hidden"><img sc-camel-src="{{ p.miniImg }}" alt="" loading="lazy" style="width:100%;height:100%;object-fit:contain;padding:2px;display:block"></span>
               <span style="flex:1;min-width:0"><span style="display:flex;align-items:center;gap:8px;font-size:15.5px;font-weight:600;color:var(--foreground)">{{ p.miniTitle }}<span style="padding:1px 6px;border:1px solid var(--brand);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;color:var(--brand)">HARDWARE</span></span><span style="display:block;margin-top:2px;font-size:16px;line-height:1.4;color:var(--muted)">{{ p.miniBlurb }}</span></span>
               <span style="color:var(--muted);font-size:16px">→</span>
             </a>
@@ -141,7 +141,7 @@
         <div style="position:relative;overflow:hidden;min-height:340px;border:1px solid var(--border-light);border-radius:18px;background:var(--surface-2)">
           <sc-for list="{{ cPanels }}" as="pn" hint-placeholder-count="7">
             <div aria-hidden="{{ pn.hidden }}" style="position:absolute;inset:0;opacity:{{ pn.op }};transition:opacity .55s;pointer-events:{{ pn.pe }}">
-              <img src="{{ pn.img }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ pn.pos }};transform:scale({{ pn.sc }});transition:transform 1.4s cubic-bezier(.22,1,.36,1);filter:brightness(.8) saturate(.9)">
+              <img sc-camel-src="{{ pn.img }}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ pn.pos }};transform:scale({{ pn.sc }});transition:transform 1.4s cubic-bezier(.22,1,.36,1);filter:brightness(.8) saturate(.9)">
               <div style="position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,8,14,.94) 0%,rgba(5,8,14,.62) 38%,rgba(5,8,14,.1) 72%,rgba(5,8,14,.25) 100%)"></div>
               <div class="bg-grid" style="position:absolute;inset:0;opacity:.18;pointer-events:none"></div>
               <span style="position:absolute;left:20px;top:18px;display:inline-flex;align-items:center;gap:8px;padding:5px 9px;border-radius:6px;background:rgba(5,8,14,.62);backdrop-filter:blur(8px);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;font-size:12px;color:var(--foreground-2)"><span style="width:6px;height:6px;border-radius:50%;background:var(--brand)"></span>{{ pn.group }}</span>

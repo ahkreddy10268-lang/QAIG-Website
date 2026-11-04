@@ -52,7 +52,12 @@ The `.dc.html` sources, shared components (`QAIG Global Navbar`, `Footer`, `CTA`
 - `qaig-content-data.js`: IP portfolio and certificate details, publications, News & Updates achievements, upcoming events (empty until confirmed).
 - `qaig-legal-data.js`: Privacy, Terms, Cookies copy (DRAFT pending legal review).
 
-## Changes in this build (30 Oct 2026)
+## Fixes (4 Nov 2026)
+- **No more `{{ … }}` 404s:** image `src` and CSS `URL('{{ … }}')` bindings in templates are written as `sc-camel-src` / `sc-camel-style`. The dc-runtime maps them back to `src` / `style` at render, but the browser no longer requests the raw placeholder before React fills it in. Keep this pattern when adding image bindings.
+- **Code restored after the Title Case pass:** `cur`/`k` had become `Cur`/`K` in script code. This broke the Home Technology Explorer auto-advance timer and the custom cursor (Home, Company, Laser, Resources). Style keys `Transition`/`Filter` were lowercased so the cursor fade and blur animations apply. Title Case applies to visible text only, never to code.
+- Applied to both `source/` and the bundled `site/` pages. All 30 pages load with no failed requests and no console errors.
+
+## Changes in the 30 Oct build
 - **site/ rebuilt:** all 30 pages re-bundled from current source (Q-Cluster Mini and QNTSim Mini now included), with the latest `qaig-*.js`, `assets/` and `docs/`.
 - **Work With Us:** rebuilt as a two-door hero leading into separate Careers and Collaborations journeys, each with its own sticky in-page nav (Products style). Collaboration Areas cards have "Add to Proposal" with selection state and product-domain links. Path card photos load from correct paths.
 - **Home:** image overlay badges removed from Achievements cards; category badge sits below the image.

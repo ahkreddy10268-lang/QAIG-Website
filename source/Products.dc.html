@@ -51,7 +51,7 @@
       </div>
       <figcaption aria-live="polite" style="display:grid;grid-template-columns:{{ roCols }};align-items:center;gap:16px 28px;padding:18px 22px;border-top:1px solid var(--border);background:var(--surface-2);border-radius:0 0 24px 24px">
         <div style="display:flex;align-items:center;gap:14px;min-width:0">
-          <img loading="lazy" src="{{ sp.logo }}" alt="" aria-hidden="true" style="flex:none;width:44px;height:44px;object-fit:contain">
+          <img loading="lazy" sc-camel-src="{{ sp.logo }}" alt="" aria-hidden="true" style="flex:none;width:44px;height:44px;object-fit:contain">
           <div style="min-width:0;display:flex;flex-direction:column;gap:3px">
             <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ sp.idx }} · {{ sp.domain }}</span>
             <span style="display:flex;align-items:center;gap:10px;font-size:clamp(1.2rem,1rem + .5vw,1.5rem);font-weight:600;letter-spacing:-0.02em">{{ sp.title }}<sc-if value="{{ sp.rnd }}" hint-placeholder-val="{{ false }}"><span style="padding:2px 7px;border:1px solid var(--warning);border-radius:4px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;color:var(--warning)">R&amp;D</span></sc-if></span>
@@ -91,7 +91,7 @@
             </div>
           </div>
           <figure style="position:relative;margin:0;min-height:{{ miniFigH }};background:radial-gradient(ellipse 58% 42% at 50% 78%,rgba(0,212,255,.14),transparent 72%),radial-gradient(ellipse 66% 60% at 50% 50%,rgba(120,170,215,.28),rgba(40,90,140,.10) 58%,transparent 78%)">
-            <img src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="position:absolute;inset:{{ miniImgInset }};width:calc(100% - {{ miniImgW }});height:calc(100% - {{ miniImgH }});object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.6))">
+            <img sc-camel-src="{{ m.img }}" alt="{{ m.alt }}" loading="lazy" style="position:absolute;inset:{{ miniImgInset }};width:calc(100% - {{ miniImgW }});height:calc(100% - {{ miniImgH }});object-fit:contain;filter:drop-shadow(0 18px 24px rgba(0,0,0,.6))">
           </figure>
         </article>
       </sc-for>
@@ -143,7 +143,7 @@
       <div role="group" aria-label="Q-Forte, Integrated PQC Stack" style="display:flex;flex-direction:column;gap:{{ grpGap }};padding:{{ grpPad }};border:1px solid rgba(0,212,255,.28);border-radius:28px;background:linear-gradient(180deg,rgba(0,212,255,.06),transparent 40%),rgba(0,212,255,.015)">
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:{{ grpHeadPad }}">
           <div style="flex:1 1 320px;display:flex;align-items:center;gap:14px;min-width:0">
-            <img loading="lazy" src="{{ qfIcon }}" alt="Q-Forte" style="flex:none;width:40px;height:40px;object-fit:contain">
+            <img loading="lazy" sc-camel-src="{{ qfIcon }}" alt="Q-Forte" style="flex:none;width:40px;height:40px;object-fit:contain">
             <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
               <span style="display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px"><span style="font-size:20px;font-weight:600;letter-spacing:-0.02em;white-space:nowrap">Q-Forte</span><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Integrated PQC Stack</span></span>
               <span style="font-size:16px;line-height:1.45;color:var(--foreground-2)">Three Complementary Products. One Unified Stack.</span>
@@ -160,7 +160,7 @@
                 <div style="position:absolute;left:20px;right:20px;top:48px;bottom:24px;display:flex;align-items:center;justify-content:center">{{ c.ill }}</div>
               </sc-if>
               <sc-if value="{{ c.showPhoto }}" hint-placeholder-val="{{ false }}">
-                <img src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
+                <img sc-camel-src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
               </sc-if>
               <sc-if value="{{ c.hasPhoto }}" hint-placeholder-val="{{ false }}">
                 <div role="group" aria-label="Figure View" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
@@ -175,7 +175,7 @@
                 <div style="flex:none;display:{{ c.badgeDisp }};align-items:center;gap:8px">
                 <sc-if value="{{ c.qf }}" hint-placeholder-val="{{ false }}">
                   <span style="position:relative;display:flex">
-                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte Stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img loading="lazy" src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
+                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte Stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img loading="lazy" sc-camel-src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
                     <span id="tip-{{ c.slug }}" role="tooltip" style="position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:max-content;max-width:260px;padding:10px 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-3);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;color:var(--foreground);opacity:{{ c.tipOp }};visibility:{{ c.tipVis }};transform:translateY({{ c.tipY }});transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none">{{ c.tip }}</span>
                   </span>
                 </sc-if>
@@ -206,7 +206,7 @@
                 <div style="position:absolute;left:20px;right:20px;top:48px;bottom:24px;display:flex;align-items:center;justify-content:center">{{ c.ill }}</div>
               </sc-if>
               <sc-if value="{{ c.showPhoto }}" hint-placeholder-val="{{ false }}">
-                <img src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
+                <img sc-camel-src="{{ c.photo }}" alt="{{ c.photoAlt }}" loading="lazy" style="position:absolute;left:6%;top:48px;width:88%;height:calc(100% - 72px);object-fit:contain;mix-blend-mode:multiply;-webkit-mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%);mask-image:radial-gradient(ellipse 50% 50% at 50% 50%,#000 70%,transparent 100%)">
               </sc-if>
               <sc-if value="{{ c.hasPhoto }}" hint-placeholder-val="{{ false }}">
                 <div role="group" aria-label="Figure View" style="position:absolute;left:14px;top:12px;z-index:2;display:flex;gap:2px;padding:3px;border:1px solid {{ c.tabBd }};border-radius:8px;background:{{ c.tabBg }}">
@@ -221,7 +221,7 @@
                 <div style="flex:none;display:{{ c.badgeDisp }};align-items:center;gap:8px">
                 <sc-if value="{{ c.qf }}" hint-placeholder-val="{{ false }}">
                   <span style="position:relative;display:flex">
-                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte Stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img loading="lazy" src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
+                    <a href="{{ qfHref }}" aria-label="Part of Q-Forte. View the Q-Forte Stack." aria-describedby="tip-{{ c.slug }}" onMouseEnter="{{ c.tipOn }}" onMouseLeave="{{ tipOff }}" onFocus="{{ c.tipOn }}" onBlur="{{ tipOff }}" onKeyDown="{{ tipKey }}" style="display:flex;align-items:center;gap:6px;min-height:28px;padding:0 10px 0 8px;border:1px solid rgba(0,212,255,.45);border-radius:6px;background:var(--brand-soft);font-family:var(--font-mono);font-size:13.5px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;color:var(--brand)" style-hover="border-color:var(--brand)"><img loading="lazy" sc-camel-src="{{ qfIcon }}" alt="" aria-hidden="true" style="flex:none;width:12px;height:12px;object-fit:contain;opacity:.9">Part of Q-Forte</a>
                     <span id="tip-{{ c.slug }}" role="tooltip" style="position:absolute;right:0;top:calc(100% + 8px);z-index:5;width:max-content;max-width:260px;padding:10px 12px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-3);box-shadow:var(--shadow-lg);font-size:14px;line-height:1.45;color:var(--foreground);opacity:{{ c.tipOp }};visibility:{{ c.tipVis }};transform:translateY({{ c.tipY }});transition:opacity .18s,transform .18s,visibility .18s;pointer-events:none">{{ c.tip }}</span>
                   </span>
                 </sc-if>
