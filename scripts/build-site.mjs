@@ -168,7 +168,8 @@ function addMeta(page, b, extraHead = '') {
   let h = b.html;
   h = h.replace(/<html[^>]*>/, `<html lang="${seo.site.lang}">`);
   h = h.replace(/<title>[^<]*<\/title>\s*/, '');
-  h = h.replace(/(<meta name="viewport"[^>]*>)/, `$1\n  ${extraHead}${metaTags(page, { forShell: true })}`);
+  // the exported loader page has only <meta charset> in its head: add viewport and page metadata after it (first match = shell head)
+  h = h.replace(/<meta charset="utf-8">/, `<meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  ${extraHead}${metaTags(page, { forShell: true })}`);
   // Loading shell: dark, no thumbnail or "Unpacking..." label (was a cream flash between pages)
   h = h.replace('body { background: #faf9f5;', `html, body { background: ${BG};`);
   h = h.replace(/(#__bundler_thumbnail \{[^}]*?background: )#faf9f5;/, `$1${BG};`);
@@ -235,7 +236,7 @@ for (const page of basePages) {
     b.html = b.html.replace(/<title>[^<]*<\/title>\s*/g, '').replace(/<link rel="canonical"[^>]*>\s*/g, '').replace(/<meta (property="og:[^"]+"|name="twitter:card")[^>]*>\s*/g, '').replace(/<meta name="description"[^>]*>\s*/g, '');
     // <base href="/"> so relative assets resolve at any depth
     const base = '<base href="/">';
-    b.html = b.html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n  ${base}${metaTags('404.html', { forShell: true })}`);
+    b.html = b.html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n  ${base}<title>${esc(seo.notFound.title)} · ${esc(seo.site.name)}</title>`);
     const head = b.template.match(/<head[^>]*>/i); const i = head.index + head[0].length;
     b.template = b.template.slice(0, i) + base + `<title>${esc(seo.notFound.title)} · ${esc(seo.site.name)}</title><meta name="robots" content="noindex">` + b.template.slice(i);
     outputs.set('404.html', writeBundle(b));
