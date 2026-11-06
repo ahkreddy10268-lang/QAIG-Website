@@ -44,7 +44,7 @@ window.QAIG_PRODUCTS = {
     finalCta: "Discuss Your Requirements"
   },
   "q-cluster": {
-    name: "Q-Cluster", domain: "QIS", tag: "Quantum Simulation, Local or Cloud", logo: "assets/products/QCLUSTER_WN.png", status: "ready", ill: "q-cluster",
+    name: "Q-Cluster", domain: "QIS", tag: "Quantum Simulation, Local or Cloud", logo: "assets/products/QCLUSTER_WN.webp", status: "ready", ill: "q-cluster",
     verified: "Sources: Q_Cluster.pdf p1–2, Q-Cluster industry brochure p1, Q-Cluster mini brochure p1. Offering names follow the three brochures. Prices: [PRICE TO CONFIRM], billing: [BILLING INTERVAL TO CONFIRM], destination: [DESTINATION TO CONFIRM]. PROVISIONAL — CONFIRM WITH QAIG",
     headline: "A Quantum Computing Lab Without the Quantum Computer",
     lead: "Q-Cluster Is a Quantum Simulation Platform for Learning, Algorithm Development and Application Prototyping. Run Circuits in Ideal Conditions or Under Configurable Noise, on CPU, GPU and HPC Infrastructure.",
@@ -165,7 +165,7 @@ window.QAIG_PRODUCTS = {
     module: apps("Experiments It Supports", "Detailed Specifications and Configuration Are Available on Enquiry.", [["Storage and Retrieval", "Characterise Storage and Retrieval of Light Pulses."], ["Atomic Physics", "Explore Light-Atom Interaction in Rubidium Vapour."], ["Network Building Blocks", "Study the Role of Memory in Quantum Repeaters."]]),
     related: [["EPS-QKD", "Generate and Measure Entangled Photon Pairs."], ["Quantum Repeater", "Long-Distance Modules That Build on Quantum Memory."]],
     finalTitle: "Add Quantum Memory to Your Lab", finalText: "Tell Us About Your Experiments. We'll Share Kit Details and Options.", finalCta: "Enquire About Q-Memory" };
-  P["qntsim"] = { name: "QNTSim", domain: "NET", tag: "Quantum Network Simulator", logo: "assets/products/QNTSIM_WN.png", status: "ready", ill: "qntsim",
+  P["qntsim"] = { name: "QNTSim", domain: "NET", tag: "Quantum Network Simulator", logo: "assets/products/QNTSIM_WN.webp", status: "ready", ill: "qntsim",
     verified: "Source: QNTSim.pdf p1–2. QNTSim Mini is named in the brief only; no source document found. Prices: [PRICE TO CONFIRM]. PROVISIONAL — CONFIRM WITH QAIG",
     headline: "Every Student Builds a Quantum Network",
     lead: "QNTSim Is a Quantum Network Simulator for Academia and Research Training. Design Networks, Run Protocols and See How Entanglement and Noise Behave, Without an Optical Bench.",

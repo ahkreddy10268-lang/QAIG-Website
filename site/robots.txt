@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://qaig-website-site.vercel.app/sitemap.xml
