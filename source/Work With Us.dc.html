@@ -179,6 +179,16 @@
               <div><sc-if value="{{ cCanBack }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" type="button" variant="ghost" onClick="{{ cBack }}" hint-size="100px,44px">← Back</x-import></sc-if></div>
               <x-import component-from-global-scope="QAIG.Button" type="submit" size="lg" hint-size="200px,44px">{{ cNextLabel }}</x-import>
             </div>
+            <sc-if value="{{ cHasIssue }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="display:flex;flex-direction:column;gap:12px;padding:16px 18px;border:1px solid rgba(255,180,84,.45);border-radius:12px;background:var(--surface-2)">
+                <div style="font-size:17px;font-weight:600;color:var(--foreground)">{{ cIssueTitle }}</div>
+                <p style="margin:0;max-width:60ch;font-size:16px;line-height:1.55;color:var(--foreground-2)">{{ cIssueText }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:10px">
+                  <a href="{{ cMailto }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--brand);color:var(--brand-ink);font-weight:600;font-size:15.5px">Email the Details</a>
+                  <button type="button" onClick="{{ cCopy }}" style="min-height:44px;padding:0 18px;border:1px solid var(--border-light);border-radius:10px;background:transparent;color:var(--foreground);font:inherit;font-size:15.5px;font-weight:500;cursor:pointer">{{ cCopyLabel }}</button>
+                </div>
+              </div>
+            </sc-if>
           </form>
         </sc-if>
         <sc-if value="{{ cSent }}" hint-placeholder-val="{{ false }}">
@@ -347,6 +357,16 @@
               <div><sc-if value="{{ kCanBack }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" type="button" variant="ghost" onClick="{{ kBack }}" hint-size="100px,44px">← Back</x-import></sc-if></div>
               <x-import component-from-global-scope="QAIG.Button" type="submit" size="lg" hint-size="200px,44px">{{ kNextLabel }}</x-import>
             </div>
+            <sc-if value="{{ kHasIssue }}" hint-placeholder-val="{{ false }}">
+              <div role="alert" style="display:flex;flex-direction:column;gap:12px;padding:16px 18px;border:1px solid rgba(255,180,84,.45);border-radius:12px;background:var(--surface-2)">
+                <div style="font-size:17px;font-weight:600;color:var(--foreground)">{{ kIssueTitle }}</div>
+                <p style="margin:0;max-width:60ch;font-size:16px;line-height:1.55;color:var(--foreground-2)">{{ kIssueText }}</p>
+                <div style="display:flex;flex-wrap:wrap;gap:10px">
+                  <a href="{{ kMailto }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--brand);color:var(--brand-ink);font-weight:600;font-size:15.5px">Email the Details</a>
+                  <button type="button" onClick="{{ kCopy }}" style="min-height:44px;padding:0 18px;border:1px solid var(--border-light);border-radius:10px;background:transparent;color:var(--foreground);font:inherit;font-size:15.5px;font-weight:500;cursor:pointer">{{ kCopyLabel }}</button>
+                </div>
+              </div>
+            </sc-if>
           </form>
         </sc-if>
         <sc-if value="{{ kSent }}" hint-placeholder-val="{{ false }}">
@@ -454,12 +474,34 @@ class Component extends DCLogic {
 
     const fieldUI = (which, ok, keys) => { const st = S[which], e = {}; keys.forEach((k) => { const bad = st.tried && !ok[k]; e[k] = bad; e[k + "Inv"] = bad ? "true" : "false"; e[k + "Bd"] = bad ? "var(--danger)" : "var(--border-control)"; }); return e; };
     const stepsUI = (which, titles) => { const st = S[which]; return titles.map((t, i) => { const done = st.sent || i < st.step, cur = !st.sent && i === st.step; return { t, mark: done ? "✓" : pad(i + 1), status: done ? "Complete" : cur ? "Current" : "Next", cur: cur ? "step" : undefined, lock: !done || st.sent, cursor: done && !st.sent ? "pointer" : "default", bd: done || cur ? "var(--brand)" : "var(--border-light)", bg: done ? "var(--brand)" : "transparent", ncol: done ? "var(--brand-ink)" : cur ? "var(--brand)" : "var(--faint)", col: cur || done ? "var(--foreground)" : "var(--muted)", barBg: done || cur ? "var(--brand)" : "var(--border-light)", go: () => { this.setState({ [which]: { ...st, step: i, tried: false } }); this.focus(which + "-step-h"); } }; }); };
+    const issueUI = (p) => {
+      const st = S[p], nc = st.issue === "not-connected", what = p === "c" ? "Application" : "Proposal";
+      return {
+        [p + "HasIssue"]: !!st.issue && !st.sent,
+        [p + "IssueTitle"]: nc ? "Online Sending Isn't Connected Yet" : "Your " + what + " Could Not Be Sent",
+        [p + "IssueText"]: nc ? "Your " + what + " Has Not Been Sent. Your Details Are Saved in This Form: Email Them to Our Team Instead, or Copy Them to Send Later." : "Check Your Connection and Try Again, or Email the Details to Our Team Instead. Your Details Are Saved in This Form.",
+        [p + "Mailto"]: st.fields && window.QAIG_MAILTO ? window.QAIG_MAILTO(p === "c" ? "careers" : "collaborations", (p === "c" ? "Job Application" : "Collaboration Proposal") + (st.f.name ? " · " + st.f.name : ""), st.fields) : "mailto:info@thequantum.ai",
+        [p + "CopyLabel"]: st.copied ? "Details Copied" : "Copy Details",
+        [p + "Copy"]: () => { const t = st.fields && window.QAIG_FORM_TEXT ? window.QAIG_FORM_TEXT(st.fields) : ""; try { navigator.clipboard.writeText(t).then(() => this.setState({ [p]: { ...this.state[p], copied: true } }), () => {}); } catch (er) {} },
+      };
+    };
     const flow = (which, ok, stepKeys, prefix) => {
       const st = S[which], last = stepKeys.length - 1;
       return {
         next: (e) => { e && e.preventDefault && e.preventDefault(); const bad = stepKeys[st.step].some((k) => !ok[k]); if (bad) { this.setState({ [which]: { ...st, tried: true } }); setTimeout(() => { const el = document.querySelector("#" + (which === "c" ? "c-apply" : "k-propose") + " [aria-invalid='true'], #" + (which === "c" ? "c-apply" : "k-propose") + " [role='alert']"); el && el.focus && el.focus(); }, 30); return; }
           if (st.step < last) { this.setState({ [which]: { ...st, step: st.step + 1, tried: false } }); this.focus(which + "-step-h"); }
-          else { this.setState({ [which]: { ...st, sent: true, tried: false, ref: prefix + Date.now().toString(36).toUpperCase().slice(-6) } }, () => { try { localStorage.removeItem("qaig-wwu-draft"); } catch (er) {} this.save(); }); this.focus(which + "-done-h"); } },
+          else {
+            if (st.sending) return;
+            const ref = prefix + Date.now().toString(36).toUpperCase().slice(-6), fields = Object.assign({ reference: ref }, st.f);
+            this.setState({ [which]: { ...st, sending: true, issue: "", copied: false } });
+            const done = (res) => {
+              const cur = this.state[which];
+              // The saved draft is cleared only once the submission is confirmed; otherwise it stays, with email and copy options.
+              if (res && res.ok) { this.setState({ [which]: { ...cur, sending: false, sent: true, tried: false, ref } }, () => { try { localStorage.removeItem("qaig-wwu-draft"); } catch (er) {} this.save(); }); this.focus(which + "-done-h"); }
+              else this.setState({ [which]: { ...cur, sending: false, issue: (res && res.status) || "failed", fields } });
+            };
+            (window.QAIG_SUBMIT ? window.QAIG_SUBMIT(which === "c" ? "careers" : "collaborations", fields) : Promise.resolve({ ok: false, status: "not-connected" })).then(done, () => done({ ok: false, status: "failed" }));
+          } },
         back: () => { this.setState({ [which]: { ...st, step: Math.max(0, st.step - 1), tried: false } }); this.focus(which + "-step-h"); },
         edit: (i) => () => { this.setState({ [which]: { ...st, step: i, tried: false } }); this.focus(which + "-step-h"); },
         label: st.step < last ? "Continue →" : which === "c" ? "Send Application" : "Send Proposal",
@@ -504,7 +546,7 @@ class Component extends DCLogic {
       cSteps: stepsUI("c", ["About You", "Your Interest", "Review and Send"]),
       cStepTitle: ["About You", "Your Interest", "Review and Send"][S.c.step], cStepN: pad(S.c.step + 1),
       cs0: S.c.step === 0, cs1: S.c.step === 1, cs2: S.c.step === 2, cCanBack: S.c.step > 0,
-      cNotSent: !S.c.sent, cSent: S.c.sent, cRef: S.c.ref, cNext: cFlow.next, cBack: cFlow.back, cNextLabel: cFlow.label,
+      cNotSent: !S.c.sent, cSent: S.c.sent, cRef: S.c.ref, cNext: cFlow.next, cBack: cFlow.back, cNextLabel: cFlow.label, ...issueUI("c"),
       cDraft: !S.c.sent && !!(cf.name || cf.email || cf.msg),
       cf, ce: fieldUI("c", cOk, ["name", "email", "team", "msg", "consent"]),
       cOn: { name: (e) => this.setF("c", "name", e.target.value), email: (e) => this.setF("c", "email", e.target.value), loc: (e) => this.setF("c", "loc", e.target.value), url: (e) => this.setF("c", "url", e.target.value), msg: (e) => this.setF("c", "msg", e.target.value), consent: (e) => this.setF("c", "consent", e.target.checked), cv: (e) => { const fl = e.target.files && e.target.files[0]; this.setF("c", "cv", fl ? fl.name : ""); } },
@@ -532,7 +574,7 @@ class Component extends DCLogic {
       kSteps: stepsUI("k", ["Organisation", "Scope", "Review and Send"]),
       kStepTitle: ["Organisation", "Scope", "Review and Send"][S.k.step], kStepN: pad(S.k.step + 1),
       ks0: S.k.step === 0, ks1: S.k.step === 1, ks2: S.k.step === 2, kCanBack: S.k.step > 0,
-      kNotSent: !S.k.sent, kSent: S.k.sent, kRef: S.k.ref, kNext: kFlow.next, kBack: kFlow.back, kNextLabel: kFlow.label,
+      kNotSent: !S.k.sent, kSent: S.k.sent, kRef: S.k.ref, kNext: kFlow.next, kBack: kFlow.back, kNextLabel: kFlow.label, ...issueUI("k"),
       kDraft: !S.k.sent && !!(kf.name || kf.email || kf.org || kf.obj),
       kf, ke: fieldUI("k", kOk, ["name", "email", "org", "type", "areas", "obj", "consent"]), kModelName: m[0],
       kOn: { name: (e) => this.setF("k", "name", e.target.value), email: (e) => this.setF("k", "email", e.target.value), org: (e) => this.setF("k", "org", e.target.value), type: (e) => this.setF("k", "type", e.target.value), country: (e) => this.setF("k", "country", e.target.value), obj: (e) => this.setF("k", "obj", e.target.value), consent: (e) => this.setF("k", "consent", e.target.checked) },

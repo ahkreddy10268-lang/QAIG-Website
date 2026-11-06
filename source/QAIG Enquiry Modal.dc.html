@@ -58,6 +58,16 @@
             <p style="margin:0;max-width:40ch;font-size:16px;line-height:1.5;color:var(--muted)">We Use These Details Only to Respond to This Request. Read Our <a href="{{ privacyHref }}">Privacy Policy</a>.</p>
             <x-import component-from-global-scope="QAIG.Button" size="lg" type="submit" dc-props="{{ submitProps }}" hint-size="190px,48px">Submit Request →</x-import>
           </div>
+          <sc-if value="{{ hasSendIssue }}" hint-placeholder-val="{{ false }}">
+            <div role="alert" style="display:flex;flex-direction:column;gap:12px;padding:16px 18px;border:1px solid rgba(255,180,84,.45);border-radius:12px;background:var(--surface-2)">
+              <div style="font-size:17px;font-weight:600;color:var(--foreground)">{{ issueTitle }}</div>
+              <p style="margin:0;max-width:60ch;font-size:16px;line-height:1.55;color:var(--foreground-2)">{{ issueText }}</p>
+              <div style="display:flex;flex-wrap:wrap;gap:10px">
+                <a href="{{ issueMailto }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:10px;background:var(--brand);color:var(--brand-ink);font-weight:600;font-size:15.5px">Email This Request</a>
+                <button type="button" onClick="{{ copyIssue }}" style="min-height:44px;padding:0 18px;border:1px solid var(--border-light);border-radius:10px;background:transparent;color:var(--foreground);font:inherit;font-size:15.5px;font-weight:500;cursor:pointer">{{ copyLabel }}</button>
+              </div>
+            </div>
+          </sc-if>
         </form>
       </sc-if>
       <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
@@ -65,7 +75,7 @@
           <span style="display:inline-flex;align-items:center;gap:12px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)"><span style="width:22px;height:1px;background:var(--brand)"></span>Request Received</span>
           <span style="display:flex;align-items:center;justify-content:center;width:60px;height:60px;border-radius:50%;border:1px solid var(--brand);background:var(--brand-soft);color:var(--brand)"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
           <h2 id="qeq-title" style="margin:0;font-size:clamp(28px,1.4rem + 1.4vw,40px);line-height:1.12;letter-spacing:-0.03em;font-weight:600;text-wrap:balance">Thank You, <span style="color:var(--brand)">{{ firstName }}</span>. Your Request Is In.</h2>
-          <p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:var(--foreground-2)">A Confirmation Is on Its Way to {{ sentEmail }}. Our Engineering Team Will Review Your Request Within 24 Hours.</p>
+          <p style="margin:0;max-width:52ch;font-size:17px;line-height:1.6;color:var(--foreground-2)">We Will Reply to {{ sentEmail }}. Our Engineering Team Will Review Your Request Within 24 Hours.</p>
           <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr));gap:1px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--border)">
             <div style="padding:16px 18px;background:var(--surface-2)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Reference</dt><dd class="tnum" style="margin:8px 0 0;font-family:var(--font-mono);font-size:16px;color:var(--brand)">{{ refId }}</dd></div>
             <div style="padding:16px 18px;background:var(--surface-2)"><dt style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)">Demo Mode</dt><dd style="margin:8px 0 0;font-size:16px;color:var(--foreground)">{{ modeSel }}</dd></div>
@@ -107,7 +117,7 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;inline&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
-  state = { open: false, f: { name: "", title: "", email: "", phone: "", org: "", country: "", use: "", req: "" }, prods: [], mode: "", tried: false, sent: false, refId: "", ctx: "", w: typeof window !== "undefined" ? window.innerWidth : 1280, step: 0, hov: null, rm: false };
+  state = { open: false, f: { name: "", title: "", email: "", phone: "", org: "", country: "", use: "", req: "" }, prods: [], mode: "", tried: false, sent: false, sendIssue: "", sending: false, refId: "", ctx: "", w: typeof window !== "undefined" ? window.innerWidth : 1280, step: 0, hov: null, rm: false };
   firstRef = React.createRef(); cardRef = React.createRef(); olRef = React.createRef();
   tlMeasure() { const c = this.cardRef.current, ol = this.olRef.current || (c && c.querySelector("ol")); if (!ol) return; const ys = Array.from(ol.querySelectorAll("[data-dot]")).map((d) => Math.round(d.getBoundingClientRect().top - ol.getBoundingClientRect().top + d.offsetHeight / 2)); if (ys.length && ys.join() !== (this.state.ys || []).join()) this.setState({ ys }); }
   componentDidUpdate() { this.tlMeasure(); }
@@ -137,7 +147,7 @@ class Component extends DCLogic {
   openWith(o) {
     let search = o.search || ""; if (!search && o.href) { try { search = new URL(o.href, location.href).search; } catch (e) {} }
     this.lastFocus = document.activeElement;
-    this.setState({ open: true, sent: false, tried: false, step: 0, hov: null });
+    this.setState({ open: true, sent: false, sendIssue: "", sending: false, tried: false, step: 0, hov: null });
     this.applyParams(new URLSearchParams(search));
     document.documentElement.style.overflow = "hidden";
     setTimeout(() => this.firstRef.current && this.firstRef.current.focus({ preventScroll: true }), 80);
@@ -158,9 +168,21 @@ class Component extends DCLogic {
     if (ev && ev.preventDefault) ev.preventDefault();
     const e = this.errors(), keys = Object.keys(e);
     if (keys.length) { this.setState({ tried: true }); setTimeout(() => { const el = this.cardRef.current && this.cardRef.current.querySelector('[data-f="' + keys[0] + '"]'); el && el.focus(); }, 30); return; }
-    this.setState({ sent: true, hov: null, step: 0, refId: "QAIG-" + Date.now().toString(36).toUpperCase().slice(-6) });
-    const c = this.cardRef.current && this.cardRef.current.parentElement; if (c && c.scrollTo) c.scrollTo({ top: 0, behavior: "smooth" });
-    if (this.inline()) window.scrollTo({ top: 0, behavior: "smooth" });
+    if (this.state.sending) return;
+    const S0 = this.state, refId = "QAIG-" + Date.now().toString(36).toUpperCase().slice(-6);
+    const fields = { reference: refId, name: S0.f.name, jobTitle: S0.f.title, email: S0.f.email, phone: S0.f.phone, organisation: S0.f.org, country: S0.f.country, useCase: S0.f.use, interestedProducts: S0.prods, preferredDemoMode: S0.mode, additionalRequirements: S0.f.req, context: S0.ctx };
+    this.setState({ sending: true, sendIssue: "", copied: false });
+    const done = (res) => {
+      if (res && res.ok) {
+        this.setState({ sending: false, sent: true, hov: null, step: 0, refId });
+        const c = this.cardRef.current && this.cardRef.current.parentElement; if (c && c.scrollTo) c.scrollTo({ top: 0, behavior: "smooth" });
+        if (this.inline()) window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        // Not sent: keep everything the visitor typed and offer email or copy instead (see qaig-nav-data.js, forms)
+        this.setState({ sending: false, sendIssue: (res && res.status) || "failed", sendFields: fields });
+      }
+    };
+    (window.QAIG_SUBMIT ? window.QAIG_SUBMIT("enquiry", fields) : Promise.resolve({ ok: false, status: "not-connected" })).then(done, () => done({ ok: false, status: "failed" }));
   }
   renderVals() {
     const S = this.state, modal = !this.inline(), D = this.nav(), R = D.routes || {};
@@ -186,11 +208,17 @@ class Component extends DCLogic {
       notSent: !S.sent, sent: S.sent, hasCtx: !!S.ctx, ctx: S.ctx, F, chips, modes, prodsErr: !!errs.prods,
       countries: ["India", "United States", "United Arab Emirates", "United Kingdom", "Singapore", "Saudi Arabia", "Germany", "France", "Netherlands", "Canada", "Australia", "Japan", "South Korea", "Other"],
       countryColor: S.f.country ? "var(--foreground)" : "#7d8aa0",
-      submit: (e) => this.submit(e), submitProps: { type: "submit", onClick: (e) => this.submit(e) },
+      submit: (e) => this.submit(e), submitProps: { type: "submit", onClick: (e) => this.submit(e), "aria-busy": S.sending ? "true" : "false" },
+      hasSendIssue: !!S.sendIssue && !S.sent,
+      issueTitle: S.sendIssue === "not-connected" ? "Online Sending Isn't Connected Yet" : "Your Request Could Not Be Sent",
+      issueText: S.sendIssue === "not-connected" ? "Your Request Has Not Been Sent. Your Details Are Still in the Form: Email Them to Our Team Instead, or Copy Them to Send Later." : "Check Your Connection and Try Again, or Email the Details to Our Team Instead. Your Details Are Still in the Form.",
+      issueMailto: S.sendFields && window.QAIG_MAILTO ? window.QAIG_MAILTO("enquiry", "Requirement Enquiry" + (S.f.org ? " · " + S.f.org : ""), S.sendFields) : "mailto:info@thequantum.ai",
+      copyLabel: S.copied ? "Details Copied" : "Copy Details",
+      copyIssue: () => { const t = S.sendFields && window.QAIG_FORM_TEXT ? window.QAIG_FORM_TEXT(S.sendFields) : ""; try { navigator.clipboard.writeText(t).then(() => this.setState({ copied: true }), () => {}); } catch (er) {} },
       privacyHref: R.privacy || "Privacy Policy.dc.html",
       firstName: (S.f.name.trim().split(/\s+/)[0] || ""), sentEmail: S.f.email.trim(), refId: S.refId, modeSel: S.mode || "Not Specified", prodList: S.prods.join(", "),
       doneLabel: modal ? "Close" : "Back to Home", done: () => modal ? this.close() : (window.QAIG_GO ? window.QAIG_GO(R.home || "Home Page Design.dc.html") : (location.href = R.home)),
-      again: () => this.setState({ sent: false, tried: false, f: { name: "", title: "", email: "", phone: "", org: "", country: "", use: "", req: "" }, prods: [], mode: "" }),
+      again: () => this.setState({ sent: false, sendIssue: "", sending: false, tried: false, f: { name: "", title: "", email: "", phone: "", org: "", country: "", use: "", req: "" }, prods: [], mode: "" }),
     };
   }
 }

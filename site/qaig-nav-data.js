@@ -73,3 +73,40 @@ window.QAIG_NAV = {
 window.QAIG_NAV.slug = function (t) { return "p-" + String(t).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, ""); };
 window.QAIG_NAV.domainHref = function (code) { return this.routes.products + "#" + String(code).toLowerCase(); };
 window.QAIG_NAV.productPageHref = function (title) { return this.productHref[title] || (this.routes.products + "#" + this.slug(title)); };
+
+/* ---- Form submissions ---------------------------------------------------------------
+   Every website form (enquiry popup, Discuss Your Requirement, Work With Us careers and
+   collaborations) sends through QAIG_SUBMIT. Nothing is sent until an endpoint is set.
+
+   To connect a service, set forms.endpoint and forms.provider:
+     provider "json"    -> POST application/json to the endpoint (Formspree, Getform, Basin,
+                           a Zapier or Make webhook, or your own API). Expects a 2xx reply.
+     provider "hubspot" -> HubSpot Forms API, endpoint
+                           https://api.hsforms.com/submissions/v3/integration/submit/<portalId>/<formGuid>
+   Until then forms do not show a success message: they keep what the visitor typed and offer
+   to send it by email (forms.fallbackEmail) or copy it. See README "Forms". */
+window.QAIG_NAV.forms = {
+  endpoint: "",          // e.g. "https://formspree.io/f/xxxxxxx" (pending confirmation)
+  provider: "json",
+  fallbackEmail: { enquiry: "info@thequantum.ai", careers: "info@thequantum.ai", collaborations: "info@thequantum.ai" },
+};
+window.QAIG_SUBMIT = function (form, fields) {
+  var cfg = (window.QAIG_NAV && window.QAIG_NAV.forms) || {};
+  var payload = { form: form, page: location.pathname, submittedAt: new Date().toISOString(), fields: fields };
+  if (!cfg.endpoint) return Promise.resolve({ ok: false, status: "not-connected" });
+  var body = cfg.provider === "hubspot"
+    ? JSON.stringify({ fields: Object.keys(fields).map(function (k) { return { name: k, value: Array.isArray(fields[k]) ? fields[k].join("; ") : String(fields[k] == null ? "" : fields[k]) }; }), context: { pageUri: location.href, pageName: document.title } })
+    : JSON.stringify(payload);
+  return fetch(cfg.endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: body })
+    .then(function (r) { return { ok: r.ok, status: r.ok ? "sent" : "failed" }; })
+    .catch(function () { return { ok: false, status: "failed" }; });
+};
+/* Plain-text summary of a submission, used for the email and copy fallbacks. */
+window.QAIG_FORM_TEXT = function (fields) {
+  return Object.keys(fields).filter(function (k) { var v = fields[k]; return v !== "" && v != null && !(Array.isArray(v) && !v.length); })
+    .map(function (k) { var v = fields[k]; return k + ": " + (Array.isArray(v) ? v.join(", ") : v); }).join("\n");
+};
+window.QAIG_MAILTO = function (form, subject, fields) {
+  var cfg = (window.QAIG_NAV && window.QAIG_NAV.forms) || {}, to = (cfg.fallbackEmail || {})[form] || "info@thequantum.ai";
+  return "mailto:" + to + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(window.QAIG_FORM_TEXT(fields));
+};
