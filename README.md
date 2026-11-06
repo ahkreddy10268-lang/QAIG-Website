@@ -55,6 +55,7 @@ The `.dc.html` sources, shared components (`QAIG Global Navbar`, `Footer`, `CTA`
 ## Fixes (4 Nov 2026)
 - **No more `{{ … }}` 404s:** image `src` and CSS `URL('{{ … }}')` bindings in templates are written as `sc-camel-src` / `sc-camel-style`. The dc-runtime maps them back to `src` / `style` at render, but the browser no longer requests the raw placeholder before React fills it in. Keep this pattern when adding image bindings.
 - **Code restored after the Title Case pass:** `cur`/`k` had become `Cur`/`K` in script code. This broke the Home Technology Explorer auto-advance timer and the custom cursor (Home, Company, Laser, Resources). Style keys `Transition`/`Filter` were lowercased so the cursor fade and blur animations apply. Title Case applies to visible text only, never to code.
+- **Home opens as a normal website:** its `viewport` setting defaulted to "Desktop · 1440", which wrapped the live page in the Responsive Preview frame. It now defaults to "Auto", like every other page. Keep pages on "Auto" before publishing; the preview modes are for checking breakpoints only.
 - Applied to both `source/` and the bundled `site/` pages. All 30 pages load with no failed requests and no console errors.
 
 ## Changes in the 30 Oct build
