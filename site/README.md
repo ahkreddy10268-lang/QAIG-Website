@@ -1,13 +1,16 @@
-# QAIG Website: Handoff (final build, 30 Oct 2026)
+# QAIG Website: Handoff (release fixes, 6 Nov 2026)
 
-Two folders. All old versions have been removed; everything here is the latest.
+`source/` is the canonical, editable website. `site/` is the deployable output, regenerated from `source/` by `scripts/build-site.mjs`. Never edit `site/` by hand: the next build overwrites it.
 
-## Quick start
-1. Unzip the folder.
-2. Open `site/index.html` in any modern browser (double-click; no server or install needed).
-3. It redirects to the Home page. Every navbar, footer, button and card link routes to a page inside `site/`.
+## Build and deploy
+1. Edit pages, components and data in `source/`.
+2. If you changed images in `source/assets`: `python3 scripts/optimize-images.py` (needs Pillow).
+3. `node scripts/build-site.mjs` (Node 18+, no other dependencies). Use `--check` to build without writing.
+4. Commit `source/` and `site/` together. Vercel serves `site/` (Root Directory `site`, no build command) and deploys every push to `main`.
 
-The first open needs internet (React loads from unpkg). To host, upload the contents of `site/` as-is to any static host; `index.html` is the entry point.
+How the build works: `site/` pages are self-unpacking bundles made by the design tool's exporter, which is not in this repository. The build starts from that export at the baseline commit in `scripts/export-baseline.json` and replays every change made in `source/` since then. Files the bundles embed verbatim (shared components, `qaig-*.js`) are replaced whole. Page edits are applied block by block, and each block must match the bundled template exactly once, or the build stops with an error instead of guessing. Page titles, descriptions and link previews come from `source/qaig-seo.json`. If you re-export `site/` from the design tool, commit the new export together with the matching `source/` and update the commit in `scripts/export-baseline.json`.
+
+To view locally, serve `site/` over HTTP (`cd site && python3 -m http.server`) and open `http://localhost:8000/`.
 
 ## site/ (open directly, no server needed)
 Each page is self-contained, with the navbar, footer, CTA, enquiry popup and product/legal templates inlined. Keep `assets/`, `_ds/` and `qaig-*.js` next to the pages; images and data load from them. Do not rename page files: routes in `qaig-nav-data.js` use these exact filenames.
@@ -45,18 +48,36 @@ Each page is self-contained, with the navbar, footer, CTA, enquiry popup and pro
 - Work With Us.dc.html
 
 ## source/ (editable)
-The `.dc.html` sources, shared components (`QAIG Global Navbar`, `Footer`, `CTA`, `Enquiry Modal`, `Product Page`, `Legal Page`), data files and `PROJECT-RULES.md`. Edit here and regenerate `site/`.
+The `.dc.html` sources, shared components (`QAIG Global Navbar`, `Footer`, `CTA`, `Enquiry Modal`, `Product Page`, `Mini Page`, `Legal Page`), data files and `PROJECT-RULES.md`. Edit here, then run the build. `public/` holds root files (favicons); `assets/` holds full-resolution image masters.
 
 ### Data files
-- `qaig-nav-data.js`: routes, product taxonomy, nav and footer links (all page destinations).
+- `qaig-nav-data.js`: routes, product taxonomy, nav and footer links (all page destinations), and the form submission settings (`forms`).
+- `qaig-seo.json`: page titles, descriptions and the site address used for canonical links, the sitemap and link previews.
 - `qaig-content-data.js`: IP portfolio and certificate details, publications, News & Updates achievements, upcoming events (empty until confirmed).
 - `qaig-legal-data.js`: Privacy, Terms, Cookies copy (DRAFT pending legal review).
+
+## Release fixes (6 Nov 2026)
+Full audit, evidence and before/after results are in the audit report. Summary:
+- **Customer Portal is a labelled demo.** Kept for demonstrations with its screens and journey unchanged. A "Demo Environment" banner on every sign-in and signed-in screen, and a pill in the top bar, say that the account and data are samples and that sign-in, payments, orders, invoices and support are simulated, with production authentication and backend integrations not yet connected. Every simulated confirmation is titled "Demo: …". Downloaded invoices are named `-SAMPLE` and headed "Not a tax invoice". The sample e-mail uses the reserved `example.com` domain. The presenter screen switcher appears only with `?demo-tools` in the URL. Fixed: the order, subscription and invoice tables had collapsed into one column.
+- **Forms never confirm what was not sent.** See "Forms" below.
+- **Pricing on Request.** No price appears in any approved document (the product data marked them `[PRICE TO CONFIRM]`). Q-Cluster Mini and QNTSim Mini show "Pricing on Request". Subscription plans show "On Request". The quarterly and annual discounts are hidden until prices are confirmed: restore the values in `qaig-product-data.js` (`periods` and each plan's `price`).
+- **Metadata:** page titles, descriptions, `lang`, canonical links, Open Graph, theme colour and favicons on every page; `robots.txt`, `sitemap.xml` and a 404 page built from the System States design. Portal States and System States are kept in `source/` as design references but not deployed (`site/.vercelignore`).
+- **Images:** web-sized copies in `site/assets` (2× their largest displayed size), WebP for large PNGs; masters stay in `source/assets`.
+- **Accessibility:** skip link; `main` landmark on every page; navigation items are real links; menu state announced; mobile menu locks page scroll; focus returns after the enquiry popup closes; contrast, autocomplete, landmark and naming fixes; pause control for the Home Technology Explorer. axe-core reports no WCAG 2.2 AA violations on the public pages apart from the Laser placeholder card (see Known gaps).
+- **Removed hidden duplicate pages:** 20 pages contained a second, hidden copy of themselves that was rendered but never shown, doubling their work.
+- **Broken links:** the Q-Sleeve and HEALMED white papers were linked to files that are not in the repository; they now open a pre-addressed request to sales@thequantum.ai.
+
+## Forms
+Every form (enquiry popup, Discuss Your Requirement, Work With Us careers and collaborations) sends through `QAIG_SUBMIT` in `source/qaig-nav-data.js`.
+- **Pending:** no form service is configured, so nothing is sent yet. Visitors see "Online Sending Isn't Connected Yet", their details stay in the form, and they can email the prepared request to info@thequantum.ai or copy it. No success message is shown unless the service confirms receipt.
+- **Recommended:** Formspree (or Getform/Basin) for the simplest reliable setup on a static Vercel site: create a form, then set `forms.endpoint` to its URL (`provider: "json"`). It e-mails each submission and filters spam; no server code is needed. If QAIG uses HubSpot, set `provider: "hubspot"` and the HubSpot Forms API endpoint instead, so enquiries land in the CRM. Either way, rebuild `site/` after editing.
+- **Also pending:** the careers form records the CV file name but does not upload the file; add file upload when the service is chosen (Formspree supports attachments on paid plans).
 
 ## Fixes (4 Nov 2026)
 - **No more `{{ … }}` 404s:** image `src` and CSS `URL('{{ … }}')` bindings in templates are written as `sc-camel-src` / `sc-camel-style`. The dc-runtime maps them back to `src` / `style` at render, but the browser no longer requests the raw placeholder before React fills it in. Keep this pattern when adding image bindings.
 - **Code restored after the Title Case pass:** `cur`/`k` had become `Cur`/`K` in script code. This broke the Home Technology Explorer auto-advance timer and the custom cursor (Home, Company, Laser, Resources). Style keys `Transition`/`Filter` were lowercased so the cursor fade and blur animations apply. Title Case applies to visible text only, never to code.
 - **Home opens as a normal website:** its `viewport` setting defaulted to "Desktop · 1440", which wrapped the live page in the Responsive Preview frame. It now defaults to "Auto", like every other page. Keep pages on "Auto" before publishing; the preview modes are for checking breakpoints only.
-- **No flash between pages:** the bundle loader in each `site/` page showed a cream "Unpacking..." screen with a large Q, then the raw template with `{{ … }}` text, then a white frame, before the page appeared. The loader screen is now plain dark (`#05080e`), and each page template starts dark with the raw template hidden. This lives in the exported `site/` files only: after re-exporting `site/` from the design tool, re-apply it (the loader's `#faf9f5` background, and a `qaig-no-flash` style at the top of each page template).
+- **No flash between pages:** the bundle loader in each `site/` page showed a cream "Unpacking..." screen with a large Q, then the raw template with `{{ … }}` text, then a white frame, before the page appeared. The loader screen is now plain dark (`#05080e`), and each page template starts dark with the raw template hidden. This lives in the exported `site/` files only: after re-exporting `site/` from the design tool, the build re-applies this automatically.
 - Applied to both `source/` and the bundled `site/` pages. All 30 pages load with no failed requests and no console errors.
 
 ## Changes in the 30 Oct build
@@ -107,12 +128,15 @@ The `.dc.html` sources, shared components (`QAIG Global Navbar`, `Footer`, `CTA`
 
 ## Known gaps
 - **Work With Us copy:** Hiring Process, How It Works and FAQ text need QAIG review for accuracy and commitments before going live.
-- **Deployment:** to publish on GitHub Pages, push to https://github.com/ahkreddy10268-lang/QAIG-Website.git and set Pages to serve the `site/` folder (or copy its contents to the repo root / `docs/`).
-- **Subscription prices are placeholders** (Q-Cluster Mini ₹3,000 / ₹7,500, cloud ₹5,000 / ₹12,000; QNTSim Mini ₹2,500 / ₹6,000, cloud ₹4,000 / ₹10,000). Studio, QML, QEC, QPU and Projects values per plan are assumptions; only GPU allowance and qubit ceilings come from the backend screens. Edit in `qaig-product-data.js`.
+- **Form service:** choose and configure it (see "Forms"). Until then the site offers email instead of online sending.
+- **Prices and plan terms:** confirm hardware and subscription prices before showing them. Also confirm "Software Free for the First 3 Months" on both Mini pages, and the per-plan feature values (Studio, QML, QEC, QPU, Projects), which are assumptions; only GPU allowance and qubit ceilings come from the backend screens.
+- **QuLabs:** the navbar item has no destination. Add the address as `routes.qulabs` in `qaig-nav-data.js`.
+- **Production address:** `site.url` in `qaig-seo.json` is the Vercel address; change it when the domain is confirmed (canonical links, sitemap and link previews use it).
+- **Missing files:** Q-Sleeve and HEALMED white papers, the five laser product photos (cards show "Product Photograph · Placeholder"; the ECDL card is labelled "Temporary Image"), and the company video.
+- **Performance on phones:** each page is a 3–8 MB self-unpacking bundle, so first paint on mobile is slow; the structural fix is the React rebuild recommended in the audit. Remaining technical items: synchronous loading of `qaig-nav-data.js` (17 places), the hero canvas cost on product pages, and three.js loaded from unpkg on the Mini pages.
 - Mission and Vision statements, the CEO quote and the hero headline were left as written (official copy). They read as generic; consider a rewrite with QAIG.
 - Company page "7 Technology Areas" (renamed from "7 Technology Domains") differs from the five product domains. Confirm the intended count.
 - Removed the unsupported claim "India’s first deep-tech quantum stack" from the team intro.
 - IP 03 "Input Laser Control Box" is listed as "Patent Granted" on the IP sheet, but its certificate is a Certificate of Registration of Design (No. 460524-001). The site labels it "Design Registered"; confirm the wording.
 - Author list for "Experimental Realization of Quantum Memory and EPS-QKD" (IEEE ATS 2024) not verified; shown as the QAIG research team.
 - `/videos/Companyppt.mp4` and the company brochure/presentation PDFs still need adding to the host / `assets/pdfs`.
-- Forms (enquiry, Work With Us) confirm client-side only; wire to the backend.

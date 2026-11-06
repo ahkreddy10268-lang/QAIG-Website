@@ -52,3 +52,12 @@ Changes to these global components are permitted only when explicitly requested.
 - Product `does`/`when` copy lives on each item in `qaig-nav-data.js`. Product concept illustrations are shared via `qaig-product-ill.js` (`window.QAIG_PILL(React, title, reducedMotion)`).
 - Casing: Title Case for all visible text, including headings, nav, buttons, labels, paragraphs, descriptions, form messages, placeholders, alt text and legal copy. Minor words (a, an, the, and, but, or, nor, for, so, yet, as, at, by, in, of, off, on, per, to, up, via, vs) stay lowercase unless first or last. Never alter official names (Q-Forte, Chec-Q AI, QuRNG, QNTSim, ApeX-Pro, etc.) or acronyms. Navbar height is 85px including its border; sticky offsets must use 85.
 - Resources dropdown content (Research & Publications, Downloads, News & Updates) and the footer Resources column both come from the same data.
+
+## Build and source of truth (added 6 Nov 2026)
+- `source/` is canonical. Never edit `site/` by hand; run `node scripts/build-site.mjs` (see README "Build and deploy").
+- Title Case applies to visible text only. Never change the case of code: identifiers, object keys, CSS property names, grid-area names, `autocomplete` tokens and media queries keep their exact spelling.
+- Every page keeps its `viewport` setting on "Auto" and the System States preview switcher off; preview controls are for design review only (`?demo-tools` shows them).
+- The Customer Portal is a demo: keep its demo banner and "Demo:" confirmations until production authentication and backends are connected.
+- Forms must never show a success message unless the form service confirmed receipt (`QAIG_SUBMIT`).
+- Prices appear only when confirmed in approved company documents; otherwise "Pricing on Request".
+- Images in templates bind with `sc-camel-src` / `sc-camel-style`, not `src="{{ … }}"`, so the browser never requests a raw placeholder.
