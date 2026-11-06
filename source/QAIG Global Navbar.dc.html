@@ -12,25 +12,26 @@
 <link rel="stylesheet" href="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/styles.css">
 <script src="_ds/qaig-instrument-b3f27954-a74d-4c8a-8609-5ae177d93b5f/_ds_bundle.js"></script><script src="qaig-nav-data.js"></script>
 <script src="qaig-transition.js"></script>
-<style>body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}@keyframes qdrift{from{transform:translate3d(-5%,-3%,0)}to{transform:translate3d(5%,4%,0)}}@keyframes qsig2{from{stroke-dashoffset:60}to{stroke-dashoffset:-900}}@keyframes qsig3{from{stroke-dashoffset:120}to{stroke-dashoffset:-1400}}@keyframes qsig{from{stroke-dashoffset:80}to{stroke-dashoffset:-1000}}@keyframes qtravel{0%{left:12.5%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:87.5%;opacity:0}}@keyframes qnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}@keyframes qbob{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,4px)}}@keyframes qfadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.qnudge{animation:qnudge 1.5s ease-in-out infinite}.qbob{animation:qbob 1.8s ease-in-out infinite}.qfadein{animation:qfadein .35s cubic-bezier(.22,1,.36,1) both}@media (prefers-reduced-motion:reduce){.qnudge,.qbob,.qfadein{animation:none!important}}@keyframes rsdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes rsin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}input::placeholder{color:var(--faint)}select option,select optgroup{background:#0b111c;color:#e6edf5}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}</style>
+<style>/* nav items are links styled as design-system buttons: keep the button text colour over the global a{} rule */a[data-slot="button"][data-variant="ghost"],a[data-slot="button"][data-variant="secondary"],a[data-slot="button"][data-variant="ghost"]:hover,a[data-slot="button"][data-variant="secondary"]:hover{color:var(--foreground)}.qaig-skip{position:absolute;left:16px;top:-80px;z-index:100;padding:10px 16px;border-radius:8px;background:var(--brand);color:var(--brand-ink)!important;font-weight:600;font-size:15px;transition:top .15s}.qaig-skip:focus{top:16px;outline:2px solid var(--brand-light);outline-offset:2px}body{margin:0;background:#05080e}a{color:var(--brand);text-decoration:none}a:hover{color:var(--brand-light)}html{scroll-behavior:smooth}@keyframes qdrift{from{transform:translate3d(-5%,-3%,0)}to{transform:translate3d(5%,4%,0)}}@keyframes qsig2{from{stroke-dashoffset:60}to{stroke-dashoffset:-900}}@keyframes qsig3{from{stroke-dashoffset:120}to{stroke-dashoffset:-1400}}@keyframes qsig{from{stroke-dashoffset:80}to{stroke-dashoffset:-1000}}@keyframes qtravel{0%{left:12.5%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:87.5%;opacity:0}}@keyframes qnudge{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}@keyframes qbob{0%,100%{transform:translate(0,0)}50%{transform:translate(4px,4px)}}@keyframes qfadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.qnudge{animation:qnudge 1.5s ease-in-out infinite}.qbob{animation:qbob 1.8s ease-in-out infinite}.qfadein{animation:qfadein .35s cubic-bezier(.22,1,.36,1) both}@media (prefers-reduced-motion:reduce){.qnudge,.qbob,.qfadein{animation:none!important}}@keyframes rsdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}@keyframes rsin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}input::placeholder{color:var(--faint)}select option,select optgroup{background:#0b111c;color:#e6edf5}:focus-visible{outline:2px solid var(--brand);outline-offset:2px}</style>
 </helmet>
 <div style="font-family:var(--font-sans);color:var(--foreground);-webkit-font-smoothing:antialiased">
 <header onMouseLeave="{{ closeMenu }}" style="position:relative;z-index:50;background:var(--nav-surface);backdrop-filter:blur(20px) saturate(1.5);border-bottom:1px solid var(--border)">
+  <a href="#main" class="qaig-skip" onClick="{{ skipToMain }}">Skip to Content</a>
   <div class="section-shell" style="display:flex;align-items:center;justify-content:space-between;height:84px;gap:20px">
     <a href="{{ homeHref }}" aria-label="Quantum AI Global Home" onMouseEnter="{{ closeMenu }}" style="display:flex;align-items:center;flex:none"><img src="assets/qaig-stacked.png" alt="Quantum AI Global" style="display:block;height:72px;width:auto;aspect-ratio:1460/1062"></a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
       <nav style="display:flex;align-items:center;gap:4px">
         <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
-          <x-import component-from-global-scope="QAIG.Button" variant="{{ n.variant }}" size="sm" onMouseEnter="{{ n.enter }}" onFocus="{{ n.enter }}" onClick="{{ n.click }}" aria-label="{{ n.aria }}" hint-size="90px,32px">{{ n.label }}<span style="margin-left:6px;font-size:11px;opacity:.6">{{ n.caret }}</span>{{ n.ext }}</x-import>
+          <a class="{{ n.cls }}" data-slot="button" data-variant="{{ n.variant }}" href="{{ n.href }}" target="{{ n.target }}" rel="{{ n.rel }}" onMouseEnter="{{ n.enter }}" onFocus="{{ n.enter }}" onClick="{{ n.click }}" aria-label="{{ n.aria }}" aria-expanded="{{ n.expanded }}" aria-haspopup="{{ n.popup }}">{{ n.label }}<span style="margin-left:6px;font-size:11px;opacity:.6">{{ n.caret }}</span>{{ n.ext }}</a>
         </sc-for>
       </nav>
     </sc-if>
     <div style="display:flex;align-items:center;gap:8px;flex:none" onMouseEnter="{{ closeMenu }}">
-      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ openSearch }}" aria-label="Search" hint-size="130px,32px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Search<kbd style="margin-left:6px;font-family:var(--font-mono);font-size:13.5px;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:2px 5px;line-height:1">⌘K</kbd></x-import></sc-if>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="sm" onClick="{{ openSearch }}" hint-size="130px,32px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>Search<kbd style="margin-left:6px;font-family:var(--font-mono);font-size:13.5px;color:var(--muted);border:1px solid var(--border);border-radius:4px;padding:2px 5px;line-height:1">⌘K</kbd></x-import></sc-if>
       <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ openSearch }}" aria-label="Search" hint-size="36px,36px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg></x-import></sc-if>
-      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" variant="ghost" size="sm" onClick="{{ toPortal }}" hint-size="72px,32px">Sign In</x-import></sc-if>
+      <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}"><a class="{{ signInCls }}" data-slot="button" data-variant="ghost" href="{{ portalHref }}" onClick="{{ toPortal }}">Sign In</a></sc-if>
       <sc-if value="{{ notTiny }}" hint-placeholder-val="{{ true }}"><x-import component-from-global-scope="QAIG.Button" size="sm" onClick="{{ toEnquiry }}" hint-size="210px,32px">Discuss Your Requirement</x-import></sc-if>
-      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ toggleMobile }}" aria-label="Menu" hint-size="36px,36px">{{ mobileIcon }}</x-import></sc-if>
+      <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}"><x-import component-from-global-scope="QAIG.Button" variant="outline" size="icon" onClick="{{ toggleMobile }}" aria-label="Menu" aria-expanded="{{ mobExpanded }}" hint-size="36px,36px">{{ mobileIcon }}</x-import></sc-if>
     </div>
   </div>
 
@@ -179,7 +180,7 @@
       <a href="#" style="display:flex;align-items:center;justify-content:space-between;padding:16px 4px;border-bottom:1px solid var(--border);font-size:17px;font-weight:500;color:var(--foreground)">QuLabs <span style="color:var(--muted)">↗</span></a>
       <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
         <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ toEnquiry }}" hint-size="100%,44px">Discuss Your Requirement</x-import>
-        <x-import component-from-global-scope="QAIG.Button" size="lg" variant="secondary" onClick="{{ toPortal }}" hint-size="100%,44px">Sign In</x-import>
+        <a class="{{ signInMobCls }}" data-slot="button" data-variant="secondary" href="{{ portalHref }}" onClick="{{ toPortal }}">Sign In</a>
       </div>
     </div>
   </div>
@@ -224,6 +225,7 @@ class Component extends DCLogic {
   cHref(l) { const D = this.nav() || {}; return (D.companyHref || {})[l] || "#"; }
   go(href, kind) { if (!href || href === "#") return; this.setState({ menu: null, mobile: false, search: false }); if (window.QAIG_GO) window.QAIG_GO(href, kind); else window.location.href = href; }
   openSearch() { this.setState({ search: true, menu: null, mobile: false, q: "" }, () => setTimeout(() => this.searchRef.current && this.searchRef.current.focus(), 30)); }
+  componentDidUpdate() { const lock = !!this.state.mobile; if (this._lock !== lock) { this._lock = lock; document.documentElement.style.overflow = lock ? "hidden" : ""; } }
   componentDidMount() {
     try { this.setState({ rm: window.matchMedia("(Prefers-Reduced-Motion: Reduce)").matches }); } catch (err) {}
     this.onR = () => this.setState({ w: window.innerWidth });
@@ -266,13 +268,17 @@ class Component extends DCLogic {
     const companyCols = D.company.map((c) => ({ heading: c.heading, items: c.items.map(([label, description, cur]) => ({ label, description, color: cur ? "var(--brand)" : "var(--foreground)" })) }));
     const menuFor = (k) => ({ enter: () => this.setState({ menu: k }), click: () => this.setState((s) => ({ menu: s.menu === k ? null : k })) });
     const cur = this.props.current ?? "Home";
+    /* Navigation items are real links styled with the design-system Button classes (QAIG.buttonVariants). */
+    const btnCls = (variant, size) => (window.QAIG && window.QAIG.buttonVariants ? window.QAIG.buttonVariants({ variant, size }) : "");
     const navItems = [
       { label: "Home", key: null }, { label: "Products", key: "products" }, { label: "Resources", key: "resources" }, { label: "Company", key: "company" }, { label: "Our IPs", key: null, route: "ips" }, { label: "QuLabs", key: null, ext: true },
     ].map((n) => {
       const open = n.key && S.menu === n.key;
       const dest = { products: "products", resources: "resources", company: "about" }[n.key];
-      const h = n.key ? { enter: () => this.setState({ menu: n.key }), click: () => this.go(this.route(dest)) } : { enter: () => this.setState({ menu: null }), click: () => { if (n.label === "Home") this.go(this.route("home")); else if (n.route) this.go(this.route(n.route)); } };
-      return { label: n.label, aria: n.ext ? "QuLabs, Opens an External Site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
+      const href = n.key ? this.route(dest) : n.label === "Home" ? this.route("home") : n.route ? this.route(n.route) : n.ext ? this.route("qulabs") : "#";
+      const plain = (ev) => !(ev && (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button === 1)); // modified clicks open a new tab as usual
+      const h = { enter: () => this.setState({ menu: n.key || null }), click: (ev) => { if (n.ext) { if (href === "#") ev && ev.preventDefault && ev.preventDefault(); return; } if (!plain(ev)) return; ev && ev.preventDefault && ev.preventDefault(); this.go(href); } };
+      return { cls: btnCls(open || n.label === cur ? "secondary" : "ghost", "sm"), label: n.label, href: n.ext && href === "#" ? undefined : href, target: n.ext ? "_blank" : undefined, rel: n.ext ? "noopener noreferrer" : undefined, expanded: n.key ? (open ? "true" : "false") : undefined, popup: n.key ? "true" : undefined, aria: n.ext ? "QuLabs, Opens an External Site" : n.label, ext: n.ext ? React.createElement("svg", { width: 11, height: 11, viewBox: "0 0 12 12", "aria-hidden": true, style: { marginLeft: 2, opacity: 0.7 } }, React.createElement("path", { d: "M3 9l6-6M4 3h5v5", fill: "none", stroke: "currentColor", strokeWidth: 1.4, strokeLinecap: "round" })) : null, caret: n.key ? (open ? "▴" : "▾") : "", ...h,
         variant: open || n.label === cur ? "secondary" : "ghost" };
     });
     const tx = (x, y, s, o) => e("text", Object.assign({ x, y, textAnchor: "middle", fill: "var(--foreground-2)", style: { font: "500 13px var(--font-sans)" } }, o || {}), s);
@@ -349,7 +355,8 @@ class Component extends DCLogic {
       suggested: ["QuLabs", "Resources", "Documentation", "Research", "Company"].map((label) => ({ label, pick: () => this.setState({ q: label }) })),
       results, noResults: results.length === 0,
       toEnquiry: () => this.go(this.props.enquiryHref || this.route("enquiry"), "enquiry"),
-      toPortal: () => this.go(this.route("portal")), toResources: () => this.go(this.route("resources")), homeHref: this.route("home"), ipsHref: this.route("ips"), ipsCur: cur === "Our IPs" ? "page" : undefined, ipsColor: cur === "Our IPs" ? "var(--brand)" : "var(--foreground)",
+      toPortal: (ev) => { if (ev && (ev.metaKey || ev.ctrlKey || ev.shiftKey || ev.altKey || ev.button === 1)) return; ev && ev.preventDefault && ev.preventDefault(); this.go(this.route("portal")); }, portalHref: this.route("portal"), signInCls: btnCls("ghost", "sm"), signInMobCls: btnCls("secondary", "lg") + " w-full", mobExpanded: S.mobile ? "true" : "false",
+      skipToMain: (ev) => { const m = document.getElementById("main") || document.querySelector("main, h1"); if (!m) return; ev.preventDefault(); if (!m.hasAttribute("tabindex")) m.setAttribute("tabindex", "-1"); m.focus({ preventScroll: true }); m.scrollIntoView({ block: "start" }); }, toResources: () => this.go(this.route("resources")), homeHref: this.route("home"), ipsHref: this.route("ips"), ipsCur: cur === "Our IPs" ? "page" : undefined, ipsColor: cur === "Our IPs" ? "var(--brand)" : "var(--foreground)",
       mcats, mcur, cItems, cGroups, cPanels };
   }
 }

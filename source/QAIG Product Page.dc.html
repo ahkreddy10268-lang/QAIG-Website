@@ -555,7 +555,7 @@ class Component extends DCLogic {
       cmpTabs: [cmp.a, cmp.b].map((c, i) => ({ label: c.label, on: String(S.cmp === i), bg: S.cmp === i ? (i ? "var(--brand)" : "var(--surface-3)") : "transparent", fg: S.cmp === i ? (i ? "var(--brand-ink)" : "var(--foreground)") : "var(--muted)", pick: () => this.setState({ cmp: i }) })),
       cmpCols: S.w >= 860 ? "minmax(0,1fr) minmax(0,1fr)" : "minmax(0,1fr)",
       cmpCards: [cmp.a, cmp.b].map((c, i) => { const on = S.cmp === i, two = S.w >= 860; return { label: c.label, title: c.title, points: (c.points || []).map((x) => this.capN(x)), pick: () => this.setState({ cmp: i }), disp: two || on ? "flex" : "none",
-        bd: on ? (i ? "var(--brand)" : "var(--border-strong)") : "var(--border)", bg: on && i ? "radial-gradient(ellipse 70% 60% at 100% 0%,rgba(0,212,255,.12),transparent 65%),var(--surface)" : "var(--surface)", op: on ? 1 : 0.42, sc: on || !two ? 1 : 0.97,
+        bd: on ? (i ? "var(--brand)" : "var(--border-strong)") : "var(--border)", bg: on && i ? "radial-gradient(ellipse 70% 60% at 100% 0%,rgba(0,212,255,.12),transparent 65%),var(--surface)" : "var(--surface)", op: on ? 1 : 0.72 /* 0.72 keeps dimmed text at 4.5:1 or more */, sc: on || !two ? 1 : 0.97,
         tagBd: i ? "var(--brand)" : "var(--border-strong)", tagFg: i ? "var(--brand)" : "var(--muted)", mk: i ? "50%" : "0" }; }),
       capMap: cap === "map", capLayers: cap === "layers", capSplit: cap === "split", capBento: cap === "bento",
       capsL: caps.slice(0, half).map((c, i) => capItem(c, i, "L")), capsR: caps.slice(half).map((c, i) => capItem(c, i + half, "R")), capsAll,

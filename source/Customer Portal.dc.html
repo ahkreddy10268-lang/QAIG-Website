@@ -18,7 +18,7 @@
 <div onClick="{{ closeMenus }}" style="min-height:100vh;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
 
 <sc-if value="{{ isAuth }}" hint-placeholder-val="{{ true }}">
-<main style="position:relative;min-height:100vh;overflow:hidden;isolation:isolate;background:var(--base)">
+<main id="main" style="position:relative;min-height:100vh;overflow:hidden;isolation:isolate;background:var(--base)">
   <div aria-hidden="true" style="position:absolute;inset:0;z-index:-2;pointer-events:none">
     <img src="assets/company/gallery/g6-optics-closeup.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 50%;filter:grayscale(1) contrast(1.25) brightness(.42)">
     <div style="position:absolute;inset:0;background:rgb(0,170,220);mix-blend-mode:color;opacity:.55"></div>
@@ -852,7 +852,7 @@
 
 <div onClick="{{ stop }}" style="position:fixed;right:16px;bottom:16px;z-index:90;display:{{ toolsDisplay }};align-items:center;gap:8px;padding:6px 6px 6px 12px;border:1px solid var(--border-light);border-radius:10px;background:var(--surface-2);box-shadow:var(--shadow-lg)">
   <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Screen</span>
-  <select value="{{ screen }}" onChange="{{ jump }}" style="height:30px;padding:0 8px;border-radius:6px;border:1px solid var(--border-control);background:var(--base);color:var(--foreground);font:inherit;font-size:15px">
+  <select aria-label="Demo Screen" value="{{ screen }}" onChange="{{ jump }}" style="height:30px;padding:0 8px;border-radius:6px;border:1px solid var(--border-control);background:var(--base);color:var(--foreground);font:inherit;font-size:15px">
     <sc-for list="{{ screens }}" as="sc" hint-placeholder-count="12"><option value="{{ sc.k }}">{{ sc.label }}</option></sc-for>
   </select>
 </div>

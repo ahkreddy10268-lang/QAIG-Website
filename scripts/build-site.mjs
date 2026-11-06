@@ -97,7 +97,9 @@ function replayOnto(template, baseText, curText, label, pathToUuid) {
       const oldBlock = A.slice(a0, a1).join('\n'), newBlock = B.slice(b0, b1).join('\n');
       // the exporter re-serialises the page with DOMParser: boolean attributes gain ="" (data-dc-script -> data-dc-script="")
       const serial = x => x.replace(/ data-dc-script /g, ' data-dc-script="" ');
-      const variants = [x => x, encodeCamel, serial];
+      // ...and renames raw elements the way the runtime does (dc-runtime RAW_WRAP: <select> -> <sc-raw-select>, tables)
+      const rawWrap = x => x.replace(/(<\/?)(select|table|tbody|thead|tfoot|tr|td|th|caption)(?=[\s>])/gi, (_, a, t) => a + 'sc-raw-' + t.toLowerCase());
+      const variants = [x => x, encodeCamel, serial, x => rawWrap(encodeCamel(x)), x => serial(rawWrap(encodeCamel(x)))];
       for (const v of variants) {
         const sub = x => { let y = v(x); for (const [p, u] of pathToUuid) y = y.split(p).join(u); return y; };
         for (const tf of [v, sub]) {
@@ -115,6 +117,8 @@ function replayOnto(template, baseText, curText, label, pathToUuid) {
   }
   return template;
 }
+
+function nestedDoc(src) { const a = src.indexOf('<x-dc>'), z = src.lastIndexOf('</x-dc>'), n = src.indexOf('<html', a); return a >= 0 && n > a && n < z ? [n, z] : null; }
 
 // ---------- 3. Bundle read/write ----------
 const SECT = t => new RegExp(`(<script type="__bundler/${t}">)([\\s\\S]*?)(</script>)`);
@@ -206,7 +210,16 @@ for (const page of basePages) {
       if (assetRel) { pathToUuid.set(assetRel, uuid); const opt = curAssets(assetRel); if (opt && opt.length < buf.length) { setEntry(e, opt); replacedImgs++; } }
     }
   }
-  b.template = toWebp(replayOnto(b.template, baseSrcText(page), curSrcText(page), page, pathToUuid));
+  // Some exported pages contained a second, hidden copy of themselves nested inside <x-dc> (rendered but hidden
+  // by CSS, doubling the page's work). When the copy has been removed from source/, cut it from the template too.
+  let baseText = baseSrcText(page); const curText = curSrcText(page);
+  if (nestedDoc(baseText) && !nestedDoc(curText)) {
+    const [n, z] = nestedDoc(baseText); baseText = baseText.slice(0, n) + baseText.slice(z);
+    const a = b.template.indexOf('<x-dc>'), tn = b.template.indexOf('<meta charset="utf-8">', a), tz = b.template.lastIndexOf('</x-dc>');
+    if (a < 0 || tn < 0 || tz < tn || b.template.slice(tn, tz).indexOf('<x-dc>') < 0) fail(page + ': nested copy not found in the template');
+    else b.template = b.template.slice(0, tn) + b.template.slice(tz);
+  }
+  b.template = toWebp(replayOnto(b.template, baseText, curText, page, pathToUuid));
   for (const e of Object.values(b.manifest)) if (/html|javascript/.test(e.mime)) { const t = entryBytes(e).toString(); const w = toWebp(t); if (w !== t) setEntry(e, Buffer.from(w)); }
   addMeta(page, b);
   outputs.set(page, writeBundle(b));

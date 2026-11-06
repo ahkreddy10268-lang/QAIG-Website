@@ -18,6 +18,7 @@
 <div style="min-height:100vh;overflow-x:clip;background:var(--base);color:var(--foreground);font-family:var(--font-sans);-webkit-font-smoothing:antialiased">
 
 <dc-import name="QAIG Global Navbar" current="Company" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
+<main id="main">
 
 <section id="wwu-hero" data-screen-label="01 Work With Us Hero" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
   <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.45;-webkit-mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,#000,transparent);mask-image:radial-gradient(ellipse 70% 70% at 20% 0%,#000,transparent)"></div>
@@ -409,6 +410,7 @@
 </div>
 
 <dc-import name="QAIG Global CTA" hint-size="100%,620px"></dc-import>
+</main>
 <dc-import name="QAIG Global Footer" after-cta="true" hint-size="100%,760px"></dc-import>
 </div>
 </x-dc>
@@ -538,7 +540,7 @@ class Component extends DCLogic {
       quadCols: quad,
       pillars: [["Deep-Tech Research", "Work on Applied Research in Quantum Communication, Sensing, Security and Simulation."], ["Product-Driven Development", "Take Designs From the Lab Bench to Products Customers Use."], ["Global Impact", "Work With Colleagues Across India, the US and the UAE."], ["Mission-Led Work", "Contribute to the Research Our Team Publishes."]].map(([t, d], i) => ({ n: pad(i + 1), t, d })),
       teamCols: desk ? "minmax(0,3fr) minmax(0,5fr) 220px" : "minmax(0,1fr)", teamJustify: desk ? "flex-end" : "flex-start",
-      teams: TEAMS.map(([t, d, tags], i) => { const on = cf.team === t; return { n: pad(i + 1), t, d, tags, variant: on ? "secondary" : "outline", color: on ? "var(--brand)" : "var(--foreground)", ic: on ? "var(--brand)" : "var(--muted)", cta: on ? "✓ Selected" : "Apply to This Team →", aria: on ? t + " team selected for your application" : "Apply to The " + t + " team", pick: () => { this.setF("c", "team", t); this.setState((s) => ({ c: { ...s.c, sent: false, step: s.c.step === 0 && cOk.name && cOk.email ? 1 : s.c.step } })); setTimeout(() => this.jump("c-apply"), 30); } }; }),
+      teams: TEAMS.map(([t, d, tags], i) => { const on = cf.team === t; return { n: pad(i + 1), t, d, tags, variant: on ? "secondary" : "outline", color: on ? "var(--brand)" : "var(--foreground)", ic: on ? "var(--brand)" : "var(--muted)", cta: on ? "✓ Selected" : "Apply to This Team →", aria: on ? "Selected, " + t + " Team" : "Apply to This Team, " + t, /* name starts with the visible text */ pick: () => { this.setF("c", "team", t); this.setState((s) => ({ c: { ...s.c, sent: false, step: s.c.step === 0 && cOk.name && cOk.email ? 1 : s.c.step } })); setTimeout(() => this.jump("c-apply"), 30); } }; }),
       cProcess: C_PROC.map(([t, d], i) => ({ n: pad(i + 1), t, d })), kProcess: K_PROC.map(([t, d], i) => ({ n: pad(i + 1), t, d })),
       formCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", asidePos: desk ? "sticky" : "static", fieldCols: mob ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))", halfMax: mob ? "none" : "calc(50% - 9px)", revCols: mob ? "minmax(0,1fr)" : "150px minmax(0,1fr) auto",
       faqCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)",

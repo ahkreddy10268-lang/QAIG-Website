@@ -19,7 +19,7 @@
 <sc-if value="{{ withNav }}" hint-placeholder-val="{{ true }}">
   <dc-import name="QAIG Global Navbar" current="" hint-size="100%,84px" style="position:sticky;top:0;z-index:50;display:block"></dc-import>
 </sc-if>
-
+<main id="main">
 <sc-if value="{{ isError }}" hint-placeholder-val="{{ true }}">
   <section data-screen-label="{{ screenLabel }}" style="position:relative;overflow:hidden;border-bottom:1px solid var(--border)">
     <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.45;-webkit-mask-image:radial-gradient(ellipse 70% 80% at 70% 40%,#000,transparent);mask-image:radial-gradient(ellipse 70% 80% at 70% 40%,#000,transparent)"></div>
@@ -105,7 +105,7 @@
     </div>
   </section>
 </sc-if>
-
+</main>
 <sc-if value="{{ withFooter }}" hint-placeholder-val="{{ true }}">
   <dc-import name="QAIG Global Footer" after-cta="false" hint-size="100%,760px"></dc-import>
 </sc-if>

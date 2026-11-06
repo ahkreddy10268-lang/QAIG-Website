@@ -46,7 +46,7 @@
       </ul>
     </div>
     <div style="position:relative;min-width:0">
-      <div ref="{{ stageRef }}" role="img" aria-label="{{ stageAlt }}" style="position:relative;height:{{ stageH }};border-radius:28px;overflow:hidden">
+      <div ref="{{ stageRef }}" role="group" aria-label="{{ stageAlt }}" style="position:relative;height:{{ stageH }};border-radius:28px;overflow:hidden">
         <div aria-hidden="true" style="position:absolute;left:50%;top:58%;width:78%;aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.16),rgba(0,90,160,.06) 45%,transparent 70%);pointer-events:none"></div>
         <img loading="lazy" sc-camel-src="{{ poster }}" alt="" style="position:absolute;inset:8% 6%;width:88%;height:84%;object-fit:contain;opacity:{{ posterOp }};transition:opacity .6s ease;pointer-events:none">
       </div>
@@ -80,7 +80,7 @@
     </div>
     <div style="position:relative;border:1px solid var(--border-light);border-radius:24px;overflow:hidden;background:radial-gradient(ellipse 50% 55% at 50% 58%,rgba(0,212,255,.13),transparent 70%),linear-gradient(180deg,var(--surface),var(--base))">
       <div class="bg-grid" aria-hidden="true" style="position:absolute;inset:0;opacity:.22;-webkit-mask-image:radial-gradient(ellipse 60% 60% at 50% 60%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 60% at 50% 60%,#000,transparent 75%)"></div>
-      <div role="img" aria-label="{{ galAlt }}" style="position:relative;height:{{ galH }}">
+      <div role="group" aria-label="{{ galAlt }}" style="position:relative;height:{{ galH }}">
         <sc-for list="{{ frames }}" as="f" hint-placeholder-count="1"><img sc-camel-src="{{ f.src }}" alt="" loading="{{ f.load }}" style="position:absolute;inset:6% 8%;width:84%;height:88%;object-fit:contain;opacity:{{ f.op }};transform:scale({{ f.sc }});transition:opacity .5s ease,transform .8s cubic-bezier(.16,1,.3,1)"></sc-for>
         <span class="tnum" style="position:absolute;left:20px;top:18px;font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">View {{ fNum }} / {{ fTot }}</span>
         <div style="position:absolute;right:16px;top:12px;display:flex;gap:8px">

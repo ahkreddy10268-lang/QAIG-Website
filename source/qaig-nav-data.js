@@ -17,7 +17,9 @@ window.QAIG_NAV = {
     about: "Company page.dc.html",
     workWithUs: "Work With Us.dc.html",
     systemStates: "System States.dc.html",
-    ips: "Our IPs.dc.html"
+    ips: "Our IPs.dc.html",
+    /* QuLabs (external site): add the full https:// address here; the navbar item stays inactive until it is set. */
+    qulabs: ""
   },
   /* Product detail pages, one per product. Content lives in qaig-product-data.js. */
   productHref: { "ECDL": "Laser.dc.html", "Q-Forte": "Q-Forte.dc.html", "Chec-Q AI": "Chec-Q AI.dc.html", "Q-Sleeve": "Q-Sleeve.dc.html", "QuRNG": "QuRNG.dc.html", "QubitIQ": "QubitIQ.dc.html", "EPS-QKD": "EPS-QKD.dc.html", "Q-Memory": "Q-Memory.dc.html", "QNTSim": "QNTSim.dc.html", "Quantum Repeater": "Quantum Repeater.dc.html", "Q-Biosensor": "Q-Biosensor.dc.html", "Quantum Gravimeter": "Quantum Gravimeter.dc.html", "Rydberg Sensor": "Rydberg Sensor.dc.html", "Q-Cluster": "Q-Cluster.dc.html", "Q-Cluster Mini": "Q-Cluster Mini.dc.html", "QNTSim Mini": "QNTSim Mini.dc.html" },
