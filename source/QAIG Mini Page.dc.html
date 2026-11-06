@@ -34,7 +34,7 @@
       <h1 style="margin:0;max-width:13ch;font-size:clamp(2.6rem,1.3rem + 4.2vw,5rem);line-height:.98;letter-spacing:-0.04em;font-weight:600;text-wrap:balance">{{ h1A }} <span style="color:var(--brand)">{{ h1B }}</span></h1>
       <p style="margin:0;max-width:46ch;font-size:var(--text-lead);line-height:1.6;color:var(--foreground-2);text-wrap:pretty">{{ lead }}</p>
       <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 28px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
-        <div><div class="tnum" style="font-size:clamp(2rem,1.5rem + 1.4vw,2.9rem);line-height:1;letter-spacing:-0.035em;font-weight:600">{{ price }}</div><div style="margin-top:8px;font-size:16px;color:var(--muted)">{{ priceNote }}</div></div>
+        <div><div class="tnum" style="font-size:{{ priceSizeHero }};line-height:1.1;letter-spacing:-0.035em;font-weight:600">{{ price }}</div><div style="margin-top:8px;font-size:16px;color:var(--muted)">{{ priceNote }}</div></div>
         <div style="display:flex;flex-direction:column;gap:6px;padding-left:20px;border-left:1px solid var(--border-light)"><span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">Software Included</span><span style="font-size:16px;color:var(--foreground-2)">Free for the First 3 Months</span></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:12px">
@@ -128,7 +128,7 @@
     <div style="display:grid;grid-template-columns:{{ priceCols }};gap:16px;align-items:stretch">
       <article style="position:relative;display:flex;flex-direction:column;gap:20px;padding:clamp(24px,3vw,36px);border:1px solid var(--brand);border-radius:24px;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(0,212,255,.12),transparent 70%),var(--surface);box-shadow:0 30px 80px -60px rgba(0,212,255,.7)">
         <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand)">The Hardware</span>
-        <div><div style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ name }}</div><div class="tnum" style="margin-top:14px;font-size:clamp(2.4rem,2rem + 1.4vw,3.25rem);line-height:1;letter-spacing:-0.035em;font-weight:600">{{ price }}</div><div style="margin-top:8px;font-size:16px;color:var(--muted)">{{ priceNote }} · Software Free for 3 Months</div></div>
+        <div><div style="font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ name }}</div><div class="tnum" style="margin-top:14px;font-size:{{ priceSizeCard }};line-height:1.1;letter-spacing:-0.035em;font-weight:600">{{ price }}</div><div style="margin-top:8px;font-size:16px;color:var(--muted)">{{ priceNote }} · Software Free for 3 Months</div></div>
         <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;border-top:1px solid var(--border)">
           <sc-for list="{{ features }}" as="ft" hint-placeholder-count="5"><li style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:16px;color:var(--foreground-2)"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" style="flex:none"><path d="M2.5 7.4l2.8 2.8 6.2-6.4" fill="none" stroke="var(--brand)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{ ft }}</li></sc-for>
         </ul>
@@ -137,7 +137,7 @@
       <div style="display:flex;flex-direction:column;gap:16px;min-width:0;padding:clamp(20px,2.6vw,32px);border:1px solid var(--border-light);border-radius:24px;background:var(--surface)">
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px">
           <div style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">{{ subEyebrow }}</div>
-          <div role="group" aria-label="Billing Period" style="display:flex;gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
+          <div role="group" aria-label="Billing Period" style="display:{{ periodDisplay }};gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
             <sc-for list="{{ periods }}" as="p" hint-placeholder-count="3"><button type="button" onClick="{{ p.pick }}" aria-pressed="{{ p.on }}" style="display:flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border:0;border-radius:7px;background:{{ p.bg }};color:{{ p.color }};font:inherit;font-size:15px;cursor:pointer">{{ p.label }}<sc-if value="{{ p.hasSave }}" hint-placeholder-val="{{ false }}"><span style="font-family:var(--font-mono);font-size:13.5px;color:var(--success)">{{ p.save }}</span></sc-if></button></sc-for>
           </div>
         </div>
@@ -257,7 +257,7 @@ class Component extends DCLogic {
     const pers = sb.periods || [[30, "Monthly", 1, 0]], per = pers.find((x) => x[0] === S.subP) || pers[0], plans = tr.plans || [], sel = plans.find((x) => x.k === S.subSel) || plans[1] || plans[0] || {};
     const other = k === "qntsim" ? "q-cluster" : "qntsim", all = window.QAIG_PRODUCTS || {}, om = (all[other] || {}).mini || {};
     return {
-      name: m.name, kicker: m.kicker, h1A: C.h1A, h1B: C.h1B, lead: m.line, price: m.price, priceNote: m.priceNote,
+      name: m.name, kicker: m.kicker, h1A: C.h1A, h1B: C.h1B, lead: m.line, price: m.price, priceNote: m.priceNote, /* figures keep the display size; a text label such as "Pricing on Request" is set smaller so it stays on one line */ priceSizeHero: /^₹/.test(m.price || "") ? "clamp(2rem,1.5rem + 1.4vw,2.9rem)" : "clamp(1.5rem,1.2rem + .8vw,1.9rem)", priceSizeCard: /^₹/.test(m.price || "") ? "clamp(2.4rem,2rem + 1.4vw,3.25rem)" : "clamp(1.6rem,1.3rem + .9vw,2.1rem)",
       crumbAll: R.products || "Products.dc.html", parentName: p.name, parentHref: PH[p.name] || R.products,
       buyLabel: m.cta || "Buy " + m.name, goBuy: () => this.go(enqFor("interest=" + encodeURIComponent("Buy " + m.name))), goPlans: () => this.go("#plans"),
       trust: ["1-Year Hardware Warranty", k === "qntsim" ? "Onsite Installation and Calibration" : "Onsite Installation and Setup", k === "qntsim" ? "Direct Device Integration" : "Zero Cloud Dependency"],
@@ -277,16 +277,16 @@ class Component extends DCLogic {
       steps: C.steps.map(([title, text], i) => ({ n: pad(i), title, text, bl: w >= 900 && i > 0 ? "1px solid var(--border)" : "0", bt: w < 900 && i > 0 ? "1px solid var(--border)" : "0" })),
       subLead: sb.lead, subEyebrow: sb.eyebrow || "After Your 3 Free Months", features: m.features || [], full: { style: { width: "100%" } },
       priceCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", trackCols: mob ? "minmax(0,1fr)" : "repeat(2,minmax(0,1fr))", planCols: w >= 760 ? "repeat(3,minmax(0,1fr))" : "minmax(0,1fr)",
-      periods: pers.map(([d, label, , disc]) => { const on = d === per[0]; return { label, on: on ? "true" : "false", bg: on ? "var(--surface-3)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", hasSave: !!disc, save: disc ? "−" + Math.round(disc * 100) + "%" : "", pick: () => this.setState({ subP: d }) }; }),
+      periodDisplay: pers.length > 1 && plans.some((x) => x.price != null) ? "flex" : "none", periods: pers.map(([d, label, , disc]) => { const on = d === per[0]; return { label, on: on ? "true" : "false", bg: on ? "var(--surface-3)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", hasSave: !!disc, save: disc ? "−" + Math.round(disc * 100) + "%" : "", pick: () => this.setState({ subP: d }) }; }),
       multiTrack: tracks.length > 1,
       tracks: tracks.map((x, i) => { const on = i === ti; return { label: x.label, line: x.line, on: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "transparent", pick: () => this.setState({ subT: i }) }; }),
-      plans: plans.map((x) => { const on = x.k === sel.k, mo = x.price != null ? x.price * (1 - per[3]) : null; return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], price: mo != null ? inr(mo) : "Custom", per: mo != null ? "/ month" : "", on: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--base)", pick: () => this.setState({ subSel: x.k }) }; }),
+      plans: plans.map((x) => { const on = x.k === sel.k, mo = x.price != null ? x.price * (1 - per[3]) : null; return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], price: mo != null ? inr(mo) : (x.priceLabel || "Custom"), per: mo != null ? "/ month" : "", on: on ? "true" : "false", bd: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--base)", pick: () => this.setState({ subSel: x.k }) }; }),
       selSummary: (sel.name || "") + " · " + per[1] + (sel.price != null ? " · " + inr(sel.price * (1 - per[3]) * per[2]) + (per[2] > 1 ? " every " + (per[2] === 12 ? "12 months" : per[2] + " months") : " a month") : " · Priced for your contract"),
       planCta: sel.price != null ? "Choose " + sel.name : "Discuss " + sel.name,
       goPlan: () => this.go(enqFor("plan=" + encodeURIComponent((sel.name || "") + " · " + per[1]))),
       faqCols: desk ? "minmax(0,4fr) minmax(0,7fr)" : "minmax(0,1fr)", bestFor: m.bestFor || [],
       faq: [
-        ["What Does The " + (m.price || "") + " cover?", "The " + m.name + " hardware, the complete software stack, " + (k === "qntsim" ? "onsite installation and calibration" : "onsite installation and setup") + ", and a 1-year hardware warranty."],
+        [(/^₹/.test(m.price || "") ? "What Does The " + m.price + " Cover?" : "What Does the Hardware Purchase Cover?"), "The " + m.name + " hardware, the complete software stack, " + (k === "qntsim" ? "onsite installation and calibration" : "onsite installation and setup") + ", and a 1-year hardware warranty."],
         ["What Happens After the First 3 Months?", sb.lead || ""],
         [k === "qntsim" ? "Can It Work With My Lab Equipment?" : "Does Any Data Leave My Site?", C.faqLocal],
         ["Who Is It For?", "Researchers, Universities, Startups and Academic Labs That Want " + (k === "qntsim" ? "quantum network simulation" : "quantum simulation") + " on hardware they own."]

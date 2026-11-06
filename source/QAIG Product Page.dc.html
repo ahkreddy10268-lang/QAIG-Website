@@ -342,7 +342,7 @@
         </div>
         </sc-if>
         <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;padding:16px clamp(18px,4vw,32px) 0">
-          <div role="group" aria-label="Billing Period" style="display:flex;gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
+          <div role="group" aria-label="Billing Period" style="display:{{ subPeriodDisplay }};gap:4px;padding:4px;border:1px solid var(--border);border-radius:10px;background:var(--base)">
             <sc-for list="{{ subPeriods }}" as="pd" hint-placeholder-count="3"><x-import component-from-global-scope="QAIG.Button" variant="{{ pd.variant }}" size="sm" aria-pressed="{{ pd.on }}" onClick="{{ pd.pick }}" hint-size="100px,32px">{{ pd.label }}<sc-if value="{{ pd.hasSave }}" hint-placeholder-val="{{ false }}"><span style="margin-left:6px;font-size:12.5px;color:var(--success)">{{ pd.save }}</span></sc-if></x-import></sc-for>
           </div>
           <span style="font-size:15px;white-space:nowrap;color:var(--muted)">Prices in INR, Before GST</span>
@@ -356,7 +356,7 @@
               </div>
               <div>
                 <sc-if value="{{ pc.hasPrice }}" hint-placeholder-val="{{ true }}"><span class="tnum" style="font-size:30px;font-weight:500;letter-spacing:-0.03em">{{ pc.price }}</span><span style="margin-left:6px;font-size:15px;color:var(--muted)">/mo</span></sc-if>
-                <sc-if value="{{ pc.noPrice }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:flex-end;min-height:36px;font-size:22px;font-weight:600;letter-spacing:-0.02em">Custom Pricing</span></sc-if>
+                <sc-if value="{{ pc.noPrice }}" hint-placeholder-val="{{ false }}"><span style="display:flex;align-items:flex-end;min-height:36px;font-size:22px;font-weight:600;letter-spacing:-0.02em">{{ pc.noPriceLabel }}</span></sc-if>
                 <div style="margin-top:4px;font-size:15px;color:var(--muted)">{{ pc.billed }}</div>
               </div>
               <p style="margin:0;font-size:16px;line-height:1.55;color:var(--muted)">{{ pc.blurb }}</p>
@@ -486,9 +486,9 @@ class Component extends DCLogic {
       hasSubs: true, subHasTrial: !sb.cloudOnly, subMultiTrack: tracks.length > 1, subNote: sb.note || "You Can Change Plan or Move Between Your Mini and Cloud Access at the End of Any Billing Period.", subEyebrow: sb.eyebrow, subTitle: sb.title, subLead: sb.lead, subTrackLine: tr.line,
       goSubs: () => this.go("#subscriptions"),
       subTracks: tracks.map((x, i) => ({ label: x.label, line: x.line, on: i === ti ? "true" : "false", bd: i === ti ? "var(--brand)" : "var(--border)", bg: i === ti ? "var(--surface-2)" : "transparent", dotBd: i === ti ? "var(--brand)" : "var(--border-strong)", dot: i === ti ? "var(--brand)" : "transparent", pick: () => this.setState({ subT: i }) })),
-      subPeriods: pers.map(([d, label, m, disc]) => ({ label, on: d === per[0] ? "true" : "false", variant: d === per[0] ? "secondary" : "ghost", hasSave: !!disc, save: disc ? "Save " + Math.round(disc * 100) + "%" : "", pick: () => this.setState({ subP: d }) })),
+      subPeriodDisplay: pers.length > 1 && plans.some((x) => x.price != null) ? "flex" : "none", subPeriods: pers.map(([d, label, m, disc]) => ({ label, on: d === per[0] ? "true" : "false", variant: d === per[0] ? "secondary" : "ghost", hasSave: !!disc, save: disc ? "Save " + Math.round(disc * 100) + "%" : "", pick: () => this.setState({ subP: d }) })),
       subCards: plans.map((x) => { const on = x.k === sel.k, mo = x.price != null ? x.price * (1 - per[3]) : null;
-        return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], hasPrice: mo != null, noPrice: mo == null, price: mo != null ? inr(mo) : "", billed: mo != null ? (per[2] > 1 ? inr(mo * per[2]) + " billed " + per[1].toLowerCase() : "Billed Monthly") : "Quoted for Your Deployment",
+        return { name: x.name, blurb: x.blurb, bullets: x.bullets || [], hasPrice: mo != null, noPrice: mo == null, noPriceLabel: x.priceLabel || "Custom Pricing", price: mo != null ? inr(mo) : "", billed: mo != null ? (per[2] > 1 ? inr(mo * per[2]) + " billed " + per[1].toLowerCase() : "Billed Monthly") : "Quoted for Your Deployment",
           on: on ? "true" : "false", isOn: on, border: on ? "var(--brand)" : "var(--border)", bg: on ? "var(--surface-2)" : "var(--surface)", ring: on ? "0 0 0 3px var(--brand-soft)" : "none", radioBorder: on ? "var(--brand)" : "var(--border-strong)", radioBg: on ? "var(--brand)" : "transparent", pick: () => this.setState({ subSel: x.k }) }; }),
       subHasCmp: !!vals, subCmpOn: !!vals && !!S.subCmp, subCmpExp: S.subCmp ? "true" : "false", subCmpRot: S.subCmp ? "180deg" : "0deg", subCmpLabel: S.subCmp ? "Hide Feature Comparison" : "Compare All Features", subToggleCmp: () => this.setState((s) => ({ subCmp: !s.subCmp })),
       subCmpAria: "Feature Comparison, " + (tr.label || ""), subCmpCols: "minmax(0,2.2fr) repeat(" + plans.length + ",minmax(0,1fr))",

@@ -78,7 +78,7 @@ window.QAIG_PRODUCTS = {
       mini: { name: "Q-Cluster Mini", kicker: "Your Own Quantum Compute Unit", line: "High-Performance Quantum Simulation Running Locally, With No Cloud Dependency and No Data Leaving Your Site. Built for Researchers, Universities, Startups and Innovation Teams.", points: ["Personal, Portable Hardware", "Curated Set of 10 Essential Algorithms", "Per-Gate Noise Modelling"],
         features: ["High-Performance Local Quantum Computing", "Zero Cloud Dependency", "Complete Software Stack Included", "1-Year Hardware Warranty", "Onsite Installation and Setup"], bestFor: ["Researchers", "Universities", "Startups", "Academic Labs"],
         photos: [0, 1, 2, 3, 4, 5].map((i) => "assets/products/mini/q-cluster-mini-" + i + ".png"), photoAlt: "Q-Cluster Mini Hardware Unit",
-        price: "₹30,000", priceNote: "One-Time Hardware Purchase", trialDays: 90, cta: "Buy Q-Cluster Mini", href: "enquiry" },
+        price: "Pricing on Request", priceNote: "One-Time Hardware Purchase", trialDays: 90, cta: "Buy Q-Cluster Mini", href: "enquiry" },
       publicPrice: "Contact Us for Plan Details"
     },
     related: [["QNTSim", "Simulate Quantum Networks the Same Way Q-Cluster Simulates Circuits."], ["QubitIQ", "AI-assisted Design of Quantum Algorithms and Logic."]],
@@ -184,7 +184,7 @@ window.QAIG_PRODUCTS = {
       /* Pricing source: QulabsBlackVersion src/data/marketing/pricing.ts (tier QNTSim-Mini, upfront 30000) and src/lib/trial.ts (HARDWARE_TRIAL_DAYS 90). */
       mini: { name: "QNTSim Mini", kicker: "Local Quantum Network Simulator", line: "Your Own QNTSim Hardware Unit for Hardware-In-The-Loop Network Simulation, With the Software Free for the First 3 Months.", points: ["Hardware-In-The-Loop Simulation", "Direct Device Integration", "Complete Software Stack"],
         features: ["Hardware-In-The-Loop Simulation", "Direct Device Integration", "Complete Software Stack", "1-Year Hardware Warranty", "Onsite Installation and Calibration"], bestFor: ["Researchers", "Universities", "Startups", "Academic Labs"],
-        photos: [0, 1, 2, 3, 4, 5].map((i) => "assets/products/mini/qntsim-mini-" + i + ".png"), photoAlt: "QNTSim Mini Hardware Unit", price: "₹30,000", priceNote: "One-Time Hardware Purchase", trialDays: 90, cta: "Buy QNTSim Mini" },
+        photos: [0, 1, 2, 3, 4, 5].map((i) => "assets/products/mini/qntsim-mini-" + i + ".png"), photoAlt: "QNTSim Mini Hardware Unit", price: "Pricing on Request", priceNote: "One-Time Hardware Purchase", trialDays: 90, cta: "Buy QNTSim Mini" },
       publicPrice: "Contact Us for Plan Details" },
     related: [["Q-Cluster", "Simulate Quantum Circuits and Algorithms."], ["EPS-QKD", "Run Entanglement-Based QKD in Real Hardware."]],
     finalTitle: "Bring Quantum Networking Into the Classroom", finalText: "Tell Us Who Will Use QNTSim and How. We'll Recommend a Deployment.", finalCta: "Discuss QNTSim" };
@@ -344,7 +344,9 @@ window.QAIG_PRODUCTS = {
    PROVISIONAL — CONFIRM WITH QAIG: all monthly prices, and per-plan values for rows not shown in the backend screens. Custom = configured per contract. */
 (function () {
   var P = window.QAIG_PRODUCTS; if (!P) return;
-  var periods = [[30, "Monthly", 1, 0], [90, "Quarterly", 3, 0.05], [365, "Annual", 12, 0.15]];
+  /* Monthly prices and period discounts are not confirmed (see PROVISIONAL note above). Until they are, plans show
+     "On Request" and the billing-period toggle is hidden. Restore the confirmed values here. */
+  var periods = [[30, "Monthly", 1, 0]];
   var C = "Configured for You";
   P["q-cluster"].module.mini.subs = {
     eyebrow: "After Your 3 Free Months", title: "Subscription Plans for Q-Cluster Mini",
@@ -353,14 +355,14 @@ window.QAIG_PRODUCTS = {
     tracks: [
       { k: "mini", label: "On Your Q-Cluster Mini", line: "Runs Locally on the Mini. No Cloud Dependency and No Data Leaving Your Site.",
         plans: [
-          { k: "learner", name: "Learner", price: 3000, blurb: "For Students and Individual Learners Building Their First Circuits.", bullets: ["Circuit, Algorithm and Noise Composers", "Up to 20 Qubits on CPU", "Up to 28 Qubits on GPU", "Email Support"] },
-          { k: "researcher", name: "Researcher", price: 7500, blurb: "For Researchers Running Deeper Circuits and Longer Projects.", bullets: ["Everything in Learner", "Accelerated Studio", "Projects (IDE) Workspaces", "Priority Support"] },
+          { k: "learner", name: "Learner", price: null, priceLabel: "On Request", blurb: "For Students and Individual Learners Building Their First Circuits.", bullets: ["Circuit, Algorithm and Noise Composers", "Up to 20 Qubits on CPU", "Up to 28 Qubits on GPU", "Email Support"] },
+          { k: "researcher", name: "Researcher", price: null, priceLabel: "On Request", blurb: "For Researchers Running Deeper Circuits and Longer Projects.", bullets: ["Everything in Learner", "Accelerated Studio", "Projects (IDE) Workspaces", "Priority Support"] },
           { k: "custom", name: "Custom", price: null, blurb: "Qubit Ceilings, Studios and GPU Allowance Set to Your Contract.", bullets: ["Every Feature Configurable", "Limits Matched to Your Hardware", "Multi-Unit Deployments", "Dedicated Support Engineer"] }
         ] },
       { k: "cloud", label: "Cloud Access", line: "Hosted by Quantum AI Global. Open Q-Cluster From Any Browser, With or Without Your Mini.",
         plans: [
-          { k: "learner", name: "Cloud Learner", price: 5000, blurb: "Hosted Access for Coursework and Self-Study.", bullets: ["Circuit, Algorithm and Noise Composers", "Up to 20 Qubits on CPU", "Up to 28 Qubits on GPU", "Email Support"] },
-          { k: "researcher", name: "Cloud Researcher", price: 12000, blurb: "Hosted Access With the Studios Research Teams Need.", bullets: ["Everything in Cloud Learner", "QML Studio and Quantum Error Correction", "Quantum Processing Units", "Priority Support"] },
+          { k: "learner", name: "Cloud Learner", price: null, priceLabel: "On Request", blurb: "Hosted Access for Coursework and Self-Study.", bullets: ["Circuit, Algorithm and Noise Composers", "Up to 20 Qubits on CPU", "Up to 28 Qubits on GPU", "Email Support"] },
+          { k: "researcher", name: "Cloud Researcher", price: null, priceLabel: "On Request", blurb: "Hosted Access With the Studios Research Teams Need.", bullets: ["Everything in Cloud Learner", "QML Studio and Quantum Error Correction", "Quantum Processing Units", "Priority Support"] },
           { k: "custom", name: "Cloud Custom", price: null, blurb: "Hosted Capacity and Limits Agreed for Your Organisation.", bullets: ["Every Feature Configurable", "Dedicated Capacity", "Organisation-Wide Access", "Dedicated Support Engineer"] }
         ] }
     ],
@@ -403,14 +405,14 @@ window.QAIG_PRODUCTS = {
     tracks: [
       { k: "mini", label: "On Your QNTSim Mini", line: "Runs Locally on the Mini, Connected Directly to Your Lab Devices.",
         plans: [
-          { k: "learner", name: "Learner", price: 2500, blurb: "Coursework and Guided Protocol Experiments.", bullets: ["Core Network Simulation", "Guided QKD and Entanglement Experiments", "Course Templates", "Email Support"] },
-          { k: "researcher", name: "Researcher", price: 6000, blurb: "Research-Grade Protocol Simulation With Your Hardware in the Loop.", bullets: ["Full Protocol Library", "Hardware-In-The-Loop Runs", "Parameter Sweeps and Batch Runs", "Priority Support"] },
+          { k: "learner", name: "Learner", price: null, priceLabel: "On Request", blurb: "Coursework and Guided Protocol Experiments.", bullets: ["Core Network Simulation", "Guided QKD and Entanglement Experiments", "Course Templates", "Email Support"] },
+          { k: "researcher", name: "Researcher", price: null, priceLabel: "On Request", blurb: "Research-Grade Protocol Simulation With Your Hardware in the Loop.", bullets: ["Full Protocol Library", "Hardware-In-The-Loop Runs", "Parameter Sweeps and Batch Runs", "Priority Support"] },
           { k: "custom", name: "Custom", price: null, blurb: "Protocols, Devices and Limits Set to Your Contract.", bullets: ["Custom Topologies and Devices", "Multi-Unit Deployments", "Instructor and Admin Controls", "Dedicated Support Engineer"] }
         ] },
       { k: "cloud", label: "Cloud Access", line: "Hosted by Quantum AI Global. Open QNTSim From Any Browser, With or Without Your Mini.",
         plans: [
-          { k: "learner", name: "Cloud Learner", price: 4000, blurb: "Hosted Access for Classrooms and Self-Study.", bullets: ["Core Network Simulation", "Guided QKD and Entanglement Experiments", "Course Templates", "Email Support"] },
-          { k: "researcher", name: "Cloud Researcher", price: 10000, blurb: "Hosted Access for Network Design Studies.", bullets: ["Full Protocol Library", "Custom Topologies", "Export Results and Traces", "Priority Support"] },
+          { k: "learner", name: "Cloud Learner", price: null, priceLabel: "On Request", blurb: "Hosted Access for Classrooms and Self-Study.", bullets: ["Core Network Simulation", "Guided QKD and Entanglement Experiments", "Course Templates", "Email Support"] },
+          { k: "researcher", name: "Cloud Researcher", price: null, priceLabel: "On Request", blurb: "Hosted Access for Network Design Studies.", bullets: ["Full Protocol Library", "Custom Topologies", "Export Results and Traces", "Priority Support"] },
           { k: "custom", name: "Cloud Custom", price: null, blurb: "Hosted Capacity Agreed for Your Organisation.", bullets: ["Dedicated Capacity", "Organisation-Wide Access", "Usage Analytics", "Dedicated Support Engineer"] }
         ] }
     ]

@@ -119,7 +119,7 @@
 </div>
 </x-dc>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#05080e"/><circle cx="50" cy="50" r="22" fill="none" stroke="#00d4ff" stroke-width="5"/><path d="M62 62l14 14" stroke="#00d4ff" stroke-width="5"/></svg></template>
-<script type="text/x-dc" data-dc-script data-props="{&quot;state&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;404&quot;,&quot;500&quot;,&quot;403&quot;,&quot;empty&quot;,&quot;loading&quot;,&quot;maintenance&quot;],&quot;default&quot;:&quot;404&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showSwitcher&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;state&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;404&quot;,&quot;500&quot;,&quot;403&quot;,&quot;empty&quot;,&quot;loading&quot;,&quot;maintenance&quot;],&quot;default&quot;:&quot;404&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showSwitcher&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
 class Component extends DCLogic {
   state = { w: typeof window !== "undefined" ? window.innerWidth : 1440, st: null, rm: false, pct: 64 };
   waveRef = React.createRef(); ghostRef = React.createRef();
@@ -177,7 +177,7 @@ class Component extends DCLogic {
       screenLabel: "State · " + st, cols: desk ? "minmax(0,6fr) minmax(0,5fr)" : "minmax(0,1fr)", minH: desk ? "calc(100vh - 85px)" : "auto", scopeH: w >= 640 ? "260px" : "200px",
       waveRef: this.waveRef, ghostRef: this.ghostRef, maintPct: S.pct + "%",
       skelCols: w >= 900 ? "repeat(3,minmax(0,1fr))" : w >= 600 ? "repeat(2,minmax(0,1fr))" : "minmax(0,1fr)", skelCards: [1, 2, 3],
-      showSwitch: this.props.showSwitcher ?? true,
+      showSwitch: !!this.props.showSwitcher || /[?&]demo-tools(=|&|$)/.test(location.search), /* design preview switcher: hidden on the live 404 page */
       switches: LABELS.map(([k, label]) => { const on = k === st; return { label, sel: on ? "true" : "false", bd: on ? "var(--brand)" : "transparent", bg: on ? "var(--surface-2)" : "transparent", color: on ? "var(--foreground)" : "var(--muted)", pick: () => { this.setState({ st: k }); try { const u = new URL(window.location.href); u.searchParams.set("state", k); history.replaceState(null, "", u); } catch (e) {} } }; }),
     };
   }

@@ -55,6 +55,7 @@
       </div>
       <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:40px 0">
         <div style="width:100%;max-width:{{ authMax }};display:flex;flex-direction:column;gap:28px">
+          <div role="note" aria-label="Demo Environment" style="display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid rgba(0,212,255,.35);border-radius:10px;background:var(--brand-soft);color:var(--foreground-2);font-size:15px;line-height:1.55;text-align:left"><span style="color:var(--brand);display:flex"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5h.01"></path></svg></span><span><strong style="color:var(--foreground);font-weight:600">Demo Environment.</strong> This Portal Shows a Sample Account With Sample Data. Sign-In, Payments, Orders, Invoices and Support Requests Are Simulated: Production Authentication and Backend Integrations Are Not Yet Connected.</span></div>
           <sc-if value="{{ showTabs }}" hint-placeholder-val="{{ true }}">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:4px;border:1px solid var(--border);border-radius:12px;background:rgba(5,8,14,.6)">
               <x-import component-from-global-scope="QAIG.Button" variant="{{ tabIn }}" onClick="{{ goSignin }}" dc-props="{{ full }}" hint-size="100%,36px">Sign In</x-import>
@@ -69,7 +70,7 @@
               <p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--muted)">Access Your Products, Licences, Orders and Billing.</p>
             </div>
             <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:16px;font-weight:500;color:var(--foreground-2)">Email Address</span>
-              <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.mail }}</span><input type="email" defaultValue="ananya.rao@northfield-labs.in" placeholder="you@organisation.com" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
+              <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.mail }}</span><input type="email" defaultValue="ananya.rao@example.com" placeholder="you@organisation.com" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
             </label>
             <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:16px;font-weight:500;color:var(--foreground-2)">Password</span>
               <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.lock }}</span><input type="{{ pwType }}" defaultValue="Quantum2026" placeholder="••••••••" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"><button type="button" onClick="{{ togglePw }}" aria-label="Show Password" style="display:flex;padding:0;border:0;background:transparent;color:var(--muted);cursor:pointer">{{ I.eye }}</button></span>
@@ -91,7 +92,7 @@
             </div>
             <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.user }}</span><input placeholder="Full Name" defaultValue="Ananya Rao" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
             <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.building }}</span><input placeholder="Organisation (Optional)" defaultValue="Northfield Research Labs" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
-            <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.mail }}</span><input placeholder="Enterprise Email" defaultValue="ananya.rao@northfield-labs.in" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
+            <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.mail }}</span><input placeholder="Enterprise Email" defaultValue="ananya.rao@example.com" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
               <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.lock }}</span><input type="password" placeholder="Password" defaultValue="Quantum2026" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
               <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.lock }}</span><input type="password" placeholder="Confirm" defaultValue="Quantum2026" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
@@ -108,7 +109,7 @@
             <span style="display:flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;border:1px solid var(--border-light);background:var(--brand-soft);color:var(--brand)">{{ I.mailLg }}</span>
             <div>
               <h1 style="margin:0;font-size:20px;line-height:1.3;font-weight:600">Verify Your Email to Finish Creating Your Account</h1>
-              <p style="margin:10px 0 0;font-size:16px;line-height:1.6;color:var(--muted)">We Sent a Verification Link to <span style="color:var(--foreground-2);font-weight:500">ananya.rao@northfield-labs.in</span>. Confirm It to Activate Your Account, Then Sign In.</p>
+              <p style="margin:10px 0 0;font-size:16px;line-height:1.6;color:var(--muted)">We Sent a Verification Link to <span style="color:var(--foreground-2);font-weight:500">ananya.rao@example.com</span>. Confirm It to Activate Your Account, Then Sign In.</p>
             </div>
             <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ goEmpty }}" dc-props="{{ full }}" hint-size="100%,44px">I’ve Verified My Email</x-import>
             <x-import component-from-global-scope="QAIG.Button" variant="link" size="sm" onClick="{{ resendVerify }}" hint-size="220px,28px">Didn’t Get It? Resend Verification Email</x-import>
@@ -124,14 +125,14 @@
             </div>
             <sc-if value="{{ forgotSent }}" hint-placeholder-val="{{ false }}">
               <div style="display:flex;flex-direction:column;gap:14px">
-                <div style="display:flex;gap:12px;padding:14px 16px;border-radius:10px;border:1px solid var(--border-light);background:var(--surface-2)"><span style="color:var(--success);display:flex;margin-top:2px">{{ I.check }}</span><p style="margin:0;font-size:16px;line-height:1.55;color:var(--foreground-2)">If an Account Exists for <span style="color:var(--foreground)">ananya.rao@northfield-labs.in</span>, a Reset Link Is on Its Way. It Expires in 30 Minutes.</p></div>
+                <div style="display:flex;gap:12px;padding:14px 16px;border-radius:10px;border:1px solid var(--border-light);background:var(--surface-2)"><span style="color:var(--success);display:flex;margin-top:2px">{{ I.check }}</span><p style="margin:0;font-size:16px;line-height:1.55;color:var(--foreground-2)">If an Account Exists for <span style="color:var(--foreground)">ananya.rao@example.com</span>, a Reset Link Is on Its Way. It Expires in 30 Minutes.</p></div>
                 <x-import component-from-global-scope="QAIG.Button" size="lg" variant="outline" onClick="{{ goReset }}" dc-props="{{ full }}" hint-size="100%,44px">Open Reset Link (Prototype)</x-import>
               </div>
             </sc-if>
             <sc-if value="{{ forgotForm }}" hint-placeholder-val="{{ true }}">
               <div style="display:flex;flex-direction:column;gap:22px">
                 <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:16px;font-weight:500;color:var(--foreground-2)">Email Address</span>
-                  <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.mail }}</span><input type="email" defaultValue="ananya.rao@northfield-labs.in" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
+                  <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.mail }}</span><input type="email" defaultValue="ananya.rao@example.com" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
                 </label>
                 <x-import component-from-global-scope="QAIG.Button" size="lg" onClick="{{ sendReset }}" dc-props="{{ full }}" hint-size="100%,44px">Send Reset Link</x-import>
               </div>
@@ -144,7 +145,7 @@
           <div style="display:flex;flex-direction:column;gap:20px">
             <div>
               <h1 style="margin:0;font-size:clamp(1.75rem,1.4rem + 1vw,2.25rem);line-height:1.12;letter-spacing:-0.03em;font-weight:600">Set a New Password</h1>
-              <p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--muted)">For ananya.rao@northfield-labs.in</p>
+              <p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:var(--muted)">For ananya.rao@example.com</p>
             </div>
             <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:16px;font-weight:500;color:var(--foreground-2)">New Password</span>
               <span style="display:flex;align-items:center;gap:12px;height:48px;padding:0 16px;border-radius:8px;border:1px solid var(--border-control);background:var(--base)"><span style="color:var(--muted);display:flex">{{ I.lock }}</span><input type="password" defaultValue="Quantum2027" style="flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--foreground);font:inherit;font-size:16px"></span>
@@ -257,13 +258,15 @@
         <span style="color:var(--foreground);font-weight:500;overflow:hidden;text-overflow:ellipsis">{{ crumb }}</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px;flex:none">
-        <x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="auto,22px">Northfield Research Labs</x-import>
+        <span style="display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border:1px solid rgba(0,212,255,.35);border-radius:999px;background:var(--brand-soft);color:var(--brand);font-family:var(--font-mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase">Demo Environment</span>
+        <x-import component-from-global-scope="QAIG.Badge" variant="outline" hint-size="auto,22px">Northfield Research Labs · Sample Account</x-import>
         <span aria-hidden="true" style="width:1px;height:22px;margin:0 6px;background:var(--border)"></span><a href="{{ homeHref }}" style="flex:none;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border:1px solid var(--border-light);border-radius:8px;background:var(--surface-2);color:var(--foreground);font-size:15px;font-weight:500;white-space:nowrap;transition:border-color .2s,color .2s,background .2s" style-hover="border-color:var(--brand);color:var(--brand);background:var(--brand-soft)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"></path></svg>Back to Website</a>
       </div>
     </header>
     </sc-if>
 
     <div style="flex:1;width:100%;max-width:1200px;margin:0 auto;padding:clamp(28px,4vw,48px) clamp(20px,3vw,40px) 80px">
+      <div style="margin-bottom:28px"><div role="note" aria-label="Demo Environment" style="display:flex;gap:12px;align-items:flex-start;padding:12px 16px;border:1px solid rgba(0,212,255,.35);border-radius:10px;background:var(--brand-soft);color:var(--foreground-2);font-size:15px;line-height:1.55;text-align:left"><span style="color:var(--brand);display:flex"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5"></path><path d="M12 7.5h.01"></path></svg></span><span><strong style="color:var(--foreground);font-weight:600">Demo Environment.</strong> This Portal Shows a Sample Account With Sample Data. Sign-In, Payments, Orders, Invoices and Support Requests Are Simulated: Production Authentication and Backend Integrations Are Not Yet Connected.</span></div></div>
 
       <sc-if value="{{ sOverview }}" hint-placeholder-val="{{ false }}">
         <div style="display:flex;flex-direction:column;gap:40px">
@@ -544,7 +547,7 @@
                     <label style="display:flex;flex-direction:column;gap:8px"><span style="font-size:16px;font-weight:500;color:var(--foreground-2)">Details <span style="color:var(--danger)">*</span></span><textarea data-sf="msg" value="{{ supMsg }}" onChange="{{ onSupMsg }}" rows="5" placeholder="What Happened, What You Have Tried and Any Serial Number or Error Message." style="width:100%;min-height:132px;padding:12px 14px;line-height:1.55;resize:vertical;border:1px solid {{ supMsgBd }};border-radius:10px;background:var(--base);color:var(--foreground);font:inherit;font-size:16px;outline:none;transition:border-color .2s,box-shadow .2s" style-focus="border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)"></textarea><sc-if value="{{ supMsgErr }}" hint-placeholder-val="{{ false }}"><span role="alert" style="font-size:14.5px;color:var(--danger)">Describe the Issue so an Engineer Can Start on It.</span></sc-if></label>
                   </div>
                   <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;padding:16px 22px;border-top:1px solid var(--border);background:var(--surface-2)">
-                    <span style="flex:1 1 240px;min-width:0;font-size:15px;color:var(--muted)">Replies Go to <span style="color:var(--foreground-2);overflow-wrap:anywhere">ananya.rao@northfield-labs.in</span></span>
+                    <span style="flex:1 1 240px;min-width:0;font-size:15px;color:var(--muted)">Replies Go to <span style="color:var(--foreground-2);overflow-wrap:anywhere">ananya.rao@example.com</span></span>
                     <x-import component-from-global-scope="QAIG.Button" type="submit" dc-props="{{ supSubmitProps }}" hint-size="160px,36px">Submit Request</x-import>
                   </div>
                 </form>
@@ -553,7 +556,7 @@
                 <div role="status" style="display:flex;flex-direction:column;gap:22px;padding:22px">
                   <div style="display:flex;align-items:flex-start;gap:14px">
                     <span style="flex:none;display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;border:1px solid var(--brand);background:var(--brand-soft);color:var(--brand)">{{ I.check }}</span>
-                    <div style="min-width:0"><div style="font-size:18px;font-weight:600">Request Received</div><p style="margin:4px 0 0;font-size:16px;line-height:1.55;color:var(--muted)">Reference <span class="tnum" style="font-family:var(--font-mono);color:var(--brand)">{{ supRef }}</span>. A Confirmation Is on Its Way to Your Email.</p></div>
+                    <div style="min-width:0"><div style="font-size:18px;font-weight:600">Demo: Request Received</div><p style="margin:4px 0 0;font-size:16px;line-height:1.55;color:var(--muted)">Reference <span class="tnum" style="font-family:var(--font-mono);color:var(--brand)">{{ supRef }}</span>. A Confirmation Is on Its Way to Your Email.</p></div>
                   </div>
                   <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
                     <sc-for list="{{ supSteps }}" as="s" hint-placeholder-count="3">
@@ -847,7 +850,7 @@
   <div style="position:fixed;right:16px;bottom:72px;z-index:110;display:flex;gap:12px;max-width:360px;padding:14px 16px;border:1px solid var(--border-light);border-radius:12px;background:var(--surface-2);box-shadow:var(--shadow-lg)"><span style="flex:none;margin-top:6px;width:8px;height:8px;border-radius:50%;background:var(--success)"></span><div><div style="font-size:16px;font-weight:600">{{ paidTitle }}</div><div style="margin-top:2px;font-size:15px;color:var(--muted)">{{ paidDesc }}</div></div></div>
 </sc-if>
 
-<div onClick="{{ stop }}" style="position:fixed;right:16px;bottom:16px;z-index:90;display:flex;align-items:center;gap:8px;padding:6px 6px 6px 12px;border:1px solid var(--border-light);border-radius:10px;background:var(--surface-2);box-shadow:var(--shadow-lg)">
+<div onClick="{{ stop }}" style="position:fixed;right:16px;bottom:16px;z-index:90;display:{{ toolsDisplay }};align-items:center;gap:8px;padding:6px 6px 6px 12px;border:1px solid var(--border-light);border-radius:10px;background:var(--surface-2);box-shadow:var(--shadow-lg)">
   <span style="font-family:var(--font-mono);font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)">Screen</span>
   <select value="{{ screen }}" onChange="{{ jump }}" style="height:30px;padding:0 8px;border-radius:6px;border:1px solid var(--border-control);background:var(--base);color:var(--foreground);font:inherit;font-size:15px">
     <sc-for list="{{ screens }}" as="sc" hint-placeholder-count="12"><option value="{{ sc.k }}">{{ sc.label }}</option></sc-for>
@@ -937,9 +940,9 @@ class Component extends DCLogic {
     try { this.lastFocus && this.lastFocus.focus(); } catch (er) {}
   }
   removeAddr(id) { this.setState((s) => { let list = s.addrs.filter((x) => x.id !== id); const gone = s.addrs.find((x) => x.id === id); if (gone && gone.def) { const f = list.find((x) => x.kind === gone.kind); if (f) list = list.map((x) => (x === f ? { ...x, def: true } : x)); } return { addrs: list, rmId: null }; }); this.toast("Address Removed", "It Will No Longer Appear at Checkout."); }
-  dlFile(name, body) { try { const b = new Blob([body], { type: "text/plain" }), u = URL.createObjectURL(b), a = document.createElement("a"); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 1000); } catch (e) {} }
+  dlFile(name, body) { name = name.replace(/(\.[a-z]+)$/, "-SAMPLE$1"); body = "SAMPLE DOCUMENT · QAIG CUSTOMER PORTAL DEMO\nNot a tax invoice. No transaction took place. All values are sample data.\n\n" + body.replace(/Tax Invoice/g, "Sample Invoice"); try { const b = new Blob([body], { type: "text/plain" }), u = URL.createObjectURL(b), a = document.createElement("a"); a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 1000); } catch (e) {} }
   dlInvoice(r) { this.dlFile(r[0] + ".txt", "Quantum AI Global Pvt. Ltd.\nTax Invoice " + r[0] + "\n\nItem: " + r[1] + "\nDate: " + r[2] + "\nAmount: " + r[3] + "\nStatus: " + r[4] + "\n"); this.toast("Invoice Downloaded", r[0] + " saved to your device."); }
-  toast(t, d) { this.setState({ paid: { t, d } }); setTimeout(() => this.setState({ paid: null }), 3200); }
+  toast(t, d) { t = /^Demo:/.test(t) ? t : "Demo: " + t; this.setState({ paid: { t, d } }); setTimeout(() => this.setState({ paid: null }), 3200); }
   renderVals() {
     const S = this.state, h = React.createElement;
     const P = {
@@ -1096,7 +1099,7 @@ class Component extends DCLogic {
       payLabel: "Pay " + inrF(sub + gst),
       payPlan: () => { const name = pmProd.name; this.setState({ plans: null, paid: { t: "Demo: Payment Captured", d: name + " · " + selPlan.name + " until " + until + (S.autopay ? " · autopay on" : "") } }); setTimeout(() => this.setState({ paid: null }), 3200); },
       paidToast: !!S.paid, paidTitle: S.paid ? S.paid.t : "", paidDesc: S.paid ? S.paid.d : "",
-      I, screen: curKey, screens: screens.map(([k, label]) => ({ k, label })),
+      I, screen: curKey, toolsDisplay: /[?&]demo-tools(=|&|$)/.test(location.search) ? "flex" : "none", /* presenter screen switcher: add ?demo-tools to the URL */ screens: screens.map(([k, label]) => ({ k, label })),
       jump: (e) => { const [s, sub] = e.target.value.split(":"); this.go(s, sub ? { set: sub } : {}); },
       stop: (e) => e.stopPropagation(),
       closeMenus: () => S.menu && this.setState({ menu: null }),
@@ -1180,9 +1183,9 @@ class Component extends DCLogic {
         { idx: "02", title: "Request a Demo", desc: "See a product running on your use case before you buy. Response within 24 hours.", cta: "Request Demo", variant: "outline", go: () => this.enquire() },
         { idx: "03", title: "Talk to Sales", desc: "Enterprise consultation and technical guidance for seats, servers and hardware.", cta: "Contact Sales", variant: "outline", go: () => this.enquire() },
       ],
-      ...(() => { const m = S.w < 860; return { ordHead: m ? "none" : "grid", ordCols: m ? "minmax(0,1fr) auto" : "minmax(150px,1.1fr) minmax(0,1.5fr) minmax(0,.9fr) minmax(0,.8fr) minmax(0,1fr) 96px", ordAreas: m ? "'Ref Amt' 'Item Item' 'Date St'" : "'Ref Item Date Amt St Act'", ordActD: m ? "none" : "inline", ordGap: m ? "6px 12px" : "16px", ordStJ: m ? "end" : "start", recCols: m ? "minmax(0,1fr) auto" : "minmax(0,1.3fr) minmax(0,1.4fr) auto auto", recAreas: m ? "'Ref Amt' 'Item St'" : "'Ref Item Amt St'",
-        subCols: m ? "minmax(0,1fr) auto" : "minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr) 130px", subAreas: m ? "'nm Am' 'Pl Ap' 'Nx Nx'" : "'nm Pl Nx Am Ap'",
-        invCols: m ? "minmax(0,1fr) auto auto" : "minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr) 90px 40px", invAreas: m ? "'No Am Dl' 'It St Dl' 'Dt Dt Dl'" : "'No It Dt Am St Dl'" }; })(),
+      ...(() => { const m = S.w < 860; return { ordHead: m ? "none" : "grid", ordCols: m ? "minmax(0,1fr) auto" : "minmax(150px,1.1fr) minmax(0,1.5fr) minmax(0,.9fr) minmax(0,.8fr) minmax(0,1fr) 96px", ordAreas: m ? "'ref amt' 'item item' 'date st'" : "'ref item date amt st act'", ordActD: m ? "none" : "inline", ordGap: m ? "6px 12px" : "16px", ordStJ: m ? "end" : "start", recCols: m ? "minmax(0,1fr) auto" : "minmax(0,1.3fr) minmax(0,1.4fr) auto auto", recAreas: m ? "'ref amt' 'item st'" : "'ref item amt st'",
+        subCols: m ? "minmax(0,1fr) auto" : "minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr) 130px", subAreas: m ? "'nm am' 'pl ap' 'nx nx'" : "'nm pl nx am ap'",
+        invCols: m ? "minmax(0,1fr) auto auto" : "minmax(0,1.2fr) minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr) 90px 40px", invAreas: m ? "'no am dl' 'it st dl' 'dt dt dl'" : "'no it dt am st dl'" }; })(),
       pfx: mkF("pf", pfMap, products), ofx: mkF("of", ofMap, ordersRaw),
       prodFilters, allProducts: products.filter(pfMap[S.pf]).map(decorate),
       orderFilters: Object.keys(ofMap).map((k) => ({ label: k, count: ordersRaw.filter(ofMap[k]).length, variant: S.of === k ? "secondary" : "ghost", pick: () => this.setState({ of: k }) })),
@@ -1254,7 +1257,7 @@ class Component extends DCLogic {
       setProfile: S.set === "profile", setAddress: S.set === "address", setSecurity: S.set === "security",
       profileFields: [
         { label: "Full Name", value: "Ananya Rao" },
-        { label: "Email", value: "ananya.rao@northfield-labs.in", verified: true, ro: true },
+        { label: "Email", value: "ananya.rao@example.com", verified: true, ro: true },
         { label: "Organisation", value: "Northfield Research Labs" },
         { label: "Phone", value: "+91 98450 11223" },
         { label: "Role", value: "Head of Research Computing" },
@@ -1274,7 +1277,7 @@ class Component extends DCLogic {
           amSubmit: { type: "submit", onClick: (ev) => { ev.preventDefault(); this.saveAddr(); } } }; })(),
       closeAddr: () => { this.setState({ am: null }); try { this.lastFocus && this.lastFocus.focus(); } catch (er) {} }, saveAddr: (ev) => { ev && ev.preventDefault && ev.preventDefault(); this.saveAddr(); },
       termsHref: this.rt("terms", "#"), privacyHref: this.rt("privacy", "#"), payFailed: S.payFailed,
-      resendVerify: () => this.toast("Verification Email Sent", "Check ananya.rao@northfield-labs.in. It Can Take a Minute to Arrive."),
+      resendVerify: () => this.toast("Verification Email Sent", "Check ananya.rao@example.com. It Can Take a Minute to Arrive."),
       dlOrderInvoice: () => this.dlInvoice(["INV-2026-0311", "QuRNG Hardware Unit", "28 Jul 2026", "₹3,40,000", "Paid"]),
       trackShipment: () => { try { window.open("https://www.bluedart.com/tracking", "_blank", "noopener"); } catch (e) {} this.toast("Opening BlueDart Tracking", "AWB 7781 2290 4410"); },
       retryPayment: () => { this.setState({ payFailed: false }); this.toast("Payment Successful", "₹42,000 charged for QubitIQ · Cloud. Your access continues."); },

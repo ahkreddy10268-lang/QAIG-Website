@@ -95,7 +95,9 @@ function replayOnto(template, baseText, curText, label, pathToUuid) {
     let a0 = h.a0, a1 = h.a1, b0 = h.b0, b1 = h.b1, done = false;
     for (let ctx = 0; ctx <= 6 && !done; ctx++) {
       const oldBlock = A.slice(a0, a1).join('\n'), newBlock = B.slice(b0, b1).join('\n');
-      const variants = [x => x, encodeCamel];
+      // the exporter re-serialises the page with DOMParser: boolean attributes gain ="" (data-dc-script -> data-dc-script="")
+      const serial = x => x.replace(/ data-dc-script /g, ' data-dc-script="" ');
+      const variants = [x => x, encodeCamel, serial];
       for (const v of variants) {
         const sub = x => { let y = v(x); for (const [p, u] of pathToUuid) y = y.split(p).join(u); return y; };
         for (const tf of [v, sub]) {
